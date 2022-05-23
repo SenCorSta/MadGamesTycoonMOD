@@ -1283,23 +1283,23 @@
 [COUNTRY]1
 
 [ID]67
-[NAME EN]Apogee Entertainment
-[NAME GE]Apogee Entertainment
-[NAME TU]Apogee Entertainment
-[NAME FR]Apogee Entertainment
-[NAME JA]Apogee Entertainment
-[NAME CH]Apogee
-[NAME CT]Apogee Entertainment
-[DATE]JUL 2008
+[NAME EN]Atlus
+[NAME GE]Atlus
+[NAME TU]Atlus
+[NAME FR]Atlus
+[NAME JA]Atlus
+[NAME CH]Atlus
+[NAME CT]Atlus
+[DATE]APR 1986
 [PIC]68
 [DEVELOPER]true
 [PUBLISHER]true
-[MARKET]79
-[SHARE]6
-[GENRE]14
+[MARKET]50
+[SHARE]7
+[GENRE]3
 [SPEED]0
 [COMVAL]15000000
-[COUNTRY]0
+[COUNTRY]1
 
 [ID]68
 [NAME EN]Broderbund
