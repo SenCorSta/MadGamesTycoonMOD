@@ -851,7 +851,7 @@
 [NAME TU]Lionhead Studios
 [NAME FR]Lionhead Studios
 [NAME JA]Lionhead Studios
-[NAME CH]Lionhead
+[NAME CH]狮头
 [NAME CT]Lionhead Studios
 [DATE]JUL 1996
 [PIC]45
