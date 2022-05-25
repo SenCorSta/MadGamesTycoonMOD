@@ -1654,7 +1654,7 @@
 [NAME TU]Lucasfilm Games
 [NAME FR]Lucasfilm Games
 [NAME JA]Lucasfilm Games
-[NAME CH]卢卡斯影业
+[NAME CH]卢卡斯艺术
 [NAME CT]盧卡斯藝術
 [DATE]FEB 1982
 [PIC]183
