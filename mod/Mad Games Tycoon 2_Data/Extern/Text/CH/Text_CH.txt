@@ -2009,5 +2009,5 @@ IP忽略度
 您想将哪个 IP 分配给您的公司或子公司？
 目前正在为此 IP 开发产品.您必须先取消开发才能转让 IP.
 目前无法转让 IP.
-<b>Mad Games Awards - Winner</b><br>您的粉丝很高兴您在“疯狂游戏大奖”中获奖.<br>+<NUM>% games sold<br>
-European Manor
+<b>疯狂游戏大奖-获奖者</b><br>您的粉丝很高兴您在“疯狂游戏大奖”中获奖.<br>+<NUM>% 游戏销量<br>
+欧洲庄园
