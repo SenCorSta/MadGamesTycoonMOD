@@ -1,0 +1,98 @@
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
+
+// Token: 0x0200008B RID: 139
+public class Item_DevGame_Port : MonoBehaviour
+{
+	// Token: 0x0600058D RID: 1421 RVA: 0x0004A4FD File Offset: 0x000486FD
+	private void Start()
+	{
+		this.SetData();
+	}
+
+	// Token: 0x0600058E RID: 1422 RVA: 0x0004A505 File Offset: 0x00048705
+	private void Update()
+	{
+		this.MultiplayerUpdate();
+	}
+
+	// Token: 0x0600058F RID: 1423 RVA: 0x0004A510 File Offset: 0x00048710
+	private void MultiplayerUpdate()
+	{
+		if (!this.mS_.multiplayer)
+		{
+			return;
+		}
+		this.updateTimer += Time.deltaTime;
+		if (this.updateTimer < 5f)
+		{
+			return;
+		}
+		this.updateTimer = 0f;
+		this.SetData();
+	}
+
+	// Token: 0x06000590 RID: 1424 RVA: 0x0004A55C File Offset: 0x0004875C
+	private void SetData()
+	{
+		if (!this.game_)
+		{
+			return;
+		}
+		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag();
+		this.uiObjects[3].GetComponent<Text>().text = this.game_.GetReleaseDateString();
+		this.uiObjects[4].GetComponent<Text>().text = this.tS_.GetText(275) + ": " + this.mS_.GetMoney(this.game_.sellsTotal, false);
+		this.uiObjects[5].GetComponent<Text>().text = this.tS_.GetText(277) + ": " + Mathf.RoundToInt((float)this.game_.reviewTotal).ToString() + "%";
+		this.uiObjects[2].GetComponent<Image>().sprite = this.game_.GetScreenshot();
+		this.uiObjects[1].GetComponent<Image>().sprite = this.genres_.GetPic(this.game_.maingenre);
+		this.uiObjects[7].GetComponent<Image>().sprite = this.game_.GetPlatformTypSprite();
+		this.uiObjects[8].GetComponent<Image>().sprite = this.game_.GetTypSprite();
+		this.uiObjects[9].GetComponent<Text>().text = this.mS_.Round(this.game_.GetIpBekanntheit(), 1).ToString();
+		this.tooltip_.c = this.game_.GetTooltip();
+	}
+
+	// Token: 0x06000591 RID: 1425 RVA: 0x0003D679 File Offset: 0x0003B879
+	private void OnDisable()
+	{
+		UnityEngine.Object.Destroy(base.gameObject);
+	}
+
+	// Token: 0x06000592 RID: 1426 RVA: 0x0004A708 File Offset: 0x00048908
+	public void BUTTON_Click()
+	{
+		this.sfx_.PlaySound(3, true);
+		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[313]);
+		this.guiMain_.uiObjects[313].GetComponent<Menu_Dev_PortChoosePlatform>().Init(this.rS_, this.game_);
+	}
+
+	// Token: 0x040008AE RID: 2222
+	public gameScript game_;
+
+	// Token: 0x040008AF RID: 2223
+	public GameObject[] uiObjects;
+
+	// Token: 0x040008B0 RID: 2224
+	public mainScript mS_;
+
+	// Token: 0x040008B1 RID: 2225
+	public textScript tS_;
+
+	// Token: 0x040008B2 RID: 2226
+	public sfxScript sfx_;
+
+	// Token: 0x040008B3 RID: 2227
+	public GUI_Main guiMain_;
+
+	// Token: 0x040008B4 RID: 2228
+	public tooltip tooltip_;
+
+	// Token: 0x040008B5 RID: 2229
+	public genres genres_;
+
+	// Token: 0x040008B6 RID: 2230
+	public roomScript rS_;
+
+	// Token: 0x040008B7 RID: 2231
+	private float updateTimer;
+}
