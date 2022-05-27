@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000269 RID: 617
+
 public class Menu_W_FirmaKaufen : MonoBehaviour
 {
-	// Token: 0x060017FD RID: 6141 RVA: 0x000EF708 File Offset: 0x000ED908
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060017FE RID: 6142 RVA: 0x000EF710 File Offset: 0x000ED910
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_W_FirmaKaufen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017FF RID: 6143 RVA: 0x000EF7F8 File Offset: 0x000ED9F8
+	
 	public void Init(publisherScript script_)
 	{
 		this.FindScripts();
@@ -57,7 +57,7 @@ public class Menu_W_FirmaKaufen : MonoBehaviour
 		}
 		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
 		{
-			if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].publisherID == this.pS_.myID && (this.games_.arrayGamesScripts[i].auftragsspiel || this.games_.arrayGamesScripts[i].pubAngebot))
+			if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].publisherID == this.pS_.myID && this.games_.arrayGamesScripts[i].auftragsspiel)
 			{
 				this.guiMain_.MessageBox(this.tS_.GetText(1975), false);
 				this.BUTTON_Abbrechen();
@@ -76,14 +76,14 @@ public class Menu_W_FirmaKaufen : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x06001800 RID: 6144 RVA: 0x000EF983 File Offset: 0x000EDB83
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001801 RID: 6145 RVA: 0x000EF9A0 File Offset: 0x000EDBA0
+	
 	public void BUTTON_Yes()
 	{
 		if (this.pS_)
@@ -94,7 +94,7 @@ public class Menu_W_FirmaKaufen : MonoBehaviour
 				return;
 			}
 			this.mS_.Pay(this.pS_.GetFirmenwert(), 28);
-			this.pS_.SetAsTochterfirma(this.mS_.myID);
+			this.pS_.SetAsTochterfirma();
 			this.pS_.firmenwert = this.pS_.firmenwert / 100L * 80L;
 			this.pS_.exklusive = false;
 			this.pS_.onlyMobile = false;
@@ -155,30 +155,30 @@ public class Menu_W_FirmaKaufen : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x04001BB4 RID: 7092
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001BB5 RID: 7093
+	
 	private publisherScript pS_;
 
-	// Token: 0x04001BB6 RID: 7094
+	
 	private GameObject main_;
 
-	// Token: 0x04001BB7 RID: 7095
+	
 	private mainScript mS_;
 
-	// Token: 0x04001BB8 RID: 7096
+	
 	private textScript tS_;
 
-	// Token: 0x04001BB9 RID: 7097
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001BBA RID: 7098
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001BBB RID: 7099
+	
 	private genres genres_;
 
-	// Token: 0x04001BBC RID: 7100
+	
 	private games games_;
 }

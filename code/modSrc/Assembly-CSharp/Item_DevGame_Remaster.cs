@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200008D RID: 141
+
 public class Item_DevGame_Remaster : MonoBehaviour
 {
-	// Token: 0x06000597 RID: 1431 RVA: 0x0004A7B4 File Offset: 0x000489B4
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000598 RID: 1432 RVA: 0x0004A7BC File Offset: 0x000489BC
+	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000599 RID: 1433 RVA: 0x0004A7C4 File Offset: 0x000489C4
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_DevGame_Remaster : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600059A RID: 1434 RVA: 0x0004A810 File Offset: 0x00048A10
+	
 	private void SetData()
 	{
 		if (!this.game_)
@@ -53,13 +53,13 @@ public class Item_DevGame_Remaster : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x0600059B RID: 1435 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600059C RID: 1436 RVA: 0x0004A9EC File Offset: 0x00048BEC
+	
 	public void BUTTON_Click()
 	{
 		base.gameObject.SetActive(false);
@@ -68,36 +68,36 @@ public class Item_DevGame_Remaster : MonoBehaviour
 		this.guiMain_.uiObjects[98].SetActive(false);
 	}
 
-	// Token: 0x040008BA RID: 2234
+	
 	public gameScript game_;
 
-	// Token: 0x040008BB RID: 2235
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040008BC RID: 2236
+	
 	public mainScript mS_;
 
-	// Token: 0x040008BD RID: 2237
+	
 	public textScript tS_;
 
-	// Token: 0x040008BE RID: 2238
+	
 	public sfxScript sfx_;
 
-	// Token: 0x040008BF RID: 2239
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x040008C0 RID: 2240
+	
 	public tooltip tooltip_;
 
-	// Token: 0x040008C1 RID: 2241
+	
 	public genres genres_;
 
-	// Token: 0x040008C2 RID: 2242
+	
 	public roomScript rS_;
 
-	// Token: 0x040008C3 RID: 2243
+	
 	public games games_;
 
-	// Token: 0x040008C4 RID: 2244
+	
 	private float updateTimer;
 }

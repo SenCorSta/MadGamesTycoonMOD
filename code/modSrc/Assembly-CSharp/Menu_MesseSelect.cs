@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001CE RID: 462
+
 public class Menu_MesseSelect : MonoBehaviour
 {
-	// Token: 0x06001177 RID: 4471 RVA: 0x000B8B0D File Offset: 0x000B6D0D
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001178 RID: 4472 RVA: 0x000B8B18 File Offset: 0x000B6D18
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001179 RID: 4473 RVA: 0x000B8BC4 File Offset: 0x000B6DC4
+	
 	public void Init(int standgroesse)
 	{
 		this.standGroesse = standgroesse;
@@ -78,7 +78,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600117A RID: 4474 RVA: 0x000B8D29 File Offset: 0x000B6F29
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -87,14 +87,14 @@ public class Menu_MesseSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600117B RID: 4475 RVA: 0x000B8D44 File Offset: 0x000B6F44
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600117C RID: 4476 RVA: 0x000B8D60 File Offset: 0x000B6F60
+	
 	public void BUTTON_SelectGame(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -102,7 +102,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		this.guiMain_.uiObjects[187].GetComponent<Menu_MesseSelectGame>().Init(i);
 	}
 
-	// Token: 0x0600117D RID: 4477 RVA: 0x000B8DB4 File Offset: 0x000B6FB4
+	
 	public void BUTTON_SelectKonsole(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -110,7 +110,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		this.guiMain_.uiObjects[323].GetComponent<Menu_MesseSelectKonsole>().Init(i);
 	}
 
-	// Token: 0x0600117E RID: 4478 RVA: 0x000B8E08 File Offset: 0x000B7008
+	
 	public void SetGame(int slot_, gameScript game_)
 	{
 		this.games[slot_] = game_;
@@ -138,7 +138,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		this.uiObjects[2].GetComponent<Text>().text = this.tS_.GetText(948);
 	}
 
-	// Token: 0x0600117F RID: 4479 RVA: 0x000B8F40 File Offset: 0x000B7140
+	
 	public void SetKonsole(int slot_, platformScript script_)
 	{
 		this.konsolen[slot_] = script_;
@@ -158,7 +158,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		this.uiObjects[9].GetComponent<Text>().text = this.tS_.GetText(949);
 	}
 
-	// Token: 0x06001180 RID: 4480 RVA: 0x000B901C File Offset: 0x000B721C
+	
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -209,30 +209,30 @@ public class Menu_MesseSelect : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040015F7 RID: 5623
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040015F8 RID: 5624
+	
 	private GameObject main_;
 
-	// Token: 0x040015F9 RID: 5625
+	
 	private mainScript mS_;
 
-	// Token: 0x040015FA RID: 5626
+	
 	private textScript tS_;
 
-	// Token: 0x040015FB RID: 5627
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040015FC RID: 5628
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040015FD RID: 5629
+	
 	public int standGroesse;
 
-	// Token: 0x040015FE RID: 5630
+	
 	public gameScript[] games;
 
-	// Token: 0x040015FF RID: 5631
+	
 	public platformScript[] konsolen;
 }

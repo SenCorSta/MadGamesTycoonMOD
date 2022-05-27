@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000236 RID: 566
+
 public class Menu_Stats_Fanshopverlauf : MonoBehaviour
 {
-	// Token: 0x060015DA RID: 5594 RVA: 0x000DE3D0 File Offset: 0x000DC5D0
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060015DB RID: 5595 RVA: 0x000DE3D8 File Offset: 0x000DC5D8
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_Stats_Fanshopverlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060015DC RID: 5596 RVA: 0x000DE4BE File Offset: 0x000DC6BE
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060015DD RID: 5597 RVA: 0x000DE4C6 File Offset: 0x000DC6C6
+	
 	private void Update()
 	{
 		if (!this.mS_.multiplayer)
@@ -60,7 +60,7 @@ public class Menu_Stats_Fanshopverlauf : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x060015DE RID: 5598 RVA: 0x000DE4DC File Offset: 0x000DC6DC
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -68,7 +68,7 @@ public class Menu_Stats_Fanshopverlauf : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.tS_.GetText(724) + ": " + this.mS_.GetMoney(i, true);
 	}
 
-	// Token: 0x060015DF RID: 5599 RVA: 0x000DE530 File Offset: 0x000DC730
+	
 	private long InitBalken()
 	{
 		long num = 0L;
@@ -113,40 +113,40 @@ public class Menu_Stats_Fanshopverlauf : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060015E0 RID: 5600 RVA: 0x000DE77B File Offset: 0x000DC97B
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040019C4 RID: 6596
+	
 	public GameObject[] uiBalken;
 
-	// Token: 0x040019C5 RID: 6597
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040019C6 RID: 6598
+	
 	private GameObject main_;
 
-	// Token: 0x040019C7 RID: 6599
+	
 	private mainScript mS_;
 
-	// Token: 0x040019C8 RID: 6600
+	
 	private textScript tS_;
 
-	// Token: 0x040019C9 RID: 6601
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040019CA RID: 6602
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040019CB RID: 6603
+	
 	private genres genres_;
 
-	// Token: 0x040019CC RID: 6604
+	
 	private engineFeatures eF_;
 
-	// Token: 0x040019CD RID: 6605
+	
 	private engineScript eS_;
 }

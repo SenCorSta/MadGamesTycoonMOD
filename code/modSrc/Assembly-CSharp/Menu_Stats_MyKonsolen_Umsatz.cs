@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000251 RID: 593
+
 public class Menu_Stats_MyKonsolen_Umsatz : MonoBehaviour
 {
-	// Token: 0x0600170A RID: 5898 RVA: 0x000E6C1E File Offset: 0x000E4E1E
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600170B RID: 5899 RVA: 0x000E6C28 File Offset: 0x000E4E28
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_Stats_MyKonsolen_Umsatz : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600170C RID: 5900 RVA: 0x000E6CF0 File Offset: 0x000E4EF0
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -51,7 +51,7 @@ public class Menu_Stats_MyKonsolen_Umsatz : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x0600170D RID: 5901 RVA: 0x000E6D28 File Offset: 0x000E4F28
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -67,7 +67,7 @@ public class Menu_Stats_MyKonsolen_Umsatz : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600170E RID: 5902 RVA: 0x000E6D74 File Offset: 0x000E4F74
+	
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -80,13 +80,13 @@ public class Menu_Stats_MyKonsolen_Umsatz : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600170F RID: 5903 RVA: 0x000E6DB8 File Offset: 0x000E4FB8
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001710 RID: 5904 RVA: 0x000E6DC0 File Offset: 0x000E4FC0
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -94,7 +94,7 @@ public class Menu_Stats_MyKonsolen_Umsatz : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001711 RID: 5905 RVA: 0x000E6DD4 File Offset: 0x000E4FD4
+	
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[4].name);
@@ -108,7 +108,7 @@ public class Menu_Stats_MyKonsolen_Umsatz : MonoBehaviour
 		this.uiObjects[4].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001712 RID: 5906 RVA: 0x000E6E78 File Offset: 0x000E5078
+	
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -117,7 +117,7 @@ public class Menu_Stats_MyKonsolen_Umsatz : MonoBehaviour
 			if (array[i])
 			{
 				platformScript component = array[i].GetComponent<platformScript>();
-				if (component && component.ownerID == this.mS_.myID && component.isUnlocked && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && component.playerConsole && component.isUnlocked && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_MyKonsolen_Umsatz component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_MyKonsolen_Umsatz>();
 					component2.mS_ = this.mS_;
@@ -137,14 +137,14 @@ public class Menu_Stats_MyKonsolen_Umsatz : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06001713 RID: 5907 RVA: 0x000E6FEC File Offset: 0x000E51EC
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001714 RID: 5908 RVA: 0x000E7008 File Offset: 0x000E5208
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[4].GetComponent<Dropdown>().value;
@@ -173,30 +173,30 @@ public class Menu_Stats_MyKonsolen_Umsatz : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x04001AC7 RID: 6855
+	
 	private mainScript mS_;
 
-	// Token: 0x04001AC8 RID: 6856
+	
 	private GameObject main_;
 
-	// Token: 0x04001AC9 RID: 6857
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001ACA RID: 6858
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001ACB RID: 6859
+	
 	private textScript tS_;
 
-	// Token: 0x04001ACC RID: 6860
+	
 	private genres genres_;
 
-	// Token: 0x04001ACD RID: 6861
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001ACE RID: 6862
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001ACF RID: 6863
+	
 	private float updateTimer;
 }

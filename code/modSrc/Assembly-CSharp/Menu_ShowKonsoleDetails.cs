@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200016A RID: 362
+
 public class Menu_ShowKonsoleDetails : MonoBehaviour
 {
-	// Token: 0x06000D8A RID: 3466 RVA: 0x0009345C File Offset: 0x0009165C
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000D8B RID: 3467 RVA: 0x00093464 File Offset: 0x00091664
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -81,7 +81,7 @@ public class Menu_ShowKonsoleDetails : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D8C RID: 3468 RVA: 0x0009365C File Offset: 0x0009185C
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -94,7 +94,7 @@ public class Menu_ShowKonsoleDetails : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D8D RID: 3469 RVA: 0x000936B4 File Offset: 0x000918B4
+	
 	public void Init(platformScript plat_)
 	{
 		this.FindScripts();
@@ -202,7 +202,7 @@ public class Menu_ShowKonsoleDetails : MonoBehaviour
 		base.StartCoroutine(this.ResizeKonsolenFeatures());
 	}
 
-	// Token: 0x06000D8E RID: 3470 RVA: 0x00093E21 File Offset: 0x00092021
+	
 	private IEnumerator ResizeKonsolenFeatures()
 	{
 		this.uiObjects[34].SetActive(false);
@@ -218,7 +218,7 @@ public class Menu_ShowKonsoleDetails : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000D8F RID: 3471 RVA: 0x00093E30 File Offset: 0x00092030
+	
 	public void BUTTON_ShowGames()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -226,7 +226,7 @@ public class Menu_ShowKonsoleDetails : MonoBehaviour
 		this.guiMain_.uiObjects[340].GetComponent<Menu_ShowKonsoleGames>().Init(this.pS_);
 	}
 
-	// Token: 0x06000D90 RID: 3472 RVA: 0x00093E84 File Offset: 0x00092084
+	
 	public void BUTTON_Close()
 	{
 		for (int i = 0; i < this.uiObjects[34].transform.childCount; i++)
@@ -237,60 +237,60 @@ public class Menu_ShowKonsoleDetails : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001218 RID: 4632
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001219 RID: 4633
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400121A RID: 4634
+	
 	private GameObject main_;
 
-	// Token: 0x0400121B RID: 4635
+	
 	private mainScript mS_;
 
-	// Token: 0x0400121C RID: 4636
+	
 	private textScript tS_;
 
-	// Token: 0x0400121D RID: 4637
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400121E RID: 4638
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400121F RID: 4639
+	
 	private genres genres_;
 
-	// Token: 0x04001220 RID: 4640
+	
 	private themes themes_;
 
-	// Token: 0x04001221 RID: 4641
+	
 	private licences licences_;
 
-	// Token: 0x04001222 RID: 4642
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04001223 RID: 4643
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04001224 RID: 4644
+	
 	private unlockScript unlock_;
 
-	// Token: 0x04001225 RID: 4645
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x04001226 RID: 4646
+	
 	private games games_;
 
-	// Token: 0x04001227 RID: 4647
+	
 	private hardware hardware_;
 
-	// Token: 0x04001228 RID: 4648
+	
 	private hardwareFeatures hardwareFeatures_;
 
-	// Token: 0x04001229 RID: 4649
+	
 	private platforms platforms_;
 
-	// Token: 0x0400122A RID: 4650
+	
 	private platformScript pS_;
 }

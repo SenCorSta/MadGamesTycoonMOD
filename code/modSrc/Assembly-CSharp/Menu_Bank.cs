@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000216 RID: 534
+
 public class Menu_Bank : MonoBehaviour
 {
-	// Token: 0x06001492 RID: 5266 RVA: 0x000D591F File Offset: 0x000D3B1F
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001493 RID: 5267 RVA: 0x000D5928 File Offset: 0x000D3B28
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,19 +36,19 @@ public class Menu_Bank : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001494 RID: 5268 RVA: 0x000D59D2 File Offset: 0x000D3BD2
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001495 RID: 5269 RVA: 0x000D59DA File Offset: 0x000D3BDA
+	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001496 RID: 5270 RVA: 0x000D59E4 File Offset: 0x000D3BE4
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -64,7 +64,7 @@ public class Menu_Bank : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x06001497 RID: 5271 RVA: 0x000D5A30 File Offset: 0x000D3C30
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -81,7 +81,7 @@ public class Menu_Bank : MonoBehaviour
 		this.uiObjects[10].GetComponent<Text>().text = this.mS_.GetMoney(250000L, true);
 	}
 
-	// Token: 0x06001498 RID: 5272 RVA: 0x000D5BE1 File Offset: 0x000D3DE1
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -89,7 +89,7 @@ public class Menu_Bank : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001499 RID: 5273 RVA: 0x000D5C08 File Offset: 0x000D3E08
+	
 	public void BUTTON_KreditAufnehmen(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -114,7 +114,7 @@ public class Menu_Bank : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x0600149A RID: 5274 RVA: 0x000D5CF8 File Offset: 0x000D3EF8
+	
 	public void BUTTON_KreditAbzahlen(int i)
 	{
 		if (i == 0)
@@ -147,27 +147,27 @@ public class Menu_Bank : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040018A2 RID: 6306
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040018A3 RID: 6307
+	
 	private roomScript rS_;
 
-	// Token: 0x040018A4 RID: 6308
+	
 	private GameObject main_;
 
-	// Token: 0x040018A5 RID: 6309
+	
 	private mainScript mS_;
 
-	// Token: 0x040018A6 RID: 6310
+	
 	private textScript tS_;
 
-	// Token: 0x040018A7 RID: 6311
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040018A8 RID: 6312
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040018A9 RID: 6313
+	
 	private float updateTimer;
 }

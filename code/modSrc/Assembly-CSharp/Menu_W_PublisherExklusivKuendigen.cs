@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001A3 RID: 419
+
 public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 {
-	// Token: 0x06000FCA RID: 4042 RVA: 0x000A7949 File Offset: 0x000A5B49
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FCB RID: 4043 RVA: 0x000A7954 File Offset: 0x000A5B54
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,13 +36,13 @@ public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FCC RID: 4044 RVA: 0x000A79FE File Offset: 0x000A5BFE
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06000FCD RID: 4045 RVA: 0x000A7A08 File Offset: 0x000A5C08
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -65,7 +65,7 @@ public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06000FCE RID: 4046 RVA: 0x000A7B58 File Offset: 0x000A5D58
+	
 	public long GetStrafzahlung()
 	{
 		if (this.pS_)
@@ -75,7 +75,7 @@ public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 		return 0L;
 	}
 
-	// Token: 0x06000FCF RID: 4047 RVA: 0x000A7BDF File Offset: 0x000A5DDF
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -83,7 +83,7 @@ public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FD0 RID: 4048 RVA: 0x000A7C08 File Offset: 0x000A5E08
+	
 	public void BUTTON_Kuendigen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -96,24 +96,24 @@ public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x04001441 RID: 5185
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001442 RID: 5186
+	
 	private GameObject main_;
 
-	// Token: 0x04001443 RID: 5187
+	
 	private mainScript mS_;
 
-	// Token: 0x04001444 RID: 5188
+	
 	private textScript tS_;
 
-	// Token: 0x04001445 RID: 5189
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001446 RID: 5190
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001447 RID: 5191
+	
 	private publisherScript pS_;
 }

@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace ReachableGames.PostLinerPro
 {
-	// Token: 0x020003F6 RID: 1014
+	
 	public class CheesyHeadTracking : MonoBehaviour
 	{
-		// Token: 0x06002415 RID: 9237 RVA: 0x00173DA0 File Offset: 0x00171FA0
+		
 		private void Start()
 		{
 			this.startRot = base.transform.rotation;
@@ -14,7 +14,7 @@ namespace ReachableGames.PostLinerPro
 			this.nextTrackStart = Time.time + UnityEngine.Random.value * this.trackDelay;
 		}
 
-		// Token: 0x06002416 RID: 9238 RVA: 0x00173DF0 File Offset: 0x00171FF0
+		
 		private void Update()
 		{
 			if (Time.time > this.nextTrackStart)
@@ -29,16 +29,16 @@ namespace ReachableGames.PostLinerPro
 			}
 		}
 
-		// Token: 0x04002E2B RID: 11819
+		
 		public Quaternion startRot;
 
-		// Token: 0x04002E2C RID: 11820
+		
 		private float trackRate = 0.1f;
 
-		// Token: 0x04002E2D RID: 11821
+		
 		private float trackDelay = 2f;
 
-		// Token: 0x04002E2E RID: 11822
+		
 		private float nextTrackStart;
 	}
 }

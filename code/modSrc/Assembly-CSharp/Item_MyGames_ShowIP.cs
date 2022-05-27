@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000EE RID: 238
+
 public class Item_MyGames_ShowIP : MonoBehaviour
 {
-	// Token: 0x060007E3 RID: 2019 RVA: 0x00057625 File Offset: 0x00055825
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007E4 RID: 2020 RVA: 0x0005762D File Offset: 0x0005582D
+	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060007E5 RID: 2021 RVA: 0x00057638 File Offset: 0x00055838
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_MyGames_ShowIP : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060007E6 RID: 2022 RVA: 0x00057684 File Offset: 0x00055884
+	
 	private void SetData()
 	{
 		if (!this.game_)
@@ -58,13 +58,13 @@ public class Item_MyGames_ShowIP : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060007E7 RID: 2023 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007E8 RID: 2024 RVA: 0x00057850 File Offset: 0x00055A50
+	
 	public void BUTTON_Click()
 	{
 		if (this.game_.reviewTotal > 0)
@@ -75,30 +75,30 @@ public class Item_MyGames_ShowIP : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000BFE RID: 3070
+	
 	public gameScript game_;
 
-	// Token: 0x04000BFF RID: 3071
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000C00 RID: 3072
+	
 	public mainScript mS_;
 
-	// Token: 0x04000C01 RID: 3073
+	
 	public textScript tS_;
 
-	// Token: 0x04000C02 RID: 3074
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000C03 RID: 3075
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000C04 RID: 3076
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000C05 RID: 3077
+	
 	public genres genres_;
 
-	// Token: 0x04000C06 RID: 3078
+	
 	private float updateTimer;
 }

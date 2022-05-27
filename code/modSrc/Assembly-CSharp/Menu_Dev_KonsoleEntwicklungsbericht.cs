@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000160 RID: 352
+
 public class Menu_Dev_KonsoleEntwicklungsbericht : MonoBehaviour
 {
-	// Token: 0x06000D25 RID: 3365 RVA: 0x0008FE4F File Offset: 0x0008E04F
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000D26 RID: 3366 RVA: 0x0008FE58 File Offset: 0x0008E058
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -76,21 +76,21 @@ public class Menu_Dev_KonsoleEntwicklungsbericht : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D27 RID: 3367 RVA: 0x00090022 File Offset: 0x0008E222
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.cmS_.disableMovement = true;
 	}
 
-	// Token: 0x06000D28 RID: 3368 RVA: 0x00090036 File Offset: 0x0008E236
+	
 	private void OnDisable()
 	{
 		this.FindScripts();
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x06000D29 RID: 3369 RVA: 0x0009004C File Offset: 0x0008E24C
+	
 	public void Init(platformScript plat_, roomScript room_)
 	{
 		this.FindScripts();
@@ -110,7 +110,7 @@ public class Menu_Dev_KonsoleEntwicklungsbericht : MonoBehaviour
 		this.uiObjects[9].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06000D2A RID: 3370 RVA: 0x00090230 File Offset: 0x0008E430
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -118,7 +118,7 @@ public class Menu_Dev_KonsoleEntwicklungsbericht : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000D2B RID: 3371 RVA: 0x00090256 File Offset: 0x0008E456
+	
 	public void BUTTON_Yes()
 	{
 		if (this.uiObjects[0].GetComponent<InputField>().text.Length > 0)
@@ -128,7 +128,7 @@ public class Menu_Dev_KonsoleEntwicklungsbericht : MonoBehaviour
 		this.BUTTON_Close();
 	}
 
-	// Token: 0x06000D2C RID: 3372 RVA: 0x00090298 File Offset: 0x0008E498
+	
 	public void SetLeitenderTechniker(characterScript charS_, bool manuellSelectet)
 	{
 		taskKonsole taskKonsole = null;
@@ -183,7 +183,7 @@ public class Menu_Dev_KonsoleEntwicklungsbericht : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D2D RID: 3373 RVA: 0x00090400 File Offset: 0x0008E600
+	
 	public characterScript GetLeitenderTechniker()
 	{
 		GameObject gameObject = GameObject.Find("Task_" + this.rS_.taskID.ToString());
@@ -198,7 +198,7 @@ public class Menu_Dev_KonsoleEntwicklungsbericht : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000D2E RID: 3374 RVA: 0x0009044C File Offset: 0x0008E64C
+	
 	public void BUTTON_LeitenderEntwickler()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -206,54 +206,54 @@ public class Menu_Dev_KonsoleEntwicklungsbericht : MonoBehaviour
 		this.guiMain_.uiObjects[324].GetComponent<Menu_LeitenderTechniker>().Init(this.rS_);
 	}
 
-	// Token: 0x040011AF RID: 4527
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040011B0 RID: 4528
+	
 	private GameObject main_;
 
-	// Token: 0x040011B1 RID: 4529
+	
 	private mainScript mS_;
 
-	// Token: 0x040011B2 RID: 4530
+	
 	private textScript tS_;
 
-	// Token: 0x040011B3 RID: 4531
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040011B4 RID: 4532
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040011B5 RID: 4533
+	
 	private genres genres_;
 
-	// Token: 0x040011B6 RID: 4534
+	
 	private themes themes_;
 
-	// Token: 0x040011B7 RID: 4535
+	
 	private licences licences_;
 
-	// Token: 0x040011B8 RID: 4536
+	
 	private engineFeatures eF_;
 
-	// Token: 0x040011B9 RID: 4537
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040011BA RID: 4538
+	
 	private unlockScript unlock_;
 
-	// Token: 0x040011BB RID: 4539
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x040011BC RID: 4540
+	
 	private games games_;
 
-	// Token: 0x040011BD RID: 4541
+	
 	private platforms platforms_;
 
-	// Token: 0x040011BE RID: 4542
+	
 	private platformScript pS_;
 
-	// Token: 0x040011BF RID: 4543
+	
 	private roomScript rS_;
 }

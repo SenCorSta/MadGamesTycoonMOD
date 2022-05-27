@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace UntitledTools.VertexWind
 {
-	// Token: 0x020003B3 RID: 947
+	
 	public class VertexWind : MonoBehaviour
 	{
-		// Token: 0x060022FD RID: 8957 RVA: 0x0016EFF4 File Offset: 0x0016D1F4
+		
 		private void Start()
 		{
 			this.effectorObjs = UnityEngine.Object.FindObjectsOfType<WindEffectorRadius>();
@@ -43,7 +43,7 @@ namespace UntitledTools.VertexWind
 			}
 		}
 
-		// Token: 0x060022FE RID: 8958 RVA: 0x0016F180 File Offset: 0x0016D380
+		
 		private void Update()
 		{
 			for (int i = 0; i < this.effectorObjs.Length; i++)
@@ -68,7 +68,7 @@ namespace UntitledTools.VertexWind
 			}
 		}
 
-		// Token: 0x060022FF RID: 8959 RVA: 0x0016F2C8 File Offset: 0x0016D4C8
+		
 		private Vector3[] CalcNewVerts(Vector3[] verts, Vector3 objectPos)
 		{
 			ComputeBuffer computeBuffer = new ComputeBuffer(verts.Length, 12);
@@ -101,7 +101,7 @@ namespace UntitledTools.VertexWind
 			return array;
 		}
 
-		// Token: 0x06002300 RID: 8960 RVA: 0x0016F438 File Offset: 0x0016D638
+		
 		private Mesh[] CombineMeshes(List<MeshFilter> meshes)
 		{
 			int num = 0;
@@ -178,13 +178,13 @@ namespace UntitledTools.VertexWind
 			return list.ToArray();
 		}
 
-		// Token: 0x06002301 RID: 8961 RVA: 0x0016F6D0 File Offset: 0x0016D8D0
+		
 		public void ObjsAddChildren()
 		{
 			this.objs.AddRange(base.GetComponentsInChildren<MeshFilter>());
 		}
 
-		// Token: 0x06002302 RID: 8962 RVA: 0x0016F6E3 File Offset: 0x0016D8E3
+		
 		public void ObjsAddCurrent()
 		{
 			if (base.GetComponent<MeshFilter>() != null)
@@ -193,12 +193,12 @@ namespace UntitledTools.VertexWind
 			}
 		}
 
-		// Token: 0x06002303 RID: 8963 RVA: 0x00002715 File Offset: 0x00000915
+		
 		public void ObjsAddSelected()
 		{
 		}
 
-		// Token: 0x06002304 RID: 8964 RVA: 0x0016F704 File Offset: 0x0016D904
+		
 		public void ObjsAreTagged()
 		{
 			GameObject[] array = GameObject.FindGameObjectsWithTag(this.objectTag);
@@ -213,64 +213,64 @@ namespace UntitledTools.VertexWind
 			this.objs.AddRange(list);
 		}
 
-		// Token: 0x04002D12 RID: 11538
+		
 		public List<MeshFilter> objs = new List<MeshFilter>();
 
-		// Token: 0x04002D13 RID: 11539
+		
 		public float speed = 10f;
 
-		// Token: 0x04002D14 RID: 11540
+		
 		public float scale = 1f;
 
-		// Token: 0x04002D15 RID: 11541
+		
 		public bool useMeshCombination = true;
 
-		// Token: 0x04002D16 RID: 11542
+		
 		public Vector3 amount = Vector3.one * 0.5f;
 
-		// Token: 0x04002D17 RID: 11543
+		
 		private Mesh[] instancedMeshes;
 
-		// Token: 0x04002D18 RID: 11544
+		
 		private Vector3[][] objsOriginalVerts;
 
-		// Token: 0x04002D19 RID: 11545
+		
 		private List<MeshFilter> newObjects = new List<MeshFilter>();
 
-		// Token: 0x04002D1A RID: 11546
+		
 		private WindEffectorRadius[] effectorObjs;
 
-		// Token: 0x04002D1B RID: 11547
+		
 		private VertexWind.WindEffector[] effectors;
 
-		// Token: 0x04002D1C RID: 11548
+		
 		private ComputeShader windShader;
 
-		// Token: 0x04002D1D RID: 11549
+		
 		private int doWindCalcId;
 
-		// Token: 0x04002D1E RID: 11550
+		
 		public string objectTag = string.Empty;
 
-		// Token: 0x04002D1F RID: 11551
+		
 		public bool showAdvancedSelection;
 
-		// Token: 0x04002D20 RID: 11552
+		
 		public bool showObjectsList = true;
 
-		// Token: 0x04002D21 RID: 11553
+		
 		public MeshFilter selectedObj;
 
-		// Token: 0x020003B4 RID: 948
+		
 		public struct WindEffector
 		{
-			// Token: 0x04002D22 RID: 11554
+			
 			public Vector3 pos;
 
-			// Token: 0x04002D23 RID: 11555
+			
 			public Vector3 strength;
 
-			// Token: 0x04002D24 RID: 11556
+			
 			public float radius;
 		}
 	}

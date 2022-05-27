@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200025D RID: 605
+
 public class Menu_Stats_TochterfirmaTopic : MonoBehaviour
 {
-	// Token: 0x06001796 RID: 6038 RVA: 0x000ECE5F File Offset: 0x000EB05F
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001797 RID: 6039 RVA: 0x000ECE68 File Offset: 0x000EB068
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_Stats_TochterfirmaTopic : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001798 RID: 6040 RVA: 0x000ECF4E File Offset: 0x000EB14E
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -53,7 +53,7 @@ public class Menu_Stats_TochterfirmaTopic : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001799 RID: 6041 RVA: 0x000ECF80 File Offset: 0x000EB180
+	
 	public void Init(publisherScript script_)
 	{
 		this.FindScripts();
@@ -65,7 +65,7 @@ public class Menu_Stats_TochterfirmaTopic : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600179A RID: 6042 RVA: 0x000ECFDC File Offset: 0x000EB1DC
+	
 	private void SetData()
 	{
 		if (!this.pS_)
@@ -95,7 +95,7 @@ public class Menu_Stats_TochterfirmaTopic : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x0600179B RID: 6043 RVA: 0x000ED130 File Offset: 0x000EB330
+	
 	public void BUTTON_RemoveTopic()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -104,14 +104,14 @@ public class Menu_Stats_TochterfirmaTopic : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600179C RID: 6044 RVA: 0x000ED17D File Offset: 0x000EB37D
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600179D RID: 6045 RVA: 0x000ED198 File Offset: 0x000EB398
+	
 	public void BUTTON_Search()
 	{
 		if (!base.gameObject.activeSelf)
@@ -126,36 +126,36 @@ public class Menu_Stats_TochterfirmaTopic : MonoBehaviour
 		this.Init(this.pS_);
 	}
 
-	// Token: 0x04001B53 RID: 6995
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001B54 RID: 6996
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001B55 RID: 6997
+	
 	private mainScript mS_;
 
-	// Token: 0x04001B56 RID: 6998
+	
 	private GameObject main_;
 
-	// Token: 0x04001B57 RID: 6999
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001B58 RID: 7000
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001B59 RID: 7001
+	
 	private textScript tS_;
 
-	// Token: 0x04001B5A RID: 7002
+	
 	private genres genres_;
 
-	// Token: 0x04001B5B RID: 7003
+	
 	private themes themes_;
 
-	// Token: 0x04001B5C RID: 7004
+	
 	private publisherScript pS_;
 
-	// Token: 0x04001B5D RID: 7005
+	
 	private string searchStringA = "";
 }

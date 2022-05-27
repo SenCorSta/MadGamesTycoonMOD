@@ -4,16 +4,16 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x02000068 RID: 104
+
 public class reviewText : MonoBehaviour
 {
-	// Token: 0x060003EB RID: 1003 RVA: 0x0003DBF4 File Offset: 0x0003BDF4
+	
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060003EC RID: 1004 RVA: 0x0003DBFC File Offset: 0x0003BDFC
+	
 	private void FindScripts()
 	{
 		GameObject gameObject = GameObject.Find("Main");
@@ -22,7 +22,7 @@ public class reviewText : MonoBehaviour
 		this.settings_ = gameObject.GetComponent<settingsScript>();
 	}
 
-	// Token: 0x060003ED RID: 1005 RVA: 0x0003DC38 File Offset: 0x0003BE38
+	
 	public string GetReviewText(gameScript game_)
 	{
 		string str;
@@ -227,7 +227,7 @@ public class reviewText : MonoBehaviour
 		return text2 + " " + this.totalList[game_.reviewTotalText];
 	}
 
-	// Token: 0x060003EE RID: 1006 RVA: 0x0003E290 File Offset: 0x0003C490
+	
 	private void GetStrings(int i, int what)
 	{
 		int num = i + 1;
@@ -255,36 +255,36 @@ public class reviewText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003EF RID: 1007 RVA: 0x0003E348 File Offset: 0x0003C548
+	
 	private bool ParseData(string c, int i)
 	{
 		return this.data[i].Contains(c);
 	}
 
-	// Token: 0x04000758 RID: 1880
+	
 	private mainScript mS_;
 
-	// Token: 0x04000759 RID: 1881
+	
 	private textScript tS_;
 
-	// Token: 0x0400075A RID: 1882
+	
 	private settingsScript settings_;
 
-	// Token: 0x0400075B RID: 1883
+	
 	private List<string> gameplayList = new List<string>();
 
-	// Token: 0x0400075C RID: 1884
+	
 	private List<string> grafikList = new List<string>();
 
-	// Token: 0x0400075D RID: 1885
+	
 	private List<string> soundList = new List<string>();
 
-	// Token: 0x0400075E RID: 1886
+	
 	private List<string> steuerungList = new List<string>();
 
-	// Token: 0x0400075F RID: 1887
+	
 	private List<string> totalList = new List<string>();
 
-	// Token: 0x04000760 RID: 1888
+	
 	private string[] data;
 }

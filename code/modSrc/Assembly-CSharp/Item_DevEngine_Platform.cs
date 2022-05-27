@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200007D RID: 125
+
 public class Item_DevEngine_Platform : MonoBehaviour
 {
-	// Token: 0x0600052F RID: 1327 RVA: 0x00047AB4 File Offset: 0x00045CB4
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000530 RID: 1328 RVA: 0x00047ABC File Offset: 0x00045CBC
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.pS_.GetName();
@@ -72,7 +72,7 @@ public class Item_DevEngine_Platform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000531 RID: 1329 RVA: 0x00047D71 File Offset: 0x00045F71
+	
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -84,13 +84,13 @@ public class Item_DevEngine_Platform : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000532 RID: 1330 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000533 RID: 1331 RVA: 0x00047DA4 File Offset: 0x00045FA4
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, false);
@@ -98,36 +98,36 @@ public class Item_DevEngine_Platform : MonoBehaviour
 		this.guiMain_.uiObjects[237].GetComponent<Menu_Dev_EnginePlatform>().BUTTON_Close();
 	}
 
-	// Token: 0x04000825 RID: 2085
+	
 	public int myID;
 
-	// Token: 0x04000826 RID: 2086
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000827 RID: 2087
+	
 	public mainScript mS_;
 
-	// Token: 0x04000828 RID: 2088
+	
 	public textScript tS_;
 
-	// Token: 0x04000829 RID: 2089
+	
 	public sfxScript sfx_;
 
-	// Token: 0x0400082A RID: 2090
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x0400082B RID: 2091
+	
 	public tooltip tooltip_;
 
-	// Token: 0x0400082C RID: 2092
+	
 	public platformScript pS_;
 
-	// Token: 0x0400082D RID: 2093
+	
 	public gameplayFeatures gF_;
 
-	// Token: 0x0400082E RID: 2094
+	
 	public Menu_Dev_Engine menuDevEngine_;
 
-	// Token: 0x0400082F RID: 2095
+	
 	private float updateTimer;
 }

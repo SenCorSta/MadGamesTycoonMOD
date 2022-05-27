@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002F4 RID: 756
+
 public class maschieneScript : MonoBehaviour
 {
-	// Token: 0x06001A9C RID: 6812 RVA: 0x0010C008 File Offset: 0x0010A208
+	
 	private void Start()
 	{
 		this.FindScripts();
 		this.InitUI();
 	}
 
-	// Token: 0x06001A9D RID: 6813 RVA: 0x0010C018 File Offset: 0x0010A218
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A9E RID: 6814 RVA: 0x0010C13D File Offset: 0x0010A33D
+	
 	private void OnDestroy()
 	{
 		if (this.myUI)
@@ -62,7 +62,7 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A9F RID: 6815 RVA: 0x0010C158 File Offset: 0x0010A358
+	
 	private void InitUI()
 	{
 		this.myUI = UnityEngine.Object.Instantiate<GameObject>(this.uiMaschiene, new Vector3(99999f, 99999f, 0f), Quaternion.identity);
@@ -74,7 +74,7 @@ public class maschieneScript : MonoBehaviour
 		this.uiWorkProgress_Image = this.uiWorkProgress.GetComponent<Image>();
 	}
 
-	// Token: 0x06001AA0 RID: 6816 RVA: 0x0010C224 File Offset: 0x0010A424
+	
 	private void UpdateUI(bool show)
 	{
 		if (this.guiMain.menuOpen || this.oS_.picked || !show)
@@ -114,7 +114,7 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AA1 RID: 6817 RVA: 0x0010C388 File Offset: 0x0010A588
+	
 	private void Update()
 	{
 		if (!this.oS_)
@@ -151,7 +151,7 @@ public class maschieneScript : MonoBehaviour
 		this.myAnimation[1]["maschineLight"].speed = 0f;
 	}
 
-	// Token: 0x06001AA2 RID: 6818 RVA: 0x0010C4D4 File Offset: 0x0010A6D4
+	
 	private bool UpdateMaschine()
 	{
 		if (!this.oS_.isMaschine)
@@ -209,7 +209,7 @@ public class maschieneScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001AA3 RID: 6819 RVA: 0x0010C684 File Offset: 0x0010A884
+	
 	private void UpdateDisketten()
 	{
 		this.updateDisketteTimer += Time.deltaTime;
@@ -295,72 +295,72 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040021A5 RID: 8613
+	
 	private GameObject main_;
 
-	// Token: 0x040021A6 RID: 8614
+	
 	private objectScript oS_;
 
-	// Token: 0x040021A7 RID: 8615
+	
 	public mainScript mS_;
 
-	// Token: 0x040021A8 RID: 8616
+	
 	private Camera myCamera;
 
-	// Token: 0x040021A9 RID: 8617
+	
 	private GUI_Main guiMain;
 
-	// Token: 0x040021AA RID: 8618
+	
 	public sfxScript sfx_;
 
-	// Token: 0x040021AB RID: 8619
+	
 	public mapScript mapS_;
 
-	// Token: 0x040021AC RID: 8620
+	
 	public textScript tS_;
 
-	// Token: 0x040021AD RID: 8621
+	
 	private games games_;
 
-	// Token: 0x040021AE RID: 8622
+	
 	public Animation[] myAnimation;
 
-	// Token: 0x040021AF RID: 8623
+	
 	public MeshRenderer bahn;
 
-	// Token: 0x040021B0 RID: 8624
+	
 	public GameObject[] disketten1976;
 
-	// Token: 0x040021B1 RID: 8625
+	
 	public GameObject[] disketten1985;
 
-	// Token: 0x040021B2 RID: 8626
+	
 	public GameObject[] disketten1995;
 
-	// Token: 0x040021B3 RID: 8627
+	
 	public GameObject uiMaschiene;
 
-	// Token: 0x040021B4 RID: 8628
+	
 	private GameObject myUI;
 
-	// Token: 0x040021B5 RID: 8629
+	
 	private GameObject uiIconMain;
 
-	// Token: 0x040021B6 RID: 8630
+	
 	private GameObject uiWorkProgress;
 
-	// Token: 0x040021B7 RID: 8631
+	
 	private RectTransform myUI_RectTransform;
 
-	// Token: 0x040021B8 RID: 8632
+	
 	private Image uiWorkProgress_Image;
 
-	// Token: 0x040021B9 RID: 8633
+	
 	private float invisibleTimer;
 
-	// Token: 0x040021BA RID: 8634
+	
 	private float updateTimer;
 
-	// Token: 0x040021BB RID: 8635
+	
 	private float updateDisketteTimer;
 }

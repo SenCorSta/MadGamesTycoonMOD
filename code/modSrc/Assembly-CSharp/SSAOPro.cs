@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000018 RID: 24
+
 [ImageEffectAllowedInSceneView]
 [HelpURL("http://www.thomashourdel.com/ssaopro/doc/")]
 [ExecuteInEditMode]
@@ -9,8 +9,8 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class SSAOPro : MonoBehaviour
 {
-	// Token: 0x17000008 RID: 8
-	// (get) Token: 0x06000076 RID: 118 RVA: 0x00004189 File Offset: 0x00002389
+	
+	// (get) Token: 0x06000076 RID: 118 RVA: 0x00002556 File Offset: 0x00000756
 	public Material Material
 	{
 		get
@@ -26,8 +26,8 @@ public class SSAOPro : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000009 RID: 9
-	// (get) Token: 0x06000077 RID: 119 RVA: 0x000041B8 File Offset: 0x000023B8
+	
+	// (get) Token: 0x06000077 RID: 119 RVA: 0x00002585 File Offset: 0x00000785
 	public Shader ShaderSSAO
 	{
 		get
@@ -40,7 +40,7 @@ public class SSAOPro : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000078 RID: 120 RVA: 0x000041E0 File Offset: 0x000023E0
+	
 	private void OnEnable()
 	{
 		this.m_Camera = base.GetComponent<Camera>();
@@ -70,13 +70,13 @@ public class SSAOPro : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000079 RID: 121 RVA: 0x0000426B File Offset: 0x0000246B
+	
 	private void OnPreRender()
 	{
 		this.m_Camera.depthTextureMode |= (DepthTextureMode.Depth | DepthTextureMode.DepthNormals);
 	}
 
-	// Token: 0x0600007A RID: 122 RVA: 0x00004280 File Offset: 0x00002480
+	
 	private void OnDisable()
 	{
 		if (this.m_Material != null)
@@ -86,7 +86,7 @@ public class SSAOPro : MonoBehaviour
 		this.m_Material = null;
 	}
 
-	// Token: 0x0600007B RID: 123 RVA: 0x000042A4 File Offset: 0x000024A4
+	
 	[ImageEffectOpaque]
 	private void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
@@ -173,111 +173,111 @@ public class SSAOPro : MonoBehaviour
 		RenderTexture.ReleaseTemporary(temporary3);
 	}
 
-	// Token: 0x0400006B RID: 107
+	
 	public Texture2D NoiseTexture;
 
-	// Token: 0x0400006C RID: 108
+	
 	public bool UseHighPrecisionDepthMap;
 
-	// Token: 0x0400006D RID: 109
+	
 	public SSAOPro.SampleCount Samples = SSAOPro.SampleCount.Medium;
 
-	// Token: 0x0400006E RID: 110
+	
 	[Range(1f, 4f)]
 	public int Downsampling = 1;
 
-	// Token: 0x0400006F RID: 111
+	
 	[Range(0.01f, 1.25f)]
 	public float Radius = 0.12f;
 
-	// Token: 0x04000070 RID: 112
+	
 	[Range(0f, 16f)]
 	public float Intensity = 2.5f;
 
-	// Token: 0x04000071 RID: 113
+	
 	[Range(0f, 10f)]
 	public float Distance = 1f;
 
-	// Token: 0x04000072 RID: 114
+	
 	[Range(0f, 1f)]
 	public float Bias = 0.1f;
 
-	// Token: 0x04000073 RID: 115
+	
 	[Range(0f, 1f)]
 	public float LumContribution = 0.5f;
 
-	// Token: 0x04000074 RID: 116
+	
 	[ColorUsage(false)]
 	public Color OcclusionColor = Color.black;
 
-	// Token: 0x04000075 RID: 117
+	
 	public float CutoffDistance = 150f;
 
-	// Token: 0x04000076 RID: 118
+	
 	public float CutoffFalloff = 50f;
 
-	// Token: 0x04000077 RID: 119
+	
 	public SSAOPro.BlurMode Blur = SSAOPro.BlurMode.HighQualityBilateral;
 
-	// Token: 0x04000078 RID: 120
+	
 	public bool BlurDownsampling;
 
-	// Token: 0x04000079 RID: 121
+	
 	[Range(1f, 4f)]
 	public int BlurPasses = 1;
 
-	// Token: 0x0400007A RID: 122
+	
 	[Range(1f, 20f)]
 	public float BlurBilateralThreshold = 10f;
 
-	// Token: 0x0400007B RID: 123
+	
 	public bool DebugAO;
 
-	// Token: 0x0400007C RID: 124
+	
 	protected Shader m_ShaderSSAO;
 
-	// Token: 0x0400007D RID: 125
+	
 	protected Material m_Material;
 
-	// Token: 0x0400007E RID: 126
+	
 	protected Camera m_Camera;
 
-	// Token: 0x02000019 RID: 25
+	
 	public enum BlurMode
 	{
-		// Token: 0x04000080 RID: 128
+		
 		None,
-		// Token: 0x04000081 RID: 129
+		
 		Gaussian,
-		// Token: 0x04000082 RID: 130
+		
 		HighQualityBilateral
 	}
 
-	// Token: 0x0200001A RID: 26
+	
 	public enum SampleCount
 	{
-		// Token: 0x04000084 RID: 132
+		
 		VeryLow,
-		// Token: 0x04000085 RID: 133
+		
 		Low,
-		// Token: 0x04000086 RID: 134
+		
 		Medium,
-		// Token: 0x04000087 RID: 135
+		
 		High,
-		// Token: 0x04000088 RID: 136
+		
 		Ultra
 	}
 
-	// Token: 0x0200001B RID: 27
+	
 	protected enum Pass
 	{
-		// Token: 0x0400008A RID: 138
+		
 		Clear,
-		// Token: 0x0400008B RID: 139
+		
 		GaussianBlur = 5,
-		// Token: 0x0400008C RID: 140
+		
 		HighQualityBilateralBlur,
-		// Token: 0x0400008D RID: 141
+		
 		Composite
 	}
 }

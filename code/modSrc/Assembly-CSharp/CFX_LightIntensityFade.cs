@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000013 RID: 19
+
 [RequireComponent(typeof(Light))]
 public class CFX_LightIntensityFade : MonoBehaviour
 {
-	// Token: 0x0600005C RID: 92 RVA: 0x00003AB6 File Offset: 0x00001CB6
+	
 	private void Start()
 	{
 		this.baseIntensity = base.GetComponent<Light>().intensity;
 	}
 
-	// Token: 0x0600005D RID: 93 RVA: 0x00003AC9 File Offset: 0x00001CC9
+	
 	private void OnEnable()
 	{
 		this.p_lifetime = 0f;
@@ -22,7 +22,7 @@ public class CFX_LightIntensityFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600005E RID: 94 RVA: 0x00003AFC File Offset: 0x00001CFC
+	
 	private void Update()
 	{
 		if (this.p_delay > 0f)
@@ -46,24 +46,24 @@ public class CFX_LightIntensityFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000053 RID: 83
+	
 	public float duration = 1f;
 
-	// Token: 0x04000054 RID: 84
+	
 	public float delay;
 
-	// Token: 0x04000055 RID: 85
+	
 	public float finalIntensity;
 
-	// Token: 0x04000056 RID: 86
+	
 	private float baseIntensity;
 
-	// Token: 0x04000057 RID: 87
+	
 	public bool autodestruct;
 
-	// Token: 0x04000058 RID: 88
+	
 	private float p_lifetime;
 
-	// Token: 0x04000059 RID: 89
+	
 	private float p_delay;
 }

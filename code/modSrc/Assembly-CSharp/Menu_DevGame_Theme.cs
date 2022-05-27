@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000123 RID: 291
+
 public class Menu_DevGame_Theme : MonoBehaviour
 {
-	// Token: 0x06000A15 RID: 2581 RVA: 0x0006E29C File Offset: 0x0006C49C
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000A16 RID: 2582 RVA: 0x0006E2A4 File Offset: 0x0006C4A4
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -57,7 +57,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A17 RID: 2583 RVA: 0x0006E402 File Offset: 0x0006C602
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -67,7 +67,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000A18 RID: 2584 RVA: 0x0006E43C File Offset: 0x0006C63C
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -83,7 +83,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		this.SetData(this.themeArt);
 	}
 
-	// Token: 0x06000A19 RID: 2585 RVA: 0x0006E490 File Offset: 0x0006C690
+	
 	private bool Exists(GameObject parent_, int id_)
 	{
 		if (!this.mS_.multiplayer)
@@ -100,7 +100,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000A1A RID: 2586 RVA: 0x0006E4F6 File Offset: 0x0006C6F6
+	
 	public void Init(int g)
 	{
 		this.uiObjects[7].GetComponent<InputField>().text = "";
@@ -110,7 +110,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		this.SetData(this.themeArt);
 	}
 
-	// Token: 0x06000A1B RID: 2587 RVA: 0x0006E530 File Offset: 0x0006C730
+	
 	private void SetData(int g)
 	{
 		if (g == 0)
@@ -179,6 +179,10 @@ public class Menu_DevGame_Theme : MonoBehaviour
 					{
 						gameObject.GetComponent<Button>().interactable = false;
 					}
+					if (this.themes_.IsThemesFitWithGenre(i, this.mDevGame_.g_GameMainGenre))
+					{
+						gameObject.GetComponent<Image>().color = Color.green;
+					}
 				}
 			}
 		}
@@ -186,7 +190,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[4]);
 	}
 
-	// Token: 0x06000A1C RID: 2588 RVA: 0x0006E8A0 File Offset: 0x0006CAA0
+	
 	private int FitGenre(int theme_)
 	{
 		int num = -1;
@@ -207,7 +211,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 			int i = 0;
 			while (i < this.games_.arrayGamesScripts.Length)
 			{
-				if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].spielbericht && this.games_.arrayGamesScripts[i].maingenre == num && (this.games_.arrayGamesScripts[i].ownerID == this.mS_.myID || this.games_.arrayGamesScripts[i].developerID == this.mS_.myID) && (this.games_.arrayGamesScripts[i].gameMainTheme == theme_ || this.games_.arrayGamesScripts[i].gameSubTheme == theme_))
+				if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].spielbericht && this.games_.arrayGamesScripts[i].maingenre == num && (this.games_.arrayGamesScripts[i].playerGame || this.games_.arrayGamesScripts[i].IsMyAuftragsspiel()) && (this.games_.arrayGamesScripts[i].gameMainTheme == theme_ || this.games_.arrayGamesScripts[i].gameSubTheme == theme_))
 				{
 					if (this.themes_.IsThemesFitWithGenre(theme_, num))
 					{
@@ -224,7 +228,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06000A1D RID: 2589 RVA: 0x0006EA08 File Offset: 0x0006CC08
+	
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[5].name);
@@ -239,7 +243,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		this.uiObjects[5].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06000A1E RID: 2590 RVA: 0x0006EAD0 File Offset: 0x0006CCD0
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[5].GetComponent<Dropdown>().value;
@@ -301,14 +305,14 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06000A1F RID: 2591 RVA: 0x0006EC84 File Offset: 0x0006CE84
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000A20 RID: 2592 RVA: 0x0006ECA0 File Offset: 0x0006CEA0
+	
 	public void BUTTON_ThemaEntfernen()
 	{
 		if (this.themeArt == 0)
@@ -337,7 +341,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000A21 RID: 2593 RVA: 0x0006ED5C File Offset: 0x0006CF5C
+	
 	public void BUTTON_Search()
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
@@ -347,52 +351,52 @@ public class Menu_DevGame_Theme : MonoBehaviour
 		this.SetData(this.themeArt);
 	}
 
-	// Token: 0x06000A22 RID: 2594 RVA: 0x0006EDB0 File Offset: 0x0006CFB0
+	
 	public void BUTTON_Marktanalyse()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.uiObjects[136].SetActive(true);
 	}
 
-	// Token: 0x04000E60 RID: 3680
+	
 	public int themeArt;
 
-	// Token: 0x04000E61 RID: 3681
+	
 	private mainScript mS_;
 
-	// Token: 0x04000E62 RID: 3682
+	
 	private GameObject main_;
 
-	// Token: 0x04000E63 RID: 3683
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000E64 RID: 3684
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04000E65 RID: 3685
+	
 	private textScript tS_;
 
-	// Token: 0x04000E66 RID: 3686
+	
 	private themes themes_;
 
-	// Token: 0x04000E67 RID: 3687
+	
 	private games games_;
 
-	// Token: 0x04000E68 RID: 3688
+	
 	private Menu_DevGame mDevGame_;
 
-	// Token: 0x04000E69 RID: 3689
+	
 	private Menu_Dev_AddonDo mDevAddon_;
 
-	// Token: 0x04000E6A RID: 3690
+	
 	private Menu_Dev_MMOAddon mDevMMOAddon_;
 
-	// Token: 0x04000E6B RID: 3691
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04000E6C RID: 3692
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000E6D RID: 3693
+	
 	private float updateTimer;
 }

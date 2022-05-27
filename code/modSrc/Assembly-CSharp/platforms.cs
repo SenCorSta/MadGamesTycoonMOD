@@ -3,16 +3,16 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x02000061 RID: 97
+
 public class platforms : MonoBehaviour
 {
-	// Token: 0x0600037C RID: 892 RVA: 0x00034F21 File Offset: 0x00033121
+	
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600037D RID: 893 RVA: 0x00034F2C File Offset: 0x0003312C
+	
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -53,7 +53,7 @@ public class platforms : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600037E RID: 894 RVA: 0x0003502C File Offset: 0x0003322C
+	
 	public platformScript CreatePlatform()
 	{
 		platformScript component = UnityEngine.Object.Instantiate<GameObject>(this.prefabPlatform).GetComponent<platformScript>();
@@ -71,7 +71,7 @@ public class platforms : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x0600037F RID: 895 RVA: 0x000350D4 File Offset: 0x000332D4
+	
 	public void LoadPlatformDataForOldSavegames(string filename)
 	{
 		StreamReader streamReader = new StreamReader(Application.dataPath + "/Extern/Text/" + filename, Encoding.Unicode);
@@ -108,7 +108,7 @@ public class platforms : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000380 RID: 896 RVA: 0x000351D0 File Offset: 0x000333D0
+	
 	public void LoadPlatforms(string filename)
 	{
 		StreamReader streamReader = new StreamReader(Application.dataPath + "/Extern/Text/" + filename, Encoding.Unicode);
@@ -126,6 +126,7 @@ public class platforms : MonoBehaviour
 				num++;
 			}
 		}
+		Debug.Log("Platforms Amount: " + num.ToString());
 		platformScript platformScript = null;
 		for (int j = 0; j < this.data.Length; j++)
 		{
@@ -133,7 +134,7 @@ public class platforms : MonoBehaviour
 			{
 				platformScript = this.CreatePlatform();
 				platformScript.myID = int.Parse(this.data[j]);
-				platformScript.ownerID = -1;
+				platformScript.npc = true;
 				platformScript.date_year_end = 999999;
 				platformScript.date_month_end = 1;
 				platformScript.pic2_year = 999999;
@@ -394,13 +395,14 @@ public class platforms : MonoBehaviour
 				}
 				if (this.ParseData("[EOF]", j))
 				{
-					break;
+					Debug.Log("Platforms.txt -> EOF");
+					return;
 				}
 			}
 		}
 	}
 
-	// Token: 0x06000381 RID: 897 RVA: 0x000359B0 File Offset: 0x00033BB0
+	
 	private bool ParseData(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -412,7 +414,7 @@ public class platforms : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000382 RID: 898 RVA: 0x00035A10 File Offset: 0x00033C10
+	
 	private bool ParseDataDontCutLastChar(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -423,7 +425,7 @@ public class platforms : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000383 RID: 899 RVA: 0x00035A40 File Offset: 0x00033C40
+	
 	public int GetDurchschnittsDevKitPreis()
 	{
 		int num = 1;
@@ -444,7 +446,7 @@ public class platforms : MonoBehaviour
 		return num2 / num;
 	}
 
-	// Token: 0x06000384 RID: 900 RVA: 0x00035AA8 File Offset: 0x00033CA8
+	
 	public void UpdateGamesForPlatforms()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -461,7 +463,7 @@ public class platforms : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000385 RID: 901 RVA: 0x00035AF0 File Offset: 0x00033CF0
+	
 	public void UpdatePlatformSells(bool sendDataToClient, bool forceSendAll)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -472,11 +474,11 @@ public class platforms : MonoBehaviour
 				if (array[i])
 				{
 					platformScript component = array[i].GetComponent<platformScript>();
-					if (component.ownerID == this.mS_.myID && !component.isUnlocked)
+					if (component.playerConsole && !component.isUnlocked)
 					{
 						component.weeksInDevelopment++;
 					}
-					if (component.ownerID == this.mS_.myID && component.isUnlocked && !component.vomMarktGenommen)
+					if (component.playerConsole && component.isUnlocked && !component.vomMarktGenommen)
 					{
 						component.Sell();
 						this.mpCalls_.CLIENT_Send_Platform(component);
@@ -495,7 +497,7 @@ public class platforms : MonoBehaviour
 			if (array[j])
 			{
 				platformScript component2 = array[j].GetComponent<platformScript>();
-				if (component2.ownerID == this.mS_.myID && !component2.isUnlocked)
+				if (component2.playerConsole && !component2.isUnlocked)
 				{
 					component2.weeksInDevelopment++;
 				}
@@ -597,7 +599,7 @@ public class platforms : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000386 RID: 902 RVA: 0x00035EBC File Offset: 0x000340BC
+	
 	public Sprite GetPlayerPlatformSprite(int id_, int platTyp_)
 	{
 		if (platTyp_ == 1)
@@ -611,7 +613,7 @@ public class platforms : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000387 RID: 903 RVA: 0x00035EDC File Offset: 0x000340DC
+	
 	public int GetPerformance(platformScript script_)
 	{
 		int num = 0;
@@ -652,7 +654,7 @@ public class platforms : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000388 RID: 904 RVA: 0x00035FE8 File Offset: 0x000341E8
+	
 	public float GetSellsCurve()
 	{
 		float num = (float)this.mS_.PassedMonth();
@@ -663,7 +665,7 @@ public class platforms : MonoBehaviour
 		return this.sellsCurve.Evaluate(num / 600f) * 1f;
 	}
 
-	// Token: 0x06000389 RID: 905 RVA: 0x00036028 File Offset: 0x00034228
+	
 	public bool ExistInternetReadyConsole()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -682,7 +684,7 @@ public class platforms : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600038A RID: 906 RVA: 0x0003609C File Offset: 0x0003429C
+	
 	public bool IsPlatformRemovedFromMarket(int platID)
 	{
 		GameObject gameObject = GameObject.Find("PLATFORM_" + platID.ToString());
@@ -697,57 +699,57 @@ public class platforms : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x040006C9 RID: 1737
+	
 	public GameObject prefabPlatform;
 
-	// Token: 0x040006CA RID: 1738
+	
 	public mainScript mS_;
 
-	// Token: 0x040006CB RID: 1739
+	
 	private textScript tS_;
 
-	// Token: 0x040006CC RID: 1740
+	
 	private mpCalls mpCalls_;
 
-	// Token: 0x040006CD RID: 1741
+	
 	private settingsScript settings_;
 
-	// Token: 0x040006CE RID: 1742
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x040006CF RID: 1743
+	
 	private hardware hardware_;
 
-	// Token: 0x040006D0 RID: 1744
+	
 	private hardwareFeatures hardwareFeatures_;
 
-	// Token: 0x040006D1 RID: 1745
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040006D2 RID: 1746
+	
 	private games games_;
 
-	// Token: 0x040006D3 RID: 1747
+	
 	private string[] data;
 
-	// Token: 0x040006D4 RID: 1748
+	
 	public Sprite[] complexSprites;
 
-	// Token: 0x040006D5 RID: 1749
+	
 	public Sprite[] typSprites;
 
-	// Token: 0x040006D6 RID: 1750
+	
 	public Sprite[] playerConsoleSprites;
 
-	// Token: 0x040006D7 RID: 1751
+	
 	public Sprite[] playerHandheldSprites;
 
-	// Token: 0x040006D8 RID: 1752
+	
 	public Color[] playerPlatformColors;
 
-	// Token: 0x040006D9 RID: 1753
+	
 	public AnimationCurve productionCostsCurve;
 
-	// Token: 0x040006DA RID: 1754
+	
 	public AnimationCurve sellsCurve;
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200017D RID: 381
+
 public class Menu_Options : MonoBehaviour
 {
-	// Token: 0x06000E46 RID: 3654 RVA: 0x0009A064 File Offset: 0x00098264
+	
 	private void Awake()
 	{
 		this.resolutions = Screen.resolutions;
@@ -29,13 +29,13 @@ public class Menu_Options : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E47 RID: 3655 RVA: 0x0009A154 File Offset: 0x00098354
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000E48 RID: 3656 RVA: 0x0009A15C File Offset: 0x0009835C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_Options : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E49 RID: 3657 RVA: 0x0009A246 File Offset: 0x00098446
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -77,7 +77,7 @@ public class Menu_Options : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E4A RID: 3658 RVA: 0x0009A278 File Offset: 0x00098478
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -86,7 +86,7 @@ public class Menu_Options : MonoBehaviour
 		this.TAB_Settings(0);
 	}
 
-	// Token: 0x06000E4B RID: 3659 RVA: 0x0009A294 File Offset: 0x00098494
+	
 	private void Init()
 	{
 		if (this.settings_.masterVolume <= 0f)
@@ -190,7 +190,7 @@ public class Menu_Options : MonoBehaviour
 		this.uiObjects[51].GetComponent<Toggle>().isOn = this.settings_.tochtefirmaTAG;
 	}
 
-	// Token: 0x06000E4C RID: 3660 RVA: 0x0009A8E4 File Offset: 0x00098AE4
+	
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -216,20 +216,20 @@ public class Menu_Options : MonoBehaviour
 		this.uiObjects[40].GetComponent<Dropdown>().AddOptions(list);
 	}
 
-	// Token: 0x06000E4D RID: 3661 RVA: 0x0009A154 File Offset: 0x00098354
+	
 	private void Init(bool inBesitz)
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000E4E RID: 3662 RVA: 0x0009AA80 File Offset: 0x00098C80
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000E4F RID: 3663 RVA: 0x0009AA9C File Offset: 0x00098C9C
+	
 	public void TOGGLE_MUSIC()
 	{
 		if (this.uiObjects[9].GetComponent<Toggle>().isOn && this.settings_.musicVolume <= 0f)
@@ -238,12 +238,12 @@ public class Menu_Options : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E50 RID: 3664 RVA: 0x00002715 File Offset: 0x00000915
+	
 	public void DROPDOWN_Resolution()
 	{
 	}
 
-	// Token: 0x06000E51 RID: 3665 RVA: 0x0009AAE8 File Offset: 0x00098CE8
+	
 	public void BUTTON_OK()
 	{
 		this.settings_.masterVolume = this.uiObjects[10].GetComponent<Slider>().value;
@@ -357,7 +357,7 @@ public class Menu_Options : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E52 RID: 3666 RVA: 0x0009B23C File Offset: 0x0009943C
+	
 	public void TAB_Settings(int t)
 	{
 		this.TAB = t;
@@ -385,7 +385,7 @@ public class Menu_Options : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E53 RID: 3667 RVA: 0x0009B304 File Offset: 0x00099504
+	
 	public void BUTTON_DefaultGuiSize()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -400,7 +400,7 @@ public class Menu_Options : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E54 RID: 3668 RVA: 0x0009B378 File Offset: 0x00099578
+	
 	public void SLIDER_GuiSize()
 	{
 		float value = this.uiObjects[23].GetComponent<Slider>().value;
@@ -419,7 +419,7 @@ public class Menu_Options : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E55 RID: 3669 RVA: 0x0009B440 File Offset: 0x00099640
+	
 	public void SLIDER_Helligkeit()
 	{
 		float value = this.uiObjects[42].GetComponent<Slider>().value;
@@ -429,72 +429,72 @@ public class Menu_Options : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E56 RID: 3670 RVA: 0x0009B4A4 File Offset: 0x000996A4
+	
 	public void SLIDER_FanletterTime()
 	{
 		float value = this.uiObjects[37].GetComponent<Slider>().value;
 	}
 
-	// Token: 0x06000E57 RID: 3671 RVA: 0x0009B4BA File Offset: 0x000996BA
+	
 	public void SLIDER_NewsTime()
 	{
 		float value = this.uiObjects[41].GetComponent<Slider>().value;
 	}
 
-	// Token: 0x06000E58 RID: 3672 RVA: 0x0009B4D0 File Offset: 0x000996D0
+	
 	public void BUTTON_DefaultFanletterTime()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.uiObjects[37].GetComponent<Slider>().value = 5f;
 	}
 
-	// Token: 0x06000E59 RID: 3673 RVA: 0x0009B4F7 File Offset: 0x000996F7
+	
 	public void BUTTON_DefaultNewsTime()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.uiObjects[41].GetComponent<Slider>().value = 5f;
 	}
 
-	// Token: 0x06000E5A RID: 3674 RVA: 0x0009B51E File Offset: 0x0009971E
+	
 	public void BUTTON_DefaultHelligkeit()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.uiObjects[42].GetComponent<Slider>().value = 255f;
 	}
 
-	// Token: 0x040012C5 RID: 4805
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040012C6 RID: 4806
+	
 	private GameObject mainCanvas;
 
-	// Token: 0x040012C7 RID: 4807
+	
 	private mpCalls mpCalls_;
 
-	// Token: 0x040012C8 RID: 4808
+	
 	private mainScript mS_;
 
-	// Token: 0x040012C9 RID: 4809
+	
 	private GameObject main_;
 
-	// Token: 0x040012CA RID: 4810
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040012CB RID: 4811
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040012CC RID: 4812
+	
 	private textScript tS_;
 
-	// Token: 0x040012CD RID: 4813
+	
 	private settingsScript settings_;
 
-	// Token: 0x040012CE RID: 4814
+	
 	private int TAB;
 
-	// Token: 0x040012CF RID: 4815
+	
 	private Resolution[] resolutions;
 
-	// Token: 0x040012D0 RID: 4816
+	
 	public List<Resolution> resFilter = new List<Resolution>();
 }

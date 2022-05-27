@@ -2,20 +2,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200009A RID: 154
+
 public class Filter_InventarKaufen : MonoBehaviour
 {
-	// Token: 0x060005EA RID: 1514 RVA: 0x00002715 File Offset: 0x00000915
+	
 	private void Start()
 	{
 	}
 
-	// Token: 0x060005EB RID: 1515 RVA: 0x00002715 File Offset: 0x00000915
+	
 	private void Update()
 	{
 	}
 
-	// Token: 0x060005EC RID: 1516 RVA: 0x0004C690 File Offset: 0x0004A890
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -45,30 +45,30 @@ public class Filter_InventarKaufen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400092D RID: 2349
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400092E RID: 2350
+	
 	public int filterArrayID;
 
-	// Token: 0x0400092F RID: 2351
+	
 	public Color[] colors;
 
-	// Token: 0x04000930 RID: 2352
+	
 	public mainScript mS_;
 
-	// Token: 0x04000931 RID: 2353
+	
 	public textScript tS_;
 
-	// Token: 0x04000932 RID: 2354
+	
 	public mapScript mapS_;
 
-	// Token: 0x04000933 RID: 2355
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000934 RID: 2356
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000935 RID: 2357
+	
 	public bool show = true;
 }

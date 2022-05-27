@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000A5 RID: 165
+
 public class Item_EngineFeatures_GameDesign : MonoBehaviour
 {
-	// Token: 0x0600062D RID: 1581 RVA: 0x0004E470 File Offset: 0x0004C670
+	
 	private void Start()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x0600062E RID: 1582 RVA: 0x0004E480 File Offset: 0x0004C680
+	
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -25,7 +25,7 @@ public class Item_EngineFeatures_GameDesign : MonoBehaviour
 		this.eF_ = this.main_.GetComponent<engineFeatures>();
 	}
 
-	// Token: 0x0600062F RID: 1583 RVA: 0x0004E4E0 File Offset: 0x0004C6E0
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.eF_.GetName(this.myID);
@@ -78,7 +78,7 @@ public class Item_EngineFeatures_GameDesign : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000630 RID: 1584 RVA: 0x0004E7E2 File Offset: 0x0004C9E2
+	
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -90,27 +90,27 @@ public class Item_EngineFeatures_GameDesign : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x040009A9 RID: 2473
+	
 	public int myID;
 
-	// Token: 0x040009AA RID: 2474
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040009AB RID: 2475
+	
 	private GameObject main_;
 
-	// Token: 0x040009AC RID: 2476
+	
 	private mainScript mS_;
 
-	// Token: 0x040009AD RID: 2477
+	
 	private textScript tS_;
 
-	// Token: 0x040009AE RID: 2478
+	
 	private engineFeatures eF_;
 
-	// Token: 0x040009AF RID: 2479
+	
 	public tooltip tooltip_;
 
-	// Token: 0x040009B0 RID: 2480
+	
 	private float updateTimer;
 }

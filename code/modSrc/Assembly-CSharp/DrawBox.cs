@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x0200036F RID: 879
+
 public class DrawBox : MonoBehaviour
 {
-	// Token: 0x06002039 RID: 8249 RVA: 0x0014DC46 File Offset: 0x0014BE46
+	
 	private IEnumerator Start()
 	{
 		base.GetComponent<Renderer>().enabled = false;
@@ -17,7 +17,7 @@ public class DrawBox : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600203A RID: 8250 RVA: 0x0014DC58 File Offset: 0x0014BE58
+	
 	private void Update()
 	{
 		Vector3 mousePosition = Input.mousePosition;
@@ -42,7 +42,7 @@ public class DrawBox : MonoBehaviour
 		base.transform.Translate(Vector3.right * Time.deltaTime * this.moveSpeed * Input.GetAxis("Horizontal"));
 	}
 
-	// Token: 0x0600203B RID: 8251 RVA: 0x0014DD80 File Offset: 0x0014BF80
+	
 	private void OnGUI()
 	{
 		GUI.Box(new Rect(20f, 20f, 320f, 38f), "Draw a box by clicking and dragging with the mouse\nMove the drawn box with the arrow keys");
@@ -58,24 +58,24 @@ public class DrawBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002890 RID: 10384
+	
 	public float moveSpeed = 1f;
 
-	// Token: 0x04002891 RID: 10385
+	
 	public float explodePower = 20f;
 
-	// Token: 0x04002892 RID: 10386
+	
 	public Camera vectorCam;
 
-	// Token: 0x04002893 RID: 10387
+	
 	private bool mouseDown;
 
-	// Token: 0x04002894 RID: 10388
+	
 	private Rigidbody[] rigidbodies;
 
-	// Token: 0x04002895 RID: 10389
+	
 	private bool canClick = true;
 
-	// Token: 0x04002896 RID: 10390
+	
 	private bool boxDrawn;
 }

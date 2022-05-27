@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001DD RID: 477
+
 public class Menu_MOCAP_AnimationVerbessernSelectGame : MonoBehaviour
 {
-	// Token: 0x060011F8 RID: 4600 RVA: 0x000BD289 File Offset: 0x000BB489
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060011F9 RID: 4601 RVA: 0x000BD294 File Offset: 0x000BB494
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_MOCAP_AnimationVerbessernSelectGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011FA RID: 4602 RVA: 0x000BD385 File Offset: 0x000BB585
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -55,7 +55,7 @@ public class Menu_MOCAP_AnimationVerbessernSelectGame : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060011FB RID: 4603 RVA: 0x000BD3C0 File Offset: 0x000BB5C0
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -71,7 +71,7 @@ public class Menu_MOCAP_AnimationVerbessernSelectGame : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060011FC RID: 4604 RVA: 0x000BD40C File Offset: 0x000BB60C
+	
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -84,13 +84,13 @@ public class Menu_MOCAP_AnimationVerbessernSelectGame : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060011FD RID: 4605 RVA: 0x000BD468 File Offset: 0x000BB668
+	
 	private void OnEnable()
 	{
 		this.InitDropdowns();
 	}
 
-	// Token: 0x060011FE RID: 4606 RVA: 0x000BD470 File Offset: 0x000BB670
+	
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -103,14 +103,14 @@ public class Menu_MOCAP_AnimationVerbessernSelectGame : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x060011FF RID: 4607 RVA: 0x000BD500 File Offset: 0x000BB700
+	
 	public void Init()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x06001200 RID: 4608 RVA: 0x000BD510 File Offset: 0x000BB710
+	
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -119,7 +119,7 @@ public class Menu_MOCAP_AnimationVerbessernSelectGame : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && this.CheckGameData(component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(0, component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(1, component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(2, component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(3, component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(4, component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(5, component) && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && component.playerGame && component.inDevelopment && !this.menuMocap_.WirdInAnderenRaumBearbeitet(0, component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(1, component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(2, component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(3, component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(4, component) && !this.menuMocap_.WirdInAnderenRaumBearbeitet(5, component) && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_MOCAP_AnimationVerbessern component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_MOCAP_AnimationVerbessern>();
 					component2.mS_ = this.mS_;
@@ -134,20 +134,14 @@ public class Menu_MOCAP_AnimationVerbessernSelectGame : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06001201 RID: 4609 RVA: 0x000BD67A File Offset: 0x000BB87A
-	public bool CheckGameData(gameScript script_)
-	{
-		return script_ && script_.developerID == this.mS_.myID && script_.inDevelopment;
-	}
-
-	// Token: 0x06001202 RID: 4610 RVA: 0x000BD6A2 File Offset: 0x000BB8A2
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001203 RID: 4611 RVA: 0x000BD6C0 File Offset: 0x000BB8C0
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -180,33 +174,33 @@ public class Menu_MOCAP_AnimationVerbessernSelectGame : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x04001678 RID: 5752
+	
 	private mainScript mS_;
 
-	// Token: 0x04001679 RID: 5753
+	
 	private GameObject main_;
 
-	// Token: 0x0400167A RID: 5754
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400167B RID: 5755
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400167C RID: 5756
+	
 	private textScript tS_;
 
-	// Token: 0x0400167D RID: 5757
+	
 	private genres genres_;
 
-	// Token: 0x0400167E RID: 5758
+	
 	private Menu_MOCAP_AnimationVerbessern menuMocap_;
 
-	// Token: 0x0400167F RID: 5759
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001680 RID: 5760
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001681 RID: 5761
+	
 	private float updateTimer;
 }

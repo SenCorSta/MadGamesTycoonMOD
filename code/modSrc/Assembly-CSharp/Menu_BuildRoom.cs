@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001AF RID: 431
+
 public class Menu_BuildRoom : MonoBehaviour
 {
-	// Token: 0x06001046 RID: 4166 RVA: 0x000AC4EB File Offset: 0x000AA6EB
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001047 RID: 4167 RVA: 0x000AC4F4 File Offset: 0x000AA6F4
+	
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -36,7 +36,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001048 RID: 4168 RVA: 0x000AC5DE File Offset: 0x000AA7DE
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -46,14 +46,14 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001049 RID: 4169 RVA: 0x000AC5FF File Offset: 0x000AA7FF
+	
 	private void OnDisable()
 	{
 		this.uiObjects[27].SetActive(false);
 		this.uiObjects[29].SetActive(false);
 	}
 
-	// Token: 0x0600104A RID: 4170 RVA: 0x000AC61F File Offset: 0x000AA81F
+	
 	private void Update()
 	{
 		if (this.mS_.multiplayer && !this.guiMain_.menuOpen)
@@ -63,7 +63,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.Update_DesignRoomMenu();
 	}
 
-	// Token: 0x0600104B RID: 4171 RVA: 0x000AC650 File Offset: 0x000AA850
+	
 	private void Update_DesignRoomMenu()
 	{
 		if (!Input.GetMouseButton(0) && this.buildRoomScript_.modus == 0 && Input.GetKeyDown(KeyCode.LeftShift))
@@ -119,7 +119,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600104C RID: 4172 RVA: 0x000AC8A8 File Offset: 0x000AAAA8
+	
 	public int AnzahlArbeitsplaetze()
 	{
 		float num = 3.3f;
@@ -150,7 +150,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		return num3;
 	}
 
-	// Token: 0x0600104D RID: 4173 RVA: 0x000AC904 File Offset: 0x000AAB04
+	
 	private int GetRoomPrice()
 	{
 		int num = this.buildRoomScript_.AmountTiles();
@@ -163,7 +163,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		return num2;
 	}
 
-	// Token: 0x0600104E RID: 4174 RVA: 0x000AC948 File Offset: 0x000AAB48
+	
 	private void UpdateSizePanel()
 	{
 		if ((this.buildRoomScript_.modus == 0 || this.buildRoomScript_.modus == 1) && !this.guiMain_.IsMouseOverGUI() && Input.GetMouseButton(0))
@@ -185,7 +185,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600104F RID: 4175 RVA: 0x000ACA80 File Offset: 0x000AAC80
+	
 	private void UpdateCloseButton()
 	{
 		if (this.buildRoomScript_.replaceRoomID == -1)
@@ -213,7 +213,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001050 RID: 4176 RVA: 0x000ACB14 File Offset: 0x000AAD14
+	
 	private void UpdateAcceptButton()
 	{
 		Button component = this.uiObjects[17].GetComponent<Button>();
@@ -283,7 +283,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001051 RID: 4177 RVA: 0x000ACD3C File Offset: 0x000AAF3C
+	
 	public void BUTTON_AcceptRoomDesign()
 	{
 		if (!this.mS_.settings_TutorialOff && this.roomTyp == 1)
@@ -300,7 +300,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.guiMain_.DROPDOWN_BuyInventar(this.roomTyp);
 	}
 
-	// Token: 0x06001052 RID: 4178 RVA: 0x000ACDD4 File Offset: 0x000AAFD4
+	
 	private void ResetButtonColors()
 	{
 		this.uiObjects[19].GetComponent<Image>().color = this.colors[1];
@@ -309,7 +309,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.uiObjects[22].GetComponent<Image>().color = this.colors[1];
 	}
 
-	// Token: 0x06001053 RID: 4179 RVA: 0x000ACE5D File Offset: 0x000AB05D
+	
 	public void BUTTON_SetRoom()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -318,7 +318,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.uiObjects[19].GetComponent<Image>().color = this.colors[0];
 	}
 
-	// Token: 0x06001054 RID: 4180 RVA: 0x000ACE9D File Offset: 0x000AB09D
+	
 	public void BUTTON_RemoveRoom()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -327,7 +327,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.uiObjects[20].GetComponent<Image>().color = this.colors[0];
 	}
 
-	// Token: 0x06001055 RID: 4181 RVA: 0x000ACEDD File Offset: 0x000AB0DD
+	
 	public void BUTTON_SetDoor()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -336,7 +336,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.uiObjects[21].GetComponent<Image>().color = this.colors[0];
 	}
 
-	// Token: 0x06001056 RID: 4182 RVA: 0x000ACF1D File Offset: 0x000AB11D
+	
 	public void BUTTON_SetWindow()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -345,13 +345,13 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.uiObjects[22].GetComponent<Image>().color = this.colors[0];
 	}
 
-	// Token: 0x06001057 RID: 4183 RVA: 0x000ACF5D File Offset: 0x000AB15D
+	
 	public void BUTTON_Grab()
 	{
 		this.buildRoomScript_.modus = 4;
 	}
 
-	// Token: 0x06001058 RID: 4184 RVA: 0x000ACF6C File Offset: 0x000AB16C
+	
 	public void BUTTON_SelectRoom(int i)
 	{
 		this.FindScripts();
@@ -365,7 +365,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.mS_.SetBuildGrid(true);
 	}
 
-	// Token: 0x06001059 RID: 4185 RVA: 0x000ACFDC File Offset: 0x000AB1DC
+	
 	public void Close_DesignRoom()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Room");
@@ -385,45 +385,45 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.mS_.SetBuildGrid(false);
 	}
 
-	// Token: 0x040014BD RID: 5309
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040014BE RID: 5310
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040014BF RID: 5311
+	
 	public Color[] colors;
 
-	// Token: 0x040014C0 RID: 5312
+	
 	private GameObject main_;
 
-	// Token: 0x040014C1 RID: 5313
+	
 	private mainScript mS_;
 
-	// Token: 0x040014C2 RID: 5314
+	
 	private textScript tS_;
 
-	// Token: 0x040014C3 RID: 5315
+	
 	private mapScript mapS_;
 
-	// Token: 0x040014C4 RID: 5316
+	
 	private unlockScript unlock_;
 
-	// Token: 0x040014C5 RID: 5317
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040014C6 RID: 5318
+	
 	private buildRoomScript buildRoomScript_;
 
-	// Token: 0x040014C7 RID: 5319
+	
 	private roomDataScript rdS_;
 
-	// Token: 0x040014C8 RID: 5320
+	
 	private mainCameraScript mCamS_;
 
-	// Token: 0x040014C9 RID: 5321
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040014CA RID: 5322
+	
 	public int roomTyp;
 }

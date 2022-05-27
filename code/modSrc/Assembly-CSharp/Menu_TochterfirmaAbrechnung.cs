@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200019B RID: 411
+
 public class Menu_TochterfirmaAbrechnung : MonoBehaviour
 {
-	// Token: 0x06000F99 RID: 3993 RVA: 0x000A5E9A File Offset: 0x000A409A
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F9A RID: 3994 RVA: 0x000A5EA4 File Offset: 0x000A40A4
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_TochterfirmaAbrechnung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F9B RID: 3995 RVA: 0x000A6044 File Offset: 0x000A4244
+	
 	public void Init(gameScript game_)
 	{
 		Debug.Log("MENU_TOCHTERFIRMA_ABRECHNUNG");
@@ -140,7 +140,7 @@ public class Menu_TochterfirmaAbrechnung : MonoBehaviour
 		this.sfx_.PlaySound(40, false);
 	}
 
-	// Token: 0x06000F9C RID: 3996 RVA: 0x000A642A File Offset: 0x000A462A
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -149,7 +149,7 @@ public class Menu_TochterfirmaAbrechnung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F9D RID: 3997 RVA: 0x000A6445 File Offset: 0x000A4645
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -157,48 +157,48 @@ public class Menu_TochterfirmaAbrechnung : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x040013F3 RID: 5107
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040013F4 RID: 5108
+	
 	private GameObject main_;
 
-	// Token: 0x040013F5 RID: 5109
+	
 	private mainScript mS_;
 
-	// Token: 0x040013F6 RID: 5110
+	
 	private textScript tS_;
 
-	// Token: 0x040013F7 RID: 5111
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040013F8 RID: 5112
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040013F9 RID: 5113
+	
 	private genres genres_;
 
-	// Token: 0x040013FA RID: 5114
+	
 	private themes themes_;
 
-	// Token: 0x040013FB RID: 5115
+	
 	private licences licences_;
 
-	// Token: 0x040013FC RID: 5116
+	
 	private engineFeatures eF_;
 
-	// Token: 0x040013FD RID: 5117
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040013FE RID: 5118
+	
 	private unlockScript unlock_;
 
-	// Token: 0x040013FF RID: 5119
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x04001400 RID: 5120
+	
 	private games games_;
 
-	// Token: 0x04001401 RID: 5121
+	
 	private gameScript gS_;
 }

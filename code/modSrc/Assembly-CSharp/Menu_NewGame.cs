@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000177 RID: 375
+
 public class Menu_NewGame : MonoBehaviour
 {
-	// Token: 0x06000DEB RID: 3563 RVA: 0x00095DEB File Offset: 0x00093FEB
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000DEC RID: 3564 RVA: 0x00095DF4 File Offset: 0x00093FF4
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -50,7 +50,7 @@ public class Menu_NewGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DED RID: 3565 RVA: 0x00095EEC File Offset: 0x000940EC
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -78,7 +78,7 @@ public class Menu_NewGame : MonoBehaviour
 		this.cmS_.disableMovement = true;
 	}
 
-	// Token: 0x06000DEE RID: 3566 RVA: 0x00095FA4 File Offset: 0x000941A4
+	
 	public void Init()
 	{
 		this.InitDropdowns();
@@ -87,7 +87,7 @@ public class Menu_NewGame : MonoBehaviour
 		this.SetGenre(this.genre);
 	}
 
-	// Token: 0x06000DEF RID: 3567 RVA: 0x00095FD0 File Offset: 0x000941D0
+	
 	private void OnDisable()
 	{
 		this.FindScripts();
@@ -98,7 +98,7 @@ public class Menu_NewGame : MonoBehaviour
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x06000DF0 RID: 3568 RVA: 0x00095FF4 File Offset: 0x000941F4
+	
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -145,7 +145,6 @@ public class Menu_NewGame : MonoBehaviour
 		list = new List<string>();
 		list.Add(this.tS_.GetText(1770) + " " + this.tS_.GetText(1772));
 		list.Add(this.tS_.GetText(1771));
-		list.Add(this.tS_.GetText(2012));
 		list.Add(this.tS_.GetText(1773));
 		this.uiObjects[8].GetComponent<Dropdown>().ClearOptions();
 		this.uiObjects[8].GetComponent<Dropdown>().AddOptions(list);
@@ -157,7 +156,7 @@ public class Menu_NewGame : MonoBehaviour
 		base.StartCoroutine(this.DropdownAfterOneFrame());
 	}
 
-	// Token: 0x06000DF1 RID: 3569 RVA: 0x00096347 File Offset: 0x00094547
+	
 	public IEnumerator DropdownAfterOneFrame()
 	{
 		yield return new WaitForEndOfFrame();
@@ -179,14 +178,14 @@ public class Menu_NewGame : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000DF2 RID: 3570 RVA: 0x00096356 File Offset: 0x00094556
+	
 	public void SetLogo(int i)
 	{
 		this.uiObjects[4].GetComponent<Image>().sprite = this.guiMain_.GetCompanyLogo(i);
 		this.logo = i;
 	}
 
-	// Token: 0x06000DF3 RID: 3571 RVA: 0x00096380 File Offset: 0x00094580
+	
 	public void SetCountry(int i)
 	{
 		this.country = i;
@@ -194,7 +193,7 @@ public class Menu_NewGame : MonoBehaviour
 		this.uiObjects[5].GetComponent<Image>().sprite = this.guiMain_.flagSprites[i];
 	}
 
-	// Token: 0x06000DF4 RID: 3572 RVA: 0x000963D4 File Offset: 0x000945D4
+	
 	public void SetGenre(int i)
 	{
 		this.genre = i;
@@ -202,7 +201,7 @@ public class Menu_NewGame : MonoBehaviour
 		this.uiObjects[11].GetComponent<Image>().sprite = this.genres_.GetPic(this.genre);
 	}
 
-	// Token: 0x06000DF5 RID: 3573 RVA: 0x00096430 File Offset: 0x00094630
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.SaveOptions();
@@ -210,35 +209,35 @@ public class Menu_NewGame : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000DF6 RID: 3574 RVA: 0x00096451 File Offset: 0x00094651
+	
 	public void BUTTON_RandomCompanyName()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.uiObjects[0].GetComponent<InputField>().text = this.tS_.GetRandomCompanyName();
 	}
 
-	// Token: 0x06000DF7 RID: 3575 RVA: 0x0009647D File Offset: 0x0009467D
+	
 	public void BUTTON_Firmenlogo()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[48]);
 	}
 
-	// Token: 0x06000DF8 RID: 3576 RVA: 0x000964A5 File Offset: 0x000946A5
+	
 	public void BUTTON_Standort()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[161]);
 	}
 
-	// Token: 0x06000DF9 RID: 3577 RVA: 0x000964D0 File Offset: 0x000946D0
+	
 	public void BUTTON_Genre()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[298]);
 	}
 
-	// Token: 0x06000DFA RID: 3578 RVA: 0x000964FC File Offset: 0x000946FC
+	
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -252,7 +251,7 @@ public class Menu_NewGame : MonoBehaviour
 		this.guiMain_.uiObjects[162].SetActive(true);
 	}
 
-	// Token: 0x06000DFB RID: 3579 RVA: 0x00096588 File Offset: 0x00094788
+	
 	private void SaveOptions()
 	{
 		PlayerPrefs.SetInt("optDifficulty", this.uiObjects[1].GetComponent<Dropdown>().value);
@@ -266,36 +265,36 @@ public class Menu_NewGame : MonoBehaviour
 		PlayerPrefs.SetString("CompanyName", this.uiObjects[0].GetComponent<InputField>().text);
 	}
 
-	// Token: 0x04001282 RID: 4738
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001283 RID: 4739
+	
 	private GameObject main_;
 
-	// Token: 0x04001284 RID: 4740
+	
 	private mainScript mS_;
 
-	// Token: 0x04001285 RID: 4741
+	
 	private textScript tS_;
 
-	// Token: 0x04001286 RID: 4742
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001287 RID: 4743
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001288 RID: 4744
+	
 	private genres genres_;
 
-	// Token: 0x04001289 RID: 4745
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x0400128A RID: 4746
+	
 	public int logo = -1;
 
-	// Token: 0x0400128B RID: 4747
+	
 	public int country;
 
-	// Token: 0x0400128C RID: 4748
+	
 	public int genre;
 }

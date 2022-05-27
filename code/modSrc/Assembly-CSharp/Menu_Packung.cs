@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000153 RID: 339
+
 public class Menu_Packung : MonoBehaviour
 {
-	// Token: 0x06000C7B RID: 3195 RVA: 0x0008637A File Offset: 0x0008457A
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000C7C RID: 3196 RVA: 0x00086384 File Offset: 0x00084584
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -58,7 +58,7 @@ public class Menu_Packung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C7D RID: 3197 RVA: 0x000864CC File Offset: 0x000846CC
+	
 	private void Update()
 	{
 		if (!this.gS_)
@@ -226,7 +226,7 @@ public class Menu_Packung : MonoBehaviour
 		this.uiObjects[52].GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
 	}
 
-	// Token: 0x06000C7E RID: 3198 RVA: 0x00086E74 File Offset: 0x00085074
+	
 	private float GetGewinn(int i)
 	{
 		float num = (float)this.verkaufspreis[i] - this.GetProduktionskosten(i);
@@ -237,7 +237,7 @@ public class Menu_Packung : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000C7F RID: 3199 RVA: 0x00086EC4 File Offset: 0x000850C4
+	
 	public void Init(gameScript game_, taskGame t_, bool newGame, bool hideClose)
 	{
 		this.FindScripts();
@@ -392,7 +392,7 @@ public class Menu_Packung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C80 RID: 3200 RVA: 0x000876D2 File Offset: 0x000858D2
+	
 	private void Unlock(int id_, GameObject lock_, GameObject toggle_)
 	{
 		if (this.unlock_.unlock[id_])
@@ -405,7 +405,7 @@ public class Menu_Packung : MonoBehaviour
 		lock_.SetActive(true);
 	}
 
-	// Token: 0x06000C81 RID: 3201 RVA: 0x0008770C File Offset: 0x0008590C
+	
 	private string GetMoneyString(float f)
 	{
 		string text = "$" + this.mS_.Round(f, 2);
@@ -421,7 +421,7 @@ public class Menu_Packung : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06000C82 RID: 3202 RVA: 0x0008777C File Offset: 0x0008597C
+	
 	private float GetProduktionskosten(int edition)
 	{
 		float num = 0f;
@@ -460,7 +460,7 @@ public class Menu_Packung : MonoBehaviour
 		return num + this.games_.GetGrundkosten();
 	}
 
-	// Token: 0x06000C83 RID: 3203 RVA: 0x0008784C File Offset: 0x00085A4C
+	
 	public void InitDropdowns()
 	{
 		List<string> list = new List<string>();
@@ -476,7 +476,7 @@ public class Menu_Packung : MonoBehaviour
 		this.DROPDOWN_Edition();
 	}
 
-	// Token: 0x06000C84 RID: 3204 RVA: 0x00087930 File Offset: 0x00085B30
+	
 	public void TOGGLE_ManualSW()
 	{
 		if (this.uiObjects[11].GetComponent<Toggle>().isOn)
@@ -485,7 +485,7 @@ public class Menu_Packung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C85 RID: 3205 RVA: 0x0008795B File Offset: 0x00085B5B
+	
 	public void TOGGLE_ManualColor()
 	{
 		if (this.uiObjects[10].GetComponent<Toggle>().isOn)
@@ -494,7 +494,7 @@ public class Menu_Packung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C86 RID: 3206 RVA: 0x00087988 File Offset: 0x00085B88
+	
 	private void UpdatePackung()
 	{
 		if (this.packObjects[0].activeSelf != this.uiObjects[10].GetComponent<Toggle>().isOn)
@@ -686,7 +686,7 @@ public class Menu_Packung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C87 RID: 3207 RVA: 0x0008832C File Offset: 0x0008652C
+	
 	public void DROPDOWN_Edition()
 	{
 		switch (this.uiObjects[20].GetComponent<Dropdown>().value)
@@ -738,7 +738,7 @@ public class Menu_Packung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C88 RID: 3208 RVA: 0x000886E9 File Offset: 0x000868E9
+	
 	private IEnumerator iMinusPreis(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -749,7 +749,7 @@ public class Menu_Packung : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000C89 RID: 3209 RVA: 0x00088700 File Offset: 0x00086900
+	
 	public void BUTTON_MinusPreis(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -780,7 +780,7 @@ public class Menu_Packung : MonoBehaviour
 		base.StartCoroutine(this.iMinusPreis(i));
 	}
 
-	// Token: 0x06000C8A RID: 3210 RVA: 0x000887B5 File Offset: 0x000869B5
+	
 	private IEnumerator iPlusPreis(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -791,7 +791,7 @@ public class Menu_Packung : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000C8B RID: 3211 RVA: 0x000887CC File Offset: 0x000869CC
+	
 	public void BUTTON_PlusPreis(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -877,13 +877,13 @@ public class Menu_Packung : MonoBehaviour
 		base.StartCoroutine(this.iPlusPreis(i));
 	}
 
-	// Token: 0x06000C8C RID: 3212 RVA: 0x000889D3 File Offset: 0x00086BD3
+	
 	private float GetQualityPackung(int i)
 	{
 		return (this.GetProduktionskosten(i) - this.games_.GetGrundkosten()) * 10f;
 	}
 
-	// Token: 0x06000C8D RID: 3213 RVA: 0x000889F0 File Offset: 0x00086BF0
+	
 	public void BUTTON_Close()
 	{
 		if (!this.guiMain_.uiObjects[220].activeSelf)
@@ -896,7 +896,7 @@ public class Menu_Packung : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000C8E RID: 3214 RVA: 0x00088A78 File Offset: 0x00086C78
+	
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -923,11 +923,6 @@ public class Menu_Packung : MonoBehaviour
 				return;
 			}
 		}
-		int num = 0;
-		for (int i = 0; i < this.gS_.verkaufspreis.Length; i++)
-		{
-			num += this.verkaufspreis[i] - this.gS_.verkaufspreis[i];
-		}
 		this.gS_.standard_edition = (bool[])this.standard_edition.Clone();
 		this.gS_.deluxe_edition = (bool[])this.deluxe_edition.Clone();
 		this.gS_.collectors_edition = (bool[])this.collectors_edition.Clone();
@@ -943,28 +938,9 @@ public class Menu_Packung : MonoBehaviour
 			return;
 		}
 		base.gameObject.SetActive(false);
-		if (this.gS_.vorbestellungen > 0 && num > 0)
-		{
-			int num2 = this.gS_.vorbestellungen / 100 * num;
-			if (num2 > this.gS_.vorbestellungen)
-			{
-				num2 = this.gS_.vorbestellungen;
-			}
-			if (num2 > 0)
-			{
-				this.gS_.vorbestellungen -= num2;
-				if (this.gS_.vorbestellungen < 0)
-				{
-					this.gS_.vorbestellungen = 0;
-				}
-				string text = this.tS_.GetText(2013);
-				text = text.Replace("<NUM>", "<color=red>" + this.mS_.GetMoney((long)num2, false) + "</color>");
-				this.guiMain_.MessageBox(text, false);
-			}
-		}
 	}
 
-	// Token: 0x06000C8F RID: 3215 RVA: 0x00088DFC File Offset: 0x00086FFC
+	
 	private void SaveData()
 	{
 		if (this.gS_.typ_bundle)
@@ -1013,7 +989,7 @@ public class Menu_Packung : MonoBehaviour
 		this.collectors_default_standard = (bool[])this.collectors_edition.Clone();
 	}
 
-	// Token: 0x06000C90 RID: 3216 RVA: 0x0008907C File Offset: 0x0008727C
+	
 	private void LoadData()
 	{
 		if (this.gS_.typ_bundle)
@@ -1080,7 +1056,7 @@ public class Menu_Packung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C91 RID: 3217 RVA: 0x00089335 File Offset: 0x00087535
+	
 	public void TOGGLE_Autopreis()
 	{
 		if (this.uiObjects[58].GetComponent<Toggle>().isOn)
@@ -1090,132 +1066,132 @@ public class Menu_Packung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040010D0 RID: 4304
+	
 	private mainScript mS_;
 
-	// Token: 0x040010D1 RID: 4305
+	
 	private GameObject main_;
 
-	// Token: 0x040010D2 RID: 4306
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040010D3 RID: 4307
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040010D4 RID: 4308
+	
 	private textScript tS_;
 
-	// Token: 0x040010D5 RID: 4309
+	
 	private themes themes_;
 
-	// Token: 0x040010D6 RID: 4310
+	
 	private Menu_DevGame mDevGame_;
 
-	// Token: 0x040010D7 RID: 4311
+	
 	private genres genres_;
 
-	// Token: 0x040010D8 RID: 4312
+	
 	private games games_;
 
-	// Token: 0x040010D9 RID: 4313
+	
 	private unlockScript unlock_;
 
-	// Token: 0x040010DA RID: 4314
+	
 	private gameScript gS_;
 
-	// Token: 0x040010DB RID: 4315
+	
 	private taskGame task_;
 
-	// Token: 0x040010DC RID: 4316
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040010DD RID: 4317
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040010DE RID: 4318
+	
 	public GameObject[] packObjects;
 
-	// Token: 0x040010DF RID: 4319
+	
 	public bool[] standard_edition;
 
-	// Token: 0x040010E0 RID: 4320
+	
 	public bool[] deluxe_edition;
 
-	// Token: 0x040010E1 RID: 4321
+	
 	public bool[] collectors_edition;
 
-	// Token: 0x040010E2 RID: 4322
+	
 	public int[] verkaufspreis;
 
-	// Token: 0x040010E3 RID: 4323
+	
 	public int[] verkaufspreis_default_bundle;
 
-	// Token: 0x040010E4 RID: 4324
+	
 	public int[] verkaufspreis_default_bundleAddon;
 
-	// Token: 0x040010E5 RID: 4325
+	
 	public int[] verkaufspreis_default_addon;
 
-	// Token: 0x040010E6 RID: 4326
+	
 	public int[] verkaufspreis_default_budget;
 
-	// Token: 0x040010E7 RID: 4327
+	
 	public int[] verkaufspreis_default_goty;
 
-	// Token: 0x040010E8 RID: 4328
+	
 	public int[] verkaufspreis_default_standard;
 
-	// Token: 0x040010E9 RID: 4329
+	
 	public bool[] standard_default_bundleAddon;
 
-	// Token: 0x040010EA RID: 4330
+	
 	public bool[] deluxe_default_bundleAddon;
 
-	// Token: 0x040010EB RID: 4331
+	
 	public bool[] collectors_default_bundleAddon;
 
-	// Token: 0x040010EC RID: 4332
+	
 	public bool[] standard_default_bundle;
 
-	// Token: 0x040010ED RID: 4333
+	
 	public bool[] deluxe_default_bundle;
 
-	// Token: 0x040010EE RID: 4334
+	
 	public bool[] collectors_default_bundle;
 
-	// Token: 0x040010EF RID: 4335
+	
 	public bool[] standard_default_addon;
 
-	// Token: 0x040010F0 RID: 4336
+	
 	public bool[] deluxe_default_addon;
 
-	// Token: 0x040010F1 RID: 4337
+	
 	public bool[] collectors_default_addon;
 
-	// Token: 0x040010F2 RID: 4338
+	
 	public bool[] standard_default_budget;
 
-	// Token: 0x040010F3 RID: 4339
+	
 	public bool[] deluxe_default_budget;
 
-	// Token: 0x040010F4 RID: 4340
+	
 	public bool[] collectors_default_budget;
 
-	// Token: 0x040010F5 RID: 4341
+	
 	public bool[] standard_default_goty;
 
-	// Token: 0x040010F6 RID: 4342
+	
 	public bool[] deluxe_default_goty;
 
-	// Token: 0x040010F7 RID: 4343
+	
 	public bool[] collectors_default_goty;
 
-	// Token: 0x040010F8 RID: 4344
+	
 	public bool[] standard_default_standard;
 
-	// Token: 0x040010F9 RID: 4345
+	
 	public bool[] deluxe_default_standard;
 
-	// Token: 0x040010FA RID: 4346
+	
 	public bool[] collectors_default_standard;
 }

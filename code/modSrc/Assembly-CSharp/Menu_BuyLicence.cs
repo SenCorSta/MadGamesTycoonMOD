@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200018E RID: 398
+
 public class Menu_BuyLicence : MonoBehaviour
 {
-	// Token: 0x06000F23 RID: 3875 RVA: 0x000A0981 File Offset: 0x0009EB81
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F24 RID: 3876 RVA: 0x000A098C File Offset: 0x0009EB8C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_BuyLicence : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F25 RID: 3877 RVA: 0x000A0A54 File Offset: 0x0009EC54
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -51,7 +51,7 @@ public class Menu_BuyLicence : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000F26 RID: 3878 RVA: 0x000A0A8C File Offset: 0x0009EC8C
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -77,7 +77,7 @@ public class Menu_BuyLicence : MonoBehaviour
 		this.SetData(true);
 	}
 
-	// Token: 0x06000F27 RID: 3879 RVA: 0x000A0AF0 File Offset: 0x0009ECF0
+	
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -90,7 +90,7 @@ public class Menu_BuyLicence : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000F28 RID: 3880 RVA: 0x000A0B47 File Offset: 0x0009ED47
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -98,7 +98,7 @@ public class Menu_BuyLicence : MonoBehaviour
 		this.TAB_LicenceBuy(0);
 	}
 
-	// Token: 0x06000F29 RID: 3881 RVA: 0x000A0B5C File Offset: 0x0009ED5C
+	
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -113,7 +113,7 @@ public class Menu_BuyLicence : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06000F2A RID: 3882 RVA: 0x000A0C28 File Offset: 0x0009EE28
+	
 	private void Init(bool inBesitz)
 	{
 		this.FindScripts();
@@ -124,7 +124,7 @@ public class Menu_BuyLicence : MonoBehaviour
 		this.SetData(inBesitz);
 	}
 
-	// Token: 0x06000F2B RID: 3883 RVA: 0x000A0C80 File Offset: 0x0009EE80
+	
 	private void SetData(bool inBesitz)
 	{
 		for (int i = 0; i < this.licences_.licence_ANGEBOT.Length; i++)
@@ -144,7 +144,7 @@ public class Menu_BuyLicence : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06000F2C RID: 3884 RVA: 0x000A0D94 File Offset: 0x0009EF94
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -171,14 +171,7 @@ public class Menu_BuyLicence : MonoBehaviour
 					gameObject.name = this.licences_.licence_TYP[component.myID].ToString();
 					break;
 				case 4:
-					if (this.licences_.licence_GEKAUFT[component.myID] > 0)
-					{
-						gameObject.name = this.licences_.licence_GEKAUFT[component.myID].ToString();
-					}
-					else
-					{
-						gameObject.name = this.licences_.licence_ANGEBOT[component.myID].ToString();
-					}
+					gameObject.name = this.licences_.licence_ANGEBOT[component.myID].ToString();
 					break;
 				}
 			}
@@ -191,14 +184,14 @@ public class Menu_BuyLicence : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06000F2D RID: 3885 RVA: 0x000A0F4B File Offset: 0x0009F14B
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000F2E RID: 3886 RVA: 0x000A0F66 File Offset: 0x0009F166
+	
 	public void TAB_LicenceBuy(int t)
 	{
 		this.TAB = t;
@@ -207,7 +200,7 @@ public class Menu_BuyLicence : MonoBehaviour
 		this.Init(false);
 	}
 
-	// Token: 0x06000F2F RID: 3887 RVA: 0x000A0F97 File Offset: 0x0009F197
+	
 	public void TAB_MyLicence(int t)
 	{
 		this.TAB = t;
@@ -216,33 +209,33 @@ public class Menu_BuyLicence : MonoBehaviour
 		this.Init(true);
 	}
 
-	// Token: 0x04001366 RID: 4966
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001367 RID: 4967
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001368 RID: 4968
+	
 	private mainScript mS_;
 
-	// Token: 0x04001369 RID: 4969
+	
 	private GameObject main_;
 
-	// Token: 0x0400136A RID: 4970
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400136B RID: 4971
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400136C RID: 4972
+	
 	private textScript tS_;
 
-	// Token: 0x0400136D RID: 4973
+	
 	private licences licences_;
 
-	// Token: 0x0400136E RID: 4974
+	
 	private int TAB;
 
-	// Token: 0x0400136F RID: 4975
+	
 	private float updateTimer;
 }

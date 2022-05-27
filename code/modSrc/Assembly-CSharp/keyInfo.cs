@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000274 RID: 628
+
 public class keyInfo : MonoBehaviour
 {
-	// Token: 0x06001870 RID: 6256 RVA: 0x000F2558 File Offset: 0x000F0758
+	
 	private void Start()
 	{
 		string text = "";
@@ -20,9 +20,9 @@ public class keyInfo : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x04001C20 RID: 7200
+	
 	public KeyCode[] keys;
 
-	// Token: 0x04001C21 RID: 7201
+	
 	public GameObject[] uiObjects;
 }

@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000339 RID: 825
+
 public class pickCharacterScript : MonoBehaviour
 {
-	// Token: 0x06001DDC RID: 7644 RVA: 0x00129B23 File Offset: 0x00127D23
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001DDD RID: 7645 RVA: 0x00129B2C File Offset: 0x00127D2C
+	
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -58,14 +58,14 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DDE RID: 7646 RVA: 0x00129C65 File Offset: 0x00127E65
+	
 	private void Update()
 	{
 		this.Pick();
 		this.MouseMovement();
 	}
 
-	// Token: 0x06001DDF RID: 7647 RVA: 0x00129C74 File Offset: 0x00127E74
+	
 	private void Pick()
 	{
 		if (this.gummiS_.isActive)
@@ -115,13 +115,13 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DE0 RID: 7648 RVA: 0x00129E65 File Offset: 0x00128065
+	
 	public void PickFromExternObject(GameObject go)
 	{
 		base.StartCoroutine(this.PickChar(go));
 	}
 
-	// Token: 0x06001DE1 RID: 7649 RVA: 0x00129E75 File Offset: 0x00128075
+	
 	public IEnumerator PickChar(GameObject go)
 	{
 		yield return new WaitForEndOfFrame();
@@ -147,7 +147,7 @@ public class pickCharacterScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001DE2 RID: 7650 RVA: 0x00129E8C File Offset: 0x0012808C
+	
 	private void SetLayer(int newLayer, Transform trans)
 	{
 		trans.gameObject.layer = newLayer;
@@ -162,7 +162,7 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DE3 RID: 7651 RVA: 0x00129F08 File Offset: 0x00128108
+	
 	public bool ESC_DropChar()
 	{
 		if (this.mS_.pickedChars.Count == 1 && this.oldRoomID != -1 && this.oldPosition.x != (float)Mathf.RoundToInt(9999f))
@@ -186,7 +186,7 @@ public class pickCharacterScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DE4 RID: 7652 RVA: 0x00129FEC File Offset: 0x001281EC
+	
 	private void MouseMovement()
 	{
 		if (!this.mS_)
@@ -334,7 +334,7 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DE5 RID: 7653 RVA: 0x0012A570 File Offset: 0x00128770
+	
 	private void PickupGroupWithKey()
 	{
 		if (Input.GetKey(KeyCode.LeftShift))
@@ -390,7 +390,7 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DE6 RID: 7654 RVA: 0x0012A674 File Offset: 0x00128874
+	
 	private void SelectGroup(int g)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Character");
@@ -407,60 +407,60 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400258D RID: 9613
+	
 	private mainScript mS_;
 
-	// Token: 0x0400258E RID: 9614
+	
 	private GUI_Main guiMain;
 
-	// Token: 0x0400258F RID: 9615
+	
 	private Camera myCamera;
 
-	// Token: 0x04002590 RID: 9616
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04002591 RID: 9617
+	
 	private RaycastHit hit;
 
-	// Token: 0x04002592 RID: 9618
+	
 	public RaycastHit hitOld;
 
-	// Token: 0x04002593 RID: 9619
+	
 	private RaycastHit hitEmpty;
 
-	// Token: 0x04002594 RID: 9620
+	
 	private gummibandScript gummiS_;
 
-	// Token: 0x04002595 RID: 9621
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002596 RID: 9622
+	
 	private mapScript mapS_;
 
-	// Token: 0x04002597 RID: 9623
+	
 	private roomDataScript rdS_;
 
-	// Token: 0x04002598 RID: 9624
+	
 	private pickObjectScript pOS_;
 
-	// Token: 0x04002599 RID: 9625
+	
 	private mainCameraScript mCamS_;
 
-	// Token: 0x0400259A RID: 9626
+	
 	public LayerMask layerMaskChar;
 
-	// Token: 0x0400259B RID: 9627
+	
 	public LayerMask layerMaskFloor;
 
-	// Token: 0x0400259C RID: 9628
+	
 	private int oldRoomID = -1;
 
-	// Token: 0x0400259D RID: 9629
+	
 	private Vector3 oldPosition;
 
-	// Token: 0x0400259E RID: 9630
+	
 	private roomScript roomOutlineOld;
 
-	// Token: 0x0400259F RID: 9631
+	
 	private bool lastFrameESC;
 }

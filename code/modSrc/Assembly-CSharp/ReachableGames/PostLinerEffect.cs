@@ -4,16 +4,16 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace ReachableGames
 {
-	// Token: 0x020003ED RID: 1005
+	
 	public sealed class PostLinerEffect : PostProcessEffectRenderer<PostLiner>
 	{
-		// Token: 0x060023E5 RID: 9189 RVA: 0x00172EEB File Offset: 0x001710EB
+		
 		public override DepthTextureMode GetCameraFlags()
 		{
 			return base.GetCameraFlags() | DepthTextureMode.DepthNormals;
 		}
 
-		// Token: 0x060023E6 RID: 9190 RVA: 0x00172EF8 File Offset: 0x001710F8
+		
 		public override void Render(PostProcessRenderContext context)
 		{
 			Texture globalTexture = Shader.GetGlobalTexture(PostLinerEffect._globalTextureId);
@@ -39,46 +39,46 @@ namespace ReachableGames
 			context.command.CopyTexture(context.source, context.destination);
 		}
 
-		// Token: 0x04002DE6 RID: 11750
+		
 		private static int _globalTextureId = Shader.PropertyToID("_OutlineDepth");
 
-		// Token: 0x04002DE7 RID: 11751
+		
 		private static int _pixelOffsetId = Shader.PropertyToID("_PixelOffset");
 
-		// Token: 0x04002DE8 RID: 11752
+		
 		private static int _fillColorId = Shader.PropertyToID("_FillColor");
 
-		// Token: 0x04002DE9 RID: 11753
+		
 		private static int _fillBlendId = Shader.PropertyToID("_FillBlend");
 
-		// Token: 0x04002DEA RID: 11754
+		
 		private static int _fillDepthFadingId = Shader.PropertyToID("_FillDepthFading");
 
-		// Token: 0x04002DEB RID: 11755
+		
 		private static int _outlineColorId = Shader.PropertyToID("_OutlineColor");
 
-		// Token: 0x04002DEC RID: 11756
+		
 		private static int _lineThicknessId = Shader.PropertyToID("_LineThickness");
 
-		// Token: 0x04002DED RID: 11757
+		
 		private static int _errorToleranceId = Shader.PropertyToID("_ErrorTolerance");
 
-		// Token: 0x04002DEE RID: 11758
+		
 		private static int _topologySensitivityId = Shader.PropertyToID("_TopologySensitivity");
 
-		// Token: 0x04002DEF RID: 11759
+		
 		private static int _topologyBlendId = Shader.PropertyToID("_TopologyBlend");
 
-		// Token: 0x04002DF0 RID: 11760
+		
 		private static int _topologyDepthFadingId = Shader.PropertyToID("_TopologyDepthFading");
 
-		// Token: 0x04002DF1 RID: 11761
+		
 		private static int _hardEdgeBlendId = Shader.PropertyToID("_HardEdgeBlend");
 
-		// Token: 0x04002DF2 RID: 11762
+		
 		private static int _hardEdgeDepthFadingId = Shader.PropertyToID("_HardEdgeDepthFading");
 
-		// Token: 0x04002DF3 RID: 11763
+		
 		private static int _finalBlendId = Shader.PropertyToID("_FinalBlend");
 	}
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000041 RID: 65
+
 public class characterGFXScript : MonoBehaviour
 {
-	// Token: 0x060000EE RID: 238 RVA: 0x00002715 File Offset: 0x00000915
+	
 	private void Start()
 	{
 	}
 
-	// Token: 0x060000EF RID: 239 RVA: 0x0000C52C File Offset: 0x0000A72C
+	
 	public void Init(bool forcedClothes)
 	{
 		this.cS_ = base.transform.root.GetComponent<characterScript>();
@@ -80,7 +80,7 @@ public class characterGFXScript : MonoBehaviour
 		UnityEngine.Object.Destroy(this);
 	}
 
-	// Token: 0x060000F0 RID: 240 RVA: 0x0000C854 File Offset: 0x0000AA54
+	
 	private void SetEyes(bool force, int model1)
 	{
 		int num = 0;
@@ -120,7 +120,7 @@ public class characterGFXScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F1 RID: 241 RVA: 0x0000C968 File Offset: 0x0000AB68
+	
 	private void SetHairs(bool force, int model1)
 	{
 		if (!force)
@@ -158,7 +158,7 @@ public class characterGFXScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F2 RID: 242 RVA: 0x0000CA70 File Offset: 0x0000AC70
+	
 	private void SetBeard(bool force, int model1)
 	{
 		if (!this.male)
@@ -185,7 +185,7 @@ public class characterGFXScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F3 RID: 243 RVA: 0x0000CB04 File Offset: 0x0000AD04
+	
 	private void SetSkinColor(bool force, int color1)
 	{
 		this.indexSkinColor = 0;
@@ -204,7 +204,7 @@ public class characterGFXScript : MonoBehaviour
 		this.cS_.model_skinColor = 0;
 	}
 
-	// Token: 0x060000F4 RID: 244 RVA: 0x0000CB90 File Offset: 0x0000AD90
+	
 	private void SetHairColor(bool force, int colorHair, int colorBeard)
 	{
 		if (!force)
@@ -265,7 +265,7 @@ public class characterGFXScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F5 RID: 245 RVA: 0x0000CD9C File Offset: 0x0000AF9C
+	
 	private void SetClothColors(bool force, int colorHose, int colorShirt, int colorAdd1)
 	{
 		if (!force)
@@ -347,78 +347,78 @@ public class characterGFXScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000284 RID: 644
+	
 	public bool male;
 
-	// Token: 0x04000285 RID: 645
+	
 	public GameObject boneHead;
 
-	// Token: 0x04000286 RID: 646
+	
 	public GameObject objectSkin;
 
-	// Token: 0x04000287 RID: 647
+	
 	public GameObject objectHose;
 
-	// Token: 0x04000288 RID: 648
+	
 	public GameObject objectShirt;
 
-	// Token: 0x04000289 RID: 649
+	
 	public GameObject objectAdd1;
 
-	// Token: 0x0400028A RID: 650
+	
 	public GameObject addTasse1;
 
-	// Token: 0x0400028B RID: 651
+	
 	public GameObject addMuel1;
 
-	// Token: 0x0400028C RID: 652
+	
 	public GameObject addGiesskanne1;
 
-	// Token: 0x0400028D RID: 653
+	
 	public GameObject addBook1;
 
-	// Token: 0x0400028E RID: 654
+	
 	public GameObject addTelefon1;
 
-	// Token: 0x0400028F RID: 655
+	
 	public GameObject addDartPfeil1;
 
-	// Token: 0x04000290 RID: 656
+	
 	public GameObject addController1;
 
-	// Token: 0x04000291 RID: 657
+	
 	public GameObject addStift1;
 
-	// Token: 0x04000292 RID: 658
+	
 	public GameObject addHammer1;
 
-	// Token: 0x04000293 RID: 659
+	
 	public GameObject addSchraubenzieher1;
 
-	// Token: 0x04000294 RID: 660
+	
 	public GameObject addGolf;
 
-	// Token: 0x04000295 RID: 661
+	
 	private clothScript clothScript_;
 
-	// Token: 0x04000296 RID: 662
+	
 	private GameObject myEyes;
 
-	// Token: 0x04000297 RID: 663
+	
 	private GameObject myHair;
 
-	// Token: 0x04000298 RID: 664
+	
 	private GameObject myBeard;
 
-	// Token: 0x04000299 RID: 665
+	
 	private GameObject myHat;
 
-	// Token: 0x0400029A RID: 666
+	
 	private int indexSkinColor;
 
-	// Token: 0x0400029B RID: 667
+	
 	private int indexHairColor;
 
-	// Token: 0x0400029C RID: 668
+	
 	private characterScript cS_;
 }

@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x020003FB RID: 1019
+	
 	public class AllIn1ScrollProperty : MonoBehaviour
 	{
-		// Token: 0x06002428 RID: 9256 RVA: 0x001745B8 File Offset: 0x001727B8
+		
 		private void Start()
 		{
 			if (this.mat == null)
@@ -42,7 +42,7 @@ namespace AllIn1SpriteShader
 			this.currValue = this.mat.GetFloat(this.propertyShaderID);
 		}
 
-		// Token: 0x06002429 RID: 9257 RVA: 0x0017469C File Offset: 0x0017289C
+		
 		private void Update()
 		{
 			this.currValue += this.scrollSpeed * Time.deltaTime;
@@ -53,40 +53,40 @@ namespace AllIn1SpriteShader
 			this.mat.SetFloat(this.propertyShaderID, this.currValue);
 		}
 
-		// Token: 0x0600242A RID: 9258 RVA: 0x0017458C File Offset: 0x0017278C
+		
 		private void DestroyComponentAndLogError(string logError)
 		{
 			Debug.LogError(logError);
 			UnityEngine.Object.Destroy(this);
 		}
 
-		// Token: 0x04002E43 RID: 11843
+		
 		[SerializeField]
 		private string numericPropertyName = "_RotateUvAmount";
 
-		// Token: 0x04002E44 RID: 11844
+		
 		[SerializeField]
 		private float scrollSpeed;
 
-		// Token: 0x04002E45 RID: 11845
+		
 		[Space]
 		[SerializeField]
 		private bool applyModulo;
 
-		// Token: 0x04002E46 RID: 11846
+		
 		[SerializeField]
 		private float modulo = 1f;
 
-		// Token: 0x04002E47 RID: 11847
+		
 		[Space]
 		[SerializeField]
 		[Header("If missing will search object Sprite Renderer or UI Image")]
 		private Material mat;
 
-		// Token: 0x04002E48 RID: 11848
+		
 		private int propertyShaderID;
 
-		// Token: 0x04002E49 RID: 11849
+		
 		private float currValue;
 	}
 }

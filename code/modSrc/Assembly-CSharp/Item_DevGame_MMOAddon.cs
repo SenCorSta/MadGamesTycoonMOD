@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000088 RID: 136
+
 public class Item_DevGame_MMOAddon : MonoBehaviour
 {
-	// Token: 0x06000578 RID: 1400 RVA: 0x000499E4 File Offset: 0x00047BE4
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000579 RID: 1401 RVA: 0x000499EC File Offset: 0x00047BEC
+	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x0600057A RID: 1402 RVA: 0x000499F4 File Offset: 0x00047BF4
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_DevGame_MMOAddon : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600057B RID: 1403 RVA: 0x00049A40 File Offset: 0x00047C40
+	
 	private void SetData()
 	{
 		if (!this.game_)
@@ -53,13 +53,13 @@ public class Item_DevGame_MMOAddon : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x0600057C RID: 1404 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600057D RID: 1405 RVA: 0x00049C0C File Offset: 0x00047E0C
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -67,33 +67,33 @@ public class Item_DevGame_MMOAddon : MonoBehaviour
 		this.guiMain_.uiObjects[247].GetComponent<Menu_Dev_MMOAddon>().Init(this.rS_, this.game_);
 	}
 
-	// Token: 0x0400088F RID: 2191
+	
 	public gameScript game_;
 
-	// Token: 0x04000890 RID: 2192
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000891 RID: 2193
+	
 	public mainScript mS_;
 
-	// Token: 0x04000892 RID: 2194
+	
 	public textScript tS_;
 
-	// Token: 0x04000893 RID: 2195
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000894 RID: 2196
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000895 RID: 2197
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000896 RID: 2198
+	
 	public genres genres_;
 
-	// Token: 0x04000897 RID: 2199
+	
 	public roomScript rS_;
 
-	// Token: 0x04000898 RID: 2200
+	
 	private float updateTimer;
 }

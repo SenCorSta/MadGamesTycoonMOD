@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001B7 RID: 439
+
 public class Menu_PickCharacter : MonoBehaviour
 {
-	// Token: 0x06001094 RID: 4244 RVA: 0x000AFB06 File Offset: 0x000ADD06
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001095 RID: 4245 RVA: 0x000AFB10 File Offset: 0x000ADD10
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001096 RID: 4246 RVA: 0x000AFBFC File Offset: 0x000ADDFC
+	
 	private void Update()
 	{
 		if (!Input.GetKey(KeyCode.LeftShift))
@@ -108,14 +108,14 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001097 RID: 4247 RVA: 0x000AFD45 File Offset: 0x000ADF45
+	
 	private void OnDisable()
 	{
 		this.FindScripts();
 		this.guiMain_.DeselectInputField();
 	}
 
-	// Token: 0x06001098 RID: 4248 RVA: 0x000AFD58 File Offset: 0x000ADF58
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -126,7 +126,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001099 RID: 4249 RVA: 0x000AFD94 File Offset: 0x000ADF94
+	
 	private void SetAllToGroup(int g)
 	{
 		if (this.mS_.pickedChars.Count > 0)
@@ -142,7 +142,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600109A RID: 4250 RVA: 0x000AFE14 File Offset: 0x000AE014
+	
 	public void UpdateData()
 	{
 		if (this.mS_.pickedChars.Count > 0 && this.mS_.pickedChars[0])
@@ -175,7 +175,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600109B RID: 4251 RVA: 0x000B005C File Offset: 0x000AE25C
+	
 	public void SetBalken(GameObject go, float val, int beruf_)
 	{
 		go.transform.Find("Value").GetComponent<Text>().text = this.mS_.Round(val, 1).ToString();
@@ -194,7 +194,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.5f;
 	}
 
-	// Token: 0x0600109C RID: 4252 RVA: 0x000B0158 File Offset: 0x000AE358
+	
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -212,7 +212,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x0600109D RID: 4253 RVA: 0x000B01CC File Offset: 0x000AE3CC
+	
 	public void INPUTFIELD_Name()
 	{
 		if (this.mS_.pickedChars.Count > 0)
@@ -226,13 +226,13 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600109E RID: 4254 RVA: 0x000B0244 File Offset: 0x000AE444
+	
 	public void INPUTFIELD_NameEnd()
 	{
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x0600109F RID: 4255 RVA: 0x000B0254 File Offset: 0x000AE454
+	
 	public void BUTTON_Entlassen()
 	{
 		if (this.mS_.pickedChars.Count > 0 && this.mS_.pickedChars[0])
@@ -248,7 +248,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010A0 RID: 4256 RVA: 0x000B0300 File Offset: 0x000AE500
+	
 	public void AddCharToList(characterScript cS_)
 	{
 		this.FindScripts();
@@ -259,39 +259,39 @@ public class Menu_PickCharacter : MonoBehaviour
 		component.BUTTON_Click();
 	}
 
-	// Token: 0x060010A1 RID: 4257 RVA: 0x000B0357 File Offset: 0x000AE557
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.pcS_.ESC_DropChar();
 	}
 
-	// Token: 0x04001504 RID: 5380
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001505 RID: 5381
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001506 RID: 5382
+	
 	private GameObject main_;
 
-	// Token: 0x04001507 RID: 5383
+	
 	private mainScript mS_;
 
-	// Token: 0x04001508 RID: 5384
+	
 	private textScript tS_;
 
-	// Token: 0x04001509 RID: 5385
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400150A RID: 5386
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400150B RID: 5387
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x0400150C RID: 5388
+	
 	private characterScript charS_;
 
-	// Token: 0x0400150D RID: 5389
+	
 	private pickCharacterScript pcS_;
 }

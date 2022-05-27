@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x02000362 RID: 866
+
 public class CreateHills : MonoBehaviour
 {
-	// Token: 0x06002003 RID: 8195 RVA: 0x0014CC7C File Offset: 0x0014AE7C
+	
 	private void Start()
 	{
 		this.storedPosition = this.ball.transform.position;
@@ -19,7 +19,7 @@ public class CreateHills : MonoBehaviour
 		this.CreateHillLine();
 	}
 
-	// Token: 0x06002004 RID: 8196 RVA: 0x0014CD14 File Offset: 0x0014AF14
+	
 	private void OnGUI()
 	{
 		if (GUI.Button(new Rect(10f, 10f, 150f, 40f), "Make new hills"))
@@ -31,7 +31,7 @@ public class CreateHills : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002005 RID: 8197 RVA: 0x0014CD88 File Offset: 0x0014AF88
+	
 	private void CreateHillLine()
 	{
 		this.splinePoints[0] = new Vector2(-0.02f, UnityEngine.Random.Range(0.1f, 0.6f));
@@ -50,27 +50,27 @@ public class CreateHills : MonoBehaviour
 		this.hills.Draw();
 	}
 
-	// Token: 0x04002857 RID: 10327
+	
 	public Texture hillTexture;
 
-	// Token: 0x04002858 RID: 10328
+	
 	public PhysicsMaterial2D hillPhysicsMaterial;
 
-	// Token: 0x04002859 RID: 10329
+	
 	public int numberOfPoints = 100;
 
-	// Token: 0x0400285A RID: 10330
+	
 	public int numberOfHills = 4;
 
-	// Token: 0x0400285B RID: 10331
+	
 	public GameObject ball;
 
-	// Token: 0x0400285C RID: 10332
+	
 	private Vector3 storedPosition;
 
-	// Token: 0x0400285D RID: 10333
+	
 	private VectorLine hills;
 
-	// Token: 0x0400285E RID: 10334
+	
 	private Vector2[] splinePoints;
 }

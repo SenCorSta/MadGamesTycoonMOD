@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000203 RID: 515
+
 public class Menu_RemoveGameSelect : MonoBehaviour
 {
-	// Token: 0x060013AF RID: 5039 RVA: 0x000CE9C7 File Offset: 0x000CCBC7
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060013B0 RID: 5040 RVA: 0x000CE9D0 File Offset: 0x000CCBD0
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013B1 RID: 5041 RVA: 0x000CEA98 File Offset: 0x000CCC98
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -51,7 +51,7 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060013B2 RID: 5042 RVA: 0x000CEAD0 File Offset: 0x000CCCD0
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -67,7 +67,7 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060013B3 RID: 5043 RVA: 0x000CEB1C File Offset: 0x000CCD1C
+	
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -80,14 +80,14 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060013B4 RID: 5044 RVA: 0x000CEB78 File Offset: 0x000CCD78
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.InitDropdowns();
 	}
 
-	// Token: 0x060013B5 RID: 5045 RVA: 0x000CEB88 File Offset: 0x000CCD88
+	
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -103,7 +103,7 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x060013B6 RID: 5046 RVA: 0x000CEC6C File Offset: 0x000CCE6C
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -115,7 +115,7 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060013B7 RID: 5047 RVA: 0x000CECE0 File Offset: 0x000CCEE0
+	
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -147,13 +147,13 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x060013B8 RID: 5048 RVA: 0x000CEE3E File Offset: 0x000CD03E
+	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.publisherID == this.mS_.myID && !script_.inDevelopment && script_.isOnMarket;
+		return script_ && script_.playerGame && !script_.inDevelopment && script_.isOnMarket && script_.publisherID == -1;
 	}
 
-	// Token: 0x060013B9 RID: 5049 RVA: 0x000CEE70 File Offset: 0x000CD070
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -200,7 +200,7 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x060013BA RID: 5050 RVA: 0x000CEFF8 File Offset: 0x000CD1F8
+	
 	public void BUTTON_Close()
 	{
 		this.mS_.automatic_RemoveGameFormMarket = this.uiObjects[4].GetComponent<Toggle>().isOn;
@@ -209,7 +209,7 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060013BB RID: 5051 RVA: 0x000CF048 File Offset: 0x000CD248
+	
 	public void BUTTON_Search()
 	{
 		if (!base.gameObject.activeSelf)
@@ -224,33 +224,33 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x040017D2 RID: 6098
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040017D3 RID: 6099
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040017D4 RID: 6100
+	
 	private mainScript mS_;
 
-	// Token: 0x040017D5 RID: 6101
+	
 	private GameObject main_;
 
-	// Token: 0x040017D6 RID: 6102
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040017D7 RID: 6103
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040017D8 RID: 6104
+	
 	private textScript tS_;
 
-	// Token: 0x040017D9 RID: 6105
+	
 	private genres genres_;
 
-	// Token: 0x040017DA RID: 6106
+	
 	private float updateTimer;
 
-	// Token: 0x040017DB RID: 6107
+	
 	private string searchStringA = "";
 }

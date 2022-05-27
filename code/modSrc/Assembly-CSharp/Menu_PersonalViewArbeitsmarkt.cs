@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001E8 RID: 488
+
 public class Menu_PersonalViewArbeitsmarkt : MonoBehaviour
 {
-	// Token: 0x0600127B RID: 4731 RVA: 0x000C3C1E File Offset: 0x000C1E1E
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600127C RID: 4732 RVA: 0x000C3C26 File Offset: 0x000C1E26
+	
 	private void Update()
 	{
 		if (!this.cA_)
@@ -20,7 +20,7 @@ public class Menu_PersonalViewArbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600127D RID: 4733 RVA: 0x000C3C3C File Offset: 0x000C1E3C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class Menu_PersonalViewArbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600127E RID: 4734 RVA: 0x000C3D28 File Offset: 0x000C1F28
+	
 	public void Init(charArbeitsmarkt charArbeitsmarkt_)
 	{
 		this.FindScripts();
@@ -73,7 +73,7 @@ public class Menu_PersonalViewArbeitsmarkt : MonoBehaviour
 		this.uiObjects[10].GetComponent<Text>().text = this.mS_.GetMoney((long)this.cA_.GetGehalt(), true);
 	}
 
-	// Token: 0x0600127F RID: 4735 RVA: 0x000C3EB8 File Offset: 0x000C20B8
+	
 	public void SetBalken(GameObject go, float val, int beruf_)
 	{
 		go.transform.Find("Value").GetComponent<Text>().text = this.mS_.Round(val, 1).ToString();
@@ -92,7 +92,7 @@ public class Menu_PersonalViewArbeitsmarkt : MonoBehaviour
 		go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.5f;
 	}
 
-	// Token: 0x06001280 RID: 4736 RVA: 0x000C3FB4 File Offset: 0x000C21B4
+	
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -110,14 +110,14 @@ public class Menu_PersonalViewArbeitsmarkt : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x06001281 RID: 4737 RVA: 0x000C4028 File Offset: 0x000C2228
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, false);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001282 RID: 4738 RVA: 0x000C4044 File Offset: 0x000C2244
+	
 	public void BUTTON_Einstellen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -144,30 +144,30 @@ public class Menu_PersonalViewArbeitsmarkt : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040016E0 RID: 5856
+	
 	private mainScript mS_;
 
-	// Token: 0x040016E1 RID: 5857
+	
 	private GameObject main_;
 
-	// Token: 0x040016E2 RID: 5858
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040016E3 RID: 5859
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040016E4 RID: 5860
+	
 	private textScript tS_;
 
-	// Token: 0x040016E5 RID: 5861
+	
 	private pickCharacterScript pcS_;
 
-	// Token: 0x040016E6 RID: 5862
+	
 	private charArbeitsmarkt cA_;
 
-	// Token: 0x040016E7 RID: 5863
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040016E8 RID: 5864
+	
 	public GameObject[] uiObjects;
 }

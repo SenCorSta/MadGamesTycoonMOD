@@ -3,16 +3,16 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000281 RID: 641
+
 public class Menu_MultiplayerLobbyInGame : MonoBehaviour
 {
-	// Token: 0x06001914 RID: 6420 RVA: 0x000F91C7 File Offset: 0x000F73C7
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001915 RID: 6421 RVA: 0x000F91D0 File Offset: 0x000F73D0
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_MultiplayerLobbyInGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001916 RID: 6422 RVA: 0x000F92C0 File Offset: 0x000F74C0
+	
 	public void OnEnable()
 	{
 		this.FindScripts();
@@ -63,7 +63,7 @@ public class Menu_MultiplayerLobbyInGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001917 RID: 6423 RVA: 0x000F9324 File Offset: 0x000F7524
+	
 	private void Update()
 	{
 		for (int i = 0; i < this.mpCalls_.playersMP.Count; i++)
@@ -90,30 +90,30 @@ public class Menu_MultiplayerLobbyInGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001C72 RID: 7282
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001C73 RID: 7283
+	
 	public int[] price;
 
-	// Token: 0x04001C74 RID: 7284
+	
 	private GameObject main_;
 
-	// Token: 0x04001C75 RID: 7285
+	
 	private mainScript mS_;
 
-	// Token: 0x04001C76 RID: 7286
+	
 	private textScript tS_;
 
-	// Token: 0x04001C77 RID: 7287
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001C78 RID: 7288
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001C79 RID: 7289
+	
 	private mpCalls mpCalls_;
 
-	// Token: 0x04001C7A RID: 7290
+	
 	private NetworkManager manager;
 }

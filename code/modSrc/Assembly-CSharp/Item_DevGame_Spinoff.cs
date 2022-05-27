@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200008F RID: 143
+
 public class Item_DevGame_Spinoff : MonoBehaviour
 {
-	// Token: 0x060005A6 RID: 1446 RVA: 0x0004AD45 File Offset: 0x00048F45
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060005A7 RID: 1447 RVA: 0x0004AD4D File Offset: 0x00048F4D
+	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060005A8 RID: 1448 RVA: 0x0004AD58 File Offset: 0x00048F58
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_DevGame_Spinoff : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060005A9 RID: 1449 RVA: 0x0004ADA4 File Offset: 0x00048FA4
+	
 	private void SetData()
 	{
 		if (!this.game_)
@@ -53,13 +53,13 @@ public class Item_DevGame_Spinoff : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltipIP();
 	}
 
-	// Token: 0x060005AA RID: 1450 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060005AB RID: 1451 RVA: 0x0004AF7C File Offset: 0x0004917C
+	
 	public void BUTTON_Click()
 	{
 		base.gameObject.SetActive(false);
@@ -68,33 +68,33 @@ public class Item_DevGame_Spinoff : MonoBehaviour
 		this.guiMain_.uiObjects[310].SetActive(false);
 	}
 
-	// Token: 0x040008CE RID: 2254
+	
 	public gameScript game_;
 
-	// Token: 0x040008CF RID: 2255
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040008D0 RID: 2256
+	
 	public mainScript mS_;
 
-	// Token: 0x040008D1 RID: 2257
+	
 	public textScript tS_;
 
-	// Token: 0x040008D2 RID: 2258
+	
 	public sfxScript sfx_;
 
-	// Token: 0x040008D3 RID: 2259
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x040008D4 RID: 2260
+	
 	public tooltip tooltip_;
 
-	// Token: 0x040008D5 RID: 2261
+	
 	public genres genres_;
 
-	// Token: 0x040008D6 RID: 2262
+	
 	public roomScript rS_;
 
-	// Token: 0x040008D7 RID: 2263
+	
 	private float updateTimer;
 }

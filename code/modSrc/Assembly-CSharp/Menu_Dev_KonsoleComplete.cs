@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200015E RID: 350
+
 public class Menu_Dev_KonsoleComplete : MonoBehaviour
 {
-	// Token: 0x06000D13 RID: 3347 RVA: 0x0008F3A3 File Offset: 0x0008D5A3
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000D14 RID: 3348 RVA: 0x0008F3AC File Offset: 0x0008D5AC
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -76,13 +76,13 @@ public class Menu_Dev_KonsoleComplete : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D15 RID: 3349 RVA: 0x0008F3A3 File Offset: 0x0008D5A3
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000D16 RID: 3350 RVA: 0x0008F586 File Offset: 0x0008D786
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -91,7 +91,7 @@ public class Menu_Dev_KonsoleComplete : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D17 RID: 3351 RVA: 0x0008F5A4 File Offset: 0x0008D7A4
+	
 	public void Init(platformScript s1_, taskKonsole s2_)
 	{
 		this.FindScripts();
@@ -106,7 +106,7 @@ public class Menu_Dev_KonsoleComplete : MonoBehaviour
 		this.uiObjects[6].GetComponent<Text>().text = this.tS_.GetText(1612) + ": <b><color=blue>" + this.mS_.GetMoney((long)this.platforms_.GetPerformance(this.pS_), false) + "</color></b>";
 	}
 
-	// Token: 0x06000D18 RID: 3352 RVA: 0x0008F6CA File Offset: 0x0008D8CA
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -114,7 +114,7 @@ public class Menu_Dev_KonsoleComplete : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000D19 RID: 3353 RVA: 0x0008F6F0 File Offset: 0x0008D8F0
+	
 	public void BUTTON_Release()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -124,7 +124,7 @@ public class Menu_Dev_KonsoleComplete : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000D1A RID: 3354 RVA: 0x0008F770 File Offset: 0x0008D970
+	
 	public void BUTTON_Verwerfen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -132,57 +132,57 @@ public class Menu_Dev_KonsoleComplete : MonoBehaviour
 		this.guiMain_.uiObjects[327].GetComponent<Menu_W_Dev_KonsoleVerwerfen>().Init(this.pS_, this.task_);
 	}
 
-	// Token: 0x04001191 RID: 4497
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001192 RID: 4498
+	
 	private GameObject main_;
 
-	// Token: 0x04001193 RID: 4499
+	
 	private mainScript mS_;
 
-	// Token: 0x04001194 RID: 4500
+	
 	private textScript tS_;
 
-	// Token: 0x04001195 RID: 4501
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001196 RID: 4502
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001197 RID: 4503
+	
 	private genres genres_;
 
-	// Token: 0x04001198 RID: 4504
+	
 	private themes themes_;
 
-	// Token: 0x04001199 RID: 4505
+	
 	private licences licences_;
 
-	// Token: 0x0400119A RID: 4506
+	
 	private engineFeatures eF_;
 
-	// Token: 0x0400119B RID: 4507
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x0400119C RID: 4508
+	
 	private unlockScript unlock_;
 
-	// Token: 0x0400119D RID: 4509
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x0400119E RID: 4510
+	
 	private games games_;
 
-	// Token: 0x0400119F RID: 4511
+	
 	private forschungSonstiges forschungSonstiges_;
 
-	// Token: 0x040011A0 RID: 4512
+	
 	private platforms platforms_;
 
-	// Token: 0x040011A1 RID: 4513
+	
 	private platformScript pS_;
 
-	// Token: 0x040011A2 RID: 4514
+	
 	private taskKonsole task_;
 }

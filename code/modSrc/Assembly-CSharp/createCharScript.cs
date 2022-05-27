@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000047 RID: 71
+
 public class createCharScript : MonoBehaviour
 {
-	// Token: 0x06000164 RID: 356 RVA: 0x00002715 File Offset: 0x00000915
+	
 	private void Start()
 	{
 	}
 
-	// Token: 0x06000165 RID: 357 RVA: 0x00015204 File Offset: 0x00013404
+	
 	public characterScript CreateCharacter(int id_, bool male, int forceModel)
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.charMainObject);
@@ -60,18 +60,18 @@ public class createCharScript : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x04000353 RID: 851
+	
 	public GameObject charMainObject;
 
-	// Token: 0x04000354 RID: 852
+	
 	public GameObject[] charGfxMales;
 
-	// Token: 0x04000355 RID: 853
+	
 	public GameObject[] charGfxFemales;
 
-	// Token: 0x04000356 RID: 854
+	
 	public int DEBUG_ForceMesh = -1;
 
-	// Token: 0x04000357 RID: 855
+	
 	public int DEBUG_Sex;
 }

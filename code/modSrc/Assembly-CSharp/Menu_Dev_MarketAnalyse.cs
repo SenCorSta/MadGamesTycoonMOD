@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200013B RID: 315
+
 public class Menu_Dev_MarketAnalyse : MonoBehaviour
 {
-	// Token: 0x06000B80 RID: 2944 RVA: 0x0007CFC7 File Offset: 0x0007B1C7
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000B81 RID: 2945 RVA: 0x0007CFD0 File Offset: 0x0007B1D0
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_Dev_MarketAnalyse : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B82 RID: 2946 RVA: 0x0007D16E File Offset: 0x0007B36E
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -78,7 +78,7 @@ public class Menu_Dev_MarketAnalyse : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B83 RID: 2947 RVA: 0x0007D190 File Offset: 0x0007B390
+	
 	public void Init(gameScript game_)
 	{
 		this.FindScripts();
@@ -118,7 +118,7 @@ public class Menu_Dev_MarketAnalyse : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B84 RID: 2948 RVA: 0x0007D3C8 File Offset: 0x0007B5C8
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -127,48 +127,48 @@ public class Menu_Dev_MarketAnalyse : MonoBehaviour
 		this.guiMain_.uiObjects[195].GetComponent<Menu_Dev_USK>().Init(this.gS_);
 	}
 
-	// Token: 0x04000FC4 RID: 4036
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000FC5 RID: 4037
+	
 	private GameObject main_;
 
-	// Token: 0x04000FC6 RID: 4038
+	
 	private mainScript mS_;
 
-	// Token: 0x04000FC7 RID: 4039
+	
 	private textScript tS_;
 
-	// Token: 0x04000FC8 RID: 4040
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000FC9 RID: 4041
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04000FCA RID: 4042
+	
 	private genres genres_;
 
-	// Token: 0x04000FCB RID: 4043
+	
 	private themes themes_;
 
-	// Token: 0x04000FCC RID: 4044
+	
 	private licences licences_;
 
-	// Token: 0x04000FCD RID: 4045
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04000FCE RID: 4046
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04000FCF RID: 4047
+	
 	private unlockScript unlock_;
 
-	// Token: 0x04000FD0 RID: 4048
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x04000FD1 RID: 4049
+	
 	private games games_;
 
-	// Token: 0x04000FD2 RID: 4050
+	
 	private gameScript gS_;
 }

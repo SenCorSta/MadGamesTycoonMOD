@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200031D RID: 797
+
 public class taskTraining : MonoBehaviour
 {
-	// Token: 0x06001C3A RID: 7226 RVA: 0x00117487 File Offset: 0x00115687
+	
 	private void Awake()
 	{
 		base.transform.position = new Vector3(90f, 0f, 0f);
 	}
 
-	// Token: 0x06001C3B RID: 7227 RVA: 0x001174A8 File Offset: 0x001156A8
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001C3C RID: 7228 RVA: 0x001174B0 File Offset: 0x001156B0
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class taskTraining : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C3D RID: 7229 RVA: 0x00117556 File Offset: 0x00115756
+	
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -51,13 +51,13 @@ public class taskTraining : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001C3E RID: 7230 RVA: 0x00117587 File Offset: 0x00115787
+	
 	public float GetProzent()
 	{
 		return 100f / this.points * (this.points - this.pointsLeft);
 	}
 
-	// Token: 0x06001C3F RID: 7231 RVA: 0x001175A3 File Offset: 0x001157A3
+	
 	public Sprite GetPic()
 	{
 		this.FindScripts();
@@ -68,7 +68,7 @@ public class taskTraining : MonoBehaviour
 		return this.guiMain_.uiObjects[92].GetComponent<Menu_Training_Select>().trainingSprites[this.slot];
 	}
 
-	// Token: 0x06001C40 RID: 7232 RVA: 0x001175D5 File Offset: 0x001157D5
+	
 	public void Work(float f)
 	{
 		if (this.pointsLeft > 0f)
@@ -82,7 +82,7 @@ public class taskTraining : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C41 RID: 7233 RVA: 0x00117610 File Offset: 0x00115810
+	
 	private void Complete()
 	{
 		int roomID_ = -1;
@@ -106,7 +106,7 @@ public class taskTraining : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C42 RID: 7234 RVA: 0x001176F8 File Offset: 0x001158F8
+	
 	private bool DoAutomatic()
 	{
 		if (!this.automatic)
@@ -124,7 +124,7 @@ public class taskTraining : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001C43 RID: 7235 RVA: 0x0011779C File Offset: 0x0011599C
+	
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -141,13 +141,13 @@ public class taskTraining : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001C44 RID: 7236 RVA: 0x001177FB File Offset: 0x001159FB
+	
 	public int GetRueckgeld()
 	{
 		return Mathf.RoundToInt((float)this.guiMain_.uiObjects[92].GetComponent<Menu_Training_Select>().trainingCosts[this.slot] * ((100f - this.GetProzent()) * 0.01f));
 	}
 
-	// Token: 0x06001C45 RID: 7237 RVA: 0x00117838 File Offset: 0x00115A38
+	
 	public void Abbrechen()
 	{
 		int rueckgeld = this.GetRueckgeld();
@@ -168,33 +168,33 @@ public class taskTraining : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0400233E RID: 9022
+	
 	public int myID = -1;
 
-	// Token: 0x0400233F RID: 9023
+	
 	public int slot = -1;
 
-	// Token: 0x04002340 RID: 9024
+	
 	public bool automatic;
 
-	// Token: 0x04002341 RID: 9025
+	
 	public float points;
 
-	// Token: 0x04002342 RID: 9026
+	
 	public float pointsLeft;
 
-	// Token: 0x04002343 RID: 9027
+	
 	private GameObject main_;
 
-	// Token: 0x04002344 RID: 9028
+	
 	private mainScript mS_;
 
-	// Token: 0x04002345 RID: 9029
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002346 RID: 9030
+	
 	private textScript tS_;
 
-	// Token: 0x04002347 RID: 9031
+	
 	private roomDataScript rdS_;
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001B6 RID: 438
+
 public class Menu_MoveObject : MonoBehaviour
 {
-	// Token: 0x0600108B RID: 4235 RVA: 0x000AF3EA File Offset: 0x000AD5EA
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600108C RID: 4236 RVA: 0x000AF3F4 File Offset: 0x000AD5F4
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,14 +44,14 @@ public class Menu_MoveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600108D RID: 4237 RVA: 0x000AF4DA File Offset: 0x000AD6DA
+	
 	private void Update()
 	{
 		this.mS_.snapObject = this.uiObjects[0].GetComponent<Toggle>().isOn;
 		this.mS_.snapRotation = this.uiObjects[4].GetComponent<Toggle>().isOn;
 	}
 
-	// Token: 0x0600108E RID: 4238 RVA: 0x000AF518 File Offset: 0x000AD718
+	
 	public void BUTTON_Sell()
 	{
 		bool flag = false;
@@ -78,7 +78,7 @@ public class Menu_MoveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600108F RID: 4239 RVA: 0x000AF608 File Offset: 0x000AD808
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -94,7 +94,7 @@ public class Menu_MoveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001090 RID: 4240 RVA: 0x000AF720 File Offset: 0x000AD920
+	
 	private void OnDisable()
 	{
 		if (this.mS_)
@@ -103,7 +103,7 @@ public class Menu_MoveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001091 RID: 4241 RVA: 0x000AF73C File Offset: 0x000AD93C
+	
 	private string SetTooltip(int typ)
 	{
 		objectScript component = this.mapS_.prefabsInventar[typ].GetComponent<objectScript>();
@@ -177,7 +177,7 @@ public class Menu_MoveObject : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06001092 RID: 4242 RVA: 0x000AFA9C File Offset: 0x000ADC9C
+	
 	private string GetQualitatStars(int i)
 	{
 		string result;
@@ -208,27 +208,27 @@ public class Menu_MoveObject : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x040014FC RID: 5372
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040014FD RID: 5373
+	
 	private GameObject main_;
 
-	// Token: 0x040014FE RID: 5374
+	
 	private mainScript mS_;
 
-	// Token: 0x040014FF RID: 5375
+	
 	private textScript tS_;
 
-	// Token: 0x04001500 RID: 5376
+	
 	private mapScript mapS_;
 
-	// Token: 0x04001501 RID: 5377
+	
 	private unlockScript unlock_;
 
-	// Token: 0x04001502 RID: 5378
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001503 RID: 5379
+	
 	private sfxScript sfx_;
 }

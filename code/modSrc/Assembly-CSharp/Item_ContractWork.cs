@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000079 RID: 121
+
 public class Item_ContractWork : MonoBehaviour
 {
-	// Token: 0x06000515 RID: 1301 RVA: 0x00047125 File Offset: 0x00045325
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000516 RID: 1302 RVA: 0x0004712D File Offset: 0x0004532D
+	
 	private void Update()
 	{
 		if (!this.contract_)
@@ -22,7 +22,7 @@ public class Item_ContractWork : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000517 RID: 1303 RVA: 0x00047150 File Offset: 0x00045350
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -38,7 +38,7 @@ public class Item_ContractWork : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000518 RID: 1304 RVA: 0x0004719C File Offset: 0x0004539C
+	
 	private void SetData()
 	{
 		if (this.contract_.art != 5 && this.contract_.art != 6)
@@ -76,13 +76,13 @@ public class Item_ContractWork : MonoBehaviour
 		this.tooltip_.c = this.contract_.GetTooltip();
 	}
 
-	// Token: 0x06000519 RID: 1305 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600051A RID: 1306 RVA: 0x0004743A File Offset: 0x0004563A
+	
 	public void BUTTON_Remove()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -93,7 +93,7 @@ public class Item_ContractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600051B RID: 1307 RVA: 0x00047474 File Offset: 0x00045674
+	
 	public void BUTTON_Click()
 	{
 		Menu_Dev_AuftragSelect component = this.guiMain_.uiObjects[96].GetComponent<Menu_Dev_AuftragSelect>();
@@ -115,30 +115,30 @@ public class Item_ContractWork : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x04000801 RID: 2049
+	
 	public contractWork contract_;
 
-	// Token: 0x04000802 RID: 2050
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000803 RID: 2051
+	
 	public mainScript mS_;
 
-	// Token: 0x04000804 RID: 2052
+	
 	public textScript tS_;
 
-	// Token: 0x04000805 RID: 2053
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000806 RID: 2054
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000807 RID: 2055
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000808 RID: 2056
+	
 	private publisherScript pS_;
 
-	// Token: 0x04000809 RID: 2057
+	
 	private float updateTimer;
 }

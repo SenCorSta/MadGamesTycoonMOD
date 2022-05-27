@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000237 RID: 567
+
 public class Menu_Stats_Fanverlauf : MonoBehaviour
 {
-	// Token: 0x060015E2 RID: 5602 RVA: 0x000DE796 File Offset: 0x000DC996
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060015E3 RID: 5603 RVA: 0x000DE7A0 File Offset: 0x000DC9A0
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,19 +44,19 @@ public class Menu_Stats_Fanverlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060015E4 RID: 5604 RVA: 0x000DE886 File Offset: 0x000DCA86
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060015E5 RID: 5605 RVA: 0x000DE88E File Offset: 0x000DCA8E
+	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060015E6 RID: 5606 RVA: 0x000DE898 File Offset: 0x000DCA98
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -76,7 +76,7 @@ public class Menu_Stats_Fanverlauf : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x060015E7 RID: 5607 RVA: 0x000DE920 File Offset: 0x000DCB20
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -112,7 +112,7 @@ public class Menu_Stats_Fanverlauf : MonoBehaviour
 		this.uiObjects[2].GetComponent<Text>().text = this.tS_.GetText(1162) + ": <color=blue>" + this.mS_.GetMoney((long)this.genres_.GetAmountFans(), false) + "</color>";
 	}
 
-	// Token: 0x060015E8 RID: 5608 RVA: 0x000DEB50 File Offset: 0x000DCD50
+	
 	private void InitBalken()
 	{
 		float num = 400f;
@@ -154,46 +154,46 @@ public class Menu_Stats_Fanverlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060015E9 RID: 5609 RVA: 0x000DED80 File Offset: 0x000DCF80
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040019CE RID: 6606
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040019CF RID: 6607
+	
 	public GameObject[] uiBalken;
 
-	// Token: 0x040019D0 RID: 6608
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040019D1 RID: 6609
+	
 	private GameObject main_;
 
-	// Token: 0x040019D2 RID: 6610
+	
 	private mainScript mS_;
 
-	// Token: 0x040019D3 RID: 6611
+	
 	private textScript tS_;
 
-	// Token: 0x040019D4 RID: 6612
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040019D5 RID: 6613
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040019D6 RID: 6614
+	
 	private genres genres_;
 
-	// Token: 0x040019D7 RID: 6615
+	
 	private engineFeatures eF_;
 
-	// Token: 0x040019D8 RID: 6616
+	
 	private engineScript eS_;
 
-	// Token: 0x040019D9 RID: 6617
+	
 	private float updateTimer;
 }

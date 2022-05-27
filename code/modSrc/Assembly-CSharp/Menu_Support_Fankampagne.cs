@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000270 RID: 624
+
 public class Menu_Support_Fankampagne : MonoBehaviour
 {
-	// Token: 0x06001849 RID: 6217 RVA: 0x000F1459 File Offset: 0x000EF659
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600184A RID: 6218 RVA: 0x000F1464 File Offset: 0x000EF664
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600184B RID: 6219 RVA: 0x000F154E File Offset: 0x000EF74E
+	
 	private void Update()
 	{
 		if (this.selectedKampagne == -1)
@@ -55,7 +55,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		this.uiObjects[25].GetComponent<Button>().interactable = true;
 	}
 
-	// Token: 0x0600184C RID: 6220 RVA: 0x000F1584 File Offset: 0x000EF784
+	
 	public void Init(roomScript roomS_)
 	{
 		this.FindScripts();
@@ -76,7 +76,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		this.uiObjects[21].GetComponent<Text>().text = "+" + this.fans[5].ToString();
 	}
 
-	// Token: 0x0600184D RID: 6221 RVA: 0x000F17B0 File Offset: 0x000EF9B0
+	
 	private void SetButtonColor(int i)
 	{
 		this.uiObjects[2].GetComponent<Image>().color = Color.white;
@@ -113,7 +113,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600184E RID: 6222 RVA: 0x000F1944 File Offset: 0x000EFB44
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -121,7 +121,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600184F RID: 6223 RVA: 0x000F196A File Offset: 0x000EFB6A
+	
 	public void BUTTON_Select(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -129,7 +129,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		this.SetButtonColor(i);
 	}
 
-	// Token: 0x06001850 RID: 6224 RVA: 0x000F1988 File Offset: 0x000EFB88
+	
 	public void BUTTON_OK()
 	{
 		if (this.selectedKampagne == -1)
@@ -162,50 +162,50 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001851 RID: 6225 RVA: 0x00002715 File Offset: 0x00000915
+	
 	public void TOGGLE_Auto()
 	{
 	}
 
-	// Token: 0x04001BF0 RID: 7152
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001BF1 RID: 7153
+	
 	public int[] preise;
 
-	// Token: 0x04001BF2 RID: 7154
+	
 	public int[] fans;
 
-	// Token: 0x04001BF3 RID: 7155
+	
 	public int[] workPoints;
 
-	// Token: 0x04001BF4 RID: 7156
+	
 	public Sprite[] sprites;
 
-	// Token: 0x04001BF5 RID: 7157
+	
 	private GameObject main_;
 
-	// Token: 0x04001BF6 RID: 7158
+	
 	private mainScript mS_;
 
-	// Token: 0x04001BF7 RID: 7159
+	
 	private textScript tS_;
 
-	// Token: 0x04001BF8 RID: 7160
+	
 	private unlockScript unlock_;
 
-	// Token: 0x04001BF9 RID: 7161
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001BFA RID: 7162
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001BFB RID: 7163
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04001BFC RID: 7164
+	
 	private roomScript rS_;
 
-	// Token: 0x04001BFD RID: 7165
+	
 	private int selectedKampagne = -1;
 }

@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002D4 RID: 724
+
 public class arcadeProduktionScript : MonoBehaviour
 {
-	// Token: 0x06001A1B RID: 6683 RVA: 0x00109799 File Offset: 0x00107999
+	
 	private void Start()
 	{
 		this.FindScripts();
 		this.DisableAllChilds();
 	}
 
-	// Token: 0x06001A1C RID: 6684 RVA: 0x001097A8 File Offset: 0x001079A8
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -37,7 +37,7 @@ public class arcadeProduktionScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A1D RID: 6685 RVA: 0x00109858 File Offset: 0x00107A58
+	
 	private void Update()
 	{
 		if (!this.force)
@@ -118,7 +118,7 @@ public class arcadeProduktionScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A1E RID: 6686 RVA: 0x00109AFC File Offset: 0x00107CFC
+	
 	private void DisableAllChilds()
 	{
 		for (int i = 0; i < base.transform.childCount; i++)
@@ -130,33 +130,33 @@ public class arcadeProduktionScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400211F RID: 8479
+	
 	public Animation myAnimation;
 
-	// Token: 0x04002120 RID: 8480
+	
 	public bool force;
 
-	// Token: 0x04002121 RID: 8481
+	
 	public GameObject saegeblatt;
 
-	// Token: 0x04002122 RID: 8482
+	
 	public GameObject saegeplattPartikel;
 
-	// Token: 0x04002123 RID: 8483
+	
 	private GameObject main_;
 
-	// Token: 0x04002124 RID: 8484
+	
 	private roomScript roomS_;
 
-	// Token: 0x04002125 RID: 8485
+	
 	private mapScript mapS_;
 
-	// Token: 0x04002126 RID: 8486
+	
 	private mainScript mS_;
 
-	// Token: 0x04002127 RID: 8487
+	
 	private objectScript oS_;
 
-	// Token: 0x04002128 RID: 8488
+	
 	private characterScript charS_;
 }

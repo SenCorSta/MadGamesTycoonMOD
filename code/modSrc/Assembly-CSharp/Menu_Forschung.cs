@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000159 RID: 345
+
 public class Menu_Forschung : MonoBehaviour
 {
-	// Token: 0x06000CB3 RID: 3251 RVA: 0x00089D87 File Offset: 0x00087F87
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000CB4 RID: 3252 RVA: 0x00089D90 File Offset: 0x00087F90
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -77,7 +77,7 @@ public class Menu_Forschung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CB5 RID: 3253 RVA: 0x00089F68 File Offset: 0x00088168
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -86,14 +86,14 @@ public class Menu_Forschung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CB6 RID: 3254 RVA: 0x00089F9A File Offset: 0x0008819A
+	
 	private void OnEnable()
 	{
 		this.uiObjects[7].GetComponent<InputField>().text = "";
 		this.FindScripts();
 	}
 
-	// Token: 0x06000CB7 RID: 3255 RVA: 0x00089FBC File Offset: 0x000881BC
+	
 	public int GetAmountForschung(int i, bool getUnerforschtesObjekt)
 	{
 		this.FindScripts();
@@ -308,7 +308,7 @@ public class Menu_Forschung : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000CB8 RID: 3256 RVA: 0x0008A460 File Offset: 0x00088660
+	
 	public void Init(int roomID_, int i)
 	{
 		this.FindScripts();
@@ -635,7 +635,7 @@ public class Menu_Forschung : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06000CB9 RID: 3257 RVA: 0x0008B31C File Offset: 0x0008951C
+	
 	private void CreateItem(int id_)
 	{
 		if (!this.fS_.IsErforscht(id_))
@@ -651,7 +651,7 @@ public class Menu_Forschung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CBA RID: 3258 RVA: 0x0008B3B0 File Offset: 0x000895B0
+	
 	public void BUTTON_Search()
 	{
 		if (!base.gameObject.activeSelf)
@@ -666,7 +666,7 @@ public class Menu_Forschung : MonoBehaviour
 		this.Init(this.roomID, this.forschungsTyp);
 	}
 
-	// Token: 0x06000CBB RID: 3259 RVA: 0x0008B430 File Offset: 0x00089630
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -674,7 +674,7 @@ public class Menu_Forschung : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000CBC RID: 3260 RVA: 0x0008B458 File Offset: 0x00089658
+	
 	public void InitDropdowns()
 	{
 		int value = 0;
@@ -719,7 +719,7 @@ public class Menu_Forschung : MonoBehaviour
 		this.uiObjects[6].GetComponent<Dropdown>().value = value;
 	}
 
-	// Token: 0x06000CBD RID: 3261 RVA: 0x0008B5A8 File Offset: 0x000897A8
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[6].GetComponent<Dropdown>().value;
@@ -875,63 +875,63 @@ public class Menu_Forschung : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x0400112C RID: 4396
+	
 	private mainScript mS_;
 
-	// Token: 0x0400112D RID: 4397
+	
 	private GameObject main_;
 
-	// Token: 0x0400112E RID: 4398
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400112F RID: 4399
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001130 RID: 4400
+	
 	private textScript tS_;
 
-	// Token: 0x04001131 RID: 4401
+	
 	private genres genres_;
 
-	// Token: 0x04001132 RID: 4402
+	
 	private themes themes_;
 
-	// Token: 0x04001133 RID: 4403
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04001134 RID: 4404
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x04001135 RID: 4405
+	
 	private hardware hardware_;
 
-	// Token: 0x04001136 RID: 4406
+	
 	private hardwareFeatures hardwareFeature_;
 
-	// Token: 0x04001137 RID: 4407
+	
 	private unlockScript unlock_;
 
-	// Token: 0x04001138 RID: 4408
+	
 	private forschungSonstiges fS_;
 
-	// Token: 0x04001139 RID: 4409
+	
 	private copyProtect copyProtect_;
 
-	// Token: 0x0400113A RID: 4410
+	
 	public int roomID = -1;
 
-	// Token: 0x0400113B RID: 4411
+	
 	private int forschungsTyp;
 
-	// Token: 0x0400113C RID: 4412
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x0400113D RID: 4413
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400113E RID: 4414
+	
 	public InputField myInputField;
 
-	// Token: 0x0400113F RID: 4415
+	
 	private string searchStringA = "";
 }

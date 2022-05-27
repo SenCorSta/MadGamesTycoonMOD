@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200003E RID: 62
+
 public class ui_suimonoFps : MonoBehaviour
 {
-	// Token: 0x060000DF RID: 223 RVA: 0x0000AF58 File Offset: 0x00009158
+	
 	private void Start()
 	{
 		base.InvokeRepeating("SetType", 0.1f, 0.5f);
 	}
 
-	// Token: 0x060000E0 RID: 224 RVA: 0x0000AF70 File Offset: 0x00009170
+	
 	private void LateUpdate()
 	{
 		if (this.showFPS)
@@ -33,7 +33,7 @@ public class ui_suimonoFps : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000E1 RID: 225 RVA: 0x0000B004 File Offset: 0x00009204
+	
 	private void SetType()
 	{
 		if (this.textObj_fps != null && this.accum > 0f && this.frames > 0f)
@@ -42,21 +42,21 @@ public class ui_suimonoFps : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000257 RID: 599
+	
 	public Text textObj_fps;
 
-	// Token: 0x04000258 RID: 600
+	
 	public bool showFPS = true;
 
-	// Token: 0x04000259 RID: 601
+	
 	private float updateInterval = 0.5f;
 
-	// Token: 0x0400025A RID: 602
+	
 	private float accum;
 
-	// Token: 0x0400025B RID: 603
+	
 	private float frames;
 
-	// Token: 0x0400025C RID: 604
+	
 	private float timeleft;
 }

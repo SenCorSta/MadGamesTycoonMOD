@@ -4,29 +4,29 @@ using UnityEngine;
 
 namespace ReachableGames.PostLinerPro
 {
-	// Token: 0x020003F4 RID: 1012
+	
 	[ExecuteInEditMode]
 	public class PostLinerRenderer : MonoBehaviour
 	{
-		// Token: 0x06002404 RID: 9220 RVA: 0x001739AA File Offset: 0x00171BAA
+		
 		private void Awake()
 		{
 			PostLinerRenderer.Instance = null;
 		}
 
-		// Token: 0x06002405 RID: 9221 RVA: 0x001739B2 File Offset: 0x00171BB2
+		
 		private void Start()
 		{
 			PostLinerRenderer.Instance = this;
 		}
 
-		// Token: 0x06002406 RID: 9222 RVA: 0x001739AA File Offset: 0x00171BAA
+		
 		private void OnDestroy()
 		{
 			PostLinerRenderer.Instance = null;
 		}
 
-		// Token: 0x06002407 RID: 9223 RVA: 0x001739BA File Offset: 0x00171BBA
+		
 		public void ClearAllOutlines()
 		{
 			this._recursiveList.Clear();
@@ -34,7 +34,7 @@ namespace ReachableGames.PostLinerPro
 			this._objectLayers.Clear();
 		}
 
-		// Token: 0x06002408 RID: 9224 RVA: 0x001739DD File Offset: 0x00171BDD
+		
 		public void AddToOutlines(Transform t)
 		{
 			this.DoRecursive(t, delegate(Transform o)
@@ -43,7 +43,7 @@ namespace ReachableGames.PostLinerPro
 			});
 		}
 
-		// Token: 0x06002409 RID: 9225 RVA: 0x001739F2 File Offset: 0x00171BF2
+		
 		public void RemoveFromOutlines(Transform t)
 		{
 			this.DoRecursive(t, delegate(Transform o)
@@ -52,7 +52,7 @@ namespace ReachableGames.PostLinerPro
 			});
 		}
 
-		// Token: 0x0600240A RID: 9226 RVA: 0x00173A08 File Offset: 0x00171C08
+		
 		private void DoRecursive(Transform root, PostLinerRenderer.DoAction action)
 		{
 			this._recursiveList.Clear();
@@ -69,13 +69,13 @@ namespace ReachableGames.PostLinerPro
 			}
 		}
 
-		// Token: 0x0600240B RID: 9227 RVA: 0x00173A9C File Offset: 0x00171C9C
+		
 		public void OnPreRender()
 		{
 			this.UpdateRenderTexture(Camera.current);
 		}
 
-		// Token: 0x0600240C RID: 9228 RVA: 0x00173AAC File Offset: 0x00171CAC
+		
 		private void UpdateRenderTexture(Camera c)
 		{
 			if (c.depthTextureMode == DepthTextureMode.None)
@@ -142,33 +142,33 @@ namespace ReachableGames.PostLinerPro
 			goto IL_92;
 		}
 
-		// Token: 0x04002E23 RID: 11811
+		
 		[HideInInspector]
 		public int _outlineLayer;
 
-		// Token: 0x04002E24 RID: 11812
+		
 		private Camera _hiddenCamera;
 
-		// Token: 0x04002E25 RID: 11813
+		
 		private RenderTexture _renderTexture;
 
-		// Token: 0x04002E26 RID: 11814
+		
 		private static int _globalTextureId = Shader.PropertyToID("_OutlineDepth");
 
-		// Token: 0x04002E27 RID: 11815
+		
 		private HashSet<Transform> _outlineObjects = new HashSet<Transform>();
 
-		// Token: 0x04002E28 RID: 11816
+		
 		private List<int> _objectLayers = new List<int>();
 
-		// Token: 0x04002E29 RID: 11817
+		
 		public static PostLinerRenderer Instance = null;
 
-		// Token: 0x04002E2A RID: 11818
+		
 		private Queue<Transform> _recursiveList = new Queue<Transform>();
 
-		// Token: 0x020003F5 RID: 1013
-		// (Invoke) Token: 0x06002412 RID: 9234
+		
+		// (Invoke) Token: 0x060023BF RID: 9151
 		private delegate void DoAction(Transform g);
 	}
 }

@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000104 RID: 260
+
 public class Item_Training_Kurs : MonoBehaviour
 {
-	// Token: 0x06000863 RID: 2147 RVA: 0x0005A6D9 File Offset: 0x000588D9
+	
 	private void Start()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x06000864 RID: 2148 RVA: 0x0005A6E8 File Offset: 0x000588E8
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Item_Training_Kurs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000865 RID: 2149 RVA: 0x0005A7B8 File Offset: 0x000589B8
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.tS_.GetText(538 + this.myID);
@@ -53,7 +53,7 @@ public class Item_Training_Kurs : MonoBehaviour
 		this.uiObjects[4].GetComponent<Text>().text = this.tS_.GetText(563 + this.menuTraining_.trainingEffekt[this.myID]);
 	}
 
-	// Token: 0x06000866 RID: 2150 RVA: 0x0005A8D0 File Offset: 0x00058AD0
+	
 	public void BUTTON_Click()
 	{
 		if (!this.menuTraining_.rS_)
@@ -76,27 +76,27 @@ public class Item_Training_Kurs : MonoBehaviour
 		this.menuTraining_.BUTTON_Close();
 	}
 
-	// Token: 0x04000CB8 RID: 3256
+	
 	public int myID;
 
-	// Token: 0x04000CB9 RID: 3257
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000CBA RID: 3258
+	
 	private GameObject main_;
 
-	// Token: 0x04000CBB RID: 3259
+	
 	private mainScript mS_;
 
-	// Token: 0x04000CBC RID: 3260
+	
 	private textScript tS_;
 
-	// Token: 0x04000CBD RID: 3261
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04000CBE RID: 3262
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000CBF RID: 3263
+	
 	private Menu_Training_Select menuTraining_;
 }

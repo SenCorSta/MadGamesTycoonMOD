@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000193 RID: 403
+
 public class Menu_Firmenlogo : MonoBehaviour
 {
-	// Token: 0x06000F52 RID: 3922 RVA: 0x000A22AE File Offset: 0x000A04AE
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F53 RID: 3923 RVA: 0x000A22B8 File Offset: 0x000A04B8
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_Firmenlogo : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F54 RID: 3924 RVA: 0x000A2362 File Offset: 0x000A0562
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -45,13 +45,13 @@ public class Menu_Firmenlogo : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F55 RID: 3925 RVA: 0x000A2394 File Offset: 0x000A0594
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06000F56 RID: 3926 RVA: 0x000A239C File Offset: 0x000A059C
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -80,7 +80,7 @@ public class Menu_Firmenlogo : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[4]);
 	}
 
-	// Token: 0x06000F57 RID: 3927 RVA: 0x000A24A4 File Offset: 0x000A06A4
+	
 	private bool LogoUsed(int id_)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
@@ -94,31 +94,31 @@ public class Menu_Firmenlogo : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000F58 RID: 3928 RVA: 0x000A24E7 File Offset: 0x000A06E7
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001399 RID: 5017
+	
 	private mainScript mS_;
 
-	// Token: 0x0400139A RID: 5018
+	
 	private GameObject main_;
 
-	// Token: 0x0400139B RID: 5019
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400139C RID: 5020
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400139D RID: 5021
+	
 	private textScript tS_;
 
-	// Token: 0x0400139E RID: 5022
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x0400139F RID: 5023
+	
 	public GameObject[] uiObjects;
 }

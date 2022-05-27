@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200031E RID: 798
+
 public class taskUnterstuetzen : MonoBehaviour
 {
-	// Token: 0x06001C47 RID: 7239 RVA: 0x00117901 File Offset: 0x00115B01
+	
 	private void Awake()
 	{
 		base.transform.position = new Vector3(250f, 0f, 0f);
 	}
 
-	// Token: 0x06001C48 RID: 7240 RVA: 0x00117922 File Offset: 0x00115B22
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001C49 RID: 7241 RVA: 0x0011792C File Offset: 0x00115B2C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class taskUnterstuetzen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C4A RID: 7242 RVA: 0x00117A30 File Offset: 0x00115C30
+	
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -63,13 +63,13 @@ public class taskUnterstuetzen : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001C4B RID: 7243 RVA: 0x00117A61 File Offset: 0x00115C61
+	
 	private void Update()
 	{
 		this.FindMyRoom();
 	}
 
-	// Token: 0x06001C4C RID: 7244 RVA: 0x00117A6C File Offset: 0x00115C6C
+	
 	private void FindMyRoom()
 	{
 		if (!this.rS_)
@@ -84,64 +84,64 @@ public class taskUnterstuetzen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C4D RID: 7245 RVA: 0x00117AC1 File Offset: 0x00115CC1
+	
 	public bool IsCrunchtime()
 	{
 		return this.rS_ && this.rS_.IsCrunchtimeRead();
 	}
 
-	// Token: 0x06001C4E RID: 7246 RVA: 0x00002715 File Offset: 0x00000915
+	
 	public void Work(float f, int what)
 	{
 	}
 
-	// Token: 0x06001C4F RID: 7247 RVA: 0x00002715 File Offset: 0x00000915
+	
 	private void CompleteFeature()
 	{
 	}
 
-	// Token: 0x06001C50 RID: 7248 RVA: 0x00002715 File Offset: 0x00000915
+	
 	private void Complete()
 	{
 	}
 
-	// Token: 0x06001C51 RID: 7249 RVA: 0x00117ADD File Offset: 0x00115CDD
+	
 	public void Abbrechen()
 	{
 		this.FindScripts();
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04002348 RID: 9032
+	
 	public int myID = -1;
 
-	// Token: 0x04002349 RID: 9033
+	
 	public int roomID = -1;
 
-	// Token: 0x0400234A RID: 9034
+	
 	public roomScript rS_;
 
-	// Token: 0x0400234B RID: 9035
+	
 	private GameObject main_;
 
-	// Token: 0x0400234C RID: 9036
+	
 	private mainScript mS_;
 
-	// Token: 0x0400234D RID: 9037
+	
 	private engineFeatures eF_;
 
-	// Token: 0x0400234E RID: 9038
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x0400234F RID: 9039
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002350 RID: 9040
+	
 	private textScript tS_;
 
-	// Token: 0x04002351 RID: 9041
+	
 	private roomDataScript rdS_;
 
-	// Token: 0x04002352 RID: 9042
+	
 	private sfxScript sfx_;
 }

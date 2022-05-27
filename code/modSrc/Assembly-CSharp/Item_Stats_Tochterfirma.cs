@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000FC RID: 252
+
 public class Item_Stats_Tochterfirma : MonoBehaviour
 {
-	// Token: 0x06000834 RID: 2100 RVA: 0x0005949B File Offset: 0x0005769B
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000835 RID: 2101 RVA: 0x000594A3 File Offset: 0x000576A3
+	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000836 RID: 2102 RVA: 0x000594AC File Offset: 0x000576AC
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_Stats_Tochterfirma : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000837 RID: 2103 RVA: 0x000594F8 File Offset: 0x000576F8
+	
 	private void SetData()
 	{
 		if (!this.pS_)
@@ -88,13 +88,13 @@ public class Item_Stats_Tochterfirma : MonoBehaviour
 		this.uiObjects[9].GetComponent<Text>().text = this.tS_.GetText(1947);
 	}
 
-	// Token: 0x06000838 RID: 2104 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000839 RID: 2105 RVA: 0x000597A8 File Offset: 0x000579A8
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -102,33 +102,33 @@ public class Item_Stats_Tochterfirma : MonoBehaviour
 		this.guiMain_.uiObjects[387].GetComponent<Menu_Stats_Tochterfirma_Main>().Init(this.pS_);
 	}
 
-	// Token: 0x04000C6E RID: 3182
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000C6F RID: 3183
+	
 	public mainScript mS_;
 
-	// Token: 0x04000C70 RID: 3184
+	
 	public textScript tS_;
 
-	// Token: 0x04000C71 RID: 3185
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000C72 RID: 3186
+	
 	public genres genres_;
 
-	// Token: 0x04000C73 RID: 3187
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000C74 RID: 3188
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000C75 RID: 3189
+	
 	public publisherScript pS_;
 
-	// Token: 0x04000C76 RID: 3190
+	
 	public int playerID = -1;
 
-	// Token: 0x04000C77 RID: 3191
+	
 	private float updateTimer;
 }

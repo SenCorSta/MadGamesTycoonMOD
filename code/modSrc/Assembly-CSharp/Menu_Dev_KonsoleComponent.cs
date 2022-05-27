@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200015F RID: 351
+
 public class Menu_Dev_KonsoleComponent : MonoBehaviour
 {
-	// Token: 0x06000D1C RID: 3356 RVA: 0x0008F7CD File Offset: 0x0008D9CD
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000D1D RID: 3357 RVA: 0x0008F7D8 File Offset: 0x0008D9D8
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -49,7 +49,7 @@ public class Menu_Dev_KonsoleComponent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D1E RID: 3358 RVA: 0x0008F8E7 File Offset: 0x0008DAE7
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -58,7 +58,7 @@ public class Menu_Dev_KonsoleComponent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D1F RID: 3359 RVA: 0x0008F91C File Offset: 0x0008DB1C
+	
 	public void Init(int compTyp_, int platTyp_)
 	{
 		this.typ = compTyp_;
@@ -103,7 +103,7 @@ public class Menu_Dev_KonsoleComponent : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[6]);
 	}
 
-	// Token: 0x06000D20 RID: 3360 RVA: 0x0008FB20 File Offset: 0x0008DD20
+	
 	private void CreateItems(int typ_)
 	{
 		for (int i = 0; i < this.hardware_.hardware_UNLOCK.Length; i++)
@@ -121,12 +121,11 @@ public class Menu_Dev_KonsoleComponent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D21 RID: 3361 RVA: 0x0008FC34 File Offset: 0x0008DE34
+	
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[5].name);
 		List<string> list = new List<string>();
-		list.Add(this.tS_.GetText(183));
 		list.Add(this.tS_.GetText(1604));
 		list.Add(this.tS_.GetText(6));
 		list.Add(this.tS_.GetText(4));
@@ -135,7 +134,7 @@ public class Menu_Dev_KonsoleComponent : MonoBehaviour
 		this.uiObjects[5].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06000D22 RID: 3362 RVA: 0x0008FCE4 File Offset: 0x0008DEE4
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[5].GetComponent<Dropdown>().value;
@@ -150,68 +149,60 @@ public class Menu_Dev_KonsoleComponent : MonoBehaviour
 				switch (value)
 				{
 				case 0:
-					gameObject.name = this.hardware_.GetName(component.myID).ToString();
-					break;
-				case 1:
 					gameObject.name = this.hardware_.GetPerformance(component.myID).ToString();
 					break;
-				case 2:
+				case 1:
 					gameObject.name = this.hardware_.GetDevCosts(component.myID).ToString();
 					break;
-				case 3:
+				case 2:
 					gameObject.name = this.hardware_.hardware_TECH[component.myID].ToString();
 					break;
 				}
 			}
 		}
-		if (value == 0)
-		{
-			this.mS_.SortChildrenByName(this.uiObjects[0]);
-			return;
-		}
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06000D23 RID: 3363 RVA: 0x0008FE34 File Offset: 0x0008E034
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040011A3 RID: 4515
+	
 	private mainScript mS_;
 
-	// Token: 0x040011A4 RID: 4516
+	
 	private GameObject main_;
 
-	// Token: 0x040011A5 RID: 4517
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040011A6 RID: 4518
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040011A7 RID: 4519
+	
 	private textScript tS_;
 
-	// Token: 0x040011A8 RID: 4520
+	
 	private engineFeatures eF_;
 
-	// Token: 0x040011A9 RID: 4521
+	
 	private Menu_Dev_Konsole menu_;
 
-	// Token: 0x040011AA RID: 4522
+	
 	private hardware hardware_;
 
-	// Token: 0x040011AB RID: 4523
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040011AC RID: 4524
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040011AD RID: 4525
+	
 	public int typ;
 
-	// Token: 0x040011AE RID: 4526
+	
 	public int platformTyp;
 }

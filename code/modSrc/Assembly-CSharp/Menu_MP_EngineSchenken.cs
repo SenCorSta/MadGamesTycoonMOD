@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001C4 RID: 452
+
 public class Menu_MP_EngineSchenken : MonoBehaviour
 {
-	// Token: 0x06001105 RID: 4357 RVA: 0x000B4A37 File Offset: 0x000B2C37
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001106 RID: 4358 RVA: 0x000B4A40 File Offset: 0x000B2C40
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -49,7 +49,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001107 RID: 4359 RVA: 0x000B4B48 File Offset: 0x000B2D48
+	
 	private void OnEnable()
 	{
 		this.selectedEngine = null;
@@ -59,7 +59,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		this.InitPlayerButtons();
 	}
 
-	// Token: 0x06001108 RID: 4360 RVA: 0x000B4B6C File Offset: 0x000B2D6C
+	
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -78,7 +78,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001109 RID: 4361 RVA: 0x000B4C7C File Offset: 0x000B2E7C
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -97,7 +97,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x0600110A RID: 4362 RVA: 0x000B4CFC File Offset: 0x000B2EFC
+	
 	public void UpdatePlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -116,7 +116,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600110B RID: 4363 RVA: 0x000B4D6C File Offset: 0x000B2F6C
+	
 	public void InitPlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -129,7 +129,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		for (int j = 0; j < this.mpCalls_.playersMP.Count; j++)
 		{
 			int playerID = this.mpCalls_.playersMP[j].playerID;
-			if (playerID == this.mS_.myID)
+			if (playerID == this.mpCalls_.myID)
 			{
 				if (this.uiPlayerButtons[j].activeSelf)
 				{
@@ -152,14 +152,14 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600110C RID: 4364 RVA: 0x000B4E97 File Offset: 0x000B3097
+	
 	public void BUTTON_Player(int p)
 	{
 		this.sfx_.PlaySound(12, true);
 		this.selectedPlayer = p;
 	}
 
-	// Token: 0x0600110D RID: 4365 RVA: 0x000B4EB0 File Offset: 0x000B30B0
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -175,7 +175,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600110E RID: 4366 RVA: 0x000B4EFC File Offset: 0x000B30FC
+	
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -188,7 +188,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600110F RID: 4367 RVA: 0x000B4F58 File Offset: 0x000B3158
+	
 	public void Init()
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
@@ -198,7 +198,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001110 RID: 4368 RVA: 0x000B4FA8 File Offset: 0x000B31A8
+	
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Engine");
@@ -207,7 +207,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 			if (array[i])
 			{
 				engineScript component = array[i].GetComponent<engineScript>();
-				if (component && component.myID != 0 && component.ownerID == this.mS_.myID && component.Complete() && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && component.myID != 0 && component.playerEngine && component.Complete() && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_EngineSchenken component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_EngineSchenken>();
 					component2.eS_ = component;
@@ -225,7 +225,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[4]);
 	}
 
-	// Token: 0x06001111 RID: 4369 RVA: 0x000B50E8 File Offset: 0x000B32E8
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -274,14 +274,14 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06001112 RID: 4370 RVA: 0x000B529B File Offset: 0x000B349B
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001113 RID: 4371 RVA: 0x000B52B8 File Offset: 0x000B34B8
+	
 	public void BUTTON_Ok()
 	{
 		if (!this.selectedEngine)
@@ -295,7 +295,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		this.sfx_.PlaySound(3, true);
 		if (this.mpCalls_.isServer)
 		{
-			this.mpCalls_.SERVER_Send_Help(this.mS_.myID, this.mpCalls_.playersMP[this.selectedPlayer].playerID, 1, this.selectedEngine.myID, 0, 0);
+			this.mpCalls_.SERVER_Send_Help(this.mpCalls_.myID, this.mpCalls_.playersMP[this.selectedPlayer].playerID, 1, this.selectedEngine.myID, 0, 0);
 		}
 		else
 		{
@@ -308,45 +308,45 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0400158E RID: 5518
+	
 	private mainScript mS_;
 
-	// Token: 0x0400158F RID: 5519
+	
 	private GameObject main_;
 
-	// Token: 0x04001590 RID: 5520
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001591 RID: 5521
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001592 RID: 5522
+	
 	private textScript tS_;
 
-	// Token: 0x04001593 RID: 5523
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04001594 RID: 5524
+	
 	private genres genres_;
 
-	// Token: 0x04001595 RID: 5525
+	
 	private mpCalls mpCalls_;
 
-	// Token: 0x04001596 RID: 5526
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001597 RID: 5527
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001598 RID: 5528
+	
 	public GameObject[] uiPlayerButtons;
 
-	// Token: 0x04001599 RID: 5529
+	
 	public int selectedPlayer = -1;
 
-	// Token: 0x0400159A RID: 5530
+	
 	public engineScript selectedEngine;
 
-	// Token: 0x0400159B RID: 5531
+	
 	private float updateTimer;
 }

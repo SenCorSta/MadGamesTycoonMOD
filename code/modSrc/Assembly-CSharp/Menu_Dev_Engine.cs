@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200010C RID: 268
+
 public class Menu_Dev_Engine : MonoBehaviour
 {
-	// Token: 0x060008A5 RID: 2213 RVA: 0x0005E603 File Offset: 0x0005C803
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060008A6 RID: 2214 RVA: 0x0005E60C File Offset: 0x0005C80C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -48,7 +48,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008A7 RID: 2215 RVA: 0x0005E714 File Offset: 0x0005C914
+	
 	private void Update()
 	{
 		this.UpdateFeatureData();
@@ -57,7 +57,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		this.uiObjects[11].GetComponent<Text>().text = this.tS_.GetText(4) + " " + this.techLevel.ToString();
 	}
 
-	// Token: 0x060008A8 RID: 2216 RVA: 0x0005E7D4 File Offset: 0x0005C9D4
+	
 	private void UpdateLockedFeatures()
 	{
 		this.featuresLock[0] = true;
@@ -66,7 +66,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		this.featuresLock[46] = true;
 	}
 
-	// Token: 0x060008A9 RID: 2217 RVA: 0x0005E800 File Offset: 0x0005CA00
+	
 	private void UpdateFeatureData()
 	{
 		this.featureAnzahl = 0;
@@ -89,7 +89,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008AA RID: 2218 RVA: 0x0005E8A4 File Offset: 0x0005CAA4
+	
 	public void Init(roomScript script_)
 	{
 		this.FindScripts();
@@ -105,7 +105,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		this.UpdateLockedFeatures();
 	}
 
-	// Token: 0x060008AB RID: 2219 RVA: 0x0005E92C File Offset: 0x0005CB2C
+	
 	public void InitUpdateEngine(roomScript scriptRoom_, engineScript scriptEngine_)
 	{
 		this.FindScripts();
@@ -135,7 +135,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		this.UpdateLockedFeatures();
 	}
 
-	// Token: 0x060008AC RID: 2220 RVA: 0x0005EA94 File Offset: 0x0005CC94
+	
 	private void InitArray()
 	{
 		if (this.features.Length != this.eF_.engineFeatures_TYP.Length)
@@ -148,7 +148,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008AD RID: 2221 RVA: 0x0005EB00 File Offset: 0x0005CD00
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -165,28 +165,28 @@ public class Menu_Dev_Engine : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060008AE RID: 2222 RVA: 0x0005EB8B File Offset: 0x0005CD8B
+	
 	public void BUTTON_RandomEngineName()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.uiObjects[4].GetComponent<InputField>().text = this.tS_.GetRandomEngineName();
 	}
 
-	// Token: 0x060008AF RID: 2223 RVA: 0x0005EBB7 File Offset: 0x0005CDB7
+	
 	public void BUTTON_Preis(int i)
 	{
 		this.sfx_.PlaySound(3, true);
 		this.uiObjects[2].GetComponent<Slider>().value += (float)i;
 	}
 
-	// Token: 0x060008B0 RID: 2224 RVA: 0x0005EBE1 File Offset: 0x0005CDE1
+	
 	public void BUTTON_Gewinnbeteiligung(int i)
 	{
 		this.sfx_.PlaySound(3, true);
 		this.uiObjects[3].GetComponent<Slider>().value += (float)i;
 	}
 
-	// Token: 0x060008B1 RID: 2225 RVA: 0x0005EC0B File Offset: 0x0005CE0B
+	
 	public void BUTTON_Spezialgenre()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -194,7 +194,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		this.guiMain_.uiObjects[38].GetComponent<Menu_Dev_Engine_Genre>().Init();
 	}
 
-	// Token: 0x060008B2 RID: 2226 RVA: 0x0005EC4C File Offset: 0x0005CE4C
+	
 	public void BUTTON_Spezialplatform()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -202,7 +202,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		this.guiMain_.uiObjects[237].GetComponent<Menu_Dev_EnginePlatform>().Init();
 	}
 
-	// Token: 0x060008B3 RID: 2227 RVA: 0x0005EC9D File Offset: 0x0005CE9D
+	
 	public void BUTTON_Features()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -210,7 +210,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		this.guiMain_.uiObjects[39].GetComponent<Menu_Dev_EngineFeatures>().Init();
 	}
 
-	// Token: 0x060008B4 RID: 2228 RVA: 0x0005ECE0 File Offset: 0x0005CEE0
+	
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -259,7 +259,11 @@ public class Menu_Dev_Engine : MonoBehaviour
 			engineScript engineScript = this.eF_.CreateEngine();
 			engineScript.myID = this.mS_.GetNewID();
 			engineScript.myName = this.uiObjects[4].GetComponent<InputField>().text;
-			engineScript.ownerID = this.mS_.myID;
+			engineScript.playerEngine = true;
+			if (this.mS_.multiplayer)
+			{
+				engineScript.multiplayerSlot = this.mS_.mpCalls_.myID;
+			}
 			engineScript.spezialgenre = this.spezialgenre;
 			engineScript.spezialplatform = this.spezialplatform;
 			engineScript.spezialplatformUpdate = this.spezialplatform;
@@ -327,25 +331,25 @@ public class Menu_Dev_Engine : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060008B5 RID: 2229 RVA: 0x0005F204 File Offset: 0x0005D404
+	
 	public void SLIDER_Preis()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.mS_.GetMoney((long)Mathf.RoundToInt(this.uiObjects[2].GetComponent<Slider>().value * 1000f), true);
 	}
 
-	// Token: 0x060008B6 RID: 2230 RVA: 0x0005F244 File Offset: 0x0005D444
+	
 	public void SLIDER_Gewinnbeteiligung()
 	{
 		this.uiObjects[1].GetComponent<Text>().text = Mathf.RoundToInt(this.uiObjects[3].GetComponent<Slider>().value).ToString() + "%";
 	}
 
-	// Token: 0x060008B7 RID: 2231 RVA: 0x0005F28C File Offset: 0x0005D48C
+	
 	public void TOGGLE_EngineVerkaufen()
 	{
 		this.sfx_.PlaySound(12, true);
 	}
 
-	// Token: 0x060008B8 RID: 2232 RVA: 0x0005F29C File Offset: 0x0005D49C
+	
 	public void SetSpezialgenre(int i)
 	{
 		if (i >= 0)
@@ -363,7 +367,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 		this.guiMain_.DrawStars(this.uiObjects[8], 0);
 	}
 
-	// Token: 0x060008B9 RID: 2233 RVA: 0x0005F3B8 File Offset: 0x0005D5B8
+	
 	public void SetSpezialplatform(int i)
 	{
 		if (i < 0)
@@ -392,27 +396,27 @@ public class Menu_Dev_Engine : MonoBehaviour
 		this.SetSpezialplatform(-1);
 	}
 
-	// Token: 0x060008BA RID: 2234 RVA: 0x0005F540 File Offset: 0x0005D740
+	
 	public void SetFeature(int i, bool b)
 	{
 		this.features[i] = b;
 	}
 
-	// Token: 0x060008BB RID: 2235 RVA: 0x0005F54B File Offset: 0x0005D74B
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.cmS_.disableMovement = true;
 	}
 
-	// Token: 0x060008BC RID: 2236 RVA: 0x0005F55F File Offset: 0x0005D75F
+	
 	private void OnDisable()
 	{
 		this.FindScripts();
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x060008BD RID: 2237 RVA: 0x0005F574 File Offset: 0x0005D774
+	
 	private void DeleteAllDatas()
 	{
 		this.uiObjects[4].GetComponent<InputField>().text = "";
@@ -426,64 +430,64 @@ public class Menu_Dev_Engine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008BE RID: 2238 RVA: 0x0005F5D2 File Offset: 0x0005D7D2
+	
 	public void BUTTON_PlatformKaufen()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[33]);
 	}
 
-	// Token: 0x04000D29 RID: 3369
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000D2A RID: 3370
+	
 	private roomScript rS_;
 
-	// Token: 0x04000D2B RID: 3371
+	
 	private GameObject main_;
 
-	// Token: 0x04000D2C RID: 3372
+	
 	private mainScript mS_;
 
-	// Token: 0x04000D2D RID: 3373
+	
 	private textScript tS_;
 
-	// Token: 0x04000D2E RID: 3374
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000D2F RID: 3375
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04000D30 RID: 3376
+	
 	private genres genres_;
 
-	// Token: 0x04000D31 RID: 3377
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04000D32 RID: 3378
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04000D33 RID: 3379
+	
 	public engineScript eSUpdate_;
 
-	// Token: 0x04000D34 RID: 3380
+	
 	public int spezialgenre = -1;
 
-	// Token: 0x04000D35 RID: 3381
+	
 	public int spezialplatform = -1;
 
-	// Token: 0x04000D36 RID: 3382
+	
 	public int featureAnzahl;
 
-	// Token: 0x04000D37 RID: 3383
+	
 	public int preis;
 
-	// Token: 0x04000D38 RID: 3384
+	
 	public int techLevel;
 
-	// Token: 0x04000D39 RID: 3385
+	
 	public bool[] features;
 
-	// Token: 0x04000D3A RID: 3386
+	
 	public bool[] featuresLock;
 }

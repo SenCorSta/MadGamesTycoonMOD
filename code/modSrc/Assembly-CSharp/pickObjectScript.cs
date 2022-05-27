@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200033B RID: 827
+
 public class pickObjectScript : MonoBehaviour
 {
-	// Token: 0x06001DEE RID: 7662 RVA: 0x0012A80A File Offset: 0x00128A0A
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001DEF RID: 7663 RVA: 0x0012A814 File Offset: 0x00128A14
+	
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -44,14 +44,14 @@ public class pickObjectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DF0 RID: 7664 RVA: 0x0012A8F4 File Offset: 0x00128AF4
+	
 	private void Update()
 	{
 		this.Pick();
 		this.disableMouseButton = false;
 	}
 
-	// Token: 0x06001DF1 RID: 7665 RVA: 0x0012A904 File Offset: 0x00128B04
+	
 	private void Pick()
 	{
 		if (this.gummiS_.isActive)
@@ -156,7 +156,7 @@ public class pickObjectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DF2 RID: 7666 RVA: 0x0012ACBF File Offset: 0x00128EBF
+	
 	private void Unpick()
 	{
 		if (this.hitOld.transform)
@@ -166,7 +166,7 @@ public class pickObjectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DF3 RID: 7667 RVA: 0x0012ACFC File Offset: 0x00128EFC
+	
 	public void Click(GameObject go)
 	{
 		this.guiMain.OpenMenu(false);
@@ -186,51 +186,51 @@ public class pickObjectScript : MonoBehaviour
 		this.guiMain.ActivateMenu(this.guiMain.uiObjects[0]);
 	}
 
-	// Token: 0x040025A4 RID: 9636
+	
 	private mainScript mS_;
 
-	// Token: 0x040025A5 RID: 9637
+	
 	private GUI_Main guiMain;
 
-	// Token: 0x040025A6 RID: 9638
+	
 	private mapScript mapS_;
 
-	// Token: 0x040025A7 RID: 9639
+	
 	private Camera myCamera;
 
-	// Token: 0x040025A8 RID: 9640
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040025A9 RID: 9641
+	
 	private pickCharacterScript pcS_;
 
-	// Token: 0x040025AA RID: 9642
+	
 	private RaycastHit hit;
 
-	// Token: 0x040025AB RID: 9643
+	
 	private RaycastHit hitOld;
 
-	// Token: 0x040025AC RID: 9644
+	
 	private RaycastHit hitEmpty;
 
-	// Token: 0x040025AD RID: 9645
+	
 	public LayerMask layerMask;
 
-	// Token: 0x040025AE RID: 9646
+	
 	private gummibandScript gummiS_;
 
-	// Token: 0x040025AF RID: 9647
+	
 	public bool disableMouseButton;
 
-	// Token: 0x040025B0 RID: 9648
+	
 	public Vector3 oldPosition;
 
-	// Token: 0x040025B1 RID: 9649
+	
 	public Vector3 oldRotation;
 
-	// Token: 0x040025B2 RID: 9650
+	
 	public bool reopenBuyInventarMenu;
 
-	// Token: 0x040025B3 RID: 9651
+	
 	public int buyInventar = -1;
 }

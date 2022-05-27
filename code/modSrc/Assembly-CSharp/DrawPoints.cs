@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x02000360 RID: 864
+
 public class DrawPoints : MonoBehaviour
 {
-	// Token: 0x06001FFC RID: 8188 RVA: 0x0014C8A0 File Offset: 0x0014AAA0
+	
 	private void Start()
 	{
 		int num = this.numberOfDots * this.numberOfRings;
@@ -27,15 +27,15 @@ public class DrawPoints : MonoBehaviour
 		vectorLine.Draw();
 	}
 
-	// Token: 0x0400284B RID: 10315
+	
 	public float dotSize = 2f;
 
-	// Token: 0x0400284C RID: 10316
+	
 	public int numberOfDots = 100;
 
-	// Token: 0x0400284D RID: 10317
+	
 	public int numberOfRings = 8;
 
-	// Token: 0x0400284E RID: 10318
+	
 	public Color dotColor = Color.cyan;
 }

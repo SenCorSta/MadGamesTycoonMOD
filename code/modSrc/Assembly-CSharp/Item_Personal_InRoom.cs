@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000C8 RID: 200
+
 public class Item_Personal_InRoom : MonoBehaviour
 {
-	// Token: 0x060006F4 RID: 1780 RVA: 0x00052B6C File Offset: 0x00050D6C
+	
 	private void Update()
 	{
 		if (!this.cS_)
@@ -38,7 +38,7 @@ public class Item_Personal_InRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006F5 RID: 1781 RVA: 0x00052CD4 File Offset: 0x00050ED4
+	
 	public void EnableObjects()
 	{
 		for (int i = 0; i < this.uiObjects.Length; i++)
@@ -50,7 +50,7 @@ public class Item_Personal_InRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006F6 RID: 1782 RVA: 0x00052D20 File Offset: 0x00050F20
+	
 	public void SetData(string s, float val)
 	{
 		if (!this.cS_)
@@ -75,13 +75,13 @@ public class Item_Personal_InRoom : MonoBehaviour
 		this.Update();
 	}
 
-	// Token: 0x060006F7 RID: 1783 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060006F8 RID: 1784 RVA: 0x00052E94 File Offset: 0x00051094
+	
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -99,7 +99,7 @@ public class Item_Personal_InRoom : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x060006F9 RID: 1785 RVA: 0x00052F08 File Offset: 0x00051108
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -107,36 +107,36 @@ public class Item_Personal_InRoom : MonoBehaviour
 		this.guiMain_.uiObjects[28].GetComponent<Menu_PersonalView>().Init(this.cS_);
 	}
 
-	// Token: 0x04000AB7 RID: 2743
+	
 	public int characterID = -1;
 
-	// Token: 0x04000AB8 RID: 2744
+	
 	public characterScript cS_;
 
-	// Token: 0x04000AB9 RID: 2745
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000ABA RID: 2746
+	
 	public mainScript mS_;
 
-	// Token: 0x04000ABB RID: 2747
+	
 	public textScript tS_;
 
-	// Token: 0x04000ABC RID: 2748
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000ABD RID: 2749
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000ABE RID: 2750
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000ABF RID: 2751
+	
 	public roomDataScript rdS_;
 
-	// Token: 0x04000AC0 RID: 2752
+	
 	private RectTransform myRect_;
 
-	// Token: 0x04000AC1 RID: 2753
+	
 	private int frames;
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200009B RID: 155
+
 public class Item_EngineFeatures_Forschung : MonoBehaviour
 {
-	// Token: 0x060005EE RID: 1518 RVA: 0x0004C7D2 File Offset: 0x0004A9D2
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060005EF RID: 1519 RVA: 0x0004C7DC File Offset: 0x0004A9DC
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.eF_.GetName(this.myID);
@@ -34,7 +34,7 @@ public class Item_EngineFeatures_Forschung : MonoBehaviour
 		this.tooltip_.c = this.eF_.GetTooltip(this.myID);
 	}
 
-	// Token: 0x060005F0 RID: 1520 RVA: 0x0004C9B2 File Offset: 0x0004ABB2
+	
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -46,13 +46,13 @@ public class Item_EngineFeatures_Forschung : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060005F1 RID: 1521 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060005F2 RID: 1522 RVA: 0x0004C9E8 File Offset: 0x0004ABE8
+	
 	public void BUTTON_Click()
 	{
 		Menu_Forschung component = this.guiMain_.uiObjects[21].GetComponent<Menu_Forschung>();
@@ -75,36 +75,36 @@ public class Item_EngineFeatures_Forschung : MonoBehaviour
 		component.BUTTON_Close();
 	}
 
-	// Token: 0x04000936 RID: 2358
+	
 	public int myID;
 
-	// Token: 0x04000937 RID: 2359
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000938 RID: 2360
+	
 	public Color[] colors;
 
-	// Token: 0x04000939 RID: 2361
+	
 	public mainScript mS_;
 
-	// Token: 0x0400093A RID: 2362
+	
 	public textScript tS_;
 
-	// Token: 0x0400093B RID: 2363
+	
 	public sfxScript sfx_;
 
-	// Token: 0x0400093C RID: 2364
+	
 	public engineFeatures eF_;
 
-	// Token: 0x0400093D RID: 2365
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x0400093E RID: 2366
+	
 	public tooltip tooltip_;
 
-	// Token: 0x0400093F RID: 2367
+	
 	public roomScript rS_;
 
-	// Token: 0x04000940 RID: 2368
+	
 	private float updateTimer;
 }

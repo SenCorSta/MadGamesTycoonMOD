@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200023B RID: 571
+
 public class Menu_Stats_Finanzen : MonoBehaviour
 {
-	// Token: 0x06001603 RID: 5635 RVA: 0x000E0FFC File Offset: 0x000DF1FC
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001604 RID: 5636 RVA: 0x000E1004 File Offset: 0x000DF204
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -35,7 +35,7 @@ public class Menu_Stats_Finanzen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001605 RID: 5637 RVA: 0x000E10AE File Offset: 0x000DF2AE
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -43,52 +43,52 @@ public class Menu_Stats_Finanzen : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001606 RID: 5638 RVA: 0x000E10D4 File Offset: 0x000DF2D4
+	
 	public void BUTTON_Monatsbilanz()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[132]);
 	}
 
-	// Token: 0x06001607 RID: 5639 RVA: 0x000E10FF File Offset: 0x000DF2FF
+	
 	public void BUTTON_Jahresbilanz()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[133]);
 	}
 
-	// Token: 0x06001608 RID: 5640 RVA: 0x000E112A File Offset: 0x000DF32A
+	
 	public void BUTTON_Finanzverlauf()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[134]);
 	}
 
-	// Token: 0x06001609 RID: 5641 RVA: 0x000E1155 File Offset: 0x000DF355
+	
 	public void BUTTON_Monatsverlauf()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[137]);
 	}
 
-	// Token: 0x04001A00 RID: 6656
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001A01 RID: 6657
+	
 	private roomScript rS_;
 
-	// Token: 0x04001A02 RID: 6658
+	
 	private GameObject main_;
 
-	// Token: 0x04001A03 RID: 6659
+	
 	private mainScript mS_;
 
-	// Token: 0x04001A04 RID: 6660
+	
 	private textScript tS_;
 
-	// Token: 0x04001A05 RID: 6661
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001A06 RID: 6662
+	
 	private sfxScript sfx_;
 }

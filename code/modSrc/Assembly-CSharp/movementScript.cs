@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
 
-// Token: 0x02000048 RID: 72
+
 public class movementScript : MonoBehaviour
 {
-	// Token: 0x06000167 RID: 359 RVA: 0x0001536E File Offset: 0x0001356E
+	
 	private void Start()
 	{
 		this.randomDeskEmoteTime = UnityEngine.Random.Range(5f, 30f);
@@ -14,7 +14,7 @@ public class movementScript : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x06000168 RID: 360 RVA: 0x00015394 File Offset: 0x00013594
+	
 	private void Init()
 	{
 		if (base.gameObject.tag == "CharAM")
@@ -36,7 +36,7 @@ public class movementScript : MonoBehaviour
 		this.InitPathfinding();
 	}
 
-	// Token: 0x06000169 RID: 361 RVA: 0x00015424 File Offset: 0x00013624
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -65,7 +65,7 @@ public class movementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600016A RID: 362 RVA: 0x000154E3 File Offset: 0x000136E3
+	
 	public void InitUpdate()
 	{
 		if (base.gameObject.tag == "CharAM")
@@ -78,7 +78,7 @@ public class movementScript : MonoBehaviour
 		this.charAnimation.speed = 100f;
 	}
 
-	// Token: 0x0600016B RID: 363 RVA: 0x00015521 File Offset: 0x00013721
+	
 	private void Update()
 	{
 		if (this.charArbeitsmarkt)
@@ -91,7 +91,7 @@ public class movementScript : MonoBehaviour
 		this.TargetReached(false);
 	}
 
-	// Token: 0x0600016C RID: 364 RVA: 0x00015545 File Offset: 0x00013745
+	
 	private void InitPathfinding()
 	{
 		if (this.aStar == null)
@@ -100,7 +100,7 @@ public class movementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600016D RID: 365 RVA: 0x0001555C File Offset: 0x0001375C
+	
 	private void Move()
 	{
 		if (this.cS_.picked)
@@ -139,14 +139,14 @@ public class movementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600016E RID: 366 RVA: 0x0001566A File Offset: 0x0001386A
+	
 	public void SetAnimationForce(string c, AnimationClip clip)
 	{
 		this.PlayAnimation(c);
 		this.waitForceAnimation = clip.length;
 	}
 
-	// Token: 0x0600016F RID: 367 RVA: 0x00015680 File Offset: 0x00013880
+	
 	private void SetAnimation()
 	{
 		this.charAnimation.speed = this.mS_.GetGameSpeed();
@@ -583,13 +583,13 @@ public class movementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000170 RID: 368 RVA: 0x00016418 File Offset: 0x00014618
+	
 	private bool IsForceAnimation(string c)
 	{
 		return this.currentAnimation == c && this.waitForceAnimation > 0f;
 	}
 
-	// Token: 0x06000171 RID: 369 RVA: 0x00016438 File Offset: 0x00014638
+	
 	private void PlayAnimation(string c)
 	{
 		if (this.currentAnimation != c)
@@ -599,7 +599,7 @@ public class movementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000172 RID: 370 RVA: 0x0001646C File Offset: 0x0001466C
+	
 	public void TargetReached(bool teleport)
 	{
 		if (!this.myTarget)
@@ -884,7 +884,7 @@ public class movementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000173 RID: 371 RVA: 0x00016E50 File Offset: 0x00015050
+	
 	private void FindTarget()
 	{
 		if (this.cS_.picked)
@@ -994,7 +994,7 @@ public class movementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000174 RID: 372 RVA: 0x000171B4 File Offset: 0x000153B4
+	
 	public bool FindObjectInRoom(int what, GameObject forceObject, bool onlyInRoom)
 	{
 		this.Init();
@@ -1369,7 +1369,7 @@ public class movementScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000175 RID: 373 RVA: 0x00018054 File Offset: 0x00016254
+	
 	public void FindRandomFloorInRoom()
 	{
 		if (!this.cS_.roomS_)
@@ -1391,7 +1391,7 @@ public class movementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000176 RID: 374 RVA: 0x00018118 File Offset: 0x00016318
+	
 	private GameObject ShortestWay(List<GameObject> objects)
 	{
 		int index = 0;
@@ -1408,19 +1408,19 @@ public class movementScript : MonoBehaviour
 		return objects[index];
 	}
 
-	// Token: 0x06000177 RID: 375 RVA: 0x0001816F File Offset: 0x0001636F
+	
 	public void RecalculatePath()
 	{
 		this.aStar.SearchPath();
 	}
 
-	// Token: 0x06000178 RID: 376 RVA: 0x0001817C File Offset: 0x0001637C
+	
 	public int GetPosition_RoomID()
 	{
 		return this.mapS_.mapRoomID[Mathf.RoundToInt(base.transform.position.x), Mathf.RoundToInt(base.transform.position.z)];
 	}
 
-	// Token: 0x06000179 RID: 377 RVA: 0x000181B8 File Offset: 0x000163B8
+	
 	public int GetTargetPosition_RoomID()
 	{
 		if (!this.myTarget)
@@ -1430,66 +1430,66 @@ public class movementScript : MonoBehaviour
 		return this.mapS_.mapRoomID[Mathf.RoundToInt(this.myTarget.transform.position.x), Mathf.RoundToInt(this.myTarget.transform.position.z)];
 	}
 
-	// Token: 0x0600017A RID: 378 RVA: 0x00018218 File Offset: 0x00016418
+	
 	public void DeleteTarget()
 	{
 		this.myTarget = null;
 	}
 
-	// Token: 0x04000358 RID: 856
+	
 	public GameObject myTarget;
 
-	// Token: 0x04000359 RID: 857
+	
 	private GameObject main_;
 
-	// Token: 0x0400035A RID: 858
+	
 	private mainScript mS_;
 
-	// Token: 0x0400035B RID: 859
+	
 	private GameObject charGFX;
 
-	// Token: 0x0400035C RID: 860
+	
 	private characterScript cS_;
 
-	// Token: 0x0400035D RID: 861
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400035E RID: 862
+	
 	private clipScript clipS_;
 
-	// Token: 0x0400035F RID: 863
+	
 	private mapScript mapS_;
 
-	// Token: 0x04000360 RID: 864
+	
 	private IAstarAI aStar;
 
-	// Token: 0x04000361 RID: 865
+	
 	public Animator charAnimation;
 
-	// Token: 0x04000362 RID: 866
+	
 	public string currentAnimation;
 
-	// Token: 0x04000363 RID: 867
+	
 	private int audioTyping = -1;
 
-	// Token: 0x04000364 RID: 868
+	
 	private Seeker seeker;
 
-	// Token: 0x04000365 RID: 869
+	
 	public float waitForceAnimation;
 
-	// Token: 0x04000366 RID: 870
+	
 	private float randomDeskEmoteTime;
 
-	// Token: 0x04000367 RID: 871
+	
 	private float waitOnFloor;
 
-	// Token: 0x04000368 RID: 872
+	
 	private bool charArbeitsmarkt;
 
-	// Token: 0x04000369 RID: 873
+	
 	private float walkDistance;
 
-	// Token: 0x0400036A RID: 874
+	
 	public int trysToFindPath;
 }

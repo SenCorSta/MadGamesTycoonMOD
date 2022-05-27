@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000108 RID: 264
+
 public class Component_Aufwertungen : MonoBehaviour
 {
-	// Token: 0x06000881 RID: 2177 RVA: 0x0005CFAF File Offset: 0x0005B1AF
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000882 RID: 2178 RVA: 0x0005CFB8 File Offset: 0x0005B1B8
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Component_Aufwertungen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000883 RID: 2179 RVA: 0x0005D158 File Offset: 0x0005B358
+	
 	public void Init(gameScript gS_)
 	{
 		if (!gS_)
@@ -150,51 +150,51 @@ public class Component_Aufwertungen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000CFD RID: 3325
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000CFE RID: 3326
+	
 	public Sprite[] uiSprites;
 
-	// Token: 0x04000CFF RID: 3327
+	
 	public Color[] colors;
 
-	// Token: 0x04000D00 RID: 3328
+	
 	private GameObject main_;
 
-	// Token: 0x04000D01 RID: 3329
+	
 	private mainScript mS_;
 
-	// Token: 0x04000D02 RID: 3330
+	
 	private textScript tS_;
 
-	// Token: 0x04000D03 RID: 3331
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000D04 RID: 3332
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04000D05 RID: 3333
+	
 	private genres genres_;
 
-	// Token: 0x04000D06 RID: 3334
+	
 	private themes themes_;
 
-	// Token: 0x04000D07 RID: 3335
+	
 	private licences licences_;
 
-	// Token: 0x04000D08 RID: 3336
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04000D09 RID: 3337
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04000D0A RID: 3338
+	
 	private unlockScript unlock_;
 
-	// Token: 0x04000D0B RID: 3339
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x04000D0C RID: 3340
+	
 	private games games_;
 }

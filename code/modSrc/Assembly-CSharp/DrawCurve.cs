@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x0200034A RID: 842
+
 public class DrawCurve : MonoBehaviour
 {
-	// Token: 0x06001FA4 RID: 8100 RVA: 0x00149818 File Offset: 0x00147A18
+	
 	private void Start()
 	{
 		DrawCurve.use = this;
@@ -27,7 +27,7 @@ public class DrawCurve : MonoBehaviour
 		this.AddControlObjects();
 	}
 
-	// Token: 0x06001FA5 RID: 8101 RVA: 0x001499B8 File Offset: 0x00147BB8
+	
 	private void SetLine()
 	{
 		if (this.useDottedLine)
@@ -44,7 +44,7 @@ public class DrawCurve : MonoBehaviour
 		this.line.textureScale = 0f;
 	}
 
-	// Token: 0x06001FA6 RID: 8102 RVA: 0x00149A5C File Offset: 0x00147C5C
+	
 	private void AddControlObjects()
 	{
 		this.anchorObject = UnityEngine.Object.Instantiate<GameObject>(this.anchorPoint, this.controlLine.points2[this.pointIndex], Quaternion.identity);
@@ -61,7 +61,7 @@ public class DrawCurve : MonoBehaviour
 		component2.objectNumber = num;
 	}
 
-	// Token: 0x06001FA7 RID: 8103 RVA: 0x00149B30 File Offset: 0x00147D30
+	
 	public void UpdateLine(int objectNumber, Vector2 pos)
 	{
 		Vector2 b = this.controlLine.points2[objectNumber];
@@ -87,7 +87,7 @@ public class DrawCurve : MonoBehaviour
 		this.controlLine.Draw();
 	}
 
-	// Token: 0x06001FA8 RID: 8104 RVA: 0x00149D0C File Offset: 0x00147F0C
+	
 	private void OnGUI()
 	{
 		if (GUI.Button(new Rect(20f, 20f, 100f, 30f), "Add Point"))
@@ -146,7 +146,7 @@ public class DrawCurve : MonoBehaviour
 		GUILayout.EndArea();
 	}
 
-	// Token: 0x06001FA9 RID: 8105 RVA: 0x00149FB8 File Offset: 0x001481B8
+	
 	private void AddPoint()
 	{
 		if (this.line.points2.Count + this.controlLine.points2.Count + this.segments + 4 > 16383)
@@ -183,7 +183,7 @@ public class DrawCurve : MonoBehaviour
 		this.line.Draw();
 	}
 
-	// Token: 0x06001FAA RID: 8106 RVA: 0x0014A380 File Offset: 0x00148580
+	
 	private void ChangeSegments()
 	{
 		if (this.segments * 4 * this.numberOfCurves > 65534)
@@ -198,7 +198,7 @@ public class DrawCurve : MonoBehaviour
 		this.line.Draw();
 	}
 
-	// Token: 0x06001FAB RID: 8107 RVA: 0x0014A461 File Offset: 0x00148661
+	
 	private void Update()
 	{
 		if (Screen.width != this.oldWidth)
@@ -208,7 +208,7 @@ public class DrawCurve : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001FAC RID: 8108 RVA: 0x0014A484 File Offset: 0x00148684
+	
 	private void ChangeResolution()
 	{
 		foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("GameController"))
@@ -217,60 +217,60 @@ public class DrawCurve : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040027B4 RID: 10164
+	
 	public Texture lineTexture;
 
-	// Token: 0x040027B5 RID: 10165
+	
 	public Color lineColor = Color.white;
 
-	// Token: 0x040027B6 RID: 10166
+	
 	public Texture dottedLineTexture;
 
-	// Token: 0x040027B7 RID: 10167
+	
 	public Color dottedLineColor = Color.yellow;
 
-	// Token: 0x040027B8 RID: 10168
+	
 	public int segments = 60;
 
-	// Token: 0x040027B9 RID: 10169
+	
 	public GameObject anchorPoint;
 
-	// Token: 0x040027BA RID: 10170
+	
 	public GameObject controlPoint;
 
-	// Token: 0x040027BB RID: 10171
+	
 	public Transform canvas;
 
-	// Token: 0x040027BC RID: 10172
+	
 	private int numberOfCurves = 1;
 
-	// Token: 0x040027BD RID: 10173
+	
 	private VectorLine line;
 
-	// Token: 0x040027BE RID: 10174
+	
 	private VectorLine controlLine;
 
-	// Token: 0x040027BF RID: 10175
+	
 	private int pointIndex;
 
-	// Token: 0x040027C0 RID: 10176
+	
 	private GameObject anchorObject;
 
-	// Token: 0x040027C1 RID: 10177
+	
 	private int oldWidth;
 
-	// Token: 0x040027C2 RID: 10178
+	
 	private bool useDottedLine;
 
-	// Token: 0x040027C3 RID: 10179
+	
 	private bool oldDottedLineSetting;
 
-	// Token: 0x040027C4 RID: 10180
+	
 	private int oldSegments;
 
-	// Token: 0x040027C5 RID: 10181
+	
 	private bool listPoints;
 
-	// Token: 0x040027C6 RID: 10182
+	
 	public static DrawCurve use;
 }

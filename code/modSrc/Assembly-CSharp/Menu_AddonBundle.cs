@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001EE RID: 494
+
 public class Menu_AddonBundle : MonoBehaviour
 {
-	// Token: 0x060012B8 RID: 4792 RVA: 0x000C6B78 File Offset: 0x000C4D78
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060012B9 RID: 4793 RVA: 0x000C6B80 File Offset: 0x000C4D80
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_AddonBundle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012BA RID: 4794 RVA: 0x000C6C66 File Offset: 0x000C4E66
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060012BB RID: 4795 RVA: 0x000C6C70 File Offset: 0x000C4E70
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -60,7 +60,7 @@ public class Menu_AddonBundle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012BC RID: 4796 RVA: 0x000C6CA8 File Offset: 0x000C4EA8
+	
 	public void SetGame(int slot, gameScript script_)
 	{
 		if (slot == 0)
@@ -102,13 +102,13 @@ public class Menu_AddonBundle : MonoBehaviour
 		this.guiMain_.DrawStarsColor(this.uiObjects[1], Mathf.RoundToInt(this.GetQuality()), Color.white);
 	}
 
-	// Token: 0x060012BD RID: 4797 RVA: 0x000C6F1E File Offset: 0x000C511E
+	
 	public float GetQuality()
 	{
 		return this.GetTotalReview() / 20f;
 	}
 
-	// Token: 0x060012BE RID: 4798 RVA: 0x000C6F2C File Offset: 0x000C512C
+	
 	public float GetTotalReview()
 	{
 		float num = 0f;
@@ -130,7 +130,7 @@ public class Menu_AddonBundle : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060012BF RID: 4799 RVA: 0x000C6F91 File Offset: 0x000C5191
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -138,7 +138,7 @@ public class Menu_AddonBundle : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060012C0 RID: 4800 RVA: 0x000C6FB8 File Offset: 0x000C51B8
+	
 	public void BUTTON_Game(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -151,14 +151,14 @@ public class Menu_AddonBundle : MonoBehaviour
 		this.guiMain_.uiObjects[272].GetComponent<Menu_AddonBundleSelect>().Init(i);
 	}
 
-	// Token: 0x060012C1 RID: 4801 RVA: 0x000C7039 File Offset: 0x000C5239
+	
 	public void BUTTON_Remove(int i)
 	{
 		this.sfx_.PlaySound(3, true);
 		this.SetGame(i, null);
 	}
 
-	// Token: 0x060012C2 RID: 4802 RVA: 0x000C7050 File Offset: 0x000C5250
+	
 	public void BUTTON_OK()
 	{
 		int num = 0;
@@ -200,7 +200,7 @@ public class Menu_AddonBundle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012C3 RID: 4803 RVA: 0x000C7188 File Offset: 0x000C5388
+	
 	private void CreateAddonBundleGame()
 	{
 		for (int i = 1; i < this.games.Length; i++)
@@ -212,6 +212,10 @@ public class Menu_AddonBundle : MonoBehaviour
 		}
 		gameScript component = UnityEngine.Object.Instantiate<GameObject>(this.games[0].gameObject).GetComponent<gameScript>();
 		this.games_.InitAddonBundle(component);
+		if (this.mS_.multiplayer)
+		{
+			component.multiplayerSlot = this.mS_.mpCalls_.myID;
+		}
 		component.SetMyName(this.uiObjects[0].GetComponent<InputField>().text);
 		component.developerID = -1;
 		component.publisherID = -1;
@@ -234,6 +238,7 @@ public class Menu_AddonBundle : MonoBehaviour
 		component.spielbericht_favorit = false;
 		component.userPositiv = 0;
 		component.userNegativ = 0;
+		component.hype = 0f;
 		component.reviewGameplayText = 0;
 		component.reviewGrafikText = 0;
 		component.reviewSoundText = 0;
@@ -303,33 +308,33 @@ public class Menu_AddonBundle : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0400170E RID: 5902
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400170F RID: 5903
+	
 	private roomScript rS_;
 
-	// Token: 0x04001710 RID: 5904
+	
 	private GameObject main_;
 
-	// Token: 0x04001711 RID: 5905
+	
 	private mainScript mS_;
 
-	// Token: 0x04001712 RID: 5906
+	
 	private textScript tS_;
 
-	// Token: 0x04001713 RID: 5907
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001714 RID: 5908
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001715 RID: 5909
+	
 	private genres genres_;
 
-	// Token: 0x04001716 RID: 5910
+	
 	private games games_;
 
-	// Token: 0x04001717 RID: 5911
+	
 	public gameScript[] games;
 }

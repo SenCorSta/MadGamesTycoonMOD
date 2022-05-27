@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000E5 RID: 229
+
 public class Item_EngineSchenken : MonoBehaviour
 {
-	// Token: 0x060007B0 RID: 1968 RVA: 0x000564E0 File Offset: 0x000546E0
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007B1 RID: 1969 RVA: 0x000564E8 File Offset: 0x000546E8
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.eS_.GetName();
@@ -30,11 +30,11 @@ public class Item_EngineSchenken : MonoBehaviour
 		});
 		this.uiObjects[2].GetComponent<Text>().text = text;
 		this.uiObjects[4].GetComponent<Text>().text = "";
-		if (!this.eS_.sellEngine || this.eS_.OwnerIsNPC())
+		if (!this.eS_.sellEngine || !this.eS_.playerEngine)
 		{
 			this.uiObjects[5].SetActive(false);
 		}
-		if (this.eS_.sellEngine && this.eS_.myID == this.mS_.myID)
+		if (this.eS_.sellEngine && this.eS_.playerEngine)
 		{
 			this.uiObjects[5].SetActive(true);
 		}
@@ -51,7 +51,7 @@ public class Item_EngineSchenken : MonoBehaviour
 		base.GetComponent<Image>().color = Color.white;
 	}
 
-	// Token: 0x060007B2 RID: 1970 RVA: 0x000566F1 File Offset: 0x000548F1
+	
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -63,13 +63,13 @@ public class Item_EngineSchenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060007B3 RID: 1971 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007B4 RID: 1972 RVA: 0x00056724 File Offset: 0x00054924
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -77,36 +77,36 @@ public class Item_EngineSchenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x04000BB5 RID: 2997
+	
 	public engineScript eS_;
 
-	// Token: 0x04000BB6 RID: 2998
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000BB7 RID: 2999
+	
 	public mainScript mS_;
 
-	// Token: 0x04000BB8 RID: 3000
+	
 	public textScript tS_;
 
-	// Token: 0x04000BB9 RID: 3001
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000BBA RID: 3002
+	
 	public engineFeatures eF_;
 
-	// Token: 0x04000BBB RID: 3003
+	
 	public genres genres_;
 
-	// Token: 0x04000BBC RID: 3004
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000BBD RID: 3005
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000BBE RID: 3006
+	
 	public Menu_MP_EngineSchenken menu_;
 
-	// Token: 0x04000BBF RID: 3007
+	
 	private float updateTimer;
 }

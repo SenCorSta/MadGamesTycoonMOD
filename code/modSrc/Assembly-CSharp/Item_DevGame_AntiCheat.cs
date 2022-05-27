@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200007F RID: 127
+
 public class Item_DevGame_AntiCheat : MonoBehaviour
 {
-	// Token: 0x0600053C RID: 1340 RVA: 0x0004805D File Offset: 0x0004625D
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600053D RID: 1341 RVA: 0x00048065 File Offset: 0x00046265
+	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x0600053E RID: 1342 RVA: 0x00048070 File Offset: 0x00046270
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_DevGame_AntiCheat : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600053F RID: 1343 RVA: 0x000480BC File Offset: 0x000462BC
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.acS_.GetName();
@@ -49,7 +49,7 @@ public class Item_DevGame_AntiCheat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000540 RID: 1344 RVA: 0x0004821C File Offset: 0x0004641C
+	
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -67,13 +67,13 @@ public class Item_DevGame_AntiCheat : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x06000541 RID: 1345 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000542 RID: 1346 RVA: 0x00048290 File Offset: 0x00046490
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -89,27 +89,27 @@ public class Item_DevGame_AntiCheat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400083A RID: 2106
+	
 	public antiCheatScript acS_;
 
-	// Token: 0x0400083B RID: 2107
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400083C RID: 2108
+	
 	public mainScript mS_;
 
-	// Token: 0x0400083D RID: 2109
+	
 	public textScript tS_;
 
-	// Token: 0x0400083E RID: 2110
+	
 	public sfxScript sfx_;
 
-	// Token: 0x0400083F RID: 2111
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000840 RID: 2112
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000841 RID: 2113
+	
 	private float updateTimer;
 }

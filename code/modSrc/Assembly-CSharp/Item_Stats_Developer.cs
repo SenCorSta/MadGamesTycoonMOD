@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000F6 RID: 246
+
 public class Item_Stats_Developer : MonoBehaviour
 {
-	// Token: 0x06000813 RID: 2067 RVA: 0x0005859F File Offset: 0x0005679F
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000814 RID: 2068 RVA: 0x000585A7 File Offset: 0x000567A7
+	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000815 RID: 2069 RVA: 0x000585B0 File Offset: 0x000567B0
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_Stats_Developer : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000816 RID: 2070 RVA: 0x000585FC File Offset: 0x000567FC
+	
 	private void SetData()
 	{
 		if (this.pS_)
@@ -45,38 +45,14 @@ public class Item_Stats_Developer : MonoBehaviour
 			this.uiObjects[4].GetComponent<Text>().text = this.pS_.GetFirmenwertString();
 			this.uiObjects[7].GetComponent<Text>().text = this.pS_.GetDeveloperPublisherString();
 			this.tooltip_.c = this.pS_.GetTooltip();
+			base.gameObject.GetComponent<Image>().color = Color.white;
 			if (this.pS_.IsMyTochterfirma())
 			{
-				if (!this.uiObjects[6].activeSelf)
-				{
-					this.uiObjects[6].SetActive(true);
-				}
+				base.gameObject.GetComponent<Image>().color = this.guiMain_.colors[4];
 			}
-			else if (this.uiObjects[6].activeSelf)
+			if (this.pS_.tf_geschlossen)
 			{
-				this.uiObjects[6].SetActive(false);
-			}
-			if (this.pS_.isPlayer)
-			{
-				if (!this.uiObjects[9].activeSelf)
-				{
-					this.uiObjects[9].SetActive(true);
-				}
-			}
-			else if (this.uiObjects[9].activeSelf)
-			{
-				this.uiObjects[9].SetActive(false);
-			}
-			if (!this.pS_.isPlayer && !this.pS_.IsTochterfirma())
-			{
-				if (!this.uiObjects[10].activeSelf)
-				{
-					this.uiObjects[10].SetActive(true);
-				}
-			}
-			else if (this.uiObjects[10].activeSelf)
-			{
-				this.uiObjects[10].SetActive(false);
+				base.gameObject.GetComponent<Image>().color = this.guiMain_.colors[25];
 			}
 			if (this.pS_.tf_geschlossen)
 			{
@@ -106,13 +82,13 @@ public class Item_Stats_Developer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000817 RID: 2071 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000818 RID: 2072 RVA: 0x00058978 File Offset: 0x00056B78
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -120,33 +96,33 @@ public class Item_Stats_Developer : MonoBehaviour
 		this.guiMain_.uiObjects[359].GetComponent<Menu_Stats_Developer_Main>().Init(this.pS_);
 	}
 
-	// Token: 0x04000C3E RID: 3134
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000C3F RID: 3135
+	
 	public mainScript mS_;
 
-	// Token: 0x04000C40 RID: 3136
+	
 	public textScript tS_;
 
-	// Token: 0x04000C41 RID: 3137
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000C42 RID: 3138
+	
 	public genres genres_;
 
-	// Token: 0x04000C43 RID: 3139
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000C44 RID: 3140
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000C45 RID: 3141
+	
 	public publisherScript pS_;
 
-	// Token: 0x04000C46 RID: 3142
+	
 	public int playerID = -1;
 
-	// Token: 0x04000C47 RID: 3143
+	
 	private float updateTimer;
 }

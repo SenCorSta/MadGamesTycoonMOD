@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000226 RID: 550
+
 public class Menu_Statistics_BestMMO : MonoBehaviour
 {
-	// Token: 0x06001525 RID: 5413 RVA: 0x000D91EE File Offset: 0x000D73EE
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001526 RID: 5414 RVA: 0x000D91F8 File Offset: 0x000D73F8
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_Statistics_BestMMO : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001527 RID: 5415 RVA: 0x000D92C0 File Offset: 0x000D74C0
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -50,13 +50,13 @@ public class Menu_Statistics_BestMMO : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001528 RID: 5416 RVA: 0x000D92F2 File Offset: 0x000D74F2
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001529 RID: 5417 RVA: 0x000D92FC File Offset: 0x000D74FC
+	
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -69,7 +69,7 @@ public class Menu_Statistics_BestMMO : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x0600152A RID: 5418 RVA: 0x000D938C File Offset: 0x000D758C
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -80,7 +80,7 @@ public class Menu_Statistics_BestMMO : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600152B RID: 5419 RVA: 0x000D93B8 File Offset: 0x000D75B8
+	
 	private void SetData()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -116,14 +116,14 @@ public class Menu_Statistics_BestMMO : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x0600152C RID: 5420 RVA: 0x000D953C File Offset: 0x000D773C
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600152D RID: 5421 RVA: 0x000D9558 File Offset: 0x000D7758
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -133,27 +133,27 @@ public class Menu_Statistics_BestMMO : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x04001924 RID: 6436
+	
 	private mainScript mS_;
 
-	// Token: 0x04001925 RID: 6437
+	
 	private GameObject main_;
 
-	// Token: 0x04001926 RID: 6438
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001927 RID: 6439
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001928 RID: 6440
+	
 	private textScript tS_;
 
-	// Token: 0x04001929 RID: 6441
+	
 	private genres genres_;
 
-	// Token: 0x0400192A RID: 6442
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x0400192B RID: 6443
+	
 	public GameObject[] uiObjects;
 }

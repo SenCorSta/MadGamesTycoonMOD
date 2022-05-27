@@ -3,10 +3,10 @@ using Suimono.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200003F RID: 63
+
 public class ui_suimonoHandler : MonoBehaviour
 {
-	// Token: 0x060000E3 RID: 227 RVA: 0x0000B084 File Offset: 0x00009284
+	
 	private void Start()
 	{
 		this.lightObject = GameObject.Find("Directional Light").GetComponent<Transform>();
@@ -18,7 +18,7 @@ public class ui_suimonoHandler : MonoBehaviour
 		this.sliderBeaufort = GameObject.Find("Slider_Beaufort").GetComponent<Slider>();
 	}
 
-	// Token: 0x060000E4 RID: 228 RVA: 0x0000B120 File Offset: 0x00009320
+	
 	private void LateUpdate()
 	{
 		if (this.uiCanvasScale != null)
@@ -39,27 +39,27 @@ public class ui_suimonoHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400025D RID: 605
+	
 	public float uiScale = 1f;
 
-	// Token: 0x0400025E RID: 606
+	
 	private Transform lightObject;
 
-	// Token: 0x0400025F RID: 607
+	
 	private SuimonoModule suimonoModule;
 
-	// Token: 0x04000260 RID: 608
+	
 	private SuimonoObject suimonoObject;
 
-	// Token: 0x04000261 RID: 609
+	
 	private CanvasScaler uiCanvasScale;
 
-	// Token: 0x04000262 RID: 610
+	
 	private Text textVersion;
 
-	// Token: 0x04000263 RID: 611
+	
 	private Slider sliderTOD;
 
-	// Token: 0x04000264 RID: 612
+	
 	private Slider sliderBeaufort;
 }

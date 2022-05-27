@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000276 RID: 630
+
 public class objectTooltip : MonoBehaviour
 {
-	// Token: 0x06001877 RID: 6263 RVA: 0x000F27B8 File Offset: 0x000F09B8
+	
 	private void Start()
 	{
 		this.myText = this.tooltipText.GetComponent<Text>();
@@ -14,7 +14,7 @@ public class objectTooltip : MonoBehaviour
 		this.rt_tooltipText = this.tooltipText.GetComponent<RectTransform>();
 	}
 
-	// Token: 0x06001878 RID: 6264 RVA: 0x000F2809 File Offset: 0x000F0A09
+	
 	public void SetActive(objectScript script_)
 	{
 		if (!script_)
@@ -27,7 +27,7 @@ public class objectTooltip : MonoBehaviour
 		this.tooltipEnabled = true;
 	}
 
-	// Token: 0x06001879 RID: 6265 RVA: 0x000F2833 File Offset: 0x000F0A33
+	
 	public void SetInactive()
 	{
 		this.timer = 0f;
@@ -35,7 +35,7 @@ public class objectTooltip : MonoBehaviour
 		this.myText.text = "";
 	}
 
-	// Token: 0x0600187A RID: 6266 RVA: 0x000F2858 File Offset: 0x000F0A58
+	
 	private void Update()
 	{
 		if (!this.tooltipEnabled)
@@ -94,36 +94,36 @@ public class objectTooltip : MonoBehaviour
 		this.rt_tooltipPic.anchoredPosition = new Vector2(num2, num3);
 	}
 
-	// Token: 0x04001C29 RID: 7209
+	
 	public float timeToShow = 1f;
 
-	// Token: 0x04001C2A RID: 7210
+	
 	public GameObject tooltipPic;
 
-	// Token: 0x04001C2B RID: 7211
+	
 	public GameObject tooltipText;
 
-	// Token: 0x04001C2C RID: 7212
+	
 	public GameObject tooltipFill;
 
-	// Token: 0x04001C2D RID: 7213
+	
 	private RectTransform rt_tooltipPic;
 
-	// Token: 0x04001C2E RID: 7214
+	
 	private RectTransform rt_tooltipText;
 
-	// Token: 0x04001C2F RID: 7215
+	
 	public Text myText;
 
-	// Token: 0x04001C30 RID: 7216
+	
 	public Image myFill;
 
-	// Token: 0x04001C31 RID: 7217
+	
 	private float timer;
 
-	// Token: 0x04001C32 RID: 7218
+	
 	public bool tooltipEnabled;
 
-	// Token: 0x04001C33 RID: 7219
+	
 	private objectScript objectScript_;
 }

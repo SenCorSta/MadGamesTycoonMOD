@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001B9 RID: 441
+
 public class Menu_TooltipCharacter : MonoBehaviour
 {
-	// Token: 0x060010A9 RID: 4265 RVA: 0x000B04E0 File Offset: 0x000AE6E0
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010AA RID: 4266 RVA: 0x000B04E8 File Offset: 0x000AE6E8
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010AB RID: 4267 RVA: 0x000B05D2 File Offset: 0x000AE7D2
+	
 	private void Update()
 	{
 		if (!this.charS_)
@@ -53,7 +53,7 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010AC RID: 4268 RVA: 0x000B05ED File Offset: 0x000AE7ED
+	
 	public void Init(characterScript script_)
 	{
 		this.charS_ = script_;
@@ -64,7 +64,7 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010AD RID: 4269 RVA: 0x000B0610 File Offset: 0x000AE810
+	
 	public void UpdateData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.charS_.myName;
@@ -143,7 +143,7 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010AE RID: 4270 RVA: 0x000B09DC File Offset: 0x000AEBDC
+	
 	public void SetBalken(GameObject go, float val, int beruf_)
 	{
 		go.transform.Find("Value").GetComponent<Text>().text = this.mS_.Round(val, 1).ToString();
@@ -162,7 +162,7 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.5f;
 	}
 
-	// Token: 0x060010AF RID: 4271 RVA: 0x000B0AD8 File Offset: 0x000AECD8
+	
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -180,33 +180,33 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x04001516 RID: 5398
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001517 RID: 5399
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001518 RID: 5400
+	
 	private GameObject main_;
 
-	// Token: 0x04001519 RID: 5401
+	
 	private mainScript mS_;
 
-	// Token: 0x0400151A RID: 5402
+	
 	private textScript tS_;
 
-	// Token: 0x0400151B RID: 5403
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400151C RID: 5404
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400151D RID: 5405
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x0400151E RID: 5406
+	
 	private characterScript charS_;
 
-	// Token: 0x0400151F RID: 5407
+	
 	private mapScript mapS_;
 }

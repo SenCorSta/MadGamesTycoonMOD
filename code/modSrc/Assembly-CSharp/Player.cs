@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000023 RID: 35
+
 public class Player : MonoBehaviour
 {
-	// Token: 0x06000099 RID: 153 RVA: 0x000052BA File Offset: 0x000034BA
+	
 	private void Start()
 	{
 		this.rb = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x0600009A RID: 154 RVA: 0x000052C8 File Offset: 0x000034C8
+	
 	private void FixedUpdate()
 	{
 		float axis = Input.GetAxis("Horizontal");
@@ -19,9 +19,9 @@ public class Player : MonoBehaviour
 		this.rb.AddForce(a * this.speed);
 	}
 
-	// Token: 0x040000C0 RID: 192
+	
 	public float speed;
 
-	// Token: 0x040000C1 RID: 193
+	
 	private Rigidbody rb;
 }

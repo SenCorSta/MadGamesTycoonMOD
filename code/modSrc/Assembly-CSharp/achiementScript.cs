@@ -3,16 +3,16 @@ using HeathenEngineering.SteamAPI;
 using Steamworks;
 using UnityEngine;
 
-// Token: 0x02000321 RID: 801
+
 public class achiementScript : MonoBehaviour
 {
-	// Token: 0x06001C6C RID: 7276 RVA: 0x001184D8 File Offset: 0x001166D8
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001C6D RID: 7277 RVA: 0x001184E0 File Offset: 0x001166E0
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -37,7 +37,7 @@ public class achiementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C6E RID: 7278 RVA: 0x0011858C File Offset: 0x0011678C
+	
 	public void SetAchivement(int i)
 	{
 		if (!this.mS_.achivementsDisabled[i] && !this.mS_.achivements[i])
@@ -268,31 +268,31 @@ public class achiementScript : MonoBehaviour
 		Debug.Log("ACH: " + i.ToString());
 	}
 
-	// Token: 0x06001C6F RID: 7279 RVA: 0x00118BC6 File Offset: 0x00116DC6
+	
 	public void ResetAchivements()
 	{
 		SteamUserStats.ResetAllStats(true);
 		this.steamSettings.client.StoreStatsAndAchievements();
 	}
 
-	// Token: 0x0400236E RID: 9070
+	
 	private mainScript mS_;
 
-	// Token: 0x0400236F RID: 9071
+	
 	private GameObject main_;
 
-	// Token: 0x04002370 RID: 9072
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002371 RID: 9073
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04002372 RID: 9074
+	
 	private textScript tS_;
 
-	// Token: 0x04002373 RID: 9075
+	
 	public SteamSettings steamSettings;
 
-	// Token: 0x04002374 RID: 9076
+	
 	public AchievementObject[] winnerAchievement;
 }

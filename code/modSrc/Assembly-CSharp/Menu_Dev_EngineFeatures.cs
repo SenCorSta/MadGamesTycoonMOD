@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200010D RID: 269
+
 public class Menu_Dev_EngineFeatures : MonoBehaviour
 {
-	// Token: 0x060008C0 RID: 2240 RVA: 0x0005F610 File Offset: 0x0005D810
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060008C1 RID: 2241 RVA: 0x0005F618 File Offset: 0x0005D818
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_Dev_EngineFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008C2 RID: 2242 RVA: 0x0005F6E0 File Offset: 0x0005D8E0
+	
 	private void Update()
 	{
 		Menu_Dev_Engine component = this.guiMain_.uiObjects[37].GetComponent<Menu_Dev_Engine>();
@@ -75,7 +75,7 @@ public class Menu_Dev_EngineFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008C3 RID: 2243 RVA: 0x0005F868 File Offset: 0x0005DA68
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -86,7 +86,7 @@ public class Menu_Dev_EngineFeatures : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[6]);
 	}
 
-	// Token: 0x060008C4 RID: 2244 RVA: 0x0005F94C File Offset: 0x0005DB4C
+	
 	private void CreateItems(int typ_, string title_)
 	{
 		Menu_Dev_Engine component = this.guiMain_.uiObjects[37].GetComponent<Menu_Dev_Engine>();
@@ -115,21 +115,21 @@ public class Menu_Dev_EngineFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008C5 RID: 2245 RVA: 0x0005FB1F File Offset: 0x0005DD1F
+	
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060008C6 RID: 2246 RVA: 0x0005FB1F File Offset: 0x0005DD1F
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060008C7 RID: 2247 RVA: 0x0005FB3C File Offset: 0x0005DD3C
+	
 	public void BUTTON_All_Nothing()
 	{
 		Menu_Dev_Engine component = this.guiMain_.uiObjects[37].GetComponent<Menu_Dev_Engine>();
@@ -152,33 +152,33 @@ public class Menu_Dev_EngineFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000D3B RID: 3387
+	
 	private mainScript mS_;
 
-	// Token: 0x04000D3C RID: 3388
+	
 	private GameObject main_;
 
-	// Token: 0x04000D3D RID: 3389
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000D3E RID: 3390
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04000D3F RID: 3391
+	
 	private textScript tS_;
 
-	// Token: 0x04000D40 RID: 3392
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04000D41 RID: 3393
+	
 	public int roomID = -1;
 
-	// Token: 0x04000D42 RID: 3394
+	
 	private bool activ_All_Nothing;
 
-	// Token: 0x04000D43 RID: 3395
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04000D44 RID: 3396
+	
 	public GameObject[] uiObjects;
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x0200035A RID: 858
+
 public class CreateStars : MonoBehaviour
 {
-	// Token: 0x06001FE5 RID: 8165 RVA: 0x0014C1AC File Offset: 0x0014A3AC
+	
 	private void Start()
 	{
 		Vector3[] array = new Vector3[this.numberOfStars];
@@ -33,15 +33,15 @@ public class CreateStars : MonoBehaviour
 		VectorLine.canvas.planeDistance = Camera.main.farClipPlane - 1f;
 	}
 
-	// Token: 0x06001FE6 RID: 8166 RVA: 0x0014C2D9 File Offset: 0x0014A4D9
+	
 	private void LateUpdate()
 	{
 		this.stars.Draw();
 	}
 
-	// Token: 0x0400282F RID: 10287
+	
 	public int numberOfStars = 2000;
 
-	// Token: 0x04002830 RID: 10288
+	
 	private VectorLine stars;
 }

@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000081 RID: 129
+
 public class Item_DevGame_CopyProtect : MonoBehaviour
 {
-	// Token: 0x0600054C RID: 1356 RVA: 0x000487BE File Offset: 0x000469BE
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600054D RID: 1357 RVA: 0x000487C6 File Offset: 0x000469C6
+	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x0600054E RID: 1358 RVA: 0x000487D0 File Offset: 0x000469D0
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_DevGame_CopyProtect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600054F RID: 1359 RVA: 0x0004881C File Offset: 0x00046A1C
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.cpS_.GetName();
@@ -49,7 +49,7 @@ public class Item_DevGame_CopyProtect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000550 RID: 1360 RVA: 0x0004897C File Offset: 0x00046B7C
+	
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -67,13 +67,13 @@ public class Item_DevGame_CopyProtect : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x06000551 RID: 1361 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000552 RID: 1362 RVA: 0x000489F0 File Offset: 0x00046BF0
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -89,27 +89,27 @@ public class Item_DevGame_CopyProtect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400084E RID: 2126
+	
 	public copyProtectScript cpS_;
 
-	// Token: 0x0400084F RID: 2127
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000850 RID: 2128
+	
 	public mainScript mS_;
 
-	// Token: 0x04000851 RID: 2129
+	
 	public textScript tS_;
 
-	// Token: 0x04000852 RID: 2130
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000853 RID: 2131
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000854 RID: 2132
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000855 RID: 2133
+	
 	private float updateTimer;
 }

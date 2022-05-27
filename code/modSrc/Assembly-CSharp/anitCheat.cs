@@ -3,16 +3,16 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x02000049 RID: 73
+
 public class anitCheat : MonoBehaviour
 {
-	// Token: 0x0600017C RID: 380 RVA: 0x00018230 File Offset: 0x00016430
+	
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600017D RID: 381 RVA: 0x00018238 File Offset: 0x00016438
+	
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -29,7 +29,7 @@ public class anitCheat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600017E RID: 382 RVA: 0x00018290 File Offset: 0x00016490
+	
 	public antiCheatScript CreateAntiCheat()
 	{
 		antiCheatScript component = UnityEngine.Object.Instantiate<GameObject>(this.prefabAntiCheat).GetComponent<antiCheatScript>();
@@ -40,7 +40,7 @@ public class anitCheat : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x0600017F RID: 383 RVA: 0x000182E0 File Offset: 0x000164E0
+	
 	public void LoadAnitCheat(string filename)
 	{
 		StreamReader streamReader = new StreamReader(Application.dataPath + "/Extern/Text/" + filename, Encoding.Unicode);
@@ -58,6 +58,7 @@ public class anitCheat : MonoBehaviour
 				num++;
 			}
 		}
+		Debug.Log("AntiCheat Amount: " + num.ToString());
 		antiCheatScript antiCheatScript = null;
 		for (int j = 0; j < this.data.Length; j++)
 		{
@@ -175,13 +176,14 @@ public class anitCheat : MonoBehaviour
 				}
 				if (this.ParseData("[EOF]", j))
 				{
-					break;
+					Debug.Log("AntiCheat.txt -> EOF");
+					return;
 				}
 			}
 		}
 	}
 
-	// Token: 0x06000180 RID: 384 RVA: 0x00018688 File Offset: 0x00016888
+	
 	private bool ParseData(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -193,7 +195,7 @@ public class anitCheat : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000181 RID: 385 RVA: 0x000186E8 File Offset: 0x000168E8
+	
 	private bool ParseDataDontCutLastChar(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -204,7 +206,7 @@ public class anitCheat : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000182 RID: 386 RVA: 0x00018718 File Offset: 0x00016918
+	
 	public void UpdateEffekt()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("AntiCheat");
@@ -217,18 +219,18 @@ public class anitCheat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400036B RID: 875
+	
 	public GameObject prefabAntiCheat;
 
-	// Token: 0x0400036C RID: 876
+	
 	private mainScript mS_;
 
-	// Token: 0x0400036D RID: 877
+	
 	private textScript tS_;
 
-	// Token: 0x0400036E RID: 878
+	
 	private settingsScript settings_;
 
-	// Token: 0x0400036F RID: 879
+	
 	private string[] data;
 }

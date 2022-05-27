@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200027A RID: 634
+
 public class roomWindow : MonoBehaviour
 {
-	// Token: 0x060018D6 RID: 6358 RVA: 0x000F66C0 File Offset: 0x000F48C0
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060018D7 RID: 6359 RVA: 0x000F66C8 File Offset: 0x000F48C8
+	
 	private void OnEnable()
 	{
 		if (this.uiObjects[1])
@@ -20,7 +20,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018D8 RID: 6360 RVA: 0x000F66F0 File Offset: 0x000F48F0
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -57,7 +57,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018D9 RID: 6361 RVA: 0x000F67F8 File Offset: 0x000F49F8
+	
 	public void Window_Konsole(taskKonsole task_)
 	{
 		if (!task_)
@@ -99,7 +99,7 @@ public class roomWindow : MonoBehaviour
 		this.uiObjects[7].transform.GetChild(0).GetComponent<Text>().text = this.tS_.GetText(1777);
 	}
 
-	// Token: 0x060018DA RID: 6362 RVA: 0x000F69B0 File Offset: 0x000F4BB0
+	
 	public void Window_ArcadeProduction(taskArcadeProduction task_)
 	{
 		if (!task_)
@@ -130,7 +130,7 @@ public class roomWindow : MonoBehaviour
 		});
 	}
 
-	// Token: 0x060018DB RID: 6363 RVA: 0x000F6AB0 File Offset: 0x000F4CB0
+	
 	public void Window_Update(string name_, float prozent, bool automatic)
 	{
 		this.uiObjects[0].GetComponent<Text>().text = name_;
@@ -142,7 +142,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018DC RID: 6364 RVA: 0x000F6B50 File Offset: 0x000F4D50
+	
 	public void Window_F2PUpdate(taskF2PUpdate task_)
 	{
 		if (!task_)
@@ -166,7 +166,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018DD RID: 6365 RVA: 0x000F6C34 File Offset: 0x000F4E34
+	
 	public void Window_Wait(taskWait task_)
 	{
 		if (!task_)
@@ -184,13 +184,13 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018DE RID: 6366 RVA: 0x000F6C9C File Offset: 0x000F4E9C
+	
 	public void Window_ContractWorkWait(taskContractWait task_)
 	{
 		task_;
 	}
 
-	// Token: 0x060018DF RID: 6367 RVA: 0x000F6CA8 File Offset: 0x000F4EA8
+	
 	public void Window_ContractWork(taskContractWork task_, roomScript rS_)
 	{
 		if (!task_)
@@ -264,7 +264,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018E0 RID: 6368 RVA: 0x000F6F98 File Offset: 0x000F5198
+	
 	public void Window_Training(string name_, float prozent, Sprite icon, bool automatic)
 	{
 		this.uiObjects[0].GetComponent<Text>().text = name_;
@@ -277,7 +277,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018E1 RID: 6369 RVA: 0x000F704C File Offset: 0x000F524C
+	
 	public void Window_Anrufe(taskSupport task_)
 	{
 		if (!task_)
@@ -297,7 +297,7 @@ public class roomWindow : MonoBehaviour
 		this.uiObjects[2].GetComponent<Text>().text = this.Round(task_.GetProzent(), 1).ToString() + "%";
 	}
 
-	// Token: 0x060018E2 RID: 6370 RVA: 0x000F710C File Offset: 0x000F530C
+	
 	public void Window_Fanshop(taskFanshop task_)
 	{
 		if (!task_)
@@ -337,7 +337,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018E3 RID: 6371 RVA: 0x000F724C File Offset: 0x000F544C
+	
 	public void Window_Bugfixing(taskBugfixing task_)
 	{
 		if (!task_)
@@ -361,7 +361,7 @@ public class roomWindow : MonoBehaviour
 		this.uiObjects[2].GetComponent<Text>().text = task_.mS_.GetMoney((long)Mathf.RoundToInt(task_.gS_.points_bugs), false) + " " + this.tS_.GetText(424);
 	}
 
-	// Token: 0x060018E4 RID: 6372 RVA: 0x000F732C File Offset: 0x000F552C
+	
 	public void Window_Polishing(taskPolishing task_)
 	{
 		if (!task_)
@@ -385,7 +385,7 @@ public class roomWindow : MonoBehaviour
 		this.uiObjects[2].GetComponent<Text>().text = this.Round(task_.GetProzent(), 1).ToString() + "%";
 	}
 
-	// Token: 0x060018E5 RID: 6373 RVA: 0x000F73F4 File Offset: 0x000F55F4
+	
 	public void Window_Lagerhaus(roomScript rS_)
 	{
 		if (!rS_)
@@ -424,7 +424,7 @@ public class roomWindow : MonoBehaviour
 		this.uiObjects[2].GetComponent<Text>().text = Mathf.RoundToInt(num).ToString() + "%";
 	}
 
-	// Token: 0x060018E6 RID: 6374 RVA: 0x000F7530 File Offset: 0x000F5730
+	
 	public void Window_Serverraum(roomScript rS_)
 	{
 		if (!rS_)
@@ -493,7 +493,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018E7 RID: 6375 RVA: 0x000F7780 File Offset: 0x000F5980
+	
 	public void Window_Production(taskProduction task_)
 	{
 		if (!task_)
@@ -541,7 +541,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018E8 RID: 6376 RVA: 0x000F78FC File Offset: 0x000F5AFC
+	
 	public void Window_Spielbericht(taskSpielbericht task_)
 	{
 		if (!task_)
@@ -573,7 +573,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018E9 RID: 6377 RVA: 0x000F7A2C File Offset: 0x000F5C2C
+	
 	public void Window_GameplayVerbessern(taskGameplayVerbessern task_)
 	{
 		if (!task_)
@@ -612,7 +612,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018EA RID: 6378 RVA: 0x000F7B8C File Offset: 0x000F5D8C
+	
 	public void Window_GrafikVerbessern(taskGrafikVerbessern task_)
 	{
 		if (!task_)
@@ -651,7 +651,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018EB RID: 6379 RVA: 0x000F7CEC File Offset: 0x000F5EEC
+	
 	public void Window_SoundVerbessern(taskSoundVerbessern task_)
 	{
 		if (!task_)
@@ -690,7 +690,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018EC RID: 6380 RVA: 0x000F7E4C File Offset: 0x000F604C
+	
 	public void Window_AnimationVerbessern(taskAnimationVerbessern task_)
 	{
 		if (!task_)
@@ -729,7 +729,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018ED RID: 6381 RVA: 0x000F7FAC File Offset: 0x000F61AC
+	
 	public void Window_Fankampagne(taskFankampagne task_)
 	{
 		if (!task_)
@@ -754,7 +754,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018EE RID: 6382 RVA: 0x000F80B4 File Offset: 0x000F62B4
+	
 	public void Window_Mitarbeitersuche(taskMitarbeitersuche task_)
 	{
 		if (!task_)
@@ -779,7 +779,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018EF RID: 6383 RVA: 0x000F81C8 File Offset: 0x000F63C8
+	
 	public void Window_Marktforschung(taskMarktforschung task_)
 	{
 		if (!task_)
@@ -794,7 +794,7 @@ public class roomWindow : MonoBehaviour
 		this.uiObjects[2].GetComponent<Text>().text = this.Round(task_.GetProzent(), 1).ToString() + "%";
 	}
 
-	// Token: 0x060018F0 RID: 6384 RVA: 0x000F8258 File Offset: 0x000F6458
+	
 	public void Window_MarketingSpezial(taskMarketingSpezial task_)
 	{
 		if (!task_)
@@ -819,7 +819,7 @@ public class roomWindow : MonoBehaviour
 		this.uiObjects[3].GetComponent<Image>().sprite = task_.GetPic();
 	}
 
-	// Token: 0x060018F1 RID: 6385 RVA: 0x000F8338 File Offset: 0x000F6538
+	
 	public void Window_Marketing(string name_, float prozent, Sprite icon, taskMarketing taskMarketing_)
 	{
 		if (!this.tS_)
@@ -858,7 +858,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018F2 RID: 6386 RVA: 0x000F8518 File Offset: 0x000F6718
+	
 	public void Window_Forschung(string name_, float prozent, Sprite icon, taskForschung task_)
 	{
 		if (!this.guiMain_)
@@ -893,7 +893,7 @@ public class roomWindow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018F3 RID: 6387 RVA: 0x000F866C File Offset: 0x000F686C
+	
 	public void Window_DevEngine(string name_, float prozent, Sprite icon)
 	{
 		this.uiObjects[0].GetComponent<Text>().text = name_;
@@ -902,7 +902,7 @@ public class roomWindow : MonoBehaviour
 		this.uiObjects[3].GetComponent<Image>().sprite = icon;
 	}
 
-	// Token: 0x060018F4 RID: 6388 RVA: 0x000F8700 File Offset: 0x000F6900
+	
 	public void Window_DevGame(gameScript gS_, taskGame task_)
 	{
 		if (!this.main_)
@@ -976,7 +976,7 @@ public class roomWindow : MonoBehaviour
 		this.uiObjects[15].transform.GetChild(0).GetComponent<Text>().text = this.tS_.GetText(1000);
 	}
 
-	// Token: 0x060018F5 RID: 6389 RVA: 0x000F8AB8 File Offset: 0x000F6CB8
+	
 	public void Window_Unterstuetzen(string roomName, float prozent)
 	{
 		if (!this.tS_)
@@ -993,40 +993,40 @@ public class roomWindow : MonoBehaviour
 		this.uiObjects[2].GetComponent<Text>().text = this.tS_.GetText(476);
 	}
 
-	// Token: 0x060018F6 RID: 6390 RVA: 0x000F8B78 File Offset: 0x000F6D78
+	
 	private float Round(float value, int digits)
 	{
 		float num = Mathf.Pow(10f, (float)digits);
 		return Mathf.Round(value * num) / num;
 	}
 
-	// Token: 0x04001C4D RID: 7245
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001C4E RID: 7246
+	
 	public GameObject main_;
 
-	// Token: 0x04001C4F RID: 7247
+	
 	public textScript tS_;
 
-	// Token: 0x04001C50 RID: 7248
+	
 	public engineFeatures eF_;
 
-	// Token: 0x04001C51 RID: 7249
+	
 	public gameplayFeatures gF_;
 
-	// Token: 0x04001C52 RID: 7250
+	
 	public games games_;
 
-	// Token: 0x04001C53 RID: 7251
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04001C54 RID: 7252
+	
 	private Menu_Marketing_GameKampagne scriptMarketing_;
 
-	// Token: 0x04001C55 RID: 7253
+	
 	private contractWorkMain contractWorkMain_;
 
-	// Token: 0x04001C56 RID: 7254
+	
 	private float window_ForschungTimer = 2f;
 }

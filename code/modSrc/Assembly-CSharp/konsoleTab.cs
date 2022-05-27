@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000107 RID: 263
+
 public class konsoleTab : MonoBehaviour
 {
-	// Token: 0x06000878 RID: 2168 RVA: 0x0005C657 File Offset: 0x0005A857
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000879 RID: 2169 RVA: 0x0005C660 File Offset: 0x0005A860
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -72,7 +72,7 @@ public class konsoleTab : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600087A RID: 2170 RVA: 0x0005C804 File Offset: 0x0005AA04
+	
 	public void Init(int platID_)
 	{
 		this.platformID = platID_;
@@ -82,7 +82,7 @@ public class konsoleTab : MonoBehaviour
 		base.gameObject.transform.SetSiblingIndex(0);
 	}
 
-	// Token: 0x0600087B RID: 2171 RVA: 0x0005C830 File Offset: 0x0005AA30
+	
 	private void FindMyPlatform()
 	{
 		if (this.platformID == -1)
@@ -99,7 +99,7 @@ public class konsoleTab : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600087C RID: 2172 RVA: 0x0005C884 File Offset: 0x0005AA84
+	
 	private void Update()
 	{
 		if (this.guiMain_.menuOpen)
@@ -200,7 +200,7 @@ public class konsoleTab : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600087D RID: 2173 RVA: 0x0005CD3C File Offset: 0x0005AF3C
+	
 	public void UpdateData()
 	{
 		this.FindScripts();
@@ -246,7 +246,7 @@ public class konsoleTab : MonoBehaviour
 		this.fillBalken = 0f;
 	}
 
-	// Token: 0x0600087E RID: 2174 RVA: 0x0005CEA8 File Offset: 0x0005B0A8
+	
 	public void BUTTON_Minimize()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -261,7 +261,7 @@ public class konsoleTab : MonoBehaviour
 		this.uiObjects[8].GetComponent<Image>().sprite = this.uiSprites[1];
 	}
 
-	// Token: 0x0600087F RID: 2175 RVA: 0x0005CF28 File Offset: 0x0005B128
+	
 	public void BUTTON_Click()
 	{
 		if (!this.pS_)
@@ -274,78 +274,78 @@ public class konsoleTab : MonoBehaviour
 		this.guiMain_.OpenMenu(false);
 	}
 
-	// Token: 0x04000CE4 RID: 3300
+	
 	public mainScript mS_;
 
-	// Token: 0x04000CE5 RID: 3301
+	
 	public GameObject main_;
 
-	// Token: 0x04000CE6 RID: 3302
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000CE7 RID: 3303
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000CE8 RID: 3304
+	
 	public textScript tS_;
 
-	// Token: 0x04000CE9 RID: 3305
+	
 	public themes themes_;
 
-	// Token: 0x04000CEA RID: 3306
+	
 	public genres genres_;
 
-	// Token: 0x04000CEB RID: 3307
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000CEC RID: 3308
+	
 	public games games_;
 
-	// Token: 0x04000CED RID: 3309
+	
 	public settingsScript settings_;
 
-	// Token: 0x04000CEE RID: 3310
+	
 	public licences licences_;
 
-	// Token: 0x04000CEF RID: 3311
+	
 	public int platformID = -1;
 
-	// Token: 0x04000CF0 RID: 3312
+	
 	public platformScript pS_;
 
-	// Token: 0x04000CF1 RID: 3313
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04000CF2 RID: 3314
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000CF3 RID: 3315
+	
 	public GameObject[] uiBalken;
 
-	// Token: 0x04000CF4 RID: 3316
+	
 	public Sprite[] uiSprites;
 
-	// Token: 0x04000CF5 RID: 3317
+	
 	private float fillBalken;
 
-	// Token: 0x04000CF6 RID: 3318
+	
 	private float sellsPerWeek;
 
-	// Token: 0x04000CF7 RID: 3319
+	
 	private float sellsTotal;
 
-	// Token: 0x04000CF8 RID: 3320
+	
 	public bool fullView = true;
 
-	// Token: 0x04000CF9 RID: 3321
+	
 	private RectTransform rect;
 
-	// Token: 0x04000CFA RID: 3322
+	
 	private Image myImage;
 
-	// Token: 0x04000CFB RID: 3323
+	
 	private Button myButton;
 
-	// Token: 0x04000CFC RID: 3324
+	
 	private float tooltipTimer;
 }

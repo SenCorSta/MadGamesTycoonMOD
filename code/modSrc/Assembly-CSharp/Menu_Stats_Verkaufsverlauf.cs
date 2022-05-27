@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000262 RID: 610
+
 public class Menu_Stats_Verkaufsverlauf : MonoBehaviour
 {
-	// Token: 0x060017CA RID: 6090 RVA: 0x000EE374 File Offset: 0x000EC574
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060017CB RID: 6091 RVA: 0x000EE37C File Offset: 0x000EC57C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_Stats_Verkaufsverlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017CC RID: 6092 RVA: 0x000EE462 File Offset: 0x000EC662
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060017CD RID: 6093 RVA: 0x000EE46A File Offset: 0x000EC66A
+	
 	private void Update()
 	{
 		if (!this.mS_.multiplayer)
@@ -60,7 +60,7 @@ public class Menu_Stats_Verkaufsverlauf : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x060017CE RID: 6094 RVA: 0x000EE480 File Offset: 0x000EC680
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -68,7 +68,7 @@ public class Menu_Stats_Verkaufsverlauf : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.tS_.GetText(703) + ": " + this.mS_.GetMoney(i, false);
 	}
 
-	// Token: 0x060017CF RID: 6095 RVA: 0x000EE4D4 File Offset: 0x000EC6D4
+	
 	private long InitBalken()
 	{
 		long num = 0L;
@@ -113,40 +113,40 @@ public class Menu_Stats_Verkaufsverlauf : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060017D0 RID: 6096 RVA: 0x000EE71F File Offset: 0x000EC91F
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001B77 RID: 7031
+	
 	public GameObject[] uiBalken;
 
-	// Token: 0x04001B78 RID: 7032
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001B79 RID: 7033
+	
 	private GameObject main_;
 
-	// Token: 0x04001B7A RID: 7034
+	
 	private mainScript mS_;
 
-	// Token: 0x04001B7B RID: 7035
+	
 	private textScript tS_;
 
-	// Token: 0x04001B7C RID: 7036
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001B7D RID: 7037
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001B7E RID: 7038
+	
 	private genres genres_;
 
-	// Token: 0x04001B7F RID: 7039
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04001B80 RID: 7040
+	
 	private engineScript eS_;
 }

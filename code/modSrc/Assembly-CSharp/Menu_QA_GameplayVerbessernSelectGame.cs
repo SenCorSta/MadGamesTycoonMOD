@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200020A RID: 522
+
 public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 {
-	// Token: 0x06001401 RID: 5121 RVA: 0x000D0E42 File Offset: 0x000CF042
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001402 RID: 5122 RVA: 0x000D0E4C File Offset: 0x000CF04C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001403 RID: 5123 RVA: 0x000D0F14 File Offset: 0x000CF114
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -51,7 +51,7 @@ public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001404 RID: 5124 RVA: 0x000D0F4C File Offset: 0x000CF14C
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -67,7 +67,7 @@ public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001405 RID: 5125 RVA: 0x000D0F98 File Offset: 0x000CF198
+	
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -80,13 +80,13 @@ public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001406 RID: 5126 RVA: 0x000D0FF4 File Offset: 0x000CF1F4
+	
 	private void OnEnable()
 	{
 		this.InitDropdowns();
 	}
 
-	// Token: 0x06001407 RID: 5127 RVA: 0x000D0FFC File Offset: 0x000CF1FC
+	
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -99,14 +99,14 @@ public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001408 RID: 5128 RVA: 0x000D108C File Offset: 0x000CF28C
+	
 	public void Init()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x06001409 RID: 5129 RVA: 0x000D109C File Offset: 0x000CF29C
+	
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -115,7 +115,7 @@ public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && this.CheckGameData(component) && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && component.playerGame && component.inDevelopment && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_QA_GameplayVerbessern component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_QA_GameplayVerbessern>();
 					component2.mS_ = this.mS_;
@@ -130,20 +130,14 @@ public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x0600140A RID: 5130 RVA: 0x000D119A File Offset: 0x000CF39A
-	public bool CheckGameData(gameScript script_)
-	{
-		return script_ && script_.developerID == this.mS_.myID && script_.inDevelopment;
-	}
-
-	// Token: 0x0600140B RID: 5131 RVA: 0x000D11C2 File Offset: 0x000CF3C2
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600140C RID: 5132 RVA: 0x000D11E0 File Offset: 0x000CF3E0
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -176,30 +170,30 @@ public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x0400181F RID: 6175
+	
 	private mainScript mS_;
 
-	// Token: 0x04001820 RID: 6176
+	
 	private GameObject main_;
 
-	// Token: 0x04001821 RID: 6177
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001822 RID: 6178
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001823 RID: 6179
+	
 	private textScript tS_;
 
-	// Token: 0x04001824 RID: 6180
+	
 	private genres genres_;
 
-	// Token: 0x04001825 RID: 6181
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001826 RID: 6182
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001827 RID: 6183
+	
 	private float updateTimer;
 }

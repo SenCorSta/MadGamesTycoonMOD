@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001BD RID: 445
+
 public class GamesGroupContent : MonoBehaviour
 {
-	// Token: 0x060010C8 RID: 4296 RVA: 0x000B19E9 File Offset: 0x000AFBE9
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010C9 RID: 4297 RVA: 0x000B19F4 File Offset: 0x000AFBF4
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,13 +40,13 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CA RID: 4298 RVA: 0x000B19E9 File Offset: 0x000AFBE9
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010CB RID: 4299 RVA: 0x000B1AAC File Offset: 0x000AFCAC
+	
 	private void Update()
 	{
 		if (!this.mS_)
@@ -196,7 +196,7 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CC RID: 4300 RVA: 0x000B1F8C File Offset: 0x000B018C
+	
 	private void SetTabKonsole(GameObject go, konsoleTab script_)
 	{
 		if (this.uiTabs[0].GetComponent<Toggle>().isOn || this.uiTabs[4].GetComponent<Toggle>().isOn)
@@ -213,7 +213,7 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CD RID: 4301 RVA: 0x000B1FE0 File Offset: 0x000B01E0
+	
 	private void SetTab(GameObject go, gameTab script_)
 	{
 		if (!this.uiTabs[0].GetComponent<Toggle>().isOn)
@@ -337,45 +337,45 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400154C RID: 5452
+	
 	public GameObject[] uiTabs;
 
-	// Token: 0x0400154D RID: 5453
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400154E RID: 5454
+	
 	private GameObject main_;
 
-	// Token: 0x0400154F RID: 5455
+	
 	private mainScript mS_;
 
-	// Token: 0x04001550 RID: 5456
+	
 	private textScript tS_;
 
-	// Token: 0x04001551 RID: 5457
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001552 RID: 5458
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001553 RID: 5459
+	
 	public float timer;
 
-	// Token: 0x04001554 RID: 5460
+	
 	private int oldAmount;
 
-	// Token: 0x04001555 RID: 5461
+	
 	private bool noStandardGame = true;
 
-	// Token: 0x04001556 RID: 5462
+	
 	private bool noHandy = true;
 
-	// Token: 0x04001557 RID: 5463
+	
 	private bool noEigeneKonsole = true;
 
-	// Token: 0x04001558 RID: 5464
+	
 	private bool noArcade = true;
 
-	// Token: 0x04001559 RID: 5465
+	
 	private bool noSchublade = true;
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200004E RID: 78
+
 public class copyProtectScript : MonoBehaviour
 {
-	// Token: 0x060001AE RID: 430 RVA: 0x00019265 File Offset: 0x00017465
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060001AF RID: 431 RVA: 0x00019270 File Offset: 0x00017470
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -31,13 +31,13 @@ public class copyProtectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001B0 RID: 432 RVA: 0x000192F4 File Offset: 0x000174F4
+	
 	public void Init()
 	{
 		base.name = "COPYPROTECT_" + this.myID.ToString();
 	}
 
-	// Token: 0x060001B1 RID: 433 RVA: 0x00019314 File Offset: 0x00017514
+	
 	public string GetName()
 	{
 		string text;
@@ -84,25 +84,25 @@ public class copyProtectScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x060001B2 RID: 434 RVA: 0x000193F2 File Offset: 0x000175F2
+	
 	public int GetPrice()
 	{
 		return this.price;
 	}
 
-	// Token: 0x060001B3 RID: 435 RVA: 0x000193FA File Offset: 0x000175FA
+	
 	public int GetDevCosts()
 	{
 		return this.dev_costs;
 	}
 
-	// Token: 0x060001B4 RID: 436 RVA: 0x00019402 File Offset: 0x00017602
+	
 	public string GetDateString()
 	{
 		return this.date_year.ToString() + " " + this.tS_.GetText(this.date_month + 220);
 	}
 
-	// Token: 0x060001B5 RID: 437 RVA: 0x00019430 File Offset: 0x00017630
+	
 	public string GetTooltip()
 	{
 		string text = "<b>" + this.GetName() + "</b>";
@@ -134,13 +134,13 @@ public class copyProtectScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x060001B6 RID: 438 RVA: 0x00019543 File Offset: 0x00017743
+	
 	public bool IsVerfuegbar()
 	{
 		return this.isUnlocked;
 	}
 
-	// Token: 0x060001B7 RID: 439 RVA: 0x00019550 File Offset: 0x00017750
+	
 	public void EffektVerschlechtern()
 	{
 		if (this.IsVerfuegbar() && !this.neverLooseEffect)
@@ -153,69 +153,69 @@ public class copyProtectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040003A8 RID: 936
+	
 	public GameObject main_;
 
-	// Token: 0x040003A9 RID: 937
+	
 	public mainScript mS_;
 
-	// Token: 0x040003AA RID: 938
+	
 	public settingsScript settings_;
 
-	// Token: 0x040003AB RID: 939
+	
 	public textScript tS_;
 
-	// Token: 0x040003AC RID: 940
+	
 	public int myID;
 
-	// Token: 0x040003AD RID: 941
+	
 	public int date_year;
 
-	// Token: 0x040003AE RID: 942
+	
 	public int date_month;
 
-	// Token: 0x040003AF RID: 943
+	
 	public int price;
 
-	// Token: 0x040003B0 RID: 944
+	
 	public int dev_costs;
 
-	// Token: 0x040003B1 RID: 945
+	
 	public string name_EN = "";
 
-	// Token: 0x040003B2 RID: 946
+	
 	public string name_GE = "";
 
-	// Token: 0x040003B3 RID: 947
+	
 	public string name_TU = "";
 
-	// Token: 0x040003B4 RID: 948
+	
 	public string name_CH = "";
 
-	// Token: 0x040003B5 RID: 949
+	
 	public string name_FR = "";
 
-	// Token: 0x040003B6 RID: 950
+	
 	public string name_CT = "";
 
-	// Token: 0x040003B7 RID: 951
+	
 	public string name_RU = "";
 
-	// Token: 0x040003B8 RID: 952
+	
 	public string name_IT = "";
 
-	// Token: 0x040003B9 RID: 953
+	
 	public string name_JA = "";
 
-	// Token: 0x040003BA RID: 954
+	
 	public bool isUnlocked;
 
-	// Token: 0x040003BB RID: 955
+	
 	public bool inBesitz;
 
-	// Token: 0x040003BC RID: 956
+	
 	public float effekt = 100f;
 
-	// Token: 0x040003BD RID: 957
+	
 	public bool neverLooseEffect;
 }

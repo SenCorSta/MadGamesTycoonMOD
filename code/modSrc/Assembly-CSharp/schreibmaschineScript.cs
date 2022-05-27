@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002FE RID: 766
+
 public class schreibmaschineScript : MonoBehaviour
 {
-	// Token: 0x06001AD0 RID: 6864 RVA: 0x0010DB65 File Offset: 0x0010BD65
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001AD1 RID: 6865 RVA: 0x0010DB70 File Offset: 0x0010BD70
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class schreibmaschineScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AD2 RID: 6866 RVA: 0x0010DC20 File Offset: 0x0010BE20
+	
 	private void Update()
 	{
 		if (!this.oS_)
@@ -76,27 +76,27 @@ public class schreibmaschineScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040021F0 RID: 8688
+	
 	public Animation myAnimation;
 
-	// Token: 0x040021F1 RID: 8689
+	
 	private objectScript oS_;
 
-	// Token: 0x040021F2 RID: 8690
+	
 	public MeshRenderer renderer;
 
-	// Token: 0x040021F3 RID: 8691
+	
 	private GameObject main_;
 
-	// Token: 0x040021F4 RID: 8692
+	
 	private roomScript roomS_;
 
-	// Token: 0x040021F5 RID: 8693
+	
 	private mapScript mapS_;
 
-	// Token: 0x040021F6 RID: 8694
+	
 	private mainScript mS_;
 
-	// Token: 0x040021F7 RID: 8695
+	
 	private float oldGamespeed;
 }

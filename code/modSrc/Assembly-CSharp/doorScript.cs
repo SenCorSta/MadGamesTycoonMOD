@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002E6 RID: 742
+
 public class doorScript : MonoBehaviour
 {
-	// Token: 0x06001A60 RID: 6752 RVA: 0x0010A966 File Offset: 0x00108B66
+	
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x06001A61 RID: 6753 RVA: 0x0010A974 File Offset: 0x00108B74
+	
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -23,14 +23,14 @@ public class doorScript : MonoBehaviour
 		this.mapS_ = this.main_.GetComponent<mapScript>();
 	}
 
-	// Token: 0x06001A62 RID: 6754 RVA: 0x0010A9C4 File Offset: 0x00108BC4
+	
 	private void Init()
 	{
 		GameObject gameObject = base.transform.parent.gameObject;
 		this.roomID = this.mapS_.mapRoomID[Mathf.RoundToInt(gameObject.transform.position.x), Mathf.RoundToInt(gameObject.transform.position.z)];
 	}
 
-	// Token: 0x06001A63 RID: 6755 RVA: 0x0010AA24 File Offset: 0x00108C24
+	
 	private void Update()
 	{
 		if (this.oldGamespeed != this.mS_.GetGameSpeed())
@@ -108,30 +108,30 @@ public class doorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002161 RID: 8545
+	
 	private GameObject main_;
 
-	// Token: 0x04002162 RID: 8546
+	
 	private mainScript mS_;
 
-	// Token: 0x04002163 RID: 8547
+	
 	private mapScript mapS_;
 
-	// Token: 0x04002164 RID: 8548
+	
 	public Animation myAnim;
 
-	// Token: 0x04002165 RID: 8549
+	
 	public int roomID = -1;
 
-	// Token: 0x04002166 RID: 8550
+	
 	private bool isOpen;
 
-	// Token: 0x04002167 RID: 8551
+	
 	private float oldGamespeed;
 
-	// Token: 0x04002168 RID: 8552
+	
 	public bool buildingDoor;
 
-	// Token: 0x04002169 RID: 8553
+	
 	private float updateTimer;
 }

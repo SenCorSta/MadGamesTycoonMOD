@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000040 RID: 64
+
 public class charArbeitsmarkt : MonoBehaviour
 {
-	// Token: 0x060000E6 RID: 230 RVA: 0x0000B217 File Offset: 0x00009417
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060000E7 RID: 231 RVA: 0x0000B220 File Offset: 0x00009420
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -39,7 +39,7 @@ public class charArbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000E8 RID: 232 RVA: 0x0000B2E4 File Offset: 0x000094E4
+	
 	public void Create(taskMitarbeitersuche task_)
 	{
 		this.FindScripts();
@@ -411,7 +411,7 @@ public class charArbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000E9 RID: 233 RVA: 0x0000BE04 File Offset: 0x0000A004
+	
 	public void RemoveFromArbeitsmarkt(bool eingestellt)
 	{
 		if (this.mS_.multiplayer)
@@ -432,7 +432,7 @@ public class charArbeitsmarkt : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060000EA RID: 234 RVA: 0x0000BE9C File Offset: 0x0000A09C
+	
 	public int GetGehalt()
 	{
 		int num = Mathf.RoundToInt(0f + this.s_gamedesign + this.s_programmieren + this.s_grafik + this.s_sound + this.s_pr + this.s_gametests + this.s_technik + this.s_forschen) * 10;
@@ -496,7 +496,7 @@ public class charArbeitsmarkt : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060000EB RID: 235 RVA: 0x0000BFE4 File Offset: 0x0000A1E4
+	
 	public int GetBestSkill()
 	{
 		float num = this.s_gamedesign;
@@ -542,7 +542,7 @@ public class charArbeitsmarkt : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x060000EC RID: 236 RVA: 0x0000C280 File Offset: 0x0000A480
+	
 	public float GetBestSkillValue()
 	{
 		float num = this.s_gamedesign;
@@ -589,96 +589,96 @@ public class charArbeitsmarkt : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x04000265 RID: 613
+	
 	public GameObject main_;
 
-	// Token: 0x04000266 RID: 614
+	
 	public mainScript mS_;
 
-	// Token: 0x04000267 RID: 615
+	
 	public textScript tS_;
 
-	// Token: 0x04000268 RID: 616
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000269 RID: 617
+	
 	public clothScript clothScript_;
 
-	// Token: 0x0400026A RID: 618
+	
 	public createCharScript cCS_;
 
-	// Token: 0x0400026B RID: 619
+	
 	public int myID;
 
-	// Token: 0x0400026C RID: 620
+	
 	public bool male;
 
-	// Token: 0x0400026D RID: 621
+	
 	public string myName;
 
-	// Token: 0x0400026E RID: 622
+	
 	public int wochenAmArbeitsmarkt;
 
-	// Token: 0x0400026F RID: 623
+	
 	public int legend = -1;
 
-	// Token: 0x04000270 RID: 624
+	
 	public int beruf;
 
-	// Token: 0x04000271 RID: 625
+	
 	public float s_gamedesign;
 
-	// Token: 0x04000272 RID: 626
+	
 	public float s_programmieren;
 
-	// Token: 0x04000273 RID: 627
+	
 	public float s_grafik;
 
-	// Token: 0x04000274 RID: 628
+	
 	public float s_sound;
 
-	// Token: 0x04000275 RID: 629
+	
 	public float s_pr;
 
-	// Token: 0x04000276 RID: 630
+	
 	public float s_gametests;
 
-	// Token: 0x04000277 RID: 631
+	
 	public float s_technik;
 
-	// Token: 0x04000278 RID: 632
+	
 	public float s_forschen;
 
-	// Token: 0x04000279 RID: 633
+	
 	public bool[] perks;
 
-	// Token: 0x0400027A RID: 634
+	
 	public int model_body;
 
-	// Token: 0x0400027B RID: 635
+	
 	public int model_eyes;
 
-	// Token: 0x0400027C RID: 636
+	
 	public int model_hair;
 
-	// Token: 0x0400027D RID: 637
+	
 	public int model_beard;
 
-	// Token: 0x0400027E RID: 638
+	
 	public int model_skinColor;
 
-	// Token: 0x0400027F RID: 639
+	
 	public int model_hairColor;
 
-	// Token: 0x04000280 RID: 640
+	
 	public int model_beardColor;
 
-	// Token: 0x04000281 RID: 641
+	
 	public int model_HoseColor;
 
-	// Token: 0x04000282 RID: 642
+	
 	public int model_ShirtColor;
 
-	// Token: 0x04000283 RID: 643
+	
 	public int model_Add1Color;
 }

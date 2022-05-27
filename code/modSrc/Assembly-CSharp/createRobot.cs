@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002DE RID: 734
+
 public class createRobot : MonoBehaviour
 {
-	// Token: 0x06001A43 RID: 6723 RVA: 0x00002715 File Offset: 0x00000915
+	
 	private void Start()
 	{
 	}
 
-	// Token: 0x06001A44 RID: 6724 RVA: 0x0010A3E8 File Offset: 0x001085E8
+	
 	public void Init(int id_)
 	{
 		if (this.myRobot)
@@ -23,7 +23,7 @@ public class createRobot : MonoBehaviour
 		UnityEngine.Object.Destroy(this.destroyThis);
 	}
 
-	// Token: 0x06001A45 RID: 6725 RVA: 0x0010A4A8 File Offset: 0x001086A8
+	
 	private void OnDestroy()
 	{
 		if (this.myRobot)
@@ -37,12 +37,12 @@ public class createRobot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400214D RID: 8525
+	
 	public GameObject prefabRobot;
 
-	// Token: 0x0400214E RID: 8526
+	
 	public GameObject destroyThis;
 
-	// Token: 0x0400214F RID: 8527
+	
 	public GameObject myRobot;
 }

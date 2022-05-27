@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200014B RID: 331
+
 public class Menu_Dev_TochterfirmaGameComplete : MonoBehaviour
 {
-	// Token: 0x06000C22 RID: 3106 RVA: 0x000827C9 File Offset: 0x000809C9
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000C23 RID: 3107 RVA: 0x000827D4 File Offset: 0x000809D4
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -72,21 +72,21 @@ public class Menu_Dev_TochterfirmaGameComplete : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C24 RID: 3108 RVA: 0x00082990 File Offset: 0x00080B90
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.cmS_.disableMovement = true;
 	}
 
-	// Token: 0x06000C25 RID: 3109 RVA: 0x000829A4 File Offset: 0x00080BA4
+	
 	private void OnDisable()
 	{
 		this.FindScripts();
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x06000C26 RID: 3110 RVA: 0x000829B8 File Offset: 0x00080BB8
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -95,7 +95,7 @@ public class Menu_Dev_TochterfirmaGameComplete : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C27 RID: 3111 RVA: 0x000829D4 File Offset: 0x00080BD4
+	
 	public void Init(gameScript s1_, publisherScript s2_)
 	{
 		this.FindScripts();
@@ -195,7 +195,7 @@ public class Menu_Dev_TochterfirmaGameComplete : MonoBehaviour
 		component.c += text;
 	}
 
-	// Token: 0x06000C28 RID: 3112 RVA: 0x00082F92 File Offset: 0x00081192
+	
 	public void BUTTON_TochterfirmaUeberlassen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -205,7 +205,7 @@ public class Menu_Dev_TochterfirmaGameComplete : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000C29 RID: 3113 RVA: 0x00082FD0 File Offset: 0x000811D0
+	
 	public void BUTTON_SelfPublish()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -214,7 +214,7 @@ public class Menu_Dev_TochterfirmaGameComplete : MonoBehaviour
 		this.SelfpublishGame(this.gS_);
 	}
 
-	// Token: 0x06000C2A RID: 3114 RVA: 0x00083000 File Offset: 0x00081200
+	
 	private void ReplaceName()
 	{
 		if (this.uiObjects[0].GetComponent<InputField>().interactable && this.uiObjects[0].GetComponent<InputField>().text.Length > 0)
@@ -223,7 +223,7 @@ public class Menu_Dev_TochterfirmaGameComplete : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C2B RID: 3115 RVA: 0x00083058 File Offset: 0x00081258
+	
 	public void BUTTON_Verwerfen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -231,9 +231,14 @@ public class Menu_Dev_TochterfirmaGameComplete : MonoBehaviour
 		this.guiMain_.uiObjects[93].GetComponent<Menu_W_GameVerwerfen>().Init(this.gS_, null);
 	}
 
-	// Token: 0x06000C2C RID: 3116 RVA: 0x000830AC File Offset: 0x000812AC
+	
 	private void SelfpublishGame(gameScript game_)
 	{
+		game_.playerGame = true;
+		if (this.mS_.multiplayer)
+		{
+			game_.multiplayerSlot = this.mS_.mpCalls_.myID;
+		}
 		game_.pubOffer = true;
 		game_.costs_marketing = 0L;
 		game_.costs_mitarbeiter = 0L;
@@ -277,54 +282,54 @@ public class Menu_Dev_TochterfirmaGameComplete : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001063 RID: 4195
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001064 RID: 4196
+	
 	private GameObject main_;
 
-	// Token: 0x04001065 RID: 4197
+	
 	private mainScript mS_;
 
-	// Token: 0x04001066 RID: 4198
+	
 	private textScript tS_;
 
-	// Token: 0x04001067 RID: 4199
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001068 RID: 4200
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001069 RID: 4201
+	
 	private genres genres_;
 
-	// Token: 0x0400106A RID: 4202
+	
 	private themes themes_;
 
-	// Token: 0x0400106B RID: 4203
+	
 	private licences licences_;
 
-	// Token: 0x0400106C RID: 4204
+	
 	private engineFeatures eF_;
 
-	// Token: 0x0400106D RID: 4205
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x0400106E RID: 4206
+	
 	private unlockScript unlock_;
 
-	// Token: 0x0400106F RID: 4207
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x04001070 RID: 4208
+	
 	private games games_;
 
-	// Token: 0x04001071 RID: 4209
+	
 	private forschungSonstiges forschungSonstiges_;
 
-	// Token: 0x04001072 RID: 4210
+	
 	private gameScript gS_;
 
-	// Token: 0x04001073 RID: 4211
+	
 	private publisherScript pS_;
 }

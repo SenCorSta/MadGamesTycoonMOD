@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000016 RID: 22
+
 public class CFX_SpawnSystem : MonoBehaviour
 {
-	// Token: 0x06000069 RID: 105 RVA: 0x00003C8C File Offset: 0x00001E8C
+	
 	public static GameObject GetNextObject(GameObject sourceObj, bool activateObject = true)
 	{
 		int instanceID = sourceObj.GetInstanceID();
@@ -60,20 +60,20 @@ public class CFX_SpawnSystem : MonoBehaviour
 		return gameObject;
 	}
 
-	// Token: 0x0600006A RID: 106 RVA: 0x00003E0B File Offset: 0x0000200B
+	
 	public static void PreloadObject(GameObject sourceObj, int poolSize = 1)
 	{
 		CFX_SpawnSystem.instance.addObjectToPool(sourceObj, poolSize);
 	}
 
-	// Token: 0x0600006B RID: 107 RVA: 0x00003E19 File Offset: 0x00002019
+	
 	public static void UnloadObjects(GameObject sourceObj)
 	{
 		CFX_SpawnSystem.instance.removeObjectsFromPool(sourceObj);
 	}
 
-	// Token: 0x17000007 RID: 7
-	// (get) Token: 0x0600006C RID: 108 RVA: 0x00003E26 File Offset: 0x00002026
+	
+	// (get) Token: 0x0600006C RID: 108 RVA: 0x000024B3 File Offset: 0x000006B3
 	public static bool AllObjectsLoaded
 	{
 		get
@@ -82,7 +82,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600006D RID: 109 RVA: 0x00003E34 File Offset: 0x00002034
+	
 	private void addObjectToPool(GameObject sourceObject, int number)
 	{
 		int instanceID = sourceObject.GetInstanceID();
@@ -117,7 +117,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600006E RID: 110 RVA: 0x00003F1C File Offset: 0x0000211C
+	
 	private void removeObjectsFromPool(GameObject sourceObject)
 	{
 		int instanceID = sourceObject.GetInstanceID();
@@ -143,7 +143,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 		this.poolCursors.Remove(instanceID);
 	}
 
-	// Token: 0x0600006F RID: 111 RVA: 0x00003FE0 File Offset: 0x000021E0
+	
 	private void increasePoolCursor(int uniqueId)
 	{
 		Dictionary<int, int> dictionary = CFX_SpawnSystem.instance.poolCursors;
@@ -155,7 +155,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000070 RID: 112 RVA: 0x00004042 File Offset: 0x00002242
+	
 	private void Awake()
 	{
 		if (CFX_SpawnSystem.instance != null)
@@ -165,7 +165,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 		CFX_SpawnSystem.instance = this;
 	}
 
-	// Token: 0x06000071 RID: 113 RVA: 0x00004068 File Offset: 0x00002268
+	
 	private void Start()
 	{
 		this.allObjectsLoaded = false;
@@ -176,33 +176,33 @@ public class CFX_SpawnSystem : MonoBehaviour
 		this.allObjectsLoaded = true;
 	}
 
-	// Token: 0x0400005E RID: 94
+	
 	private static CFX_SpawnSystem instance;
 
-	// Token: 0x0400005F RID: 95
+	
 	public GameObject[] objectsToPreload = new GameObject[0];
 
-	// Token: 0x04000060 RID: 96
+	
 	public int[] objectsToPreloadTimes = new int[0];
 
-	// Token: 0x04000061 RID: 97
+	
 	public bool hideObjectsInHierarchy;
 
-	// Token: 0x04000062 RID: 98
+	
 	public bool spawnAsChildren = true;
 
-	// Token: 0x04000063 RID: 99
+	
 	public bool onlyGetInactiveObjects;
 
-	// Token: 0x04000064 RID: 100
+	
 	public bool instantiateIfNeeded;
 
-	// Token: 0x04000065 RID: 101
+	
 	private bool allObjectsLoaded;
 
-	// Token: 0x04000066 RID: 102
+	
 	private Dictionary<int, List<GameObject>> instantiatedObjects = new Dictionary<int, List<GameObject>>();
 
-	// Token: 0x04000067 RID: 103
+	
 	private Dictionary<int, int> poolCursors = new Dictionary<int, int>();
 }

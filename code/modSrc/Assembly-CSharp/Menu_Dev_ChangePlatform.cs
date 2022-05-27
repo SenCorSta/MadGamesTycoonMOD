@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000131 RID: 305
+
 public class Menu_Dev_ChangePlatform : MonoBehaviour
 {
-	// Token: 0x06000AE0 RID: 2784 RVA: 0x000759DD File Offset: 0x00073BDD
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000AE1 RID: 2785 RVA: 0x000759E8 File Offset: 0x00073BE8
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -72,7 +72,7 @@ public class Menu_Dev_ChangePlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AE2 RID: 2786 RVA: 0x00075BA4 File Offset: 0x00073DA4
+	
 	public void Init(gameScript game_)
 	{
 		this.FindScripts();
@@ -103,7 +103,7 @@ public class Menu_Dev_ChangePlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AE3 RID: 2787 RVA: 0x00075D81 File Offset: 0x00073F81
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -111,7 +111,7 @@ public class Menu_Dev_ChangePlatform : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x06000AE4 RID: 2788 RVA: 0x00075DA8 File Offset: 0x00073FA8
+	
 	public void BUTTON_Ok()
 	{
 		string text = "";
@@ -182,14 +182,14 @@ public class Menu_Dev_ChangePlatform : MonoBehaviour
 		this.BUTTON_Close();
 	}
 
-	// Token: 0x06000AE5 RID: 2789 RVA: 0x00076024 File Offset: 0x00074224
+	
 	public void BUTTON_PlatformKaufen()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[33]);
 	}
 
-	// Token: 0x06000AE6 RID: 2790 RVA: 0x0007604C File Offset: 0x0007424C
+	
 	public void BUTTON_Platform(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -197,7 +197,7 @@ public class Menu_Dev_ChangePlatform : MonoBehaviour
 		this.guiMain_.uiObjects[66].GetComponent<Menu_DevGame_Platform>().Init(i);
 	}
 
-	// Token: 0x06000AE7 RID: 2791 RVA: 0x00076098 File Offset: 0x00074298
+	
 	public void SetPlatform(int slot, int platform_, bool init)
 	{
 		this.g_GamePlatform[slot] = platform_;
@@ -298,7 +298,7 @@ public class Menu_Dev_ChangePlatform : MonoBehaviour
 		this.uiObjects[25].GetComponent<Text>().text = this.mS_.GetMoney((long)this.CalcDevCosts(), true);
 	}
 
-	// Token: 0x06000AE8 RID: 2792 RVA: 0x0007666C File Offset: 0x0007486C
+	
 	public float GetGesamtMarktanteil(int platformTyp)
 	{
 		if (!this.gS_)
@@ -325,7 +325,7 @@ public class Menu_Dev_ChangePlatform : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000AE9 RID: 2793 RVA: 0x00076708 File Offset: 0x00074908
+	
 	public int GetEngineTechLevel()
 	{
 		this.gS_.FindMyEngineNew();
@@ -336,7 +336,7 @@ public class Menu_Dev_ChangePlatform : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06000AEA RID: 2794 RVA: 0x0007673C File Offset: 0x0007493C
+	
 	private int CalcDevCosts()
 	{
 		int num = 0;
@@ -354,54 +354,54 @@ public class Menu_Dev_ChangePlatform : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x04000F2B RID: 3883
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000F2C RID: 3884
+	
 	public int[] g_GamePlatform;
 
-	// Token: 0x04000F2D RID: 3885
+	
 	private GameObject main_;
 
-	// Token: 0x04000F2E RID: 3886
+	
 	private mainScript mS_;
 
-	// Token: 0x04000F2F RID: 3887
+	
 	private textScript tS_;
 
-	// Token: 0x04000F30 RID: 3888
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000F31 RID: 3889
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04000F32 RID: 3890
+	
 	private genres genres_;
 
-	// Token: 0x04000F33 RID: 3891
+	
 	private themes themes_;
 
-	// Token: 0x04000F34 RID: 3892
+	
 	private licences licences_;
 
-	// Token: 0x04000F35 RID: 3893
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04000F36 RID: 3894
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04000F37 RID: 3895
+	
 	private unlockScript unlock_;
 
-	// Token: 0x04000F38 RID: 3896
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x04000F39 RID: 3897
+	
 	private games games_;
 
-	// Token: 0x04000F3A RID: 3898
+	
 	private platforms platforms_;
 
-	// Token: 0x04000F3B RID: 3899
+	
 	public gameScript gS_;
 }

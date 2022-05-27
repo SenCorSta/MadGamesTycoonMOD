@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001FE RID: 510
+
 public class Menu_Production : MonoBehaviour
 {
-	// Token: 0x06001379 RID: 4985 RVA: 0x000CD377 File Offset: 0x000CB577
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600137A RID: 4986 RVA: 0x000CD380 File Offset: 0x000CB580
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_Production : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600137B RID: 4987 RVA: 0x000CD46C File Offset: 0x000CB66C
+	
 	private void Update()
 	{
 		if (!this.selectedGame.isOnMarket)
@@ -59,7 +59,7 @@ public class Menu_Production : MonoBehaviour
 		this.uiObjects[12].GetComponent<Text>().text = this.mS_.GetMoney((long)Mathf.RoundToInt(this.selectedGame.GetProduktionskosten(2) * (float)this.produktionsmenge[2]), true);
 	}
 
-	// Token: 0x0600137C RID: 4988 RVA: 0x000CD544 File Offset: 0x000CB744
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -75,7 +75,7 @@ public class Menu_Production : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600137D RID: 4989 RVA: 0x000CD590 File Offset: 0x000CB790
+	
 	public void Init(roomScript roomS_, gameScript gS_)
 	{
 		if (!roomS_ || !gS_)
@@ -107,7 +107,7 @@ public class Menu_Production : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600137E RID: 4990 RVA: 0x000CD6E8 File Offset: 0x000CB8E8
+	
 	private void SetData()
 	{
 		if (this.selectedGame)
@@ -118,7 +118,7 @@ public class Menu_Production : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600137F RID: 4991 RVA: 0x000CD78C File Offset: 0x000CB98C
+	
 	private void SetInputFieldData()
 	{
 		this.uiObjects[7].GetComponent<InputField>().text = this.produktionsmenge[0].ToString();
@@ -126,7 +126,7 @@ public class Menu_Production : MonoBehaviour
 		this.uiObjects[9].GetComponent<InputField>().text = this.produktionsmenge[2].ToString();
 	}
 
-	// Token: 0x06001380 RID: 4992 RVA: 0x000CD804 File Offset: 0x000CBA04
+	
 	public void INPUTFIELD_Production(int i)
 	{
 		if (this.uiObjects[7 + i].GetComponent<InputField>().text.Length <= 0)
@@ -137,14 +137,14 @@ public class Menu_Production : MonoBehaviour
 		this.produktionsmenge[i] = int.Parse(this.uiObjects[7 + i].GetComponent<InputField>().text);
 	}
 
-	// Token: 0x06001381 RID: 4993 RVA: 0x000CD858 File Offset: 0x000CBA58
+	
 	public void SLIDER_Production(int i)
 	{
 		this.produktionsmenge[i] = Mathf.RoundToInt(this.uiObjects[4 + i].GetComponent<Slider>().value * 1000f);
 		this.SetInputFieldData();
 	}
 
-	// Token: 0x06001382 RID: 4994 RVA: 0x000CD887 File Offset: 0x000CBA87
+	
 	private IEnumerator iMinusProduction(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -155,7 +155,7 @@ public class Menu_Production : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001383 RID: 4995 RVA: 0x000CD8A0 File Offset: 0x000CBAA0
+	
 	public void BUTTON_MinusProduction(int i)
 	{
 		if ((this.selectedGame.typ_budget || this.selectedGame.typ_bundle || this.selectedGame.typ_goty || this.selectedGame.typ_addon || this.selectedGame.typ_mmoaddon || this.selectedGame.typ_addonStandalone) && (i == 1 || i == 2))
@@ -173,7 +173,7 @@ public class Menu_Production : MonoBehaviour
 		this.uiObjects[4 + i].GetComponent<Slider>().value = (float)(this.produktionsmenge[i] / 1000);
 	}
 
-	// Token: 0x06001384 RID: 4996 RVA: 0x000CD971 File Offset: 0x000CBB71
+	
 	private IEnumerator iPlusProduction(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -184,7 +184,7 @@ public class Menu_Production : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001385 RID: 4997 RVA: 0x000CD988 File Offset: 0x000CBB88
+	
 	public void BUTTON_PlusProduction(int i)
 	{
 		if ((this.selectedGame.typ_budget || this.selectedGame.typ_bundle || this.selectedGame.typ_goty || this.selectedGame.typ_addon || this.selectedGame.typ_mmoaddon || this.selectedGame.typ_addonStandalone) && (i == 1 || i == 2))
@@ -202,14 +202,14 @@ public class Menu_Production : MonoBehaviour
 		this.uiObjects[4 + i].GetComponent<Slider>().value = (float)(this.produktionsmenge[i] / 1000);
 	}
 
-	// Token: 0x06001386 RID: 4998 RVA: 0x000CDA61 File Offset: 0x000CBC61
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001387 RID: 4999 RVA: 0x000CDA7C File Offset: 0x000CBC7C
+	
 	public void BUTTON_OK()
 	{
 		if (!this.selectedGame)
@@ -244,44 +244,44 @@ public class Menu_Production : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001388 RID: 5000 RVA: 0x00002715 File Offset: 0x00000915
+	
 	public void TOGGLE_Auto()
 	{
 	}
 
-	// Token: 0x040017AA RID: 6058
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040017AB RID: 6059
+	
 	private GameObject main_;
 
-	// Token: 0x040017AC RID: 6060
+	
 	private mainScript mS_;
 
-	// Token: 0x040017AD RID: 6061
+	
 	private textScript tS_;
 
-	// Token: 0x040017AE RID: 6062
+	
 	private unlockScript unlock_;
 
-	// Token: 0x040017AF RID: 6063
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040017B0 RID: 6064
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040017B1 RID: 6065
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040017B2 RID: 6066
+	
 	private roomScript rS_;
 
-	// Token: 0x040017B3 RID: 6067
+	
 	private gameScript selectedGame;
 
-	// Token: 0x040017B4 RID: 6068
+	
 	public int[] produktionsmenge;
 
-	// Token: 0x040017B5 RID: 6069
+	
 	private float updateTimer;
 }

@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using Vectrosity;
 
-// Token: 0x02000042 RID: 66
+
 public class characterScript : MonoBehaviour
 {
-	// Token: 0x060000F7 RID: 247 RVA: 0x0000D024 File Offset: 0x0000B224
+	
 	private void Start()
 	{
 		this.FindScripts();
@@ -20,7 +20,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F8 RID: 248 RVA: 0x0000D076 File Offset: 0x0000B276
+	
 	private void OnDestroy()
 	{
 		if (this.mS_)
@@ -29,7 +29,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F9 RID: 249 RVA: 0x0000D094 File Offset: 0x0000B294
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -86,7 +86,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000FA RID: 250 RVA: 0x0000D238 File Offset: 0x0000B438
+	
 	public void Init()
 	{
 		base.name = "CHAR_" + this.myID.ToString();
@@ -101,7 +101,7 @@ public class characterScript : MonoBehaviour
 		this.freezer = UnityEngine.Random.Range(15f, 100f);
 	}
 
-	// Token: 0x060000FB RID: 251 RVA: 0x0000D313 File Offset: 0x0000B513
+	
 	private void Update()
 	{
 		this.UpdateMyRoom();
@@ -113,7 +113,7 @@ public class characterScript : MonoBehaviour
 		this.StopPopAnimations();
 	}
 
-	// Token: 0x060000FC RID: 252 RVA: 0x0000D340 File Offset: 0x0000B540
+	
 	private void InitUI()
 	{
 		this.myUI = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(99999f, 99999f, 0f), Quaternion.identity);
@@ -181,7 +181,7 @@ public class characterScript : MonoBehaviour
 		this.HidePops();
 	}
 
-	// Token: 0x060000FD RID: 253 RVA: 0x0000D904 File Offset: 0x0000BB04
+	
 	private void HidePops()
 	{
 		Vector3 localScale = new Vector3(0f, 0f, 0f);
@@ -194,7 +194,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000FE RID: 254 RVA: 0x0000D95C File Offset: 0x0000BB5C
+	
 	private void StopPopAnimations()
 	{
 		this.timerStopPopAnimations += Time.deltaTime;
@@ -212,7 +212,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000FF RID: 255 RVA: 0x0000DA00 File Offset: 0x0000BC00
+	
 	public void HideChar()
 	{
 		if (this.picked)
@@ -223,7 +223,7 @@ public class characterScript : MonoBehaviour
 		base.transform.localScale = new Vector3(0f, 0f, 0f);
 	}
 
-	// Token: 0x06000100 RID: 256 RVA: 0x0000DA31 File Offset: 0x0000BC31
+	
 	public void UnhideChar()
 	{
 		this.hided = false;
@@ -231,7 +231,7 @@ public class characterScript : MonoBehaviour
 		this.HidePops();
 	}
 
-	// Token: 0x06000101 RID: 257 RVA: 0x0000DA60 File Offset: 0x0000BC60
+	
 	public void UpdateKI(bool roomSpecific)
 	{
 		this.FindScripts();
@@ -387,7 +387,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000102 RID: 258 RVA: 0x0000E070 File Offset: 0x0000C270
+	
 	private void UpdateMyRoom()
 	{
 		if (this.roomID == -1)
@@ -415,7 +415,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000103 RID: 259 RVA: 0x0000E10C File Offset: 0x0000C30C
+	
 	private void UpdateUI()
 	{
 		bool flag = false;
@@ -467,7 +467,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000104 RID: 260 RVA: 0x0000E2B3 File Offset: 0x0000C4B3
+	
 	private IEnumerator CreatePopInSeconds_SPRITE(Sprite sprite_, string text_, float waitTime, int sound)
 	{
 		if (!this.settings_.disableWorkIcons)
@@ -478,7 +478,7 @@ public class characterScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000105 RID: 261 RVA: 0x0000E2E0 File Offset: 0x0000C4E0
+	
 	private void CreatePop_SPRITE(Sprite sprite_, string text_, int sound)
 	{
 		if (!this.uiVisible)
@@ -500,7 +500,7 @@ public class characterScript : MonoBehaviour
 		this.ePopText[this.ePop_Misc].text = text_;
 	}
 
-	// Token: 0x06000106 RID: 262 RVA: 0x0000E39A File Offset: 0x0000C59A
+	
 	private IEnumerator CreatePopInSeconds(int popID, float f, float waitTime, int sound)
 	{
 		if (!this.settings_.disableWorkIcons)
@@ -512,7 +512,7 @@ public class characterScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000107 RID: 263 RVA: 0x0000E3C8 File Offset: 0x0000C5C8
+	
 	private void CreatePop(int popID, float f, int sound)
 	{
 		if (!this.uiVisible)
@@ -536,7 +536,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000108 RID: 264 RVA: 0x0000E46C File Offset: 0x0000C66C
+	
 	public int GetBestSkill()
 	{
 		float num = this.s_gamedesign;
@@ -582,7 +582,7 @@ public class characterScript : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06000109 RID: 265 RVA: 0x0000E708 File Offset: 0x0000C908
+	
 	public float GetBestSkillValue()
 	{
 		float num = this.s_gamedesign;
@@ -629,7 +629,7 @@ public class characterScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600010A RID: 266 RVA: 0x0000E9A4 File Offset: 0x0000CBA4
+	
 	public string GetTooltip()
 	{
 		if (!this.tS_)
@@ -817,7 +817,7 @@ public class characterScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x0600010B RID: 267 RVA: 0x0000F070 File Offset: 0x0000D270
+	
 	private void DrawRoomLine()
 	{
 		if (this.guiMain_.menuOpen)
@@ -857,7 +857,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600010C RID: 268 RVA: 0x0000F2C8 File Offset: 0x0000D4C8
+	
 	public void MouseOver()
 	{
 		this.SetOutlineLayer();
@@ -869,7 +869,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600010D RID: 269 RVA: 0x0000F32C File Offset: 0x0000D52C
+	
 	public void MouseLeave()
 	{
 		if (this.mS_.roomLine.active)
@@ -886,7 +886,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600010E RID: 270 RVA: 0x0000F3E4 File Offset: 0x0000D5E4
+	
 	public void SetOutlineLayer()
 	{
 		if (!this.outline)
@@ -900,7 +900,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600010F RID: 271 RVA: 0x0000F438 File Offset: 0x0000D638
+	
 	private void DisableOutlineLayer()
 	{
 		if (this.outline)
@@ -910,7 +910,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000110 RID: 272 RVA: 0x0000F464 File Offset: 0x0000D664
+	
 	private void SetLayer(int newLayer, Transform trans)
 	{
 		trans.gameObject.layer = newLayer;
@@ -925,7 +925,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000111 RID: 273 RVA: 0x0000F4E0 File Offset: 0x0000D6E0
+	
 	public void PickUp()
 	{
 		if (this.objectUsingS_)
@@ -948,7 +948,7 @@ public class characterScript : MonoBehaviour
 		this.guiMain_.uiObjects[15].GetComponent<Menu_PickCharacter>().AddCharToList(this);
 	}
 
-	// Token: 0x06000112 RID: 274 RVA: 0x0000F5B8 File Offset: 0x0000D7B8
+	
 	public void DropChar(Vector3 v)
 	{
 		this.picked = false;
@@ -987,7 +987,7 @@ public class characterScript : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x06000113 RID: 275 RVA: 0x0000F724 File Offset: 0x0000D924
+	
 	public void RemoveObjectUsing()
 	{
 		this.FindScripts();
@@ -1014,7 +1014,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000114 RID: 276 RVA: 0x0000F838 File Offset: 0x0000DA38
+	
 	private void UpdateUsingObject()
 	{
 		if (this.objectUsingID != -1 && !this.objectUsingS_)
@@ -1029,7 +1029,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000115 RID: 277 RVA: 0x0000F894 File Offset: 0x0000DA94
+	
 	private void UpdateBelegtObject()
 	{
 		if (this.objectBelegtID != -1 && !this.objectBelegtS_)
@@ -1044,7 +1044,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000116 RID: 278 RVA: 0x0000F8F0 File Offset: 0x0000DAF0
+	
 	public void UpdateKuendigen(bool force)
 	{
 		if (this.perks[4])
@@ -1079,7 +1079,7 @@ public class characterScript : MonoBehaviour
 		this.guiMain_.uiObjects[84].GetComponent<Menu_MitarberKuendigt>().Init(this);
 	}
 
-	// Token: 0x06000117 RID: 279 RVA: 0x0000F988 File Offset: 0x0000DB88
+	
 	public void UpdateKrank()
 	{
 		if (!this.mS_)
@@ -1113,7 +1113,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000118 RID: 280 RVA: 0x0000FA20 File Offset: 0x0000DC20
+	
 	private void UpdateBeduerfnisse()
 	{
 		if (this.mS_.GetDeltaTime() <= 0f)
@@ -1136,7 +1136,7 @@ public class characterScript : MonoBehaviour
 		{
 			return;
 		}
-		float num = 0.1f;
+		float num = 0f;
 		int num2 = Mathf.RoundToInt(base.transform.position.x);
 		int num3 = Mathf.RoundToInt(base.transform.position.z);
 		if (!this.mapS_.IsInMapLimit(num2, num3))
@@ -1181,14 +1181,17 @@ public class characterScript : MonoBehaviour
 			return;
 		}
 		this.AddMotivation(-0.02f * this.mS_.GetDeltaTime());
-		switch (this.mS_.personal_pausen)
+		int personal_pausen = this.mS_.personal_pausen;
+		if (personal_pausen != 1)
 		{
-		case 1:
+			if (personal_pausen == 2)
+			{
+				this.AddMotivation(-0.02f * this.mS_.GetDeltaTime());
+			}
+		}
+		else
+		{
 			this.AddMotivation(-0.01f * this.mS_.GetDeltaTime());
-			break;
-		case 2:
-			this.AddMotivation(-0.02f * this.mS_.GetDeltaTime());
-			break;
 		}
 		if (!this.perks[20] && this.roomS_ && this.roomS_.IsCrunchtimeRead())
 		{
@@ -1371,29 +1374,30 @@ public class characterScript : MonoBehaviour
 		{
 			return;
 		}
-		if (!flag)
+		if (flag)
 		{
-			switch (UnityEngine.Random.Range(0, 4))
-			{
-			case 0:
-				this.GoToGhostObject(4, false);
-				return;
-			case 1:
-				this.GoToGhostObject(5, false);
-				return;
-			case 2:
-				this.GoToGhostObject(6, false);
-				return;
-			case 3:
-				this.GoToGhostObject(7, false);
-				break;
-			default:
-				return;
-			}
+			return;
+		}
+		switch (UnityEngine.Random.Range(0, 4))
+		{
+		case 0:
+			this.GoToGhostObject(4, false);
+			return;
+		case 1:
+			this.GoToGhostObject(5, false);
+			return;
+		case 2:
+			this.GoToGhostObject(6, false);
+			return;
+		case 3:
+			this.GoToGhostObject(7, false);
+			return;
+		default:
+			return;
 		}
 	}
 
-	// Token: 0x06000119 RID: 281 RVA: 0x000100E0 File Offset: 0x0000E2E0
+	
 	private void GoToGhostObject(int i, bool inRoom_)
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.mS_.miscGamePrefabs[i]);
@@ -1421,25 +1425,13 @@ public class characterScript : MonoBehaviour
 		this.moveS_.FindObjectInRoom(-1, gameObject, false);
 	}
 
-	// Token: 0x0600011A RID: 282 RVA: 0x00010220 File Offset: 0x0000E420
+	
 	public void AddMotivation(float f)
 	{
-		if (this.perks[0])
-		{
-			return;
-		}
-		this.s_motivation += f;
-		if (this.s_motivation < 0f)
-		{
-			this.s_motivation = 0f;
-		}
-		if (this.s_motivation > 100f)
-		{
-			this.s_motivation = 100f;
-		}
+		this.s_motivation = 100f;
 	}
 
-	// Token: 0x0600011B RID: 283 RVA: 0x00010276 File Offset: 0x0000E476
+	
 	public void ResetKrank()
 	{
 		this.krank = 0;
@@ -1447,7 +1439,7 @@ public class characterScript : MonoBehaviour
 		this.CreatePop(this.ePop_Arzt, 0f, 15);
 	}
 
-	// Token: 0x0600011C RID: 284 RVA: 0x000102A5 File Offset: 0x0000E4A5
+	
 	public void ResetMotivation(bool erfuellt, float motivationRegen)
 	{
 		if (erfuellt)
@@ -1460,7 +1452,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600011D RID: 285 RVA: 0x000102CC File Offset: 0x0000E4CC
+	
 	public void ResetGiessen(bool erfuellt)
 	{
 		this.giessen = 100f;
@@ -1490,7 +1482,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600011E RID: 286 RVA: 0x000103A4 File Offset: 0x0000E5A4
+	
 	public void ResetDurst(bool erfuellt)
 	{
 		this.durst = 100f;
@@ -1516,7 +1508,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600011F RID: 287 RVA: 0x00010468 File Offset: 0x0000E668
+	
 	public void ResetWC(bool erfuellt)
 	{
 		this.klo = 100f;
@@ -1534,7 +1526,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000120 RID: 288 RVA: 0x0001050C File Offset: 0x0000E70C
+	
 	public void ResetWaschbecken(bool erfuellt)
 	{
 		this.waschbecken = 100f;
@@ -1559,7 +1551,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000121 RID: 289 RVA: 0x000105BC File Offset: 0x0000E7BC
+	
 	public void ResetFreezer(bool erfuellt)
 	{
 		this.freezer = 100f;
@@ -1584,7 +1576,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000122 RID: 290 RVA: 0x0001066A File Offset: 0x0000E86A
+	
 	public void ResetPause(bool erfuellt)
 	{
 		this.pause = 100f - (float)(this.mS_.personal_pausen * 20);
@@ -1594,7 +1586,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000123 RID: 291 RVA: 0x000106A8 File Offset: 0x0000E8A8
+	
 	public void ResetMuell(bool erfuellt)
 	{
 		this.muell = 100f;
@@ -1635,7 +1627,7 @@ public class characterScript : MonoBehaviour
 		this.AddMotivation(-5f);
 	}
 
-	// Token: 0x06000124 RID: 292 RVA: 0x000107D0 File Offset: 0x0000E9D0
+	
 	public void ShowAddObject(int i)
 	{
 		if (this.addObjects[i] && !this.addObjects[i].activeSelf)
@@ -1644,7 +1636,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000125 RID: 293 RVA: 0x00010800 File Offset: 0x0000EA00
+	
 	public void HideAddObjects()
 	{
 		for (int i = 0; i < this.addObjects.Length; i++)
@@ -1656,13 +1648,13 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000126 RID: 294 RVA: 0x0001084C File Offset: 0x0000EA4C
+	
 	public bool IsVisible()
 	{
 		return this.myRenderer.isVisible;
 	}
 
-	// Token: 0x06000127 RID: 295 RVA: 0x00010860 File Offset: 0x0000EA60
+	
 	private Color GetMotivationColor(float val)
 	{
 		if (val < 30f)
@@ -1680,7 +1672,7 @@ public class characterScript : MonoBehaviour
 		return this.colors[0];
 	}
 
-	// Token: 0x06000128 RID: 296 RVA: 0x000108C0 File Offset: 0x0000EAC0
+	
 	private void UpdateIcon()
 	{
 		if (this.roomID == -1)
@@ -1878,13 +1870,13 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000129 RID: 297 RVA: 0x00010EC4 File Offset: 0x0000F0C4
+	
 	public bool IsUeberfuellt()
 	{
 		return this.roomID != -1 && this.roomS_ && this.objectUsingID != -1 && this.objectUsingS_ && this.objectUsingS_.isArbeitsplatz && this.roomS_.IsUberberfuell();
 	}
 
-	// Token: 0x0600012A RID: 298 RVA: 0x00010F1C File Offset: 0x0000F11C
+	
 	public roomScript GetWorkRoomScript()
 	{
 		roomScript result = null;
@@ -1903,7 +1895,7 @@ public class characterScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x0600012B RID: 299 RVA: 0x00010F7C File Offset: 0x0000F17C
+	
 	private void UpdateSprechblase()
 	{
 		if (!this.settings_.sprechblasen)
@@ -1939,7 +1931,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600012C RID: 300 RVA: 0x00011094 File Offset: 0x0000F294
+	
 	public bool IsNoWork_Unterstuetzen()
 	{
 		if (this.roomS_.taskGameObject)
@@ -1980,7 +1972,7 @@ public class characterScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600012D RID: 301 RVA: 0x0001113C File Offset: 0x0000F33C
+	
 	private void UpdateWork()
 	{
 		if (this.mS_.GetDeltaTime() <= 0f)
@@ -2187,18 +2179,21 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600012E RID: 302 RVA: 0x00011540 File Offset: 0x0000F740
+	
 	private float GetWorkSpeed()
 	{
 		float num = 0.01f * ((this.s_motivation + 10f) * 0.5f);
-		switch (this.mS_.personal_druck)
+		int personal_druck = this.mS_.personal_druck;
+		if (personal_druck != 1)
 		{
-		case 1:
+			if (personal_druck == 2)
+			{
+				num *= 1.5f;
+			}
+		}
+		else
+		{
 			num *= 1.25f;
-			break;
-		case 2:
-			num *= 1.5f;
-			break;
 		}
 		if (this.perks[29])
 		{
@@ -2218,22 +2213,25 @@ public class characterScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600012F RID: 303 RVA: 0x000115FC File Offset: 0x0000F7FC
+	
 	private float GetWorkResult(float f)
 	{
-		switch (this.mS_.personal_druck)
+		int personal_druck = this.mS_.personal_druck;
+		if (personal_druck != 1)
 		{
-		case 1:
+			if (personal_druck == 2)
+			{
+				f *= 0.6f;
+			}
+		}
+		else
+		{
 			f *= 0.8f;
-			break;
-		case 2:
-			f *= 0.6f;
-			break;
 		}
 		return this.mS_.Round(f, 1);
 	}
 
-	// Token: 0x06000130 RID: 304 RVA: 0x0001164C File Offset: 0x0000F84C
+	
 	private void WORK_Untersteutzen()
 	{
 		taskUnterstuetzen taskUnterstuetzen = this.roomS_.GetTaskUnterstuetzen();
@@ -2336,7 +2334,7 @@ public class characterScript : MonoBehaviour
 		this.WORK_Hardware(taskUnterstuetzen.rS_);
 	}
 
-	// Token: 0x06000131 RID: 305 RVA: 0x000117D8 File Offset: 0x0000F9D8
+	
 	public int TrainingState(roomScript rS_)
 	{
 		if (!rS_)
@@ -2515,7 +2513,7 @@ public class characterScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06000132 RID: 306 RVA: 0x00011DB8 File Offset: 0x0000FFB8
+	
 	private bool WORK_Training(roomScript rS_)
 	{
 		if (!this.guiMain_)
@@ -2720,7 +2718,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000133 RID: 307 RVA: 0x00012398 File Offset: 0x00010598
+	
 	private bool WORK_ContractWork(roomScript rS_)
 	{
 		if (!rS_)
@@ -2760,140 +2758,140 @@ public class characterScript : MonoBehaviour
 		}
 		if (rS_.typ == 3)
 		{
-			float num3 = UnityEngine.Random.Range(0.1f, this.s_gamedesign * 0.1f) * num2;
-			num3 = this.GetWorkResult(num3);
+			float num4 = UnityEngine.Random.Range(0.1f, this.s_gamedesign * 0.1f) * num2;
+			num4 = this.GetWorkResult(num4);
 			if (this.perks[28])
 			{
-				num3 *= 2f;
+				num4 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Gameplay, num3, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Gameplay, num4, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num3);
+			taskContractWork.Work(num4);
 			this.Learn(true, false, false, false, false, false, false, false);
 			if (critic)
 			{
-				num3 = UnityEngine.Random.Range(0.1f, this.s_gamedesign * 0.1f);
-				num3 = this.GetWorkResult(num3);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Gameplay, num3, num, 13));
+				num4 = UnityEngine.Random.Range(0.1f, this.s_gamedesign * 0.1f);
+				num4 = this.GetWorkResult(num4);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Gameplay, num4, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num3);
+				taskContractWork.Work(num4);
 			}
 			return true;
 		}
 		if (rS_.typ == 4)
 		{
-			float num3 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f) * num2;
-			num3 = this.GetWorkResult(num3);
+			float num5 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f) * num2;
+			num5 = this.GetWorkResult(num5);
 			if (this.perks[28])
 			{
-				num3 *= 2f;
+				num5 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num3, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num5, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num3);
+			taskContractWork.Work(num5);
 			this.Learn(false, false, true, false, false, false, false, false);
 			if (critic)
 			{
-				num3 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f);
-				num3 = this.GetWorkResult(num3);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num3, num, 13));
+				num5 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f);
+				num5 = this.GetWorkResult(num5);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num5, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num3);
+				taskContractWork.Work(num5);
 			}
 			return true;
 		}
 		if (rS_.typ == 5)
 		{
-			float num3 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f) * num2;
-			num3 = this.GetWorkResult(num3);
+			float num6 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f) * num2;
+			num6 = this.GetWorkResult(num6);
 			if (this.perks[28])
 			{
-				num3 *= 2f;
+				num6 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num3, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num6, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num3);
+			taskContractWork.Work(num6);
 			this.Learn(false, false, false, true, false, false, false, false);
 			if (critic)
 			{
-				num3 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f);
-				num3 = this.GetWorkResult(num3);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num3, num, 13));
+				num6 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f);
+				num6 = this.GetWorkResult(num6);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num6, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num3);
+				taskContractWork.Work(num6);
 			}
 			return true;
 		}
 		if (rS_.typ == 10)
 		{
-			float num3 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f) * num2;
-			num3 = this.GetWorkResult(num3);
+			float num7 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f) * num2;
+			num7 = this.GetWorkResult(num7);
 			if (this.perks[28])
 			{
-				num3 *= 2f;
+				num7 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num3, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num7, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num3);
+			taskContractWork.Work(num7);
 			this.Learn(false, true, false, false, false, false, false, false);
 			if (critic)
 			{
-				num3 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f);
-				num3 = this.GetWorkResult(num3);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num3, num, 13));
+				num7 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f);
+				num7 = this.GetWorkResult(num7);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num7, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num3);
+				taskContractWork.Work(num7);
 			}
 			return true;
 		}
 		if (rS_.typ == 17)
 		{
-			float num3 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f) * num2;
-			num3 = this.GetWorkResult(num3);
+			float num8 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f) * num2;
+			num8 = this.GetWorkResult(num8);
 			if (this.perks[28])
 			{
-				num3 *= 2f;
+				num8 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_ProdArcade, num3, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_ProdArcade, num8, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num3);
+			taskContractWork.Work(num8);
 			this.Learn(false, false, false, false, false, false, true, false);
 			if (critic)
 			{
-				num3 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f);
-				num3 = this.GetWorkResult(num3);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_ProdArcade, num3, num, 13));
+				num8 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f);
+				num8 = this.GetWorkResult(num8);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_ProdArcade, num8, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num3);
+				taskContractWork.Work(num8);
 			}
 			return true;
 		}
 		if (rS_.typ == 8)
 		{
-			float num3 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f) * num2;
-			num3 = this.GetWorkResult(num3);
+			float num9 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f) * num2;
+			num9 = this.GetWorkResult(num9);
 			if (this.perks[28])
 			{
-				num3 *= 2f;
+				num9 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Hardware, num3, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Hardware, num9, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num3);
+			taskContractWork.Work(num9);
 			this.Learn(false, false, false, false, false, false, true, false);
 			if (critic)
 			{
-				num3 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f);
-				num3 = this.GetWorkResult(num3);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Hardware, num3, num, 13));
+				num9 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f);
+				num9 = this.GetWorkResult(num9);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Hardware, num9, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num3);
+				taskContractWork.Work(num9);
 			}
 			return true;
 		}
 		return true;
 	}
 
-	// Token: 0x06000134 RID: 308 RVA: 0x00012930 File Offset: 0x00010B30
+	
 	private bool WORK_Fankampagne(roomScript rS_)
 	{
 		if (!rS_)
@@ -2926,7 +2924,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000135 RID: 309 RVA: 0x00012A28 File Offset: 0x00010C28
+	
 	private bool WORK_Mitarbeitersuche(roomScript rS_)
 	{
 		if (!rS_)
@@ -2959,7 +2957,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000136 RID: 310 RVA: 0x00012B20 File Offset: 0x00010D20
+	
 	private bool WORK_Marktforschung(roomScript rS_)
 	{
 		if (!rS_)
@@ -2992,7 +2990,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000137 RID: 311 RVA: 0x00012C18 File Offset: 0x00010E18
+	
 	private bool WORK_Support(roomScript rS_)
 	{
 		if (!rS_)
@@ -3025,7 +3023,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000138 RID: 312 RVA: 0x00012D10 File Offset: 0x00010F10
+	
 	private bool WORK_Fanshop(roomScript rS_)
 	{
 		if (!rS_)
@@ -3088,7 +3086,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000139 RID: 313 RVA: 0x00012FB4 File Offset: 0x000111B4
+	
 	private bool WORK_Marketing(roomScript rS_)
 	{
 		if (!rS_)
@@ -3125,7 +3123,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600013A RID: 314 RVA: 0x000130B4 File Offset: 0x000112B4
+	
 	private bool WORK_MarketingSpezial(roomScript rS_)
 	{
 		if (!rS_)
@@ -3158,7 +3156,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600013B RID: 315 RVA: 0x000131AC File Offset: 0x000113AC
+	
 	private bool WORK_Hardware(roomScript rS_)
 	{
 		if (!rS_)
@@ -3202,7 +3200,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600013C RID: 316 RVA: 0x000132E8 File Offset: 0x000114E8
+	
 	private bool WORK_ArcadeProduction(roomScript rS_)
 	{
 		if (!rS_)
@@ -3239,7 +3237,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600013D RID: 317 RVA: 0x000133FC File Offset: 0x000115FC
+	
 	private bool WORK_Update(roomScript rS_)
 	{
 		if (!rS_)
@@ -3272,7 +3270,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600013E RID: 318 RVA: 0x000134F4 File Offset: 0x000116F4
+	
 	private bool WORK_F2PUpdate(roomScript rS_)
 	{
 		if (!rS_)
@@ -3305,7 +3303,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600013F RID: 319 RVA: 0x000135EC File Offset: 0x000117EC
+	
 	private bool WORK_Bugfixing(roomScript rS_)
 	{
 		if (!rS_)
@@ -3338,7 +3336,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000140 RID: 320 RVA: 0x000136E4 File Offset: 0x000118E4
+	
 	private bool WORK_Polishing(roomScript rS_)
 	{
 		if (!rS_)
@@ -3391,7 +3389,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000141 RID: 321 RVA: 0x000138A8 File Offset: 0x00011AA8
+	
 	private bool WORK_Spielbericht(roomScript rS_)
 	{
 		if (!rS_)
@@ -3424,7 +3422,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000142 RID: 322 RVA: 0x000139A0 File Offset: 0x00011BA0
+	
 	private bool WORK_GameplayVerbessern(roomScript rS_)
 	{
 		if (!rS_)
@@ -3461,7 +3459,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000143 RID: 323 RVA: 0x00013AB8 File Offset: 0x00011CB8
+	
 	private bool WORK_GrafikVerbessern(roomScript rS_)
 	{
 		if (!rS_)
@@ -3498,7 +3496,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000144 RID: 324 RVA: 0x00013BD0 File Offset: 0x00011DD0
+	
 	private bool WORK_SoundVerbessern(roomScript rS_)
 	{
 		if (!rS_)
@@ -3531,7 +3529,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000145 RID: 325 RVA: 0x00013CC8 File Offset: 0x00011EC8
+	
 	private bool WORK_AnimationVerbessern(roomScript rS_)
 	{
 		if (!rS_)
@@ -3564,7 +3562,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000146 RID: 326 RVA: 0x00013DC0 File Offset: 0x00011FC0
+	
 	private bool WORK_Forschung(roomScript rS_)
 	{
 		if (!rS_)
@@ -3597,7 +3595,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000147 RID: 327 RVA: 0x00013EB8 File Offset: 0x000120B8
+	
 	private bool WORK_Engine(roomScript rS_)
 	{
 		if (!rS_)
@@ -3634,7 +3632,7 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000148 RID: 328 RVA: 0x00013FC0 File Offset: 0x000121C0
+	
 	private bool WORK_Game(roomScript rS_)
 	{
 		if (!rS_)
@@ -3743,49 +3741,49 @@ public class characterScript : MonoBehaviour
 		}
 		if (num3 == 1 || num4 == 1)
 		{
-			float num6 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f) * num5;
-			num6 = this.GetWorkResult(num6);
+			float num7 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f) * num5;
+			num7 = this.GetWorkResult(num7);
 			if (this.perks[23] && taskGame.gS_.retro)
 			{
-				num6 *= 2f;
+				num7 *= 2f;
 			}
 			if (taskGame.gS_.devPoints <= 0f)
 			{
-				num6 *= 0.1f;
+				num7 *= 0.1f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num6, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num7, num, 13));
 			num += 0.4f;
-			taskGame.Work(num6, 1);
+			taskGame.Work(num7, 1);
 			this.Learn(false, false, true, false, false, false, false, false);
 		}
 		if (num3 == 2 || num4 == 2)
 		{
-			float num6 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f) * num5;
-			num6 = this.GetWorkResult(num6);
+			float num8 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f) * num5;
+			num8 = this.GetWorkResult(num8);
 			if (taskGame.gS_.devPoints <= 0f)
 			{
-				num6 *= 0.1f;
+				num8 *= 0.1f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num6, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num8, num, 13));
 			num += 0.4f;
-			taskGame.Work(num6, 2);
+			taskGame.Work(num8, 2);
 			this.Learn(false, false, false, true, false, false, false, false);
 		}
 		if (num3 == 3 || num4 == 3)
 		{
-			float num6 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f) * num5;
-			num6 = this.GetWorkResult(num6);
+			float num9 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f) * num5;
+			num9 = this.GetWorkResult(num9);
 			if (this.perks[24] && taskGame.gS_.portID != -1)
 			{
-				num6 *= 2f;
+				num9 *= 2f;
 			}
 			if (taskGame.gS_.devPoints <= 0f)
 			{
-				num6 *= 0.1f;
+				num9 *= 0.1f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num6, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num9, num, 13));
 			num += 0.4f;
-			taskGame.Work(num6, 3);
+			taskGame.Work(num9, 3);
 			this.Learn(false, true, false, false, false, false, false, false);
 		}
 		if (this.perks[1] && UnityEngine.Random.Range(0, 30) == 1)
@@ -3817,17 +3815,17 @@ public class characterScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000149 RID: 329 RVA: 0x00014599 File Offset: 0x00012799
+	
 	private float GetSkillCap()
 	{
 		if (!this.perks[15])
 		{
-			return 50f;
+			return 200f;
 		}
-		return 60f;
+		return 255f;
 	}
 
-	// Token: 0x0600014A RID: 330 RVA: 0x000145B4 File Offset: 0x000127B4
+	
 	private float GetSkillCap_Skill(int i)
 	{
 		switch (i)
@@ -3837,55 +3835,55 @@ public class characterScript : MonoBehaviour
 			{
 				return this.GetSkillCap();
 			}
-			return 100f;
+			return 255f;
 		case 1:
 			if (this.beruf != 1)
 			{
 				return this.GetSkillCap();
 			}
-			return 100f;
+			return 255f;
 		case 2:
 			if (this.beruf != 2)
 			{
 				return this.GetSkillCap();
 			}
-			return 100f;
+			return 255f;
 		case 3:
 			if (this.beruf != 3)
 			{
 				return this.GetSkillCap();
 			}
-			return 100f;
+			return 255f;
 		case 4:
 			if (this.beruf != 4)
 			{
 				return this.GetSkillCap();
 			}
-			return 100f;
+			return 255f;
 		case 5:
 			if (this.beruf != 5)
 			{
 				return this.GetSkillCap();
 			}
-			return 100f;
+			return 255f;
 		case 6:
 			if (this.beruf != 6)
 			{
 				return this.GetSkillCap();
 			}
-			return 100f;
+			return 255f;
 		case 7:
 			if (this.beruf != 7)
 			{
 				return this.GetSkillCap();
 			}
-			return 100f;
+			return 255f;
 		default:
 			return this.GetSkillCap();
 		}
 	}
 
-	// Token: 0x0600014B RID: 331 RVA: 0x000146A4 File Offset: 0x000128A4
+	
 	private void Learn(bool gamedesign_, bool programmieren_, bool grafik_, bool sound_, bool pr_, bool gametests_, bool technik_, bool forschen_)
 	{
 		float num = UnityEngine.Random.Range(0.001f, 0.002f);
@@ -3907,9 +3905,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_gamedesign = this.GetSkillCap();
 			}
-			if (this.s_gamedesign > 100f)
+			if (this.s_gamedesign > this.GetSkillCap_Skill(this.beruf))
 			{
-				this.s_gamedesign = 100f;
+				this.s_gamedesign = this.GetSkillCap_Skill(this.beruf);
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3924,9 +3922,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_programmieren = this.GetSkillCap();
 			}
-			if (this.s_programmieren > 100f)
+			if (this.s_programmieren > this.GetSkillCap_Skill(this.beruf))
 			{
-				this.s_programmieren = 100f;
+				this.s_programmieren = this.GetSkillCap_Skill(this.beruf);
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3941,9 +3939,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_grafik = this.GetSkillCap();
 			}
-			if (this.s_grafik > 100f)
+			if (this.s_grafik > this.GetSkillCap_Skill(this.beruf))
 			{
-				this.s_grafik = 100f;
+				this.s_grafik = this.GetSkillCap_Skill(this.beruf);
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3958,9 +3956,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_sound = this.GetSkillCap();
 			}
-			if (this.s_sound > 100f)
+			if (this.s_sound > this.GetSkillCap_Skill(this.beruf))
 			{
-				this.s_sound = 100f;
+				this.s_sound = this.GetSkillCap_Skill(this.beruf);
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3975,9 +3973,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_pr = this.GetSkillCap();
 			}
-			if (this.s_pr > 100f)
+			if (this.s_pr > this.GetSkillCap_Skill(this.beruf))
 			{
-				this.s_pr = 100f;
+				this.s_pr = this.GetSkillCap_Skill(this.beruf);
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3992,9 +3990,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_gametests = this.GetSkillCap();
 			}
-			if (this.s_gametests > 100f)
+			if (this.s_gametests > this.GetSkillCap_Skill(this.beruf))
 			{
-				this.s_gametests = 100f;
+				this.s_gametests = this.GetSkillCap_Skill(this.beruf);
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -4009,9 +4007,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_technik = this.GetSkillCap();
 			}
-			if (this.s_technik > 100f)
+			if (this.s_technik > this.GetSkillCap_Skill(this.beruf))
 			{
-				this.s_technik = 100f;
+				this.s_technik = this.GetSkillCap_Skill(this.beruf);
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -4026,9 +4024,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_forschen = this.GetSkillCap();
 			}
-			if (this.s_forschen > 100f)
+			if (this.s_forschen > this.GetSkillCap_Skill(this.beruf))
 			{
-				this.s_forschen = 100f;
+				this.s_forschen = this.GetSkillCap_Skill(this.beruf);
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -4038,7 +4036,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600014C RID: 332 RVA: 0x00014A90 File Offset: 0x00012C90
+	
 	private bool GetCritic(int criticBonus)
 	{
 		if (this.perks[27])
@@ -4060,7 +4058,7 @@ public class characterScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x0600014D RID: 333 RVA: 0x00014AD8 File Offset: 0x00012CD8
+	
 	public int GetGehalt()
 	{
 		if (this.perks[0])
@@ -4080,28 +4078,28 @@ public class characterScript : MonoBehaviour
 						{
 						case 14:
 							num += 1000;
-							goto IL_116;
+							goto IL_11C;
 						case 15:
 							num += 2000;
-							goto IL_116;
+							goto IL_11C;
 						case 18:
 							num -= 500;
-							goto IL_116;
+							goto IL_11C;
 						case 19:
 							num -= 500;
-							goto IL_116;
+							goto IL_11C;
 						case 20:
 							num -= 500;
-							goto IL_116;
+							goto IL_11C;
 						case 21:
 							num -= 500;
-							goto IL_116;
+							goto IL_11C;
 						case 22:
 							num -= 500;
-							goto IL_116;
+							goto IL_11C;
 						case 27:
 							num -= 500;
-							goto IL_116;
+							goto IL_11C;
 						}
 						num += 500;
 					}
@@ -4115,7 +4113,7 @@ public class characterScript : MonoBehaviour
 					num = num;
 				}
 			}
-			IL_116:;
+			IL_11C:;
 		}
 		if (num < 1000)
 		{
@@ -4128,7 +4126,7 @@ public class characterScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600014E RID: 334 RVA: 0x00014C2C File Offset: 0x00012E2C
+	
 	public void Entlassen(bool eventMitarbeiterMotivation)
 	{
 		if (this.perks[0])
@@ -4167,7 +4165,7 @@ public class characterScript : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600014F RID: 335 RVA: 0x00014D1C File Offset: 0x00012F1C
+	
 	public string GetGroupString(string farbe)
 	{
 		if (this.group != -1)
@@ -4184,7 +4182,7 @@ public class characterScript : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06000150 RID: 336 RVA: 0x00014D70 File Offset: 0x00012F70
+	
 	public string GetGroupStringWithName(string farbe)
 	{
 		if (this.group != -1)
@@ -4203,7 +4201,7 @@ public class characterScript : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06000151 RID: 337 RVA: 0x00014DE0 File Offset: 0x00012FE0
+	
 	public void Monatskosten()
 	{
 		int gehalt = this.GetGehalt();
@@ -4245,7 +4243,7 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000152 RID: 338 RVA: 0x00014EE8 File Offset: 0x000130E8
+	
 	private void UpdateLeitenderEntwicklerIcon()
 	{
 		if (this.roomS_)
@@ -4281,327 +4279,327 @@ public class characterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400029D RID: 669
+	
 	private mainScript mS_;
 
-	// Token: 0x0400029E RID: 670
+	
 	private Camera camera_;
 
-	// Token: 0x0400029F RID: 671
+	
 	private mainCameraScript mCamS_;
 
-	// Token: 0x040002A0 RID: 672
+	
 	private GameObject main_;
 
-	// Token: 0x040002A1 RID: 673
+	
 	private settingsScript settings_;
 
-	// Token: 0x040002A2 RID: 674
+	
 	private GUI_Tooltip guiTooltip;
 
-	// Token: 0x040002A3 RID: 675
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040002A4 RID: 676
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040002A5 RID: 677
+	
 	private textScript tS_;
 
-	// Token: 0x040002A6 RID: 678
+	
 	private clipScript clipS_;
 
-	// Token: 0x040002A7 RID: 679
+	
 	private roomDataScript rdS_;
 
-	// Token: 0x040002A8 RID: 680
+	
 	public movementScript moveS_;
 
-	// Token: 0x040002A9 RID: 681
+	
 	private mapScript mapS_;
 
-	// Token: 0x040002AA RID: 682
+	
 	public SkinnedMeshRenderer myRenderer;
 
-	// Token: 0x040002AB RID: 683
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040002AC RID: 684
+	
 	public Color[] colors;
 
-	// Token: 0x040002AD RID: 685
+	
 	public int myID;
 
-	// Token: 0x040002AE RID: 686
+	
 	public bool male;
 
-	// Token: 0x040002AF RID: 687
+	
 	public string myName;
 
-	// Token: 0x040002B0 RID: 688
+	
 	public int group = -1;
 
-	// Token: 0x040002B1 RID: 689
+	
 	public int roomID = -1;
 
-	// Token: 0x040002B2 RID: 690
+	
 	public roomScript roomS_;
 
-	// Token: 0x040002B3 RID: 691
+	
 	public int objectUsingID = -1;
 
-	// Token: 0x040002B4 RID: 692
+	
 	public objectScript objectUsingS_;
 
-	// Token: 0x040002B5 RID: 693
+	
 	public int objectBelegtID = -1;
 
-	// Token: 0x040002B6 RID: 694
+	
 	public objectScript objectBelegtS_;
 
-	// Token: 0x040002B7 RID: 695
+	
 	public objectScript mainArbeitsplatzS_;
 
-	// Token: 0x040002B8 RID: 696
+	
 	public int beruf;
 
-	// Token: 0x040002B9 RID: 697
+	
 	public float s_motivation;
 
-	// Token: 0x040002BA RID: 698
+	
 	public float s_gamedesign;
 
-	// Token: 0x040002BB RID: 699
+	
 	public float s_programmieren;
 
-	// Token: 0x040002BC RID: 700
+	
 	public float s_grafik;
 
-	// Token: 0x040002BD RID: 701
+	
 	public float s_sound;
 
-	// Token: 0x040002BE RID: 702
+	
 	public float s_pr;
 
-	// Token: 0x040002BF RID: 703
+	
 	public float s_gametests;
 
-	// Token: 0x040002C0 RID: 704
+	
 	public float s_technik;
 
-	// Token: 0x040002C1 RID: 705
+	
 	public float s_forschen;
 
-	// Token: 0x040002C2 RID: 706
+	
 	public bool[] perks;
 
-	// Token: 0x040002C3 RID: 707
+	
 	public int legend = -1;
 
-	// Token: 0x040002C4 RID: 708
+	
 	public float workProgress;
 
-	// Token: 0x040002C5 RID: 709
+	
 	public float durst;
 
-	// Token: 0x040002C6 RID: 710
+	
 	public float hunger;
 
-	// Token: 0x040002C7 RID: 711
+	
 	public float klo;
 
-	// Token: 0x040002C8 RID: 712
+	
 	public float waschbecken;
 
-	// Token: 0x040002C9 RID: 713
+	
 	public float muell;
 
-	// Token: 0x040002CA RID: 714
+	
 	public float giessen;
 
-	// Token: 0x040002CB RID: 715
+	
 	public float pause;
 
-	// Token: 0x040002CC RID: 716
+	
 	public float freezer;
 
-	// Token: 0x040002CD RID: 717
+	
 	public int krank;
 
-	// Token: 0x040002CE RID: 718
+	
 	private bool outline;
 
-	// Token: 0x040002CF RID: 719
+	
 	private bool uiVisible;
 
-	// Token: 0x040002D0 RID: 720
+	
 	public bool picked;
 
-	// Token: 0x040002D1 RID: 721
+	
 	public bool hided;
 
-	// Token: 0x040002D2 RID: 722
+	
 	public int model_body = -1;
 
-	// Token: 0x040002D3 RID: 723
+	
 	public int model_eyes = -1;
 
-	// Token: 0x040002D4 RID: 724
+	
 	public int model_hair = -1;
 
-	// Token: 0x040002D5 RID: 725
+	
 	public int model_beard = -1;
 
-	// Token: 0x040002D6 RID: 726
+	
 	public int model_skinColor = -1;
 
-	// Token: 0x040002D7 RID: 727
+	
 	public int model_hairColor = -1;
 
-	// Token: 0x040002D8 RID: 728
+	
 	public int model_beardColor = -1;
 
-	// Token: 0x040002D9 RID: 729
+	
 	public int model_HoseColor = -1;
 
-	// Token: 0x040002DA RID: 730
+	
 	public int model_ShirtColor = -1;
 
-	// Token: 0x040002DB RID: 731
+	
 	public int model_Add1Color = -1;
 
-	// Token: 0x040002DC RID: 732
+	
 	private GameObject myUI;
 
-	// Token: 0x040002DD RID: 733
+	
 	private RectTransform myUIRect;
 
-	// Token: 0x040002DE RID: 734
+	
 	private GameObject uiIconMain;
 
-	// Token: 0x040002DF RID: 735
+	
 	private GameObject uiWorkProgress;
 
-	// Token: 0x040002E0 RID: 736
+	
 	private Image uiWorkProgress_Image;
 
-	// Token: 0x040002E1 RID: 737
+	
 	private GameObject uiIcon;
 
-	// Token: 0x040002E2 RID: 738
+	
 	private Image uiIcon_Image;
 
-	// Token: 0x040002E3 RID: 739
+	
 	private GameObject uiNoRoom;
 
-	// Token: 0x040002E4 RID: 740
+	
 	private GameObject uiSprechblase;
 
-	// Token: 0x040002E5 RID: 741
+	
 	private GameObject uiKrank;
 
-	// Token: 0x040002E6 RID: 742
+	
 	private GameObject uiLeitenderDesigner;
 
-	// Token: 0x040002E7 RID: 743
+	
 	private GameObject uiFrieren;
 
-	// Token: 0x040002E8 RID: 744
+	
 	private GameObject uiGarbage;
 
-	// Token: 0x040002E9 RID: 745
+	
 	private GameObject uiUeberfuellt;
 
-	// Token: 0x040002EA RID: 746
+	
 	private GameObject uiLowQuality;
 
-	// Token: 0x040002EB RID: 747
+	
 	private GameObject[] ePop_Object;
 
-	// Token: 0x040002EC RID: 748
+	
 	private Animation[] ePopAnim;
 
-	// Token: 0x040002ED RID: 749
+	
 	private Text[] ePopText;
 
-	// Token: 0x040002EE RID: 750
+	
 	private int ePop_Gameplay;
 
-	// Token: 0x040002EF RID: 751
+	
 	private int ePop_Grafik = 1;
 
-	// Token: 0x040002F0 RID: 752
+	
 	private int ePop_Sound = 2;
 
-	// Token: 0x040002F1 RID: 753
+	
 	private int ePop_Technik = 3;
 
-	// Token: 0x040002F2 RID: 754
+	
 	private int ePop_Bug = 4;
 
-	// Token: 0x040002F3 RID: 755
+	
 	private int ePop_BugRemove = 5;
 
-	// Token: 0x040002F4 RID: 756
+	
 	private int ePop_Forschung = 6;
 
-	// Token: 0x040002F5 RID: 757
+	
 	private int ePop_Marketing = 7;
 
-	// Token: 0x040002F6 RID: 758
+	
 	private int ePop_Support = 8;
 
-	// Token: 0x040002F7 RID: 759
+	
 	private int ePop_QA = 9;
 
-	// Token: 0x040002F8 RID: 760
+	
 	private int ePop_Training = 10;
 
-	// Token: 0x040002F9 RID: 761
+	
 	private int ePop_Hype = 11;
 
-	// Token: 0x040002FA RID: 762
+	
 	private int ePop_BeduerfnisErfuellt = 12;
 
-	// Token: 0x040002FB RID: 763
+	
 	private int ePop_BeduerfnisNichtErfuellt = 13;
 
-	// Token: 0x040002FC RID: 764
+	
 	private int ePop_Arzt = 14;
 
-	// Token: 0x040002FD RID: 765
+	
 	private int ePop_ProdArcade = 15;
 
-	// Token: 0x040002FE RID: 766
+	
 	private int ePop_Hardware = 16;
 
-	// Token: 0x040002FF RID: 767
+	
 	private int ePop_Misc = 17;
 
-	// Token: 0x04000300 RID: 768
+	
 	public GameObject[] addObjects;
 
-	// Token: 0x04000301 RID: 769
+	
 	public LayerMask layerMaskChar;
 
-	// Token: 0x04000302 RID: 770
+	
 	public LayerMask layerMaskFloor;
 
-	// Token: 0x04000303 RID: 771
+	
 	private float timerStopPopAnimations;
 
-	// Token: 0x04000304 RID: 772
+	
 	private float invisibleTimer;
 
-	// Token: 0x04000305 RID: 773
+	
 	private float timerForMovementActions;
 
-	// Token: 0x04000306 RID: 774
+	
 	private float timerUpdateWork;
 
-	// Token: 0x04000307 RID: 775
+	
 	public bool iDoWork;
 
-	// Token: 0x04000308 RID: 776
+	
 	private Menu_Training_Select menuTrain_;
 }

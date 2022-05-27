@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000306 RID: 774
+
 public class taskAnimationVerbessern : MonoBehaviour
 {
-	// Token: 0x06001AF4 RID: 6900 RVA: 0x0010E54C File Offset: 0x0010C74C
+	
 	private void Awake()
 	{
 		base.transform.position = new Vector3(150f, 0f, 0f);
 	}
 
-	// Token: 0x06001AF5 RID: 6901 RVA: 0x0010E56D File Offset: 0x0010C76D
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001AF6 RID: 6902 RVA: 0x0010E578 File Offset: 0x0010C778
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -49,7 +49,7 @@ public class taskAnimationVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AF7 RID: 6903 RVA: 0x0010E665 File Offset: 0x0010C865
+	
 	private void Update()
 	{
 		this.FindMyObject();
@@ -57,7 +57,7 @@ public class taskAnimationVerbessern : MonoBehaviour
 		this.GamePublished();
 	}
 
-	// Token: 0x06001AF8 RID: 6904 RVA: 0x0010E679 File Offset: 0x0010C879
+	
 	private void GamePublished()
 	{
 		if (this.gS_ && !this.gS_.inDevelopment)
@@ -66,7 +66,7 @@ public class taskAnimationVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AF9 RID: 6905 RVA: 0x0010E69B File Offset: 0x0010C89B
+	
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -76,7 +76,7 @@ public class taskAnimationVerbessern : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001AFA RID: 6906 RVA: 0x0010E6CC File Offset: 0x0010C8CC
+	
 	private void FindMyObject()
 	{
 		if (this.gS_)
@@ -94,7 +94,7 @@ public class taskAnimationVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AFB RID: 6907 RVA: 0x0010E72C File Offset: 0x0010C92C
+	
 	private void FindMyRoom()
 	{
 		if (!this.gS_)
@@ -139,19 +139,19 @@ public class taskAnimationVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AFC RID: 6908 RVA: 0x0010E831 File Offset: 0x0010CA31
+	
 	public float GetProzent()
 	{
 		return 100f / this.points * (this.points - this.pointsLeft);
 	}
 
-	// Token: 0x06001AFD RID: 6909 RVA: 0x0010E84D File Offset: 0x0010CA4D
+	
 	public Sprite GetPic()
 	{
 		return this.games_.gameAdds[this.aktuellerAdd + 18];
 	}
 
-	// Token: 0x06001AFE RID: 6910 RVA: 0x0010E864 File Offset: 0x0010CA64
+	
 	public void Work(float f)
 	{
 		if (this.pointsLeft > 0f)
@@ -169,7 +169,7 @@ public class taskAnimationVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AFF RID: 6911 RVA: 0x0010E8D0 File Offset: 0x0010CAD0
+	
 	public void FindNewAdd()
 	{
 		this.FindScripts();
@@ -194,7 +194,7 @@ public class taskAnimationVerbessern : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06001B00 RID: 6912 RVA: 0x0010E988 File Offset: 0x0010CB88
+	
 	private void Complete()
 	{
 		this.FindMyObject();
@@ -218,7 +218,7 @@ public class taskAnimationVerbessern : MonoBehaviour
 		this.FindNewAdd();
 	}
 
-	// Token: 0x06001B01 RID: 6913 RVA: 0x0010EA88 File Offset: 0x0010CC88
+	
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -235,7 +235,7 @@ public class taskAnimationVerbessern : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001B02 RID: 6914 RVA: 0x0010EAE8 File Offset: 0x0010CCE8
+	
 	public int GetRueckgeld()
 	{
 		float num = 0f;
@@ -249,7 +249,7 @@ public class taskAnimationVerbessern : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x06001B03 RID: 6915 RVA: 0x0010EB30 File Offset: 0x0010CD30
+	
 	public void Abbrechen()
 	{
 		int rueckgeld = this.GetRueckgeld();
@@ -270,51 +270,51 @@ public class taskAnimationVerbessern : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04002217 RID: 8727
+	
 	public int myID = -1;
 
-	// Token: 0x04002218 RID: 8728
+	
 	public int targetID = -1;
 
-	// Token: 0x04002219 RID: 8729
+	
 	public float points;
 
-	// Token: 0x0400221A RID: 8730
+	
 	public float pointsLeft;
 
-	// Token: 0x0400221B RID: 8731
+	
 	public bool[] adds = new bool[6];
 
-	// Token: 0x0400221C RID: 8732
+	
 	public int aktuellerAdd = -1;
 
-	// Token: 0x0400221D RID: 8733
+	
 	private GameObject main_;
 
-	// Token: 0x0400221E RID: 8734
+	
 	public mainScript mS_;
 
-	// Token: 0x0400221F RID: 8735
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002220 RID: 8736
+	
 	private textScript tS_;
 
-	// Token: 0x04002221 RID: 8737
+	
 	private roomDataScript rdS_;
 
-	// Token: 0x04002222 RID: 8738
+	
 	public gameScript gS_;
 
-	// Token: 0x04002223 RID: 8739
+	
 	private Menu_MOCAP_AnimationVerbessern menuMOCAP_;
 
-	// Token: 0x04002224 RID: 8740
+	
 	private games games_;
 
-	// Token: 0x04002225 RID: 8741
+	
 	public roomScript rS_;
 
-	// Token: 0x04002226 RID: 8742
+	
 	private float findMyRoomTimer;
 }

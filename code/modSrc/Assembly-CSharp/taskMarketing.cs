@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000314 RID: 788
+
 public class taskMarketing : MonoBehaviour
 {
-	// Token: 0x06001BBA RID: 7098 RVA: 0x00114317 File Offset: 0x00112517
+	
 	private void Awake()
 	{
 		base.transform.position = new Vector3(60f, 0f, 0f);
 	}
 
-	// Token: 0x06001BBB RID: 7099 RVA: 0x00114338 File Offset: 0x00112538
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001BBC RID: 7100 RVA: 0x00114340 File Offset: 0x00112540
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class taskMarketing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BBD RID: 7101 RVA: 0x0011440C File Offset: 0x0011260C
+	
 	private void Update()
 	{
 		this.FindMyObject();
@@ -55,7 +55,7 @@ public class taskMarketing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BBE RID: 7102 RVA: 0x00114443 File Offset: 0x00112643
+	
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -65,7 +65,7 @@ public class taskMarketing : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001BBF RID: 7103 RVA: 0x00114474 File Offset: 0x00112674
+	
 	private void FindMyObject()
 	{
 		if (this.gS_ || this.pS_)
@@ -101,19 +101,19 @@ public class taskMarketing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BC0 RID: 7104 RVA: 0x00114546 File Offset: 0x00112746
+	
 	public float GetProzent()
 	{
 		return 100f / this.points * (this.points - this.pointsLeft);
 	}
 
-	// Token: 0x06001BC1 RID: 7105 RVA: 0x00114562 File Offset: 0x00112762
+	
 	public Sprite GetPic()
 	{
 		return this.guiMain_.uiObjects[89].GetComponent<Menu_Marketing_GameKampagne>().sprites[this.kampagne];
 	}
 
-	// Token: 0x06001BC2 RID: 7106 RVA: 0x00114583 File Offset: 0x00112783
+	
 	public void Work(float f)
 	{
 		if (this.pointsLeft > 0f)
@@ -127,7 +127,7 @@ public class taskMarketing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BC3 RID: 7107 RVA: 0x001145C0 File Offset: 0x001127C0
+	
 	private void Complete()
 	{
 		this.FindMyObject();
@@ -182,7 +182,7 @@ public class taskMarketing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BC4 RID: 7108 RVA: 0x00114840 File Offset: 0x00112A40
+	
 	public bool WaitForMinimumHype()
 	{
 		if (this.automatic)
@@ -208,7 +208,7 @@ public class taskMarketing : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001BC5 RID: 7109 RVA: 0x00114904 File Offset: 0x00112B04
+	
 	private bool DoAutomatic()
 	{
 		this.FindMyObject();
@@ -239,7 +239,7 @@ public class taskMarketing : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001BC6 RID: 7110 RVA: 0x00114A6C File Offset: 0x00112C6C
+	
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -256,13 +256,13 @@ public class taskMarketing : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001BC7 RID: 7111 RVA: 0x00114ACB File Offset: 0x00112CCB
+	
 	public int GetRueckgeld()
 	{
 		return Mathf.RoundToInt((float)this.scriptMarketing_.preise[this.kampagne] * ((100f - this.GetProzent()) * 0.01f));
 	}
 
-	// Token: 0x06001BC8 RID: 7112 RVA: 0x00114AF8 File Offset: 0x00112CF8
+	
 	public void Abbrechen()
 	{
 		int rueckgeld = this.GetRueckgeld();
@@ -283,54 +283,54 @@ public class taskMarketing : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x040022CE RID: 8910
+	
 	public int myID = -1;
 
-	// Token: 0x040022CF RID: 8911
+	
 	public int typ = -1;
 
-	// Token: 0x040022D0 RID: 8912
+	
 	public int targetID = -1;
 
-	// Token: 0x040022D1 RID: 8913
+	
 	public int kampagne = -1;
 
-	// Token: 0x040022D2 RID: 8914
+	
 	public bool automatic;
 
-	// Token: 0x040022D3 RID: 8915
+	
 	public bool stopAutomatic;
 
-	// Token: 0x040022D4 RID: 8916
+	
 	public bool disableWarten;
 
-	// Token: 0x040022D5 RID: 8917
+	
 	public float points;
 
-	// Token: 0x040022D6 RID: 8918
+	
 	public float pointsLeft;
 
-	// Token: 0x040022D7 RID: 8919
+	
 	private GameObject main_;
 
-	// Token: 0x040022D8 RID: 8920
+	
 	private mainScript mS_;
 
-	// Token: 0x040022D9 RID: 8921
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040022DA RID: 8922
+	
 	private textScript tS_;
 
-	// Token: 0x040022DB RID: 8923
+	
 	private roomDataScript rdS_;
 
-	// Token: 0x040022DC RID: 8924
+	
 	public Menu_Marketing_GameKampagne scriptMarketing_;
 
-	// Token: 0x040022DD RID: 8925
+	
 	public gameScript gS_;
 
-	// Token: 0x040022DE RID: 8926
+	
 	public platformScript pS_;
 }

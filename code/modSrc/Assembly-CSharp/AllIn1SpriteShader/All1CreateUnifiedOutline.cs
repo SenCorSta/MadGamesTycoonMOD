@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x02000404 RID: 1028
+	
 	[ExecuteInEditMode]
 	public class All1CreateUnifiedOutline : MonoBehaviour
 	{
-		// Token: 0x0600244C RID: 9292 RVA: 0x00174DD4 File Offset: 0x00172FD4
+		
 		private void Update()
 		{
 			if (this.createUnifiedOutline)
@@ -31,7 +31,7 @@ namespace AllIn1SpriteShader
 			}
 		}
 
-		// Token: 0x0600244D RID: 9293 RVA: 0x00174E74 File Offset: 0x00173074
+		
 		private void CreateOutlineSpriteDuplicate(GameObject target)
 		{
 			bool flag = false;
@@ -78,12 +78,12 @@ namespace AllIn1SpriteShader
 			image.material = this.outlineMaterial;
 		}
 
-		// Token: 0x0600244E RID: 9294 RVA: 0x00002715 File Offset: 0x00000915
+		
 		private void MissingMaterial()
 		{
 		}
 
-		// Token: 0x0600244F RID: 9295 RVA: 0x00174FD0 File Offset: 0x001731D0
+		
 		private void GetAllChildren(Transform parent, ref List<Transform> transforms)
 		{
 			foreach (object obj in parent)
@@ -94,25 +94,25 @@ namespace AllIn1SpriteShader
 			}
 		}
 
-		// Token: 0x04002E66 RID: 11878
+		
 		[SerializeField]
 		private Material outlineMaterial;
 
-		// Token: 0x04002E67 RID: 11879
+		
 		[SerializeField]
 		private Transform outlineParentTransform;
 
-		// Token: 0x04002E68 RID: 11880
+		
 		[Space]
 		[Header("Only needed if Sprite (ignored if UI)")]
 		[SerializeField]
 		private int duplicateOrderInLayer = -100;
 
-		// Token: 0x04002E69 RID: 11881
+		
 		[SerializeField]
 		private string duplicateSortingLayer = "Default";
 
-		// Token: 0x04002E6A RID: 11882
+		
 		[Space]
 		[Header("This operation will delete the component")]
 		[SerializeField]

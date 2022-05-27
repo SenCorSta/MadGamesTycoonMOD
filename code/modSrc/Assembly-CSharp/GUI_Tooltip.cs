@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000076 RID: 118
+
 public class GUI_Tooltip : MonoBehaviour
 {
-	// Token: 0x06000501 RID: 1281 RVA: 0x0004617C File Offset: 0x0004437C
+	
 	private void Start()
 	{
 		this.settings_ = GameObject.Find("Main").GetComponent<settingsScript>();
@@ -14,7 +14,7 @@ public class GUI_Tooltip : MonoBehaviour
 		this.rt_tooltipText = this.tooltipText.GetComponent<RectTransform>();
 	}
 
-	// Token: 0x06000502 RID: 1282 RVA: 0x000461D4 File Offset: 0x000443D4
+	
 	public void SetActive(string s)
 	{
 		if (s == null)
@@ -36,7 +36,7 @@ public class GUI_Tooltip : MonoBehaviour
 		this.SetInactive();
 	}
 
-	// Token: 0x06000503 RID: 1283 RVA: 0x0004626D File Offset: 0x0004446D
+	
 	public void SetInactive()
 	{
 		this.timer = 0f;
@@ -44,7 +44,7 @@ public class GUI_Tooltip : MonoBehaviour
 		this.myText.text = "";
 	}
 
-	// Token: 0x06000504 RID: 1284 RVA: 0x00046294 File Offset: 0x00044494
+	
 	private void Update()
 	{
 		if (!this.tooltipEnabled)
@@ -97,33 +97,33 @@ public class GUI_Tooltip : MonoBehaviour
 		this.rt_tooltipPic.anchoredPosition = new Vector2(num, num2);
 	}
 
-	// Token: 0x040007E0 RID: 2016
+	
 	public settingsScript settings_;
 
-	// Token: 0x040007E1 RID: 2017
+	
 	public float randInPixel = 8f;
 
-	// Token: 0x040007E2 RID: 2018
+	
 	public float timeToShow = 1f;
 
-	// Token: 0x040007E3 RID: 2019
+	
 	public GameObject tooltipPic;
 
-	// Token: 0x040007E4 RID: 2020
+	
 	public GameObject tooltipText;
 
-	// Token: 0x040007E5 RID: 2021
+	
 	private RectTransform rt_tooltipPic;
 
-	// Token: 0x040007E6 RID: 2022
+	
 	private RectTransform rt_tooltipText;
 
-	// Token: 0x040007E7 RID: 2023
+	
 	public Text myText;
 
-	// Token: 0x040007E8 RID: 2024
+	
 	private float timer;
 
-	// Token: 0x040007E9 RID: 2025
+	
 	public bool tooltipEnabled;
 }

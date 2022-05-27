@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000AF RID: 175
+
 public class Item_Achivement : MonoBehaviour
 {
-	// Token: 0x06000667 RID: 1639 RVA: 0x000502BC File Offset: 0x0004E4BC
+	
 	public void SetData(int i)
 	{
 		this.myID = i;
@@ -22,7 +22,7 @@ public class Item_Achivement : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000668 RID: 1640 RVA: 0x0005039C File Offset: 0x0004E59C
+	
 	public string GetBonusText(int i)
 	{
 		int num = 1;
@@ -63,24 +63,24 @@ public class Item_Achivement : MonoBehaviour
 		return text.Replace("<NUM>", num.ToString());
 	}
 
-	// Token: 0x06000669 RID: 1641 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x040009F5 RID: 2549
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040009F6 RID: 2550
+	
 	public mainScript mS_;
 
-	// Token: 0x040009F7 RID: 2551
+	
 	public textScript tS_;
 
-	// Token: 0x040009F8 RID: 2552
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x040009F9 RID: 2553
+	
 	private int myID;
 }

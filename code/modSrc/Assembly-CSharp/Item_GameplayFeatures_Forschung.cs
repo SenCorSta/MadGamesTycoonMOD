@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200009C RID: 156
+
 public class Item_GameplayFeatures_Forschung : MonoBehaviour
 {
-	// Token: 0x060005F4 RID: 1524 RVA: 0x0004CAAD File Offset: 0x0004ACAD
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060005F5 RID: 1525 RVA: 0x0004CAB8 File Offset: 0x0004ACB8
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.gF_.GetName(this.myID);
@@ -33,7 +33,7 @@ public class Item_GameplayFeatures_Forschung : MonoBehaviour
 		this.tooltip_.c = this.gF_.GetTooltip(this.myID, -1);
 	}
 
-	// Token: 0x060005F6 RID: 1526 RVA: 0x0004CC55 File Offset: 0x0004AE55
+	
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -45,13 +45,13 @@ public class Item_GameplayFeatures_Forschung : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060005F7 RID: 1527 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060005F8 RID: 1528 RVA: 0x0004CC88 File Offset: 0x0004AE88
+	
 	public void BUTTON_Click()
 	{
 		Menu_Forschung component = this.guiMain_.uiObjects[21].GetComponent<Menu_Forschung>();
@@ -74,36 +74,36 @@ public class Item_GameplayFeatures_Forschung : MonoBehaviour
 		component.BUTTON_Close();
 	}
 
-	// Token: 0x04000941 RID: 2369
+	
 	public int myID;
 
-	// Token: 0x04000942 RID: 2370
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000943 RID: 2371
+	
 	public Color[] colors;
 
-	// Token: 0x04000944 RID: 2372
+	
 	public mainScript mS_;
 
-	// Token: 0x04000945 RID: 2373
+	
 	public textScript tS_;
 
-	// Token: 0x04000946 RID: 2374
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000947 RID: 2375
+	
 	public gameplayFeatures gF_;
 
-	// Token: 0x04000948 RID: 2376
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000949 RID: 2377
+	
 	public tooltip tooltip_;
 
-	// Token: 0x0400094A RID: 2378
+	
 	public roomScript rS_;
 
-	// Token: 0x0400094B RID: 2379
+	
 	private float updateTimer;
 }

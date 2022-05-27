@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000D4 RID: 212
+
 public class Item_PackungSelect : MonoBehaviour
 {
-	// Token: 0x06000742 RID: 1858 RVA: 0x0005447E File Offset: 0x0005267E
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000743 RID: 1859 RVA: 0x00054486 File Offset: 0x00052686
+	
 	private void Update()
 	{
 		this.DataUpdate();
 	}
 
-	// Token: 0x06000744 RID: 1860 RVA: 0x0005448E File Offset: 0x0005268E
+	
 	private void DataUpdate()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -29,7 +29,7 @@ public class Item_PackungSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000745 RID: 1861 RVA: 0x000544C4 File Offset: 0x000526C4
+	
 	private void SetData()
 	{
 		if (!this.game_)
@@ -72,13 +72,13 @@ public class Item_PackungSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000746 RID: 1862 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000747 RID: 1863 RVA: 0x00054758 File Offset: 0x00052958
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -98,33 +98,33 @@ public class Item_PackungSelect : MonoBehaviour
 		this.guiMain_.uiObjects[218].GetComponent<Menu_Packung>().Init(this.game_, null, false, false);
 	}
 
-	// Token: 0x04000B25 RID: 2853
+	
 	public gameScript game_;
 
-	// Token: 0x04000B26 RID: 2854
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000B27 RID: 2855
+	
 	public mainScript mS_;
 
-	// Token: 0x04000B28 RID: 2856
+	
 	public textScript tS_;
 
-	// Token: 0x04000B29 RID: 2857
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000B2A RID: 2858
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000B2B RID: 2859
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000B2C RID: 2860
+	
 	public genres genres_;
 
-	// Token: 0x04000B2D RID: 2861
+	
 	public roomScript rS_;
 
-	// Token: 0x04000B2E RID: 2862
+	
 	private float updateTimer;
 }

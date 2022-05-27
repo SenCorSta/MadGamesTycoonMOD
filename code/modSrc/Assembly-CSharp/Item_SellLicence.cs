@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000BF RID: 191
+
 public class Item_SellLicence : MonoBehaviour
 {
-	// Token: 0x060006B9 RID: 1721 RVA: 0x000518AE File Offset: 0x0004FAAE
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060006BA RID: 1722 RVA: 0x000518B8 File Offset: 0x0004FAB8
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.licences_.GetName(this.myID);
@@ -25,13 +25,13 @@ public class Item_SellLicence : MonoBehaviour
 		this.tooltip_.c = this.licences_.GetTooltip(this.myID);
 	}
 
-	// Token: 0x060006BB RID: 1723 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060006BC RID: 1724 RVA: 0x00051A04 File Offset: 0x0004FC04
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -39,27 +39,27 @@ public class Item_SellLicence : MonoBehaviour
 		this.guiMain_.uiObjects[55].GetComponent<Menu_W_SellLicence>().Init(this.myID);
 	}
 
-	// Token: 0x04000A68 RID: 2664
+	
 	public int myID = -1;
 
-	// Token: 0x04000A69 RID: 2665
+	
 	public licences licences_;
 
-	// Token: 0x04000A6A RID: 2666
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000A6B RID: 2667
+	
 	public mainScript mS_;
 
-	// Token: 0x04000A6C RID: 2668
+	
 	public textScript tS_;
 
-	// Token: 0x04000A6D RID: 2669
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000A6E RID: 2670
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000A6F RID: 2671
+	
 	public tooltip tooltip_;
 }

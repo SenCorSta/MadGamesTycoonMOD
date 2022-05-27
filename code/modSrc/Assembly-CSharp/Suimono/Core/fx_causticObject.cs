@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Suimono.Core
 {
-	// Token: 0x020003AC RID: 940
+	
 	public class fx_causticObject : MonoBehaviour
 	{
-		// Token: 0x060022D9 RID: 8921 RVA: 0x0016DA47 File Offset: 0x0016BC47
+		
 		private void Start()
 		{
 			this.moduleObject = GameObject.Find("SUIMONO_Module").GetComponent<SuimonoModule>();
@@ -14,7 +14,7 @@ namespace Suimono.Core
 			this.lightComponent = base.GetComponent<Light>();
 		}
 
-		// Token: 0x060022DA RID: 8922 RVA: 0x0016DA80 File Offset: 0x0016BC80
+		
 		private void LateUpdate()
 		{
 			if (this.causticObject.enableCaustics)
@@ -50,19 +50,19 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x04002CCD RID: 11469
+		
 		public bool manualPlacement;
 
-		// Token: 0x04002CCE RID: 11470
+		
 		private SuimonoModule moduleObject;
 
-		// Token: 0x04002CCF RID: 11471
+		
 		private fx_causticModule causticObject;
 
-		// Token: 0x04002CD0 RID: 11472
+		
 		private Light lightComponent;
 
-		// Token: 0x04002CD1 RID: 11473
+		
 		private float heightMult = 1f;
 	}
 }

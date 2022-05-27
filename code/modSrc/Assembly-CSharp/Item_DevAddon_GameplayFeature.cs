@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000077 RID: 119
+
 public class Item_DevAddon_GameplayFeature : MonoBehaviour
 {
-	// Token: 0x06000506 RID: 1286 RVA: 0x00046463 File Offset: 0x00044663
+	
 	private void Start()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x06000507 RID: 1287 RVA: 0x00046474 File Offset: 0x00044674
+	
 	private void FindScripts()
 	{
 		if (!this.menuDevAddon_)
@@ -25,7 +25,7 @@ public class Item_DevAddon_GameplayFeature : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000508 RID: 1288 RVA: 0x000464D4 File Offset: 0x000446D4
+	
 	private void Update()
 	{
 		if (this.guiMain_.uiObjects[193].activeSelf)
@@ -69,7 +69,7 @@ public class Item_DevAddon_GameplayFeature : MonoBehaviour
 		this.SetGoodBadIcon();
 	}
 
-	// Token: 0x06000509 RID: 1289 RVA: 0x00046678 File Offset: 0x00044878
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.gF_.GetName(this.myID);
@@ -87,7 +87,7 @@ public class Item_DevAddon_GameplayFeature : MonoBehaviour
 		this.SetGoodBadIcon();
 	}
 
-	// Token: 0x0600050A RID: 1290 RVA: 0x000467B0 File Offset: 0x000449B0
+	
 	public void BUTTON_Click()
 	{
 		if (!base.GetComponent<Button>().interactable)
@@ -112,7 +112,7 @@ public class Item_DevAddon_GameplayFeature : MonoBehaviour
 		base.GetComponent<Image>().color = Color.white;
 	}
 
-	// Token: 0x0600050B RID: 1291 RVA: 0x00046880 File Offset: 0x00044A80
+	
 	private void SetGoodBadIcon()
 	{
 		this.FindScripts();
@@ -160,36 +160,36 @@ public class Item_DevAddon_GameplayFeature : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040007EA RID: 2026
+	
 	public int myID;
 
-	// Token: 0x040007EB RID: 2027
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040007EC RID: 2028
+	
 	public mainScript mS_;
 
-	// Token: 0x040007ED RID: 2029
+	
 	public textScript tS_;
 
-	// Token: 0x040007EE RID: 2030
+	
 	public sfxScript sfx_;
 
-	// Token: 0x040007EF RID: 2031
+	
 	public gameplayFeatures gF_;
 
-	// Token: 0x040007F0 RID: 2032
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x040007F1 RID: 2033
+	
 	public tooltip tooltip_;
 
-	// Token: 0x040007F2 RID: 2034
+	
 	public int goodBad = 1;
 
-	// Token: 0x040007F3 RID: 2035
+	
 	private Menu_Dev_AddonDo menuDevAddon_;
 
-	// Token: 0x040007F4 RID: 2036
+	
 	private Menu_Dev_MMOAddon menuDevMMOAddon_;
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000191 RID: 401
+
 public class Menu_Engine_ShowFeatures : MonoBehaviour
 {
-	// Token: 0x06000F3D RID: 3901 RVA: 0x000A17AC File Offset: 0x0009F9AC
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F3E RID: 3902 RVA: 0x000A17B4 File Offset: 0x0009F9B4
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_Engine_ShowFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F3F RID: 3903 RVA: 0x000A187C File Offset: 0x0009FA7C
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -50,7 +50,7 @@ public class Menu_Engine_ShowFeatures : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000F40 RID: 3904 RVA: 0x000A18B4 File Offset: 0x0009FAB4
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -66,7 +66,7 @@ public class Menu_Engine_ShowFeatures : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000F41 RID: 3905 RVA: 0x000A1900 File Offset: 0x0009FB00
+	
 	public void Init(engineScript s)
 	{
 		this.eS_ = s;
@@ -74,7 +74,7 @@ public class Menu_Engine_ShowFeatures : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000F42 RID: 3906 RVA: 0x000A1918 File Offset: 0x0009FB18
+	
 	private void SetData()
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
@@ -89,7 +89,7 @@ public class Menu_Engine_ShowFeatures : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[4]);
 	}
 
-	// Token: 0x06000F43 RID: 3907 RVA: 0x000A1A6C File Offset: 0x0009FC6C
+	
 	private void CreateItems(int typ_, string title_)
 	{
 		this.guiMain_.uiObjects[37].GetComponent<Menu_Dev_Engine>();
@@ -114,40 +114,40 @@ public class Menu_Engine_ShowFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F44 RID: 3908 RVA: 0x000A1C0E File Offset: 0x0009FE0E
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001385 RID: 4997
+	
 	public engineScript eS_;
 
-	// Token: 0x04001386 RID: 4998
+	
 	private mainScript mS_;
 
-	// Token: 0x04001387 RID: 4999
+	
 	private GameObject main_;
 
-	// Token: 0x04001388 RID: 5000
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001389 RID: 5001
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400138A RID: 5002
+	
 	private textScript tS_;
 
-	// Token: 0x0400138B RID: 5003
+	
 	private engineFeatures eF_;
 
-	// Token: 0x0400138C RID: 5004
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x0400138D RID: 5005
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400138E RID: 5006
+	
 	private float updateTimer;
 }

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000AC RID: 172
+
 public class Item_InventarKaufen : MonoBehaviour
 {
-	// Token: 0x06000653 RID: 1619 RVA: 0x0004F560 File Offset: 0x0004D760
+	
 	private void Start()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.tS_.GetObjects(this.typ);
@@ -18,7 +18,7 @@ public class Item_InventarKaufen : MonoBehaviour
 		this.SetTooltip();
 	}
 
-	// Token: 0x06000654 RID: 1620 RVA: 0x0004F698 File Offset: 0x0004D898
+	
 	private void Update()
 	{
 		this.Highlight();
@@ -121,12 +121,12 @@ public class Item_InventarKaufen : MonoBehaviour
 		this.uiObjects[3].GetComponent<Text>().color = this.guiMain_.colors[4];
 	}
 
-	// Token: 0x06000655 RID: 1621 RVA: 0x00002715 File Offset: 0x00000915
+	
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x06000656 RID: 1622 RVA: 0x0004FB38 File Offset: 0x0004DD38
+	
 	private void CheckUnlock()
 	{
 		objectScript component = this.mapS_.prefabsInventar[this.typ].GetComponent<objectScript>();
@@ -140,7 +140,7 @@ public class Item_InventarKaufen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000657 RID: 1623 RVA: 0x0004FB88 File Offset: 0x0004DD88
+	
 	public void BUTTON_Click()
 	{
 		if (this.uiObjects[1].activeSelf)
@@ -156,7 +156,7 @@ public class Item_InventarKaufen : MonoBehaviour
 		this.uiObjects[2].GetComponent<Animation>().Play();
 	}
 
-	// Token: 0x06000658 RID: 1624 RVA: 0x0004FBFC File Offset: 0x0004DDFC
+	
 	private void Highlight()
 	{
 		if (this.mS_.pickedObject && this.mS_.pickedObject.GetComponent<objectScript>().typ == this.typ)
@@ -167,7 +167,7 @@ public class Item_InventarKaufen : MonoBehaviour
 		this.uiObjects[4].GetComponent<Image>().color = this.colors[0];
 	}
 
-	// Token: 0x06000659 RID: 1625 RVA: 0x0004FC78 File Offset: 0x0004DE78
+	
 	private void SetTooltip()
 	{
 		objectScript component = this.mapS_.prefabsInventar[this.typ].GetComponent<objectScript>();
@@ -249,7 +249,7 @@ public class Item_InventarKaufen : MonoBehaviour
 		base.GetComponent<tooltip>().c = text;
 	}
 
-	// Token: 0x0600065A RID: 1626 RVA: 0x00050038 File Offset: 0x0004E238
+	
 	private string GetQualitatStars(int i)
 	{
 		string result;
@@ -280,27 +280,27 @@ public class Item_InventarKaufen : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x040009E2 RID: 2530
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040009E3 RID: 2531
+	
 	public int typ;
 
-	// Token: 0x040009E4 RID: 2532
+	
 	public Color[] colors;
 
-	// Token: 0x040009E5 RID: 2533
+	
 	public mainScript mS_;
 
-	// Token: 0x040009E6 RID: 2534
+	
 	public textScript tS_;
 
-	// Token: 0x040009E7 RID: 2535
+	
 	public mapScript mapS_;
 
-	// Token: 0x040009E8 RID: 2536
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x040009E9 RID: 2537
+	
 	public sfxScript sfx_;
 }

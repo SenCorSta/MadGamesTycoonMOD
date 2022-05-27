@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000A2 RID: 162
+
 public class Item_ForschungSchenken : MonoBehaviour
 {
-	// Token: 0x06000619 RID: 1561 RVA: 0x0004DC8D File Offset: 0x0004BE8D
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600061A RID: 1562 RVA: 0x0004DC98 File Offset: 0x0004BE98
+	
 	private void SetData()
 	{
 		switch (this.art)
@@ -67,7 +67,7 @@ public class Item_ForschungSchenken : MonoBehaviour
 		base.GetComponent<Image>().color = Color.white;
 	}
 
-	// Token: 0x0600061B RID: 1563 RVA: 0x0004E17E File Offset: 0x0004C37E
+	
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -79,13 +79,13 @@ public class Item_ForschungSchenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600061C RID: 1564 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600061D RID: 1565 RVA: 0x0004E1B1 File Offset: 0x0004C3B1
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -93,54 +93,54 @@ public class Item_ForschungSchenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x04000986 RID: 2438
+	
 	public int myID;
 
-	// Token: 0x04000987 RID: 2439
+	
 	public int art;
 
-	// Token: 0x04000988 RID: 2440
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000989 RID: 2441
+	
 	public mainScript mS_;
 
-	// Token: 0x0400098A RID: 2442
+	
 	public textScript tS_;
 
-	// Token: 0x0400098B RID: 2443
+	
 	public sfxScript sfx_;
 
-	// Token: 0x0400098C RID: 2444
+	
 	public genres genres_;
 
-	// Token: 0x0400098D RID: 2445
+	
 	public themes themes_;
 
-	// Token: 0x0400098E RID: 2446
+	
 	public engineFeatures eF_;
 
-	// Token: 0x0400098F RID: 2447
+	
 	public gameplayFeatures gF_;
 
-	// Token: 0x04000990 RID: 2448
+	
 	public hardware hardware_;
 
-	// Token: 0x04000991 RID: 2449
+	
 	public hardwareFeatures hardwareFeature_;
 
-	// Token: 0x04000992 RID: 2450
+	
 	public forschungSonstiges fS_;
 
-	// Token: 0x04000993 RID: 2451
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000994 RID: 2452
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000995 RID: 2453
+	
 	public Menu_MP_ForschungSchenken menu_;
 
-	// Token: 0x04000996 RID: 2454
+	
 	private float updateTimer;
 }

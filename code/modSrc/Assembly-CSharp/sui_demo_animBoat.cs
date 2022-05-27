@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200003A RID: 58
+
 public class sui_demo_animBoat : MonoBehaviour
 {
-	// Token: 0x060000D2 RID: 210 RVA: 0x00009950 File Offset: 0x00007B50
+	
 	private void Awake()
 	{
 		GameObject gameObject = new GameObject();
@@ -21,7 +21,7 @@ public class sui_demo_animBoat : MonoBehaviour
 		this.audioObjectB = gameObject2.GetComponent<AudioSource>();
 	}
 
-	// Token: 0x060000D3 RID: 211 RVA: 0x000099F4 File Offset: 0x00007BF4
+	
 	private void LateUpdate()
 	{
 		if (this.rudderObject != null)
@@ -156,78 +156,78 @@ public class sui_demo_animBoat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040001FA RID: 506
+	
 	public GameObject propObject;
 
-	// Token: 0x040001FB RID: 507
+	
 	public GameObject rudderObject;
 
-	// Token: 0x040001FC RID: 508
+	
 	public float propellerSpeed;
 
-	// Token: 0x040001FD RID: 509
+	
 	public float engineRotation;
 
-	// Token: 0x040001FE RID: 510
+	
 	public Transform playerPosition;
 
-	// Token: 0x040001FF RID: 511
+	
 	public Transform playerExit;
 
-	// Token: 0x04000200 RID: 512
+	
 	public AudioClip audioEngineStart;
 
-	// Token: 0x04000201 RID: 513
+	
 	public AudioClip audioEngineStop;
 
-	// Token: 0x04000202 RID: 514
+	
 	public AudioClip audioEngineIdle;
 
-	// Token: 0x04000203 RID: 515
+	
 	public AudioClip audioEngineRev;
 
-	// Token: 0x04000204 RID: 516
+	
 	public AudioClip audioEngineRevHigh;
 
-	// Token: 0x04000205 RID: 517
+	
 	public AudioClip audioEngineRevAbove;
 
-	// Token: 0x04000206 RID: 518
+	
 	public bool behaviorIsOn;
 
-	// Token: 0x04000207 RID: 519
+	
 	public bool behaviorIsInWater;
 
-	// Token: 0x04000208 RID: 520
+	
 	public bool behaviorIsRevving;
 
-	// Token: 0x04000209 RID: 521
+	
 	public bool behaviorIsRevvingBack;
 
-	// Token: 0x0400020A RID: 522
+	
 	public bool behaviorIsRevvingHigh;
 
-	// Token: 0x0400020B RID: 523
+	
 	private AudioSource audioObjectA;
 
-	// Token: 0x0400020C RID: 524
+	
 	private AudioSource audioObjectB;
 
-	// Token: 0x0400020D RID: 525
+	
 	private AudioClip useClip;
 
-	// Token: 0x0400020E RID: 526
+	
 	private AudioClip currentClip;
 
-	// Token: 0x0400020F RID: 527
+	
 	private float engineRot = 90f;
 
-	// Token: 0x04000210 RID: 528
+	
 	private bool isOn;
 
-	// Token: 0x04000211 RID: 529
+	
 	private float onTime;
 
-	// Token: 0x04000212 RID: 530
+	
 	private float propSpd;
 }

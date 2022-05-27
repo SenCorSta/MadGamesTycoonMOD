@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace ExtendedColliders3D
 {
-	// Token: 0x020003AE RID: 942
+	
 	[AddComponentMenu("Physics/Extended Colliders 3D")]
 	[Serializable]
 	public class ExtendedColliders3D : MonoBehaviour
 	{
-		// Token: 0x060022DD RID: 8925 RVA: 0x0016DC39 File Offset: 0x0016BE39
+		
 		private void Reset()
 		{
 			this.autoSizeColliderToMeshFilter();
 		}
 
-		// Token: 0x060022DE RID: 8926 RVA: 0x0016DC44 File Offset: 0x0016BE44
+		
 		private void Awake()
 		{
 			MeshCollider meshCollider = base.gameObject.AddComponent<MeshCollider>();
@@ -27,12 +27,12 @@ namespace ExtendedColliders3D
 			UnityEngine.Object.Destroy(this);
 		}
 
-		// Token: 0x060022DF RID: 8927 RVA: 0x00002715 File Offset: 0x00000915
+		
 		private void Start()
 		{
 		}
 
-		// Token: 0x060022E0 RID: 8928 RVA: 0x0016DCB0 File Offset: 0x0016BEB0
+		
 		private Mesh generateMesh(bool applyTransform)
 		{
 			Mesh mesh = new Mesh();
@@ -46,7 +46,7 @@ namespace ExtendedColliders3D
 			return mesh;
 		}
 
-		// Token: 0x060022E1 RID: 8929 RVA: 0x0016DCEC File Offset: 0x0016BEEC
+		
 		private void generateVerticesAndTriangles(bool applyTransform, out Vector3[] vertices, out int[] triangles)
 		{
 			int num = 0;
@@ -389,7 +389,7 @@ namespace ExtendedColliders3D
 			}
 		}
 
-		// Token: 0x060022E2 RID: 8930 RVA: 0x0016ED50 File Offset: 0x0016CF50
+		
 		public void autoSizeColliderToMeshFilter()
 		{
 			MeshFilter component = base.GetComponent<MeshFilter>();
@@ -405,126 +405,126 @@ namespace ExtendedColliders3D
 			}
 		}
 
-		// Token: 0x04002CD6 RID: 11478
+		
 		public ExtendedColliders3D.ExtendedCollders3DProperties properties = new ExtendedColliders3D.ExtendedCollders3DProperties();
 
-		// Token: 0x020003AF RID: 943
+		
 		public enum ColliderType
 		{
-			// Token: 0x04002CD8 RID: 11480
+			
 			Circle,
-			// Token: 0x04002CD9 RID: 11481
+			
 			CircleHalf,
-			// Token: 0x04002CDA RID: 11482
+			
 			Cone,
-			// Token: 0x04002CDB RID: 11483
+			
 			ConeHalf,
-			// Token: 0x04002CDC RID: 11484
+			
 			Cube,
-			// Token: 0x04002CDD RID: 11485
+			
 			Cylinder,
-			// Token: 0x04002CDE RID: 11486
+			
 			CylinderHalf,
-			// Token: 0x04002CDF RID: 11487
+			
 			Quad,
-			// Token: 0x04002CE0 RID: 11488
+			
 			Triangle,
-			// Token: 0x04002CE1 RID: 11489
+			
 			Sphere
 		}
 
-		// Token: 0x020003B0 RID: 944
+		
 		[Serializable]
 		public class ExtendedCollders3DProperties
 		{
-			// Token: 0x04002CE2 RID: 11490
+			
 			public bool convex;
 
-			// Token: 0x04002CE3 RID: 11491
+			
 			public bool isTrigger;
 
-			// Token: 0x04002CE4 RID: 11492
+			
 			public PhysicMaterial material;
 
-			// Token: 0x04002CE5 RID: 11493
+			
 			public ExtendedColliders3D.ColliderType colliderType = ExtendedColliders3D.ColliderType.Cylinder;
 
-			// Token: 0x04002CE6 RID: 11494
+			
 			public Vector3 centre = Vector3.zero;
 
-			// Token: 0x04002CE7 RID: 11495
+			
 			public Vector3 rotation = Vector3.zero;
 
-			// Token: 0x04002CE8 RID: 11496
+			
 			public Vector3 size = Vector3.one;
 
-			// Token: 0x04002CE9 RID: 11497
+			
 			public bool flipFaces;
 
-			// Token: 0x04002CEA RID: 11498
+			
 			public int circleVertices = 16;
 
-			// Token: 0x04002CEB RID: 11499
+			
 			public bool circleTwoSided;
 
-			// Token: 0x04002CEC RID: 11500
+			
 			public int coneFaces = 16;
 
-			// Token: 0x04002CED RID: 11501
+			
 			public bool coneCap = true;
 
-			// Token: 0x04002CEE RID: 11502
+			
 			public bool coneHalfCapFlatEnd = true;
 
-			// Token: 0x04002CEF RID: 11503
+			
 			public bool cubeTopFace = true;
 
-			// Token: 0x04002CF0 RID: 11504
+			
 			public bool cubeBottomFace = true;
 
-			// Token: 0x04002CF1 RID: 11505
+			
 			public bool cubeLeftFace = true;
 
-			// Token: 0x04002CF2 RID: 11506
+			
 			public bool cubeRightFace = true;
 
-			// Token: 0x04002CF3 RID: 11507
+			
 			public bool cubeForwardFace = true;
 
-			// Token: 0x04002CF4 RID: 11508
+			
 			public bool cubeBackFace = true;
 
-			// Token: 0x04002CF5 RID: 11509
+			
 			public int cylinderFaces = 16;
 
-			// Token: 0x04002CF6 RID: 11510
+			
 			public bool cylinderCapTop = true;
 
-			// Token: 0x04002CF7 RID: 11511
+			
 			public bool cylinderCapBottom = true;
 
-			// Token: 0x04002CF8 RID: 11512
+			
 			public Vector2 cylinderTaperTop = Vector2.one;
 
-			// Token: 0x04002CF9 RID: 11513
+			
 			public Vector2 cylinderTaperBottom = Vector2.one;
 
-			// Token: 0x04002CFA RID: 11514
+			
 			public bool cylinderHalfCapFlatEnd = true;
 
-			// Token: 0x04002CFB RID: 11515
+			
 			public bool quadTwoSided;
 
-			// Token: 0x04002CFC RID: 11516
+			
 			public bool triangleTwoSided;
 
-			// Token: 0x04002CFD RID: 11517
+			
 			public int sphereStacks = 8;
 
-			// Token: 0x04002CFE RID: 11518
+			
 			public int sphereSlices = 16;
 
-			// Token: 0x04002CFF RID: 11519
+			
 			public Color colour = new Color32(145, 244, 140, 239);
 		}
 	}

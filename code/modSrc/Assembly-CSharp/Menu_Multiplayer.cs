@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001D1 RID: 465
+
 public class Menu_Multiplayer : MonoBehaviour
 {
-	// Token: 0x06001198 RID: 4504 RVA: 0x000B9D13 File Offset: 0x000B7F13
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001199 RID: 4505 RVA: 0x000B9D1C File Offset: 0x000B7F1C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -39,19 +39,19 @@ public class Menu_Multiplayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600119A RID: 4506 RVA: 0x000B9DE4 File Offset: 0x000B7FE4
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x0600119B RID: 4507 RVA: 0x000B9D13 File Offset: 0x000B7F13
+	
 	public void Init()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600119C RID: 4508 RVA: 0x000B9DEC File Offset: 0x000B7FEC
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -59,48 +59,48 @@ public class Menu_Multiplayer : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600119D RID: 4509 RVA: 0x000B9E12 File Offset: 0x000B8012
+	
 	public void BUTTON_Unterstuetzen()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[260]);
 	}
 
-	// Token: 0x0600119E RID: 4510 RVA: 0x000B9E3D File Offset: 0x000B803D
+	
 	public void BUTTON_Sabotieren()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.MessageBox(this.tS_.GetText(408), false);
 	}
 
-	// Token: 0x0600119F RID: 4511 RVA: 0x000B9E68 File Offset: 0x000B8068
+	
 	public void BUTTON_Awards()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[276]);
 	}
 
-	// Token: 0x04001614 RID: 5652
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001615 RID: 5653
+	
 	private roomScript rS_;
 
-	// Token: 0x04001616 RID: 5654
+	
 	private GameObject main_;
 
-	// Token: 0x04001617 RID: 5655
+	
 	private mainScript mS_;
 
-	// Token: 0x04001618 RID: 5656
+	
 	private textScript tS_;
 
-	// Token: 0x04001619 RID: 5657
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400161A RID: 5658
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400161B RID: 5659
+	
 	private unlockScript unlock_;
 }

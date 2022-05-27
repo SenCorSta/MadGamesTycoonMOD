@@ -4,23 +4,23 @@ using UnityEngine.UI;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x02000406 RID: 1030
+	
 	[ExecuteInEditMode]
 	public class SetAtlasUvs : MonoBehaviour
 	{
-		// Token: 0x06002453 RID: 9299 RVA: 0x00175125 File Offset: 0x00173325
+		
 		private void Start()
 		{
 			this.Setup();
 		}
 
-		// Token: 0x06002454 RID: 9300 RVA: 0x00175125 File Offset: 0x00173325
+		
 		private void Reset()
 		{
 			this.Setup();
 		}
 
-		// Token: 0x06002455 RID: 9301 RVA: 0x0017512D File Offset: 0x0017332D
+		
 		private void Setup()
 		{
 			if (this.GetRendererReferencesIfNeeded())
@@ -33,7 +33,7 @@ namespace AllIn1SpriteShader
 			}
 		}
 
-		// Token: 0x06002456 RID: 9302 RVA: 0x0017515C File Offset: 0x0017335C
+		
 		private void OnWillRenderObject()
 		{
 			if (this.updateEveryFrame)
@@ -42,7 +42,7 @@ namespace AllIn1SpriteShader
 			}
 		}
 
-		// Token: 0x06002457 RID: 9303 RVA: 0x0017516C File Offset: 0x0017336C
+		
 		public void GetAndSetUVs()
 		{
 			if (!this.GetRendererReferencesIfNeeded())
@@ -73,7 +73,7 @@ namespace AllIn1SpriteShader
 			this.uiImage.material.SetFloat("_MaxYUV", textureRect2.yMax);
 		}
 
-		// Token: 0x06002458 RID: 9304 RVA: 0x001753B0 File Offset: 0x001735B0
+		
 		public void ResetAtlasUvs()
 		{
 			if (!this.GetRendererReferencesIfNeeded())
@@ -94,13 +94,13 @@ namespace AllIn1SpriteShader
 			this.uiImage.material.SetFloat("_MaxYUV", 1f);
 		}
 
-		// Token: 0x06002459 RID: 9305 RVA: 0x0017549F File Offset: 0x0017369F
+		
 		public void UpdateEveryFrame(bool everyFrame)
 		{
 			this.updateEveryFrame = everyFrame;
 		}
 
-		// Token: 0x0600245A RID: 9306 RVA: 0x001754A8 File Offset: 0x001736A8
+		
 		private bool GetRendererReferencesIfNeeded()
 		{
 			if (this.spriteRender == null)
@@ -145,20 +145,20 @@ namespace AllIn1SpriteShader
 			return true;
 		}
 
-		// Token: 0x04002E6B RID: 11883
+		
 		[SerializeField]
 		private bool updateEveryFrame;
 
-		// Token: 0x04002E6C RID: 11884
+		
 		private Renderer render;
 
-		// Token: 0x04002E6D RID: 11885
+		
 		private SpriteRenderer spriteRender;
 
-		// Token: 0x04002E6E RID: 11886
+		
 		private Image uiImage;
 
-		// Token: 0x04002E6F RID: 11887
+		
 		private bool isUI;
 	}
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000098 RID: 152
+
 public class Item_PubOfferSelect : MonoBehaviour
 {
-	// Token: 0x060005DE RID: 1502 RVA: 0x0004BFF0 File Offset: 0x0004A1F0
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060005DF RID: 1503 RVA: 0x0004BFF8 File Offset: 0x0004A1F8
+	
 	private void Update()
 	{
 		if (!this.game_)
@@ -50,7 +50,7 @@ public class Item_PubOfferSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005E0 RID: 1504 RVA: 0x0004C1D8 File Offset: 0x0004A3D8
+	
 	private void SetData()
 	{
 		if (!this.game_)
@@ -81,13 +81,13 @@ public class Item_PubOfferSelect : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060005E1 RID: 1505 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060005E2 RID: 1506 RVA: 0x0004C398 File Offset: 0x0004A598
+	
 	public void BUTTON_Click()
 	{
 		if (!this.game_)
@@ -103,7 +103,7 @@ public class Item_PubOfferSelect : MonoBehaviour
 		this.guiMain_.uiObjects[350].GetComponent<MenuPublishingOfferVerhandlung>().Init(this.game_);
 	}
 
-	// Token: 0x060005E3 RID: 1507 RVA: 0x0004C418 File Offset: 0x0004A618
+	
 	public void BUTTON_Delete()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -112,36 +112,36 @@ public class Item_PubOfferSelect : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0400091A RID: 2330
+	
 	public gameScript game_;
 
-	// Token: 0x0400091B RID: 2331
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400091C RID: 2332
+	
 	public Sprite[] iconStimmung;
 
-	// Token: 0x0400091D RID: 2333
+	
 	public mainScript mS_;
 
-	// Token: 0x0400091E RID: 2334
+	
 	public textScript tS_;
 
-	// Token: 0x0400091F RID: 2335
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000920 RID: 2336
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000921 RID: 2337
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000922 RID: 2338
+	
 	public genres genres_;
 
-	// Token: 0x04000923 RID: 2339
+	
 	public games games_;
 
-	// Token: 0x04000924 RID: 2340
+	
 	private float stimmungOLD;
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200019D RID: 413
+
 public class Menu_W_Aufgabe_Abbrechen : MonoBehaviour
 {
-	// Token: 0x06000FA5 RID: 4005 RVA: 0x000A69C1 File Offset: 0x000A4BC1
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FA6 RID: 4006 RVA: 0x000A69CC File Offset: 0x000A4BCC
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_W_Aufgabe_Abbrechen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FA7 RID: 4007 RVA: 0x000A6A78 File Offset: 0x000A4C78
+	
 	public void Init(roomScript script_)
 	{
 		this.FindScripts();
@@ -169,7 +169,7 @@ public class Menu_W_Aufgabe_Abbrechen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FA8 RID: 4008 RVA: 0x000A6D9C File Offset: 0x000A4F9C
+	
 	public void BUTTON_Abbrechen()
 	{
 		if (this.uiObjects[1].GetComponent<Toggle>().isOn)
@@ -182,7 +182,7 @@ public class Menu_W_Aufgabe_Abbrechen : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FA9 RID: 4009 RVA: 0x000A6E04 File Offset: 0x000A5004
+	
 	public void BUTTON_Yes()
 	{
 		if (!this.rS_)
@@ -298,27 +298,27 @@ public class Menu_W_Aufgabe_Abbrechen : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x04001412 RID: 5138
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001413 RID: 5139
+	
 	private platformScript pS_;
 
-	// Token: 0x04001414 RID: 5140
+	
 	private GameObject main_;
 
-	// Token: 0x04001415 RID: 5141
+	
 	private mainScript mS_;
 
-	// Token: 0x04001416 RID: 5142
+	
 	private textScript tS_;
 
-	// Token: 0x04001417 RID: 5143
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001418 RID: 5144
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001419 RID: 5145
+	
 	private roomScript rS_;
 }

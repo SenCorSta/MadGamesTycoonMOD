@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000F5 RID: 245
+
 public class Item_MyKonsolen_Umsatz : MonoBehaviour
 {
-	// Token: 0x0600080D RID: 2061 RVA: 0x000583F7 File Offset: 0x000565F7
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600080E RID: 2062 RVA: 0x000583F7 File Offset: 0x000565F7
+	
 	private void Update()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600080F RID: 2063 RVA: 0x00058400 File Offset: 0x00056600
+	
 	public void SetData()
 	{
 		if (!this.pS_)
@@ -51,13 +51,13 @@ public class Item_MyKonsolen_Umsatz : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000810 RID: 2064 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000811 RID: 2065 RVA: 0x00058548 File Offset: 0x00056748
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -65,30 +65,30 @@ public class Item_MyKonsolen_Umsatz : MonoBehaviour
 		this.guiMain_.uiObjects[333].GetComponent<Menu_Umsatz_Konsole>().Init(this.pS_);
 	}
 
-	// Token: 0x04000C35 RID: 3125
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000C36 RID: 3126
+	
 	public mainScript mS_;
 
-	// Token: 0x04000C37 RID: 3127
+	
 	public textScript tS_;
 
-	// Token: 0x04000C38 RID: 3128
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000C39 RID: 3129
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000C3A RID: 3130
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000C3B RID: 3131
+	
 	public genres genres_;
 
-	// Token: 0x04000C3C RID: 3132
+	
 	public Menu_Stats_MyKonsolen_Umsatz menu_;
 
-	// Token: 0x04000C3D RID: 3133
+	
 	public platformScript pS_;
 }

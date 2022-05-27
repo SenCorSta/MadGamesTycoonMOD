@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000035 RID: 53
+
 public class sui_demo_ControllerMaster : MonoBehaviour
 {
-	// Token: 0x060000C7 RID: 199 RVA: 0x000089D0 File Offset: 0x00006BD0
+	
 	private void Start()
 	{
 		this.characterController = base.gameObject.GetComponent<sui_demo_ControllerCharacter>();
@@ -12,7 +12,7 @@ public class sui_demo_ControllerMaster : MonoBehaviour
 		this.orbitController = base.gameObject.GetComponent<sui_demo_ControllerOrbit>();
 	}
 
-	// Token: 0x060000C8 RID: 200 RVA: 0x00008A08 File Offset: 0x00006C08
+	
 	private void LateUpdate()
 	{
 		if (this.currentControllerType != this.useController)
@@ -109,37 +109,37 @@ public class sui_demo_ControllerMaster : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040001A3 RID: 419
+	
 	public Transform cameraObject;
 
-	// Token: 0x040001A4 RID: 420
+	
 	public sui_demo_ControllerMaster.Sui_Demo_ControllerType currentControllerType = sui_demo_ControllerMaster.Sui_Demo_ControllerType.character;
 
-	// Token: 0x040001A5 RID: 421
+	
 	private sui_demo_ControllerCharacter characterController;
 
-	// Token: 0x040001A6 RID: 422
+	
 	private sui_demo_ControllerBoat boatController;
 
-	// Token: 0x040001A7 RID: 423
+	
 	private sui_demo_ControllerOrbit orbitController;
 
-	// Token: 0x040001A8 RID: 424
+	
 	private bool resetController;
 
-	// Token: 0x040001A9 RID: 425
+	
 	private sui_demo_ControllerMaster.Sui_Demo_ControllerType useController = sui_demo_ControllerMaster.Sui_Demo_ControllerType.character;
 
-	// Token: 0x02000036 RID: 54
+	
 	public enum Sui_Demo_ControllerType
 	{
-		// Token: 0x040001AB RID: 427
+		
 		none,
-		// Token: 0x040001AC RID: 428
+		
 		character,
-		// Token: 0x040001AD RID: 429
+		
 		boat,
-		// Token: 0x040001AE RID: 430
+		
 		orbit
 	}
 }

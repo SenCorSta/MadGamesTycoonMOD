@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000F9 RID: 249
+
 public class Item_Stats_Marktanalyse : MonoBehaviour
 {
-	// Token: 0x06000823 RID: 2083 RVA: 0x00058D84 File Offset: 0x00056F84
+	
 	public void Init(string text_, string amountGames, Sprite pic, Sprite marktanalyse, int anzGames_, int typ_)
 	{
 		this.myName = text_;
@@ -17,21 +17,21 @@ public class Item_Stats_Marktanalyse : MonoBehaviour
 		this.uiObjects[3].GetComponent<Image>().sprite = marktanalyse;
 	}
 
-	// Token: 0x06000824 RID: 2084 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04000C55 RID: 3157
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000C56 RID: 3158
+	
 	public string myName;
 
-	// Token: 0x04000C57 RID: 3159
+	
 	public int anzGames;
 
-	// Token: 0x04000C58 RID: 3160
+	
 	public int typ;
 }

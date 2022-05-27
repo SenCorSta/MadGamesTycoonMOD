@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000333 RID: 819
+
 public class mapScript : MonoBehaviour
 {
-	// Token: 0x06001D7F RID: 7551 RVA: 0x00124866 File Offset: 0x00122A66
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001D80 RID: 7552 RVA: 0x00124870 File Offset: 0x00122A70
+	
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -41,14 +41,14 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D81 RID: 7553 RVA: 0x00124924 File Offset: 0x00122B24
+	
 	private void Update()
 	{
 		this.UpdateMapMuell(false);
 		this.UpdateMapFilter(false);
 	}
 
-	// Token: 0x06001D82 RID: 7554 RVA: 0x00124934 File Offset: 0x00122B34
+	
 	public void InitBuilding(bool fromSavegame)
 	{
 		Debug.Log("InitBuilding()");
@@ -60,6 +60,7 @@ public class mapScript : MonoBehaviour
 		foreach (GameObject gameObject in array)
 		{
 			this.mapBlock[Mathf.RoundToInt(gameObject.transform.position.x), Mathf.RoundToInt(gameObject.transform.position.z)] = 1;
+			Debug.Log("BLOCK: " + Mathf.RoundToInt(gameObject.transform.position.x).ToString() + ", " + Mathf.RoundToInt(gameObject.transform.position.z).ToString());
 		}
 		GameObject[] array2 = array;
 		for (int i = 0; i < array2.Length; i++)
@@ -75,6 +76,7 @@ public class mapScript : MonoBehaviour
 		{
 			this.mapBlock[Mathf.RoundToInt(gameObject2.transform.position.x), Mathf.RoundToInt(gameObject2.transform.position.z)] = 1;
 			this.mapBlockDoor[Mathf.RoundToInt(gameObject2.transform.position.x), Mathf.RoundToInt(gameObject2.transform.position.z)] = 1;
+			Debug.Log("BLOCK DOOR: " + Mathf.RoundToInt(gameObject2.transform.position.x).ToString() + ", " + Mathf.RoundToInt(gameObject2.transform.position.z).ToString());
 		}
 		array2 = array3;
 		for (int i = 0; i < array2.Length; i++)
@@ -189,7 +191,7 @@ public class mapScript : MonoBehaviour
 		this.UpdatePathfindingInstant();
 	}
 
-	// Token: 0x06001D83 RID: 7555 RVA: 0x00124ED4 File Offset: 0x001230D4
+	
 	public void CreateRoomsForBuildingsToBuy()
 	{
 		roomScript roomScript = null;
@@ -230,7 +232,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D84 RID: 7556 RVA: 0x0012502C File Offset: 0x0012322C
+	
 	public void RemoveRoom(int id_, bool particle)
 	{
 		Debug.Log("RemoveRoom()");
@@ -282,19 +284,19 @@ public class mapScript : MonoBehaviour
 		this.CreateWalls(-1);
 	}
 
-	// Token: 0x06001D85 RID: 7557 RVA: 0x001252EE File Offset: 0x001234EE
+	
 	public void UpdatePathfindingInstant()
 	{
 		base.StartCoroutine(this.UpdatePathfindingInstantNextFrame());
 	}
 
-	// Token: 0x06001D86 RID: 7558 RVA: 0x001252FD File Offset: 0x001234FD
+	
 	public void UpdatePathfinding()
 	{
 		base.StartCoroutine(this.UpdatePathfindingNextFrame());
 	}
 
-	// Token: 0x06001D87 RID: 7559 RVA: 0x0012530C File Offset: 0x0012350C
+	
 	private IEnumerator UpdatePathfindingNextFrame()
 	{
 		yield return new WaitForEndOfFrame();
@@ -311,7 +313,7 @@ public class mapScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001D88 RID: 7560 RVA: 0x0012531B File Offset: 0x0012351B
+	
 	private IEnumerator UpdatePathfindingInstantNextFrame()
 	{
 		yield return new WaitForEndOfFrame();
@@ -328,7 +330,7 @@ public class mapScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001D89 RID: 7561 RVA: 0x0012532C File Offset: 0x0012352C
+	
 	public void CreateWalls(int buildingID)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Room");
@@ -375,7 +377,7 @@ public class mapScript : MonoBehaviour
 		this.guiMain_.filterToggles = -1;
 	}
 
-	// Token: 0x06001D8A RID: 7562 RVA: 0x00125508 File Offset: 0x00123708
+	
 	public void CreateWalls_Multiplayer(int playerID_)
 	{
 		player_mp player_mp = this.mS_.mpCalls_.FindPlayer(playerID_);
@@ -401,7 +403,7 @@ public class mapScript : MonoBehaviour
 		this.guiMain_.filterToggles = -1;
 	}
 
-	// Token: 0x06001D8B RID: 7563 RVA: 0x001255E4 File Offset: 0x001237E4
+	
 	private void InstantiateMap(int x, int y, GameObject room, roomScript script_)
 	{
 		if (this.mapBlockDoor[x, y] != 0)
@@ -587,7 +589,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D8C RID: 7564 RVA: 0x001260B4 File Offset: 0x001242B4
+	
 	private void InstantiateMap_Multiplayer(player_mp p, int x, int y, int roomID_MP, int roomTYP_MP)
 	{
 		if (this.mapBlockDoor[x, y] != 0)
@@ -753,7 +755,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D8D RID: 7565 RVA: 0x00126AF0 File Offset: 0x00124CF0
+	
 	private int GetFloorPrefab(int roomTyp)
 	{
 		switch (roomTyp)
@@ -799,7 +801,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D8E RID: 7566 RVA: 0x00126B84 File Offset: 0x00124D84
+	
 	private int GetWallPrefab(int roomTyp)
 	{
 		switch (roomTyp)
@@ -845,7 +847,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D8F RID: 7567 RVA: 0x00126C18 File Offset: 0x00124E18
+	
 	private int GetEdgeOutPrefab(int roomTyp)
 	{
 		switch (roomTyp)
@@ -891,7 +893,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D90 RID: 7568 RVA: 0x00126CAC File Offset: 0x00124EAC
+	
 	private int GetDoorPrefab(int roomTyp)
 	{
 		switch (roomTyp)
@@ -935,7 +937,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D91 RID: 7569 RVA: 0x00126D3C File Offset: 0x00124F3C
+	
 	private int GetWindowPrefab(int roomTyp)
 	{
 		switch (roomTyp)
@@ -981,13 +983,13 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D92 RID: 7570 RVA: 0x00126DD0 File Offset: 0x00124FD0
+	
 	private void SetRoomParent(GameObject go)
 	{
 		go.transform.SetParent(this.ROOMS.transform, true);
 	}
 
-	// Token: 0x06001D93 RID: 7571 RVA: 0x00126DEC File Offset: 0x00124FEC
+	
 	private void SetRoomParent_Multiplayer(GameObject go)
 	{
 		go.transform.SetParent(this.ROOMS_MP.transform, true);
@@ -996,7 +998,7 @@ public class mapScript : MonoBehaviour
 		UnityEngine.Object.Destroy(go);
 	}
 
-	// Token: 0x06001D94 RID: 7572 RVA: 0x00126E50 File Offset: 0x00125050
+	
 	public int GetAmountRooms(int t)
 	{
 		int num = 0;
@@ -1012,7 +1014,7 @@ public class mapScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06001D95 RID: 7573 RVA: 0x00126E8F File Offset: 0x0012508F
+	
 	public GameObject CreateObject(int t)
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.prefabsInventar[t]);
@@ -1021,7 +1023,7 @@ public class mapScript : MonoBehaviour
 		return gameObject;
 	}
 
-	// Token: 0x06001D96 RID: 7574 RVA: 0x00126ECC File Offset: 0x001250CC
+	
 	public Vector2 FindRandomFloorInMyBuilding(int id)
 	{
 		List<Vector2> list = new List<Vector2>();
@@ -1038,7 +1040,7 @@ public class mapScript : MonoBehaviour
 		return list[UnityEngine.Random.Range(0, list.Count)];
 	}
 
-	// Token: 0x06001D97 RID: 7575 RVA: 0x00126F44 File Offset: 0x00125144
+	
 	public Vector2 FindRandomFloor()
 	{
 		List<Vector2> list = new List<Vector2>();
@@ -1055,13 +1057,13 @@ public class mapScript : MonoBehaviour
 		return list[UnityEngine.Random.Range(0, list.Count)];
 	}
 
-	// Token: 0x06001D98 RID: 7576 RVA: 0x00126FAC File Offset: 0x001251AC
+	
 	public bool IsInMapLimit(int x, int y)
 	{
 		return x >= 0 && x <= mapScript.mapSizeX && y >= 0 && y <= mapScript.mapSizeY;
 	}
 
-	// Token: 0x06001D99 RID: 7577 RVA: 0x00126FCC File Offset: 0x001251CC
+	
 	public void UpdateMapMuell(bool force)
 	{
 		if (!force)
@@ -1132,7 +1134,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D9A RID: 7578 RVA: 0x001272D8 File Offset: 0x001254D8
+	
 	public void UpdateMapFilter(bool force)
 	{
 		if (!force)
@@ -1211,90 +1213,90 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002500 RID: 9472
+	
 	private mainScript mS_;
 
-	// Token: 0x04002501 RID: 9473
+	
 	private buildRoomScript brS_;
 
-	// Token: 0x04002502 RID: 9474
+	
 	private roomDataScript rdS_;
 
-	// Token: 0x04002503 RID: 9475
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002504 RID: 9476
+	
 	public static int mapSizeX = 100;
 
-	// Token: 0x04002505 RID: 9477
+	
 	public static int mapSizeY = 100;
 
-	// Token: 0x04002506 RID: 9478
+	
 	public static int ID_FLOOR = 1;
 
-	// Token: 0x04002507 RID: 9479
+	
 	public int[,] mapRoomID = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x04002508 RID: 9480
+	
 	public roomScript[,] mapRoomScript = new roomScript[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x04002509 RID: 9481
+	
 	public int[,] mapDoors = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x0400250A RID: 9482
+	
 	public int[,] mapWindows = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x0400250B RID: 9483
+	
 	public int[,] mapBlock = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x0400250C RID: 9484
+	
 	public int[,] mapBlockDoor = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x0400250D RID: 9485
+	
 	public int[,] mapBuilding = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x0400250E RID: 9486
+	
 	public int[,] mapRoomID_LAYOUT = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x0400250F RID: 9487
+	
 	public int[,] mapRoomTyp_LAYOUT = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x04002510 RID: 9488
+	
 	public int[,] mapDoors_LAYOUT = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x04002511 RID: 9489
+	
 	public int[,] mapWindows_LAYOUT = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x04002512 RID: 9490
+	
 	public GameObject ROOMS_MP;
 
-	// Token: 0x04002513 RID: 9491
+	
 	public GameObject[] prefabsWalls;
 
-	// Token: 0x04002514 RID: 9492
+	
 	public GameObject[] prefabsInventar;
 
-	// Token: 0x04002515 RID: 9493
+	
 	public AstarPath aStar_;
 
-	// Token: 0x04002516 RID: 9494
+	
 	private bool[,] doorsPlaced = new bool[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x04002517 RID: 9495
+	
 	private GameObject ROOMS;
 
-	// Token: 0x04002518 RID: 9496
+	
 	public float[,] mapMuell = new float[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x04002519 RID: 9497
+	
 	public float[,] mapWaerme = new float[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x0400251A RID: 9498
+	
 	public float[,] mapAusstattung = new float[mapScript.mapSizeX, mapScript.mapSizeY];
 
-	// Token: 0x0400251B RID: 9499
+	
 	private float muellTimer;
 
-	// Token: 0x0400251C RID: 9500
+	
 	private float updateMapFilterTimer;
 }

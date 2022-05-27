@@ -2,10 +2,10 @@
 using Suimono.Core;
 using UnityEngine;
 
-// Token: 0x02000034 RID: 52
+
 public class sui_demo_ControllerCharacter : MonoBehaviour
 {
-	// Token: 0x060000C3 RID: 195 RVA: 0x00006FF0 File Offset: 0x000051F0
+	
 	private void Awake()
 	{
 		this.suimonoGameObject = GameObject.Find("SUIMONO_Module");
@@ -27,7 +27,7 @@ public class sui_demo_ControllerCharacter : MonoBehaviour
 		this.IC = base.gameObject.GetComponent<sui_demo_InputController>();
 	}
 
-	// Token: 0x060000C4 RID: 196 RVA: 0x000070B4 File Offset: 0x000052B4
+	
 	private void LateUpdate()
 	{
 		if (this.rotationLimits.x != 0f)
@@ -66,7 +66,7 @@ public class sui_demo_ControllerCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000C5 RID: 197 RVA: 0x000074A8 File Offset: 0x000056A8
+	
 	private void FixedUpdate()
 	{
 		if (this.isActive)
@@ -478,219 +478,219 @@ public class sui_demo_ControllerCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400015B RID: 347
+	
 	public bool isActive;
 
-	// Token: 0x0400015C RID: 348
+	
 	public bool isControllable = true;
 
-	// Token: 0x0400015D RID: 349
+	
 	public bool isExtraZoom;
 
-	// Token: 0x0400015E RID: 350
+	
 	public bool keepAboveSurface;
 
-	// Token: 0x0400015F RID: 351
+	
 	public bool handleObjectOcclusion = true;
 
-	// Token: 0x04000160 RID: 352
+	
 	public Transform cameraTarget;
 
-	// Token: 0x04000161 RID: 353
+	
 	public Transform buoyancyTarget;
 
-	// Token: 0x04000162 RID: 354
+	
 	public bool reverseYAxis = true;
 
-	// Token: 0x04000163 RID: 355
+	
 	public bool reverseXAxis;
 
-	// Token: 0x04000164 RID: 356
+	
 	public Vector2 mouseSensitivity = new Vector2(4f, 4f);
 
-	// Token: 0x04000165 RID: 357
+	
 	public float cameraFOV = 35f;
 
-	// Token: 0x04000166 RID: 358
+	
 	public Vector2 cameraOffset = new Vector2(0f, 0f);
 
-	// Token: 0x04000167 RID: 359
+	
 	public float cameraLean;
 
-	// Token: 0x04000168 RID: 360
+	
 	public float walkSpeed = 0.02f;
 
-	// Token: 0x04000169 RID: 361
+	
 	public float runSpeed = 0.4f;
 
-	// Token: 0x0400016A RID: 362
+	
 	public float sprintSpeed = 0.4f;
 
-	// Token: 0x0400016B RID: 363
+	
 	public float rotationSensitivity = 6f;
 
-	// Token: 0x0400016C RID: 364
+	
 	public Vector3 rotationLimits = new Vector3(0f, 0f, 0f);
 
-	// Token: 0x0400016D RID: 365
+	
 	public float minZoomAmount = 1.25f;
 
-	// Token: 0x0400016E RID: 366
+	
 	public float maxZoomAmount = 8f;
 
-	// Token: 0x0400016F RID: 367
+	
 	public bool showDebug;
 
-	// Token: 0x04000170 RID: 368
+	
 	public sui_demo_animCharacter targetAnimator;
 
-	// Token: 0x04000171 RID: 369
+	
 	public bool isInBoat;
 
-	// Token: 0x04000172 RID: 370
+	
 	private Transform cameraObject;
 
-	// Token: 0x04000173 RID: 371
+	
 	private fx_buoyancy buoyancyObject;
 
-	// Token: 0x04000174 RID: 372
+	
 	private float rotSense;
 
-	// Token: 0x04000175 RID: 373
+	
 	private Vector2 axisSensitivity = new Vector2(4f, 4f);
 
-	// Token: 0x04000176 RID: 374
+	
 	private float followDistance = 5f;
 
-	// Token: 0x04000177 RID: 375
+	
 	private float followHeight = 1f;
 
-	// Token: 0x04000178 RID: 376
+	
 	private float followLat;
 
-	// Token: 0x04000179 RID: 377
+	
 	private float camFOV = 35f;
 
-	// Token: 0x0400017A RID: 378
+	
 	private float camRotation;
 
-	// Token: 0x0400017B RID: 379
+	
 	private Vector3 camRot;
 
-	// Token: 0x0400017C RID: 380
+	
 	private float camHeight = 2f;
 
-	// Token: 0x0400017D RID: 381
+	
 	private bool isInWater;
 
-	// Token: 0x0400017E RID: 382
+	
 	private bool isInWaterDeep;
 
-	// Token: 0x0400017F RID: 383
+	
 	private bool isUnderWater;
 
-	// Token: 0x04000180 RID: 384
+	
 	private bool isAtSurface;
 
-	// Token: 0x04000181 RID: 385
+	
 	private bool isFloating;
 
-	// Token: 0x04000182 RID: 386
+	
 	private bool isFalling;
 
-	// Token: 0x04000183 RID: 387
+	
 	private Vector3 targetPosition;
 
-	// Token: 0x04000184 RID: 388
+	
 	private float MouseRotationDistance;
 
-	// Token: 0x04000185 RID: 389
+	
 	private float MouseVerticalDistance;
 
-	// Token: 0x04000186 RID: 390
+	
 	private GameObject suimonoGameObject;
 
-	// Token: 0x04000187 RID: 391
+	
 	private SuimonoModule suimonoModuleObject;
 
-	// Token: 0x04000188 RID: 392
+	
 	private float followTgtDistance;
 
-	// Token: 0x04000189 RID: 393
+	
 	private bool orbitView;
 
-	// Token: 0x0400018A RID: 394
+	
 	private Quaternion targetRotation;
 
-	// Token: 0x0400018B RID: 395
+	
 	private float MouseScrollDistance;
 
-	// Token: 0x0400018C RID: 396
+	
 	private float setFOV = 1f;
 
-	// Token: 0x0400018D RID: 397
+	
 	private float useSpeed;
 
-	// Token: 0x0400018E RID: 398
+	
 	private float useSideSpeed;
 
-	// Token: 0x0400018F RID: 399
+	
 	private float useVertSpeed;
 
-	// Token: 0x04000190 RID: 400
+	
 	private float moveSpeed = 0.05f;
 
-	// Token: 0x04000191 RID: 401
+	
 	private float moveForward;
 
-	// Token: 0x04000192 RID: 402
+	
 	private float moveSideways;
 
-	// Token: 0x04000193 RID: 403
+	
 	private float moveForwardTgt;
 
-	// Token: 0x04000194 RID: 404
+	
 	private float moveSidewaysTgt;
 
-	// Token: 0x04000195 RID: 405
+	
 	private float moveVert;
 
-	// Token: 0x04000196 RID: 406
+	
 	private bool isWalking;
 
-	// Token: 0x04000197 RID: 407
+	
 	private bool isRunning;
 
-	// Token: 0x04000198 RID: 408
+	
 	private bool isSprinting;
 
-	// Token: 0x04000199 RID: 409
+	
 	private Vector3 savePos;
 
-	// Token: 0x0400019A RID: 410
+	
 	private float oldMouseRotation;
 
-	// Token: 0x0400019B RID: 411
+	
 	private sui_demo_ControllerMaster MC;
 
-	// Token: 0x0400019C RID: 412
+	
 	private sui_demo_InputController IC;
 
-	// Token: 0x0400019D RID: 413
+	
 	private float xMove;
 
-	// Token: 0x0400019E RID: 414
+	
 	private float runButtonTime;
 
-	// Token: 0x0400019F RID: 415
+	
 	private bool toggleRun;
 
-	// Token: 0x040001A0 RID: 416
+	
 	private float gSlope;
 
-	// Token: 0x040001A1 RID: 417
+	
 	private float useSlope;
 
-	// Token: 0x040001A2 RID: 418
+	
 	private float waterLevel;
 }

@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001EB RID: 491
+
 public class MenuPublishingOfferVerhandlung : MonoBehaviour
 {
-	// Token: 0x0600129D RID: 4765 RVA: 0x000C6120 File Offset: 0x000C4320
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600129E RID: 4766 RVA: 0x000C6128 File Offset: 0x000C4328
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600129F RID: 4767 RVA: 0x000C6210 File Offset: 0x000C4410
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -66,7 +66,7 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012A0 RID: 4768 RVA: 0x000C628C File Offset: 0x000C448C
+	
 	public void Init(gameScript pO_)
 	{
 		if (!pO_)
@@ -85,7 +85,7 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060012A1 RID: 4769 RVA: 0x000C6348 File Offset: 0x000C4548
+	
 	private void SetData()
 	{
 		if (!this.game_)
@@ -109,7 +109,7 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012A2 RID: 4770 RVA: 0x000C648C File Offset: 0x000C468C
+	
 	public void SLIDER_Angebot()
 	{
 		float num = this.game_.pubAngebot_VerhandlungProzent - this.uiObjects[3].GetComponent<Slider>().value;
@@ -119,7 +119,7 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060012A3 RID: 4771 RVA: 0x000C64F8 File Offset: 0x000C46F8
+	
 	private IEnumerator iMinus(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -130,7 +130,7 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060012A4 RID: 4772 RVA: 0x000C6510 File Offset: 0x000C4710
+	
 	public void BUTTON_Minus(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -145,7 +145,7 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		base.StartCoroutine(this.iMinus(i));
 	}
 
-	// Token: 0x060012A5 RID: 4773 RVA: 0x000C658E File Offset: 0x000C478E
+	
 	private IEnumerator iPlus(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -156,7 +156,7 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060012A6 RID: 4774 RVA: 0x000C65A4 File Offset: 0x000C47A4
+	
 	public void BUTTON_Plus(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -171,7 +171,7 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		base.StartCoroutine(this.iPlus(i));
 	}
 
-	// Token: 0x060012A7 RID: 4775 RVA: 0x000C6624 File Offset: 0x000C4824
+	
 	public void BUTTON_Angebot()
 	{
 		if (this.uiObjects[3].GetComponent<Slider>().value <= 0f)
@@ -212,25 +212,30 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		this.sfx_.PlaySound(54, true);
 	}
 
-	// Token: 0x060012A8 RID: 4776 RVA: 0x000C67E8 File Offset: 0x000C49E8
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060012A9 RID: 4777 RVA: 0x000C6803 File Offset: 0x000C4A03
+	
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.CreateGame();
 	}
 
-	// Token: 0x060012AA RID: 4778 RVA: 0x000C6818 File Offset: 0x000C4A18
+	
 	private void CreateGame()
 	{
 		this.mS_.Pay((long)this.game_.PUBOFFER_GetGarantiesumme(), 25);
 		this.mS_.publishingOfferMain_.amountPublishingOffers--;
+		this.game_.playerGame = true;
+		if (this.mS_.multiplayer)
+		{
+			this.game_.multiplayerSlot = this.mS_.mpCalls_.myID;
+		}
 		this.game_.pubAngebot = false;
 		this.game_.pubOffer = true;
 		this.game_.costs_marketing = 0L;
@@ -272,36 +277,36 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040016FB RID: 5883
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040016FC RID: 5884
+	
 	private GameObject main_;
 
-	// Token: 0x040016FD RID: 5885
+	
 	private mainScript mS_;
 
-	// Token: 0x040016FE RID: 5886
+	
 	private textScript tS_;
 
-	// Token: 0x040016FF RID: 5887
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001700 RID: 5888
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001701 RID: 5889
+	
 	private genres genres_;
 
-	// Token: 0x04001702 RID: 5890
+	
 	private games games_;
 
-	// Token: 0x04001703 RID: 5891
+	
 	private gameScript game_;
 
-	// Token: 0x04001704 RID: 5892
+	
 	private int garantiesummeAngebot;
 
-	// Token: 0x04001705 RID: 5893
+	
 	private float gewinnbeteiligungAngebot;
 }

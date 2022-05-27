@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000329 RID: 809
+
 public class contractWorkMain : MonoBehaviour
 {
-	// Token: 0x06001CC0 RID: 7360 RVA: 0x0011D4EA File Offset: 0x0011B6EA
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001CC1 RID: 7361 RVA: 0x0011D4F4 File Offset: 0x0011B6F4
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -56,7 +56,7 @@ public class contractWorkMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001CC2 RID: 7362 RVA: 0x0011D630 File Offset: 0x0011B830
+	
 	public contractAuftragsspiel CreateContractGame()
 	{
 		contractAuftragsspiel component = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[1]).GetComponent<contractAuftragsspiel>();
@@ -66,7 +66,7 @@ public class contractWorkMain : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x06001CC3 RID: 7363 RVA: 0x0011D668 File Offset: 0x0011B868
+	
 	public contractWork CreateContractWork()
 	{
 		contractWork component = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0]).GetComponent<contractWork>();
@@ -76,12 +76,12 @@ public class contractWorkMain : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x06001CC4 RID: 7364 RVA: 0x00002715 File Offset: 0x00000915
+	
 	public void UpdateContractGame(bool forceNewContract)
 	{
 	}
 
-	// Token: 0x06001CC5 RID: 7365 RVA: 0x0011D6A0 File Offset: 0x0011B8A0
+	
 	private int GetGameSize()
 	{
 		if (this.fS_.IsErforscht(0) && UnityEngine.Random.Range(0, 100) > 70)
@@ -103,7 +103,7 @@ public class contractWorkMain : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001CC6 RID: 7366 RVA: 0x0011D754 File Offset: 0x0011B954
+	
 	private int GetGameGenre()
 	{
 		int result = 0;
@@ -121,7 +121,7 @@ public class contractWorkMain : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001CC7 RID: 7367 RVA: 0x0011D79C File Offset: 0x0011B99C
+	
 	private int GetPlatform()
 	{
 		int result = 0;
@@ -144,7 +144,7 @@ public class contractWorkMain : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001CC8 RID: 7368 RVA: 0x0011D81C File Offset: 0x0011BA1C
+	
 	public void UpdateContractWork(bool forceNewContract)
 	{
 		this.FindScripts();
@@ -314,39 +314,30 @@ public class contractWorkMain : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x06001CC9 RID: 7369 RVA: 0x0011DE68 File Offset: 0x0011C068
+	
 	private int GetRandomPublisherID()
 	{
-		int num = 0;
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
 		if (array.Length != 0)
 		{
 			bool flag = false;
 			while (!flag)
 			{
-				int num2 = UnityEngine.Random.Range(0, array.Length);
-				if (array[num2])
+				int num = UnityEngine.Random.Range(0, array.Length);
+				if (array[num])
 				{
-					publisherScript component = array[num2].GetComponent<publisherScript>();
-					if (component)
+					publisherScript component = array[num].GetComponent<publisherScript>();
+					if (component && component.isUnlocked)
 					{
-						if (component.isUnlocked && !component.IsTochterfirma() && !component.isPlayer)
-						{
-							return component.myID;
-						}
-						num++;
-						if (num > 1000)
-						{
-							return 3;
-						}
+						return component.myID;
 					}
 				}
 			}
 		}
-		return 3;
+		return 0;
 	}
 
-	// Token: 0x06001CCA RID: 7370 RVA: 0x0011DEE8 File Offset: 0x0011C0E8
+	
 	public void UpdateGUI()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("ContractWork");
@@ -514,7 +505,7 @@ public class contractWorkMain : MonoBehaviour
 					{
 						this.mS_.games_.arrayGamesScripts[j].FindMyPublisher();
 					}
-					if (this.mS_.games_.arrayGamesScripts[j].pS_ && !this.mS_.games_.arrayGamesScripts[j].pS_.IsTochterfirma() && this.mS_.games_.arrayGamesScripts[j].auftragsspiel && !this.mS_.games_.arrayGamesScripts[j].auftragsspiel_Inivs)
+					if (this.mS_.games_.arrayGamesScripts[j].pS_ && !this.mS_.games_.arrayGamesScripts[j].pS_.tochterfirma && this.mS_.games_.arrayGamesScripts[j].auftragsspiel && !this.mS_.games_.arrayGamesScripts[j].auftragsspiel_Inivs)
 					{
 						num2++;
 						this.anzContractGames++;
@@ -621,69 +612,69 @@ public class contractWorkMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040023DD RID: 9181
+	
 	public float pointsRegulator = 1f;
 
-	// Token: 0x040023DE RID: 9182
+	
 	public int anzContractGames;
 
-	// Token: 0x040023DF RID: 9183
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040023E0 RID: 9184
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040023E1 RID: 9185
+	
 	private GameObject main_;
 
-	// Token: 0x040023E2 RID: 9186
+	
 	private mainScript mS_;
 
-	// Token: 0x040023E3 RID: 9187
+	
 	private textScript tS_;
 
-	// Token: 0x040023E4 RID: 9188
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040023E5 RID: 9189
+	
 	private roomDataScript rdS_;
 
-	// Token: 0x040023E6 RID: 9190
+	
 	private forschungSonstiges fS_;
 
-	// Token: 0x040023E7 RID: 9191
+	
 	private genres genres_;
 
-	// Token: 0x040023E8 RID: 9192
+	
 	private unlockScript unlock_;
 
-	// Token: 0x040023E9 RID: 9193
+	
 	private forschungSonstiges forschungSonstiges_;
 
-	// Token: 0x040023EA RID: 9194
+	
 	private platforms platforms_;
 
-	// Token: 0x040023EB RID: 9195
+	
 	public int anzDEV;
 
-	// Token: 0x040023EC RID: 9196
+	
 	public int anzQA;
 
-	// Token: 0x040023ED RID: 9197
+	
 	public int anzGFX;
 
-	// Token: 0x040023EE RID: 9198
+	
 	public int anzSFX;
 
-	// Token: 0x040023EF RID: 9199
+	
 	public int anzMotion;
 
-	// Token: 0x040023F0 RID: 9200
+	
 	public int anzProduction;
 
-	// Token: 0x040023F1 RID: 9201
+	
 	public int anzWerkstatt;
 
-	// Token: 0x040023F2 RID: 9202
+	
 	public int anzHardware;
 }

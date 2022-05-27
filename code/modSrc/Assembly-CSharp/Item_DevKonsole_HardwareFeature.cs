@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000A8 RID: 168
+
 public class Item_DevKonsole_HardwareFeature : MonoBehaviour
 {
-	// Token: 0x0600063C RID: 1596 RVA: 0x0004EDCC File Offset: 0x0004CFCC
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600063D RID: 1597 RVA: 0x0004EDD4 File Offset: 0x0004CFD4
+	
 	private void Update()
 	{
 		if (this.menu_.hwFeatures[this.myID])
@@ -22,7 +22,7 @@ public class Item_DevKonsole_HardwareFeature : MonoBehaviour
 		base.GetComponent<Image>().color = Color.white;
 	}
 
-	// Token: 0x0600063E RID: 1598 RVA: 0x0004EE24 File Offset: 0x0004D024
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.hardwareFeatures_.GetName(this.myID);
@@ -57,7 +57,7 @@ public class Item_DevKonsole_HardwareFeature : MonoBehaviour
 		this.tooltip_.c = this.hardwareFeatures_.GetTooltip(this.myID);
 	}
 
-	// Token: 0x0600063F RID: 1599 RVA: 0x0004EFC0 File Offset: 0x0004D1C0
+	
 	public void BUTTON_Click()
 	{
 		if (base.GetComponent<Button>().interactable)
@@ -68,30 +68,30 @@ public class Item_DevKonsole_HardwareFeature : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040009C1 RID: 2497
+	
 	public int myID;
 
-	// Token: 0x040009C2 RID: 2498
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040009C3 RID: 2499
+	
 	public mainScript mS_;
 
-	// Token: 0x040009C4 RID: 2500
+	
 	public textScript tS_;
 
-	// Token: 0x040009C5 RID: 2501
+	
 	public sfxScript sfx_;
 
-	// Token: 0x040009C6 RID: 2502
+	
 	public hardwareFeatures hardwareFeatures_;
 
-	// Token: 0x040009C7 RID: 2503
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x040009C8 RID: 2504
+	
 	public tooltip tooltip_;
 
-	// Token: 0x040009C9 RID: 2505
+	
 	public Menu_Dev_Konsole menu_;
 }

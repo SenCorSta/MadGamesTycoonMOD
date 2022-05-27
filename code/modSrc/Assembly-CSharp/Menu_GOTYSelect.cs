@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001F7 RID: 503
+
 public class Menu_GOTYSelect : MonoBehaviour
 {
-	// Token: 0x0600131E RID: 4894 RVA: 0x000CA800 File Offset: 0x000C8A00
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600131F RID: 4895 RVA: 0x000CA808 File Offset: 0x000C8A08
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_GOTYSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001320 RID: 4896 RVA: 0x000CA8D0 File Offset: 0x000C8AD0
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -51,7 +51,7 @@ public class Menu_GOTYSelect : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001321 RID: 4897 RVA: 0x000CA908 File Offset: 0x000C8B08
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -67,7 +67,7 @@ public class Menu_GOTYSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001322 RID: 4898 RVA: 0x000CA954 File Offset: 0x000C8B54
+	
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -80,14 +80,14 @@ public class Menu_GOTYSelect : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001323 RID: 4899 RVA: 0x000CA9B0 File Offset: 0x000C8BB0
+	
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.InitDropdowns();
 	}
 
-	// Token: 0x06001324 RID: 4900 RVA: 0x000CA9C0 File Offset: 0x000C8BC0
+	
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -102,7 +102,7 @@ public class Menu_GOTYSelect : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001325 RID: 4901 RVA: 0x000CAA8C File Offset: 0x000C8C8C
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -113,7 +113,7 @@ public class Menu_GOTYSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001326 RID: 4902 RVA: 0x000CAAE0 File Offset: 0x000C8CE0
+	
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -139,13 +139,13 @@ public class Menu_GOTYSelect : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06001327 RID: 4903 RVA: 0x000CABF4 File Offset: 0x000C8DF4
+	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.ownerID == this.mS_.myID && !script_.inDevelopment && !script_.isOnMarket && script_.gameTyp == 0 && !script_.schublade && script_.goty && !script_.goty_created && !script_.pubOffer && (script_.typ_standard || script_.typ_nachfolger || script_.typ_remaster || script_.typ_spinoff) && !script_.handy && !script_.arcade;
+		return script_ && script_.playerGame && !script_.inDevelopment && !script_.isOnMarket && script_.gameTyp == 0 && script_.goty && !script_.goty_created && !script_.pubOffer && (script_.typ_standard || script_.typ_nachfolger || script_.typ_remaster || script_.typ_spinoff) && !script_.handy && !script_.arcade;
 	}
 
-	// Token: 0x06001328 RID: 4904 RVA: 0x000CAC88 File Offset: 0x000C8E88
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -189,7 +189,7 @@ public class Menu_GOTYSelect : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06001329 RID: 4905 RVA: 0x000CADF3 File Offset: 0x000C8FF3
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -197,30 +197,30 @@ public class Menu_GOTYSelect : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001766 RID: 5990
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001767 RID: 5991
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001768 RID: 5992
+	
 	private mainScript mS_;
 
-	// Token: 0x04001769 RID: 5993
+	
 	private GameObject main_;
 
-	// Token: 0x0400176A RID: 5994
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400176B RID: 5995
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400176C RID: 5996
+	
 	private textScript tS_;
 
-	// Token: 0x0400176D RID: 5997
+	
 	private genres genres_;
 
-	// Token: 0x0400176E RID: 5998
+	
 	private float updateTimer;
 }

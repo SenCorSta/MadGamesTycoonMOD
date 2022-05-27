@@ -2,15 +2,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000FA RID: 250
+
 public class Item_Stats_Platform : MonoBehaviour
 {
-	// Token: 0x06000826 RID: 2086 RVA: 0x00002715 File Offset: 0x00000915
+	
 	private void Start()
 	{
 	}
 
-	// Token: 0x06000827 RID: 2087 RVA: 0x00058DF8 File Offset: 0x00056FF8
+	
 	private void Update()
 	{
 		this.frames++;
@@ -29,7 +29,7 @@ public class Item_Stats_Platform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000828 RID: 2088 RVA: 0x00058E74 File Offset: 0x00057074
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -45,7 +45,7 @@ public class Item_Stats_Platform : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000829 RID: 2089 RVA: 0x00058EC0 File Offset: 0x000570C0
+	
 	public void EnableObjects()
 	{
 		if (this.hasEnabled)
@@ -63,7 +63,7 @@ public class Item_Stats_Platform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600082A RID: 2090 RVA: 0x00058F24 File Offset: 0x00057124
+	
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.pS_.GetName();
@@ -99,45 +99,45 @@ public class Item_Stats_Platform : MonoBehaviour
 		this.uiObjects[8].SetActive(false);
 	}
 
-	// Token: 0x0600082B RID: 2091 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04000C59 RID: 3161
+	
 	public int myID;
 
-	// Token: 0x04000C5A RID: 3162
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000C5B RID: 3163
+	
 	public mainScript mS_;
 
-	// Token: 0x04000C5C RID: 3164
+	
 	public textScript tS_;
 
-	// Token: 0x04000C5D RID: 3165
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000C5E RID: 3166
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000C5F RID: 3167
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000C60 RID: 3168
+	
 	public platformScript pS_;
 
-	// Token: 0x04000C61 RID: 3169
+	
 	private RectTransform myRect_;
 
-	// Token: 0x04000C62 RID: 3170
+	
 	private int frames;
 
-	// Token: 0x04000C63 RID: 3171
+	
 	private bool hasEnabled;
 
-	// Token: 0x04000C64 RID: 3172
+	
 	private float updateTimer;
 }

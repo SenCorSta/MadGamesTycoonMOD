@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000320 RID: 800
+
 public class taskWait : MonoBehaviour
 {
-	// Token: 0x06001C63 RID: 7267 RVA: 0x001181EF File Offset: 0x001163EF
+	
 	private void Awake()
 	{
 		base.transform.position = new Vector3(260f, 0f, 0f);
 	}
 
-	// Token: 0x06001C64 RID: 7268 RVA: 0x00118210 File Offset: 0x00116410
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001C65 RID: 7269 RVA: 0x00118218 File Offset: 0x00116418
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class taskWait : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C66 RID: 7270 RVA: 0x001182BE File Offset: 0x001164BE
+	
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -51,13 +51,13 @@ public class taskWait : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001C67 RID: 7271 RVA: 0x001182EF File Offset: 0x001164EF
+	
 	private void Update()
 	{
 		this.AutomaticWait(this.art);
 	}
 
-	// Token: 0x06001C68 RID: 7272 RVA: 0x00118300 File Offset: 0x00116500
+	
 	public Sprite GetPic()
 	{
 		this.FindScripts();
@@ -68,7 +68,7 @@ public class taskWait : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06001C69 RID: 7273 RVA: 0x00118330 File Offset: 0x00116530
+	
 	private void AutomaticWait(int art_)
 	{
 		if (art_ == -1)
@@ -117,33 +117,33 @@ public class taskWait : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C6A RID: 7274 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	public void Abbrechen()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04002366 RID: 9062
+	
 	public int myID = -1;
 
-	// Token: 0x04002367 RID: 9063
+	
 	public int art = -1;
 
-	// Token: 0x04002368 RID: 9064
+	
 	private float waitTimer = 10f;
 
-	// Token: 0x04002369 RID: 9065
+	
 	private GameObject main_;
 
-	// Token: 0x0400236A RID: 9066
+	
 	public mainScript mS_;
 
-	// Token: 0x0400236B RID: 9067
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400236C RID: 9068
+	
 	private textScript tS_;
 
-	// Token: 0x0400236D RID: 9069
+	
 	private roomDataScript rdS_;
 }

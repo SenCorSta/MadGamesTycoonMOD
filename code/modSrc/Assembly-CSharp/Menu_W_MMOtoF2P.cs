@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000211 RID: 529
+
 public class Menu_W_MMOtoF2P : MonoBehaviour
 {
-	// Token: 0x06001459 RID: 5209 RVA: 0x000D39BE File Offset: 0x000D1BBE
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600145A RID: 5210 RVA: 0x000D39C8 File Offset: 0x000D1BC8
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_W_MMOtoF2P : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600145B RID: 5211 RVA: 0x000D3A90 File Offset: 0x000D1C90
+	
 	public void Init(gameScript gS_)
 	{
 		this.FindScripts();
@@ -49,20 +49,20 @@ public class Menu_W_MMOtoF2P : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = this.mS_.GetMoney((long)this.GetPrice(), true);
 	}
 
-	// Token: 0x0600145C RID: 5212 RVA: 0x000D3AE7 File Offset: 0x000D1CE7
+	
 	private int GetPrice()
 	{
 		return this.game_.GetGesamtDevPoints() * 500;
 	}
 
-	// Token: 0x0600145D RID: 5213 RVA: 0x000D3AFA File Offset: 0x000D1CFA
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600145E RID: 5214 RVA: 0x000D3B18 File Offset: 0x000D1D18
+	
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -90,12 +90,16 @@ public class Menu_W_MMOtoF2P : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600145F RID: 5215 RVA: 0x000D3BF4 File Offset: 0x000D1DF4
+	
 	private void CreateGame()
 	{
 		this.game_.mmoTOf2p_created = true;
 		gameScript component = UnityEngine.Object.Instantiate<GameObject>(this.game_.gameObject).GetComponent<gameScript>();
 		this.games_.InitMMOtoF2PGame(component);
+		if (this.mS_.multiplayer)
+		{
+			component.multiplayerSlot = this.mS_.mpCalls_.myID;
+		}
 		component.SetMyName(this.game_.GetNameSimple());
 		component.gameTyp = 2;
 		component.f2pConverted = true;
@@ -147,27 +151,27 @@ public class Menu_W_MMOtoF2P : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001864 RID: 6244
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001865 RID: 6245
+	
 	private GameObject main_;
 
-	// Token: 0x04001866 RID: 6246
+	
 	private mainScript mS_;
 
-	// Token: 0x04001867 RID: 6247
+	
 	private textScript tS_;
 
-	// Token: 0x04001868 RID: 6248
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001869 RID: 6249
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400186A RID: 6250
+	
 	private gameScript game_;
 
-	// Token: 0x0400186B RID: 6251
+	
 	private games games_;
 }

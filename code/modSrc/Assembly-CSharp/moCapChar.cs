@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020002F7 RID: 759
+
 public class moCapChar : MonoBehaviour
 {
-	// Token: 0x06001AAB RID: 6827 RVA: 0x0010CA70 File Offset: 0x0010AC70
+	
 	private void Start()
 	{
 		this.localPos = base.transform.localPosition;
@@ -38,7 +38,7 @@ public class moCapChar : MonoBehaviour
 		this.skin.material = this.clothScript_.matColor_Skin[UnityEngine.Random.Range(0, this.clothScript_.matColor_Skin.Length)];
 	}
 
-	// Token: 0x06001AAC RID: 6828 RVA: 0x0010CB90 File Offset: 0x0010AD90
+	
 	private void Update()
 	{
 		if (!this.mS_)
@@ -127,7 +127,7 @@ public class moCapChar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AAD RID: 6829 RVA: 0x0010CF24 File Offset: 0x0010B124
+	
 	private IEnumerator RemoveChar()
 	{
 		yield return new WaitForSeconds(1f);
@@ -136,36 +136,36 @@ public class moCapChar : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x040021C9 RID: 8649
+	
 	private Animator charAnimation;
 
-	// Token: 0x040021CA RID: 8650
+	
 	private float timer;
 
-	// Token: 0x040021CB RID: 8651
+	
 	private GameObject main_;
 
-	// Token: 0x040021CC RID: 8652
+	
 	private mainScript mS_;
 
-	// Token: 0x040021CD RID: 8653
+	
 	private clothScript clothScript_;
 
-	// Token: 0x040021CE RID: 8654
+	
 	public SkinnedMeshRenderer skin;
 
-	// Token: 0x040021CF RID: 8655
+	
 	public objectScript oS_;
 
-	// Token: 0x040021D0 RID: 8656
+	
 	private roomScript roomS_;
 
-	// Token: 0x040021D1 RID: 8657
+	
 	private mapScript mapS_;
 
-	// Token: 0x040021D2 RID: 8658
+	
 	private Vector3 localPos;
 
-	// Token: 0x040021D3 RID: 8659
+	
 	private bool hided = true;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B3 RID: 435
+
 public class Menu_GameDesign : MonoBehaviour
 {
-	// Token: 0x06001077 RID: 4215 RVA: 0x000AEA4C File Offset: 0x000ACC4C
+	
 	private void Start()
 	{
 		this.FindScripts();
@@ -12,7 +12,7 @@ public class Menu_GameDesign : MonoBehaviour
 		this.CreateGameplayFeatures();
 	}
 
-	// Token: 0x06001078 RID: 4216 RVA: 0x000AEA60 File Offset: 0x000ACC60
+	
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -24,7 +24,7 @@ public class Menu_GameDesign : MonoBehaviour
 		this.gameplayFeatures_ = this.main_.GetComponent<gameplayFeatures>();
 	}
 
-	// Token: 0x06001079 RID: 4217 RVA: 0x000AEAB0 File Offset: 0x000ACCB0
+	
 	private void CreateGameplayFeatures()
 	{
 		int num = 1;
@@ -112,7 +112,7 @@ public class Menu_GameDesign : MonoBehaviour
 		this.NewItems(this.uiPrefabs[1], transform, num + 1);
 	}
 
-	// Token: 0x0600107A RID: 4218 RVA: 0x000AEDA4 File Offset: 0x000ACFA4
+	
 	private void CreateEngineFeatures()
 	{
 		int num = 1;
@@ -184,13 +184,13 @@ public class Menu_GameDesign : MonoBehaviour
 		this.NewItems(this.uiPrefabs[1], transform, num + 1);
 	}
 
-	// Token: 0x0600107B RID: 4219 RVA: 0x000AF007 File Offset: 0x000AD207
+	
 	private GameObject NewItem(GameObject newGO, Transform parent)
 	{
 		return UnityEngine.Object.Instantiate<GameObject>(newGO, new Vector3(0f, 0f, 0f), Quaternion.identity, parent);
 	}
 
-	// Token: 0x0600107C RID: 4220 RVA: 0x000AF02C File Offset: 0x000AD22C
+	
 	private void NewItems(GameObject newGO, Transform parent, int amount)
 	{
 		for (int i = 0; i < amount; i++)
@@ -199,18 +199,18 @@ public class Menu_GameDesign : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040014E8 RID: 5352
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040014E9 RID: 5353
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040014EA RID: 5354
+	
 	private GameObject main_;
 
-	// Token: 0x040014EB RID: 5355
+	
 	private engineFeatures engineFeatures_;
 
-	// Token: 0x040014EC RID: 5356
+	
 	private gameplayFeatures gameplayFeatures_;
 }

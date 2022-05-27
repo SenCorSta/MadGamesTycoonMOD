@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering.PostProcessing;
 
-// Token: 0x0200032B RID: 811
+
 public class mainCameraScript : MonoBehaviour
 {
-	// Token: 0x06001CD0 RID: 7376 RVA: 0x0011E78D File Offset: 0x0011C98D
+	
 	private void Start()
 	{
 		this.cmS_ = base.transform.root.gameObject.GetComponent<cameraMovementScript>();
@@ -15,13 +15,13 @@ public class mainCameraScript : MonoBehaviour
 		this.InitPostProcess();
 	}
 
-	// Token: 0x06001CD1 RID: 7377 RVA: 0x0011E7C1 File Offset: 0x0011C9C1
+	
 	private void InitPostProcess()
 	{
 		this.postVolume.profile.TryGetSettings<PostLiner>(out this.postLiner);
 	}
 
-	// Token: 0x06001CD2 RID: 7378 RVA: 0x0011E7DC File Offset: 0x0011C9DC
+	
 	public void SetOutlineColor(int fillColor_, float fillBlend_, int outlineColor_)
 	{
 		if (this.postLiner == null)
@@ -34,20 +34,20 @@ public class mainCameraScript : MonoBehaviour
 		this.postLiner.outlineColor.Override(this.colorParameter[outlineColor_]);
 	}
 
-	// Token: 0x06001CD3 RID: 7379 RVA: 0x0011E849 File Offset: 0x0011CA49
+	
 	private void Update()
 	{
 		this.CameraInput();
 		this.LookAtCameraMovement();
 	}
 
-	// Token: 0x06001CD4 RID: 7380 RVA: 0x0011E857 File Offset: 0x0011CA57
+	
 	private void LookAtCameraMovement()
 	{
 		base.transform.LookAt(base.transform.parent.transform);
 	}
 
-	// Token: 0x06001CD5 RID: 7381 RVA: 0x0011E874 File Offset: 0x0011CA74
+	
 	private void CameraInput()
 	{
 		if (!this.cmS_.guiMain_)
@@ -115,33 +115,33 @@ public class mainCameraScript : MonoBehaviour
 		base.transform.localPosition = Vector3.Lerp(base.transform.localPosition, this.cameraPosition, 0.1f);
 	}
 
-	// Token: 0x040023F4 RID: 9204
+	
 	public bool startZoomOut = true;
 
-	// Token: 0x040023F5 RID: 9205
+	
 	public float zoomSpeed = 2f;
 
-	// Token: 0x040023F6 RID: 9206
+	
 	public float maxZoomIn = 3f;
 
-	// Token: 0x040023F7 RID: 9207
+	
 	public float maxZoomOut = 20f;
 
-	// Token: 0x040023F8 RID: 9208
+	
 	public PostProcessVolume postVolume;
 
-	// Token: 0x040023F9 RID: 9209
+	
 	public ColorParameter[] colorParameter;
 
-	// Token: 0x040023FA RID: 9210
+	
 	public GameObject[] additionalCamera;
 
-	// Token: 0x040023FB RID: 9211
+	
 	private Vector3 cameraPosition;
 
-	// Token: 0x040023FC RID: 9212
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040023FD RID: 9213
+	
 	public PostLiner postLiner;
 }

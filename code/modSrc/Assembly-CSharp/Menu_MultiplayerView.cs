@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001D2 RID: 466
+
 public class Menu_MultiplayerView : MonoBehaviour
 {
-	// Token: 0x060011A1 RID: 4513 RVA: 0x000B9E93 File Offset: 0x000B8093
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060011A2 RID: 4514 RVA: 0x000B9E9C File Offset: 0x000B809C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_MultiplayerView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011A3 RID: 4515 RVA: 0x000B9F88 File Offset: 0x000B8188
+	
 	public void Init(int p)
 	{
 		this.FindScripts();
@@ -62,7 +62,7 @@ public class Menu_MultiplayerView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011A4 RID: 4516 RVA: 0x000BA068 File Offset: 0x000B8268
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -78,7 +78,7 @@ public class Menu_MultiplayerView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011A5 RID: 4517 RVA: 0x000BA0E8 File Offset: 0x000B82E8
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(58);
@@ -92,7 +92,7 @@ public class Menu_MultiplayerView : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060011A6 RID: 4518 RVA: 0x000BA160 File Offset: 0x000B8360
+	
 	private void SetMainGuiToggles(bool b)
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
@@ -104,33 +104,33 @@ public class Menu_MultiplayerView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400161C RID: 5660
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400161D RID: 5661
+	
 	private GameObject main_;
 
-	// Token: 0x0400161E RID: 5662
+	
 	private mainScript mS_;
 
-	// Token: 0x0400161F RID: 5663
+	
 	private textScript tS_;
 
-	// Token: 0x04001620 RID: 5664
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001621 RID: 5665
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001622 RID: 5666
+	
 	private mpCalls mpCalls_;
 
-	// Token: 0x04001623 RID: 5667
+	
 	private GameObject cameraMovement;
 
-	// Token: 0x04001624 RID: 5668
+	
 	public int playerID = -1;
 
-	// Token: 0x04001625 RID: 5669
+	
 	private Vector3 cameraRotation;
 }

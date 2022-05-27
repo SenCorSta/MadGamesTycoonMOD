@@ -2,10 +2,10 @@
 using Suimono.Core;
 using UnityEngine;
 
-// Token: 0x02000032 RID: 50
+
 public class guiFPS : MonoBehaviour
 {
-	// Token: 0x060000BA RID: 186 RVA: 0x0000583C File Offset: 0x00003A3C
+	
 	private void Awake()
 	{
 		if (GameObject.Find("SUIMONO_Module") != null)
@@ -18,13 +18,13 @@ public class guiFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000BB RID: 187 RVA: 0x000058A1 File Offset: 0x00003AA1
+	
 	private void Start()
 	{
 		this.currentPreset = 0;
 	}
 
-	// Token: 0x060000BC RID: 188 RVA: 0x000058AC File Offset: 0x00003AAC
+	
 	private void LateUpdate()
 	{
 		if (this.moduleObject != null)
@@ -136,7 +136,7 @@ public class guiFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000BD RID: 189 RVA: 0x00005BCC File Offset: 0x00003DCC
+	
 	private void OnGUI()
 	{
 		GUI.color = new Color(0f, 0f, 0f, 1f);
@@ -155,54 +155,54 @@ public class guiFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000116 RID: 278
+	
 	public Texture2D showLabel;
 
-	// Token: 0x04000117 RID: 279
+	
 	public Vector2 labelOffset = new Vector2(0.5f, 0.5f);
 
-	// Token: 0x04000118 RID: 280
+	
 	public Color labelColor = new Color(1f, 1f, 1f, 1f);
 
-	// Token: 0x04000119 RID: 281
+	
 	private float updateInterval = 0.3f;
 
-	// Token: 0x0400011A RID: 282
+	
 	private string GuiMsg = "---";
 
-	// Token: 0x0400011B RID: 283
+	
 	private string VerMsg = "---";
 
-	// Token: 0x0400011C RID: 284
+	
 	private float accum;
 
-	// Token: 0x0400011D RID: 285
+	
 	private float frames;
 
-	// Token: 0x0400011E RID: 286
+	
 	private float timeleft;
 
-	// Token: 0x0400011F RID: 287
+	
 	private SuimonoModule moduleObject;
 
-	// Token: 0x04000120 RID: 288
+	
 	private SuimonoObject oceanObject;
 
-	// Token: 0x04000121 RID: 289
+	
 	private string displayMode = "---";
 
-	// Token: 0x04000122 RID: 290
+	
 	private bool inputKeyMode;
 
-	// Token: 0x04000123 RID: 291
+	
 	private string displayPreset = "---";
 
-	// Token: 0x04000124 RID: 292
+	
 	private bool inputKeyPreset;
 
-	// Token: 0x04000125 RID: 293
+	
 	private int currentPreset;
 
-	// Token: 0x04000126 RID: 294
+	
 	private int usePreset;
 }

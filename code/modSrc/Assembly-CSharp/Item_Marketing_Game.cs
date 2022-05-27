@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000C1 RID: 193
+
 public class Item_Marketing_Game : MonoBehaviour
 {
-	// Token: 0x060006C5 RID: 1733 RVA: 0x00051CEE File Offset: 0x0004FEEE
+	
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060006C6 RID: 1734 RVA: 0x00051CF8 File Offset: 0x0004FEF8
+	
 	private void Update()
 	{
 		if (this.game_ && !this.game_.inDevelopment && !this.game_.isOnMarket && !this.game_.schublade)
@@ -22,7 +22,7 @@ public class Item_Marketing_Game : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060006C7 RID: 1735 RVA: 0x00051D4C File Offset: 0x0004FF4C
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -38,7 +38,7 @@ public class Item_Marketing_Game : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060006C8 RID: 1736 RVA: 0x00051D98 File Offset: 0x0004FF98
+	
 	public void SetData()
 	{
 		if (!this.game_)
@@ -51,13 +51,13 @@ public class Item_Marketing_Game : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060006C9 RID: 1737 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060006CA RID: 1738 RVA: 0x00051E30 File Offset: 0x00050030
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -65,30 +65,30 @@ public class Item_Marketing_Game : MonoBehaviour
 		this.guiMain_.uiObjects[89].GetComponent<Menu_Marketing_GameKampagne>().SetGame(this.game_);
 	}
 
-	// Token: 0x04000A79 RID: 2681
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000A7A RID: 2682
+	
 	public mainScript mS_;
 
-	// Token: 0x04000A7B RID: 2683
+	
 	public textScript tS_;
 
-	// Token: 0x04000A7C RID: 2684
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000A7D RID: 2685
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000A7E RID: 2686
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000A7F RID: 2687
+	
 	public gameScript game_;
 
-	// Token: 0x04000A80 RID: 2688
+	
 	public genres genres_;
 
-	// Token: 0x04000A81 RID: 2689
+	
 	private float updateTimer;
 }

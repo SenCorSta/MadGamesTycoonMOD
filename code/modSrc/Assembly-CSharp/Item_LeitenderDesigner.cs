@@ -2,15 +2,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000097 RID: 151
+
 public class Item_LeitenderDesigner : MonoBehaviour
 {
-	// Token: 0x060005D7 RID: 1495 RVA: 0x00002715 File Offset: 0x00000915
+	
 	private void Start()
 	{
 	}
 
-	// Token: 0x060005D8 RID: 1496 RVA: 0x0004BCC4 File Offset: 0x00049EC4
+	
 	private void Update()
 	{
 		if (!this.cS_)
@@ -30,7 +30,7 @@ public class Item_LeitenderDesigner : MonoBehaviour
 		this.uiObjects[5].GetComponent<Text>().text = Mathf.RoundToInt(this.cS_.s_motivation).ToString();
 	}
 
-	// Token: 0x060005D9 RID: 1497 RVA: 0x0004BDC0 File Offset: 0x00049FC0
+	
 	public void SetData(string s, float val)
 	{
 		if (!this.cS_)
@@ -54,13 +54,13 @@ public class Item_LeitenderDesigner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005DA RID: 1498 RVA: 0x0003D679 File Offset: 0x0003B879
+	
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060005DB RID: 1499 RVA: 0x0004BF1C File Offset: 0x0004A11C
+	
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -78,7 +78,7 @@ public class Item_LeitenderDesigner : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x060005DC RID: 1500 RVA: 0x0004BF90 File Offset: 0x0004A190
+	
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -86,30 +86,30 @@ public class Item_LeitenderDesigner : MonoBehaviour
 		this.guiMain_.uiObjects[28].GetComponent<Menu_PersonalView>().Init(this.cS_);
 	}
 
-	// Token: 0x04000911 RID: 2321
+	
 	public int characterID = -1;
 
-	// Token: 0x04000912 RID: 2322
+	
 	public characterScript cS_;
 
-	// Token: 0x04000913 RID: 2323
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000914 RID: 2324
+	
 	public mainScript mS_;
 
-	// Token: 0x04000915 RID: 2325
+	
 	public textScript tS_;
 
-	// Token: 0x04000916 RID: 2326
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000917 RID: 2327
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000918 RID: 2328
+	
 	public tooltip tooltip_;
 
-	// Token: 0x04000919 RID: 2329
+	
 	public roomDataScript rdS_;
 }

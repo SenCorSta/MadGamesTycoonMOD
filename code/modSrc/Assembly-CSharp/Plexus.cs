@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200001F RID: 31
+
 public class Plexus : MonoBehaviour
 {
-	// Token: 0x06000086 RID: 134 RVA: 0x0000491C File Offset: 0x00002B1C
+	
 	private void Start()
 	{
 		this.lineMaterial.SetVector("_BoxDims", new Vector4(this.box.x, this.box.y, this.box.z, 1f));
@@ -33,14 +33,14 @@ public class Plexus : MonoBehaviour
 		base.StartCoroutine(this.ConnectDots());
 	}
 
-	// Token: 0x06000087 RID: 135 RVA: 0x00004A7F File Offset: 0x00002C7F
+	
 	private void Update()
 	{
 		this.MovePoints();
 		this.RenderLines();
 	}
 
-	// Token: 0x06000088 RID: 136 RVA: 0x00004A90 File Offset: 0x00002C90
+	
 	private void MovePoints()
 	{
 		int kernelIndex = this.plexus.FindKernel("MoveParticels");
@@ -63,13 +63,13 @@ public class Plexus : MonoBehaviour
 		computeBuffer3.Release();
 	}
 
-	// Token: 0x06000089 RID: 137 RVA: 0x00004BAC File Offset: 0x00002DAC
+	
 	private static float DistanceSqr(Vector3 p1, Vector3 p2)
 	{
 		return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y) + (p1.z - p2.z) * (p1.z - p2.z);
 	}
 
-	// Token: 0x0600008A RID: 138 RVA: 0x00004C0C File Offset: 0x00002E0C
+	
 	private void RenderLines()
 	{
 		this.lineMesh = new Mesh();
@@ -100,7 +100,7 @@ public class Plexus : MonoBehaviour
 		this.lineVerts.Clear();
 	}
 
-	// Token: 0x0600008B RID: 139 RVA: 0x00004E77 File Offset: 0x00003077
+	
 	private IEnumerator ConnectDots()
 	{
 		WaitForEndOfFrame wfeof = new WaitForEndOfFrame();
@@ -137,79 +137,79 @@ public class Plexus : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000099 RID: 153
+	
 	public ComputeShader plexus;
 
-	// Token: 0x0400009A RID: 154
+	
 	public int amountOfPoints = 100;
 
-	// Token: 0x0400009B RID: 155
+	
 	public int PPPS = 2;
 
-	// Token: 0x0400009C RID: 156
+	
 	public float lineWidth = 0.02f;
 
-	// Token: 0x0400009D RID: 157
+	
 	public Material lineMaterial;
 
-	// Token: 0x0400009E RID: 158
+	
 	public Vector3 box = new Vector3(4f, 4f, 4f);
 
-	// Token: 0x0400009F RID: 159
+	
 	public float particleSpeed = 1f;
 
-	// Token: 0x040000A0 RID: 160
+	
 	public float maxConnDistance = 3f;
 
-	// Token: 0x040000A1 RID: 161
+	
 	private float maxConnDistanceSqr;
 
-	// Token: 0x040000A2 RID: 162
+	
 	private Vector3[] defaultPositions;
 
-	// Token: 0x040000A3 RID: 163
+	
 	private Vector3[] velocities;
 
-	// Token: 0x040000A4 RID: 164
+	
 	private Vector3[] positions;
 
-	// Token: 0x040000A5 RID: 165
+	
 	private Mesh lineMesh;
 
-	// Token: 0x040000A6 RID: 166
+	
 	private Vector3 normal;
 
-	// Token: 0x040000A7 RID: 167
+	
 	private Vector3 side;
 
-	// Token: 0x040000A8 RID: 168
+	
 	private Vector3 p1;
 
-	// Token: 0x040000A9 RID: 169
+	
 	private Vector3 p2;
 
-	// Token: 0x040000AA RID: 170
+	
 	private int startingVerticesIndex;
 
-	// Token: 0x040000AB RID: 171
+	
 	private List<int> lineTrigs = new List<int>();
 
-	// Token: 0x040000AC RID: 172
+	
 	private List<Vector3> lineVerts = new List<Vector3>();
 
-	// Token: 0x040000AD RID: 173
+	
 	private Vector3[] verts = new Vector3[4];
 
-	// Token: 0x040000AE RID: 174
+	
 	private int[] trigs = new int[6];
 
-	// Token: 0x040000AF RID: 175
+	
 	[HideInInspector]
 	public bool isEnabled;
 
-	// Token: 0x040000B0 RID: 176
+	
 	private List<KeyValuePair<int, int>> connected = new List<KeyValuePair<int, int>>();
 
-	// Token: 0x040000B1 RID: 177
+	
 	private HashSet<KeyValuePair<int, int>> connectedHashSet = new HashSet<KeyValuePair<int, int>>();
 }

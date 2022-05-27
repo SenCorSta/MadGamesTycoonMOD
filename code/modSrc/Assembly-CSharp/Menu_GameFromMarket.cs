@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000195 RID: 405
+
 public class Menu_GameFromMarket : MonoBehaviour
 {
-	// Token: 0x06000F64 RID: 3940 RVA: 0x000A2759 File Offset: 0x000A0959
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F65 RID: 3941 RVA: 0x000A2764 File Offset: 0x000A0964
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -69,7 +69,7 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F66 RID: 3942 RVA: 0x000A2904 File Offset: 0x000A0B04
+	
 	public void Init(gameScript game_, bool selbstVomMarktGenommen)
 	{
 		this.FindScripts();
@@ -329,7 +329,7 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F67 RID: 3943 RVA: 0x000A3453 File Offset: 0x000A1653
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -338,7 +338,7 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F68 RID: 3944 RVA: 0x000A3470 File Offset: 0x000A1670
+	
 	public void BUTTON_Close()
 	{
 		this.FindScripts();
@@ -359,51 +359,51 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013A8 RID: 5032
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040013A9 RID: 5033
+	
 	private GameObject main_;
 
-	// Token: 0x040013AA RID: 5034
+	
 	private mainScript mS_;
 
-	// Token: 0x040013AB RID: 5035
+	
 	private textScript tS_;
 
-	// Token: 0x040013AC RID: 5036
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040013AD RID: 5037
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040013AE RID: 5038
+	
 	private genres genres_;
 
-	// Token: 0x040013AF RID: 5039
+	
 	private themes themes_;
 
-	// Token: 0x040013B0 RID: 5040
+	
 	private licences licences_;
 
-	// Token: 0x040013B1 RID: 5041
+	
 	private engineFeatures eF_;
 
-	// Token: 0x040013B2 RID: 5042
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040013B3 RID: 5043
+	
 	private unlockScript unlock_;
 
-	// Token: 0x040013B4 RID: 5044
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x040013B5 RID: 5045
+	
 	private games games_;
 
-	// Token: 0x040013B6 RID: 5046
+	
 	private gameScript gS_;
 
-	// Token: 0x040013B7 RID: 5047
+	
 	public List<gameScript> listMenu = new List<gameScript>();
 }

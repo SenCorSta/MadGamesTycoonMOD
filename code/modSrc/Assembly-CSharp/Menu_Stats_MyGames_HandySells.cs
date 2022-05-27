@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000248 RID: 584
+
 public class Menu_Stats_MyGames_HandySells : MonoBehaviour
 {
-	// Token: 0x06001698 RID: 5784 RVA: 0x000E4727 File Offset: 0x000E2927
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001699 RID: 5785 RVA: 0x000E4730 File Offset: 0x000E2930
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_Stats_MyGames_HandySells : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600169A RID: 5786 RVA: 0x000E47F8 File Offset: 0x000E29F8
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -50,7 +50,7 @@ public class Menu_Stats_MyGames_HandySells : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x0600169B RID: 5787 RVA: 0x000E4830 File Offset: 0x000E2A30
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -66,12 +66,12 @@ public class Menu_Stats_MyGames_HandySells : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600169C RID: 5788 RVA: 0x000E487C File Offset: 0x000E2A7C
+	
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
 		{
-			if (parent_.transform.GetChild(i).gameObject.activeSelf && parent_.transform.GetChild(i).GetComponent<Item_MyGames_Sells>().game_.myID == id_)
+			if (parent_.transform.GetChild(i).GetComponent<Item_MyGames_Sells>().game_.myID == id_)
 			{
 				return true;
 			}
@@ -79,20 +79,20 @@ public class Menu_Stats_MyGames_HandySells : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600169D RID: 5789 RVA: 0x000E48D8 File Offset: 0x000E2AD8
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x0600169E RID: 5790 RVA: 0x000E48E0 File Offset: 0x000E2AE0
+	
 	public void Init()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x0600169F RID: 5791 RVA: 0x000E48F0 File Offset: 0x000E2AF0
+	
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -122,64 +122,43 @@ public class Menu_Stats_MyGames_HandySells : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x060016A0 RID: 5792 RVA: 0x000E4A68 File Offset: 0x000E2C68
+	
 	public bool CheckGameData(gameScript script_)
 	{
-		if (script_ && (script_.ownerID == this.mS_.myID || script_.publisherID == this.mS_.myID))
-		{
-			if (this.uiObjects[6].GetComponent<Toggle>().isOn && script_.developerID != this.mS_.myID)
-			{
-				return false;
-			}
-			if (!script_.inDevelopment && !script_.schublade && script_.handy && script_.gameTyp != 2)
-			{
-				return true;
-			}
-		}
-		return false;
+		return script_ && script_.playerGame && !script_.inDevelopment && !script_.schublade && script_.handy && script_.gameTyp != 2;
 	}
 
-	// Token: 0x060016A1 RID: 5793 RVA: 0x000E4AF0 File Offset: 0x000E2CF0
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060016A2 RID: 5794 RVA: 0x000E4B0C File Offset: 0x000E2D0C
-	public void TOGGLE_OnlyMyGames()
-	{
-		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
-		{
-			this.uiObjects[0].transform.GetChild(i).gameObject.SetActive(false);
-		}
-		this.SetData();
-	}
-
-	// Token: 0x04001A7A RID: 6778
+	
 	private mainScript mS_;
 
-	// Token: 0x04001A7B RID: 6779
+	
 	private GameObject main_;
 
-	// Token: 0x04001A7C RID: 6780
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001A7D RID: 6781
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001A7E RID: 6782
+	
 	private textScript tS_;
 
-	// Token: 0x04001A7F RID: 6783
+	
 	private genres genres_;
 
-	// Token: 0x04001A80 RID: 6784
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001A81 RID: 6785
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001A82 RID: 6786
+	
 	private float updateTimer;
 }

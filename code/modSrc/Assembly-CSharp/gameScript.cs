@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// Token: 0x02000052 RID: 82
+
 public class gameScript : MonoBehaviour
 {
-	// Token: 0x060001FE RID: 510 RVA: 0x0001C08C File Offset: 0x0001A28C
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060001FF RID: 511 RVA: 0x0001C094 File Offset: 0x0001A294
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -76,7 +76,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000200 RID: 512 RVA: 0x0001C234 File Offset: 0x0001A434
+	
 	private void OnDestroy()
 	{
 		if (!this.games_)
@@ -138,13 +138,13 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000201 RID: 513 RVA: 0x0001C375 File Offset: 0x0001A575
+	
 	public void SetGameObjectName()
 	{
 		base.name = "GAME_" + this.myID.ToString();
 	}
 
-	// Token: 0x06000202 RID: 514 RVA: 0x0001C394 File Offset: 0x0001A594
+	
 	public void InitArrays()
 	{
 		this.gameGameplayFeatures = new bool[this.gF_.gameplayFeatures_UNLOCK.Length];
@@ -152,10 +152,10 @@ public class gameScript : MonoBehaviour
 		this.fanbrief = new bool[this.tS_.fanLetter_GE.Length];
 	}
 
-	// Token: 0x06000203 RID: 515 RVA: 0x0001C3EC File Offset: 0x0001A5EC
+	
 	public void InitUI()
 	{
-		if (!this.IsMyGame())
+		if (!this.playerGame)
 		{
 			return;
 		}
@@ -180,7 +180,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000204 RID: 516 RVA: 0x0001C4F0 File Offset: 0x0001A6F0
+	
 	public float GetUserReviewPercent()
 	{
 		if (this.userPositiv <= 0 && this.userNegativ <= 0)
@@ -200,7 +200,7 @@ public class gameScript : MonoBehaviour
 		return this.mS_.Round(num, 1);
 	}
 
-	// Token: 0x06000205 RID: 517 RVA: 0x0001C574 File Offset: 0x0001A774
+	
 	public string GetTooltipIP()
 	{
 		this.FindScripts();
@@ -272,7 +272,7 @@ public class gameScript : MonoBehaviour
 				this.tS_.GetText(1558),
 				"</color>\n"
 			});
-			if (this.merchGesamtGewinn > 0L)
+			if (this.playerGame)
 			{
 				float value = (float)this.merchGesamtGewinn / 1000000f;
 				text = string.Concat(new string[]
@@ -296,7 +296,7 @@ public class gameScript : MonoBehaviour
 				this.tS_.GetText(1558),
 				"</color>\n"
 			});
-			if (this.ipTime > 0)
+			if (this.playerGame)
 			{
 				string text2 = "\n" + this.tS_.GetText(1899);
 				text2 = text2.Replace("<NUM>", "<color=red>" + this.mS_.GetMoney((long)this.ipTime, false) + "</color>");
@@ -307,7 +307,7 @@ public class gameScript : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06000206 RID: 518 RVA: 0x0001C9BC File Offset: 0x0001ABBC
+	
 	public string GetTooltip()
 	{
 		if (this.pubAngebot)
@@ -317,7 +317,7 @@ public class gameScript : MonoBehaviour
 		this.FindMyEngineNew();
 		string text = "";
 		text = text + "<b><size=18>" + this.GetNameWithTag() + "</size></b>\n";
-		if (this.IsMyAuftragsspiel())
+		if (!this.playerGame && this.IsMyAuftragsspiel())
 		{
 			text = text + "<color=blue><b>" + this.tS_.GetText(598) + "</b></color>\n";
 		}
@@ -325,7 +325,7 @@ public class gameScript : MonoBehaviour
 		{
 			text = text + "<color=blue><b>" + this.tS_.GetText(1744) + "</b></color>\n";
 			text = text + "<color=blue>" + this.PUBOFFER_GetRetailDigitalString() + "</color>\n";
-			if (this.publisherID == this.mS_.myID)
+			if (this.playerGame)
 			{
 				text = string.Concat(new string[]
 				{
@@ -520,7 +520,7 @@ public class gameScript : MonoBehaviour
 				"</color>\n"
 			});
 		}
-		if ((this.developerID == this.mS_.myID || this.publisherID == this.mS_.myID) && !this.typ_bundle && !this.typ_bundleAddon)
+		if (this.playerGame && !this.typ_bundle && !this.typ_bundleAddon)
 		{
 			text = string.Concat(new string[]
 			{
@@ -547,9 +547,20 @@ public class gameScript : MonoBehaviour
 			this.GetZielgruppeString(),
 			"</color>\n"
 		});
-		if (!this.typ_bundle)
+		if (!this.playerGame && this.multiplayerSlot == -1 && this.engineID == 0)
 		{
-			if (this.DeveloperIsNPC() && this.engineID == 0)
+			text = string.Concat(new string[]
+			{
+				text,
+				this.tS_.GetText(369),
+				": <color=blue>",
+				this.tS_.GetText(1561),
+				"</color>\n"
+			});
+		}
+		else if (!this.typ_bundle)
+		{
+			if (this.pubOffer && this.engineID == 0)
 			{
 				text = string.Concat(new string[]
 				{
@@ -591,7 +602,7 @@ public class gameScript : MonoBehaviour
 				"%</color>"
 			});
 		}
-		if (this.IsMyGame())
+		if (this.playerGame)
 		{
 			if (!this.schublade && !this.inDevelopment)
 			{
@@ -669,41 +680,44 @@ public class gameScript : MonoBehaviour
 				"</color>"
 			});
 		}
-		if (this.amountUpdates > 0)
+		if (this.playerGame)
 		{
-			text = string.Concat(new string[]
+			if (this.amountUpdates > 0)
 			{
-				text,
-				"\n",
-				this.tS_.GetText(649),
-				": <color=blue>",
-				this.amountUpdates.ToString(),
-				"</color>"
-			});
-		}
-		if (this.amountAddons > 0)
-		{
-			text = string.Concat(new string[]
+				text = string.Concat(new string[]
+				{
+					text,
+					"\n",
+					this.tS_.GetText(649),
+					": <color=blue>",
+					this.amountUpdates.ToString(),
+					"</color>"
+				});
+			}
+			if (this.amountAddons > 0)
 			{
-				text,
-				"\n",
-				this.tS_.GetText(956),
-				": <color=blue>",
-				this.amountAddons.ToString(),
-				"</color>"
-			});
-		}
-		if (this.amountMMOAddons > 0)
-		{
-			text = string.Concat(new string[]
+				text = string.Concat(new string[]
+				{
+					text,
+					"\n",
+					this.tS_.GetText(956),
+					": <color=blue>",
+					this.amountAddons.ToString(),
+					"</color>"
+				});
+			}
+			if (this.amountMMOAddons > 0)
 			{
-				text,
-				"\n",
-				this.tS_.GetText(956),
-				": <color=blue>",
-				this.amountMMOAddons.ToString(),
-				"</color>"
-			});
+				text = string.Concat(new string[]
+				{
+					text,
+					"\n",
+					this.tS_.GetText(956),
+					": <color=blue>",
+					this.amountMMOAddons.ToString(),
+					"</color>"
+				});
+			}
 		}
 		if (this.exklusiv && this.exklusivKonsolenSells > 0L)
 		{
@@ -796,7 +810,7 @@ public class gameScript : MonoBehaviour
 				this.mS_.GetMoney(this.umsatzTotal, true),
 				"</color>\n"
 			});
-			if (!this.IsMyGame() && this.GetPublisherOrDeveloperIsTochterfirma())
+			if (!this.playerGame && this.GetPublisherOrDeveloperIsTochterfirma())
 			{
 				text = text + "\n<color=green><b>" + this.tS_.GetText(1987) + "</b></color>\n";
 				text = string.Concat(new string[]
@@ -809,7 +823,7 @@ public class gameScript : MonoBehaviour
 				});
 			}
 		}
-		if (this.IsMyGame())
+		if (this.playerGame)
 		{
 			if (this.GetGesamtGewinn() >= 0L)
 			{
@@ -833,7 +847,7 @@ public class gameScript : MonoBehaviour
 					"</color>\n"
 				});
 			}
-			if (!this.schublade && this.publisherID == this.mS_.myID && this.gameTyp != 2 && !this.handy && !this.arcade)
+			if (!this.schublade && this.publisherID == -1 && this.gameTyp != 2 && !this.handy && !this.arcade)
 			{
 				text += "\n";
 				text = string.Concat(new string[]
@@ -879,7 +893,7 @@ public class gameScript : MonoBehaviour
 				}
 			}
 		}
-		if (this.IsMyGame() && this.points_bugs > 0f)
+		if (this.points_bugs > 0f)
 		{
 			text = text + "\n<color=red>" + this.tS_.GetText(1761) + "</color>";
 		}
@@ -890,9 +904,17 @@ public class gameScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06000207 RID: 519 RVA: 0x0001DC88 File Offset: 0x0001BE88
+	
 	public string GetDeveloperName()
 	{
+		if (this.mS_.multiplayer && this.developerID == -1 && this.multiplayerSlot != -1)
+		{
+			return this.mS_.mpCalls_.GetCompanyName(this.multiplayerSlot);
+		}
+		if (this.developerID == -1)
+		{
+			return this.mS_.companyName;
+		}
 		if (!this.devS_)
 		{
 			this.FindMyDeveloper();
@@ -904,9 +926,17 @@ public class gameScript : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06000208 RID: 520 RVA: 0x0001DCBB File Offset: 0x0001BEBB
+	
 	public string GetPublisherName()
 	{
+		if (this.mS_.multiplayer && this.publisherID == -1 && this.multiplayerSlot != -1)
+		{
+			return this.mS_.mpCalls_.GetCompanyName(this.multiplayerSlot);
+		}
+		if (this.publisherID == -1)
+		{
+			return this.mS_.companyName;
+		}
 		if (!this.pS_)
 		{
 			this.FindMyPublisher();
@@ -918,13 +948,13 @@ public class gameScript : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06000209 RID: 521 RVA: 0x0001DCEE File Offset: 0x0001BEEE
+	
 	public string GetGenreString()
 	{
 		return this.genres_.GetName(this.maingenre);
 	}
 
-	// Token: 0x0600020A RID: 522 RVA: 0x0001DD01 File Offset: 0x0001BF01
+	
 	public string GetSubGenreString()
 	{
 		if (this.subgenre != -1)
@@ -934,7 +964,7 @@ public class gameScript : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x0600020B RID: 523 RVA: 0x0001DD24 File Offset: 0x0001BF24
+	
 	public string GetReleaseDateString()
 	{
 		if (this.inDevelopment)
@@ -948,7 +978,7 @@ public class gameScript : MonoBehaviour
 		return this.tS_.GetText(this.date_month + 220) + " " + this.date_year.ToString();
 	}
 
-	// Token: 0x0600020C RID: 524 RVA: 0x0001DD8F File Offset: 0x0001BF8F
+	
 	public string GetEntwicklungsbeginnDateString()
 	{
 		if (this.date_start_year == 0)
@@ -958,19 +988,19 @@ public class gameScript : MonoBehaviour
 		return this.tS_.GetText(this.date_start_month + 220) + " " + this.date_start_year.ToString();
 	}
 
-	// Token: 0x0600020D RID: 525 RVA: 0x0001DDCB File Offset: 0x0001BFCB
+	
 	public Sprite GetScreenshot()
 	{
 		return this.genres_.GetScreenshot(this.maingenre, Mathf.RoundToInt(this.points_grafik));
 	}
 
-	// Token: 0x0600020E RID: 526 RVA: 0x0001DDE9 File Offset: 0x0001BFE9
+	
 	public Texture2D GetScreenshotTexture2D()
 	{
 		return this.genres_.GetScreenshotTexture2D(this.maingenre, Mathf.RoundToInt(this.points_grafik));
 	}
 
-	// Token: 0x0600020F RID: 527 RVA: 0x0001DE08 File Offset: 0x0001C008
+	
 	public void FindNextFeatureForDevelopment()
 	{
 		Debug.Log("FindNextFeatureForDevelopment");
@@ -1001,7 +1031,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000210 RID: 528 RVA: 0x0001DEFC File Offset: 0x0001C0FC
+	
 	public int GetGesamtDevPoints()
 	{
 		int num = 0;
@@ -1019,7 +1049,7 @@ public class gameScript : MonoBehaviour
 		return Mathf.RoundToInt(this.CalcPlatformComplex((float)num));
 	}
 
-	// Token: 0x06000211 RID: 529 RVA: 0x0001DF70 File Offset: 0x0001C170
+	
 	public int GetGesamtDevPointsAddon()
 	{
 		int num = 0;
@@ -1040,7 +1070,7 @@ public class gameScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000212 RID: 530 RVA: 0x0001DFEC File Offset: 0x0001C1EC
+	
 	public int GetRueckggeld()
 	{
 		int result;
@@ -1055,7 +1085,7 @@ public class gameScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06000213 RID: 531 RVA: 0x0001E038 File Offset: 0x0001C238
+	
 	public long GetBisherigeEntwicklungskosten()
 	{
 		long num = (long)this.GetRueckggeld();
@@ -1063,7 +1093,7 @@ public class gameScript : MonoBehaviour
 		return num + this.costs_mitarbeiter;
 	}
 
-	// Token: 0x06000214 RID: 532 RVA: 0x0001E060 File Offset: 0x0001C260
+	
 	public float GetProzentGesamt()
 	{
 		float num = 100f / this.devPointsStart_Gesamt * (this.devPointsStart_Gesamt - this.devPoints_Gesamt);
@@ -1074,7 +1104,7 @@ public class gameScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000215 RID: 533 RVA: 0x0001E098 File Offset: 0x0001C298
+	
 	public float GetProzentFeature()
 	{
 		float num = 100f / this.devPointsStart * (this.devPointsStart - this.devPoints);
@@ -1085,43 +1115,43 @@ public class gameScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000216 RID: 534 RVA: 0x0001E0CF File Offset: 0x0001C2CF
+	
 	public long GetEntwicklungskosten()
 	{
 		return this.costs_entwicklung + this.costs_mitarbeiter;
 	}
 
-	// Token: 0x06000217 RID: 535 RVA: 0x0001E0DE File Offset: 0x0001C2DE
+	
 	public long GetGesamteEntwicklungskosten()
 	{
 		return this.costs_entwicklung + this.costs_mitarbeiter + this.costs_updates;
 	}
 
-	// Token: 0x06000218 RID: 536 RVA: 0x0001E0F4 File Offset: 0x0001C2F4
+	
 	public long GetMarketingkosten()
 	{
 		return this.costs_marketing;
 	}
 
-	// Token: 0x06000219 RID: 537 RVA: 0x0001E0FC File Offset: 0x0001C2FC
+	
 	public long GetEnginegebuehren()
 	{
 		return this.costs_enginegebuehren;
 	}
 
-	// Token: 0x0600021A RID: 538 RVA: 0x0001E104 File Offset: 0x0001C304
+	
 	public long GetUmsatzVerkauf()
 	{
 		return this.umsatzTotal - this.umsatzAbos - this.umsatzInApp;
 	}
 
-	// Token: 0x0600021B RID: 539 RVA: 0x0001E11A File Offset: 0x0001C31A
+	
 	public long GetUmsatzbeteiligung()
 	{
 		return this.umsatzTotal / 100L * (long)Mathf.RoundToInt((float)this.PUBOFFER_GetGewinnbeteiligung());
 	}
 
-	// Token: 0x0600021C RID: 540 RVA: 0x0001E134 File Offset: 0x0001C334
+	
 	public int SubGewinnbeteiligung(int i)
 	{
 		float num = (float)i / 100f;
@@ -1129,7 +1159,7 @@ public class gameScript : MonoBehaviour
 		return Mathf.RoundToInt((float)(i - Mathf.RoundToInt(num)));
 	}
 
-	// Token: 0x0600021D RID: 541 RVA: 0x0001E164 File Offset: 0x0001C364
+	
 	public void PayGewinnbeteiligung(long i)
 	{
 		if (this.PUBOFFER_GetGewinnbeteiligung() <= 0)
@@ -1141,13 +1171,13 @@ public class gameScript : MonoBehaviour
 		this.mS_.Pay((long)Mathf.RoundToInt(num), 26);
 	}
 
-	// Token: 0x0600021E RID: 542 RVA: 0x0001E1A2 File Offset: 0x0001C3A2
+	
 	public long GetGesamtAusgaben()
 	{
 		return this.costs_entwicklung + this.costs_mitarbeiter + this.costs_marketing + this.costs_enginegebuehren + this.costs_server + this.costs_production + this.costs_updates;
 	}
 
-	// Token: 0x0600021F RID: 543 RVA: 0x0001E1D4 File Offset: 0x0001C3D4
+	
 	public long GetGesamtGewinn()
 	{
 		long num;
@@ -1177,7 +1207,7 @@ public class gameScript : MonoBehaviour
 		return this.umsatzTotal - num;
 	}
 
-	// Token: 0x06000220 RID: 544 RVA: 0x0001E27C File Offset: 0x0001C47C
+	
 	public string GetTypString()
 	{
 		if (!this.tS_)
@@ -1244,7 +1274,7 @@ public class gameScript : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06000221 RID: 545 RVA: 0x0001E480 File Offset: 0x0001C680
+	
 	public string GetPlatformTypString()
 	{
 		if (!this.tS_)
@@ -1278,7 +1308,7 @@ public class gameScript : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06000222 RID: 546 RVA: 0x0001E54B File Offset: 0x0001C74B
+	
 	public Sprite GetSizeSprite()
 	{
 		if (!this.games_)
@@ -1288,7 +1318,7 @@ public class gameScript : MonoBehaviour
 		return this.games_.gameSizeSprites[this.gameSize];
 	}
 
-	// Token: 0x06000223 RID: 547 RVA: 0x0001E570 File Offset: 0x0001C770
+	
 	public Sprite GetTypSprite()
 	{
 		if (!this.games_)
@@ -1357,7 +1387,7 @@ public class gameScript : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000224 RID: 548 RVA: 0x0001E6EC File Offset: 0x0001C8EC
+	
 	public Sprite GetPlatformTypSprite()
 	{
 		if (!this.games_)
@@ -1387,7 +1417,7 @@ public class gameScript : MonoBehaviour
 		return this.games_.gamePlatformTypSprites[0];
 	}
 
-	// Token: 0x06000225 RID: 549 RVA: 0x0001E783 File Offset: 0x0001C983
+	
 	public void ClearReview()
 	{
 		this.date_month = 0;
@@ -1399,7 +1429,7 @@ public class gameScript : MonoBehaviour
 		this.reviewTotal = 0;
 	}
 
-	// Token: 0x06000226 RID: 550 RVA: 0x0001E7B8 File Offset: 0x0001C9B8
+	
 	public void CalcReview(bool entwicklungsbericht)
 	{
 		if (this.reviewTotal > 0)
@@ -1409,7 +1439,7 @@ public class gameScript : MonoBehaviour
 		this.date_month = this.mS_.month;
 		this.date_year = this.mS_.year;
 		float num = 0f;
-		if (this.developerID == this.mS_.myID)
+		if (this.playerGame)
 		{
 			if (!this.retro)
 			{
@@ -1489,13 +1519,13 @@ public class gameScript : MonoBehaviour
 		{
 			num5 = 99f;
 		}
-		if (this.developerID != this.mS_.myID && this.retro)
+		if (!this.playerGame && this.retro)
 		{
 			num3 *= 0.7f;
 			num4 *= 0.7f;
 			num5 *= 0.7f;
 		}
-		if (this.developerID == this.mS_.myID)
+		if (this.playerGame)
 		{
 			float num7 = 0f;
 			int num8 = 0;
@@ -1525,7 +1555,7 @@ public class gameScript : MonoBehaviour
 			num4 -= UnityEngine.Random.Range(0f, 5f);
 			num5 -= UnityEngine.Random.Range(0f, 5f);
 		}
-		if (this.developerID == this.mS_.myID && this.mS_.year >= 1979)
+		if (this.playerGame && this.mS_.year >= 1979)
 		{
 			if (!this.gameplayStudio[0])
 			{
@@ -1633,7 +1663,7 @@ public class gameScript : MonoBehaviour
 				num3 -= 1f;
 			}
 		}
-		if (this.developerID == this.mS_.myID)
+		if (this.playerGame)
 		{
 			int outdatetAmount = this.eF_.GetOutdatetAmount(this.gameEngineFeature[0]);
 			int outdatetAmount2 = this.eF_.GetOutdatetAmount(this.gameEngineFeature[1]);
@@ -1656,7 +1686,7 @@ public class gameScript : MonoBehaviour
 				num2 -= (float)outdatetAmount3;
 			}
 		}
-		if (this.developerID == this.mS_.myID)
+		if (this.playerGame)
 		{
 			if (this.mS_.year >= 1983 && this.mS_.year < 1988 && this.gameSize == 0)
 			{
@@ -1738,7 +1768,7 @@ public class gameScript : MonoBehaviour
 				}
 			}
 		}
-		if (this.developerID != this.mS_.myID)
+		if (!this.playerGame)
 		{
 			num2 -= UnityEngine.Random.Range(0f, 2f);
 			num3 -= UnityEngine.Random.Range(0f, 2f);
@@ -1839,19 +1869,19 @@ public class gameScript : MonoBehaviour
 				break;
 			}
 		}
-		if (this.developerID == this.mS_.myID)
+		if (this.playerGame)
 		{
-			float num10 = (5f - (float)this.genres_.genres_LEVEL[this.maingenre]) * 0.4f;
-			num2 -= num10 * 2f;
-			num6 -= num10 * 1.5f;
+			float num11 = (5f - (float)this.genres_.genres_LEVEL[this.maingenre]) * 0.4f;
+			num2 -= num11 * 2f;
+			num6 -= num11 * 1.5f;
 		}
-		else if (this.developerID == this.mS_.myID)
+		else if (this.playerGame)
 		{
 			if (this.subgenre >= 0)
 			{
-				float num10 = (5f - (float)this.genres_.genres_LEVEL[this.subgenre]) * 0.2f;
-				num2 -= num10 * 2f;
-				num6 -= num10 * 1.5f;
+				float num12 = (5f - (float)this.genres_.genres_LEVEL[this.subgenre]) * 0.2f;
+				num2 -= num12 * 2f;
+				num6 -= num12 * 1.5f;
 			}
 			else
 			{
@@ -1859,19 +1889,19 @@ public class gameScript : MonoBehaviour
 				num6 -= 1.5f;
 			}
 		}
-		if (this.developerID == this.mS_.myID)
+		if (this.playerGame)
 		{
-			float num10 = (5f - (float)this.themes_.themes_LEVEL[this.gameMainTheme]) * 0.4f;
-			num2 -= num10 * 2f;
-			num6 -= num10 * 1.5f;
+			float num13 = (5f - (float)this.themes_.themes_LEVEL[this.gameMainTheme]) * 0.4f;
+			num2 -= num13 * 2f;
+			num6 -= num13 * 1.5f;
 		}
-		if (this.developerID == this.mS_.myID)
+		if (this.playerGame)
 		{
 			if (this.gameSubTheme >= 0)
 			{
-				float num10 = (5f - (float)this.themes_.themes_LEVEL[this.gameSubTheme]) * 0.2f;
-				num2 -= num10 * 2f;
-				num6 -= num10 * 1.5f;
+				float num14 = (5f - (float)this.themes_.themes_LEVEL[this.gameSubTheme]) * 0.2f;
+				num2 -= num14 * 2f;
+				num6 -= num14 * 1.5f;
 			}
 			else
 			{
@@ -1879,37 +1909,37 @@ public class gameScript : MonoBehaviour
 				num6 -= 1.5f;
 			}
 		}
-		if (this.developerID == this.mS_.myID)
+		if (this.playerGame)
 		{
 			if (this.typ_addon || this.typ_addonStandalone)
 			{
-				float num11 = 0.4f;
-				num11 -= this.addonQuality;
-				num2 -= num2 * num11;
-				num6 -= num6 * num11;
+				float num15 = 0.4f;
+				num15 -= this.addonQuality;
+				num2 -= num2 * num15;
+				num6 -= num6 * num15;
 			}
 			if (this.typ_mmoaddon)
 			{
-				float num12 = 0.4f;
-				num12 -= this.addonQuality;
-				num2 -= num2 * num12;
-				num6 -= num6 * num12;
+				float num16 = 0.4f;
+				num16 -= this.addonQuality;
+				num2 -= num2 * num16;
+				num6 -= num6 * num16;
 			}
 		}
-		if (this.developerID == this.mS_.myID && this.finanzierung_Grundkosten < 100)
+		if (this.playerGame && this.finanzierung_Grundkosten < 100)
 		{
-			float num13 = (float)this.finanzierung_Grundkosten;
-			num13 *= 0.01f;
-			float num14 = num6 - num6 * num13;
-			num6 -= num14 * 0.5f;
-			num14 = num6 - num2 * num13;
-			num2 -= num14 * 0.5f;
-			num14 = num3 - num3 * num13;
-			num3 -= num14 * 0.2f;
-			num14 = num4 - num4 * num13;
-			num4 -= num14 * 0.3f;
-			num14 = num5 - num5 * num13;
-			num5 -= num14 * 0.2f;
+			float num17 = (float)this.finanzierung_Grundkosten;
+			num17 *= 0.01f;
+			float num18 = num6 - num6 * num17;
+			num6 -= num18 * 0.5f;
+			num18 = num6 - num2 * num17;
+			num2 -= num18 * 0.5f;
+			num18 = num3 - num3 * num17;
+			num3 -= num18 * 0.2f;
+			num18 = num4 - num4 * num17;
+			num4 -= num18 * 0.3f;
+			num18 = num5 - num5 * num17;
+			num5 -= num18 * 0.2f;
 		}
 		if (!entwicklungsbericht && this.specialMarketing[1] != 0)
 		{
@@ -1919,11 +1949,11 @@ public class gameScript : MonoBehaviour
 			num5 += (float)this.specialMarketing[1];
 			num6 += (float)this.specialMarketing[1];
 		}
-		if (this.developerID == this.mS_.myID && this.mS_.GetFanGenreID() == this.maingenre)
+		if (this.playerGame && this.mS_.companySpecialGenre == this.maingenre)
 		{
 			num6 += 3f;
 		}
-		if (this.developerID == this.mS_.myID)
+		if (this.playerGame)
 		{
 			switch (this.mS_.difficulty)
 			{
@@ -1979,13 +2009,13 @@ public class gameScript : MonoBehaviour
 			num5 += (float)UnityEngine.Random.Range(-10, 10);
 			num6 += (float)UnityEngine.Random.Range(-10, 10);
 		}
-		if (this.developerID != this.mS_.myID)
+		if (!this.playerGame)
 		{
 			if (!this.devS_)
 			{
 				this.FindMyDeveloper();
 			}
-			if (this.devS_ && !this.devS_.IsTochterfirma())
+			if (this.devS_ && !this.devS_.tochterfirma)
 			{
 				switch (this.mS_.difficulty)
 				{
@@ -2041,86 +2071,29 @@ public class gameScript : MonoBehaviour
 				{
 					this.FindMyDeveloper();
 				}
-				if (this.devS_ && this.devS_.IsTochterfirma())
+				if (this.devS_ && this.devS_.tochterfirma)
 				{
-					switch (this.devS_.tf_entwicklungsdauer)
+					int tf_entwicklungsdauer = this.devS_.tf_entwicklungsdauer;
+					if (tf_entwicklungsdauer != 0)
 					{
-					case 0:
+						if (tf_entwicklungsdauer == 1)
+						{
+							num2 -= 5f;
+							num3 -= 5f;
+							num4 -= 5f;
+							num5 -= 5f;
+							num6 -= 5f;
+						}
+					}
+					else
+					{
 						num2 -= 10f;
 						num3 -= 10f;
 						num4 -= 10f;
 						num5 -= 10f;
 						num6 -= 10f;
-						break;
-					case 1:
-						num2 -= 5f;
-						num3 -= 5f;
-						num4 -= 5f;
-						num5 -= 5f;
-						num6 -= 5f;
-						break;
 					}
 				}
-			}
-		}
-		if (num6 >= 98f)
-		{
-			num6 = 98f;
-			if (UnityEngine.Random.Range(0, 25) == 1)
-			{
-				num6 = 99f;
-			}
-			if (UnityEngine.Random.Range(0, 50) == 1)
-			{
-				num6 = 100f;
-			}
-		}
-		if (num2 >= 98f)
-		{
-			num2 = 98f;
-			if (UnityEngine.Random.Range(0, 10) == 1)
-			{
-				num2 = 99f;
-			}
-			if (UnityEngine.Random.Range(0, 25) == 1)
-			{
-				num2 = 100f;
-			}
-		}
-		if (num3 >= 98f)
-		{
-			num3 = 98f;
-			if (UnityEngine.Random.Range(0, 10) == 1)
-			{
-				num3 = 99f;
-			}
-			if (UnityEngine.Random.Range(0, 25) == 1)
-			{
-				num3 = 100f;
-			}
-		}
-		if (num4 >= 98f)
-		{
-			num4 = 98f;
-			if (UnityEngine.Random.Range(0, 10) == 1)
-			{
-				num4 = 99f;
-			}
-			if (UnityEngine.Random.Range(0, 25) == 1)
-			{
-				num4 = 100f;
-			}
-		}
-		if (num5 >= 98f)
-		{
-			num5 = 98f;
-			if (UnityEngine.Random.Range(0, 10) == 1)
-			{
-				num5 = 99f;
-			}
-			if (UnityEngine.Random.Range(0, 25) == 1)
-			{
-				num5 = 100f;
 			}
 		}
 		this.reviewGameplay = Mathf.RoundToInt(num2);
@@ -2168,7 +2141,7 @@ public class gameScript : MonoBehaviour
 		{
 			this.reviewTotal = 100;
 		}
-		if (this.developerID != this.mS_.myID && this.reviewTotal <= 1)
+		if (!this.playerGame && this.reviewTotal <= 1)
 		{
 			if (this.reviewGameplay <= 1)
 			{
@@ -2191,31 +2164,26 @@ public class gameScript : MonoBehaviour
 				this.reviewTotal = UnityEngine.Random.Range(2, 10);
 			}
 		}
-		if (!entwicklungsbericht && !this.typ_addon && !this.typ_addonStandalone && !this.typ_budget && !this.typ_bundle && !this.typ_mmoaddon && !this.typ_goty && !this.typ_bundleAddon)
+		if (!entwicklungsbericht && this.playerGame && !this.typ_addon && !this.typ_addonStandalone && !this.typ_budget && !this.typ_bundle && !this.typ_mmoaddon && !this.typ_goty && !this.typ_bundleAddon)
 		{
-			if (!this.devS_)
-			{
-				this.FindMyDeveloper();
-			}
 			if (this.reviewTotal >= 80)
 			{
-				this.devS_.awards[8]++;
+				this.mS_.awards[8]++;
 			}
 			if (this.reviewTotal < 30)
 			{
-				this.devS_.awards[9]++;
+				this.mS_.awards[9]++;
 			}
 		}
 	}
 
-	// Token: 0x06000227 RID: 551 RVA: 0x0001FF21 File Offset: 0x0001E121
+	
 	public void SetPublisher(int id_)
 	{
-		this.pS_ = null;
 		this.publisherID = id_;
 	}
 
-	// Token: 0x06000228 RID: 552 RVA: 0x0001FF34 File Offset: 0x0001E134
+	
 	public void AddIpPoints(float p)
 	{
 		if (this.mainIP != -1)
@@ -2233,7 +2201,7 @@ public class gameScript : MonoBehaviour
 				{
 					this.script_mainIP.ipPunkte = 0f;
 				}
-				if (this.developerID == this.mS_.myID && this.mS_.achScript_ && this.script_mainIP.ipPunkte >= 990f)
+				if (this.playerGame && this.mS_.achScript_ && this.script_mainIP.ipPunkte >= 990f)
 				{
 					this.mS_.achScript_.SetAchivement(57);
 				}
@@ -2243,7 +2211,7 @@ public class gameScript : MonoBehaviour
 					{
 						this.mS_.mpCalls_.SERVER_Send_GameData(this);
 					}
-					if (this.mS_.mpCalls_.isClient && this.developerID == this.mS_.myID)
+					if (this.mS_.mpCalls_.isClient && this.playerGame)
 					{
 						this.mS_.mpCalls_.CLIENT_Send_GameData(this);
 					}
@@ -2256,7 +2224,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000229 RID: 553 RVA: 0x000200C4 File Offset: 0x0001E2C4
+	
 	public void AddIpPointsRelease()
 	{
 		if (this.mainIP != -1)
@@ -2306,7 +2274,7 @@ public class gameScript : MonoBehaviour
 				else
 				{
 					float num;
-					if (this.developerID == this.mS_.myID)
+					if (this.playerGame)
 					{
 						num = (float)(this.reviewTotal * 2 / (this.mS_.difficulty + 1));
 					}
@@ -2314,7 +2282,7 @@ public class gameScript : MonoBehaviour
 					{
 						num = (float)(this.reviewTotal * 2 / 2);
 					}
-					if (this.script_mainIP.developerID == this.mS_.myID)
+					if (this.script_mainIP.playerGame)
 					{
 						if (this.script_mainIP.ipTime < 8)
 						{
@@ -2362,7 +2330,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600022A RID: 554 RVA: 0x00020310 File Offset: 0x0001E510
+	
 	public void SetAsContractGameAngebot()
 	{
 		this.auftragsspiel = true;
@@ -2427,13 +2395,20 @@ public class gameScript : MonoBehaviour
 			this.auftragsspiel_gehalt += component.costs_gameSize[this.gameSize] / 2;
 			this.auftragsspiel_bonus += component.costs_gameSize[this.gameSize] / 2;
 		}
-		if (this.mS_.multiplayer && this.mS_.mpCalls_.isServer)
+		if (this.mS_.multiplayer)
 		{
-			this.mS_.mpCalls_.SERVER_Send_Game(this);
+			if (this.mS_.mpCalls_.isServer)
+			{
+				this.mS_.mpCalls_.SERVER_Send_Game(this);
+			}
+			if (this.mS_.mpCalls_.isClient && this.playerGame)
+			{
+				this.mS_.mpCalls_.CLIENT_Send_Game(this);
+			}
 		}
 	}
 
-	// Token: 0x0600022B RID: 555 RVA: 0x000205B0 File Offset: 0x0001E7B0
+	
 	public void SetAsPublishingAngebot()
 	{
 		this.pubAngebot = true;
@@ -2484,13 +2459,20 @@ public class gameScript : MonoBehaviour
 		{
 			this.pubAngebot_Gewinnbeteiligung = 80f;
 		}
-		if (this.mS_.multiplayer && this.mS_.mpCalls_.isServer)
+		if (this.mS_.multiplayer)
 		{
-			this.mS_.mpCalls_.SERVER_Send_Game(this);
+			if (this.mS_.mpCalls_.isServer)
+			{
+				this.mS_.mpCalls_.SERVER_Send_Game(this);
+			}
+			if (this.mS_.mpCalls_.isClient && this.playerGame)
+			{
+				this.mS_.mpCalls_.CLIENT_Send_Game(this);
+			}
 		}
 	}
 
-	// Token: 0x0600022C RID: 556 RVA: 0x000207A8 File Offset: 0x0001E9A8
+	
 	public void SetOnMarket()
 	{
 		bool flag = false;
@@ -2499,9 +2481,9 @@ public class gameScript : MonoBehaviour
 		this.schublade = false;
 		this.pubAngebot = false;
 		this.auftragsspiel = false;
-		if (this.typ_contractGame && this.developerID == this.mS_.myID)
+		if (this.typ_contractGame && this.playerGame)
 		{
-			Debug.Log("SetOnMarktet() -> Contract Game");
+			this.playerGame = false;
 			flag = true;
 		}
 		if (this.gameTab_ && this.gameTab_.gameObject)
@@ -2557,7 +2539,7 @@ public class gameScript : MonoBehaviour
 				this.verkaufspreis[j] = 0;
 			}
 		}
-		if (this.developerID == this.mS_.myID && this.points_bugs >= 50f)
+		if (this.playerGame && this.points_bugs >= 50f)
 		{
 			this.mS_.sauerBugs = UnityEngine.Random.Range(4, 16);
 		}
@@ -2615,7 +2597,7 @@ public class gameScript : MonoBehaviour
 				this.script_vorgaenger.AddMMOInteresse((float)this.reviewTotal);
 			}
 		}
-		if (this.IsMyGame())
+		if (this.playerGame)
 		{
 			if ((this.typ_standard || this.typ_nachfolger || this.typ_remaster || this.typ_spinoff) && !this.typ_contractGame && !this.typ_addon && !this.typ_addonStandalone && !this.typ_budget && !this.typ_bundle && !this.typ_bundleAddon && !this.typ_mmoaddon && !this.typ_goty && !this.arcade && this.portID == -1)
 			{
@@ -2695,9 +2677,9 @@ public class gameScript : MonoBehaviour
 				this.mS_.AddStudioPoints(Mathf.RoundToInt(50f * num2));
 			}
 		}
-		if (this.IsMyGame() && this.mS_.achScript_)
+		if (this.playerGame && this.mS_.achScript_)
 		{
-			if (this.developerID == this.mS_.myID)
+			if (this.developerID == -1)
 			{
 				if (this.reviewTotal >= 70)
 				{
@@ -2822,7 +2804,7 @@ public class gameScript : MonoBehaviour
 				{
 					this.mS_.achScript_.SetAchivement(53);
 				}
-				if (this.publisherID == this.mS_.myID)
+				if (this.publisherID == -1)
 				{
 					this.mS_.achScript_.SetAchivement(44);
 				}
@@ -2850,14 +2832,14 @@ public class gameScript : MonoBehaviour
 			{
 				this.mS_.mpCalls_.SERVER_Send_Game(this);
 			}
-			if (this.mS_.mpCalls_.isClient && (this.IsMyGame() || flag))
+			if (this.mS_.mpCalls_.isClient && (this.playerGame || flag))
 			{
 				this.mS_.mpCalls_.CLIENT_Send_Game(this);
 			}
 		}
 	}
 
-	// Token: 0x0600022D RID: 557 RVA: 0x000212B8 File Offset: 0x0001F4B8
+	
 	public void RemoveFromMarket()
 	{
 		this.FindScripts();
@@ -2867,7 +2849,7 @@ public class gameScript : MonoBehaviour
 		{
 			UnityEngine.Object.Destroy(this.gameTab_.gameObject);
 		}
-		if (this.publisherID == this.mS_.myID && this.mS_.sellLagerbestandAutomatic)
+		if (this.playerGame && this.mS_.sellLagerbestandAutomatic)
 		{
 			this.guiMain_.uiObjects[226].SetActive(true);
 			this.guiMain_.uiObjects[226].GetComponent<Menu_W_Restbestand>().Init(this);
@@ -2876,7 +2858,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600022E RID: 558 RVA: 0x0002137C File Offset: 0x0001F57C
+	
 	public gameScript FindMainIpScript()
 	{
 		if (this.script_mainIP)
@@ -2897,7 +2879,7 @@ public class gameScript : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x0600022F RID: 559 RVA: 0x000213E8 File Offset: 0x0001F5E8
+	
 	public gameScript FindPortOriginalScript()
 	{
 		if (this.originalIP == -1)
@@ -2921,7 +2903,7 @@ public class gameScript : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000230 RID: 560 RVA: 0x00021458 File Offset: 0x0001F658
+	
 	public gameScript FindVorgaengerScript()
 	{
 		if (this.originalIP == -1)
@@ -2941,7 +2923,7 @@ public class gameScript : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000231 RID: 561 RVA: 0x000214BC File Offset: 0x0001F6BC
+	
 	public gameScript FindNachfolgerScript()
 	{
 		if (this.originalIP == -1)
@@ -2963,7 +2945,7 @@ public class gameScript : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000232 RID: 562 RVA: 0x00021549 File Offset: 0x0001F749
+	
 	public int GetContractGameAbgabetermin()
 	{
 		if (!this.typ_contractGame)
@@ -2973,11 +2955,17 @@ public class gameScript : MonoBehaviour
 		return this.auftragsspiel_zeitInWochen;
 	}
 
-	// Token: 0x06000233 RID: 563 RVA: 0x0002155C File Offset: 0x0001F75C
+	
+	public void DeleteGameContract()
+	{
+	}
+
+	
 	public void FreeGameContract()
 	{
 		this.auftragsspiel = true;
-		this.developerID = this.publisherID;
+		this.playerGame = false;
+		this.multiplayerSlot = -1;
 		this.typ_contractGame = false;
 		this.auftragsspiel_Inivs = true;
 		if (this.mS_.multiplayer)
@@ -2993,10 +2981,15 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000234 RID: 564 RVA: 0x000215E0 File Offset: 0x0001F7E0
+	
+	public void FindContractGameScript()
+	{
+	}
+
+	
 	public void SellMerchandise()
 	{
-		if (this.ownerID != this.mS_.myID)
+		if (!this.playerGame)
 		{
 			return;
 		}
@@ -3118,12 +3111,12 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000235 RID: 565 RVA: 0x000218C0 File Offset: 0x0001FAC0
+	
 	public void SellGame()
 	{
 		if (!this.isOnMarket)
 		{
-			if (!this.inDevelopment && this.freigabeBudget > 0)
+			if (this.playerGame && !this.inDevelopment && this.freigabeBudget > 0)
 			{
 				this.freigabeBudget--;
 			}
@@ -3257,7 +3250,7 @@ public class gameScript : MonoBehaviour
 				}
 			}
 		}
-		if (this.ExistAutomatenspiel())
+		if (this.playerGame && this.ExistAutomatenspiel())
 		{
 			num2 += num2 * 0.2f;
 		}
@@ -3347,7 +3340,7 @@ public class gameScript : MonoBehaviour
 				}
 			}
 		}
-		if (this.IsMyGame())
+		if (this.playerGame)
 		{
 			float num8 = (float)this.reviewTotal * 0.01f;
 			float num9 = num8 * (float)this.genres_.GetAmountFans() * 0.005f;
@@ -3366,6 +3359,16 @@ public class gameScript : MonoBehaviour
 			float num14 = num13 * (float)(50000 * num12) * 0.001f;
 			float num15 = num13 * (float)(5000 * num12) * 0.01f;
 			num2 += num14 + num15;
+		}
+		if (this.debug)
+		{
+			Debug.Log(string.Concat(new object[]
+			{
+				"GAME ",
+				this.myName,
+				" C ",
+				num2
+			}));
 		}
 		switch (this.gameTyp)
 		{
@@ -3399,7 +3402,7 @@ public class gameScript : MonoBehaviour
 			break;
 		case 1:
 			num2 *= this.mmoInteresse * 0.01f;
-			if (this.IsMyGame())
+			if (this.playerGame)
 			{
 				this.AddMMOInteresse(-UnityEngine.Random.Range(0.3f, 0.5f));
 			}
@@ -3410,7 +3413,7 @@ public class gameScript : MonoBehaviour
 			break;
 		case 2:
 			num2 *= this.f2pInteresse * 0.01f;
-			if (this.IsMyGame())
+			if (this.playerGame)
 			{
 				this.AddF2PInteresse(-UnityEngine.Random.Range(0.3f, 0.5f));
 			}
@@ -3460,7 +3463,7 @@ public class gameScript : MonoBehaviour
 				num2
 			}));
 		}
-		if (this.IsMyGame())
+		if (this.playerGame)
 		{
 			if (this.typ_nachfolger || this.typ_remaster || this.typ_spinoff || this.typ_standard)
 			{
@@ -3517,49 +3520,62 @@ public class gameScript : MonoBehaviour
 			num3 -= 0.2f;
 			break;
 		}
-		if (!this.gameLanguage[0])
+		if (this.playerGame)
 		{
-			num3 -= 0.05f;
+			if (!this.gameLanguage[0])
+			{
+				num3 -= 0.05f;
+			}
+			if (!this.gameLanguage[1])
+			{
+				num3 -= 0.03f;
+			}
+			if (!this.gameLanguage[2])
+			{
+				num3 -= 0.03f;
+			}
+			if (!this.gameLanguage[3])
+			{
+				num3 -= 0.02f;
+			}
+			if (!this.gameLanguage[4])
+			{
+				num3 -= 0.02f;
+			}
+			if (!this.gameLanguage[5])
+			{
+				num3 -= 0.02f;
+			}
+			if (!this.gameLanguage[6])
+			{
+				num3 -= 0.01f;
+			}
+			if (!this.gameLanguage[7])
+			{
+				num3 -= 0.02f;
+			}
+			if (!this.gameLanguage[8])
+			{
+				num3 -= 0.02f;
+			}
+			if (!this.gameLanguage[9])
+			{
+				num3 -= 0.03f;
+			}
+			if (!this.gameLanguage[10])
+			{
+				num3 -= 0.04f;
+			}
 		}
-		if (!this.gameLanguage[1])
+		if (this.debug)
 		{
-			num3 -= 0.03f;
-		}
-		if (!this.gameLanguage[2])
-		{
-			num3 -= 0.03f;
-		}
-		if (!this.gameLanguage[3])
-		{
-			num3 -= 0.02f;
-		}
-		if (!this.gameLanguage[4])
-		{
-			num3 -= 0.02f;
-		}
-		if (!this.gameLanguage[5])
-		{
-			num3 -= 0.02f;
-		}
-		if (!this.gameLanguage[6])
-		{
-			num3 -= 0.01f;
-		}
-		if (!this.gameLanguage[7])
-		{
-			num3 -= 0.02f;
-		}
-		if (!this.gameLanguage[8])
-		{
-			num3 -= 0.02f;
-		}
-		if (!this.gameLanguage[9])
-		{
-			num3 -= 0.03f;
-		}
-		if (!this.gameLanguage[10])
-		{
-			num3 -= 0.04f;
+			Debug.Log(string.Concat(new object[]
+			{
+				"GAME ",
+				this.myName,
+				" E ",
+				num2
+			}));
 		}
 		if (!this.typ_bundle)
 		{
@@ -3597,6 +3613,10 @@ public class gameScript : MonoBehaviour
 			}
 		}
 		num3 += this.GetHype() * 0.01f;
+		if (this.debug)
+		{
+			Debug.Log("5: " + num2);
+		}
 		if (!this.typ_bundle && !this.arcade)
 		{
 			if (this.gameCopyProtect != -1)
@@ -3638,7 +3658,17 @@ public class gameScript : MonoBehaviour
 				}
 			}
 		}
-		if (this.publisherID != this.mS_.myID && this.pS_)
+		if (this.debug)
+		{
+			Debug.Log(string.Concat(new object[]
+			{
+				"GAME ",
+				this.myName,
+				" F ",
+				num2
+			}));
+		}
+		if (this.publisherID != -1 && this.pS_)
 		{
 			if (this.maingenre == this.pS_.fanGenre)
 			{
@@ -3646,20 +3676,13 @@ public class gameScript : MonoBehaviour
 			}
 			num3 += this.pS_.stars * 0.01f;
 		}
-		if (!this.arcade)
+		if (this.mS_.month == 12 || this.mS_.month == 1)
 		{
-			if (this.mS_.month == 12 || this.mS_.month == 1)
-			{
-				num3 += 0.5f;
-			}
-			if (this.mS_.month == 6 || this.mS_.month == 7)
-			{
-				num3 -= 0.3f;
-			}
+			num3 += 0.5f;
 		}
-		if (this.IsMyGame() && this.mS_.awardBonus > 0 && this.mS_.awardBonusAmount > 0f)
+		if (!this.arcade && (this.mS_.month == 6 || this.mS_.month == 7))
 		{
-			num3 += this.mS_.awardBonusAmount;
+			num3 -= 0.3f;
 		}
 		if (!this.arcade)
 		{
@@ -3682,7 +3705,7 @@ public class gameScript : MonoBehaviour
 			{
 				Debug.Log("Platform Start: " + num2);
 			}
-			float num23 = 10f;
+			float num23 = 100f;
 			for (int i = 0; i < this.gamePlatform.Length; i++)
 			{
 				if (this.gamePlatform[i] != -1)
@@ -3714,7 +3737,7 @@ public class gameScript : MonoBehaviour
 				num2
 			}));
 		}
-		if (this.IsMyGame())
+		if (this.playerGame)
 		{
 			if (!this.typ_bundle && !this.arcade && this.mS_.gelangweiltGenre != -1)
 			{
@@ -3744,9 +3767,19 @@ public class gameScript : MonoBehaviour
 				num2 -= num2 * num26;
 			}
 		}
-		if (this.gameLicence != -1)
+		if (this.playerGame && this.gameLicence != -1)
 		{
 			num2 += num2 * (this.licences_.licence_QUALITY[this.gameLicence] * 0.01f);
+		}
+		if (this.debug)
+		{
+			Debug.Log(string.Concat(new object[]
+			{
+				"GAME ",
+				this.myName,
+				" H ",
+				num2
+			}));
 		}
 		float num27 = this.genres_.genres_BELIEBTHEIT[this.maingenre];
 		if (this.maingenre == this.mS_.trendGenre)
@@ -3798,6 +3831,16 @@ public class gameScript : MonoBehaviour
 				this.commercialHit = false;
 			}
 		}
+		if (this.debug)
+		{
+			Debug.Log(string.Concat(new object[]
+			{
+				"GAME ",
+				this.myName,
+				" I ",
+				num2
+			}));
+		}
 		switch (this.mS_.difficulty)
 		{
 		case 0:
@@ -3819,7 +3862,7 @@ public class gameScript : MonoBehaviour
 			num2 *= 0.25f;
 			break;
 		}
-		if (this.IsMyGame() && this.publisherID == this.mS_.myID)
+		if (this.playerGame && this.publisherID == -1)
 		{
 			switch (this.mS_.GetStudioLevel(this.mS_.studioPoints))
 			{
@@ -3856,6 +3899,16 @@ public class gameScript : MonoBehaviour
 			}
 		}
 		num2 *= num;
+		if (this.debug)
+		{
+			Debug.Log(string.Concat(new object[]
+			{
+				"GAME ",
+				this.myName,
+				" J ",
+				num2
+			}));
+		}
 		if (this.typ_addon)
 		{
 			num2 *= 0.4f;
@@ -3869,7 +3922,7 @@ public class gameScript : MonoBehaviour
 				{
 					num2 /= (float)this.script_vorgaenger.amountAddons;
 				}
-				if (!this.script_vorgaenger.isOnMarket && this.script_vorgaenger.publisherID != this.mS_.myID)
+				if (!this.script_vorgaenger.isOnMarket && this.script_vorgaenger.publisherID != -1)
 				{
 					num2 *= 0.8f;
 				}
@@ -3921,7 +3974,7 @@ public class gameScript : MonoBehaviour
 		}
 		if (this.gameTyp == 1)
 		{
-			if (this.IsMyGame() && this.games_.freeServerPlatz <= 0)
+			if (this.playerGame && this.games_.freeServerPlatz <= 0)
 			{
 				num2 *= 0.05f;
 			}
@@ -3936,7 +3989,7 @@ public class gameScript : MonoBehaviour
 			float num31 = (float)this.abonnements - (float)this.abonnements / 102f * (float)this.reviewTotal;
 			num31 *= 0.25f;
 			num31 += (float)this.weeksOnMarket;
-			if (this.IsMyGame())
+			if (this.playerGame)
 			{
 				num31 += num31 * ((100f - this.hype) * 0.01f);
 			}
@@ -3985,7 +4038,7 @@ public class gameScript : MonoBehaviour
 			{
 				this.abonnements = (int)this.sellsTotal;
 			}
-			if (this.IsMyGame())
+			if (this.playerGame)
 			{
 				int num32 = this.abonnements;
 				for (int j = 0; j < this.mS_.arrayRooms.Length; j++)
@@ -4022,7 +4075,7 @@ public class gameScript : MonoBehaviour
 		}
 		if (this.arcade)
 		{
-			if (this.IsMyGame())
+			if (this.playerGame)
 			{
 				float num33 = (float)(this.arcadeCase + this.arcadeMonitor + this.arcadeJoystick + this.arcadeSound);
 				num33 = 1f + num33 * 0.05f;
@@ -4033,7 +4086,7 @@ public class gameScript : MonoBehaviour
 				num2 *= 0.1f;
 			}
 			num2 *= 0.005f;
-			if (num2 < 1f && !this.IsMyGame() && this.weeksOnMarket < 2)
+			if (num2 < 1f && !this.playerGame && this.weeksOnMarket < 2)
 			{
 				num2 = (float)UnityEngine.Random.Range(1, 4);
 			}
@@ -4042,7 +4095,14 @@ public class gameScript : MonoBehaviour
 		{
 			int amountOfF2Ps = this.games_.GetAmountOfF2Ps();
 			float num34 = 1f + (float)amountOfF2Ps * 0.1f;
-			num2 *= 4f;
+			if (this.playerGame)
+			{
+				num2 *= 4f;
+			}
+			else
+			{
+				num2 *= 5f;
+			}
 			if (amountOfF2Ps > 0)
 			{
 				num2 /= num34;
@@ -4063,7 +4123,7 @@ public class gameScript : MonoBehaviour
 			{
 				this.abonnements = (int)this.sellsTotal;
 			}
-			if (this.IsMyGame())
+			if (this.playerGame)
 			{
 				int num37 = this.abonnements;
 				for (int k = 0; k < this.mS_.arrayRooms.Length; k++)
@@ -4195,7 +4255,7 @@ public class gameScript : MonoBehaviour
 						}
 						if (this.gamePlatformScript[l])
 						{
-							if (this.exklusiv && this.gamePlatformScript[l].OwnerIsNPC() && !this.gamePlatformScript[l].vomMarktGenommen)
+							if (this.exklusiv && this.gamePlatformScript[l].npc && !this.gamePlatformScript[l].vomMarktGenommen)
 							{
 								if (this.gameTyp != 2)
 								{
@@ -4233,6 +4293,10 @@ public class gameScript : MonoBehaviour
 					}
 				}
 			}
+			if (this.debug)
+			{
+				Debug.Log("PlatformLimit End: " + num2);
+			}
 		}
 		if (this.HasInAppPurchases())
 		{
@@ -4242,7 +4306,7 @@ public class gameScript : MonoBehaviour
 				num2 -= num46;
 				float num47 = this.GetInAppPurchaseMoneyPerWeek();
 				float num48 = UnityEngine.Random.Range(((float)this.sellsTotal + num2) / 100f * 2f, ((float)this.sellsTotal + num2) / 100f * 3f);
-				if (this.IsMyGame())
+				if (this.playerGame)
 				{
 					float num49 = (float)this.mS_.GetAchivementBonus(5);
 					num49 *= 0.01f;
@@ -4270,15 +4334,15 @@ public class gameScript : MonoBehaviour
 				num47 *= (float)Mathf.RoundToInt(num48);
 				this.umsatzTotal += (long)Mathf.RoundToInt(num47);
 				this.umsatzInApp += (long)Mathf.RoundToInt(num47);
-				if (this.IsMyGame())
+				if (this.playerGame)
 				{
 					this.mS_.Earn((long)Mathf.RoundToInt(num47), 8);
 				}
-				if (this.IsMyGame())
+				if (this.playerGame)
 				{
 					this.PayGewinnbeteiligung((long)Mathf.RoundToInt(num47));
 				}
-				if (!this.IsMyGame())
+				if (!this.playerGame)
 				{
 					this.AddFirmenwert((long)num47);
 					this.AddTochterfirmaUmsatz((long)num47);
@@ -4288,200 +4352,200 @@ public class gameScript : MonoBehaviour
 			{
 				float num51 = num2 * (this.GetInAppPurchaseHate() * 0.01f) * 0.3f;
 				num2 -= num51;
-				float num47 = this.GetInAppPurchaseMoneyPerWeek();
-				float num52 = UnityEngine.Random.Range(((float)this.abonnements + num2) / 100f * 4f, ((float)this.abonnements + num2) / 100f * 5f);
-				if (this.IsMyGame())
+				float num52 = this.GetInAppPurchaseMoneyPerWeek();
+				float num53 = UnityEngine.Random.Range(((float)this.abonnements + num2) / 100f * 4f, ((float)this.abonnements + num2) / 100f * 5f);
+				if (this.playerGame)
 				{
-					float num53 = (float)this.mS_.GetAchivementBonus(5);
-					num53 *= 0.01f;
-					num52 += num52 * num53;
+					float num54 = (float)this.mS_.GetAchivementBonus(5);
+					num54 *= 0.01f;
+					num53 += num53 * num54;
 				}
 				if (num2 <= 0f)
 				{
-					num52 *= 0.8f;
+					num53 *= 0.8f;
 				}
-				this.inAppPurchaseWeek = Mathf.RoundToInt(num52);
-				num47 *= (float)Mathf.RoundToInt(num52);
-				this.umsatzTotal += (long)Mathf.RoundToInt(num47);
-				this.umsatzInApp += (long)Mathf.RoundToInt(num47);
-				if (this.IsMyGame())
+				this.inAppPurchaseWeek = Mathf.RoundToInt(num53);
+				num52 *= (float)Mathf.RoundToInt(num53);
+				this.umsatzTotal += (long)Mathf.RoundToInt(num52);
+				this.umsatzInApp += (long)Mathf.RoundToInt(num52);
+				if (this.playerGame)
 				{
-					this.mS_.Earn((long)Mathf.RoundToInt(num47), 8);
+					this.mS_.Earn((long)Mathf.RoundToInt(num52), 8);
 				}
-				if (this.IsMyGame())
+				if (this.playerGame)
 				{
-					this.PayGewinnbeteiligung((long)Mathf.RoundToInt(num47));
+					this.PayGewinnbeteiligung((long)Mathf.RoundToInt(num52));
 				}
-				if (!this.IsMyGame())
+				if (!this.playerGame)
 				{
-					this.AddFirmenwert((long)num47);
-					this.AddTochterfirmaUmsatz((long)num47);
+					this.AddFirmenwert((long)num52);
+					this.AddTochterfirmaUmsatz((long)num52);
 				}
 			}
 			if (this.gameTyp == 2 && this.releaseDate <= 0)
 			{
-				float num54 = num2 * (this.GetInAppPurchaseHate() * 0.01f) * 0.3f;
-				num2 -= num54;
-				float num47 = this.GetInAppPurchaseMoneyPerWeek();
-				float num55 = UnityEngine.Random.Range(((float)this.abonnements + num2) / 100f * 150f, ((float)this.abonnements + num2) / 100f * 200f);
-				if (this.IsMyGame())
+				float num55 = num2 * (this.GetInAppPurchaseHate() * 0.01f) * 0.3f;
+				num2 -= num55;
+				float num56 = this.GetInAppPurchaseMoneyPerWeek();
+				float num57 = UnityEngine.Random.Range(((float)this.abonnements + num2) / 100f * 150f, ((float)this.abonnements + num2) / 100f * 200f);
+				if (this.playerGame)
 				{
-					float num56 = (float)this.mS_.GetAchivementBonus(5);
-					num56 *= 0.01f;
-					num55 += num55 * num56;
+					float num58 = (float)this.mS_.GetAchivementBonus(5);
+					num58 *= 0.01f;
+					num57 += num57 * num58;
 				}
 				if (num2 <= 0f)
 				{
-					num55 *= 0.8f;
+					num57 *= 0.8f;
 				}
-				this.inAppPurchaseWeek = Mathf.RoundToInt(num55);
-				num47 *= (float)Mathf.RoundToInt(num55);
-				this.umsatzTotal += (long)Mathf.RoundToInt(num47);
-				this.umsatzInApp += (long)Mathf.RoundToInt(num47);
-				if (this.IsMyGame())
+				this.inAppPurchaseWeek = Mathf.RoundToInt(num57);
+				num56 *= (float)Mathf.RoundToInt(num57);
+				this.umsatzTotal += (long)Mathf.RoundToInt(num56);
+				this.umsatzInApp += (long)Mathf.RoundToInt(num56);
+				if (this.playerGame)
 				{
-					this.mS_.Earn((long)Mathf.RoundToInt(num47), 8);
+					this.mS_.Earn((long)Mathf.RoundToInt(num56), 8);
 				}
-				if (this.IsMyGame())
+				if (this.playerGame)
 				{
-					this.PayGewinnbeteiligung((long)Mathf.RoundToInt(num47));
+					this.PayGewinnbeteiligung((long)Mathf.RoundToInt(num56));
 				}
-				if (!this.IsMyGame())
+				if (!this.playerGame)
 				{
-					this.AddFirmenwert((long)num47);
-					this.AddTochterfirmaUmsatz((long)num47);
+					this.AddFirmenwert((long)num56);
+					this.AddTochterfirmaUmsatz((long)num56);
 				}
 			}
 		}
-		int num57 = Mathf.RoundToInt(num2);
-		if (num57 < 0)
+		int num59 = Mathf.RoundToInt(num2);
+		if (num59 < 0)
 		{
-			num57 = 0;
+			num59 = 0;
 		}
-		if (this.IsMyGame() && this.releaseDate <= 0 && !this.typ_bundle)
+		if (this.playerGame && this.releaseDate <= 0 && !this.typ_bundle)
 		{
 			int genre_ = this.maingenre;
 			if (UnityEngine.Random.Range(0, 100) > 70)
 			{
 				genre_ = this.subgenre;
 			}
-			float num58 = (float)this.mS_.GetAchivementBonus(7);
-			num58 *= 0.01f;
+			float num60 = (float)this.mS_.GetAchivementBonus(7);
+			num60 *= 0.01f;
 			if (!this.retro)
 			{
-				float num59 = num2;
+				float num61 = num2;
 				if (this.gameTyp == 2)
 				{
-					num59 *= 0.1f;
+					num61 *= 0.1f;
 				}
-				num59 += num59 * num58;
+				num61 += num61 * num60;
 				if (this.reviewTotal < 10)
 				{
-					this.mS_.AddFans(-Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.1f)), genre_);
+					this.mS_.AddFans(-Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.1f)), genre_);
 				}
 				if (this.reviewTotal >= 10 && this.reviewTotal < 20)
 				{
-					this.mS_.AddFans(-Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.05f)), genre_);
+					this.mS_.AddFans(-Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.05f)), genre_);
 				}
 				if (this.reviewTotal >= 20 && this.reviewTotal < 30)
 				{
-					this.mS_.AddFans(-Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.03f)), genre_);
+					this.mS_.AddFans(-Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.03f)), genre_);
 				}
 				if (this.reviewTotal >= 30 && this.reviewTotal < 40)
 				{
-					this.mS_.AddFans(-Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.02f)), genre_);
+					this.mS_.AddFans(-Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.02f)), genre_);
 				}
 				if (this.reviewTotal >= 40 && this.reviewTotal < 50)
 				{
-					this.mS_.AddFans(-Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.01f)), genre_);
+					this.mS_.AddFans(-Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.01f)), genre_);
 				}
 				if (this.reviewTotal >= 50 && this.reviewTotal < 60)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.01f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.01f)), genre_);
 				}
 				if (this.reviewTotal >= 60 && this.reviewTotal < 70)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.01f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.01f)), genre_);
 				}
 				if (this.reviewTotal >= 70 && this.reviewTotal < 80)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.01f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.01f)), genre_);
 				}
 				if (this.reviewTotal >= 80 && this.reviewTotal < 90)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.01f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.01f)), genre_);
 				}
 				if (this.reviewTotal >= 90 && this.reviewTotal < 95)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.01f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.01f)), genre_);
 				}
 				if (this.reviewTotal >= 95 && this.reviewTotal < 100)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.01f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.01f)), genre_);
 				}
 				if (this.reviewTotal >= 100)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num59 * 0.01f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num61 * 0.01f)), genre_);
 				}
 			}
 			else
 			{
-				float num60 = num2;
-				num60 += num60 * num58;
+				float num62 = num2;
+				num62 += num62 * num60;
 				if (this.reviewTotal < 40)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num60 * 0.01f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num62 * 0.01f)), genre_);
 				}
 				if (this.reviewTotal >= 40 && this.reviewTotal < 50)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num60 * 0.05f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num62 * 0.05f)), genre_);
 				}
 				if (this.reviewTotal >= 50 && this.reviewTotal < 60)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num60 * 0.05f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num62 * 0.05f)), genre_);
 				}
 				if (this.reviewTotal >= 60 && this.reviewTotal < 70)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num60 * 0.05f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num62 * 0.05f)), genre_);
 				}
 				if (this.reviewTotal >= 70 && this.reviewTotal < 80)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num60 * 0.05f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num62 * 0.05f)), genre_);
 				}
 				if (this.reviewTotal >= 80 && this.reviewTotal < 90)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num60 * 0.05f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num62 * 0.05f)), genre_);
 				}
 				if (this.reviewTotal >= 90 && this.reviewTotal < 95)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num60 * 0.05f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num62 * 0.05f)), genre_);
 				}
 				if (this.reviewTotal >= 95 && this.reviewTotal < 100)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num60 * 0.05f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num62 * 0.05f)), genre_);
 				}
 				if (this.reviewTotal >= 100)
 				{
-					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num60 * 0.05f)), genre_);
+					this.mS_.AddFans(Mathf.RoundToInt(UnityEngine.Random.Range(0f, num62 * 0.05f)), genre_);
 				}
 			}
 		}
-		float num61 = 0f;
-		float num62 = 0f;
 		float num63 = 0f;
 		float num64 = 0f;
+		float num65 = 0f;
+		float num66 = 0f;
 		if (this.releaseDate <= 0)
 		{
 			for (int m = this.sellsPerWeek.Length - 1; m >= 1; m--)
 			{
 				this.sellsPerWeek[m] = this.sellsPerWeek[m - 1];
 			}
-			if (this.publisherID != this.mS_.myID)
+			if (this.publisherID != -1)
 			{
-				this.sellsPerWeek[0] = num57;
-				this.sellsTotal += (long)num57;
+				this.sellsPerWeek[0] = num59;
+				this.sellsTotal += (long)num59;
 			}
-			else if (this.IsMyGame())
+			else if (this.playerGame)
 			{
 				if (this.gameTyp != 2)
 				{
@@ -4490,76 +4554,76 @@ public class gameScript : MonoBehaviour
 						float digitalSells = this.games_.GetDigitalSells();
 						if (this.digitalVersion)
 						{
-							num64 = (float)num57 * digitalSells * this.GetPreisAbzug(3);
+							num66 = (float)num59 * digitalSells * this.GetPreisAbzug(3);
 							if (!this.retailVersion)
 							{
-								num64 += (float)num57 * 0.2f * this.GetPreisAbzug(3);
+								num66 += (float)num59 * 0.2f * this.GetPreisAbzug(3);
 							}
 						}
 						if (this.retailVersion)
 						{
-							num61 = (float)num57 * (1f - digitalSells) * this.GetPreisAbzug(0);
-							num61 += num61 * this.GetEditionQualiaet(0);
-							num62 = (float)num57 * this.games_.GetDeluxeCurve() * this.GetPreisAbzug(1) * this.GetEditionQualiaet(1);
-							num61 -= num62;
-							num63 = (float)num57 * this.games_.GetCollectorsCurve() * this.GetPreisAbzug(2) * this.GetEditionQualiaet(2);
-							num61 -= num63;
+							num63 = (float)num59 * (1f - digitalSells) * this.GetPreisAbzug(0);
+							num63 += num63 * this.GetEditionQualiaet(0);
+							num64 = (float)num59 * this.games_.GetDeluxeCurve() * this.GetPreisAbzug(1) * this.GetEditionQualiaet(1);
+							num63 -= num64;
+							num65 = (float)num59 * this.games_.GetCollectorsCurve() * this.GetPreisAbzug(2) * this.GetEditionQualiaet(2);
+							num63 -= num65;
 							if (!this.digitalVersion)
 							{
-								num61 += (float)num57 * 0.2f * this.GetPreisAbzug(0);
+								num63 += (float)num59 * 0.2f * this.GetPreisAbzug(0);
 							}
 							if (this.lagerbestand[1] <= 0)
 							{
-								num61 += num62;
-								num62 = 0f;
+								num63 += num64;
+								num64 = 0f;
 							}
 							if (this.lagerbestand[2] <= 0)
 							{
-								num61 += num63;
+								num63 += num65;
+								num65 = 0f;
+							}
+							if (num63 < 0f)
+							{
 								num63 = 0f;
 							}
-							if (num61 < 0f)
-							{
-								num61 = 0f;
-							}
 						}
-						num61 += (float)this.vorbestellungen;
+						num63 += (float)this.vorbestellungen;
 						this.vorbestellungen = 0;
 						if (this.retailVersion)
 						{
-							num64 = (float)Mathf.RoundToInt(num64);
-							num61 = (float)Mathf.RoundToInt(num61);
-							num62 = (float)Mathf.RoundToInt(num62);
+							num66 = (float)Mathf.RoundToInt(num66);
 							num63 = (float)Mathf.RoundToInt(num63);
-							if ((float)this.lagerbestand[0] < num61)
+							num64 = (float)Mathf.RoundToInt(num64);
+							num65 = (float)Mathf.RoundToInt(num65);
+							if ((float)this.lagerbestand[0] < num63)
 							{
-								this.vorbestellungen += Mathf.RoundToInt(num61 - (float)this.lagerbestand[0]);
-								num61 = (float)this.lagerbestand[0];
+								this.vorbestellungen += Mathf.RoundToInt(num63 - (float)this.lagerbestand[0]);
+								num63 = (float)this.lagerbestand[0];
 							}
-							this.lagerbestand[0] -= Mathf.RoundToInt(num61);
-							if ((float)this.lagerbestand[1] < num62)
+							this.lagerbestand[0] -= Mathf.RoundToInt(num63);
+							if ((float)this.lagerbestand[1] < num64)
 							{
-								num62 = (float)this.lagerbestand[1];
+								num64 = (float)this.lagerbestand[1];
 							}
-							this.lagerbestand[1] -= Mathf.RoundToInt(num62);
-							if ((float)this.lagerbestand[2] < num63)
+							this.lagerbestand[1] -= Mathf.RoundToInt(num64);
+							if ((float)this.lagerbestand[2] < num65)
 							{
-								num63 = (float)this.lagerbestand[2];
+								num65 = (float)this.lagerbestand[2];
 							}
-							this.lagerbestand[2] -= Mathf.RoundToInt(num63);
+							this.lagerbestand[2] -= Mathf.RoundToInt(num65);
 						}
-						this.sellsPerWeek[0] = Mathf.RoundToInt(num64 + num61 + num62 + num63);
-						this.sellsTotal += (long)Mathf.RoundToInt(num64 + num61 + num62 + num63);
-						this.sellsTotalStandard += (long)Mathf.RoundToInt(num61);
-						this.sellsTotalDeluxe += (long)Mathf.RoundToInt(num62);
-						this.sellsTotalCollectors += (long)Mathf.RoundToInt(num63);
-						this.sellsTotalOnline += (long)Mathf.RoundToInt(num64);
+						this.sellsPerWeek[0] = Mathf.RoundToInt(num66 + num63 + num64 + num65);
+						this.sellsTotal += (long)Mathf.RoundToInt(num66 + num63 + num64 + num65);
+						this.sellsTotalStandard += (long)Mathf.RoundToInt(num63);
+						this.sellsTotalDeluxe += (long)Mathf.RoundToInt(num64);
+						this.sellsTotalCollectors += (long)Mathf.RoundToInt(num65);
+						this.sellsTotalOnline += (long)Mathf.RoundToInt(num66);
 					}
 					else
 					{
-						num61 = (float)num57 * this.GetPreisAbzug(0);
-						this.sellsPerWeek[0] = Mathf.RoundToInt(num61);
-						this.vorbestellungen += Mathf.RoundToInt(num61);
+						num63 = (float)num59 * this.GetPreisAbzug(0);
+						this.sellsPerWeek[0] = Mathf.RoundToInt(num63);
+						this.vorbestellungen += Mathf.RoundToInt(num63);
 						if (this.vorbestellungen > 50)
 						{
 							this.stornierungen = UnityEngine.Random.Range(0, this.vorbestellungen / 50 + 3);
@@ -4578,18 +4642,18 @@ public class gameScript : MonoBehaviour
 				}
 				else
 				{
-					num64 = (float)num57;
-					this.sellsPerWeek[0] = Mathf.RoundToInt(num64);
-					this.sellsTotal += (long)Mathf.RoundToInt(num64);
-					this.sellsTotalOnline += (long)Mathf.RoundToInt(num64);
+					num66 = (float)num59;
+					this.sellsPerWeek[0] = Mathf.RoundToInt(num66);
+					this.sellsTotal += (long)Mathf.RoundToInt(num66);
+					this.sellsTotalOnline += (long)Mathf.RoundToInt(num66);
 				}
 			}
 		}
 		else if (this.retailVersion)
 		{
-			this.vorbestellungen += Mathf.RoundToInt((float)num57 * this.GetPreisAbzug(0) / (float)(this.releaseDate + 1));
+			this.vorbestellungen += Mathf.RoundToInt((float)(num59 / (this.releaseDate + 1)));
 		}
-		if (this.IsMyGame())
+		if (this.playerGame)
 		{
 			if (this.hype > 0f && this.releaseDate <= 0)
 			{
@@ -4602,147 +4666,121 @@ public class gameScript : MonoBehaviour
 		}
 		if (this.releaseDate <= 0 && ((this.sellsPerWeek[0] > 100 && !this.arcade) || this.sellsTotal > 100L || (this.arcade && this.sellsTotal > 0L)) && !this.typ_budget && !this.typ_goty)
 		{
-			float num65;
+			float num67;
 			if (!this.arcade)
 			{
-				num65 = (float)this.sellsPerWeek[0];
-				num65 = UnityEngine.Random.Range(num65 * 0.01f, num65 * 0.02f);
+				num67 = (float)this.sellsPerWeek[0];
+				num67 = UnityEngine.Random.Range(num67 * 0.01f, num67 * 0.02f);
 			}
 			else
 			{
-				num65 = (float)this.sellsTotal;
-				num65 = UnityEngine.Random.Range(num65 * 0.01f, num65 * 0.02f) + (float)UnityEngine.Random.Range(0, 5);
+				num67 = (float)this.sellsTotal;
+				num67 = UnityEngine.Random.Range(num67 * 0.01f, num67 * 0.02f) + (float)UnityEngine.Random.Range(0, 5);
 			}
-			float num66 = 0f;
+			float num68 = 0f;
 			switch (UnityEngine.Random.Range(0, 5))
 			{
 			case 0:
-				num66 = num65 * (float)this.reviewGameplay / 100f;
+				num68 = num67 * (float)this.reviewGameplay / 100f;
 				break;
 			case 1:
-				num66 = num65 * (float)this.reviewGrafik / 100f;
+				num68 = num67 * (float)this.reviewGrafik / 100f;
 				break;
 			case 2:
-				num66 = num65 * (float)this.reviewSound / 100f;
+				num68 = num67 * (float)this.reviewSound / 100f;
 				break;
 			case 3:
-				num66 = num65 * (float)this.reviewSteuerung / 100f;
+				num68 = num67 * (float)this.reviewSteuerung / 100f;
 				break;
 			case 4:
-				num66 = num65 * (float)this.reviewTotal / 100f;
+				num68 = num67 * (float)this.reviewTotal / 100f;
 				break;
 			}
-			num66 -= UnityEngine.Random.Range(0f, this.points_bugs);
-			if (num66 < 0f)
+			num68 -= UnityEngine.Random.Range(0f, this.points_bugs);
+			if (num68 < 0f)
 			{
-				num66 = 0f;
+				num68 = 0f;
 			}
-			this.userPositiv += Mathf.RoundToInt(num66);
-			this.userNegativ += Mathf.RoundToInt(num65 - num66);
+			this.userPositiv += Mathf.RoundToInt(num68);
+			this.userNegativ += Mathf.RoundToInt(num67 - num68);
 		}
-		if (this.gameTyp != 2 && !this.arcade && !this.typ_addon && !this.typ_addonStandalone && !this.typ_mmoaddon && this.releaseDate <= 0)
+		if (this.playerGame)
 		{
-			if (!this.devS_)
+			if (this.releaseDate <= 0)
 			{
-				this.FindMyDeveloper();
-			}
-			if (!this.pS_)
-			{
-				this.FindMyPublisher();
-			}
-			if (num4 < 1000000L && this.sellsTotal >= 1000000L)
-			{
-				this.mS_.AddAwards(7, this.devS_);
-				if (this.publisherID != this.developerID)
+				if (this.mS_.achScript_ && this.gameTyp != 2)
 				{
-					this.mS_.AddAwards(7, this.pS_);
+					if (this.sellsTotal >= 1000000L)
+					{
+						this.mS_.achScript_.SetAchivement(48);
+					}
+					if (this.sellsTotal >= 10000000L)
+					{
+						this.mS_.achScript_.SetAchivement(49);
+					}
+					if (this.sellsTotal >= 50000000L && this.mS_.difficulty >= 5)
+					{
+						this.mS_.achScript_.SetAchivement(50);
+					}
 				}
-				if (this.IsMyGame() || this.developerID == this.mS_.myID)
+				if (this.gameTyp != 2 && !this.arcade && !this.typ_addon && !this.typ_addonStandalone && !this.typ_mmoaddon)
 				{
-					this.guiMain_.CreateTopNewsGoldeneSchallplatte(this.GetNameWithTag());
-					this.mS_.goldeneSchallplatten++;
-				}
-			}
-			if (num4 < 5000000L && this.sellsTotal >= 5000000L)
-			{
-				this.mS_.AddAwards(10, this.devS_);
-				if (this.publisherID != this.developerID)
-				{
-					this.mS_.AddAwards(10, this.pS_);
-				}
-				if (this.IsMyGame() || this.developerID == this.mS_.myID)
-				{
-					this.guiMain_.CreateTopNewsPlatinSchallplatte(this.GetNameWithTag());
-					this.mS_.platinSchallplatten++;
-				}
-			}
-			if (num4 < 10000000L && this.sellsTotal >= 10000000L)
-			{
-				this.mS_.AddAwards(11, this.devS_);
-				if (this.publisherID != this.developerID)
-				{
-					this.mS_.AddAwards(11, this.pS_);
-				}
-				if (this.IsMyGame() || this.developerID == this.mS_.myID)
-				{
-					this.guiMain_.CreateTopNewsDiamantSchallplatte(this.GetNameWithTag());
-					this.mS_.diamantSchallplatten++;
-				}
-			}
-		}
-		if (this.IsMyGame())
-		{
-			if (this.releaseDate <= 0 && this.mS_.achScript_ && this.gameTyp != 2)
-			{
-				if (this.sellsTotal >= 1000000L)
-				{
-					this.mS_.achScript_.SetAchivement(48);
-				}
-				if (this.sellsTotal >= 10000000L)
-				{
-					this.mS_.achScript_.SetAchivement(49);
-				}
-				if (this.sellsTotal >= 50000000L && this.mS_.difficulty >= 5)
-				{
-					this.mS_.achScript_.SetAchivement(50);
+					if (num4 < 1000000L && this.sellsTotal >= 1000000L)
+					{
+						this.guiMain_.CreateTopNewsGoldeneSchallplatte(this.GetNameWithTag());
+						this.mS_.goldeneSchallplatten++;
+						this.mS_.awards[7]++;
+					}
+					if (num4 < 5000000L && this.sellsTotal >= 5000000L)
+					{
+						this.guiMain_.CreateTopNewsPlatinSchallplatte(this.GetNameWithTag());
+						this.mS_.platinSchallplatten++;
+						this.mS_.awards[10]++;
+					}
+					if (num4 < 10000000L && this.sellsTotal >= 10000000L)
+					{
+						this.guiMain_.CreateTopNewsDiamantSchallplatte(this.GetNameWithTag());
+						this.mS_.diamantSchallplatten++;
+						this.mS_.awards[11]++;
+					}
 				}
 			}
 			this.UpdateFanletter();
 			if (!this.typ_addon && !this.typ_mmoaddon && !this.arcade)
 			{
-				float num67 = (float)num57 * 0.001f + this.points_bugs;
-				num67 = UnityEngine.Random.Range(0f, num67);
-				this.mS_.AddAnrufe(Mathf.RoundToInt(num67));
+				float num69 = (float)num59 * 0.001f + this.points_bugs;
+				num69 = UnityEngine.Random.Range(0f, num69);
+				this.mS_.AddAnrufe(Mathf.RoundToInt(num69));
 			}
-			if (this.publisherID != this.mS_.myID)
+			if (this.publisherID != -1)
 			{
 				if (this.pS_)
 				{
-					this.mS_.AddVerkaufsverlauf((long)num57);
+					this.mS_.AddVerkaufsverlauf((long)num59);
 					float f;
 					if (this.mS_.exklusivVertrag_ID == this.publisherID)
 					{
-						f = (float)(num57 * this.pS_.GetShareExklusiv());
+						f = (float)(num59 * this.pS_.GetShareExklusiv());
 					}
 					else
 					{
-						f = (float)(num57 * this.pS_.GetShare());
+						f = (float)(num59 * this.pS_.GetShare());
 					}
-					int num68 = Mathf.RoundToInt(f);
-					this.umsatzTotal += (long)num68;
-					this.mS_.Earn((long)num68, 3);
-					this.PayGewinnbeteiligung((long)num68);
-					long num69 = 0L;
+					int num70 = Mathf.RoundToInt(f);
+					this.umsatzTotal += (long)num70;
+					this.mS_.Earn((long)num70, 3);
+					this.PayGewinnbeteiligung((long)num70);
+					long num71 = 0L;
 					if (this.gameTyp == 1 && this.mS_.week == 5)
 					{
-						num69 = (long)this.abonnements * (long)this.aboPreis;
-						this.umsatzTotal += num69;
-						this.umsatzAbos += num69;
-						this.mS_.Earn(num69, 7);
-						this.PayGewinnbeteiligung(num69);
+						num71 = (long)this.abonnements * (long)this.aboPreis;
+						this.umsatzTotal += num71;
+						this.umsatzAbos += num71;
+						this.mS_.Earn(num71, 7);
+						this.PayGewinnbeteiligung(num71);
 						this.costs_server += (long)(this.abonnements / 10);
 					}
-					this.PlayerPayEngineLicence((long)num68 + num69);
+					this.PlayerPayEngineLicence((long)num70 + num71);
 					if (this.hype < 10f && (UnityEngine.Random.Range(0f, 100f + this.pS_.stars) > 90f || this.weeksOnMarket <= 1))
 					{
 						this.AddHype(UnityEngine.Random.Range(0f, this.pS_.stars));
@@ -4754,35 +4792,35 @@ public class gameScript : MonoBehaviour
 			}
 			else if (!this.arcade)
 			{
-				this.mS_.AddVerkaufsverlauf((long)Mathf.RoundToInt(num64 + num61 + num62 + num63));
-				if (num64 > 0f)
+				this.mS_.AddVerkaufsverlauf((long)Mathf.RoundToInt(num66 + num63 + num64 + num65));
+				if (num66 > 0f)
 				{
-					this.mS_.AddDownloadverlauf((long)Mathf.RoundToInt(num64));
+					this.mS_.AddDownloadverlauf((long)Mathf.RoundToInt(num66));
 				}
-				long num70 = 0L;
+				long num72 = 0L;
 				if (this.gameTyp != 2)
 				{
-					num70 = Convert.ToInt64(num64 * (float)this.verkaufspreis[3]) + (long)Mathf.RoundToInt(num61 * (float)this.verkaufspreis[0]) + (long)Mathf.RoundToInt(num62 * (float)this.verkaufspreis[1]) + (long)Mathf.RoundToInt(num63 * (float)this.verkaufspreis[2]);
-					this.umsatzTotal += num70;
-					this.mS_.Earn(num70, 3);
-					this.PayGewinnbeteiligung(num70);
+					num72 = Convert.ToInt64(num66 * (float)this.verkaufspreis[3]) + (long)Mathf.RoundToInt(num63 * (float)this.verkaufspreis[0]) + (long)Mathf.RoundToInt(num64 * (float)this.verkaufspreis[1]) + (long)Mathf.RoundToInt(num65 * (float)this.verkaufspreis[2]);
+					this.umsatzTotal += num72;
+					this.mS_.Earn(num72, 3);
+					this.PayGewinnbeteiligung(num72);
 				}
-				long num71;
+				long num73;
 				if (this.gameTyp == 1 && this.mS_.week == 5)
 				{
-					num71 = (long)this.abonnements * (long)this.aboPreis;
-					this.umsatzTotal += num71;
-					this.umsatzAbos += num71;
-					this.mS_.Earn(num71, 7);
-					this.PayGewinnbeteiligung(num71);
+					num73 = (long)this.abonnements * (long)this.aboPreis;
+					this.umsatzTotal += num73;
+					this.umsatzAbos += num73;
+					this.mS_.Earn(num73, 7);
+					this.PayGewinnbeteiligung(num73);
 					this.costs_server += (long)(this.abonnements / 10);
 				}
-				num71 = 0L;
+				num73 = 0L;
 				if (this.gameTyp == 2 && this.mS_.week == 5)
 				{
 					this.costs_server += (long)(this.abonnements / 10);
 				}
-				this.PlayerPayEngineLicence(num70 + num71);
+				this.PlayerPayEngineLicence(num72 + num73);
 				if (this.autoPreis && !this.arcade && !this.handy)
 				{
 					this.UpdateAutoPreis();
@@ -4792,9 +4830,9 @@ public class gameScript : MonoBehaviour
 			{
 				this.gameTab_.UpdateData();
 			}
-			if (num57 <= 0 && this.abonnements <= 0)
+			if (num59 <= 0 && this.abonnements <= 0)
 			{
-				if ((this.publisherID != this.mS_.myID || this.mS_.automatic_RemoveGameFormMarket) && (!this.arcade || (this.arcade && this.vorbestellungen <= 0)))
+				if ((this.publisherID != -1 || this.mS_.automatic_RemoveGameFormMarket) && (!this.arcade || (this.arcade && this.vorbestellungen <= 0)))
 				{
 					this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[82]);
 					this.guiMain_.uiObjects[82].GetComponent<Menu_GameFromMarket>().Init(this, false);
@@ -4848,57 +4886,57 @@ public class gameScript : MonoBehaviour
 					{
 						if (this.pS_)
 						{
-							f2 = (float)num57 * this.pS_.share;
+							f2 = (float)num59 * this.pS_.share;
 						}
 					}
 					else
 					{
-						f2 = (float)(num57 * this.verkaufspreis[0]);
+						f2 = (float)(num59 * this.verkaufspreis[0]);
 					}
 				}
 				if (this.handy)
 				{
-					f2 = (float)(num57 * 3);
+					f2 = (float)(num59 * 3);
 				}
 				if (this.arcade)
 				{
-					f2 = (float)(num57 * this.verkaufspreis[0]);
+					f2 = (float)(num59 * this.verkaufspreis[0]);
 				}
-				int num72 = Mathf.RoundToInt(f2);
-				this.umsatzTotal += (long)num72;
-				this.AddFirmenwert((long)num72);
-				this.AddTochterfirmaUmsatz((long)num72);
+				int num74 = Mathf.RoundToInt(f2);
+				this.umsatzTotal += (long)num74;
+				this.AddFirmenwert((long)num74);
+				this.AddTochterfirmaUmsatz((long)num74);
 			}
 			if (this.gameTyp == 1 && this.mS_.week == 5)
 			{
-				int num73 = this.abonnements * this.aboPreis;
-				this.umsatzTotal += (long)num73;
-				this.umsatzAbos += (long)num73;
-				this.AddFirmenwert((long)num73);
-				this.AddTochterfirmaUmsatz((long)num73);
+				int num75 = this.abonnements * this.aboPreis;
+				this.umsatzTotal += (long)num75;
+				this.umsatzAbos += (long)num75;
+				this.AddFirmenwert((long)num75);
+				this.AddTochterfirmaUmsatz((long)num75);
 				this.costs_server += (long)(this.abonnements / 10);
 			}
 			if (this.gameTyp == 2 && this.mS_.week == 5)
 			{
 				this.costs_server += (long)(this.abonnements / 10);
 			}
-			if ((num57 <= 0 && this.abonnements < 10) || (this.gameTyp == 2 && this.abonnements < 10 && this.weeksOnMarket > 5))
+			if ((num59 <= 0 && this.abonnements < 10) || (this.gameTyp == 2 && this.abonnements < 10 && this.weeksOnMarket > 5))
 			{
 				if (!this.typ_bundle)
 				{
 					this.FindMyEngineNew();
-					if (this.engineS_)
+					if (this.engineS_ && !this.typ_bundle)
 					{
-						if (this.engineS_.ownerID == this.mS_.myID)
+						if (this.engineS_.playerEngine)
 						{
 							if (this.guiMain_)
 							{
 								this.guiMain_.OpenEngineAbrechnung(this);
 							}
 						}
-						else if (this.mS_.multiplayer && this.engineS_.EngineFromMitspieler())
+						else if (this.mS_.multiplayer && this.engineS_.multiplayerSlot != -1 && !this.engineS_.playerEngine)
 						{
-							this.mS_.mpCalls_.SERVER_Send_EngineAbrechnung(this.engineS_.ownerID, this.myID);
+							this.mS_.mpCalls_.SERVER_Send_EngineAbrechnung(this.engineS_.multiplayerSlot, this.myID);
 						}
 						if (this.GetPublisherOrDeveloperIsTochterfirma() && this.guiMain_)
 						{
@@ -4919,39 +4957,39 @@ public class gameScript : MonoBehaviour
 		}
 		if (this.mS_.multiplayer)
 		{
-			if (this.mS_.mpCalls_.isServer && (this.IsMyGame() || this.typ_contractGame || (this.DeveloperIsNPC() && this.PublisherIsNPC() && this.OwnerIsNPC())))
+			if (this.mS_.mpCalls_.isServer && (this.playerGame || this.multiplayerSlot == -1 || this.typ_contractGame))
 			{
 				this.mS_.mpCalls_.SERVER_Send_GameData(this);
 			}
-			if (this.mS_.mpCalls_.isClient && this.IsMyGame())
+			if (this.mS_.mpCalls_.isClient && this.playerGame)
 			{
 				this.mS_.mpCalls_.CLIENT_Send_GameData(this);
 			}
 		}
 	}
 
-	// Token: 0x06000236 RID: 566 RVA: 0x0002527C File Offset: 0x0002347C
+	
 	public void PlayerPayEngineLicence(long e)
 	{
 		if (!this.typ_bundle)
 		{
 			this.FindMyEngineNew();
-			if (this.engineS_ && this.engineS_.ownerID != this.mS_.myID && this.engineS_.gewinnbeteiligung > 0)
+			if (this.engineS_ && !this.engineS_.playerEngine && this.engineS_.gewinnbeteiligung > 0)
 			{
 				long num = e * (long)this.engineS_.gewinnbeteiligung / 100L;
 				if (num > 0L)
 				{
 					this.costs_enginegebuehren += num;
 					this.mS_.Pay(num, 11);
-					if (this.engineS_.ownerID != -1)
+					if (this.engineS_.multiplayerSlot != -1)
 					{
 						if (this.mS_.mpCalls_.isServer)
 						{
-							this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.myID, this.engineS_.ownerID, 0, (int)num);
+							this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.mpCalls_.myID, this.engineS_.multiplayerSlot, 0, (int)num);
 						}
 						if (this.mS_.mpCalls_.isClient)
 						{
-							this.mS_.mpCalls_.CLIENT_Send_Payment(this.engineS_.ownerID, 0, (int)num);
+							this.mS_.mpCalls_.CLIENT_Send_Payment(this.engineS_.multiplayerSlot, 0, (int)num);
 						}
 					}
 				}
@@ -4959,7 +4997,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000237 RID: 567 RVA: 0x00025388 File Offset: 0x00023588
+	
 	public void FindMyPlatforms()
 	{
 		for (int i = 0; i < this.gamePlatform.Length; i++)
@@ -4979,7 +5017,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000238 RID: 568 RVA: 0x000253F8 File Offset: 0x000235F8
+	
 	public void FindMyPublisher()
 	{
 		if (this.publisherID == -1)
@@ -4993,7 +5031,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000239 RID: 569 RVA: 0x00025440 File Offset: 0x00023640
+	
 	public void FindMyDeveloper()
 	{
 		if (this.developerID == -1)
@@ -5007,7 +5045,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600023A RID: 570 RVA: 0x00025488 File Offset: 0x00023688
+	
 	public void FindMyEngineNew()
 	{
 		if (this.engineID == -1)
@@ -5032,7 +5070,7 @@ public class gameScript : MonoBehaviour
 		this.engineID = 0;
 	}
 
-	// Token: 0x0600023B RID: 571 RVA: 0x00025508 File Offset: 0x00023708
+	
 	public void AddF2PInteresse(float f)
 	{
 		this.f2pInteresse += f;
@@ -5054,7 +5092,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600023C RID: 572 RVA: 0x0002558C File Offset: 0x0002378C
+	
 	public void AddMMOInteresse(float f)
 	{
 		this.mmoInteresse += f;
@@ -5076,7 +5114,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600023D RID: 573 RVA: 0x0002560E File Offset: 0x0002380E
+	
 	public float GetMMOAbnutzung()
 	{
 		if (this.weeksOnMarket > 52)
@@ -5086,7 +5124,7 @@ public class gameScript : MonoBehaviour
 		return 0f;
 	}
 
-	// Token: 0x0600023E RID: 574 RVA: 0x00025630 File Offset: 0x00023830
+	
 	public float GetF2PAbnutzung()
 	{
 		if (this.weeksOnMarket > 52)
@@ -5096,7 +5134,7 @@ public class gameScript : MonoBehaviour
 		return 0f;
 	}
 
-	// Token: 0x0600023F RID: 575 RVA: 0x00025654 File Offset: 0x00023854
+	
 	public void AddHype(float f)
 	{
 		if (this.hype <= 100f)
@@ -5117,13 +5155,13 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000240 RID: 576 RVA: 0x000256CF File Offset: 0x000238CF
+	
 	public float GetHype()
 	{
 		return this.hype;
 	}
 
-	// Token: 0x06000241 RID: 577 RVA: 0x000256D8 File Offset: 0x000238D8
+	
 	public float GetIpBekanntheit()
 	{
 		if (this.mainIP == -1)
@@ -5151,63 +5189,7 @@ public class gameScript : MonoBehaviour
 		return num / 200f;
 	}
 
-	// Token: 0x06000242 RID: 578 RVA: 0x00025754 File Offset: 0x00023954
-	public long GetIpWert()
-	{
-		float num = this.script_mainIP.ipPunkte;
-		if (num > 1000f)
-		{
-			num = 1000f;
-		}
-		if (num < 0f)
-		{
-			num = 0f;
-		}
-		long result = 0L;
-		if (num > 0f && num <= 100f)
-		{
-			result = (long)((int)num * 5000);
-		}
-		if (num > 100f && num <= 200f)
-		{
-			result = (long)((int)num * 10000);
-		}
-		if (num > 200f && num <= 300f)
-		{
-			result = (long)((int)num * 15000);
-		}
-		if (num > 300f && num <= 400f)
-		{
-			result = (long)((int)num * 20000);
-		}
-		if (num > 400f && num <= 500f)
-		{
-			result = (long)((int)num * 30000);
-		}
-		if (num > 500f && num <= 600f)
-		{
-			result = (long)((int)num * 40000);
-		}
-		if (num > 600f && num <= 700f)
-		{
-			result = (long)((int)num * 50000);
-		}
-		if (num > 700f && num <= 800f)
-		{
-			result = (long)((int)num * 60000);
-		}
-		if (num > 800f && num <= 900f)
-		{
-			result = (long)((int)num * 70000);
-		}
-		if (num > 900f)
-		{
-			result = (long)((int)num * 100000);
-		}
-		return result;
-	}
-
-	// Token: 0x06000243 RID: 579 RVA: 0x0002588C File Offset: 0x00023A8C
+	
 	public int GetHypeNachfolger()
 	{
 		if (this.reviewTotal < 30)
@@ -5249,7 +5231,7 @@ public class gameScript : MonoBehaviour
 		return 1;
 	}
 
-	// Token: 0x06000244 RID: 580 RVA: 0x00025954 File Offset: 0x00023B54
+	
 	public int GetHypeSpinoff()
 	{
 		int num = -1;
@@ -5317,7 +5299,7 @@ public class gameScript : MonoBehaviour
 		return 1;
 	}
 
-	// Token: 0x06000245 RID: 581 RVA: 0x00025AD4 File Offset: 0x00023CD4
+	
 	public int GetAmountFanbriefe()
 	{
 		int num = 0;
@@ -5331,7 +5313,7 @@ public class gameScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000246 RID: 582 RVA: 0x00025B08 File Offset: 0x00023D08
+	
 	public string GetZielgruppeString()
 	{
 		string result = "";
@@ -5356,214 +5338,215 @@ public class gameScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06000247 RID: 583 RVA: 0x00025B9C File Offset: 0x00023D9C
+	
 	private void UpdateFanletter()
 	{
-		if (this.IsMyGame() || this.IsMyAuftragsspiel())
+		if (!this.playerGame)
 		{
-			if (this.pubOffer)
+			return;
+		}
+		if (this.pubOffer)
+		{
+			return;
+		}
+		if (this.sellsTotal < 100L)
+		{
+			return;
+		}
+		if (this.typ_addon || this.typ_mmoaddon || this.typ_bundle || this.typ_budget || this.typ_addonStandalone || this.typ_bundleAddon || this.typ_goty)
+		{
+			return;
+		}
+		if (this.fanbrief.Length == 0)
+		{
+			this.fanbrief = new bool[this.tS_.fanLetter_GE.Length];
+		}
+		if (this.fanbrief.Length < this.tS_.fanLetter_GE.Length)
+		{
+			this.fanbrief = new bool[this.tS_.fanLetter_GE.Length];
+		}
+		if (!this.fanbrief[0] && this.reviewTotal >= 80 && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(0, this.GetNameWithTag());
+			this.fanbrief[0] = true;
+			return;
+		}
+		if (!this.fanbrief[1] && this.reviewTotal <= 40 && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(1, this.GetNameWithTag());
+			this.fanbrief[1] = true;
+			return;
+		}
+		if (!this.fanbrief[2] && this.reviewGrafik >= 80 && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(2, this.GetNameWithTag());
+			this.fanbrief[2] = true;
+			return;
+		}
+		if (!this.fanbrief[3] && this.reviewGrafik <= 40 && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(3, this.GetNameWithTag());
+			this.fanbrief[3] = true;
+			return;
+		}
+		if (!this.fanbrief[4] && this.reviewSound >= 80 && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(4, this.GetNameWithTag());
+			this.fanbrief[4] = true;
+			return;
+		}
+		if (!this.fanbrief[5] && this.reviewSound <= 40 && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(5, this.GetNameWithTag());
+			this.fanbrief[5] = true;
+			return;
+		}
+		if (!this.fanbrief[6] && this.reviewSteuerung >= 80 && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(6, this.GetNameWithTag());
+			this.fanbrief[6] = true;
+			return;
+		}
+		if (!this.fanbrief[7] && this.reviewSteuerung <= 40 && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(7, this.GetNameWithTag());
+			this.fanbrief[7] = true;
+			return;
+		}
+		if (!this.fanbrief[8])
+		{
+			int num = 0;
+			for (int i = 0; i < this.gameLanguage.Length; i++)
 			{
-				return;
-			}
-			if (this.sellsTotal < 100L)
-			{
-				return;
-			}
-			if (this.typ_addon || this.typ_mmoaddon || this.typ_bundle || this.typ_budget || this.typ_addonStandalone || this.typ_bundleAddon || this.typ_goty)
-			{
-				return;
-			}
-			if (this.fanbrief.Length == 0)
-			{
-				this.fanbrief = new bool[this.tS_.fanLetter_GE.Length];
-			}
-			if (this.fanbrief.Length < this.tS_.fanLetter_GE.Length)
-			{
-				this.fanbrief = new bool[this.tS_.fanLetter_GE.Length];
-			}
-			if (!this.fanbrief[0] && this.reviewTotal >= 80 && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(0, this.GetNameWithTag());
-				this.fanbrief[0] = true;
-				return;
-			}
-			if (!this.fanbrief[1] && this.reviewTotal <= 40 && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(1, this.GetNameWithTag());
-				this.fanbrief[1] = true;
-				return;
-			}
-			if (!this.fanbrief[2] && this.reviewGrafik >= 80 && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(2, this.GetNameWithTag());
-				this.fanbrief[2] = true;
-				return;
-			}
-			if (!this.fanbrief[3] && this.reviewGrafik <= 40 && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(3, this.GetNameWithTag());
-				this.fanbrief[3] = true;
-				return;
-			}
-			if (!this.fanbrief[4] && this.reviewSound >= 80 && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(4, this.GetNameWithTag());
-				this.fanbrief[4] = true;
-				return;
-			}
-			if (!this.fanbrief[5] && this.reviewSound <= 40 && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(5, this.GetNameWithTag());
-				this.fanbrief[5] = true;
-				return;
-			}
-			if (!this.fanbrief[6] && this.reviewSteuerung >= 80 && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(6, this.GetNameWithTag());
-				this.fanbrief[6] = true;
-				return;
-			}
-			if (!this.fanbrief[7] && this.reviewSteuerung <= 40 && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(7, this.GetNameWithTag());
-				this.fanbrief[7] = true;
-				return;
-			}
-			if (!this.fanbrief[8])
-			{
-				int num = 0;
-				for (int i = 0; i < this.gameLanguage.Length; i++)
+				if (this.gameLanguage[i])
 				{
-					if (this.gameLanguage[i])
-					{
-						num++;
-					}
-				}
-				if (num <= 3 && UnityEngine.Random.Range(0, 10) == 1)
-				{
-					this.guiMain_.ShowFanLetter(8, this.GetNameWithTag());
-					this.fanbrief[8] = true;
-					return;
+					num++;
 				}
 			}
-			if (!this.fanbrief[12] && this.Designschwerpunkt[0] < this.genres_.GetFocus(0, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+			if (num <= 3 && UnityEngine.Random.Range(0, 10) == 1)
 			{
-				this.guiMain_.ShowFanLetter(12, this.GetNameWithTag());
-				this.fanbrief[12] = true;
-				return;
-			}
-			if (!this.fanbrief[15] && this.Designschwerpunkt[1] < this.genres_.GetFocus(1, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(15, this.GetNameWithTag());
-				this.fanbrief[15] = true;
-				return;
-			}
-			if (!this.fanbrief[16] && this.Designschwerpunkt[2] < this.genres_.GetFocus(2, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(16, this.GetNameWithTag());
-				this.fanbrief[16] = true;
-				return;
-			}
-			if (!this.fanbrief[19] && this.Designschwerpunkt[3] < this.genres_.GetFocus(3, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(19, this.GetNameWithTag());
-				this.fanbrief[19] = true;
-				return;
-			}
-			if (!this.fanbrief[11] && this.Designschwerpunkt[4] < this.genres_.GetFocus(4, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(11, this.GetNameWithTag());
-				this.fanbrief[11] = true;
-				return;
-			}
-			if (!this.fanbrief[20] && this.Designschwerpunkt[5] < this.genres_.GetFocus(5, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(20, this.GetNameWithTag());
-				this.fanbrief[20] = true;
-				return;
-			}
-			if (!this.fanbrief[21] && this.Designschwerpunkt[6] < this.genres_.GetFocus(6, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(21, this.GetNameWithTag());
-				this.fanbrief[21] = true;
-				return;
-			}
-			if (!this.fanbrief[22] && this.Designschwerpunkt[7] < this.genres_.GetFocus(7, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(22, this.GetNameWithTag());
-				this.fanbrief[22] = true;
-				return;
-			}
-			if (!this.fanbrief[17] && this.Designausrichtung[0] > this.genres_.GetAlign(0, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(17, this.GetNameWithTag());
-				this.fanbrief[17] = true;
-				return;
-			}
-			if (!this.fanbrief[18] && this.Designausrichtung[0] < this.genres_.GetAlign(0, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(18, this.GetNameWithTag());
-				this.fanbrief[18] = true;
-				return;
-			}
-			if (!this.fanbrief[23] && this.Designausrichtung[1] < this.genres_.GetAlign(1, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(23, this.GetNameWithTag());
-				this.fanbrief[23] = true;
-				return;
-			}
-			if (!this.fanbrief[24] && this.Designausrichtung[1] > this.genres_.GetAlign(1, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(24, this.GetNameWithTag());
-				this.fanbrief[24] = true;
-				return;
-			}
-			if (!this.fanbrief[25] && this.Designausrichtung[2] < this.genres_.GetAlign(2, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(25, this.GetNameWithTag());
-				this.fanbrief[25] = true;
-				return;
-			}
-			if (!this.fanbrief[26] && this.Designausrichtung[2] > this.genres_.GetAlign(2, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
-			{
-				this.guiMain_.ShowFanLetter(26, this.GetNameWithTag());
-				this.fanbrief[26] = true;
+				this.guiMain_.ShowFanLetter(8, this.GetNameWithTag());
+				this.fanbrief[8] = true;
 				return;
 			}
 		}
+		if (!this.fanbrief[12] && this.Designschwerpunkt[0] < this.genres_.GetFocus(0, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(12, this.GetNameWithTag());
+			this.fanbrief[12] = true;
+			return;
+		}
+		if (!this.fanbrief[15] && this.Designschwerpunkt[1] < this.genres_.GetFocus(1, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(15, this.GetNameWithTag());
+			this.fanbrief[15] = true;
+			return;
+		}
+		if (!this.fanbrief[16] && this.Designschwerpunkt[2] < this.genres_.GetFocus(2, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(16, this.GetNameWithTag());
+			this.fanbrief[16] = true;
+			return;
+		}
+		if (!this.fanbrief[19] && this.Designschwerpunkt[3] < this.genres_.GetFocus(3, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(19, this.GetNameWithTag());
+			this.fanbrief[19] = true;
+			return;
+		}
+		if (!this.fanbrief[11] && this.Designschwerpunkt[4] < this.genres_.GetFocus(4, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(11, this.GetNameWithTag());
+			this.fanbrief[11] = true;
+			return;
+		}
+		if (!this.fanbrief[20] && this.Designschwerpunkt[5] < this.genres_.GetFocus(5, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(20, this.GetNameWithTag());
+			this.fanbrief[20] = true;
+			return;
+		}
+		if (!this.fanbrief[21] && this.Designschwerpunkt[6] < this.genres_.GetFocus(6, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(21, this.GetNameWithTag());
+			this.fanbrief[21] = true;
+			return;
+		}
+		if (!this.fanbrief[22] && this.Designschwerpunkt[7] < this.genres_.GetFocus(7, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(22, this.GetNameWithTag());
+			this.fanbrief[22] = true;
+			return;
+		}
+		if (!this.fanbrief[17] && this.Designausrichtung[0] > this.genres_.GetAlign(0, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(17, this.GetNameWithTag());
+			this.fanbrief[17] = true;
+			return;
+		}
+		if (!this.fanbrief[18] && this.Designausrichtung[0] < this.genres_.GetAlign(0, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(18, this.GetNameWithTag());
+			this.fanbrief[18] = true;
+			return;
+		}
+		if (!this.fanbrief[23] && this.Designausrichtung[1] < this.genres_.GetAlign(1, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(23, this.GetNameWithTag());
+			this.fanbrief[23] = true;
+			return;
+		}
+		if (!this.fanbrief[24] && this.Designausrichtung[1] > this.genres_.GetAlign(1, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(24, this.GetNameWithTag());
+			this.fanbrief[24] = true;
+			return;
+		}
+		if (!this.fanbrief[25] && this.Designausrichtung[2] < this.genres_.GetAlign(2, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(25, this.GetNameWithTag());
+			this.fanbrief[25] = true;
+			return;
+		}
+		if (!this.fanbrief[26] && this.Designausrichtung[2] > this.genres_.GetAlign(2, this.maingenre, this.subgenre) && UnityEngine.Random.Range(0, 10) == 1)
+		{
+			this.guiMain_.ShowFanLetter(26, this.GetNameWithTag());
+			this.fanbrief[26] = true;
+			return;
+		}
 	}
 
-	// Token: 0x06000248 RID: 584 RVA: 0x0002633E File Offset: 0x0002453E
+	
 	public void SetSpielbericht()
 	{
 		this.spielbericht = true;
 	}
 
-	// Token: 0x06000249 RID: 585 RVA: 0x00026347 File Offset: 0x00024547
+	
 	public void SetMyName(string c)
 	{
 		this.myName = c;
 	}
 
-	// Token: 0x0600024A RID: 586 RVA: 0x00026350 File Offset: 0x00024550
+	
 	public string GetNameSimple()
 	{
 		return this.myName;
 	}
 
-	// Token: 0x0600024B RID: 587 RVA: 0x00026358 File Offset: 0x00024558
+	
 	public string GetNameWithTag()
 	{
 		string text = "";
 		if (this.mS_.settings_)
 		{
-			if (this.GetPublisherOrDeveloperIsTochterfirma() && this.mS_.settings_.tochtefirmaTAG)
+			if (!this.GetPublisherOrDeveloperIsTochterfirma() || this.playerGame || !this.mS_.settings_.tochtefirmaTAG)
 			{
-				text = this.myName + " <color=green>[★]</color>";
+				text = this.myName;
 			}
 			else
 			{
-				text = this.myName;
+				text = this.myName + " <color=green>[★]</color>";
 			}
 		}
 		if (this.tS_)
@@ -5584,7 +5567,7 @@ public class gameScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x0600024C RID: 588 RVA: 0x0002644E File Offset: 0x0002464E
+	
 	public string GetIpName()
 	{
 		if (this.ipName == null)
@@ -5598,7 +5581,7 @@ public class gameScript : MonoBehaviour
 		return this.ipName;
 	}
 
-	// Token: 0x0600024D RID: 589 RVA: 0x0002647C File Offset: 0x0002467C
+	
 	public int GetLagerbestand()
 	{
 		int num = 0;
@@ -5609,7 +5592,7 @@ public class gameScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600024E RID: 590 RVA: 0x000264AC File Offset: 0x000246AC
+	
 	public string GetLagerbestandString()
 	{
 		if (this.lagerbestand[1] > 0 || this.lagerbestand[2] > 0)
@@ -5619,13 +5602,13 @@ public class gameScript : MonoBehaviour
 		return this.mS_.GetMoney((long)this.lagerbestand[0], false);
 	}
 
-	// Token: 0x0600024F RID: 591 RVA: 0x00026527 File Offset: 0x00024727
+	
 	public int GetVorbestellungen()
 	{
 		return this.vorbestellungen;
 	}
 
-	// Token: 0x06000250 RID: 592 RVA: 0x00026530 File Offset: 0x00024730
+	
 	public float GetEditionQualiaet(int i)
 	{
 		float num = 0f;
@@ -5751,7 +5734,7 @@ public class gameScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000251 RID: 593 RVA: 0x00026760 File Offset: 0x00024960
+	
 	public float GetPreisAbzug(int i)
 	{
 		if (this.arcade)
@@ -5947,7 +5930,7 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000252 RID: 594 RVA: 0x00026CD0 File Offset: 0x00024ED0
+	
 	public float GetProduktionskosten(int edition)
 	{
 		float num = 0f;
@@ -5986,7 +5969,7 @@ public class gameScript : MonoBehaviour
 		return num + this.games_.GetGrundkosten();
 	}
 
-	// Token: 0x06000253 RID: 595 RVA: 0x00026DA0 File Offset: 0x00024FA0
+	
 	public float CalcPlatformComplex(float points)
 	{
 		float num = 1f;
@@ -6018,14 +6001,14 @@ public class gameScript : MonoBehaviour
 		return num * points;
 	}
 
-	// Token: 0x06000254 RID: 596 RVA: 0x00026E36 File Offset: 0x00025036
+	
 	public engineScript GetEngineScript()
 	{
 		this.FindMyEngineNew();
 		return this.engineS_;
 	}
 
-	// Token: 0x06000255 RID: 597 RVA: 0x00026E44 File Offset: 0x00025044
+	
 	private string GetUskString()
 	{
 		if (!this.tS_)
@@ -6057,7 +6040,7 @@ public class gameScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06000256 RID: 598 RVA: 0x00026ECC File Offset: 0x000250CC
+	
 	public gameScript GetBundleGame(int slot_)
 	{
 		if (this.bundleID[slot_] == -1)
@@ -6074,7 +6057,7 @@ public class gameScript : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000257 RID: 599 RVA: 0x00026F40 File Offset: 0x00025140
+	
 	public bool HasInAppPurchases()
 	{
 		for (int i = 0; i < this.inAppPurchase.Length; i++)
@@ -6087,7 +6070,7 @@ public class gameScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000258 RID: 600 RVA: 0x00026F70 File Offset: 0x00025170
+	
 	public float GetInAppPurchaseHate()
 	{
 		float num = 0f;
@@ -6101,7 +6084,7 @@ public class gameScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000259 RID: 601 RVA: 0x00026FB4 File Offset: 0x000251B4
+	
 	public float GetInAppPurchaseMoneyPerWeek()
 	{
 		float num = 0f;
@@ -6115,7 +6098,7 @@ public class gameScript : MonoBehaviour
 		return num * 0.25f;
 	}
 
-	// Token: 0x0600025A RID: 602 RVA: 0x00026FFC File Offset: 0x000251FC
+	
 	public bool ExistAutomatenspiel()
 	{
 		if (this.gameTyp == 0 && !this.typ_addon && !this.typ_addonStandalone && !this.typ_bundle && !this.typ_bundleAddon && !this.typ_contractGame && !this.typ_mmoaddon && !this.arcade)
@@ -6136,31 +6119,31 @@ public class gameScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600025B RID: 603 RVA: 0x00027084 File Offset: 0x00025284
+	
 	public bool IsHit()
 	{
 		return !this.typ_addon && !this.typ_addonStandalone && !this.typ_budget && !this.typ_bundle && !this.typ_mmoaddon && !this.typ_bundleAddon && this.reviewTotal >= 80;
 	}
 
-	// Token: 0x0600025C RID: 604 RVA: 0x000270D0 File Offset: 0x000252D0
+	
 	public bool HasGold()
 	{
-		return this.gameTyp != 2 && !this.arcade && !this.typ_addon && !this.typ_addonStandalone && !this.typ_mmoaddon && this.sellsTotal >= 1000000L;
+		return this.gameTyp != 2 && !this.arcade && this.sellsTotal >= 1000000L;
 	}
 
-	// Token: 0x0600025D RID: 605 RVA: 0x0002710C File Offset: 0x0002530C
+	
 	public bool HasPlatin()
 	{
-		return this.gameTyp != 2 && !this.arcade && !this.typ_addon && !this.typ_addonStandalone && !this.typ_mmoaddon && this.sellsTotal >= 5000000L;
+		return this.gameTyp != 2 && !this.arcade && this.sellsTotal >= 5000000L;
 	}
 
-	// Token: 0x0600025E RID: 606 RVA: 0x00027148 File Offset: 0x00025348
+	
 	public bool HasDiamant()
 	{
-		return this.gameTyp != 2 && !this.arcade && !this.typ_addon && !this.typ_addonStandalone && !this.typ_mmoaddon && this.sellsTotal >= 10000000L;
+		return this.gameTyp != 2 && !this.arcade && this.sellsTotal >= 10000000L;
 	}
 
-	// Token: 0x0600025F RID: 607 RVA: 0x00027184 File Offset: 0x00025384
+	
 	public bool AllePlattformenReleased()
 	{
 		this.FindMyPlatforms();
@@ -6174,7 +6157,7 @@ public class gameScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000260 RID: 608 RVA: 0x000271CC File Offset: 0x000253CC
+	
 	public string GetUnreleasedPlatformsString()
 	{
 		this.FindMyPlatforms();
@@ -6189,7 +6172,7 @@ public class gameScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06000261 RID: 609 RVA: 0x00027230 File Offset: 0x00025430
+	
 	public void UpdateAutoPreis()
 	{
 		if (this.typ_budget)
@@ -6415,12 +6398,16 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000262 RID: 610 RVA: 0x00027878 File Offset: 0x00025A78
+	
 	public Sprite GetDeveloperLogo()
 	{
 		if (!this.guiMain_)
 		{
 			this.FindScripts();
+		}
+		if (this.playerGame)
+		{
+			return this.guiMain_.GetCompanyLogo(this.mS_.logo);
 		}
 		GameObject gameObject = GameObject.Find("PUB_" + this.developerID.ToString());
 		if (gameObject)
@@ -6430,7 +6417,7 @@ public class gameScript : MonoBehaviour
 		return this.guiMain_.uiSprites[19];
 	}
 
-	// Token: 0x06000263 RID: 611 RVA: 0x000278D8 File Offset: 0x00025AD8
+	
 	public void FindPublisherForGame()
 	{
 		int num = -1;
@@ -6447,7 +6434,7 @@ public class gameScript : MonoBehaviour
 				if (array[n])
 				{
 					publisherScript component = array[n].GetComponent<publisherScript>();
-					if (component && component.isUnlocked && !component.isPlayer && component.publisher && component.IsMyTochterfirma() && !component.TochterfirmaGeschlossen())
+					if (component && component.isUnlocked && component.publisher && component.IsMyTochterfirma())
 					{
 						list.Add(new gameScript.PublisherList(0L, component));
 					}
@@ -6467,7 +6454,7 @@ public class gameScript : MonoBehaviour
 				if (array[j])
 				{
 					publisherScript component2 = array[j].GetComponent<publisherScript>();
-					if (component2 && component2.isUnlocked && !component2.isPlayer && component2.publisher && !component2.TochterfirmaGeschlossen())
+					if (component2 && component2.isUnlocked && component2.publisher && !component2.TochterfirmaGeschlossen())
 					{
 						float f = component2.share + component2.stars * 0.1f;
 						list2.Add(new gameScript.PublisherList((long)Mathf.RoundToInt(f), component2));
@@ -6492,7 +6479,7 @@ public class gameScript : MonoBehaviour
 			if (array[num2])
 			{
 				publisherScript component3 = array[num2].GetComponent<publisherScript>();
-				if (component3 && component3.isUnlocked && !component3.isPlayer && component3.publisher && !component3.TochterfirmaGeschlossen())
+				if (component3 && component3.isUnlocked && component3.publisher && !component3.TochterfirmaGeschlossen())
 				{
 					this.publisherID = component3.myID;
 					return;
@@ -6504,7 +6491,7 @@ public class gameScript : MonoBehaviour
 			if (array[m])
 			{
 				publisherScript component4 = array[m].GetComponent<publisherScript>();
-				if (component4 && component4.isUnlocked && !component4.isPlayer && component4.publisher && !component4.TochterfirmaGeschlossen() && (this.publisherID == -1 || UnityEngine.Random.Range(0, 100) > 70))
+				if (component4 && component4.isUnlocked && component4.publisher && !component4.TochterfirmaGeschlossen() && (this.publisherID == -1 || UnityEngine.Random.Range(0, 100) > 70))
 				{
 					num = component4.myID;
 				}
@@ -6513,7 +6500,7 @@ public class gameScript : MonoBehaviour
 		this.publisherID = num;
 	}
 
-	// Token: 0x06000264 RID: 612 RVA: 0x00027BB8 File Offset: 0x00025DB8
+	
 	public int PUBOFFER_GetGarantiesumme()
 	{
 		if (this.typ_budget)
@@ -6537,7 +6524,7 @@ public class gameScript : MonoBehaviour
 		return Mathf.RoundToInt((float)this.pubAngebot_Garantiesumme * num);
 	}
 
-	// Token: 0x06000265 RID: 613 RVA: 0x00027C0C File Offset: 0x00025E0C
+	
 	public int PUBOFFER_GetGewinnbeteiligung()
 	{
 		float num = this.pubAngebot_VerhandlungProzent;
@@ -6545,7 +6532,7 @@ public class gameScript : MonoBehaviour
 		return Mathf.RoundToInt(this.pubAngebot_Gewinnbeteiligung * num);
 	}
 
-	// Token: 0x06000266 RID: 614 RVA: 0x00027C38 File Offset: 0x00025E38
+	
 	public string PUBOFFER_GetRetailDigitalString()
 	{
 		if (this.tS_)
@@ -6566,7 +6553,7 @@ public class gameScript : MonoBehaviour
 		return "<missing>";
 	}
 
-	// Token: 0x06000267 RID: 615 RVA: 0x00027CBC File Offset: 0x00025EBC
+	
 	public string PUBOFFER_GetTooltip()
 	{
 		string text = "<b>" + this.GetNameWithTag() + "</b>";
@@ -6661,7 +6648,7 @@ public class gameScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06000268 RID: 616 RVA: 0x00028024 File Offset: 0x00026224
+	
 	private string PUBOFFER_GetQualitatStars(int i)
 	{
 		string result;
@@ -6692,17 +6679,23 @@ public class gameScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06000269 RID: 617 RVA: 0x00028090 File Offset: 0x00026290
+	
 	public bool IsMyAuftragsspiel()
 	{
 		if (!this.mS_)
 		{
 			this.FindScripts();
 		}
-		return this.typ_contractGame && this.developerID == this.mS_.myID && this.ownerID != this.mS_.myID;
+		return (this.typ_contractGame && this.developerID == -1 && !this.mS_.multiplayer) || (this.typ_contractGame && this.developerID == -1 && this.mS_.multiplayer && this.multiplayerSlot == this.mS_.mpCalls_.myID);
 	}
 
-	// Token: 0x0600026A RID: 618 RVA: 0x000280E4 File Offset: 0x000262E4
+	
+	public bool IsMerchArtikelLeer()
+	{
+		return false;
+	}
+
+	
 	public string GetUrsprungsName()
 	{
 		gameScript gameScript = this.FindVorgaengerScript();
@@ -6723,7 +6716,7 @@ public class gameScript : MonoBehaviour
 		return this.myName;
 	}
 
-	// Token: 0x0600026B RID: 619 RVA: 0x00028132 File Offset: 0x00026332
+	
 	public bool GetDeveloperIsTochtefirma()
 	{
 		if (!this.devS_)
@@ -6733,7 +6726,7 @@ public class gameScript : MonoBehaviour
 		return this.devS_ && this.devS_.IsMyTochterfirma();
 	}
 
-	// Token: 0x0600026C RID: 620 RVA: 0x00028164 File Offset: 0x00026364
+	
 	public bool GetPublisherIsTochtefirma()
 	{
 		if (!this.pS_)
@@ -6743,7 +6736,7 @@ public class gameScript : MonoBehaviour
 		return this.pS_ && this.pS_.IsMyTochterfirma();
 	}
 
-	// Token: 0x0600026D RID: 621 RVA: 0x00028198 File Offset: 0x00026398
+	
 	public bool GetPublisherOrDeveloperIsTochterfirma()
 	{
 		if (!this.pS_)
@@ -6757,16 +6750,10 @@ public class gameScript : MonoBehaviour
 		return (this.pS_ && this.pS_.IsMyTochterfirma()) || (this.devS_ && this.devS_.IsMyTochterfirma());
 	}
 
-	// Token: 0x0600026E RID: 622 RVA: 0x00028204 File Offset: 0x00026404
-	public bool IsMyGame()
-	{
-		return !this.typ_contractGame && (this.developerID == this.mS_.myID || this.publisherID == this.mS_.myID) && ((this.developerID == this.mS_.myID && this.publisherID != this.mS_.myID) || (this.developerID == this.mS_.myID && this.publisherID == this.mS_.myID) || (this.developerID != this.mS_.myID && this.publisherID == this.mS_.myID));
-	}
-
-	// Token: 0x0600026F RID: 623 RVA: 0x000282BC File Offset: 0x000264BC
+	
 	public void AddTochterfirmaUmsatz(long i)
 	{
-		if (!this.IsMyGame())
+		if (!this.playerGame)
 		{
 			if (!this.pS_)
 			{
@@ -6776,31 +6763,34 @@ public class gameScript : MonoBehaviour
 			{
 				this.FindMyDeveloper();
 			}
-			if (this.pS_ && this.devS_ && (this.pS_.IsMyTochterfirma() || this.devS_.IsMyTochterfirma()))
+			if (this.pS_ && this.devS_)
 			{
 				long num = i / 100L * (long)Mathf.RoundToInt(this.games_.tf_gewinnbeteiligungTochterfirma);
-				this.mS_.Earn(num, 13);
-				this.tw_gewinnanteil += num;
-				if (this.pS_.IsMyTochterfirma() && this.devS_.IsMyTochterfirma())
+				if (this.pS_.IsMyTochterfirma() || this.devS_.IsMyTochterfirma())
 				{
-					this.devS_.AddTochterfirmaUmsatz(num);
-					return;
-				}
-				if (this.pS_.IsMyTochterfirma() && !this.devS_.IsMyTochterfirma())
-				{
-					this.pS_.AddTochterfirmaUmsatz(num);
-					return;
-				}
-				if (!this.pS_.IsMyTochterfirma() && this.devS_.IsMyTochterfirma())
-				{
-					this.devS_.AddTochterfirmaUmsatz(num);
-					return;
+					this.mS_.Earn(num, 13);
+					this.tw_gewinnanteil += num;
+					if (this.pS_.IsMyTochterfirma() && this.devS_.IsMyTochterfirma())
+					{
+						this.devS_.AddTochterfirmaUmsatz(num);
+						return;
+					}
+					if (this.pS_.IsMyTochterfirma() && !this.devS_.IsMyTochterfirma())
+					{
+						this.pS_.AddTochterfirmaUmsatz(num);
+						return;
+					}
+					if (!this.pS_.IsMyTochterfirma() && this.devS_.IsMyTochterfirma())
+					{
+						this.devS_.AddTochterfirmaUmsatz(num);
+						return;
+					}
 				}
 			}
 		}
 	}
 
-	// Token: 0x06000270 RID: 624 RVA: 0x000283E0 File Offset: 0x000265E0
+	
 	public void AddFirmenwert(long i)
 	{
 		if (!this.pS_)
@@ -6867,760 +6857,716 @@ public class gameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000271 RID: 625 RVA: 0x000285FA File Offset: 0x000267FA
+	
 	public bool IsMyIP(publisherScript script_)
 	{
 		return script_.myID == this.ownerID;
 	}
 
-	// Token: 0x06000272 RID: 626 RVA: 0x0002860D File Offset: 0x0002680D
-	public bool OwnerIsNPC()
-	{
-		return this.ownerID < 100000;
-	}
-
-	// Token: 0x06000273 RID: 627 RVA: 0x0002861F File Offset: 0x0002681F
-	public bool DeveloperIsNPC()
-	{
-		return this.developerID < 100000;
-	}
-
-	// Token: 0x06000274 RID: 628 RVA: 0x00028631 File Offset: 0x00026831
-	public bool PublisherIsNPC()
-	{
-		return this.publisherID < 100000;
-	}
-
-	// Token: 0x06000275 RID: 629 RVA: 0x00028644 File Offset: 0x00026844
-	public bool GameFromMitspieler()
-	{
-		return this.mS_.multiplayer && (this.ownerID >= 100000 || this.publisherID >= 100000 || this.developerID >= 100000) && this.ownerID != this.mS_.myID && this.publisherID != this.mS_.myID && this.developerID != this.mS_.myID && (this.ownerID >= 100000 || this.publisherID >= 100000 || this.developerID >= 100000);
-	}
-
-	// Token: 0x06000276 RID: 630 RVA: 0x000286F8 File Offset: 0x000268F8
-	public int GetIdFromMitspieler()
-	{
-		if (!this.mS_.multiplayer)
-		{
-			return -1;
-		}
-		if (this.ownerID < 100000 && this.publisherID < 100000 && this.developerID < 100000)
-		{
-			return -1;
-		}
-		if (this.ownerID >= 100000)
-		{
-			return this.ownerID;
-		}
-		if (this.developerID >= 100000)
-		{
-			return this.developerID;
-		}
-		if (this.publisherID >= 100000)
-		{
-			return this.publisherID;
-		}
-		return -1;
-	}
-
-	// Token: 0x04000453 RID: 1107
+	
 	public GameObject main_;
 
-	// Token: 0x04000454 RID: 1108
+	
 	public mainScript mS_;
 
-	// Token: 0x04000455 RID: 1109
+	
 	public textScript tS_;
 
-	// Token: 0x04000456 RID: 1110
+	
 	public sfxScript sfx_;
 
-	// Token: 0x04000457 RID: 1111
+	
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000458 RID: 1112
+	
 	public genres genres_;
 
-	// Token: 0x04000459 RID: 1113
+	
 	public engineFeatures eF_;
 
-	// Token: 0x0400045A RID: 1114
+	
 	public gameplayFeatures gF_;
 
-	// Token: 0x0400045B RID: 1115
+	
 	public games games_;
 
-	// Token: 0x0400045C RID: 1116
+	
 	public themes themes_;
 
-	// Token: 0x0400045D RID: 1117
+	
 	public unlockScript unlock_;
 
-	// Token: 0x0400045E RID: 1118
+	
 	public licences licences_;
 
-	// Token: 0x0400045F RID: 1119
+	
 	public gameTab gameTab_;
 
-	// Token: 0x04000460 RID: 1120
+	
 	public bool debug;
 
-	// Token: 0x04000461 RID: 1121
+	
 	public int myID;
 
-	// Token: 0x04000462 RID: 1122
+	
 	public int developerID = -1;
 
-	// Token: 0x04000463 RID: 1123
+	
 	public int publisherID = -1;
 
-	// Token: 0x04000464 RID: 1124
+	
 	public int ownerID = -1;
 
-	// Token: 0x04000465 RID: 1125
-	public int mainIP = -1;
-
-	// Token: 0x04000466 RID: 1126
+	
 	public publisherScript devS_;
 
-	// Token: 0x04000467 RID: 1127
+	
 	public publisherScript pS_;
 
-	// Token: 0x04000468 RID: 1128
+	
 	public string myName = "";
 
-	// Token: 0x04000469 RID: 1129
+	
 	public string ipName = "";
 
-	// Token: 0x0400046A RID: 1130
+	
+	public bool playerGame;
+
+	
+	public int multiplayerSlot;
+
+	
 	public bool inDevelopment = true;
 
-	// Token: 0x0400046B RID: 1131
+	
 	public int engineID;
 
-	// Token: 0x0400046C RID: 1132
+	
 	public engineScript engineS_;
 
-	// Token: 0x0400046D RID: 1133
+	
 	public float hype;
 
-	// Token: 0x0400046E RID: 1134
+	
 	public bool isOnMarket;
 
-	// Token: 0x0400046F RID: 1135
+	
 	public bool warBeiAwards;
 
-	// Token: 0x04000470 RID: 1136
+	
 	public int weeksOnMarket;
 
-	// Token: 0x04000471 RID: 1137
+	
 	public int weeksInDevelopment;
 
-	// Token: 0x04000472 RID: 1138
+	
 	public int usk;
 
-	// Token: 0x04000473 RID: 1139
+	
 	public int freigabeBudget;
 
-	// Token: 0x04000474 RID: 1140
+	
 	public int reviewGameplay;
 
-	// Token: 0x04000475 RID: 1141
+	
 	public int reviewGrafik;
 
-	// Token: 0x04000476 RID: 1142
+	
 	public int reviewSound;
 
-	// Token: 0x04000477 RID: 1143
+	
 	public int reviewSteuerung;
 
-	// Token: 0x04000478 RID: 1144
+	
 	public int reviewTotal;
 
-	// Token: 0x04000479 RID: 1145
+	
 	public int reviewGameplayText = -1;
 
-	// Token: 0x0400047A RID: 1146
+	
 	public int reviewGrafikText = -1;
 
-	// Token: 0x0400047B RID: 1147
+	
 	public int reviewSoundText = -1;
 
-	// Token: 0x0400047C RID: 1148
+	
 	public int reviewSteuerungText = -1;
 
-	// Token: 0x0400047D RID: 1149
+	
 	public int reviewTotalText = -1;
 
-	// Token: 0x0400047E RID: 1150
+	
 	public int date_year;
 
-	// Token: 0x0400047F RID: 1151
+	
 	public int date_month;
 
-	// Token: 0x04000480 RID: 1152
+	
 	public int date_start_year;
 
-	// Token: 0x04000481 RID: 1153
+	
 	public int date_start_month;
 
-	// Token: 0x04000482 RID: 1154
+	
 	public int userPositiv;
 
-	// Token: 0x04000483 RID: 1155
+	
 	public int userNegativ;
 
-	// Token: 0x04000484 RID: 1156
+	
 	public long sellsTotalStandard;
 
-	// Token: 0x04000485 RID: 1157
+	
 	public long sellsTotalDeluxe;
 
-	// Token: 0x04000486 RID: 1158
+	
 	public long sellsTotalCollectors;
 
-	// Token: 0x04000487 RID: 1159
+	
 	public long sellsTotalOnline;
 
-	// Token: 0x04000488 RID: 1160
+	
 	public long sellsTotal;
 
-	// Token: 0x04000489 RID: 1161
+	
 	public long umsatzTotal;
 
-	// Token: 0x0400048A RID: 1162
+	
 	public long umsatzAbos;
 
-	// Token: 0x0400048B RID: 1163
+	
 	public long umsatzInApp;
 
-	// Token: 0x0400048C RID: 1164
+	
 	public long exklusivKonsolenSells;
 
-	// Token: 0x0400048D RID: 1165
+	
 	public long costs_entwicklung;
 
-	// Token: 0x0400048E RID: 1166
+	
 	public long costs_mitarbeiter;
 
-	// Token: 0x0400048F RID: 1167
+	
 	public long costs_marketing;
 
-	// Token: 0x04000490 RID: 1168
+	
 	public long costs_enginegebuehren;
 
-	// Token: 0x04000491 RID: 1169
+	
 	public long costs_server;
 
-	// Token: 0x04000492 RID: 1170
+	
 	public long costs_production;
 
-	// Token: 0x04000493 RID: 1171
+	
 	public long costs_updates;
 
-	// Token: 0x04000494 RID: 1172
+	
 	public bool typ_standard;
 
-	// Token: 0x04000495 RID: 1173
+	
+	public int mainIP = -1;
+
+	
 	public bool typ_nachfolger;
 
-	// Token: 0x04000496 RID: 1174
+	
 	public int originalIP = -1;
 
-	// Token: 0x04000497 RID: 1175
+	
 	public int teile;
 
-	// Token: 0x04000498 RID: 1176
+	
 	public gameScript script_vorgaenger;
 
-	// Token: 0x04000499 RID: 1177
+	
 	public gameScript script_nachfolger;
 
-	// Token: 0x0400049A RID: 1178
+	
 	public gameScript script_mainIP;
 
-	// Token: 0x0400049B RID: 1179
+	
 	public gameScript script_portOriginal;
 
-	// Token: 0x0400049C RID: 1180
+	
 	public bool typ_contractGame;
 
-	// Token: 0x0400049D RID: 1181
+	
 	public bool typ_remaster;
 
-	// Token: 0x0400049E RID: 1182
+	
 	public bool typ_spinoff;
 
-	// Token: 0x0400049F RID: 1183
+	
 	public bool typ_addon;
 
-	// Token: 0x040004A0 RID: 1184
+	
 	public bool typ_addonStandalone;
 
-	// Token: 0x040004A1 RID: 1185
+	
 	public bool typ_mmoaddon;
 
-	// Token: 0x040004A2 RID: 1186
+	
 	public bool typ_bundle;
 
-	// Token: 0x040004A3 RID: 1187
+	
 	public bool typ_budget;
 
-	// Token: 0x040004A4 RID: 1188
+	
 	public bool typ_bundleAddon;
 
-	// Token: 0x040004A5 RID: 1189
+	
 	public bool typ_goty;
 
-	// Token: 0x040004A6 RID: 1190
+	
 	public int originalGameID = -1;
 
-	// Token: 0x040004A7 RID: 1191
+	
 	public int portID = -1;
 
-	// Token: 0x040004A8 RID: 1192
+	
 	public float ipPunkte;
 
-	// Token: 0x040004A9 RID: 1193
+	
 	public int ipTime;
 
-	// Token: 0x040004AA RID: 1194
+	
 	public int bestChartPosition;
 
-	// Token: 0x040004AB RID: 1195
+	
 	public int lastChartPosition;
 
-	// Token: 0x040004AC RID: 1196
+	
 	public bool pubOffer;
 
-	// Token: 0x040004AD RID: 1197
+	
 	public bool sonderIP;
 
-	// Token: 0x040004AE RID: 1198
+	
 	public int sonderIPMindestreview;
 
-	// Token: 0x040004AF RID: 1199
+	
 	public int[] specialMarketing;
 
-	// Token: 0x040004B0 RID: 1200
+	
 	public bool exklusiv;
 
-	// Token: 0x040004B1 RID: 1201
+	
 	public bool herstellerExklusiv;
 
-	// Token: 0x040004B2 RID: 1202
+	
 	public bool retro;
 
-	// Token: 0x040004B3 RID: 1203
+	
 	public bool handy;
 
-	// Token: 0x040004B4 RID: 1204
+	
 	public bool arcade;
 
-	// Token: 0x040004B5 RID: 1205
+	
 	public bool goty;
 
-	// Token: 0x040004B6 RID: 1206
+	
 	public bool[] portExist;
 
-	// Token: 0x040004B7 RID: 1207
+	
 	public bool nachfolger_created;
 
-	// Token: 0x040004B8 RID: 1208
+	
 	public bool remaster_created;
 
-	// Token: 0x040004B9 RID: 1209
+	
 	public bool budget_created;
 
-	// Token: 0x040004BA RID: 1210
+	
 	public bool goty_created;
 
-	// Token: 0x040004BB RID: 1211
+	
 	public bool mmoTOf2p_created;
 
-	// Token: 0x040004BC RID: 1212
+	
 	public bool f2pConverted;
 
-	// Token: 0x040004BD RID: 1213
+	
 	public bool trendsetter;
 
-	// Token: 0x040004BE RID: 1214
+	
 	public bool spielbericht;
 
-	// Token: 0x040004BF RID: 1215
+	
 	public bool spielbericht_favorit;
 
-	// Token: 0x040004C0 RID: 1216
+	
 	public bool archiv_spielkonzept;
 
-	// Token: 0x040004C1 RID: 1217
+	
 	public bool archiv_spielbericht;
 
-	// Token: 0x040004C2 RID: 1218
+	
 	public bool archiv_fanbriefe;
 
-	// Token: 0x040004C3 RID: 1219
+	
 	public bool bundle_created;
 
-	// Token: 0x040004C4 RID: 1220
+	
 	public int[] bundleID;
 
-	// Token: 0x040004C5 RID: 1221
+	
 	public int amountUpdates;
 
-	// Token: 0x040004C6 RID: 1222
+	
 	public float bonusSellsUpdates;
 
-	// Token: 0x040004C7 RID: 1223
+	
 	public int amountAddons;
 
-	// Token: 0x040004C8 RID: 1224
+	
 	public float bonusSellsAddons;
 
-	// Token: 0x040004C9 RID: 1225
+	
 	public int amountMMOAddons;
 
-	// Token: 0x040004CA RID: 1226
+	
 	public float bonusSellsMMOAddons;
 
-	// Token: 0x040004CB RID: 1227
+	
 	public float addonQuality;
 
-	// Token: 0x040004CC RID: 1228
+	
 	public float f2pInteresse;
 
-	// Token: 0x040004CD RID: 1229
+	
 	public float mmoInteresse;
 
-	// Token: 0x040004CE RID: 1230
+	
 	public int devAktFeature;
 
-	// Token: 0x040004CF RID: 1231
+	
 	public float devPoints;
 
-	// Token: 0x040004D0 RID: 1232
+	
 	public float devPointsStart;
 
-	// Token: 0x040004D1 RID: 1233
+	
 	public float devPoints_Gesamt;
 
-	// Token: 0x040004D2 RID: 1234
+	
 	public float devPointsStart_Gesamt;
 
-	// Token: 0x040004D3 RID: 1235
+	
 	public float points_gameplay;
 
-	// Token: 0x040004D4 RID: 1236
+	
 	public float points_grafik;
 
-	// Token: 0x040004D5 RID: 1237
+	
 	public float points_sound;
 
-	// Token: 0x040004D6 RID: 1238
+	
 	public float points_technik;
 
-	// Token: 0x040004D7 RID: 1239
+	
 	public float points_bugs;
 
-	// Token: 0x040004D8 RID: 1240
+	
 	public float points_bugsInvis;
 
-	// Token: 0x040004D9 RID: 1241
+	
 	public string beschreibung = "";
 
-	// Token: 0x040004DA RID: 1242
+	
 	public int gameTyp;
 
-	// Token: 0x040004DB RID: 1243
+	
 	public int gameSize;
 
-	// Token: 0x040004DC RID: 1244
+	
 	public int gameZielgruppe;
 
-	// Token: 0x040004DD RID: 1245
+	
 	public int maingenre;
 
-	// Token: 0x040004DE RID: 1246
+	
 	public int subgenre;
 
-	// Token: 0x040004DF RID: 1247
+	
 	public int gameMainTheme;
 
-	// Token: 0x040004E0 RID: 1248
+	
 	public int gameSubTheme;
 
-	// Token: 0x040004E1 RID: 1249
+	
 	public int gameLicence = -1;
 
-	// Token: 0x040004E2 RID: 1250
+	
 	public int gameCopyProtect = -1;
 
-	// Token: 0x040004E3 RID: 1251
+	
 	public copyProtectScript gameCopyProtectScript_;
 
-	// Token: 0x040004E4 RID: 1252
+	
 	public int gameAntiCheat = -1;
 
-	// Token: 0x040004E5 RID: 1253
+	
 	public antiCheatScript gameAntiCheatScript_;
 
-	// Token: 0x040004E6 RID: 1254
+	
 	public int gameAP_Gameplay;
 
-	// Token: 0x040004E7 RID: 1255
+	
 	public int gameAP_Grafik;
 
-	// Token: 0x040004E8 RID: 1256
+	
 	public int gameAP_Sound;
 
-	// Token: 0x040004E9 RID: 1257
+	
 	public int gameAP_Technik;
 
-	// Token: 0x040004EA RID: 1258
+	
 	public bool[] gameLanguage;
 
-	// Token: 0x040004EB RID: 1259
+	
 	public bool[] gameGameplayFeatures;
 
-	// Token: 0x040004EC RID: 1260
+	
 	public int[] gamePlatform;
 
-	// Token: 0x040004ED RID: 1261
+	
 	public platformScript[] gamePlatformScript;
 
-	// Token: 0x040004EE RID: 1262
+	
 	public int[] gameEngineFeature;
 
-	// Token: 0x040004EF RID: 1263
+	
 	public bool[] gameplayFeatures_DevDone;
 
-	// Token: 0x040004F0 RID: 1264
+	
 	public bool[] engineFeature_DevDone;
 
-	// Token: 0x040004F1 RID: 1265
+	
 	public bool[] gameplayStudio;
 
-	// Token: 0x040004F2 RID: 1266
+	
 	public bool[] grafikStudio;
 
-	// Token: 0x040004F3 RID: 1267
+	
 	public bool[] soundStudio;
 
-	// Token: 0x040004F4 RID: 1268
+	
 	public bool[] motionCaptureStudio;
 
-	// Token: 0x040004F5 RID: 1269
+	
 	public int[] sellsPerWeek;
 
-	// Token: 0x040004F6 RID: 1270
+	
 	public bool[] fanbrief;
 
-	// Token: 0x040004F7 RID: 1271
+	
 	public bool[] inAppPurchase;
 
-	// Token: 0x040004F8 RID: 1272
+	
 	public int releaseDate;
 
-	// Token: 0x040004F9 RID: 1273
+	
 	public bool[] standard_edition;
 
-	// Token: 0x040004FA RID: 1274
+	
 	public bool[] deluxe_edition;
 
-	// Token: 0x040004FB RID: 1275
+	
 	public bool[] collectors_edition;
 
-	// Token: 0x040004FC RID: 1276
+	
 	public int[] verkaufspreis;
 
-	// Token: 0x040004FD RID: 1277
+	
 	public int[] lagerbestand;
 
-	// Token: 0x040004FE RID: 1278
+	
 	public bool autoPreis;
 
-	// Token: 0x040004FF RID: 1279
+	
 	public int vorbestellungen;
 
-	// Token: 0x04000500 RID: 1280
+	
 	public int stornierungen;
 
-	// Token: 0x04000501 RID: 1281
+	
 	public bool retailVersion;
 
-	// Token: 0x04000502 RID: 1282
+	
 	public bool digitalVersion;
 
-	// Token: 0x04000503 RID: 1283
+	
 	public int abonnements;
 
-	// Token: 0x04000504 RID: 1284
+	
 	public int abonnementsWoche;
 
-	// Token: 0x04000505 RID: 1285
+	
 	public int abosAddons;
 
-	// Token: 0x04000506 RID: 1286
+	
 	public int aboPreis;
 
-	// Token: 0x04000507 RID: 1287
+	
 	public int inAppPurchaseWeek;
 
-	// Token: 0x04000508 RID: 1288
+	
 	public int bestAbonnements;
 
-	// Token: 0x04000509 RID: 1289
+	
 	public int finanzierung_Grundkosten;
 
-	// Token: 0x0400050A RID: 1290
+	
 	public int finanzierung_Technology;
 
-	// Token: 0x0400050B RID: 1291
+	
 	public int finanzierung_Kontent;
 
-	// Token: 0x0400050C RID: 1292
+	
 	public int[] Designschwerpunkt;
 
-	// Token: 0x0400050D RID: 1293
+	
 	public int[] Designausrichtung;
 
-	// Token: 0x0400050E RID: 1294
+	
 	public int arcadeCase;
 
-	// Token: 0x0400050F RID: 1295
+	
 	public int arcadeMonitor;
 
-	// Token: 0x04000510 RID: 1296
+	
 	public int arcadeJoystick;
 
-	// Token: 0x04000511 RID: 1297
+	
 	public int arcadeSound;
 
-	// Token: 0x04000512 RID: 1298
+	
 	public int arcadeProdCosts;
 
-	// Token: 0x04000513 RID: 1299
+	
 	public bool schublade;
 
-	// Token: 0x04000514 RID: 1300
+	
 	public int schubladeTaskID = -1;
 
-	// Token: 0x04000515 RID: 1301
+	
 	public bool commercialFlop;
 
-	// Token: 0x04000516 RID: 1302
+	
 	public bool commercialHit;
 
-	// Token: 0x04000517 RID: 1303
+	
 	public bool newGenreCombination;
 
-	// Token: 0x04000518 RID: 1304
+	
 	public bool newTopicCombination;
 
-	// Token: 0x04000519 RID: 1305
+	
 	public bool npcLateinNumbers;
 
-	// Token: 0x0400051A RID: 1306
+	
 	public bool pubAngebot;
 
-	// Token: 0x0400051B RID: 1307
+	
 	public int pubAngebot_Weeks;
 
-	// Token: 0x0400051C RID: 1308
+	
 	public float pubAngebot_Verhandlung;
 
-	// Token: 0x0400051D RID: 1309
+	
 	public float pubAngebot_VerhandlungProzent = 100f;
 
-	// Token: 0x0400051E RID: 1310
+	
 	public float pubAngebot_Stimmung = 100f;
 
-	// Token: 0x0400051F RID: 1311
+	
 	public bool pubAngebot_Retail;
 
-	// Token: 0x04000520 RID: 1312
+	
 	public bool pubAngebot_Digital;
 
-	// Token: 0x04000521 RID: 1313
+	
 	public int pubAngebot_Garantiesumme;
 
-	// Token: 0x04000522 RID: 1314
+	
 	public float pubAngebot_Gewinnbeteiligung;
 
-	// Token: 0x04000523 RID: 1315
+	
 	public bool pubAnbgebot_Inivs;
 
-	// Token: 0x04000524 RID: 1316
+	
 	public bool pubAngebot_AngebotWoche;
 
-	// Token: 0x04000525 RID: 1317
+	
 	public bool auftragsspiel;
 
-	// Token: 0x04000526 RID: 1318
+	
 	public int auftragsspiel_gehalt;
 
-	// Token: 0x04000527 RID: 1319
+	
 	public int auftragsspiel_bonus;
 
-	// Token: 0x04000528 RID: 1320
+	
 	public int auftragsspiel_zeitInWochen;
 
-	// Token: 0x04000529 RID: 1321
+	
 	public int auftragsspiel_wochenAlsAngebot;
 
-	// Token: 0x0400052A RID: 1322
+	
 	public bool auftragsspiel_zeitAbgelaufen;
 
-	// Token: 0x0400052B RID: 1323
+	
 	public int auftragsspiel_mindestbewertung;
 
-	// Token: 0x0400052C RID: 1324
+	
 	public bool auftragsspiel_Inivs;
 
-	// Token: 0x0400052D RID: 1325
+	
 	public float[] merchVerkaufspreis;
 
-	// Token: 0x0400052E RID: 1326
+	
 	public int[] merchGesamtSells;
 
-	// Token: 0x0400052F RID: 1327
+	
 	public int[] merchLetzterMonat;
 
-	// Token: 0x04000530 RID: 1328
+	
 	public int[] merchDiesenMonat;
 
-	// Token: 0x04000531 RID: 1329
+	
 	public long merchGesamtGewinn;
 
-	// Token: 0x04000532 RID: 1330
+	
 	public bool merchKeinVerkauf;
 
-	// Token: 0x04000533 RID: 1331
+	
 	public int[] merchBestellungen;
 
-	// Token: 0x04000534 RID: 1332
+	
 	public float merchGesamtReviewPoints;
 
-	// Token: 0x04000535 RID: 1333
+	
 	public long tw_gewinnanteil;
 
-	// Token: 0x04000536 RID: 1334
+	
 	private Menu_Fanshop menuFanshop_;
 
-	// Token: 0x02000053 RID: 83
+	
 	public class PublisherList
 	{
-		// Token: 0x06000278 RID: 632 RVA: 0x0002883D File Offset: 0x00026A3D
+		
 		public PublisherList(long wert_, publisherScript s_)
 		{
 			this.wert = wert_;
 			this.script_ = s_;
 		}
 
-		// Token: 0x04000537 RID: 1335
+		
 		public long wert;
 
-		// Token: 0x04000538 RID: 1336
+		
 		public publisherScript script_;
 	}
 }

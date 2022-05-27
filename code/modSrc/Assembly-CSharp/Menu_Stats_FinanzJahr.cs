@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000238 RID: 568
+
 public class Menu_Stats_FinanzJahr : MonoBehaviour
 {
-	// Token: 0x060015EB RID: 5611 RVA: 0x000DED9B File Offset: 0x000DCF9B
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060015EC RID: 5612 RVA: 0x000DEDA3 File Offset: 0x000DCFA3
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060015ED RID: 5613 RVA: 0x000DEDAC File Offset: 0x000DCFAC
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -74,14 +74,14 @@ public class Menu_Stats_FinanzJahr : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060015EE RID: 5614 RVA: 0x000DEF4A File Offset: 0x000DD14A
+	
 	public void Init()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x060015EF RID: 5615 RVA: 0x000DEF58 File Offset: 0x000DD158
+	
 	private void Update()
 	{
 		if (!this.mS_.multiplayer)
@@ -91,7 +91,7 @@ public class Menu_Stats_FinanzJahr : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060015F0 RID: 5616 RVA: 0x000DEF70 File Offset: 0x000DD170
+	
 	private void SetData()
 	{
 		string text = "";
@@ -212,52 +212,52 @@ public class Menu_Stats_FinanzJahr : MonoBehaviour
 		this.uiObjects[4].GetComponent<Text>().text = "<color=green>" + this.mS_.GetMoney(this.mS_.finanzenJahrLast_GetGewinn(), true) + "</color>";
 	}
 
-	// Token: 0x060015F1 RID: 5617 RVA: 0x000DFCFD File Offset: 0x000DDEFD
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040019DA RID: 6618
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040019DB RID: 6619
+	
 	private GameObject main_;
 
-	// Token: 0x040019DC RID: 6620
+	
 	private mainScript mS_;
 
-	// Token: 0x040019DD RID: 6621
+	
 	private textScript tS_;
 
-	// Token: 0x040019DE RID: 6622
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040019DF RID: 6623
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040019E0 RID: 6624
+	
 	private genres genres_;
 
-	// Token: 0x040019E1 RID: 6625
+	
 	private themes themes_;
 
-	// Token: 0x040019E2 RID: 6626
+	
 	private licences licences_;
 
-	// Token: 0x040019E3 RID: 6627
+	
 	private engineFeatures eF_;
 
-	// Token: 0x040019E4 RID: 6628
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040019E5 RID: 6629
+	
 	private unlockScript unlock_;
 
-	// Token: 0x040019E6 RID: 6630
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x040019E7 RID: 6631
+	
 	private games games_;
 }

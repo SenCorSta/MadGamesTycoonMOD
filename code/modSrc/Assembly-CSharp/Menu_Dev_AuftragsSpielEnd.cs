@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200012C RID: 300
+
 public class Menu_Dev_AuftragsSpielEnd : MonoBehaviour
 {
-	// Token: 0x06000AA4 RID: 2724 RVA: 0x00073595 File Offset: 0x00071795
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000AA5 RID: 2725 RVA: 0x000735A0 File Offset: 0x000717A0
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_Dev_AuftragsSpielEnd : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AA6 RID: 2726 RVA: 0x00073740 File Offset: 0x00071940
+	
 	public void Init(gameScript game_)
 	{
 		this.FindScripts();
@@ -119,7 +119,7 @@ public class Menu_Dev_AuftragsSpielEnd : MonoBehaviour
 		this.uiObjects[9].GetComponent<Text>().text = "<color=red>" + this.mS_.GetMoney(num2, true) + "</color>";
 	}
 
-	// Token: 0x06000AA7 RID: 2727 RVA: 0x00073A96 File Offset: 0x00071C96
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -128,7 +128,7 @@ public class Menu_Dev_AuftragsSpielEnd : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AA8 RID: 2728 RVA: 0x00073AB1 File Offset: 0x00071CB1
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -136,48 +136,48 @@ public class Menu_Dev_AuftragsSpielEnd : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x04000ED3 RID: 3795
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000ED4 RID: 3796
+	
 	private GameObject main_;
 
-	// Token: 0x04000ED5 RID: 3797
+	
 	private mainScript mS_;
 
-	// Token: 0x04000ED6 RID: 3798
+	
 	private textScript tS_;
 
-	// Token: 0x04000ED7 RID: 3799
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000ED8 RID: 3800
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04000ED9 RID: 3801
+	
 	private genres genres_;
 
-	// Token: 0x04000EDA RID: 3802
+	
 	private themes themes_;
 
-	// Token: 0x04000EDB RID: 3803
+	
 	private licences licences_;
 
-	// Token: 0x04000EDC RID: 3804
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04000EDD RID: 3805
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04000EDE RID: 3806
+	
 	private unlockScript unlock_;
 
-	// Token: 0x04000EDF RID: 3807
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x04000EE0 RID: 3808
+	
 	private games games_;
 
-	// Token: 0x04000EE1 RID: 3809
+	
 	private gameScript gS_;
 }

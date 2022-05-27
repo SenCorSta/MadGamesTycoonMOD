@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000275 RID: 629
+
 public class moneyPop : MonoBehaviour
 {
-	// Token: 0x06001872 RID: 6258 RVA: 0x000F25C8 File Offset: 0x000F07C8
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001873 RID: 6259 RVA: 0x000F25D0 File Offset: 0x000F07D0
+	
 	private void FindScripts()
 	{
 		if (!this.rT_)
@@ -28,7 +28,7 @@ public class moneyPop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001874 RID: 6260 RVA: 0x000F264D File Offset: 0x000F084D
+	
 	public void Init(Vector3 v)
 	{
 		this.FindScripts();
@@ -37,7 +37,7 @@ public class moneyPop : MonoBehaviour
 		this.anim_.Play();
 	}
 
-	// Token: 0x06001875 RID: 6261 RVA: 0x000F2680 File Offset: 0x000F0880
+	
 	private void Update()
 	{
 		if (base.transform.position.x >= 99998f)
@@ -66,24 +66,24 @@ public class moneyPop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001C22 RID: 7202
+	
 	public Camera camera_;
 
-	// Token: 0x04001C23 RID: 7203
+	
 	public Vector3 myPosition;
 
-	// Token: 0x04001C24 RID: 7204
+	
 	public float myTimer;
 
-	// Token: 0x04001C25 RID: 7205
+	
 	public settingsScript settings_;
 
-	// Token: 0x04001C26 RID: 7206
+	
 	private RectTransform rT_;
 
-	// Token: 0x04001C27 RID: 7207
+	
 	private Animation anim_;
 
-	// Token: 0x04001C28 RID: 7208
+	
 	public Text text_;
 }

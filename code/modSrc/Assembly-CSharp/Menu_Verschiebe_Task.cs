@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x020001BC RID: 444
+
 public class Menu_Verschiebe_Task : MonoBehaviour
 {
-	// Token: 0x060010C0 RID: 4288 RVA: 0x000B1312 File Offset: 0x000AF512
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010C1 RID: 4289 RVA: 0x000B131C File Offset: 0x000AF51C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -49,14 +49,14 @@ public class Menu_Verschiebe_Task : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010C2 RID: 4290 RVA: 0x000B1428 File Offset: 0x000AF628
+	
 	private void Update()
 	{
 		this.DrawLine();
 		this.MouseMovement();
 	}
 
-	// Token: 0x060010C3 RID: 4291 RVA: 0x000B1438 File Offset: 0x000AF638
+	
 	private void MouseMovement()
 	{
 		if (!this.mS_)
@@ -108,7 +108,7 @@ public class Menu_Verschiebe_Task : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010C4 RID: 4292 RVA: 0x000B1658 File Offset: 0x000AF858
+	
 	public void BUTTON_Close()
 	{
 		this.initLine = false;
@@ -126,7 +126,7 @@ public class Menu_Verschiebe_Task : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060010C5 RID: 4293 RVA: 0x000B16C8 File Offset: 0x000AF8C8
+	
 	private void TaskTauschen(roomScript script_)
 	{
 		if (this.rS_ == script_)
@@ -160,7 +160,7 @@ public class Menu_Verschiebe_Task : MonoBehaviour
 		this.BUTTON_Close();
 	}
 
-	// Token: 0x060010C6 RID: 4294 RVA: 0x000B1834 File Offset: 0x000AFA34
+	
 	private void DrawLine()
 	{
 		if (this.rS_)
@@ -197,57 +197,57 @@ public class Menu_Verschiebe_Task : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400153A RID: 5434
+	
 	private GameObject main_;
 
-	// Token: 0x0400153B RID: 5435
+	
 	private mainScript mS_;
 
-	// Token: 0x0400153C RID: 5436
+	
 	private Camera myCamera;
 
-	// Token: 0x0400153D RID: 5437
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400153E RID: 5438
+	
 	private RaycastHit hit;
 
-	// Token: 0x0400153F RID: 5439
+	
 	public RaycastHit hitOld;
 
-	// Token: 0x04001540 RID: 5440
+	
 	private RaycastHit hitEmpty;
 
-	// Token: 0x04001541 RID: 5441
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001542 RID: 5442
+	
 	private mapScript mapS_;
 
-	// Token: 0x04001543 RID: 5443
+	
 	private pickObjectScript pOS_;
 
-	// Token: 0x04001544 RID: 5444
+	
 	private Camera camera_;
 
-	// Token: 0x04001545 RID: 5445
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001546 RID: 5446
+	
 	public LayerMask layerMaskFloor;
 
-	// Token: 0x04001547 RID: 5447
+	
 	public roomScript rS_;
 
-	// Token: 0x04001548 RID: 5448
+	
 	private roomScript roomOutlineOld;
 
-	// Token: 0x04001549 RID: 5449
+	
 	private VectorLine line3D;
 
-	// Token: 0x0400154A RID: 5450
+	
 	private bool initLine;
 
-	// Token: 0x0400154B RID: 5451
+	
 	private GameObject myLine;
 }

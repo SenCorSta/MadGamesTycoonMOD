@@ -3,16 +3,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x0200027E RID: 638
+
 public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler
 {
-	// Token: 0x06001903 RID: 6403 RVA: 0x000F8DB3 File Offset: 0x000F6FB3
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001904 RID: 6404 RVA: 0x000F8DBC File Offset: 0x000F6FBC
+	
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -41,7 +41,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001905 RID: 6405 RVA: 0x000F8E70 File Offset: 0x000F7070
+	
 	private void Update()
 	{
 		if (this.guiMain_.selectInputField)
@@ -88,7 +88,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001906 RID: 6406 RVA: 0x000F8FD0 File Offset: 0x000F71D0
+	
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		this.FindScripts();
@@ -129,7 +129,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001907 RID: 6407 RVA: 0x000F90EF File Offset: 0x000F72EF
+	
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		if (this.guiTooltip)
@@ -138,7 +138,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001908 RID: 6408 RVA: 0x000F90EF File Offset: 0x000F72EF
+	
 	public void OnDisable()
 	{
 		if (this.guiTooltip)
@@ -147,42 +147,42 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x04001C62 RID: 7266
+	
 	private textScript tS_;
 
-	// Token: 0x04001C63 RID: 7267
+	
 	private settingsScript settings_;
 
-	// Token: 0x04001C64 RID: 7268
+	
 	private GameObject main_;
 
-	// Token: 0x04001C65 RID: 7269
+	
 	private mainScript mS_;
 
-	// Token: 0x04001C66 RID: 7270
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001C67 RID: 7271
+	
 	public int textID = -1;
 
-	// Token: 0x04001C68 RID: 7272
+	
 	public string textArray = "";
 
-	// Token: 0x04001C69 RID: 7273
+	
 	public string c = "";
 
-	// Token: 0x04001C6A RID: 7274
+	
 	public KeyCode shortcut;
 
-	// Token: 0x04001C6B RID: 7275
+	
 	private GUI_Tooltip guiTooltip;
 
-	// Token: 0x04001C6C RID: 7276
+	
 	public Camera mainCamera;
 
-	// Token: 0x04001C6D RID: 7277
+	
 	private RaycastHit raycastHit;
 
-	// Token: 0x04001C6E RID: 7278
+	
 	private float middleMouseTimer;
 }

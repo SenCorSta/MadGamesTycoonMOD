@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000006 RID: 6
+
 [RequireComponent(typeof(ParticleSystem))]
 public class CFX_AutoStopLoopedEffect : MonoBehaviour
 {
-	// Token: 0x06000026 RID: 38 RVA: 0x00003056 File Offset: 0x00001256
+	
 	private void OnEnable()
 	{
 		this.d = this.effectDuration;
 	}
 
-	// Token: 0x06000027 RID: 39 RVA: 0x00003064 File Offset: 0x00001264
+	
 	private void Update()
 	{
 		if (this.d > 0f)
@@ -29,9 +29,9 @@ public class CFX_AutoStopLoopedEffect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400001C RID: 28
+	
 	public float effectDuration = 2.5f;
 
-	// Token: 0x0400001D RID: 29
+	
 	private float d;
 }

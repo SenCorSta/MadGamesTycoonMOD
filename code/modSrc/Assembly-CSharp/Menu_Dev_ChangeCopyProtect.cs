@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200012E RID: 302
+
 public class Menu_Dev_ChangeCopyProtect : MonoBehaviour
 {
-	// Token: 0x06000AB1 RID: 2737 RVA: 0x00073E06 File Offset: 0x00072006
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000AB2 RID: 2738 RVA: 0x00073E10 File Offset: 0x00072010
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -72,7 +72,7 @@ public class Menu_Dev_ChangeCopyProtect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AB3 RID: 2739 RVA: 0x00073FCC File Offset: 0x000721CC
+	
 	public void Init(gameScript game_)
 	{
 		this.FindScripts();
@@ -92,7 +92,7 @@ public class Menu_Dev_ChangeCopyProtect : MonoBehaviour
 		this.CalcDevCosts();
 	}
 
-	// Token: 0x06000AB4 RID: 2740 RVA: 0x000740B4 File Offset: 0x000722B4
+	
 	private void Unlock(int id_, GameObject lock_, GameObject button_)
 	{
 		if (this.unlock_.unlock[id_])
@@ -114,35 +114,35 @@ public class Menu_Dev_ChangeCopyProtect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AB5 RID: 2741 RVA: 0x00074107 File Offset: 0x00072307
+	
 	public void BUTTON_CopyProtect()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[68]);
 	}
 
-	// Token: 0x06000AB6 RID: 2742 RVA: 0x0007412F File Offset: 0x0007232F
+	
 	public void BUTTON_CopyProtectKaufen()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[49]);
 	}
 
-	// Token: 0x06000AB7 RID: 2743 RVA: 0x00074157 File Offset: 0x00072357
+	
 	public void BUTTON_AntiCheat()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[236]);
 	}
 
-	// Token: 0x06000AB8 RID: 2744 RVA: 0x00074182 File Offset: 0x00072382
+	
 	public void BUTTON_AntiCheatKaufen()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[234]);
 	}
 
-	// Token: 0x06000AB9 RID: 2745 RVA: 0x000741AD File Offset: 0x000723AD
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -150,7 +150,7 @@ public class Menu_Dev_ChangeCopyProtect : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x06000ABA RID: 2746 RVA: 0x000741D4 File Offset: 0x000723D4
+	
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -164,7 +164,7 @@ public class Menu_Dev_ChangeCopyProtect : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x06000ABB RID: 2747 RVA: 0x00074278 File Offset: 0x00072478
+	
 	public void SetCopyProtect(int i)
 	{
 		this.g_GameCopyProtect = i;
@@ -194,7 +194,7 @@ public class Menu_Dev_ChangeCopyProtect : MonoBehaviour
 		this.CalcDevCosts();
 	}
 
-	// Token: 0x06000ABC RID: 2748 RVA: 0x00074408 File Offset: 0x00072608
+	
 	public void SetAntiCheat(int i)
 	{
 		this.g_GameAntiCheat = i;
@@ -224,7 +224,7 @@ public class Menu_Dev_ChangeCopyProtect : MonoBehaviour
 		this.CalcDevCosts();
 	}
 
-	// Token: 0x06000ABD RID: 2749 RVA: 0x00074598 File Offset: 0x00072798
+	
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -242,7 +242,7 @@ public class Menu_Dev_ChangeCopyProtect : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x06000ABE RID: 2750 RVA: 0x0007460C File Offset: 0x0007280C
+	
 	private int CalcDevCosts()
 	{
 		int num = 0;
@@ -258,63 +258,63 @@ public class Menu_Dev_ChangeCopyProtect : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x04000EEC RID: 3820
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000EED RID: 3821
+	
 	private GameObject main_;
 
-	// Token: 0x04000EEE RID: 3822
+	
 	private mainScript mS_;
 
-	// Token: 0x04000EEF RID: 3823
+	
 	private textScript tS_;
 
-	// Token: 0x04000EF0 RID: 3824
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000EF1 RID: 3825
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04000EF2 RID: 3826
+	
 	private genres genres_;
 
-	// Token: 0x04000EF3 RID: 3827
+	
 	private themes themes_;
 
-	// Token: 0x04000EF4 RID: 3828
+	
 	private licences licences_;
 
-	// Token: 0x04000EF5 RID: 3829
+	
 	private engineFeatures eF_;
 
-	// Token: 0x04000EF6 RID: 3830
+	
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04000EF7 RID: 3831
+	
 	private unlockScript unlock_;
 
-	// Token: 0x04000EF8 RID: 3832
+	
 	private gameplayFeatures gF_;
 
-	// Token: 0x04000EF9 RID: 3833
+	
 	private games games_;
 
-	// Token: 0x04000EFA RID: 3834
+	
 	private platforms platforms_;
 
-	// Token: 0x04000EFB RID: 3835
+	
 	public gameScript gS_;
 
-	// Token: 0x04000EFC RID: 3836
+	
 	public int g_GameCopyProtect = -1;
 
-	// Token: 0x04000EFD RID: 3837
+	
 	public copyProtectScript g_GameCopyProtectScript_;
 
-	// Token: 0x04000EFE RID: 3838
+	
 	public int g_GameAntiCheat = -1;
 
-	// Token: 0x04000EFF RID: 3839
+	
 	public antiCheatScript g_GameAntiCheatScript_;
 }

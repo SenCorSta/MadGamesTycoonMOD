@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001CC RID: 460
+
 public class Menu_Messe : MonoBehaviour
 {
-	// Token: 0x06001169 RID: 4457 RVA: 0x000B8211 File Offset: 0x000B6411
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600116A RID: 4458 RVA: 0x000B821C File Offset: 0x000B641C
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_Messe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116B RID: 4459 RVA: 0x000B82C8 File Offset: 0x000B64C8
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -68,7 +68,7 @@ public class Menu_Messe : MonoBehaviour
 		this.sfx_.PlaySound(50, false);
 	}
 
-	// Token: 0x0600116C RID: 4460 RVA: 0x000B8491 File Offset: 0x000B6691
+	
 	private void Update()
 	{
 		if (!base.gameObject.activeSelf)
@@ -81,7 +81,7 @@ public class Menu_Messe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116D RID: 4461 RVA: 0x000B84BC File Offset: 0x000B66BC
+	
 	public int GetPrice(int i)
 	{
 		int num = this.mS_.year - 1975;
@@ -92,7 +92,7 @@ public class Menu_Messe : MonoBehaviour
 		return this.price[i] * num + 5000;
 	}
 
-	// Token: 0x0600116E RID: 4462 RVA: 0x000B84F4 File Offset: 0x000B66F4
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -104,7 +104,7 @@ public class Menu_Messe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116F RID: 4463 RVA: 0x000B8558 File Offset: 0x000B6758
+	
 	public void BUTTON_Stand(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -112,24 +112,24 @@ public class Menu_Messe : MonoBehaviour
 		this.guiMain_.uiObjects[186].GetComponent<Menu_MesseSelect>().Init(i);
 	}
 
-	// Token: 0x040015E3 RID: 5603
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040015E4 RID: 5604
+	
 	public int[] price;
 
-	// Token: 0x040015E5 RID: 5605
+	
 	private GameObject main_;
 
-	// Token: 0x040015E6 RID: 5606
+	
 	private mainScript mS_;
 
-	// Token: 0x040015E7 RID: 5607
+	
 	private textScript tS_;
 
-	// Token: 0x040015E8 RID: 5608
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040015E9 RID: 5609
+	
 	private sfxScript sfx_;
 }

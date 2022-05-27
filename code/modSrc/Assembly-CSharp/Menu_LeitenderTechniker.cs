@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000169 RID: 361
+
 public class Menu_LeitenderTechniker : MonoBehaviour
 {
-	// Token: 0x06000D7C RID: 3452 RVA: 0x00092210 File Offset: 0x00090410
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000D7D RID: 3453 RVA: 0x00092218 File Offset: 0x00090418
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D7E RID: 3454 RVA: 0x00092350 File Offset: 0x00090550
+	
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -63,7 +63,7 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000D7F RID: 3455 RVA: 0x00092388 File Offset: 0x00090588
+	
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -79,7 +79,7 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000D80 RID: 3456 RVA: 0x000923D4 File Offset: 0x000905D4
+	
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -92,7 +92,7 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000D81 RID: 3457 RVA: 0x00092430 File Offset: 0x00090630
+	
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -115,7 +115,7 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06000D82 RID: 3458 RVA: 0x00092594 File Offset: 0x00090794
+	
 	public void Init(roomScript roomS_)
 	{
 		this.FindScripts();
@@ -130,7 +130,7 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		this.uiObjects[8].GetComponent<Toggle>().isOn = false;
 	}
 
-	// Token: 0x06000D83 RID: 3459 RVA: 0x000925F0 File Offset: 0x000907F0
+	
 	private void SetData()
 	{
 		if (!this.rS_)
@@ -175,7 +175,7 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[6]);
 	}
 
-	// Token: 0x06000D84 RID: 3460 RVA: 0x000927D3 File Offset: 0x000909D3
+	
 	public void BUTTON_Close()
 	{
 		this.SetAuto();
@@ -183,7 +183,7 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000D85 RID: 3461 RVA: 0x000927F4 File Offset: 0x000909F4
+	
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -415,7 +415,7 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06000D86 RID: 3462 RVA: 0x000932AC File Offset: 0x000914AC
+	
 	public void BUTTON_Search()
 	{
 		if (!base.gameObject.activeSelf)
@@ -434,7 +434,7 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000D87 RID: 3463 RVA: 0x0009334C File Offset: 0x0009154C
+	
 	public void SetAuto()
 	{
 		if (this.rS_)
@@ -466,50 +466,50 @@ public class Menu_LeitenderTechniker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D88 RID: 3464 RVA: 0x00002715 File Offset: 0x00000915
+	
 	public void TOGGLE_Automatik()
 	{
 	}
 
-	// Token: 0x0400120A RID: 4618
+	
 	private mainScript mS_;
 
-	// Token: 0x0400120B RID: 4619
+	
 	private GameObject main_;
 
-	// Token: 0x0400120C RID: 4620
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400120D RID: 4621
+	
 	private sfxScript sfx_;
 
-	// Token: 0x0400120E RID: 4622
+	
 	private textScript tS_;
 
-	// Token: 0x0400120F RID: 4623
+	
 	private pickCharacterScript pcS_;
 
-	// Token: 0x04001210 RID: 4624
+	
 	private roomDataScript rdS_;
 
-	// Token: 0x04001211 RID: 4625
+	
 	private Menu_Dev_Konsole menuDevKonsole_;
 
-	// Token: 0x04001212 RID: 4626
+	
 	private Menu_Dev_KonsoleEntwicklungsbericht menuEntwicklungsbericht_;
 
-	// Token: 0x04001213 RID: 4627
+	
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001214 RID: 4628
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001215 RID: 4629
+	
 	private roomScript rS_;
 
-	// Token: 0x04001216 RID: 4630
+	
 	private float updateTimer;
 
-	// Token: 0x04001217 RID: 4631
+	
 	private string searchStringA = "";
 }

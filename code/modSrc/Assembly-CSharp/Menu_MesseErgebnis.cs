@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001CD RID: 461
+
 public class Menu_MesseErgebnis : MonoBehaviour
 {
-	// Token: 0x06001171 RID: 4465 RVA: 0x000B85AA File Offset: 0x000B67AA
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001172 RID: 4466 RVA: 0x000B85B4 File Offset: 0x000B67B4
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_MesseErgebnis : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001173 RID: 4467 RVA: 0x000B8688 File Offset: 0x000B6888
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -76,7 +76,7 @@ public class Menu_MesseErgebnis : MonoBehaviour
 		this.uiObjects[6].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06001174 RID: 4468 RVA: 0x000B881C File Offset: 0x000B6A1C
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -105,7 +105,7 @@ public class Menu_MesseErgebnis : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = this.mS_.GetMoney((long)Mathf.RoundToInt(this.besucherIst), false);
 	}
 
-	// Token: 0x06001175 RID: 4469 RVA: 0x000B8988 File Offset: 0x000B6B88
+	
 	public void BUTTON_Abbrechen()
 	{
 		if (this.mS_.multiplayer && this.mS_.mpCalls_.isClient)
@@ -139,42 +139,42 @@ public class Menu_MesseErgebnis : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x040015EA RID: 5610
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x040015EB RID: 5611
+	
 	public AnimationCurve curveBesucher;
 
-	// Token: 0x040015EC RID: 5612
+	
 	public Sprite[] besucherSprites;
 
-	// Token: 0x040015ED RID: 5613
+	
 	private GameObject main_;
 
-	// Token: 0x040015EE RID: 5614
+	
 	private mainScript mS_;
 
-	// Token: 0x040015EF RID: 5615
+	
 	private textScript tS_;
 
-	// Token: 0x040015F0 RID: 5616
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x040015F1 RID: 5617
+	
 	private sfxScript sfx_;
 
-	// Token: 0x040015F2 RID: 5618
+	
 	private Menu_MesseSelect menu_;
 
-	// Token: 0x040015F3 RID: 5619
+	
 	private float besucherGesamt;
 
-	// Token: 0x040015F4 RID: 5620
+	
 	private float besucherSoll;
 
-	// Token: 0x040015F5 RID: 5621
+	
 	private float besucherIst;
 
-	// Token: 0x040015F6 RID: 5622
+	
 	private int neueFans;
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000215 RID: 533
+
 public class Menu_AwardsVerlauf : MonoBehaviour
 {
-	// Token: 0x06001486 RID: 5254 RVA: 0x000D4DA9 File Offset: 0x000D2FA9
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001487 RID: 5255 RVA: 0x000D4DB4 File Offset: 0x000D2FB4
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -48,13 +48,13 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001488 RID: 5256 RVA: 0x000D4EB8 File Offset: 0x000D30B8
+	
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001489 RID: 5257 RVA: 0x000D4EC0 File Offset: 0x000D30C0
+	
 	public void Init()
 	{
 		this.FindScripts();
@@ -72,20 +72,24 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 		if (this.mS_.madGamesCon_BestGrafik.Count > this.seite)
 		{
-			this.FindWinners(this.mS_.madGamesCon_BestGrafik[this.seite], this.mS_.madGamesCon_BestSound[this.seite], this.mS_.madGamesCon_BestStudio[this.seite], this.mS_.madGamesCon_BestPublisher[this.seite], this.mS_.madGamesCon_BestGame[this.seite], this.mS_.madGamesCon_BadGame[this.seite]);
+			this.FindWinners(this.mS_.madGamesCon_BestGrafik[this.seite], this.mS_.madGamesCon_BestSound[this.seite], this.mS_.madGamesCon_BestStudio[this.seite], this.mS_.madGamesCon_BestStudioPlayer[this.seite], this.mS_.madGamesCon_BestPublisher[this.seite], this.mS_.madGamesCon_BestPublisherPlayer[this.seite], this.mS_.madGamesCon_BestGame[this.seite], this.mS_.madGamesCon_BadGame[this.seite]);
 		}
 		this.ShowAwards();
 	}
 
-	// Token: 0x0600148A RID: 5258 RVA: 0x000D4FD4 File Offset: 0x000D31D4
-	public void FindWinners(int IDbestGrafik, int IDbestSound, int IDbestStudio, int IDbestPublisher, int IDbestGame, int IDbadGame)
+	
+	public void FindWinners(int IDbestGrafik, int IDbestSound, int IDbestStudio, int bestStudioPlayer_, int IDbestPublisher, int bestPublisherPlayer_, int IDbestGame, int IDbadGame)
 	{
 		this.bestGrafik = null;
 		this.bestSound = null;
 		this.bestStudio = null;
+		this.bestStudioPlayer = -1;
 		this.bestPublisher = null;
+		this.bestPublisherPlayer = -1;
 		this.bestGame = null;
 		this.badGame = null;
+		this.bestStudioPlayer = bestStudioPlayer_;
+		this.bestPublisherPlayer = bestPublisherPlayer_;
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
 		if (array.Length != 0)
 		{
@@ -128,7 +132,7 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600148B RID: 5259 RVA: 0x000D50C0 File Offset: 0x000D32C0
+	
 	private void ShowAwards()
 	{
 		if (!this.bestGrafik)
@@ -148,17 +152,17 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		gameScript gameScript = this.bestGrafik;
 		if (gameScript)
 		{
-			if (gameScript.ownerID == this.mS_.myID || gameScript.publisherID == this.mS_.myID)
-			{
-				this.uiObjects[0].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
-			}
-			else
+			if (!gameScript.playerGame)
 			{
 				this.uiObjects[0].GetComponent<Text>().text = gameScript.GetNameWithTag();
-				if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
+				if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
 				{
 					this.uiObjects[0].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
 				}
+			}
+			else
+			{
+				this.uiObjects[0].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
 			}
 		}
 		else
@@ -168,17 +172,17 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		gameScript = this.bestSound;
 		if (gameScript)
 		{
-			if (gameScript.ownerID == this.mS_.myID || gameScript.publisherID == this.mS_.myID)
-			{
-				this.uiObjects[1].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
-			}
-			else
+			if (!gameScript.playerGame)
 			{
 				this.uiObjects[1].GetComponent<Text>().text = gameScript.GetNameWithTag();
-				if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
+				if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
 				{
 					this.uiObjects[1].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
 				}
+			}
+			else
+			{
+				this.uiObjects[1].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
 			}
 		}
 		else
@@ -188,51 +192,53 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		publisherScript publisherScript = this.bestStudio;
 		if (publisherScript)
 		{
-			if (publisherScript.myID != this.mS_.myID)
+			this.uiObjects[2].GetComponent<Text>().text = publisherScript.GetName();
+			this.uiObjects[12].GetComponent<Button>().interactable = true;
+		}
+		else
+		{
+			this.uiObjects[12].GetComponent<Button>().interactable = false;
+			if (!this.mS_.multiplayer || this.bestStudioPlayer == this.mS_.mpCalls_.myID)
 			{
-				this.uiObjects[2].GetComponent<Text>().text = publisherScript.GetName();
-				if (publisherScript.isPlayer)
-				{
-					this.uiObjects[2].GetComponent<Text>().text = "<color=magenta>" + publisherScript.GetName() + "</color>";
-				}
+				this.uiObjects[2].GetComponent<Text>().text = "<color=blue>" + this.mS_.companyName + "</color>";
 			}
 			else
 			{
-				this.uiObjects[2].GetComponent<Text>().text = "<color=blue>" + publisherScript.GetName() + "</color>";
+				this.uiObjects[2].GetComponent<Text>().text = "<color=magenta>" + this.mS_.mpCalls_.GetCompanyName(this.bestStudioPlayer) + "</color>";
 			}
-			this.uiObjects[12].GetComponent<Button>().interactable = true;
 		}
 		publisherScript = this.bestPublisher;
 		if (publisherScript)
 		{
-			if (publisherScript.myID != this.mS_.myID)
+			this.uiObjects[3].GetComponent<Text>().text = publisherScript.GetName();
+			this.uiObjects[13].GetComponent<Button>().interactable = true;
+		}
+		else
+		{
+			this.uiObjects[13].GetComponent<Button>().interactable = false;
+			if (!this.mS_.multiplayer || this.bestPublisherPlayer == this.mS_.mpCalls_.myID)
 			{
-				this.uiObjects[3].GetComponent<Text>().text = publisherScript.GetName();
-				if (publisherScript.isPlayer)
-				{
-					this.uiObjects[3].GetComponent<Text>().text = "<color=magenta>" + publisherScript.GetName() + "</color>";
-				}
+				this.uiObjects[3].GetComponent<Text>().text = "<color=blue>" + this.mS_.companyName + "</color>";
 			}
 			else
 			{
-				this.uiObjects[3].GetComponent<Text>().text = "<color=blue>" + publisherScript.GetName() + "</color>";
+				this.uiObjects[3].GetComponent<Text>().text = "<color=magenta>" + this.mS_.mpCalls_.GetCompanyName(this.bestPublisherPlayer) + "</color>";
 			}
-			this.uiObjects[13].GetComponent<Button>().interactable = true;
 		}
 		gameScript = this.bestGame;
 		if (gameScript)
 		{
-			if (gameScript.ownerID == this.mS_.myID || gameScript.publisherID == this.mS_.myID)
-			{
-				this.uiObjects[4].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
-			}
-			else
+			if (!gameScript.playerGame)
 			{
 				this.uiObjects[4].GetComponent<Text>().text = gameScript.GetNameWithTag();
-				if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
+				if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
 				{
 					this.uiObjects[4].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
 				}
+			}
+			else
+			{
+				this.uiObjects[4].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
 			}
 		}
 		else
@@ -242,13 +248,13 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		gameScript = this.badGame;
 		if (gameScript)
 		{
-			if (gameScript.ownerID == this.mS_.myID || gameScript.publisherID == this.mS_.myID)
+			if (gameScript.playerGame)
 			{
 				this.uiObjects[5].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
 				return;
 			}
 			this.uiObjects[5].GetComponent<Text>().text = gameScript.GetNameWithTag();
-			if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
+			if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
 			{
 				this.uiObjects[5].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
 				return;
@@ -260,7 +266,7 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600148C RID: 5260 RVA: 0x000D569C File Offset: 0x000D389C
+	
 	public void BUTTON_Seite(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -276,14 +282,14 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x0600148D RID: 5261 RVA: 0x000D570C File Offset: 0x000D390C
+	
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600148E RID: 5262 RVA: 0x000D5728 File Offset: 0x000D3928
+	
 	public void BUTTON_ShowGame(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -325,7 +331,7 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600148F RID: 5263 RVA: 0x000D5860 File Offset: 0x000D3A60
+	
 	public void BUTTON_ShowStudio()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -336,7 +342,7 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001490 RID: 5264 RVA: 0x000D58C0 File Offset: 0x000D3AC0
+	
 	public void BUTTON_ShowPublisher()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -347,51 +353,57 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001892 RID: 6290
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001893 RID: 6291
+	
 	private GameObject main_;
 
-	// Token: 0x04001894 RID: 6292
+	
 	private mainScript mS_;
 
-	// Token: 0x04001895 RID: 6293
+	
 	private textScript tS_;
 
-	// Token: 0x04001896 RID: 6294
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001897 RID: 6295
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001898 RID: 6296
+	
 	private genres genres_;
 
-	// Token: 0x04001899 RID: 6297
+	
 	private themes themes_;
 
-	// Token: 0x0400189A RID: 6298
+	
 	private games games_;
 
-	// Token: 0x0400189B RID: 6299
+	
 	public gameScript bestGrafik;
 
-	// Token: 0x0400189C RID: 6300
+	
 	public gameScript bestSound;
 
-	// Token: 0x0400189D RID: 6301
+	
 	public publisherScript bestStudio;
 
-	// Token: 0x0400189E RID: 6302
+	
+	public int bestStudioPlayer;
+
+	
 	public publisherScript bestPublisher;
 
-	// Token: 0x0400189F RID: 6303
+	
+	public int bestPublisherPlayer;
+
+	
 	public gameScript bestGame;
 
-	// Token: 0x040018A0 RID: 6304
+	
 	public gameScript badGame;
 
-	// Token: 0x040018A1 RID: 6305
+	
 	public int seite;
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001D9 RID: 473
+
 public class Menu_Trendsetter : MonoBehaviour
 {
-	// Token: 0x060011D3 RID: 4563 RVA: 0x000BC0E3 File Offset: 0x000BA2E3
+	
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060011D4 RID: 4564 RVA: 0x000BC0EC File Offset: 0x000BA2EC
+	
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_Trendsetter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D5 RID: 4565 RVA: 0x000BC1D2 File Offset: 0x000BA3D2
+	
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -53,7 +53,7 @@ public class Menu_Trendsetter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D6 RID: 4566 RVA: 0x000BC1F0 File Offset: 0x000BA3F0
+	
 	public void Init(gameScript script_)
 	{
 		this.FindScripts();
@@ -96,11 +96,7 @@ public class Menu_Trendsetter : MonoBehaviour
 					this.mS_.trendAntiTheme++;
 				}
 			}
-			if (!this.mS_.myPubS_)
-			{
-				this.mS_.FindMyPublisherScript();
-			}
-			this.mS_.AddAwards(6, this.mS_.myPubS_);
+			this.mS_.awards[6]++;
 			if (this.mS_.multiplayer)
 			{
 				if (this.mS_.mpCalls_.isServer)
@@ -120,7 +116,7 @@ public class Menu_Trendsetter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D7 RID: 4567 RVA: 0x000BC43C File Offset: 0x000BA63C
+	
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -129,33 +125,33 @@ public class Menu_Trendsetter : MonoBehaviour
 		this.guiMain_.CreateTopNewsTrend(this.genres_.GetName(this.mS_.trendGenre) + " / " + this.tS_.GetThemes(this.mS_.trendTheme), this.genres_.GetPic(this.mS_.trendGenre));
 	}
 
-	// Token: 0x060011D8 RID: 4568 RVA: 0x000BC4C4 File Offset: 0x000BA6C4
+	
 	public void BUTTON_Yes()
 	{
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x0400164D RID: 5709
+	
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400164E RID: 5710
+	
 	private GameObject main_;
 
-	// Token: 0x0400164F RID: 5711
+	
 	private mainScript mS_;
 
-	// Token: 0x04001650 RID: 5712
+	
 	private textScript tS_;
 
-	// Token: 0x04001651 RID: 5713
+	
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001652 RID: 5714
+	
 	private sfxScript sfx_;
 
-	// Token: 0x04001653 RID: 5715
+	
 	private genres genres_;
 
-	// Token: 0x04001654 RID: 5716
+	
 	private themes themes_;
 }
