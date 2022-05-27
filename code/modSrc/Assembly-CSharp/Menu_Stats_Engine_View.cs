@@ -72,7 +72,7 @@ public class Menu_Stats_Engine_View : MonoBehaviour
 		this.FindScripts();
 		this.eS_ = s;
 		this.SetData();
-		if (this.eS_.playerEngine)
+		if (this.eS_.ownerID == this.mS_.myID)
 		{
 			this.uiObjects[8].SetActive(true);
 			this.uiObjects[16].SetActive(false);
@@ -189,12 +189,12 @@ public class Menu_Stats_Engine_View : MonoBehaviour
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
-		if (this.eS_.playerEngine && this.uiObjects[11].GetComponent<Toggle>().isOn && Mathf.RoundToInt(this.uiObjects[9].GetComponent<Slider>().value) <= 0 && Mathf.RoundToInt(this.uiObjects[10].GetComponent<Slider>().value) <= 0)
+		if (this.eS_.ownerID == this.mS_.myID && this.uiObjects[11].GetComponent<Toggle>().isOn && Mathf.RoundToInt(this.uiObjects[9].GetComponent<Slider>().value) <= 0 && Mathf.RoundToInt(this.uiObjects[10].GetComponent<Slider>().value) <= 0)
 		{
 			this.guiMain_.MessageBox(this.tS_.GetText(1174), false);
 			return;
 		}
-		if (this.eS_.playerEngine)
+		if (this.eS_.ownerID == this.mS_.myID)
 		{
 			this.eS_.preis = Mathf.RoundToInt(this.uiObjects[9].GetComponent<Slider>().value * 1000f);
 			this.eS_.gewinnbeteiligung = Mathf.RoundToInt(this.uiObjects[10].GetComponent<Slider>().value);

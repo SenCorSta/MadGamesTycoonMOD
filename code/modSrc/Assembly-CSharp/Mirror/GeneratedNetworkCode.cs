@@ -284,6 +284,79 @@ namespace Mirror
 		}
 
 		
+		public static mpCalls.c_Publisher _Read_mpCalls/c_Publisher(NetworkReader reader)
+		{
+			return new mpCalls.c_Publisher
+			{
+				myID = reader.ReadInt32(),
+				isUnlocked = reader.ReadBoolean(),
+				name_EN = reader.ReadString(),
+				name_GE = reader.ReadString(),
+				name_TU = reader.ReadString(),
+				name_CH = reader.ReadString(),
+				name_FR = reader.ReadString(),
+				name_JA = reader.ReadString(),
+				date_year = reader.ReadInt32(),
+				date_month = reader.ReadInt32(),
+				stars = reader.ReadSingle(),
+				logoID = reader.ReadInt32(),
+				developer = reader.ReadBoolean(),
+				publisher = reader.ReadBoolean(),
+				onlyMobile = reader.ReadBoolean(),
+				share = reader.ReadSingle(),
+				fanGenre = reader.ReadInt32(),
+				firmenwert = reader.ReadInt64(),
+				notForSale = reader.ReadBoolean(),
+				lockToBuy = reader.ReadInt32(),
+				isPlayer = reader.ReadBoolean(),
+				ownerID = reader.ReadInt32(),
+				country = reader.ReadInt32(),
+				awards = GeneratedNetworkCode._Read_System.Int32[](reader)
+			};
+		}
+
+		
+		public static int[] Int32[](NetworkReader reader)
+		{
+			return reader.ReadArray<int>();
+		}
+
+		
+		public static void _Write_mpCalls/c_Publisher(NetworkWriter writer, mpCalls.c_Publisher value)
+		{
+			writer.WriteInt32(value.myID);
+			writer.WriteBoolean(value.isUnlocked);
+			writer.WriteString(value.name_EN);
+			writer.WriteString(value.name_GE);
+			writer.WriteString(value.name_TU);
+			writer.WriteString(value.name_CH);
+			writer.WriteString(value.name_FR);
+			writer.WriteString(value.name_JA);
+			writer.WriteInt32(value.date_year);
+			writer.WriteInt32(value.date_month);
+			writer.WriteSingle(value.stars);
+			writer.WriteInt32(value.logoID);
+			writer.WriteBoolean(value.developer);
+			writer.WriteBoolean(value.publisher);
+			writer.WriteBoolean(value.onlyMobile);
+			writer.WriteSingle(value.share);
+			writer.WriteInt32(value.fanGenre);
+			writer.WriteInt64(value.firmenwert);
+			writer.WriteBoolean(value.notForSale);
+			writer.WriteInt32(value.lockToBuy);
+			writer.WriteBoolean(value.isPlayer);
+			writer.WriteInt32(value.ownerID);
+			writer.WriteInt32(value.country);
+			GeneratedNetworkCode._Write_System.Int32[](writer, value.awards);
+		}
+
+		
+		public static void Int32[](NetworkWriter writer, int[] value)
+		{
+			writer.WriteArray(value);
+		}
+
+		
 		public static mpCalls.c_Forschung _Read_mpCalls/c_Forschung(NetworkReader reader)
 		{
 			return new mpCalls.c_Forschung
@@ -320,52 +393,6 @@ namespace Mirror
 
 		
 		public static void Boolean[](NetworkWriter writer, bool[] value)
-		{
-			writer.WriteArray(value);
-		}
-
-		
-		public static mpCalls.c_ChangeID _Read_mpCalls/c_ChangeID(NetworkReader reader)
-		{
-			return new mpCalls.c_ChangeID
-			{
-				playerID = reader.ReadInt32(),
-				newID = reader.ReadInt32()
-			};
-		}
-
-		
-		public static void _Write_mpCalls/c_ChangeID(NetworkWriter writer, mpCalls.c_ChangeID value)
-		{
-			writer.WriteInt32(value.playerID);
-			writer.WriteInt32(value.newID);
-		}
-
-		
-		public static mpCalls.c_AllAwards _Read_mpCalls/c_AllAwards(NetworkReader reader)
-		{
-			return new mpCalls.c_AllAwards
-			{
-				playerID = reader.ReadInt32(),
-				awards = GeneratedNetworkCode._Read_System.Int32[](reader)
-			};
-		}
-
-		
-		public static int[] Int32[](NetworkReader reader)
-		{
-			return reader.ReadArray<int>();
-		}
-
-		
-		public static void _Write_mpCalls/c_AllAwards(NetworkWriter writer, mpCalls.c_AllAwards value)
-		{
-			writer.WriteInt32(value.playerID);
-			GeneratedNetworkCode._Write_System.Int32[](writer, value.awards);
-		}
-
-		
-		public static void Int32[](NetworkWriter writer, int[] value)
 		{
 			writer.WriteArray(value);
 		}
@@ -514,8 +541,7 @@ namespace Mirror
 			return new mpCalls.c_Engine
 			{
 				myID = reader.ReadInt32(),
-				playerEngine = reader.ReadBoolean(),
-				multiplayerSlot = reader.ReadInt32(),
+				ownerID = reader.ReadInt32(),
 				isUnlocked = reader.ReadBoolean(),
 				gekauft = reader.ReadBoolean(),
 				myName = reader.ReadString(),
@@ -532,8 +558,7 @@ namespace Mirror
 		public static void _Write_mpCalls/c_Engine(NetworkWriter writer, mpCalls.c_Engine value)
 		{
 			writer.WriteInt32(value.myID);
-			writer.WriteBoolean(value.playerEngine);
-			writer.WriteInt32(value.multiplayerSlot);
+			writer.WriteInt32(value.ownerID);
 			writer.WriteBoolean(value.isUnlocked);
 			writer.WriteBoolean(value.gekauft);
 			writer.WriteString(value.myName);
@@ -555,7 +580,6 @@ namespace Mirror
 				date_month = reader.ReadInt32(),
 				date_year_end = reader.ReadInt32(),
 				date_month_end = reader.ReadInt32(),
-				npc = reader.ReadBoolean(),
 				price = reader.ReadInt32(),
 				dev_costs = reader.ReadInt32(),
 				tech = reader.ReadInt32(),
@@ -591,8 +615,7 @@ namespace Mirror
 				internet = reader.ReadBoolean(),
 				powerFromMarket = reader.ReadSingle(),
 				myName = reader.ReadString(),
-				playerConsole = reader.ReadBoolean(),
-				multiplaySlot = reader.ReadInt32(),
+				ownerID = reader.ReadInt32(),
 				gameID = reader.ReadInt32(),
 				anzController = reader.ReadInt32(),
 				conHueShift = reader.ReadSingle(),
@@ -637,7 +660,6 @@ namespace Mirror
 			writer.WriteInt32(value.date_month);
 			writer.WriteInt32(value.date_year_end);
 			writer.WriteInt32(value.date_month_end);
-			writer.WriteBoolean(value.npc);
 			writer.WriteInt32(value.price);
 			writer.WriteInt32(value.dev_costs);
 			writer.WriteInt32(value.tech);
@@ -673,8 +695,7 @@ namespace Mirror
 			writer.WriteBoolean(value.internet);
 			writer.WriteSingle(value.powerFromMarket);
 			writer.WriteString(value.myName);
-			writer.WriteBoolean(value.playerConsole);
-			writer.WriteInt32(value.multiplaySlot);
+			writer.WriteInt32(value.ownerID);
 			writer.WriteInt32(value.gameID);
 			writer.WriteInt32(value.anzController);
 			writer.WriteSingle(value.conHueShift);
@@ -770,9 +791,6 @@ namespace Mirror
 			{
 				playerID = reader.ReadInt32(),
 				playerName = reader.ReadString(),
-				companyName = reader.ReadString(),
-				logo = reader.ReadInt32(),
-				country = reader.ReadInt32(),
 				ready = reader.ReadBoolean()
 			};
 		}
@@ -782,9 +800,6 @@ namespace Mirror
 		{
 			writer.WriteInt32(value.playerID);
 			writer.WriteString(value.playerName);
-			writer.WriteString(value.companyName);
-			writer.WriteInt32(value.logo);
-			writer.WriteInt32(value.country);
 			writer.WriteBoolean(value.ready);
 		}
 
@@ -866,7 +881,6 @@ namespace Mirror
 				bestAbonnements = reader.ReadInt32(),
 				bestChartPosition = reader.ReadInt32(),
 				exklusivKonsolenSells = reader.ReadInt64(),
-				multiplayerSlot = reader.ReadInt32(),
 				ipPunkte = reader.ReadSingle(),
 				pubAngebot = reader.ReadBoolean(),
 				pubAngebot_Weeks = reader.ReadInt32(),
@@ -909,7 +923,6 @@ namespace Mirror
 			writer.WriteInt32(value.bestAbonnements);
 			writer.WriteInt32(value.bestChartPosition);
 			writer.WriteInt64(value.exklusivKonsolenSells);
-			writer.WriteInt32(value.multiplayerSlot);
 			writer.WriteSingle(value.ipPunkte);
 			writer.WriteBoolean(value.pubAngebot);
 			writer.WriteInt32(value.pubAngebot_Weeks);
@@ -937,7 +950,6 @@ namespace Mirror
 				myName = reader.ReadString(),
 				ipName = reader.ReadString(),
 				playerGame = reader.ReadBoolean(),
-				multiplayerSlot = reader.ReadInt32(),
 				inDevelopment = reader.ReadBoolean(),
 				developerID = reader.ReadInt32(),
 				publisherID = reader.ReadInt32(),
@@ -1078,7 +1090,6 @@ namespace Mirror
 			writer.WriteString(value.myName);
 			writer.WriteString(value.ipName);
 			writer.WriteBoolean(value.playerGame);
-			writer.WriteInt32(value.multiplayerSlot);
 			writer.WriteBoolean(value.inDevelopment);
 			writer.WriteInt32(value.developerID);
 			writer.WriteInt32(value.publisherID);
@@ -1227,23 +1238,6 @@ namespace Mirror
 		}
 
 		
-		public static mpCalls.s_ChangeID _Read_mpCalls/s_ChangeID(NetworkReader reader)
-		{
-			return new mpCalls.s_ChangeID
-			{
-				playerID = reader.ReadInt32(),
-				newID = reader.ReadInt32()
-			};
-		}
-
-		
-		public static void _Write_mpCalls/s_ChangeID(NetworkWriter writer, mpCalls.s_ChangeID value)
-		{
-			writer.WriteInt32(value.playerID);
-			writer.WriteInt32(value.newID);
-		}
-
-		
 		public static mpCalls.s_Forschung _Read_mpCalls/s_Forschung(NetworkReader reader)
 		{
 			return new mpCalls.s_Forschung
@@ -1312,23 +1306,6 @@ namespace Mirror
 		public static void Single[](NetworkWriter writer, float[] value)
 		{
 			writer.WriteArray(value);
-		}
-
-		
-		public static mpCalls.s_AllAwards _Read_mpCalls/s_AllAwards(NetworkReader reader)
-		{
-			return new mpCalls.s_AllAwards
-			{
-				playerID = reader.ReadInt32(),
-				awards = GeneratedNetworkCode._Read_System.Int32[](reader)
-			};
-		}
-
-		
-		public static void _Write_mpCalls/s_AllAwards(NetworkWriter writer, mpCalls.s_AllAwards value)
-		{
-			writer.WriteInt32(value.playerID);
-			GeneratedNetworkCode._Write_System.Int32[](writer, value.awards);
 		}
 
 		
@@ -1581,9 +1558,7 @@ namespace Mirror
 				bestGrafik = reader.ReadInt32(),
 				bestSound = reader.ReadInt32(),
 				bestStudio = reader.ReadInt32(),
-				bestStudioPlayer = reader.ReadInt32(),
 				bestPublisher = reader.ReadInt32(),
-				bestPublisherPlayer = reader.ReadInt32(),
 				bestGame = reader.ReadInt32(),
 				badGame = reader.ReadInt32()
 			};
@@ -1595,9 +1570,7 @@ namespace Mirror
 			writer.WriteInt32(value.bestGrafik);
 			writer.WriteInt32(value.bestSound);
 			writer.WriteInt32(value.bestStudio);
-			writer.WriteInt32(value.bestStudioPlayer);
 			writer.WriteInt32(value.bestPublisher);
-			writer.WriteInt32(value.bestPublisherPlayer);
 			writer.WriteInt32(value.bestGame);
 			writer.WriteInt32(value.badGame);
 		}
@@ -1629,8 +1602,7 @@ namespace Mirror
 			return new mpCalls.s_Engine
 			{
 				engineID = reader.ReadInt32(),
-				playerEngine = reader.ReadBoolean(),
-				multiplayerSlot = reader.ReadInt32(),
+				ownerID = reader.ReadInt32(),
 				isUnlocked = reader.ReadBoolean(),
 				gekauft = reader.ReadBoolean(),
 				myName = reader.ReadString(),
@@ -1647,8 +1619,7 @@ namespace Mirror
 		public static void _Write_mpCalls/s_Engine(NetworkWriter writer, mpCalls.s_Engine value)
 		{
 			writer.WriteInt32(value.engineID);
-			writer.WriteBoolean(value.playerEngine);
-			writer.WriteInt32(value.multiplayerSlot);
+			writer.WriteInt32(value.ownerID);
 			writer.WriteBoolean(value.isUnlocked);
 			writer.WriteBoolean(value.gekauft);
 			writer.WriteString(value.myName);
@@ -1670,7 +1641,6 @@ namespace Mirror
 				date_month = reader.ReadInt32(),
 				date_year_end = reader.ReadInt32(),
 				date_month_end = reader.ReadInt32(),
-				npc = reader.ReadBoolean(),
 				price = reader.ReadInt32(),
 				dev_costs = reader.ReadInt32(),
 				tech = reader.ReadInt32(),
@@ -1706,8 +1676,7 @@ namespace Mirror
 				internet = reader.ReadBoolean(),
 				powerFromMarket = reader.ReadSingle(),
 				myName = reader.ReadString(),
-				playerConsole = reader.ReadBoolean(),
-				multiplaySlot = reader.ReadInt32(),
+				ownerID = reader.ReadInt32(),
 				gameID = reader.ReadInt32(),
 				anzController = reader.ReadInt32(),
 				conHueShift = reader.ReadSingle(),
@@ -1752,7 +1721,6 @@ namespace Mirror
 			writer.WriteInt32(value.date_month);
 			writer.WriteInt32(value.date_year_end);
 			writer.WriteInt32(value.date_month_end);
-			writer.WriteBoolean(value.npc);
 			writer.WriteInt32(value.price);
 			writer.WriteInt32(value.dev_costs);
 			writer.WriteInt32(value.tech);
@@ -1788,8 +1756,7 @@ namespace Mirror
 			writer.WriteBoolean(value.internet);
 			writer.WriteSingle(value.powerFromMarket);
 			writer.WriteString(value.myName);
-			writer.WriteBoolean(value.playerConsole);
-			writer.WriteInt32(value.multiplaySlot);
+			writer.WriteInt32(value.ownerID);
 			writer.WriteInt32(value.gameID);
 			writer.WriteInt32(value.anzController);
 			writer.WriteSingle(value.conHueShift);
@@ -2556,8 +2523,7 @@ namespace Mirror
 			return new mpCalls.s_NpcEngine
 			{
 				myID = reader.ReadInt32(),
-				playerEngine = reader.ReadBoolean(),
-				multiplayerSlot = reader.ReadInt32(),
+				ownerID = reader.ReadInt32(),
 				isUnlocked = reader.ReadBoolean(),
 				gekauft = reader.ReadBoolean(),
 				myName = reader.ReadString(),
@@ -2594,8 +2560,7 @@ namespace Mirror
 		public static void _Write_mpCalls/s_NpcEngine(NetworkWriter writer, mpCalls.s_NpcEngine value)
 		{
 			writer.WriteInt32(value.myID);
-			writer.WriteBoolean(value.playerEngine);
-			writer.WriteInt32(value.multiplayerSlot);
+			writer.WriteInt32(value.ownerID);
 			writer.WriteBoolean(value.isUnlocked);
 			writer.WriteBoolean(value.gekauft);
 			writer.WriteString(value.myName);
@@ -2632,6 +2597,7 @@ namespace Mirror
 		{
 			return new mpCalls.s_Firmenwert
 			{
+				publisherID = GeneratedNetworkCode._Read_System.Int32[](reader),
 				firmenwert = GeneratedNetworkCode._Read_System.Int64[](reader)
 			};
 		}
@@ -2645,6 +2611,7 @@ namespace Mirror
 		
 		public static void _Write_mpCalls/s_Firmenwert(NetworkWriter writer, mpCalls.s_Firmenwert value)
 		{
+			GeneratedNetworkCode._Write_System.Int32[](writer, value.publisherID);
 			GeneratedNetworkCode._Write_System.Int64[](writer, value.firmenwert);
 		}
 
@@ -2678,7 +2645,11 @@ namespace Mirror
 				fanGenre = reader.ReadInt32(),
 				firmenwert = reader.ReadInt64(),
 				notForSale = reader.ReadBoolean(),
-				lockToBuy = reader.ReadInt32()
+				lockToBuy = reader.ReadInt32(),
+				isPlayer = reader.ReadBoolean(),
+				ownerID = reader.ReadInt32(),
+				country = reader.ReadInt32(),
+				awards = GeneratedNetworkCode._Read_System.Int32[](reader)
 			};
 		}
 
@@ -2705,6 +2676,10 @@ namespace Mirror
 			writer.WriteInt64(value.firmenwert);
 			writer.WriteBoolean(value.notForSale);
 			writer.WriteInt32(value.lockToBuy);
+			writer.WriteBoolean(value.isPlayer);
+			writer.WriteInt32(value.ownerID);
+			writer.WriteInt32(value.country);
+			GeneratedNetworkCode._Write_System.Int32[](writer, value.awards);
 		}
 
 		
@@ -2749,7 +2724,6 @@ namespace Mirror
 				bestAbonnements = reader.ReadInt32(),
 				bestChartPosition = reader.ReadInt32(),
 				exklusivKonsolenSells = reader.ReadInt64(),
-				multiplayerSlot = reader.ReadInt32(),
 				ipPunkte = reader.ReadSingle(),
 				pubAngebot = reader.ReadBoolean(),
 				pubAngebot_Weeks = reader.ReadInt32(),
@@ -2793,7 +2767,6 @@ namespace Mirror
 			writer.WriteInt32(value.bestAbonnements);
 			writer.WriteInt32(value.bestChartPosition);
 			writer.WriteInt64(value.exklusivKonsolenSells);
-			writer.WriteInt32(value.multiplayerSlot);
 			writer.WriteSingle(value.ipPunkte);
 			writer.WriteBoolean(value.pubAngebot);
 			writer.WriteInt32(value.pubAngebot_Weeks);
@@ -2822,7 +2795,6 @@ namespace Mirror
 				myName = reader.ReadString(),
 				ipName = reader.ReadString(),
 				playerGame = reader.ReadBoolean(),
-				multiplayerSlot = reader.ReadInt32(),
 				inDevelopment = reader.ReadBoolean(),
 				developerID = reader.ReadInt32(),
 				publisherID = reader.ReadInt32(),
@@ -2963,7 +2935,6 @@ namespace Mirror
 			writer.WriteString(value.myName);
 			writer.WriteString(value.ipName);
 			writer.WriteBoolean(value.playerGame);
-			writer.WriteInt32(value.multiplayerSlot);
 			writer.WriteBoolean(value.inDevelopment);
 			writer.WriteInt32(value.developerID);
 			writer.WriteInt32(value.publisherID);
@@ -3230,9 +3201,6 @@ namespace Mirror
 			{
 				id = reader.ReadInt32(),
 				playerName = reader.ReadString(),
-				companyName = reader.ReadString(),
-				logo = reader.ReadInt32(),
-				country = reader.ReadInt32(),
 				ready = reader.ReadBoolean()
 			};
 		}
@@ -3242,9 +3210,6 @@ namespace Mirror
 		{
 			writer.WriteInt32(value.id);
 			writer.WriteString(value.playerName);
-			writer.WriteString(value.companyName);
-			writer.WriteInt32(value.logo);
-			writer.WriteInt32(value.country);
 			writer.WriteBoolean(value.ready);
 		}
 
@@ -3384,11 +3349,10 @@ namespace Mirror
 			Writer<UpdateVarsMessage>.write = new Action<NetworkWriter, UpdateVarsMessage>(GeneratedNetworkCode._Write_Mirror.UpdateVarsMessage);
 			Writer<NetworkPingMessage>.write = new Action<NetworkWriter, NetworkPingMessage>(GeneratedNetworkCode._Write_Mirror.NetworkPingMessage);
 			Writer<NetworkPongMessage>.write = new Action<NetworkWriter, NetworkPongMessage>(GeneratedNetworkCode._Write_Mirror.NetworkPongMessage);
+			Writer<mpCalls.c_Publisher>.write = new Action<NetworkWriter, mpCalls.c_Publisher>(GeneratedNetworkCode._Write_mpCalls/c_Publisher);
+			Writer<int[]>.write = new Action<NetworkWriter, int[]>(GeneratedNetworkCode._Write_System.Int32[]);
 			Writer<mpCalls.c_Forschung>.write = new Action<NetworkWriter, mpCalls.c_Forschung>(GeneratedNetworkCode._Write_mpCalls/c_Forschung);
 			Writer<bool[]>.write = new Action<NetworkWriter, bool[]>(GeneratedNetworkCode._Write_System.Boolean[]);
-			Writer<mpCalls.c_ChangeID>.write = new Action<NetworkWriter, mpCalls.c_ChangeID>(GeneratedNetworkCode._Write_mpCalls/c_ChangeID);
-			Writer<mpCalls.c_AllAwards>.write = new Action<NetworkWriter, mpCalls.c_AllAwards>(GeneratedNetworkCode._Write_mpCalls/c_AllAwards);
-			Writer<int[]>.write = new Action<NetworkWriter, int[]>(GeneratedNetworkCode._Write_System.Int32[]);
 			Writer<mpCalls.c_Help>.write = new Action<NetworkWriter, mpCalls.c_Help>(GeneratedNetworkCode._Write_mpCalls/c_Help);
 			Writer<mpCalls.c_ObjectDelete>.write = new Action<NetworkWriter, mpCalls.c_ObjectDelete>(GeneratedNetworkCode._Write_mpCalls/c_ObjectDelete);
 			Writer<mpCalls.c_Object>.write = new Action<NetworkWriter, mpCalls.c_Object>(GeneratedNetworkCode._Write_mpCalls/c_Object);
@@ -3407,12 +3371,10 @@ namespace Mirror
 			Writer<mpCalls.c_GameData>.write = new Action<NetworkWriter, mpCalls.c_GameData>(GeneratedNetworkCode._Write_mpCalls/c_GameData);
 			Writer<mpCalls.c_Game>.write = new Action<NetworkWriter, mpCalls.c_Game>(GeneratedNetworkCode._Write_mpCalls/c_Game);
 			Writer<mpCalls.s_AddPlayer>.write = new Action<NetworkWriter, mpCalls.s_AddPlayer>(GeneratedNetworkCode._Write_mpCalls/s_AddPlayer);
-			Writer<mpCalls.s_ChangeID>.write = new Action<NetworkWriter, mpCalls.s_ChangeID>(GeneratedNetworkCode._Write_mpCalls/s_ChangeID);
 			Writer<mpCalls.s_Forschung>.write = new Action<NetworkWriter, mpCalls.s_Forschung>(GeneratedNetworkCode._Write_mpCalls/s_Forschung);
 			Writer<mpCalls.s_PlayerLeave>.write = new Action<NetworkWriter, mpCalls.s_PlayerLeave>(GeneratedNetworkCode._Write_mpCalls/s_PlayerLeave);
 			Writer<mpCalls.s_GenreBeliebtheit>.write = new Action<NetworkWriter, mpCalls.s_GenreBeliebtheit>(GeneratedNetworkCode._Write_mpCalls/s_GenreBeliebtheit);
 			Writer<float[]>.write = new Action<NetworkWriter, float[]>(GeneratedNetworkCode._Write_System.Single[]);
-			Writer<mpCalls.s_AllAwards>.write = new Action<NetworkWriter, mpCalls.s_AllAwards>(GeneratedNetworkCode._Write_mpCalls/s_AllAwards);
 			Writer<mpCalls.s_GenreCombination>.write = new Action<NetworkWriter, mpCalls.s_GenreCombination>(GeneratedNetworkCode._Write_mpCalls/s_GenreCombination);
 			Writer<mpCalls.s_GenreDesign>.write = new Action<NetworkWriter, mpCalls.s_GenreDesign>(GeneratedNetworkCode._Write_mpCalls/s_GenreDesign);
 			Writer<mpCalls.s_Help>.write = new Action<NetworkWriter, mpCalls.s_Help>(GeneratedNetworkCode._Write_mpCalls/s_Help);
@@ -3511,11 +3473,10 @@ namespace Mirror
 			Reader<UpdateVarsMessage>.read = new Func<NetworkReader, UpdateVarsMessage>(GeneratedNetworkCode._Read_Mirror.UpdateVarsMessage);
 			Reader<NetworkPingMessage>.read = new Func<NetworkReader, NetworkPingMessage>(GeneratedNetworkCode._Read_Mirror.NetworkPingMessage);
 			Reader<NetworkPongMessage>.read = new Func<NetworkReader, NetworkPongMessage>(GeneratedNetworkCode._Read_Mirror.NetworkPongMessage);
+			Reader<mpCalls.c_Publisher>.read = new Func<NetworkReader, mpCalls.c_Publisher>(GeneratedNetworkCode._Read_mpCalls/c_Publisher);
+			Reader<int[]>.read = new Func<NetworkReader, int[]>(GeneratedNetworkCode._Read_System.Int32[]);
 			Reader<mpCalls.c_Forschung>.read = new Func<NetworkReader, mpCalls.c_Forschung>(GeneratedNetworkCode._Read_mpCalls/c_Forschung);
 			Reader<bool[]>.read = new Func<NetworkReader, bool[]>(GeneratedNetworkCode._Read_System.Boolean[]);
-			Reader<mpCalls.c_ChangeID>.read = new Func<NetworkReader, mpCalls.c_ChangeID>(GeneratedNetworkCode._Read_mpCalls/c_ChangeID);
-			Reader<mpCalls.c_AllAwards>.read = new Func<NetworkReader, mpCalls.c_AllAwards>(GeneratedNetworkCode._Read_mpCalls/c_AllAwards);
-			Reader<int[]>.read = new Func<NetworkReader, int[]>(GeneratedNetworkCode._Read_System.Int32[]);
 			Reader<mpCalls.c_Help>.read = new Func<NetworkReader, mpCalls.c_Help>(GeneratedNetworkCode._Read_mpCalls/c_Help);
 			Reader<mpCalls.c_ObjectDelete>.read = new Func<NetworkReader, mpCalls.c_ObjectDelete>(GeneratedNetworkCode._Read_mpCalls/c_ObjectDelete);
 			Reader<mpCalls.c_Object>.read = new Func<NetworkReader, mpCalls.c_Object>(GeneratedNetworkCode._Read_mpCalls/c_Object);
@@ -3534,12 +3495,10 @@ namespace Mirror
 			Reader<mpCalls.c_GameData>.read = new Func<NetworkReader, mpCalls.c_GameData>(GeneratedNetworkCode._Read_mpCalls/c_GameData);
 			Reader<mpCalls.c_Game>.read = new Func<NetworkReader, mpCalls.c_Game>(GeneratedNetworkCode._Read_mpCalls/c_Game);
 			Reader<mpCalls.s_AddPlayer>.read = new Func<NetworkReader, mpCalls.s_AddPlayer>(GeneratedNetworkCode._Read_mpCalls/s_AddPlayer);
-			Reader<mpCalls.s_ChangeID>.read = new Func<NetworkReader, mpCalls.s_ChangeID>(GeneratedNetworkCode._Read_mpCalls/s_ChangeID);
 			Reader<mpCalls.s_Forschung>.read = new Func<NetworkReader, mpCalls.s_Forschung>(GeneratedNetworkCode._Read_mpCalls/s_Forschung);
 			Reader<mpCalls.s_PlayerLeave>.read = new Func<NetworkReader, mpCalls.s_PlayerLeave>(GeneratedNetworkCode._Read_mpCalls/s_PlayerLeave);
 			Reader<mpCalls.s_GenreBeliebtheit>.read = new Func<NetworkReader, mpCalls.s_GenreBeliebtheit>(GeneratedNetworkCode._Read_mpCalls/s_GenreBeliebtheit);
 			Reader<float[]>.read = new Func<NetworkReader, float[]>(GeneratedNetworkCode._Read_System.Single[]);
-			Reader<mpCalls.s_AllAwards>.read = new Func<NetworkReader, mpCalls.s_AllAwards>(GeneratedNetworkCode._Read_mpCalls/s_AllAwards);
 			Reader<mpCalls.s_GenreCombination>.read = new Func<NetworkReader, mpCalls.s_GenreCombination>(GeneratedNetworkCode._Read_mpCalls/s_GenreCombination);
 			Reader<mpCalls.s_GenreDesign>.read = new Func<NetworkReader, mpCalls.s_GenreDesign>(GeneratedNetworkCode._Read_mpCalls/s_GenreDesign);
 			Reader<mpCalls.s_Help>.read = new Func<NetworkReader, mpCalls.s_Help>(GeneratedNetworkCode._Read_mpCalls/s_Help);

@@ -46,7 +46,6 @@ public class hardwareFeatures : MonoBehaviour
 				num2++;
 			}
 		}
-		Debug.Log("Hardware Features Amount: " + num2.ToString());
 		this.hardFeat_ICONFILE = new string[num2];
 		this.hardFeat_PIC = new Sprite[num2];
 		this.hardFeat_RES_POINTS = new int[num2];
@@ -323,8 +322,7 @@ public class hardwareFeatures : MonoBehaviour
 			this.ParseData("//", j);
 			if (this.ParseData("[EOF]", j))
 			{
-				Debug.Log("HardwareFeatures.txt -> EOF");
-				return;
+				break;
 			}
 			num++;
 		}

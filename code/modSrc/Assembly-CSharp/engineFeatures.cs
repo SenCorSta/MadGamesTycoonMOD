@@ -84,7 +84,6 @@ public class engineFeatures : MonoBehaviour
 				num2++;
 			}
 		}
-		Debug.Log("Engine Features Amount: " + num2.ToString());
 		this.engineFeatures_PIC = new Sprite[num2];
 		this.engineFeatures_TYP = new int[num2];
 		this.engineFeatures_RES_POINTS = new int[num2];
@@ -371,8 +370,7 @@ public class engineFeatures : MonoBehaviour
 			}
 			if (this.ParseData("[EOF]", j))
 			{
-				Debug.Log("EngineFeatures.txt -> EOF");
-				return;
+				break;
 			}
 			num++;
 		}

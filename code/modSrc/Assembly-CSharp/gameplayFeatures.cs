@@ -151,7 +151,6 @@ public class gameplayFeatures : MonoBehaviour
 				num2++;
 			}
 		}
-		Debug.Log("Gameplay Features Amount: " + num2.ToString());
 		this.gameplayFeatures_PIC = new Sprite[num2];
 		this.gameplayFeatures_TYP = new int[num2];
 		this.gameplayFeatures_RES_POINTS = new int[num2];
@@ -464,8 +463,7 @@ public class gameplayFeatures : MonoBehaviour
 			}
 			if (this.ParseData("[EOF]", j))
 			{
-				Debug.Log("GameplayFeatures.txt -> EOF");
-				return;
+				break;
 			}
 			num++;
 		}

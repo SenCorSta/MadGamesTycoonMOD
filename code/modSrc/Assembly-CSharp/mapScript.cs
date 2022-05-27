@@ -60,7 +60,6 @@ public class mapScript : MonoBehaviour
 		foreach (GameObject gameObject in array)
 		{
 			this.mapBlock[Mathf.RoundToInt(gameObject.transform.position.x), Mathf.RoundToInt(gameObject.transform.position.z)] = 1;
-			Debug.Log("BLOCK: " + Mathf.RoundToInt(gameObject.transform.position.x).ToString() + ", " + Mathf.RoundToInt(gameObject.transform.position.z).ToString());
 		}
 		GameObject[] array2 = array;
 		for (int i = 0; i < array2.Length; i++)
@@ -76,7 +75,6 @@ public class mapScript : MonoBehaviour
 		{
 			this.mapBlock[Mathf.RoundToInt(gameObject2.transform.position.x), Mathf.RoundToInt(gameObject2.transform.position.z)] = 1;
 			this.mapBlockDoor[Mathf.RoundToInt(gameObject2.transform.position.x), Mathf.RoundToInt(gameObject2.transform.position.z)] = 1;
-			Debug.Log("BLOCK DOOR: " + Mathf.RoundToInt(gameObject2.transform.position.x).ToString() + ", " + Mathf.RoundToInt(gameObject2.transform.position.z).ToString());
 		}
 		array2 = array3;
 		for (int i = 0; i < array2.Length; i++)

@@ -22,12 +22,9 @@ public class mpMain : MonoBehaviour
 		if (PlayerPrefs.HasKey("MP_IP"))
 		{
 			this.uiObjects[0].GetComponent<InputField>().text = PlayerPrefs.GetString("MP_IP");
+			return;
 		}
-		else
-		{
-			this.uiObjects[0].GetComponent<InputField>().text = "127.0.0.1";
-		}
-		this.SetLogo(UnityEngine.Random.Range(0, 10));
+		this.uiObjects[0].GetComponent<InputField>().text = "127.0.0.1";
 	}
 
 	
@@ -72,7 +69,8 @@ public class mpMain : MonoBehaviour
 	{
 		this.FindScripts();
 		this.InitDropdowns();
-		this.SetLogo(this.mS_.logo);
+		this.SetLogo(0);
+		this.uiObjects[12].GetComponent<InputField>().text = "";
 		this.INPUT_PlayerName();
 		this.INPUT_CompanyName();
 		this.mpCalls_.isServer = false;
@@ -99,7 +97,7 @@ public class mpMain : MonoBehaviour
 		}
 		this.uiObjects[28].GetComponent<Dropdown>().ClearOptions();
 		this.uiObjects[28].GetComponent<Dropdown>().AddOptions(list);
-		this.uiObjects[28].GetComponent<Dropdown>().value = this.mS_.country;
+		this.uiObjects[28].GetComponent<Dropdown>().value = 0;
 		list = new List<string>();
 		list.Add(this.tS_.GetText(802));
 		list.Add(this.tS_.GetText(803));
@@ -123,6 +121,7 @@ public class mpMain : MonoBehaviour
 		list = new List<string>();
 		list.Add(this.tS_.GetText(1770));
 		list.Add(this.tS_.GetText(1771));
+		list.Add(this.tS_.GetText(2012));
 		list.Add(this.tS_.GetText(1773));
 		this.uiObjects[33].GetComponent<Dropdown>().ClearOptions();
 		this.uiObjects[33].GetComponent<Dropdown>().AddOptions(list);
@@ -160,19 +159,30 @@ public class mpMain : MonoBehaviour
 			}
 			if (this.mpCalls_.isServer)
 			{
-				player_mp player_mp = this.mS_.mpCalls_.FindPlayer(this.mS_.mpCalls_.myID);
+				player_mp player_mp = this.mS_.mpCalls_.FindPlayer(this.mS_.myID);
 				if (player_mp != null)
 				{
-					player_mp.companyName = this.mS_.companyName;
-					player_mp.companyLogo = this.mS_.logo;
-					player_mp.companyCountry = this.mS_.country;
 					player_mp.playerName = this.mS_.playerName;
 					player_mp.ready = true;
 				}
-				this.mpCalls_.SERVER_Send_Difficulty();
-				this.mpCalls_.SERVER_Send_Startjahr();
-				this.mpCalls_.SERVER_Send_Office();
-				this.mpCalls_.SERVER_Send_Spielgeschwindigkeit();
+				if (this.manager.numPlayers > 1)
+				{
+					this.mpCalls_.SERVER_Send_Difficulty();
+					this.mpCalls_.SERVER_Send_Startjahr();
+					this.mpCalls_.SERVER_Send_Office();
+					this.mpCalls_.SERVER_Send_Spielgeschwindigkeit();
+				}
+			}
+			if (this.mS_.myPubS_)
+			{
+				if (this.mpCalls_.isClient)
+				{
+					this.mpCalls_.CLIENT_Send_Publisher(this.mS_.myPubS_);
+				}
+				if (this.mpCalls_.isServer)
+				{
+					this.mpCalls_.SERVER_Send_Publisher(this.mS_.myPubS_);
+				}
 			}
 		}
 	}
@@ -214,6 +224,18 @@ public class mpMain : MonoBehaviour
 			this.uiObjects[18 + i].GetComponent<Image>().sprite = this.guiMain_.uiSprites[19];
 			this.uiObjects[22 + i].GetComponent<Image>().sprite = this.guiMain_.uiSprites[19];
 			this.uiObjects[47 + i].GetComponent<Image>().sprite = this.guiMain_.uiSprites[19];
+		}
+		if (this.mpCalls_.isClient)
+		{
+			if (this.mS_.GetCompanyName().Length <= 0 || this.mS_.playerName.Length <= 0)
+			{
+				this.uiObjects[51].GetComponent<Toggle>().interactable = false;
+				this.uiObjects[51].GetComponent<Toggle>().isOn = false;
+			}
+			else
+			{
+				this.uiObjects[51].GetComponent<Toggle>().interactable = true;
+			}
 		}
 		this.UpdatePlayerInfos();
 		bool flag = false;
@@ -286,11 +308,17 @@ public class mpMain : MonoBehaviour
 			if (this.manager.numPlayers <= 1 || flag)
 			{
 				this.uiObjects[17].GetComponent<Button>().interactable = false;
-				this.uiObjects[34].GetComponent<Button>().interactable = false;
 			}
 			else
 			{
 				this.uiObjects[17].GetComponent<Button>().interactable = true;
+			}
+			if (this.manager.numPlayers <= 1)
+			{
+				this.uiObjects[34].GetComponent<Button>().interactable = false;
+			}
+			else
+			{
 				this.uiObjects[34].GetComponent<Button>().interactable = true;
 			}
 			if (this.manager.numPlayers < 4)
@@ -305,6 +333,10 @@ public class mpMain : MonoBehaviour
 		else
 		{
 			this.uiObjects[27].GetComponent<Text>().text = this.tS_.GetText(1031);
+		}
+		if (this.mpCalls_.isServer && (this.mS_.GetCompanyName().Length <= 0 || this.mS_.playerName.Length <= 0))
+		{
+			this.uiObjects[17].GetComponent<Button>().interactable = false;
 		}
 		if (this.mS_.achScript_)
 		{
@@ -322,6 +354,7 @@ public class mpMain : MonoBehaviour
 	
 	public void StartHost()
 	{
+		Debug.Log("5. StartHost()");
 		this.FindScripts();
 		this.mS_.mpLobbyOpen = true;
 		this.mpCalls_.SetupServer();
@@ -338,6 +371,7 @@ public class mpMain : MonoBehaviour
 	
 	public void BUTTON_StartHost()
 	{
+		Debug.Log("2. BUTTON_StartHost()");
 		this.FindScripts();
 		this.sfx_.PlaySound(3, true);
 		this.manager.GetComponent<SteamLobby>().HostLobby();
@@ -354,7 +388,7 @@ public class mpMain : MonoBehaviour
 	public void BUTTON_StartClient()
 	{
 		this.sfx_.PlaySound(3, true);
-		if (this.mS_.playerName.Length <= 0 || this.mS_.companyName.Length <= 0)
+		if (this.mS_.playerName.Length <= 0 || this.mS_.GetCompanyName().Length <= 0)
 		{
 			this.guiMain_.MessageBox(this.tS_.GetText(1033), false);
 			return;
@@ -363,15 +397,15 @@ public class mpMain : MonoBehaviour
 		{
 			this.mS_.playerName = "<Missing Player Name>";
 		}
-		if (this.mS_.companyName.Length <= 0)
+		if (this.mS_.GetCompanyName().Length <= 0)
 		{
-			this.mS_.companyName = "<Missing Company Name>";
+			this.mS_.SetCompanyName("<Missing Company Name>");
 		}
 		PlayerPrefs.SetString("PlayerName", this.uiObjects[11].GetComponent<InputField>().text);
 		PlayerPrefs.SetString("CompanyName", this.uiObjects[12].GetComponent<InputField>().text);
 		PlayerPrefs.SetString("MP_IP", this.uiObjects[0].GetComponent<InputField>().text);
 		this.mpCalls_.SetupClient();
-		this.mpCalls_.myID = -1;
+		this.mS_.myID = -1;
 		this.mpCalls_.isClient = true;
 		this.manager.networkAddress = this.uiObjects[0].GetComponent<InputField>().text;
 		this.manager.StartClient();
@@ -391,7 +425,7 @@ public class mpMain : MonoBehaviour
 		PlayerPrefs.SetString("CompanyName", this.uiObjects[12].GetComponent<InputField>().text);
 		PlayerPrefs.SetString("MP_IP", this.uiObjects[0].GetComponent<InputField>().text);
 		this.mpCalls_.SetupClient();
-		this.mpCalls_.myID = -1;
+		this.mS_.myID = -1;
 		this.mpCalls_.isClient = true;
 		this.uiObjects[3].SetActive(false);
 		this.uiObjects[5].SetActive(true);
@@ -407,9 +441,18 @@ public class mpMain : MonoBehaviour
 	{
 		this.FindScripts();
 		this.manager.GetComponent<SteamLobby>().LeaveLobby();
-		this.mpCalls_.myID = -1;
+		this.mS_.myID = -1;
+		this.mS_.myPubS_ = null;
 		this.mpCalls_.isServer = false;
 		this.mpCalls_.isClient = false;
+		for (int i = 0; i < 8; i++)
+		{
+			GameObject gameObject = GameObject.Find("PUB_" + (100000 + i).ToString());
+			if (gameObject)
+			{
+				UnityEngine.Object.Destroy(gameObject);
+			}
+		}
 		if (NetworkServer.active && NetworkClient.isConnected)
 		{
 			this.manager.StopHost();
@@ -449,13 +492,19 @@ public class mpMain : MonoBehaviour
 	
 	public void INPUT_CompanyName()
 	{
-		this.mS_.companyName = this.uiObjects[12].GetComponent<InputField>().text;
+		this.mS_.SetCompanyName(this.uiObjects[12].GetComponent<InputField>().text);
 	}
 
 	
 	public void DROPDOWN_Country()
 	{
-		this.mS_.country = this.uiObjects[28].GetComponent<Dropdown>().value;
+		this.mS_.SetCountryID(this.uiObjects[28].GetComponent<Dropdown>().value);
+	}
+
+	
+	public void DROPDOWN_Genre()
+	{
+		this.mS_.SetFanGenreID(this.uiObjects[46].GetComponent<Dropdown>().value);
 	}
 
 	
@@ -597,7 +646,7 @@ public class mpMain : MonoBehaviour
 	public void SetLogo(int i)
 	{
 		this.uiObjects[29].GetComponent<Image>().sprite = this.guiMain_.GetCompanyLogo(i);
-		this.mS_.logo = i;
+		this.mS_.SetCompanyLogoID(i);
 	}
 
 	
@@ -623,7 +672,7 @@ public class mpMain : MonoBehaviour
 	
 	public void DROPDOWN_Office()
 	{
-		this.mS_.office = this.uiObjects[33].GetComponent<Dropdown>().value + 3;
+		this.mS_.office = this.mS_.GetMapIDfromDropdown(this.uiObjects[33]);
 		if (this.mpCalls_.isServer)
 		{
 			this.mpCalls_.SERVER_Send_Office();

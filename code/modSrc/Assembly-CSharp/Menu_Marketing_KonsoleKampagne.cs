@@ -240,7 +240,7 @@ public class Menu_Marketing_KonsoleKampagne : MonoBehaviour
 	
 	public platformScript FindKonsole()
 	{
-		if (this.selectedKonsole && this.selectedKonsole.playerConsole && !this.selectedKonsole.vomMarktGenommen)
+		if (this.selectedKonsole && this.selectedKonsole.ownerID == this.mS_.myID && !this.selectedKonsole.vomMarktGenommen)
 		{
 			return this.selectedKonsole;
 		}
@@ -250,7 +250,7 @@ public class Menu_Marketing_KonsoleKampagne : MonoBehaviour
 			if (array[i])
 			{
 				platformScript component = array[i].GetComponent<platformScript>();
-				if (component && component.playerConsole && !component.vomMarktGenommen)
+				if (component && component.ownerID == this.mS_.myID && !component.vomMarktGenommen)
 				{
 					return component;
 				}

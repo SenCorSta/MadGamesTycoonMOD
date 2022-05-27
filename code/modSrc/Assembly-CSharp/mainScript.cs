@@ -217,6 +217,50 @@ public class mainScript : MonoBehaviour
 	}
 
 	
+	public int GetMapIDfromDropdown(GameObject drop_)
+	{
+		int result = 0;
+		switch (drop_.GetComponent<Dropdown>().value)
+		{
+		case 0:
+			result = 3;
+			break;
+		case 1:
+			result = 4;
+			break;
+		case 2:
+			result = 6;
+			break;
+		case 3:
+			result = 5;
+			break;
+		}
+		return result;
+	}
+
+	
+	public int GetDropdownSlotFromMapID(int id_)
+	{
+		int result = 0;
+		switch (id_)
+		{
+		case 3:
+			result = 0;
+			break;
+		case 4:
+			result = 1;
+			break;
+		case 5:
+			result = 3;
+			break;
+		case 6:
+			result = 2;
+			break;
+		}
+		return result;
+	}
+
+	
 	public void CreateStartAuto(int officeID)
 	{
 		if (officeID == 3)
@@ -306,10 +350,6 @@ public class mainScript : MonoBehaviour
 		this.licences_.LizenzenUpdaten();
 		this.unlock_.NewGameUnlocks();
 		this.unlock_.CheckUnlock(false);
-		if (!this.multiplayer || (this.multiplayer && this.mpCalls_.isServer))
-		{
-			this.UpdateTrend();
-		}
 		Menu_NewGameCEO component = this.guiMain_.uiObjects[162].GetComponent<Menu_NewGameCEO>();
 		characterScript characterScript = this.CreatePlayer(component.male, component.body, component.eyes, component.hair, component.beard, component.colorSkin, component.colorHair, component.colorHair, component.colorHose, component.colorShirt, component.colorAdd1);
 		characterScript.myName = component.uiObjects[12].GetComponent<InputField>().text;
@@ -325,6 +365,10 @@ public class mainScript : MonoBehaviour
 		characterScript.s_technik = component.s_technik;
 		characterScript.s_forschen = component.s_forschen;
 		this.UnlockRandomThemeAndGenre();
+		if (!this.multiplayer || (this.multiplayer && this.mpCalls_.isServer))
+		{
+			this.UpdateTrend(true);
+		}
 		this.contractWorkMain_.UpdateContractWork(true);
 		this.platforms_.UpdatePlatformSells(true, false);
 		for (int i = 0; i < this.newsSetting.Length; i++)
@@ -631,6 +675,7 @@ public class mainScript : MonoBehaviour
 		}
 		if (this.dayTimer >= 1f)
 		{
+			this.Autosave();
 			this.WochenUpdates();
 			if (this.week >= 5)
 			{
@@ -655,7 +700,7 @@ public class mainScript : MonoBehaviour
 		this.copyProtect_.UpdateEffekt();
 		this.antiCheat_.UpdateEffekt();
 		this.licences_.LizenzenUpdaten();
-		this.UpdateTrend();
+		this.UpdateTrend(false);
 		this.games_.SaveLastChartPosition();
 		this.games_.SellAllGames();
 		this.games_.UpdateChartsWeek();
@@ -675,6 +720,14 @@ public class mainScript : MonoBehaviour
 		{
 			this.sauerBugs = 0;
 		}
+		if (this.awardBonus > 0)
+		{
+			this.awardBonus--;
+		}
+		if (this.awardBonus < 0)
+		{
+			this.awardBonus = 0;
+		}
 		for (int i = 0; i < this.arrayCharacters.Length; i++)
 		{
 			if (this.arrayCharacters[i])
@@ -693,8 +746,9 @@ public class mainScript : MonoBehaviour
 			if (array[j])
 			{
 				publisherScript component2 = array[j].GetComponent<publisherScript>();
-				if (component2)
+				if (component2 && !component2.isPlayer)
 				{
+					component2.amountTrys = 0;
 					component2.CreateNewGame2(false);
 				}
 			}
@@ -711,6 +765,7 @@ public class mainScript : MonoBehaviour
 		}
 		this.week = 1;
 		this.month++;
+		this.autoSaveInterval--;
 		for (int i = 0; i < this.arrayObjects.Length; i++)
 		{
 			if (this.arrayObjects[i])
@@ -740,7 +795,7 @@ public class mainScript : MonoBehaviour
 			if (array[k])
 			{
 				publisherScript component3 = array[k].GetComponent<publisherScript>();
-				if (component3)
+				if (component3 && !component3.isPlayer)
 				{
 					component3.UpdateRandomData();
 					component3.VerwaltungskostenBezahlen();
@@ -768,9 +823,7 @@ public class mainScript : MonoBehaviour
 			{
 				this.achScript_.SetAchivement(45);
 			}
-			this.AutoSaveMultiplayer();
 		}
-		this.Autosave();
 	}
 
 	
@@ -814,7 +867,6 @@ public class mainScript : MonoBehaviour
 				break;
 			}
 		}
-		this.autoSaveInterval--;
 		if (this.autoSaveInterval == 0)
 		{
 			switch (this.settings_.saveInterval)
@@ -1079,15 +1131,13 @@ public class mainScript : MonoBehaviour
 	}
 
 	
-	public void AddMadGameConvetionVerlauf(int bestGrafik_, int bestSound_, int bestStudio_, int bestStudioPlayer_, int bestPublisher_, int bestPublisherPlayer_, int bestGame_, int badBame_)
+	public void AddMadGameConvetionVerlauf(int bestGrafik_, int bestSound_, int bestStudio_, int bestPublisher_, int bestGame_, int badBame_)
 	{
 		this.madGamesCon_Jahr.Add(this.year);
 		this.madGamesCon_BestGrafik.Add(bestGrafik_);
 		this.madGamesCon_BestSound.Add(bestSound_);
 		this.madGamesCon_BestStudio.Add(bestStudio_);
-		this.madGamesCon_BestStudioPlayer.Add(bestStudioPlayer_);
 		this.madGamesCon_BestPublisher.Add(bestPublisher_);
-		this.madGamesCon_BestPublisherPlayer.Add(bestPublisherPlayer_);
 		this.madGamesCon_BestGame.Add(bestGame_);
 		this.madGamesCon_BadGame.Add(badBame_);
 	}
@@ -1447,13 +1497,8 @@ public class mainScript : MonoBehaviour
 		}
 		else
 		{
-			while (i > 0)
+			while (i > 0 && i > 0)
 			{
-				if (i <= 0)
-				{
-					Debug.Log("i: " + i);
-					break;
-				}
 				int num2 = UnityEngine.Random.Range(0, this.genres_.genres_FANS.Length);
 				if (this.genres_.genres_UNLOCK[num2])
 				{
@@ -1469,12 +1514,12 @@ public class mainScript : MonoBehaviour
 					}
 				}
 			}
-			for (int l = 0; l < this.genres_.genres_FANS.Length; l++)
+		}
+		for (int l = 0; l < this.genres_.genres_FANS.Length; l++)
+		{
+			if (this.genres_.genres_FANS[l] > 20000000)
 			{
-				if (this.genres_.genres_FANS[l] > 20000000)
-				{
-					this.genres_.genres_FANS[l] = 0;
-				}
+				this.genres_.genres_FANS[l] = 20000000;
 			}
 		}
 		if (this.genres_.GetAmountFans() >= 1000000)
@@ -1773,8 +1818,9 @@ public class mainScript : MonoBehaviour
 	}
 
 	
-	private void UpdateTrend()
+	private void UpdateTrend(bool newGame)
 	{
+		Debug.Log("UpdateTrend()");
 		this.trendWeeks--;
 		if (this.multiplayer && this.mpCalls_.isClient)
 		{
@@ -1828,7 +1874,7 @@ public class mainScript : MonoBehaviour
 				if (this.trendNextGenre != -1)
 				{
 					this.trendGenre = this.trendNextGenre;
-					goto IL_1E3;
+					goto IL_1ED;
 				}
 			}
 			while (!flag)
@@ -1844,7 +1890,7 @@ public class mainScript : MonoBehaviour
 					flag = true;
 				}
 			}
-			IL_1E3:
+			IL_1ED:
 			num = 0;
 			flag = false;
 			while (!flag)
@@ -1862,28 +1908,43 @@ public class mainScript : MonoBehaviour
 			}
 			num = 0;
 			flag = false;
-			if (UnityEngine.Random.Range(0, 100) >= 20)
+			if (UnityEngine.Random.Range(0, 100) < 20 || this.trendNextAntiGenre == -1)
 			{
-				if (this.trendNextAntiGenre != -1)
+				int num2 = 0;
+				if (newGame && !this.multiplayer)
 				{
-					this.trendAntiGenre = this.trendNextAntiGenre;
-					goto IL_2A0;
+					for (int i = 0; i < this.genres_.genres_RES_POINTS_LEFT.Length; i++)
+					{
+						if (this.genres_.genres_RES_POINTS_LEFT[i] <= 0f)
+						{
+							num2 = i;
+							break;
+						}
+					}
+				}
+				while (!flag)
+				{
+					this.trendAntiGenre = UnityEngine.Random.Range(0, this.genres_.genres_LEVEL.Length);
+					if (this.genres_.genres_UNLOCK[this.trendAntiGenre] && this.trendAntiGenre != this.trendGenre)
+					{
+						flag = true;
+					}
+					if (newGame && !this.multiplayer && this.trendAntiGenre == num2)
+					{
+						Debug.Log("Nicht das eigene Fangenre wählen!");
+						flag = false;
+					}
+					num++;
+					if (num > 10000)
+					{
+						flag = true;
+					}
 				}
 			}
-			while (!flag)
+			else
 			{
-				this.trendAntiGenre = UnityEngine.Random.Range(0, this.genres_.genres_LEVEL.Length);
-				if (this.genres_.genres_UNLOCK[this.trendAntiGenre] && this.trendAntiGenre != this.trendGenre)
-				{
-					flag = true;
-				}
-				num++;
-				if (num > 10000)
-				{
-					flag = true;
-				}
+				this.trendAntiGenre = this.trendNextAntiGenre;
 			}
-			IL_2A0:
 			num = 0;
 			flag = false;
 			while (!flag)
@@ -1901,22 +1962,22 @@ public class mainScript : MonoBehaviour
 			}
 			if (this.trendGenre == this.trendAntiGenre)
 			{
-				for (int i = 0; i < this.genres_.genres_LEVEL.Length; i++)
+				for (int j = 0; j < this.genres_.genres_LEVEL.Length; j++)
 				{
-					if (this.genres_.genres_UNLOCK[i] && this.trendGenre != i)
+					if (this.genres_.genres_UNLOCK[j] && this.trendGenre != j)
 					{
-						this.trendAntiGenre = i;
+						this.trendAntiGenre = j;
 						break;
 					}
 				}
 			}
 			if (this.trendTheme == this.trendNextAntiTheme)
 			{
-				for (int j = 0; j < this.themes_.themes_LEVEL.Length; j++)
+				for (int k = 0; k < this.themes_.themes_LEVEL.Length; k++)
 				{
-					if (this.trendTheme != j)
+					if (this.trendTheme != k)
 					{
-						this.trendNextAntiTheme = j;
+						this.trendNextAntiTheme = k;
 						break;
 					}
 				}
@@ -2449,7 +2510,7 @@ public class mainScript : MonoBehaviour
 			if (array[i])
 			{
 				platformScript component = array[i].GetComponent<platformScript>();
-				if (!component.playerConsole && component.multiplaySlot == -1 && component.IsVerfuegbar())
+				if (component.OwnerIsNPC() && component.IsVerfuegbar())
 				{
 					if (component.typ == 0 && num < component.units_max)
 					{
@@ -2487,7 +2548,7 @@ public class mainScript : MonoBehaviour
 			if (array[j])
 			{
 				platformScript component2 = array[j].GetComponent<platformScript>();
-				if (!component2.playerConsole && component2.multiplaySlot == -1 && component2.IsVerfuegbar())
+				if (component2.OwnerIsNPC() && component2.IsVerfuegbar())
 				{
 					if (component2.typ == 0 && (num > component2.units_max || num == -1))
 					{
@@ -2583,7 +2644,7 @@ public class mainScript : MonoBehaviour
 		{
 			if (this.mpCalls_.isServer)
 			{
-				this.mpCalls_.SERVER_Send_Chat(this.mpCalls_.myID, c);
+				this.mpCalls_.SERVER_Send_Chat(this.myID, c);
 				return;
 			}
 			this.mpCalls_.CLIENT_Send_Chat(c);
@@ -2721,7 +2782,7 @@ public class mainScript : MonoBehaviour
 			return;
 		}
 		int playerID = this.mpCalls_.playersMP[slot].playerID;
-		if (playerID == this.mpCalls_.myID)
+		if (playerID == this.myID)
 		{
 			return;
 		}
@@ -2934,82 +2995,73 @@ public class mainScript : MonoBehaviour
 	}
 
 	
-	public int GetMyMultiplayerID()
-	{
-		if (!this.mpCalls_)
-		{
-			this.FindScripts();
-		}
-		return this.mpCalls_.myID;
-	}
-
-	
 	public bool Muttersprache(int i)
 	{
+		int countryID = this.GetCountryID();
 		switch (i)
 		{
 		case 0:
-			if (this.country == 0 || this.country == 2 || this.country == 13 || this.country == 7 || this.country == 40)
+			if (countryID == 0 || countryID == 2 || countryID == 13 || countryID == 7 || countryID == 40)
 			{
 				return true;
 			}
 			break;
 		case 1:
-			if (this.country == 5 || this.country == 14 || this.country == 16)
+			if (countryID == 5 || countryID == 14 || countryID == 16)
 			{
 				return true;
 			}
 			break;
 		case 2:
-			if (this.country == 6)
+			if (countryID == 6)
 			{
 				return true;
 			}
 			break;
 		case 3:
-			if (this.country == 10)
+			if (countryID == 10)
 			{
 				return true;
 			}
 			break;
 		case 4:
-			if (this.country == 9 || this.country == 22)
+			if (countryID == 9 || countryID == 22)
 			{
 				return true;
 			}
 			break;
 		case 5:
-			if (this.country == 11)
+			if (countryID == 11)
 			{
 				return true;
 			}
 			break;
 		case 6:
-			if (this.country == 12)
+			if (countryID == 12)
 			{
 				return true;
 			}
 			break;
 		case 7:
-			if (this.country == 8)
+			if (countryID == 8)
 			{
 				return true;
 			}
 			break;
 		case 8:
-			if (this.country == 3)
+			if (countryID == 3)
 			{
 				return true;
 			}
 			break;
 		case 9:
-			if (this.country == 4)
+			if (countryID == 4)
 			{
 				return true;
 			}
 			break;
 		case 10:
-			if (this.country == 1)
+			if (countryID == 1)
 			{
 				return true;
 			}
@@ -3090,6 +3142,235 @@ public class mainScript : MonoBehaviour
 	}
 
 	
+	public void FindMyPublisherScript()
+	{
+		if (!this.myPubS_)
+		{
+			GameObject gameObject = GameObject.Find("PUB_" + this.myID.ToString());
+			if (gameObject)
+			{
+				this.myPubS_ = gameObject.GetComponent<publisherScript>();
+			}
+		}
+	}
+
+	
+	public string GetCompanyName()
+	{
+		if (!this.myPubS_)
+		{
+			this.FindMyPublisherScript();
+		}
+		if (this.myPubS_)
+		{
+			return this.myPubS_.GetName();
+		}
+		return "";
+	}
+
+	
+	public void SetCompanyName(string c)
+	{
+		if (!this.myPubS_)
+		{
+			this.FindMyPublisherScript();
+		}
+		if (this.myPubS_)
+		{
+			this.myPubS_.name_EN = c;
+			if (this.multiplayer)
+			{
+				this.FindMyPublisherScript();
+				if (this.mpCalls_.isClient)
+				{
+					this.mpCalls_.CLIENT_Send_Publisher(this.myPubS_);
+				}
+				if (this.mpCalls_.isServer)
+				{
+					this.mpCalls_.SERVER_Send_Publisher(this.myPubS_);
+				}
+			}
+		}
+	}
+
+	
+	public int GetCompanyLogoID()
+	{
+		if (!this.myPubS_)
+		{
+			this.FindMyPublisherScript();
+		}
+		if (this.myPubS_)
+		{
+			return this.myPubS_.logoID;
+		}
+		return 0;
+	}
+
+	
+	public void SetCompanyLogoID(int i)
+	{
+		if (!this.myPubS_)
+		{
+			this.FindMyPublisherScript();
+		}
+		if (this.myPubS_)
+		{
+			this.myPubS_.logoID = i;
+			if (this.multiplayer)
+			{
+				this.FindMyPublisherScript();
+				if (this.mpCalls_.isClient)
+				{
+					this.mpCalls_.CLIENT_Send_Publisher(this.myPubS_);
+				}
+				if (this.mpCalls_.isServer)
+				{
+					this.mpCalls_.SERVER_Send_Publisher(this.myPubS_);
+				}
+			}
+		}
+	}
+
+	
+	public int GetAwards(int i)
+	{
+		if (!this.myPubS_)
+		{
+			this.FindMyPublisherScript();
+		}
+		if (this.myPubS_)
+		{
+			return this.myPubS_.awards[i];
+		}
+		return 0;
+	}
+
+	
+	public void AddAwards(int i, publisherScript script_)
+	{
+		if (!script_)
+		{
+			return;
+		}
+		script_.awards[i]++;
+		if (this.multiplayer)
+		{
+			this.FindMyPublisherScript();
+			if (this.mpCalls_.isClient)
+			{
+				this.mpCalls_.CLIENT_Send_Publisher(script_);
+			}
+			if (this.mpCalls_.isServer)
+			{
+				this.mpCalls_.SERVER_Send_Publisher(script_);
+			}
+		}
+	}
+
+	
+	public int GetCountryID()
+	{
+		if (!this.myPubS_)
+		{
+			this.FindMyPublisherScript();
+		}
+		if (this.myPubS_)
+		{
+			return this.myPubS_.country;
+		}
+		return 0;
+	}
+
+	
+	public void SetCountryID(int i)
+	{
+		if (!this.myPubS_)
+		{
+			this.FindMyPublisherScript();
+		}
+		if (this.myPubS_)
+		{
+			this.myPubS_.country = i;
+			if (this.multiplayer)
+			{
+				this.FindMyPublisherScript();
+				if (this.mpCalls_.isClient)
+				{
+					this.mpCalls_.CLIENT_Send_Publisher(this.myPubS_);
+				}
+				if (this.mpCalls_.isServer)
+				{
+					this.mpCalls_.SERVER_Send_Publisher(this.myPubS_);
+				}
+			}
+		}
+	}
+
+	
+	public int GetFanGenreID()
+	{
+		if (!this.myPubS_)
+		{
+			this.FindMyPublisherScript();
+		}
+		if (this.myPubS_)
+		{
+			return this.myPubS_.fanGenre;
+		}
+		return 0;
+	}
+
+	
+	public void SetFanGenreID(int i)
+	{
+		if (!this.myPubS_)
+		{
+			this.FindMyPublisherScript();
+		}
+		if (this.myPubS_)
+		{
+			this.myPubS_.fanGenre = i;
+			if (this.multiplayer)
+			{
+				this.FindMyPublisherScript();
+				if (this.mpCalls_.isClient)
+				{
+					this.mpCalls_.CLIENT_Send_Publisher(this.myPubS_);
+				}
+				if (this.mpCalls_.isServer)
+				{
+					this.mpCalls_.SERVER_Send_Publisher(this.myPubS_);
+				}
+			}
+		}
+	}
+
+	
+	public publisherScript CreatePlayerPublisher(int id_)
+	{
+		GameObject gameObject = GameObject.Find("PUB_" + id_.ToString());
+		if (gameObject)
+		{
+			return gameObject.GetComponent<publisherScript>();
+		}
+		publisherScript publisherScript = this.publisher_.CreatePublisher();
+		publisherScript.myID = id_;
+		publisherScript.Init();
+		publisherScript.isPlayer = true;
+		publisherScript.isUnlocked = true;
+		publisherScript.date_year = 1976;
+		publisherScript.date_month = 1;
+		publisherScript.stars = 1f;
+		publisherScript.developer = true;
+		publisherScript.publisher = true;
+		publisherScript.relation = 0f;
+		publisherScript.share = 1f;
+		publisherScript.notForSale = true;
+		return publisherScript;
+	}
+
+	
 	public string buildVersion = "BUILD 2020.08.22A";
 
 	
@@ -3108,6 +3389,45 @@ public class mainScript : MonoBehaviour
 	public Color[] globalLightColors;
 
 	
+	public int exklusivVertrag_ID = -1;
+
+	
+	public int exklusivVertrag_laufzeit;
+
+	
+	private publisherScript exkklusivVertragScript_;
+
+	
+	public float record_Gameplay;
+
+	
+	public float record_Grafik;
+
+	
+	public float record_Sound;
+
+	
+	public float record_Technik;
+
+	
+	public float auftragsAnsehen;
+
+	
+	public int studioPoints;
+
+	
+	public int myID = 100000;
+
+	
+	public publisherScript myPubS_;
+
+	
+	public string playerName = "";
+
+	
+	public int bankWarning;
+
+	
 	public bool multiplayer;
 
 	
@@ -3117,43 +3437,10 @@ public class mainScript : MonoBehaviour
 	public int multiplayerSaveID;
 
 	
-	public int myID = 100000;
-
-	
-	public string companyName = "";
-
-	
-	public string playerName = "";
-
-	
-	public long money = 200000L;
-
-	
-	public long kredit;
-
-	
-	public int bankWarning;
-
-	
-	public int savegameVersion;
-
-	
 	public int office;
 
 	
-	public bool[] buildings;
-
-	
-	public int anrufe;
-
-	
-	public float auftragsAnsehen;
-
-	
-	public int logo;
-
-	
-	public int country;
+	public int savegameVersion;
 
 	
 	public int year = 1976;
@@ -3163,6 +3450,9 @@ public class mainScript : MonoBehaviour
 
 	
 	public int week = 1;
+
+	
+	public int difficulty;
 
 	
 	public int globalEvent = -1;
@@ -3198,6 +3488,18 @@ public class mainScript : MonoBehaviour
 	public int trendNextAntiTheme;
 
 	
+	public long money = 200000L;
+
+	
+	public long kredit;
+
+	
+	public bool[] buildings;
+
+	
+	public int anrufe;
+
+	
 	public bool lastGameCommercialFlop;
 
 	
@@ -3213,9 +3515,6 @@ public class mainScript : MonoBehaviour
 	private bool pauseGame;
 
 	
-	public int difficulty;
-
-	
 	public int anzKonkurrenten;
 
 	
@@ -3229,9 +3528,6 @@ public class mainScript : MonoBehaviour
 
 	
 	public int diamantSchallplatten;
-
-	
-	public int studioPoints;
 
 	
 	public int award_GOTY;
@@ -3255,19 +3551,13 @@ public class mainScript : MonoBehaviour
 	public int pubOffersAmount;
 
 	
+	public int lastUsedEngine;
+
+	
 	public GameObject charFoto;
 
 	
 	public GameObject guiPops;
-
-	
-	public int exklusivVertrag_ID = -1;
-
-	
-	public int exklusivVertrag_laufzeit;
-
-	
-	private publisherScript exkklusivVertragScript_;
 
 	
 	public int personal_druck = 1;
@@ -3348,13 +3638,7 @@ public class mainScript : MonoBehaviour
 	public List<int> madGamesCon_BestStudio = new List<int>();
 
 	
-	public List<int> madGamesCon_BestStudioPlayer = new List<int>();
-
-	
 	public List<int> madGamesCon_BestPublisher = new List<int>();
-
-	
-	public List<int> madGamesCon_BestPublisherPlayer = new List<int>();
 
 	
 	public List<int> madGamesCon_BestGame = new List<int>();
@@ -3387,9 +3671,6 @@ public class mainScript : MonoBehaviour
 	public bool[] devLegendsHardware;
 
 	
-	public int companySpecialGenre;
-
-	
 	public bool[] newsSetting;
 
 	
@@ -3405,6 +3686,12 @@ public class mainScript : MonoBehaviour
 	public int sauerBugs;
 
 	
+	public int awardBonus;
+
+	
+	public float awardBonusAmount;
+
+	
 	public bool[] achivements;
 
 	
@@ -3415,21 +3702,6 @@ public class mainScript : MonoBehaviour
 
 	
 	public int[] amountAchivementsBonus;
-
-	
-	public int[] awards;
-
-	
-	public float record_Gameplay;
-
-	
-	public float record_Grafik;
-
-	
-	public float record_Sound;
-
-	
-	public float record_Technik;
 
 	
 	public string marktforschung_datum = "";

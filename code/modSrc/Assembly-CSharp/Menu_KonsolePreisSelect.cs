@@ -149,7 +149,7 @@ public class Menu_KonsolePreisSelect : MonoBehaviour
 	
 	public bool CheckPlatformData(platformScript script_)
 	{
-		return script_ && script_.playerConsole && !script_.vomMarktGenommen && script_.isUnlocked;
+		return script_ && script_.ownerID == this.mS_.myID && !script_.vomMarktGenommen && script_.isUnlocked;
 	}
 
 	

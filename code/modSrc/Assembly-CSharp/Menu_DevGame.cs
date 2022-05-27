@@ -599,7 +599,7 @@ public class Menu_DevGame : MonoBehaviour
 		this.SetPlatform(1, this.g_GamePlatform[1]);
 		this.SetPlatform(2, this.g_GamePlatform[2]);
 		this.SetPlatform(3, this.g_GamePlatform[3]);
-		this.SetEngine(this.g_GameEngine);
+		this.SetEngine(this.mS_.lastUsedEngine);
 		this.SetCopyProtect(this.g_GameCopyProtect);
 		this.SetAutomaticBestCopyProtect();
 		this.SetAntiCheat(this.g_GameAntiCheat);
@@ -1002,7 +1002,7 @@ public class Menu_DevGame : MonoBehaviour
 					if (gameObject3)
 					{
 						platformScript component4 = gameObject3.GetComponent<platformScript>();
-						if (component4 && !component4.playerConsole)
+						if (component4 && component4.ownerID != this.mS_.myID)
 						{
 							this.guiMain_.MessageBox(this.tS_.GetText(1696), false);
 							this.OpenSide(1);
@@ -1025,13 +1025,9 @@ public class Menu_DevGame : MonoBehaviour
 			gameScript = this.contractAuftragsspiel_;
 		}
 		gameScript.costs_entwicklung = (long)num;
-		gameScript.playerGame = true;
-		if (this.mS_.multiplayer)
-		{
-			gameScript.multiplayerSlot = this.mS_.mpCalls_.myID;
-		}
 		gameScript.inDevelopment = true;
-		gameScript.developerID = -1;
+		gameScript.developerID = this.mS_.myID;
+		gameScript.devS_ = this.mS_.myPubS_;
 		gameScript.typ_contractGame = this.typ_contractGame;
 		if (!this.typ_contractGame)
 		{
@@ -1691,12 +1687,13 @@ public class Menu_DevGame : MonoBehaviour
 		GameObject gameObject = GameObject.Find("ENGINE_" + i.ToString());
 		if (gameObject)
 		{
+			this.mS_.lastUsedEngine = i;
 			engineScript component = gameObject.GetComponent<engineScript>();
 			this.g_GameEngineScript_ = component;
 			this.uiObjects[63].GetComponent<Text>().text = component.GetName();
 			this.uiObjects[64].GetComponent<Text>().text = component.GetTechLevel().ToString();
 			this.uiObjects[216].GetComponent<Text>().text = component.GetTechLevel().ToString();
-			if (!component.playerEngine)
+			if (component.ownerID != this.mS_.myID)
 			{
 				this.uiObjects[65].GetComponent<Text>().text = this.tS_.GetText(260) + ": " + component.gewinnbeteiligung.ToString() + "%";
 			}
@@ -3220,7 +3217,6 @@ public class Menu_DevGame : MonoBehaviour
 				}
 			}
 		}
-		Debug.Log("TECH Level: " + num);
 		if (num >= 99)
 		{
 			num = 1;

@@ -128,7 +128,7 @@ public class Menu_Dev_F2PUpdateSelectGame : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.playerGame && !component.inDevelopment && component.isOnMarket && component.gameTyp == 2 && !component.pubOffer && (component.typ_standard || component.typ_nachfolger || component.typ_spinoff))
+				if (component && this.CheckGameData(component))
 				{
 					string text = component.GetNameSimple();
 					this.searchStringA = this.searchStringA.ToLower();
@@ -149,6 +149,12 @@ public class Menu_Dev_F2PUpdateSelectGame : MonoBehaviour
 		}
 		this.DROPDOWN_Sort();
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
+	}
+
+	
+	public bool CheckGameData(gameScript script_)
+	{
+		return script_ && script_.ownerID == this.mS_.myID && script_.developerID == this.mS_.myID && !script_.inDevelopment && script_.isOnMarket && script_.gameTyp == 2 && !script_.pubOffer && (script_.typ_standard || script_.typ_nachfolger || script_.typ_spinoff);
 	}
 
 	

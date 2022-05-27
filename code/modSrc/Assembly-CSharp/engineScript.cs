@@ -195,9 +195,9 @@ public class engineScript : MonoBehaviour
 		{
 			text = text + "<color=blue>" + this.GetReleaseDateString() + "</color>\n";
 		}
-		if (this.mS_.multiplayer && this.multiplayerSlot != -1)
+		if (this.mS_.multiplayer && this.ownerID != -1)
 		{
-			text = text + "<color=blue>" + this.mpCalls_.GetCompanyName(this.multiplayerSlot) + "</color>\n";
+			text = text + "<color=blue>" + this.mpCalls_.GetCompanyName(this.ownerID) + "</color>\n";
 		}
 		if (this.specialPlatformS_)
 		{
@@ -271,7 +271,7 @@ public class engineScript : MonoBehaviour
 				"%</color>"
 			});
 		}
-		if (this.playerEngine)
+		if (this.ownerID == this.mS_.myID)
 		{
 			text = string.Concat(new string[]
 			{
@@ -299,11 +299,11 @@ public class engineScript : MonoBehaviour
 	
 	public string GetName()
 	{
-		if (this.mS_.multiplayer && !this.playerEngine && this.multiplayerSlot != -1)
+		if (this.mS_.multiplayer && this.EngineFromMitspieler())
 		{
 			return this.myName;
 		}
-		if (this.playerEngine)
+		if (!this.OwnerIsNPC())
 		{
 			return this.myName;
 		}
@@ -312,43 +312,43 @@ public class engineScript : MonoBehaviour
 		{
 		case 0:
 			text = this.name_EN;
-			goto IL_101;
+			goto IL_F8;
 		case 1:
 			text = this.name_GE;
-			goto IL_101;
+			goto IL_F8;
 		case 2:
 			text = this.name_TU;
-			goto IL_101;
+			goto IL_F8;
 		case 3:
 			text = this.name_CH;
-			goto IL_101;
+			goto IL_F8;
 		case 4:
 			text = this.name_FR;
-			goto IL_101;
+			goto IL_F8;
 		case 7:
 			text = this.name_PB;
-			goto IL_101;
+			goto IL_F8;
 		case 8:
 			text = this.name_HU;
-			goto IL_101;
+			goto IL_F8;
 		case 10:
 			text = this.name_CT;
-			goto IL_101;
+			goto IL_F8;
 		case 11:
 			text = this.name_PL;
-			goto IL_101;
+			goto IL_F8;
 		case 12:
 			text = this.name_CZ;
-			goto IL_101;
+			goto IL_F8;
 		case 14:
 			text = this.name_IT;
-			goto IL_101;
+			goto IL_F8;
 		case 16:
 			text = this.name_JA;
-			goto IL_101;
+			goto IL_F8;
 		}
 		text = this.name_EN;
-		IL_101:
+		IL_F8:
 		if (text == null)
 		{
 			return this.name_EN;
@@ -442,18 +442,26 @@ public class engineScript : MonoBehaviour
 		if (!this.publisherBuyed[pS_.myID])
 		{
 			this.publisherBuyed[pS_.myID] = true;
-			if (this.playerEngine)
+			bool flag = false;
+			if (pS_.IsTochterfirma() && pS_.tf_engine == this.myID)
 			{
-				this.mS_.Earn((long)this.preis, 4);
-				string text = this.tS_.GetText(500);
-				text = text.Replace("<NAME1>", pS_.GetName());
-				text = text.Replace("<NAME2>", this.GetName());
-				text = text + "\n<color=green><b>+" + this.mS_.GetMoney((long)this.preis, true) + "</b></color>";
-				this.guiMain_.CreateTopNewsInfo(text);
+				flag = true;
 			}
-			if (this.mS_.multiplayer && !this.playerEngine && this.multiplayerSlot != -1)
+			if (!flag)
 			{
-				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.mpCalls_.myID, this.multiplayerSlot, 3, this.preis);
+				if (this.mS_.myID == this.ownerID)
+				{
+					this.mS_.Earn((long)this.preis, 4);
+					string text = this.tS_.GetText(500);
+					text = text.Replace("<NAME1>", pS_.GetName());
+					text = text.Replace("<NAME2>", this.GetName());
+					text = text + "\n<color=green><b>+" + this.mS_.GetMoney((long)this.preis, true) + "</b></color>";
+					this.guiMain_.CreateTopNewsInfo(text);
+				}
+				if (this.mS_.multiplayer && this.EngineFromMitspieler())
+				{
+					this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.myID, this.ownerID, 3, this.preis);
+				}
 			}
 		}
 	}
@@ -473,6 +481,18 @@ public class engineScript : MonoBehaviour
 			}
 		}
 		return num;
+	}
+
+	
+	public bool OwnerIsNPC()
+	{
+		return this.ownerID < 100000;
+	}
+
+	
+	public bool EngineFromMitspieler()
+	{
+		return this.mS_.multiplayer && this.ownerID >= 100000 && this.ownerID != this.mS_.myID && this.ownerID >= 100000;
 	}
 
 	
@@ -509,10 +529,7 @@ public class engineScript : MonoBehaviour
 	public int myID;
 
 	
-	public bool playerEngine;
-
-	
-	public int multiplayerSlot;
+	public int ownerID;
 
 	
 	public bool isUnlocked;

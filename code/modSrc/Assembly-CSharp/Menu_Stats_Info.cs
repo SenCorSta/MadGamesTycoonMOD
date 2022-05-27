@@ -48,6 +48,7 @@ public class Menu_Stats_Info : MonoBehaviour
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[144]);
+		this.guiMain_.uiObjects[144].GetComponent<Menu_Stats_Awards>().Init(this.mS_.myPubS_);
 	}
 
 	

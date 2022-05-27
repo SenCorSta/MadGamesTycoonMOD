@@ -485,7 +485,7 @@ public class Menu_Dev_Konsole : MonoBehaviour
 		this.mS_.Pay((long)this.GetDevCosts(), 22);
 		platformScript = this.platforms_.CreatePlatform();
 		platformScript.myID = this.mS_.GetNewID();
-		platformScript.playerConsole = true;
+		platformScript.ownerID = this.mS_.myID;
 		platformScript.typ = this.platformTyp;
 		platformScript.myName = this.uiObjects[4].GetComponent<InputField>().text;
 		platformScript.tech = this.GetTechLevel();
@@ -496,10 +496,6 @@ public class Menu_Dev_Konsole : MonoBehaviour
 		platformScript.internet = this.uiObjects[53].GetComponent<Toggle>().isOn;
 		platformScript.devPointsStart = (float)this.GetWorkPoints();
 		platformScript.devPoints = platformScript.devPointsStart;
-		if (this.mS_.multiplayer)
-		{
-			platformScript.multiplaySlot = this.mS_.mpCalls_.myID;
-		}
 		platformScript.dev_costs = this.GetGameDevCosts();
 		platformScript.gameID = this.gameID;
 		platformScript.anzController = this.anzController;

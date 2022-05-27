@@ -140,7 +140,7 @@ public class Menu_AboPreis_Select : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && script_.isOnMarket && script_.gameTyp == 1;
+		return script_ && (script_.ownerID == this.mS_.myID || script_.publisherID == this.mS_.myID) && !script_.inDevelopment && script_.isOnMarket && script_.gameTyp == 1;
 	}
 
 	

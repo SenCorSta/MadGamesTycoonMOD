@@ -145,7 +145,7 @@ public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 	
 	public bool CheckPlatformData(platformScript script_)
 	{
-		return script_ && script_.playerConsole;
+		return script_ && script_.ownerID == this.mS_.myID;
 	}
 
 	

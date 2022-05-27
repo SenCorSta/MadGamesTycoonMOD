@@ -96,7 +96,11 @@ public class Menu_Trendsetter : MonoBehaviour
 					this.mS_.trendAntiTheme++;
 				}
 			}
-			this.mS_.awards[6]++;
+			if (!this.mS_.myPubS_)
+			{
+				this.mS_.FindMyPublisherScript();
+			}
+			this.mS_.AddAwards(6, this.mS_.myPubS_);
 			if (this.mS_.multiplayer)
 			{
 				if (this.mS_.mpCalls_.isServer)

@@ -50,10 +50,6 @@ public class Menu_Training_Select : MonoBehaviour
 	{
 		this.FindScripts();
 		this.rS_ = room_;
-		for (int i = 0; i < this.trainingMaxLearn.Length; i++)
-		{
-			this.trainingMaxLearn[i] = (float)(255 / (3 - i % 3));
-		}
 	}
 
 	

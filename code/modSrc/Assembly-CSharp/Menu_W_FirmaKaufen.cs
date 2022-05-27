@@ -57,7 +57,7 @@ public class Menu_W_FirmaKaufen : MonoBehaviour
 		}
 		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
 		{
-			if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].publisherID == this.pS_.myID && this.games_.arrayGamesScripts[i].auftragsspiel)
+			if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].publisherID == this.pS_.myID && (this.games_.arrayGamesScripts[i].auftragsspiel || this.games_.arrayGamesScripts[i].pubAngebot))
 			{
 				this.guiMain_.MessageBox(this.tS_.GetText(1975), false);
 				this.BUTTON_Abbrechen();
@@ -94,7 +94,7 @@ public class Menu_W_FirmaKaufen : MonoBehaviour
 				return;
 			}
 			this.mS_.Pay(this.pS_.GetFirmenwert(), 28);
-			this.pS_.SetAsTochterfirma();
+			this.pS_.SetAsTochterfirma(this.mS_.myID);
 			this.pS_.firmenwert = this.pS_.firmenwert / 100L * 80L;
 			this.pS_.exklusive = false;
 			this.pS_.onlyMobile = false;

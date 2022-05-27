@@ -124,7 +124,7 @@ public class Menu_Stats_MyKonsolen_Sells : MonoBehaviour
 	
 	public bool CheckKonsoleData(platformScript script_)
 	{
-		return script_ && script_.playerConsole && script_.isUnlocked;
+		return script_ && script_.ownerID == this.mS_.myID && script_.isUnlocked;
 	}
 
 	

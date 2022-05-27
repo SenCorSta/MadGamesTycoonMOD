@@ -103,7 +103,7 @@ public class Menu_Stats_TochterfirmaPlatform : MonoBehaviour
 			if (array[i])
 			{
 				platformScript component = array[i].GetComponent<platformScript>();
-				if (component && component.isUnlocked && component.inBesitz && (component.npc || component.thridPartyGames || component.playerConsole) && (!component.vomMarktGenommen || isOn) && this.pubS_.tf_platformFocus[0] != component.myID && this.pubS_.tf_platformFocus[1] != component.myID && this.pubS_.tf_platformFocus[2] != component.myID && this.pubS_.tf_platformFocus[3] != component.myID)
+				if (component && component.isUnlocked && component.inBesitz && (component.OwnerIsNPC() || (component.thridPartyGames && component.ownerID == this.mS_.myID)) && (!component.vomMarktGenommen || isOn) && this.pubS_.tf_platformFocus[0] != component.myID && this.pubS_.tf_platformFocus[1] != component.myID && this.pubS_.tf_platformFocus[2] != component.myID && this.pubS_.tf_platformFocus[3] != component.myID)
 				{
 					string text = component.GetName();
 					this.searchStringA = this.searchStringA.ToLower();

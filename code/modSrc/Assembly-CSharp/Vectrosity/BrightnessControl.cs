@@ -8,7 +8,7 @@ namespace Vectrosity
 	public class BrightnessControl : MonoBehaviour
 	{
 		
-		// (get) Token: 0x06002012 RID: 8210 RVA: 0x00015401 File Offset: 0x00013601
+		// (get) Token: 0x06002065 RID: 8293 RVA: 0x0015024A File Offset: 0x0014E44A
 		public RefInt objectNumber
 		{
 			get

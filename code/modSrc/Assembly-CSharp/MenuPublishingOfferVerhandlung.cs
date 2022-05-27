@@ -231,11 +231,6 @@ public class MenuPublishingOfferVerhandlung : MonoBehaviour
 	{
 		this.mS_.Pay((long)this.game_.PUBOFFER_GetGarantiesumme(), 25);
 		this.mS_.publishingOfferMain_.amountPublishingOffers--;
-		this.game_.playerGame = true;
-		if (this.mS_.multiplayer)
-		{
-			this.game_.multiplayerSlot = this.mS_.mpCalls_.myID;
-		}
 		this.game_.pubAngebot = false;
 		this.game_.pubOffer = true;
 		this.game_.costs_marketing = 0L;

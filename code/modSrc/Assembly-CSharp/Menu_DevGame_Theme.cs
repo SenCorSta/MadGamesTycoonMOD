@@ -211,7 +211,7 @@ public class Menu_DevGame_Theme : MonoBehaviour
 			int i = 0;
 			while (i < this.games_.arrayGamesScripts.Length)
 			{
-				if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].spielbericht && this.games_.arrayGamesScripts[i].maingenre == num && (this.games_.arrayGamesScripts[i].playerGame || this.games_.arrayGamesScripts[i].IsMyAuftragsspiel()) && (this.games_.arrayGamesScripts[i].gameMainTheme == theme_ || this.games_.arrayGamesScripts[i].gameSubTheme == theme_))
+				if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].spielbericht && this.games_.arrayGamesScripts[i].maingenre == num && (this.games_.arrayGamesScripts[i].ownerID == this.mS_.myID || this.games_.arrayGamesScripts[i].developerID == this.mS_.myID) && (this.games_.arrayGamesScripts[i].gameMainTheme == theme_ || this.games_.arrayGamesScripts[i].gameSubTheme == theme_))
 				{
 					if (this.themes_.IsThemesFitWithGenre(theme_, num))
 					{

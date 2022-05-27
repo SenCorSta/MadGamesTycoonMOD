@@ -142,7 +142,7 @@ public class Menu_GOTYSelect : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && !script_.isOnMarket && script_.gameTyp == 0 && script_.goty && !script_.goty_created && !script_.pubOffer && (script_.typ_standard || script_.typ_nachfolger || script_.typ_remaster || script_.typ_spinoff) && !script_.handy && !script_.arcade;
+		return script_ && script_.ownerID == this.mS_.myID && !script_.inDevelopment && !script_.isOnMarket && script_.gameTyp == 0 && !script_.schublade && script_.goty && !script_.goty_created && !script_.pubOffer && (script_.typ_standard || script_.typ_nachfolger || script_.typ_remaster || script_.typ_spinoff) && !script_.handy && !script_.arcade;
 	}
 
 	

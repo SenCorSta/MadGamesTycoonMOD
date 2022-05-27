@@ -206,7 +206,7 @@ public class Menu_MarketingSpezial : MonoBehaviour
 	
 	public gameScript FindGame()
 	{
-		if (this.selectedGame && this.selectedGame.playerGame && (this.selectedGame.isOnMarket || this.selectedGame.inDevelopment))
+		if (this.selectedGame && (this.selectedGame.developerID == this.mS_.myID || this.selectedGame.publisherID == this.mS_.myID) && (this.selectedGame.isOnMarket || this.selectedGame.inDevelopment) && !this.selectedGame.typ_contractGame)
 		{
 			return this.selectedGame;
 		}
@@ -216,7 +216,7 @@ public class Menu_MarketingSpezial : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.playerGame && (component.isOnMarket || component.inDevelopment))
+				if (component && (component.developerID == this.mS_.myID || component.publisherID == this.mS_.myID) && (component.isOnMarket || component.inDevelopment) && !component.typ_contractGame)
 				{
 					return component;
 				}

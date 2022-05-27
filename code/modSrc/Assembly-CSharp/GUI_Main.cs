@@ -307,7 +307,7 @@ public class GUI_Main : MonoBehaviour
 			base.StartCoroutine(this.UnhideChars());
 		}
 		this.MainButtonsInteractable(true);
-		if (this.mS_.multiplayer && this.mS_.settings_autoPauseForMultiplayer && this.mpCalls_.myID != -1)
+		if (this.mS_.multiplayer && this.mS_.settings_autoPauseForMultiplayer && this.mS_.myID != -1)
 		{
 			if (this.mpCalls_.isClient)
 			{
@@ -379,12 +379,12 @@ public class GUI_Main : MonoBehaviour
 	
 	public void SetMainGuiData()
 	{
-		this.uiObjects[6].GetComponent<Text>().text = this.mS_.companyName;
-		this.uiObjects[5].GetComponent<Image>().sprite = this.flagSprites[this.mS_.country];
-		this.uiObjects[5].GetComponent<tooltip>().c = this.tS_.GetCountry(this.mS_.country);
-		if (this.logoSprites.Length > this.mS_.logo)
+		this.uiObjects[6].GetComponent<Text>().text = this.mS_.GetCompanyName();
+		this.uiObjects[5].GetComponent<Image>().sprite = this.flagSprites[this.mS_.GetCountryID()];
+		this.uiObjects[5].GetComponent<tooltip>().c = this.tS_.GetCountry(this.mS_.GetCountryID());
+		if (this.logoSprites.Length > this.mS_.GetCompanyLogoID())
 		{
-			this.uiObjects[11].GetComponent<Image>().sprite = this.GetCompanyLogo(this.mS_.logo);
+			this.uiObjects[11].GetComponent<Image>().sprite = this.GetCompanyLogo(this.mS_.GetCompanyLogoID());
 		}
 		this.UpdateTrend();
 		this.UpdateStudioBewertung();
@@ -568,7 +568,7 @@ public class GUI_Main : MonoBehaviour
 				}
 				Text component = this.uiObjects[377].GetComponent<Text>();
 				component.text += str;
-				if (gameScript.playerGame)
+				if (gameScript.ownerID == this.mS_.myID || gameScript.publisherID == this.mS_.myID)
 				{
 					Text component2 = this.uiObjects[377].GetComponent<Text>();
 					component2.text = component2.text + "<color=blue>" + gameScript.GetNameWithTag() + "</color>\n";
@@ -761,6 +761,7 @@ public class GUI_Main : MonoBehaviour
 		this.UpdateWeihnachtSommerIcon();
 		this.UpdateLangweiligIcon();
 		this.UpdateSauerBugsIcon();
+		this.UpdateAwardBonusIcon();
 	}
 
 	
@@ -841,7 +842,7 @@ public class GUI_Main : MonoBehaviour
 		}
 		for (int i = 0; i < this.genres_.genres_UNLOCK.Length; i++)
 		{
-			if (this.mS_.companySpecialGenre != i)
+			if (this.mS_.GetFanGenreID() != i)
 			{
 				int num = 0;
 				switch (this.mS_.difficulty)
@@ -958,6 +959,26 @@ public class GUI_Main : MonoBehaviour
 		else if (this.uiObjects[259].activeSelf)
 		{
 			this.uiObjects[259].SetActive(false);
+		}
+	}
+
+	
+	private void UpdateAwardBonusIcon()
+	{
+		if (this.mS_.awardBonus > 0)
+		{
+			if (!this.uiObjects[404].activeSelf)
+			{
+				this.uiObjects[404].SetActive(true);
+				string text = this.tS_.GetText(2011);
+				text = text.Replace("<NUM>", Mathf.RoundToInt(this.mS_.awardBonusAmount * 100f).ToString());
+				this.uiObjects[404].GetComponent<tooltip>().c = text;
+				return;
+			}
+		}
+		else if (this.uiObjects[404].activeSelf)
+		{
+			this.uiObjects[404].SetActive(false);
 		}
 	}
 
@@ -2885,7 +2906,7 @@ public class GUI_Main : MonoBehaviour
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[15], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[208].transform);
 		if (id_ != -1)
 		{
-			if (id_ != this.mpCalls_.myID)
+			if (id_ != this.mS_.myID)
 			{
 				gameObject.GetComponent<Text>().text = string.Concat(new string[]
 				{
@@ -2921,8 +2942,8 @@ public class GUI_Main : MonoBehaviour
 		this.uiObjects[209].GetComponent<InputField>().text = "";
 		if (this.mpCalls_.isServer)
 		{
-			this.AddChat(this.mpCalls_.myID, text);
-			this.mpCalls_.SERVER_Send_Chat(this.mpCalls_.myID, text);
+			this.AddChat(this.mS_.myID, text);
+			this.mpCalls_.SERVER_Send_Chat(this.mS_.myID, text);
 		}
 		if (this.mpCalls_.isClient)
 		{
@@ -2945,7 +2966,7 @@ public class GUI_Main : MonoBehaviour
 			}
 			return;
 		}
-		if (this.mpCalls_.myID == -1)
+		if (this.mS_.myID == -1)
 		{
 			return;
 		}
@@ -2994,7 +3015,7 @@ public class GUI_Main : MonoBehaviour
 				{
 					colorBlock.normalColor = Color.white;
 				}
-				if (playerID == this.mS_.mpCalls_.myID)
+				if (playerID == this.mS_.myID)
 				{
 					colorBlock.normalColor = this.colors[0];
 				}
@@ -3046,15 +3067,30 @@ public class GUI_Main : MonoBehaviour
 		this.SortFans();
 		for (int i = 0; i < this.fansSortList.Count; i++)
 		{
-			text = string.Concat(new string[]
+			if (this.fansSortList[i].fans < 20000000)
 			{
-				text,
-				"\n",
-				this.genres_.GetName(this.fansSortList[i].myID),
-				": <color=blue><b>",
-				this.mS_.GetMoney((long)this.fansSortList[i].fans, false),
-				"</b></color>"
-			});
+				text = string.Concat(new string[]
+				{
+					text,
+					"\n",
+					this.genres_.GetName(this.fansSortList[i].myID),
+					": <color=blue><b>",
+					this.mS_.GetMoney((long)this.fansSortList[i].fans, false),
+					"</b></color>"
+				});
+			}
+			else
+			{
+				text = string.Concat(new string[]
+				{
+					text,
+					"\n",
+					this.genres_.GetName(this.fansSortList[i].myID),
+					": <color=green><b>",
+					this.mS_.GetMoney((long)this.fansSortList[i].fans, false),
+					"</b></color>"
+				});
+			}
 		}
 		return text;
 	}
@@ -3337,7 +3373,6 @@ public class GUI_Main : MonoBehaviour
 	{
 		this.uiObjects[159].GetComponent<Menu_NewGame>().uiObjects[0].GetComponent<InputField>().text = PlayerPrefs.GetString("CompanyName");
 		this.uiObjects[201].GetComponent<mpMain>().uiObjects[11].GetComponent<InputField>().text = PlayerPrefs.GetString("PlayerName");
-		this.uiObjects[201].GetComponent<mpMain>().uiObjects[12].GetComponent<InputField>().text = PlayerPrefs.GetString("CompanyName");
 	}
 
 	

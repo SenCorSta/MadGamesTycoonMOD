@@ -150,12 +150,12 @@ public class Menu_DevGame_Platform : MonoBehaviour
 			if (array[j])
 			{
 				platformScript component = array[j].GetComponent<platformScript>();
-				if (component && (component.isUnlocked || component.playerConsole) && component.inBesitz && ((this.devGame_.uiObjects[146].GetComponent<Dropdown>().value != 3 && !component.vomMarktGenommen) || (this.devGame_.uiObjects[146].GetComponent<Dropdown>().value == 3 && component.vomMarktGenommen) || isOn))
+				if (component && (component.isUnlocked || component.ownerID == this.mS_.myID) && component.inBesitz && ((this.devGame_.uiObjects[146].GetComponent<Dropdown>().value != 3 && !component.vomMarktGenommen) || (this.devGame_.uiObjects[146].GetComponent<Dropdown>().value == 3 && component.vomMarktGenommen) || isOn))
 				{
 					if (this.devGame_.gameObject.activeSelf && ((this.devGame_.g_GamePlatform[0] != component.myID && this.devGame_.g_GamePlatform[1] != component.myID && this.devGame_.g_GamePlatform[2] != component.myID && this.devGame_.g_GamePlatform[3] != component.myID) || isOn))
 					{
 						bool flag = false;
-						if (!component.playerConsole && this.devGame_.uiObjects[146].GetComponent<Dropdown>().value == 2)
+						if (component.ownerID != this.mS_.myID && this.devGame_.uiObjects[146].GetComponent<Dropdown>().value == 2)
 						{
 							flag = true;
 						}

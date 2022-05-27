@@ -50,6 +50,13 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 	}
 
 	
+	private void Update()
+	{
+		this.uiObjects[7].GetComponent<Text>().text = this.tS_.GetText(685) + ": <b>" + this.pS_.GetFirmenwertString() + "</b>";
+		this.uiObjects[14].GetComponent<Text>().text = this.tS_.GetText(1934) + ": <b>" + this.mS_.GetMoney(this.pS_.GetVerwaltungskosten(), true) + "</b>";
+	}
+
+	
 	public void UpdateData()
 	{
 		if (!this.pS_)
@@ -180,6 +187,14 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 	}
 
 	
+	public void BUTTON_Awards()
+	{
+		this.sfx_.PlaySound(3, true);
+		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[144]);
+		this.guiMain_.uiObjects[144].GetComponent<Menu_Stats_Awards>().Init(this.pS_);
+	}
+
+	
 	public void BUTTON_Games()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -193,6 +208,14 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[361]);
 		this.guiMain_.uiObjects[361].GetComponent<Menu_Stats_Developer_IPs>().Init(this.pS_);
+	}
+
+	
+	public void BUTTON_IpChange()
+	{
+		this.sfx_.PlaySound(3, true);
+		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[403]);
+		this.guiMain_.uiObjects[403].GetComponent<Menu_Stats_TochterfirmaIpTausch>().Init(this.pS_);
 	}
 
 	

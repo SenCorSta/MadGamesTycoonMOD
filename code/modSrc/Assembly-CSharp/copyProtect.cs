@@ -58,7 +58,6 @@ public class copyProtect : MonoBehaviour
 				num++;
 			}
 		}
-		Debug.Log("CopyProtect Amount: " + num.ToString());
 		copyProtectScript copyProtectScript = null;
 		for (int j = 0; j < this.data.Length; j++)
 		{
@@ -176,8 +175,7 @@ public class copyProtect : MonoBehaviour
 				}
 				if (this.ParseData("[EOF]", j))
 				{
-					Debug.Log("CopyProtect.txt -> EOF");
-					return;
+					break;
 				}
 			}
 		}

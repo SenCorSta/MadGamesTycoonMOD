@@ -135,7 +135,7 @@ public class Menu_Stats_MyBundles : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && (script_.typ_bundle || script_.typ_bundleAddon);
+		return script_ && script_.developerID == this.mS_.myID && !script_.inDevelopment && (script_.typ_bundle || script_.typ_bundleAddon);
 	}
 
 	

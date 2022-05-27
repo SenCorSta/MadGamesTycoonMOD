@@ -46,7 +46,6 @@ public class hardware : MonoBehaviour
 				num2++;
 			}
 		}
-		Debug.Log("Hardware Features Amount: " + num2.ToString());
 		this.hardware_ICONFILE = new string[num2];
 		this.hardware_PIC = new Sprite[num2];
 		this.hardware_TYP = new int[num2];
@@ -333,8 +332,7 @@ public class hardware : MonoBehaviour
 			this.ParseData("//", j);
 			if (this.ParseData("[EOF]", j))
 			{
-				Debug.Log("Hardware.txt -> EOF");
-				return;
+				break;
 			}
 			num++;
 		}

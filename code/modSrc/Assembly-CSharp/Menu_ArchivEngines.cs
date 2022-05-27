@@ -160,7 +160,7 @@ public class Menu_ArchivEngines : MonoBehaviour
 	
 	public bool CheckData(engineScript script_)
 	{
-		return script_ && script_.myID != 0 && ((script_.isUnlocked && script_.gekauft) || (script_.playerEngine && script_.devPointsStart <= 0f) || (script_.playerEngine && script_.updating));
+		return script_ && script_.myID != 0 && ((script_.isUnlocked && script_.gekauft) || (script_.ownerID == this.mS_.myID && script_.devPointsStart <= 0f) || (script_.ownerID == this.mS_.myID && script_.updating));
 	}
 
 	
@@ -193,7 +193,7 @@ public class Menu_ArchivEngines : MonoBehaviour
 					gameObject.name = component.eS_.GetGamesAmount().ToString();
 					break;
 				case 5:
-					if (component.eS_.playerEngine)
+					if (component.eS_.ownerID == this.mS_.myID)
 					{
 						gameObject.name = "2";
 					}

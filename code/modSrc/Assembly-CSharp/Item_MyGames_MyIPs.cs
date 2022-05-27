@@ -28,11 +28,11 @@ public class Item_MyGames_MyIPs : MonoBehaviour
 		{
 			return;
 		}
-		if (this.game_.playerGame)
+		if (this.game_.ownerID == this.mS_.myID || this.game_.publisherID == this.mS_.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
-		if (this.mS_.multiplayer && !this.game_.playerGame && this.game_.multiplayerSlot != -1 && this.game_.multiplayerSlot != this.mS_.GetMyMultiplayerID())
+		if (this.mS_.multiplayer && this.game_.GameFromMitspieler())
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[8];
 		}

@@ -209,7 +209,6 @@ public class games : MonoBehaviour
 		script_.exklusivKonsolenSells = 0L;
 		script_.originalGameID = -1;
 		script_.costs_updates = 0L;
-		script_.hype = 0f;
 		script_.ipPunkte = 0f;
 		script_.ipTime = 0;
 		script_.script_mainIP = null;
@@ -229,7 +228,6 @@ public class games : MonoBehaviour
 		script_.exklusivKonsolenSells = 0L;
 		script_.originalGameID = -1;
 		script_.costs_updates = 0L;
-		script_.hype = 0f;
 		script_.ipPunkte = 0f;
 		script_.ipTime = 0;
 		script_.script_mainIP = null;
@@ -253,7 +251,6 @@ public class games : MonoBehaviour
 		script_.exklusivKonsolenSells = 0L;
 		script_.originalGameID = -1;
 		script_.costs_updates = 0L;
-		script_.hype = 0f;
 		script_.ipPunkte = 0f;
 		script_.ipTime = 0;
 		script_.script_mainIP = null;
@@ -335,7 +332,7 @@ public class games : MonoBehaviour
 			if (this.arrayGames[i])
 			{
 				this.arrayGamesScripts[i] = this.arrayGames[i].GetComponent<gameScript>();
-				if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].playerGame && this.arrayGamesScripts[i].myID == this.arrayGamesScripts[i].mainIP)
+				if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].ownerID == this.mS_.myID && this.arrayGamesScripts[i].myID == this.arrayGamesScripts[i].mainIP)
 				{
 					this.arrayMyIpScripts.Add(this.arrayGamesScripts[i]);
 				}
@@ -393,7 +390,7 @@ public class games : MonoBehaviour
 						this.poM_.amountPublishingOffers++;
 					}
 				}
-				if (this.arrayGamesScripts[l].playerGame && this.arrayGamesScripts[l].inDevelopment && this.arrayGamesScripts[l].typ_contractGame && !this.arrayGamesScripts[l].auftragsspiel_zeitAbgelaufen)
+				if (this.arrayGamesScripts[l].developerID == this.mS_.myID && this.arrayGamesScripts[l].inDevelopment && this.arrayGamesScripts[l].typ_contractGame && !this.arrayGamesScripts[l].auftragsspiel_zeitAbgelaufen)
 				{
 					this.arrayGamesScripts[l].auftragsspiel_zeitInWochen--;
 					if (this.arrayGamesScripts[l].auftragsspiel_zeitInWochen < 0)
@@ -445,7 +442,7 @@ public class games : MonoBehaviour
 						}
 					}
 				}
-				if (this.arrayGamesScripts[l].playerGame && !this.arrayGamesScripts[l].typ_contractGame && !this.arrayGamesScripts[l].auftragsspiel && this.arrayGamesScripts[l].mainIP == this.arrayGamesScripts[l].myID)
+				if (this.arrayGamesScripts[l].ownerID == this.mS_.myID && !this.arrayGamesScripts[l].typ_contractGame && !this.arrayGamesScripts[l].auftragsspiel && this.arrayGamesScripts[l].mainIP == this.arrayGamesScripts[l].myID)
 				{
 					this.arrayGamesScripts[l].ipTime++;
 					if (this.arrayGamesScripts[l].ipTime > 250)
@@ -492,7 +489,7 @@ public class games : MonoBehaviour
 						}
 					}
 				}
-				if (this.arrayGamesScripts[l].playerGame)
+				if (this.arrayGamesScripts[l].ownerID == this.mS_.myID || this.arrayGamesScripts[l].publisherID == this.mS_.myID)
 				{
 					if (this.arrayGamesScripts[l].inDevelopment)
 					{
@@ -537,11 +534,11 @@ public class games : MonoBehaviour
 				}
 				if (this.mS_.multiplayer)
 				{
-					if (this.mS_.mpCalls_.isServer && (this.arrayGamesScripts[l].playerGame || this.arrayGamesScripts[l].multiplayerSlot == -1 || this.arrayGamesScripts[l].typ_contractGame))
+					if (this.mS_.mpCalls_.isServer && (this.arrayGamesScripts[l].IsMyGame() || this.arrayGamesScripts[l].typ_contractGame || (this.arrayGamesScripts[l].DeveloperIsNPC() && this.arrayGamesScripts[l].PublisherIsNPC() && this.arrayGamesScripts[l].OwnerIsNPC())))
 					{
 						this.arrayGamesScripts[l].SellGame();
 					}
-					if (this.mS_.mpCalls_.isClient && this.arrayGamesScripts[l].playerGame)
+					if (this.mS_.mpCalls_.isClient && this.arrayGamesScripts[l].IsMyGame())
 					{
 						this.arrayGamesScripts[l].SellGame();
 					}
@@ -550,7 +547,7 @@ public class games : MonoBehaviour
 				{
 					this.arrayGamesScripts[l].SellGame();
 				}
-				if (this.arrayGamesScripts[l].playerGame)
+				if (this.arrayGamesScripts[l].ownerID == this.mS_.myID)
 				{
 					this.arrayGamesScripts[l].SellMerchandise();
 				}
@@ -751,7 +748,7 @@ public class games : MonoBehaviour
 		}
 		for (int j = 0; j < this.arrayGamesScripts.Length; j++)
 		{
-			if (this.arrayGamesScripts[j] && this.arrayGamesScripts[j].playerGame && this.arrayGamesScripts[j].publisherID == -1)
+			if (this.arrayGamesScripts[j] && this.arrayGamesScripts[j].publisherID == this.mS_.myID)
 			{
 				int lagerbestand = this.arrayGamesScripts[j].GetLagerbestand();
 				if (lagerbestand > 0)
@@ -1049,19 +1046,6 @@ public class games : MonoBehaviour
 	}
 
 	
-	public gameScript GetGameScriptFromArray(int id_)
-	{
-		for (int i = 0; i < this.arrayGamesScripts.Length; i++)
-		{
-			if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].myID == id_)
-			{
-				return this.arrayGamesScripts[i];
-			}
-		}
-		return null;
-	}
-
-	
 	public bool IsNewGenreCombination(int maingenre, int subgenre)
 	{
 		if (maingenre <= -1)
@@ -1074,7 +1058,7 @@ public class games : MonoBehaviour
 		}
 		for (int i = 0; i < this.arrayGamesScripts.Length; i++)
 		{
-			if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].playerGame && !this.arrayGamesScripts[i].pubOffer && this.arrayGamesScripts[i].maingenre == maingenre && this.arrayGamesScripts[i].subgenre == subgenre)
+			if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].ownerID == this.mS_.myID && !this.arrayGamesScripts[i].pubOffer && this.arrayGamesScripts[i].maingenre == maingenre && this.arrayGamesScripts[i].subgenre == subgenre)
 			{
 				return false;
 			}
@@ -1095,7 +1079,7 @@ public class games : MonoBehaviour
 		}
 		for (int i = 0; i < this.arrayGamesScripts.Length; i++)
 		{
-			if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].playerGame && !this.arrayGamesScripts[i].pubOffer && this.arrayGamesScripts[i].gameMainTheme == maintopic && this.arrayGamesScripts[i].gameSubTheme == subtopic)
+			if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].ownerID == this.mS_.myID && !this.arrayGamesScripts[i].pubOffer && this.arrayGamesScripts[i].gameMainTheme == maintopic && this.arrayGamesScripts[i].gameSubTheme == subtopic)
 			{
 				return false;
 			}

@@ -37,12 +37,6 @@ public class Menu_Stats_Awards : MonoBehaviour
 	}
 
 	
-	private void OnEnable()
-	{
-		this.Init();
-	}
-
-	
 	private void Update()
 	{
 		this.MultiplayerUpdate();
@@ -72,8 +66,9 @@ public class Menu_Stats_Awards : MonoBehaviour
 	}
 
 	
-	private void Init()
+	public void Init(publisherScript script_)
 	{
+		this.pS_ = script_;
 		this.FindScripts();
 		this.SetData();
 	}
@@ -81,18 +76,21 @@ public class Menu_Stats_Awards : MonoBehaviour
 	
 	private void SetData()
 	{
-		this.uiObjects[0].GetComponent<Text>().text = this.mS_.awards[4].ToString() + "x";
-		this.uiObjects[1].GetComponent<Text>().text = this.mS_.awards[2].ToString() + "x";
-		this.uiObjects[2].GetComponent<Text>().text = this.mS_.awards[3].ToString() + "x";
-		this.uiObjects[3].GetComponent<Text>().text = this.mS_.awards[0].ToString() + "x";
-		this.uiObjects[4].GetComponent<Text>().text = this.mS_.awards[1].ToString() + "x";
-		this.uiObjects[5].GetComponent<Text>().text = this.mS_.awards[8].ToString() + "x";
-		this.uiObjects[6].GetComponent<Text>().text = this.mS_.awards[7].ToString() + "x";
-		this.uiObjects[7].GetComponent<Text>().text = this.mS_.awards[6].ToString() + "x";
-		this.uiObjects[8].GetComponent<Text>().text = this.mS_.awards[5].ToString() + "x";
-		this.uiObjects[9].GetComponent<Text>().text = this.mS_.awards[9].ToString() + "x";
-		this.uiObjects[10].GetComponent<Text>().text = this.mS_.awards[10].ToString() + "x";
-		this.uiObjects[11].GetComponent<Text>().text = this.mS_.awards[11].ToString() + "x";
+		if (this.pS_)
+		{
+			this.uiObjects[0].GetComponent<Text>().text = this.pS_.awards[4].ToString() + "x";
+			this.uiObjects[1].GetComponent<Text>().text = this.pS_.awards[2].ToString() + "x";
+			this.uiObjects[2].GetComponent<Text>().text = this.pS_.awards[3].ToString() + "x";
+			this.uiObjects[3].GetComponent<Text>().text = this.pS_.awards[0].ToString() + "x";
+			this.uiObjects[4].GetComponent<Text>().text = this.pS_.awards[1].ToString() + "x";
+			this.uiObjects[5].GetComponent<Text>().text = this.pS_.awards[8].ToString() + "x";
+			this.uiObjects[6].GetComponent<Text>().text = this.pS_.awards[7].ToString() + "x";
+			this.uiObjects[7].GetComponent<Text>().text = this.pS_.awards[6].ToString() + "x";
+			this.uiObjects[8].GetComponent<Text>().text = this.pS_.awards[5].ToString() + "x";
+			this.uiObjects[9].GetComponent<Text>().text = this.pS_.awards[9].ToString() + "x";
+			this.uiObjects[10].GetComponent<Text>().text = this.pS_.awards[10].ToString() + "x";
+			this.uiObjects[11].GetComponent<Text>().text = this.pS_.awards[11].ToString() + "x";
+		}
 	}
 
 	
@@ -115,6 +113,9 @@ public class Menu_Stats_Awards : MonoBehaviour
 
 	
 	private sfxScript sfx_;
+
+	
+	private publisherScript pS_;
 
 	
 	private float updateTimer;

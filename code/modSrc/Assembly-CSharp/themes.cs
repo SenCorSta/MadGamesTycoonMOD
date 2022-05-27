@@ -66,7 +66,7 @@ public class themes : MonoBehaviour
 	
 	public void Load_THEMES_MGSR(string filename)
 	{
-		Debug.Log("Load_THEMES_MGSR() genreAmount: " + this.genres_.genres_LEVEL.Length.ToString());
+		int num = this.genres_.genres_LEVEL.Length;
 		string[] array = this.OpenFile(filename).Split(new char[]
 		{
 			"\n"[0]
@@ -101,7 +101,6 @@ public class themes : MonoBehaviour
 	public void Load_FITGENRE(string filename)
 	{
 		int num = this.genres_.genres_LEVEL.Length;
-		Debug.Log("Load_FITGENRE() genreAmount: " + num.ToString());
 		string[] array = this.OpenFile(filename).Split(new char[]
 		{
 			"\n"[0]

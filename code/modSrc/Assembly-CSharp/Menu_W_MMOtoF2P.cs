@@ -96,10 +96,6 @@ public class Menu_W_MMOtoF2P : MonoBehaviour
 		this.game_.mmoTOf2p_created = true;
 		gameScript component = UnityEngine.Object.Instantiate<GameObject>(this.game_.gameObject).GetComponent<gameScript>();
 		this.games_.InitMMOtoF2PGame(component);
-		if (this.mS_.multiplayer)
-		{
-			component.multiplayerSlot = this.mS_.mpCalls_.myID;
-		}
 		component.SetMyName(this.game_.GetNameSimple());
 		component.gameTyp = 2;
 		component.f2pConverted = true;

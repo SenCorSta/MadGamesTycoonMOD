@@ -9,7 +9,7 @@ namespace Vectrosity
 	public class VisibilityControl : MonoBehaviour
 	{
 		
-		// (get) Token: 0x060021B7 RID: 8631 RVA: 0x00016926 File Offset: 0x00014B26
+		// (get) Token: 0x0600220A RID: 8714 RVA: 0x0015FCC4 File Offset: 0x0015DEC4
 		public RefInt objectNumber
 		{
 			get

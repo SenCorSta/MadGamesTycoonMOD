@@ -19,11 +19,11 @@ public class Item_BestF2P : MonoBehaviour
 			return;
 		}
 		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag();
-		if (this.game_.playerGame)
+		if (this.game_.ownerID == this.mS_.myID || this.game_.publisherID == this.mS_.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
-		if (this.mS_.multiplayer && !this.game_.playerGame && this.game_.multiplayerSlot != -1)
+		if (this.mS_.multiplayer && this.game_.GameFromMitspieler())
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[8];
 		}

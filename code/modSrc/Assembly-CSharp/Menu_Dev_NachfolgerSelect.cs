@@ -129,7 +129,7 @@ public class Menu_Dev_NachfolgerSelect : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && (!isOn || (isOn && !component.isOnMarket)) && component.playerGame && !component.inDevelopment && !component.schublade && !component.typ_budget && !component.typ_goty && component.portID == -1 && !component.pubOffer && !component.auftragsspiel && !component.typ_bundle && !component.typ_bundleAddon && !component.f2pConverted && (component.typ_standard || component.typ_nachfolger || component.typ_spinoff) && !component.nachfolger_created)
+				if (component && (!isOn || (isOn && !component.isOnMarket)) && this.CheckGameData(component))
 				{
 					string text = component.GetNameSimple();
 					this.searchStringA = this.searchStringA.ToLower();
@@ -150,6 +150,12 @@ public class Menu_Dev_NachfolgerSelect : MonoBehaviour
 		}
 		this.DROPDOWN_Sort();
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
+	}
+
+	
+	public bool CheckGameData(gameScript script_)
+	{
+		return script_ && script_.ownerID == this.mS_.myID && !script_.inDevelopment && !script_.schublade && !script_.typ_budget && !script_.typ_goty && script_.portID == -1 && !script_.pubOffer && !script_.auftragsspiel && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.f2pConverted && (script_.typ_standard || script_.typ_nachfolger || script_.typ_spinoff) && !script_.nachfolger_created;
 	}
 
 	

@@ -110,7 +110,7 @@ public class Menu_Stats_TochterfirmaEngine : MonoBehaviour
 			if (array[i])
 			{
 				engineScript component = array[i].GetComponent<engineScript>();
-				if (component && !component.archiv_engine && ((component.playerEngine && component.devPointsStart <= 0f) || (component.playerEngine && component.updating)) && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && !component.archiv_engine && ((component.ownerID == this.mS_.myID && component.devPointsStart <= 0f) || (component.ownerID == this.mS_.myID && component.updating)) && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_TochterfirmaEngine component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_TochterfirmaEngine>();
 					component2.eS_ = component;
@@ -158,7 +158,7 @@ public class Menu_Stats_TochterfirmaEngine : MonoBehaviour
 					gameObject.name = component.eS_.GetGamesAmount().ToString();
 					break;
 				case 5:
-					if (component.eS_.playerEngine)
+					if (component.eS_.ownerID == this.mS_.myID)
 					{
 						gameObject.name = "2";
 					}

@@ -317,8 +317,8 @@ namespace Suimono.Core
 		}
 
 		
-		// (add) Token: 0x06002273 RID: 8819 RVA: 0x0016B4F4 File Offset: 0x001696F4
-		// (remove) Token: 0x06002274 RID: 8820 RVA: 0x0016B52C File Offset: 0x0016972C
+		// (add) Token: 0x060022C6 RID: 8902 RVA: 0x0016CD90 File Offset: 0x0016AF90
+		// (remove) Token: 0x060022C7 RID: 8903 RVA: 0x0016CDC8 File Offset: 0x0016AFC8
 		public event fx_EffectObject.TriggerHandler OnTrigger;
 
 		
@@ -590,7 +590,7 @@ namespace Suimono.Core
 		private float timerEvent;
 
 		
-		// (Invoke) Token: 0x06002279 RID: 8825
+		// (Invoke) Token: 0x060022CC RID: 8908
 		public delegate void TriggerHandler(Vector3 position, Quaternion rotatoin);
 	}
 }

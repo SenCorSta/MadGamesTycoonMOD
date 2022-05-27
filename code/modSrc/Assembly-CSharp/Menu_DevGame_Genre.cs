@@ -117,10 +117,10 @@ public class Menu_DevGame_Genre : MonoBehaviour
 			this.uiObjects[6].GetComponent<Button>().interactable = false;
 		}
 		string text = this.tS_.GetText(812);
-		text = text.Replace("<TEXT>", "<color=yellow>" + this.genres_.GetName(this.mS_.companySpecialGenre) + "</color>");
+		text = text.Replace("<TEXT>", "<color=yellow>" + this.genres_.GetName(this.mS_.GetFanGenreID()) + "</color>");
 		this.uiObjects[5].GetComponent<Text>().text = text;
 		text = this.tS_.GetText(1911);
-		text = text.Replace("<NAME>", "<color=blue>" + this.genres_.GetName(this.mS_.companySpecialGenre) + "</color>");
+		text = text.Replace("<NAME>", "<color=blue>" + this.genres_.GetName(this.mS_.GetFanGenreID()) + "</color>");
 		this.uiObjects[8].GetComponent<tooltip>().c = text;
 		for (int i = 0; i < 5; i++)
 		{

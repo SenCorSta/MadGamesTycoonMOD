@@ -294,7 +294,7 @@ public class taskForschung : MonoBehaviour
 		{
 			if (this.mS_.mpCalls_.isServer)
 			{
-				this.mS_.mpCalls_.SERVER_Send_Forschung(this.mS_.mpCalls_.myID);
+				this.mS_.mpCalls_.SERVER_Send_Forschung(this.mS_.myID);
 			}
 			else
 			{

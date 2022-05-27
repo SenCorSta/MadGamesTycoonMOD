@@ -8,7 +8,7 @@ namespace MeshDistortLite
 	public class MeshDistortData
 	{
 		
-		// (get) Token: 0x06002387 RID: 9095 RVA: 0x00018319 File Offset: 0x00016519
+		// (get) Token: 0x060023DA RID: 9178 RVA: 0x00172AB0 File Offset: 0x00170CB0
 		public Matrix4x4 localToWorldMatrix
 		{
 			get
@@ -22,7 +22,7 @@ namespace MeshDistortLite
 		}
 
 		
-		// (get) Token: 0x06002388 RID: 9096 RVA: 0x0001833B File Offset: 0x0001653B
+		// (get) Token: 0x060023DB RID: 9179 RVA: 0x00172AD2 File Offset: 0x00170CD2
 		public Matrix4x4 worldToLocalMatrix
 		{
 			get
@@ -36,7 +36,7 @@ namespace MeshDistortLite
 		}
 
 		
-		// (get) Token: 0x06002389 RID: 9097 RVA: 0x0016FEB0 File Offset: 0x0016E0B0
+		// (get) Token: 0x060023DC RID: 9180 RVA: 0x00172AF4 File Offset: 0x00170CF4
 		public Vector3[] skinVertices
 		{
 			get

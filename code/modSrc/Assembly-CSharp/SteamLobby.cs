@@ -40,6 +40,7 @@ public class SteamLobby : MonoBehaviour
 	
 	public void HostLobby()
 	{
+		Debug.Log("3. HostLobby()");
 		SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, this.networkManager.maxConnections);
 	}
 
@@ -58,6 +59,7 @@ public class SteamLobby : MonoBehaviour
 	
 	private void OnLobbyCreated(LobbyCreated_t callback)
 	{
+		Debug.Log("4. OnLobbyCreated()");
 		if (callback.m_eResult != EResult.k_EResultOK)
 		{
 			return;
@@ -83,7 +85,7 @@ public class SteamLobby : MonoBehaviour
 		}
 		this.FindScripts();
 		this.mS_.multiplayer = true;
-		this.mS_.mpCalls_.myID = -1;
+		this.mS_.myID = -1;
 		this.RemoveContentFromClient();
 		this.mS_.LoadContent_MultiplayerClient();
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[201]);

@@ -128,7 +128,7 @@ public class Menu_Dev_RemasterSelect : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.playerGame && !component.inDevelopment && !component.schublade && component.gameTyp == 0 && component.portID == -1 && !component.pubOffer && !component.auftragsspiel && (component.typ_standard || component.typ_nachfolger || component.typ_spinoff) && !component.remaster_created && !component.isOnMarket && !component.typ_budget && !component.typ_goty && !component.typ_remaster && !component.typ_mmoaddon && !component.typ_bundleAddon && !component.typ_bundle)
+				if (component && this.CheckGameData(component))
 				{
 					string text = component.GetNameSimple();
 					this.searchStringA = this.searchStringA.ToLower();
@@ -150,6 +150,12 @@ public class Menu_Dev_RemasterSelect : MonoBehaviour
 		}
 		this.DROPDOWN_Sort();
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
+	}
+
+	
+	public bool CheckGameData(gameScript script_)
+	{
+		return script_ && script_.ownerID == this.mS_.myID && !script_.inDevelopment && !script_.schublade && script_.gameTyp == 0 && script_.portID == -1 && !script_.pubOffer && !script_.auftragsspiel && (script_.typ_standard || script_.typ_nachfolger || script_.typ_spinoff) && !script_.remaster_created && !script_.isOnMarket && !script_.typ_budget && !script_.typ_goty && !script_.typ_remaster && !script_.typ_mmoaddon && !script_.typ_bundleAddon && !script_.typ_bundle;
 	}
 
 	

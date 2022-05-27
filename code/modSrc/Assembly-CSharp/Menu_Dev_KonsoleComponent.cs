@@ -126,6 +126,7 @@ public class Menu_Dev_KonsoleComponent : MonoBehaviour
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[5].name);
 		List<string> list = new List<string>();
+		list.Add(this.tS_.GetText(183));
 		list.Add(this.tS_.GetText(1604));
 		list.Add(this.tS_.GetText(6));
 		list.Add(this.tS_.GetText(4));
@@ -149,16 +150,24 @@ public class Menu_Dev_KonsoleComponent : MonoBehaviour
 				switch (value)
 				{
 				case 0:
-					gameObject.name = this.hardware_.GetPerformance(component.myID).ToString();
+					gameObject.name = this.hardware_.GetName(component.myID).ToString();
 					break;
 				case 1:
-					gameObject.name = this.hardware_.GetDevCosts(component.myID).ToString();
+					gameObject.name = this.hardware_.GetPerformance(component.myID).ToString();
 					break;
 				case 2:
+					gameObject.name = this.hardware_.GetDevCosts(component.myID).ToString();
+					break;
+				case 3:
 					gameObject.name = this.hardware_.hardware_TECH[component.myID].ToString();
 					break;
 				}
 			}
+		}
+		if (value == 0)
+		{
+			this.mS_.SortChildrenByName(this.uiObjects[0]);
+			return;
 		}
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}

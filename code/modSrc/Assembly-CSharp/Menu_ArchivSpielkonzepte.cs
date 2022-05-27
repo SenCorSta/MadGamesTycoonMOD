@@ -158,7 +158,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && (script_.playerGame || script_.IsMyAuftragsspiel()) && !script_.typ_budget && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.typ_goty && !script_.pubOffer && !script_.auftragsspiel;
+		return script_ && (script_.developerID == this.mS_.myID || script_.IsMyAuftragsspiel()) && !script_.typ_budget && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.typ_goty && !script_.pubOffer;
 	}
 
 	

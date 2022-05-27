@@ -59,6 +59,10 @@ public class Menu_NewGameSettings : MonoBehaviour
 		{
 			this.fS_ = this.main_.GetComponent<forschungSonstiges>();
 		}
+		if (!this.publisher_)
+		{
+			this.publisher_ = this.main_.GetComponent<publisher>();
+		}
 	}
 
 	
@@ -96,21 +100,18 @@ public class Menu_NewGameSettings : MonoBehaviour
 		Menu_NewGame component = this.guiMain_.uiObjects[159].GetComponent<Menu_NewGame>();
 		if (!this.mS_.multiplayer)
 		{
-			this.mS_.LoadOffice(component.uiObjects[8].GetComponent<Dropdown>().value + 3, false);
+			this.mS_.LoadOffice(this.mS_.GetMapIDfromDropdown(component.uiObjects[8]), false);
+			this.mS_.CreateStartAuto(this.mS_.GetMapIDfromDropdown(component.uiObjects[8]));
 		}
 		else
 		{
 			this.mS_.LoadOffice(this.mS_.office, false);
+			this.mS_.CreateStartAuto(this.mS_.office);
 		}
-		this.mS_.CreateStartAuto(component.uiObjects[8].GetComponent<Dropdown>().value + 3);
 		this.mS_.InitNewGame();
 		if (!this.mS_.multiplayer)
 		{
-			this.mS_.companyName = component.uiObjects[0].GetComponent<InputField>().text;
-			this.mS_.logo = component.logo;
-			this.mS_.country = component.country;
 			this.mS_.difficulty = component.uiObjects[1].GetComponent<Dropdown>().value;
-			this.mS_.companySpecialGenre = component.genre;
 			if (component.uiObjects[7].GetComponent<Dropdown>().value < 4)
 			{
 				this.mS_.anzKonkurrenten = (component.uiObjects[7].GetComponent<Dropdown>().value + 1) * 20;
@@ -215,6 +216,13 @@ public class Menu_NewGameSettings : MonoBehaviour
 			this.InitStartjahr(num3);
 			this.SetFirmenwert(num3);
 			this.mS_.CreateStartAuftragsspiele();
+			publisherScript publisherScript = this.mS_.CreatePlayerPublisher(this.mS_.myID);
+			this.mS_.myPubS_ = publisherScript;
+			this.mS_.SetCompanyName(component.uiObjects[0].GetComponent<InputField>().text);
+			this.mS_.SetCompanyLogoID(component.logo);
+			this.mS_.SetCountryID(component.country);
+			this.mS_.SetFanGenreID(component.genre);
+			publisherScript.date_year = this.mS_.year;
 		}
 		else
 		{
@@ -228,7 +236,6 @@ public class Menu_NewGameSettings : MonoBehaviour
 			this.guiMain_.uiObjects[202].SetActive(true);
 			this.mS_.speedSetting = this.mS_.gameSpeeds[this.guiMain_.uiObjects[201].GetComponent<mpMain>().uiObjects[44].GetComponent<Dropdown>().value];
 			this.mS_.settings_arbeitsgeschwindigkeitAnpassen = this.guiMain_.uiObjects[201].GetComponent<mpMain>().uiObjects[45].GetComponent<Toggle>().isOn;
-			this.mS_.companySpecialGenre = this.guiMain_.uiObjects[201].GetComponent<mpMain>().uiObjects[46].GetComponent<Dropdown>().value;
 			if (this.guiMain_.uiObjects[201].GetComponent<mpMain>().uiObjects[42].GetComponent<Toggle>().isOn)
 			{
 				this.SetRandomPlattformPop();
@@ -597,4 +604,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 
 	
 	private forschungSonstiges fS_;
+
+	
+	private publisher publisher_;
 }

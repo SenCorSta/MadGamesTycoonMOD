@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5682C9E9-632F-413C-8D8B-1CDA4A41088E}</ProjectGuid>
+    <ProjectGuid>{E7135F6F-6E3A-4C54-99D9-1E4F335265F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -351,6 +351,7 @@
     <Compile Include="Item_Themes_Forschung.cs" />
     <Compile Include="Item_TochterfirmaEngine.cs" />
     <Compile Include="Item_TochterfirmaIP.cs" />
+    <Compile Include="Item_TochterfirmaIpTausch.cs" />
     <Compile Include="Item_TochterfirmaPlatform.cs" />
     <Compile Include="Item_Tochterfirma_Theme.cs" />
     <Compile Include="Item_Training_Kurs.cs" />
@@ -661,6 +662,7 @@
     <Compile Include="Menu_Stats_ShowMyIPs.cs" />
     <Compile Include="Menu_Stats_TochterfirmaEngine.cs" />
     <Compile Include="Menu_Stats_TochterfirmaIP.cs" />
+    <Compile Include="Menu_Stats_TochterfirmaIpTausch.cs" />
     <Compile Include="Menu_Stats_TochterfirmaPlatform.cs" />
     <Compile Include="Menu_Stats_TochterfirmaSettings.cs" />
     <Compile Include="Menu_Stats_TochterfirmaTopic.cs" />
@@ -905,6 +907,7 @@
     <Compile Include="U10PS_MouseRotation.cs" />
     <Compile Include="U10PS_SnowOverTime.cs" />
     <Compile Include="uiAnimation.cs" />
+    <Compile Include="uiRoomMouseOver.cs" />
     <Compile Include="ui_suimonoFps.cs" />
     <Compile Include="ui_suimonoHandler.cs" />
     <Compile Include="UniformTexturedLine.cs" />

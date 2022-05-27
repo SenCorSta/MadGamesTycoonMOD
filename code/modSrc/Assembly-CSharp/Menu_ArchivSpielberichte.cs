@@ -158,7 +158,7 @@ public class Menu_ArchivSpielberichte : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && (script_.playerGame || script_.IsMyAuftragsspiel()) && script_.spielbericht && !script_.typ_budget && !script_.typ_goty;
+		return script_ && script_.developerID == this.mS_.myID && script_.spielbericht && !script_.typ_budget && !script_.typ_goty;
 	}
 
 	

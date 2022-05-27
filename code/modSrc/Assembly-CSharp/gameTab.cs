@@ -186,7 +186,7 @@ public class gameTab : MonoBehaviour
 				this.mS_.GetMoney((long)this.sellsPerWeek, false),
 				"</color><color=black>|</color>"
 			});
-			if (this.gS_.publisherID == -1 && this.gS_.gameTyp != 2 && this.gS_.retailVersion)
+			if (this.gS_.publisherID == this.mS_.myID && this.gS_.gameTyp != 2 && this.gS_.retailVersion)
 			{
 				text = text + "<color=magenta>" + this.gS_.GetLagerbestandString() + "</color><color=black>|</color>";
 			}
@@ -306,7 +306,7 @@ public class gameTab : MonoBehaviour
 		{
 			this.uiObjects[33].SetActive(false);
 		}
-		if (this.fullView && this.gS_.publisherID != -1 && !this.gS_.schublade)
+		if (this.fullView && this.gS_.publisherID != this.mS_.myID && !this.gS_.schublade)
 		{
 			if (this.uiObjects[11].activeSelf)
 			{
@@ -336,7 +336,7 @@ public class gameTab : MonoBehaviour
 				this.uiObjects[21].SetActive(false);
 			}
 		}
-		if (this.fullView && this.gS_.publisherID == -1 && !this.gS_.schublade)
+		if (this.fullView && this.gS_.publisherID == this.mS_.myID && !this.gS_.schublade)
 		{
 			if (this.gS_.gameTyp != 2 && !this.gS_.handy && !this.gS_.arcade)
 			{
@@ -436,7 +436,7 @@ public class gameTab : MonoBehaviour
 				}
 			}
 		}
-		if (this.gS_.publisherID == -1 && !this.gS_.schublade)
+		if (this.gS_.publisherID == this.mS_.myID && !this.gS_.schublade)
 		{
 			if (this.gS_.retailVersion)
 			{
@@ -627,11 +627,11 @@ public class gameTab : MonoBehaviour
 		this.uiObjects[7].SetActive(this.fullView);
 		if (this.fullView)
 		{
-			if (this.gS_.publisherID != -1)
+			if (this.gS_.publisherID != this.mS_.myID)
 			{
 				this.uiObjects[8].GetComponent<Image>().sprite = this.uiSprites[0];
 			}
-			if (this.gS_.publisherID == -1)
+			if (this.gS_.publisherID == this.mS_.myID)
 			{
 				this.uiObjects[8].GetComponent<Image>().sprite = this.uiSprites[0];
 			}

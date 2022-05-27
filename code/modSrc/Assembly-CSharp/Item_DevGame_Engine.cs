@@ -20,7 +20,7 @@ public class Item_DevGame_Engine : MonoBehaviour
 		this.uiObjects[3].GetComponent<Text>().text = this.eS_.GetTechLevel().ToString();
 		this.tooltip_.c = this.eS_.GetTooltip();
 		string text = this.tS_.GetText(160) + ": " + this.eS_.GetFeaturesAmount().ToString();
-		if (this.eS_.playerEngine)
+		if (this.eS_.ownerID == this.mS_.myID)
 		{
 			text = text + "\n" + this.tS_.GetText(262);
 			this.uiObjects[0].GetComponent<Text>().color = Color.green;

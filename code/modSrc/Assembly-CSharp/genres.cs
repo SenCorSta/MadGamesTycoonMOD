@@ -217,7 +217,6 @@ public class genres : MonoBehaviour
 				num2++;
 			}
 		}
-		Debug.Log("Genres Amount: " + num2.ToString());
 		this.genres_BELIEBTHEIT = new float[num2];
 		this.genres_BELIEBTHEIT_SOLL = new bool[num2];
 		this.genres_PIC = new Sprite[num2];
@@ -541,8 +540,7 @@ public class genres : MonoBehaviour
 			}
 			if (this.ParseData("[EOF]", j))
 			{
-				Debug.Log("Genres.txt -> EOF");
-				return;
+				break;
 			}
 			num++;
 		}
@@ -1132,7 +1130,7 @@ public class genres : MonoBehaviour
 		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
 		{
 			gameScript gameScript = this.games_.arrayGamesScripts[i];
-			if ((gameScript.playerGame || gameScript.IsMyAuftragsspiel()) && gameScript.spielbericht && gameScript.maingenre == maingenre && gameScript.subgenre == subgenre && gameScript.Designschwerpunkt[slot] == this.GetFocus(slot, maingenre, subgenre))
+			if ((gameScript.ownerID == this.mS_.myID || gameScript.developerID == this.mS_.myID) && gameScript.spielbericht && gameScript.maingenre == maingenre && gameScript.subgenre == subgenre && gameScript.Designschwerpunkt[slot] == this.GetFocus(slot, maingenre, subgenre))
 			{
 				return true;
 			}
@@ -1193,7 +1191,7 @@ public class genres : MonoBehaviour
 		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
 		{
 			gameScript gameScript = this.games_.arrayGamesScripts[i];
-			if ((gameScript.playerGame || gameScript.IsMyAuftragsspiel()) && gameScript.spielbericht && gameScript.maingenre == maingenre && gameScript.subgenre == subgenre && gameScript.Designausrichtung[slot] == this.GetAlign(slot, maingenre, subgenre))
+			if ((gameScript.ownerID == this.mS_.myID || gameScript.developerID == this.mS_.myID) && gameScript.spielbericht && gameScript.maingenre == maingenre && gameScript.subgenre == subgenre && gameScript.Designausrichtung[slot] == this.GetAlign(slot, maingenre, subgenre))
 			{
 				return true;
 			}

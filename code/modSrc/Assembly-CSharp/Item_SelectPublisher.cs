@@ -23,7 +23,37 @@ public class Item_SelectPublisher : MonoBehaviour
 		this.tooltip_.c = this.pS_.GetTooltip();
 		if (this.pS_.IsMyTochterfirma())
 		{
-			base.GetComponent<Image>().color = this.guiMain_.colors[4];
+			if (!this.uiObjects[8].activeSelf)
+			{
+				this.uiObjects[8].SetActive(true);
+			}
+		}
+		else if (this.uiObjects[8].activeSelf)
+		{
+			this.uiObjects[8].SetActive(false);
+		}
+		if (this.pS_.isPlayer)
+		{
+			if (!this.uiObjects[7].activeSelf)
+			{
+				this.uiObjects[7].SetActive(true);
+			}
+		}
+		else if (this.uiObjects[7].activeSelf)
+		{
+			this.uiObjects[7].SetActive(false);
+		}
+		if (!this.pS_.isPlayer && !this.pS_.IsMyTochterfirma())
+		{
+			if (!this.uiObjects[6].activeSelf)
+			{
+				this.uiObjects[6].SetActive(true);
+				return;
+			}
+		}
+		else if (this.uiObjects[6].activeSelf)
+		{
+			this.uiObjects[6].SetActive(false);
 		}
 	}
 

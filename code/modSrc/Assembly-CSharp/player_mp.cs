@@ -7,24 +7,19 @@ public class player_mp
 	
 	public player_mp(int playerID_)
 	{
+		this.myPubScript_ = null;
 		this.timeout = 0f;
 		this.playerID = playerID_;
 		this.playerName = "";
-		this.companyName = "";
-		this.companyLogo = 0;
-		this.companyCountry = 0;
 		this.money = 0L;
 		this.fans = 0;
 		this.playerReady = false;
 		this.playerPause = false;
-		this.awards = new int[30];
 		this.objects = new List<object_mp>();
 		this.mapRoomID = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 		this.mapRoomTyp = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 		this.mapDoors = new int[mapScript.mapSizeX, mapScript.mapSizeY];
 		this.mapWindows = new int[mapScript.mapSizeX, mapScript.mapSizeY];
-		this.awards_SOTY = 0L;
-		this.awards_POTY = 0L;
 		this.ready = false;
 		this.forschungSonstiges = new bool[1];
 		this.genres = new bool[1];
@@ -36,6 +31,9 @@ public class player_mp
 	}
 
 	
+	public publisherScript myPubScript_;
+
+	
 	public float timeout;
 
 	
@@ -43,15 +41,6 @@ public class player_mp
 
 	
 	public string playerName;
-
-	
-	public string companyName;
-
-	
-	public int companyLogo;
-
-	
-	public int companyCountry;
 
 	
 	public long money;
@@ -64,9 +53,6 @@ public class player_mp
 
 	
 	public bool playerPause;
-
-	
-	public int[] awards;
 
 	
 	public List<object_mp> objects;
@@ -82,12 +68,6 @@ public class player_mp
 
 	
 	public int[,] mapWindows;
-
-	
-	public long awards_SOTY;
-
-	
-	public long awards_POTY;
 
 	
 	public bool ready;

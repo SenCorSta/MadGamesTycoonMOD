@@ -85,9 +85,9 @@ public class Menu_Dev_SelectPublisher : MonoBehaviour
 			if (array[i])
 			{
 				publisherScript component = array[i].GetComponent<publisherScript>();
-				if (component.isUnlocked && !component.TochterfirmaGeschlossen() && component.publisher && !component.onlyMobile)
+				if (component.isUnlocked && !component.TochterfirmaGeschlossen() && !component.isPlayer && component.publisher && !component.onlyMobile)
 				{
-					if ((float)this.gS_.reviewTotal >= component.GetMinimalReviewPoints() || component.tochterfirma)
+					if ((float)this.gS_.reviewTotal >= component.GetMinimalReviewPoints() || component.IsMyTochterfirma())
 					{
 						Item_SelectPublisher component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_SelectPublisher>();
 						component2.pS_ = component;

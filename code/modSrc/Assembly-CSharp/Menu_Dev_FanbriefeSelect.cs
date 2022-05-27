@@ -119,7 +119,7 @@ public class Menu_Dev_FanbriefeSelect : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && !component.archiv_fanbriefe && component.playerGame && !component.typ_addon && !component.typ_budget && !component.typ_mmoaddon && !component.typ_bundle && !component.typ_bundleAddon && !component.typ_goty && !component.inDevelopment && component.GetAmountFanbriefe() > 0)
+				if (component && this.CheckGameData(component))
 				{
 					string text = component.GetNameSimple();
 					this.searchStringA = this.searchStringA.ToLower();
@@ -139,6 +139,12 @@ public class Menu_Dev_FanbriefeSelect : MonoBehaviour
 		}
 		this.DROPDOWN_Sort();
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
+	}
+
+	
+	public bool CheckGameData(gameScript script_)
+	{
+		return script_ && (script_.ownerID == this.mS_.myID || script_.publisherID == this.mS_.myID) && !script_.archiv_fanbriefe && !script_.typ_addon && !script_.typ_budget && !script_.typ_mmoaddon && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.typ_goty && !script_.inDevelopment && script_.GetAmountFanbriefe() > 0;
 	}
 
 	

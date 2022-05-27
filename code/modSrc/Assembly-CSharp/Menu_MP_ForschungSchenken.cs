@@ -138,7 +138,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		for (int j = 0; j < this.mpCalls_.playersMP.Count; j++)
 		{
 			int playerID = this.mpCalls_.playersMP[j].playerID;
-			if (playerID == this.mpCalls_.myID)
+			if (playerID == this.mS_.myID)
 			{
 				if (this.uiPlayerButtons[j].activeSelf)
 				{
@@ -611,7 +611,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.sfx_.PlaySound(3, true);
 		if (this.mpCalls_.isServer)
 		{
-			this.mpCalls_.SERVER_Send_Help(this.mpCalls_.myID, this.mpCalls_.playersMP[this.selectedPlayer].playerID, 3, this.selectedForschung, this.forschungsTyp, 0);
+			this.mpCalls_.SERVER_Send_Help(this.mS_.myID, this.mpCalls_.playersMP[this.selectedPlayer].playerID, 3, this.selectedForschung, this.forschungsTyp, 0);
 		}
 		else
 		{

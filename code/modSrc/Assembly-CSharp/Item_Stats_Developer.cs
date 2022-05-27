@@ -45,14 +45,38 @@ public class Item_Stats_Developer : MonoBehaviour
 			this.uiObjects[4].GetComponent<Text>().text = this.pS_.GetFirmenwertString();
 			this.uiObjects[7].GetComponent<Text>().text = this.pS_.GetDeveloperPublisherString();
 			this.tooltip_.c = this.pS_.GetTooltip();
-			base.gameObject.GetComponent<Image>().color = Color.white;
 			if (this.pS_.IsMyTochterfirma())
 			{
-				base.gameObject.GetComponent<Image>().color = this.guiMain_.colors[4];
+				if (!this.uiObjects[6].activeSelf)
+				{
+					this.uiObjects[6].SetActive(true);
+				}
 			}
-			if (this.pS_.tf_geschlossen)
+			else if (this.uiObjects[6].activeSelf)
 			{
-				base.gameObject.GetComponent<Image>().color = this.guiMain_.colors[25];
+				this.uiObjects[6].SetActive(false);
+			}
+			if (this.pS_.isPlayer)
+			{
+				if (!this.uiObjects[9].activeSelf)
+				{
+					this.uiObjects[9].SetActive(true);
+				}
+			}
+			else if (this.uiObjects[9].activeSelf)
+			{
+				this.uiObjects[9].SetActive(false);
+			}
+			if (!this.pS_.isPlayer && !this.pS_.IsTochterfirma())
+			{
+				if (!this.uiObjects[10].activeSelf)
+				{
+					this.uiObjects[10].SetActive(true);
+				}
+			}
+			else if (this.uiObjects[10].activeSelf)
+			{
+				this.uiObjects[10].SetActive(false);
 			}
 			if (this.pS_.tf_geschlossen)
 			{

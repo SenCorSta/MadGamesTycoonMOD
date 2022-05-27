@@ -84,6 +84,10 @@ public class loadSavegame : MonoBehaviour
 	
 	private IEnumerator LoadSaveGameAfterOneFrame(int i)
 	{
+		if (this.mS_.multiplayer)
+		{
+			this.save_.loadingSavegame = true;
+		}
 		this.sfX_.SetRandomMusic();
 		this.guiMain_.uiObjects[152].SetActive(true);
 		this.guiMain_.uiObjects[151].SetActive(false);
@@ -106,15 +110,19 @@ public class loadSavegame : MonoBehaviour
 			this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[202]);
 			if (this.mpCalls_.isServer)
 			{
+				if (this.mS_.multiplayer)
+				{
+					this.save_.loadingSavegame = true;
+				}
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				this.mpCalls_.SERVER_Send_Load(this.mS_.multiplayerSaveID);
-				if (this.save_.savegamePlayerID != this.mpCalls_.myID)
+				if (this.mS_.multiplayer)
 				{
-					this.mpCalls_.myID = this.save_.savegamePlayerID;
+					this.save_.loadingSavegame = false;
 				}
 			}
 			else
@@ -124,10 +132,6 @@ public class loadSavegame : MonoBehaviour
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
-				if (this.save_.savegamePlayerID != this.mpCalls_.myID)
-				{
-					this.mpCalls_.myID = this.save_.savegamePlayerID;
-				}
 			}
 		}
 		yield break;

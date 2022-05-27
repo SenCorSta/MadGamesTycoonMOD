@@ -16,7 +16,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002042 RID: 8258 RVA: 0x000155B4 File Offset: 0x000137B4
+		// (get) Token: 0x06002095 RID: 8341 RVA: 0x00153E64 File Offset: 0x00152064
 		public Vector3[] lineVertices
 		{
 			get
@@ -26,7 +26,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002043 RID: 8259 RVA: 0x000155BC File Offset: 0x000137BC
+		// (get) Token: 0x06002096 RID: 8342 RVA: 0x00153E6C File Offset: 0x0015206C
 		public Vector2[] lineUVs
 		{
 			get
@@ -36,7 +36,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002044 RID: 8260 RVA: 0x000155C4 File Offset: 0x000137C4
+		// (get) Token: 0x06002097 RID: 8343 RVA: 0x00153E74 File Offset: 0x00152074
 		public Color32[] lineColors
 		{
 			get
@@ -46,7 +46,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002045 RID: 8261 RVA: 0x000155CC File Offset: 0x000137CC
+		// (get) Token: 0x06002098 RID: 8344 RVA: 0x00153E7C File Offset: 0x0015207C
 		public List<int> lineTriangles
 		{
 			get
@@ -56,7 +56,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002046 RID: 8262 RVA: 0x000155D4 File Offset: 0x000137D4
+		// (get) Token: 0x06002099 RID: 8345 RVA: 0x00153E84 File Offset: 0x00152084
 		public RectTransform rectTransform
 		{
 			get
@@ -70,8 +70,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002047 RID: 8263 RVA: 0x000155EC File Offset: 0x000137EC
-		// (set) Token: 0x06002048 RID: 8264 RVA: 0x000155F4 File Offset: 0x000137F4
+		// (get) Token: 0x0600209A RID: 8346 RVA: 0x00153E9C File Offset: 0x0015209C
+		// (set) Token: 0x0600209B RID: 8347 RVA: 0x00153EA4 File Offset: 0x001520A4
 		public Color32 color
 		{
 			get
@@ -86,7 +86,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002049 RID: 8265 RVA: 0x00015604 File Offset: 0x00013804
+		// (get) Token: 0x0600209C RID: 8348 RVA: 0x00153EB4 File Offset: 0x001520B4
 		public bool is2D
 		{
 			get
@@ -96,8 +96,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600204A RID: 8266 RVA: 0x0001560C File Offset: 0x0001380C
-		// (set) Token: 0x0600204B RID: 8267 RVA: 0x00015638 File Offset: 0x00013838
+		// (get) Token: 0x0600209D RID: 8349 RVA: 0x00153EBC File Offset: 0x001520BC
+		// (set) Token: 0x0600209E RID: 8350 RVA: 0x00153EE8 File Offset: 0x001520E8
 		public List<Vector2> points2
 		{
 			get
@@ -121,8 +121,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600204C RID: 8268 RVA: 0x0001565F File Offset: 0x0001385F
-		// (set) Token: 0x0600204D RID: 8269 RVA: 0x0001568B File Offset: 0x0001388B
+		// (get) Token: 0x0600209F RID: 8351 RVA: 0x00153F0F File Offset: 0x0015210F
+		// (set) Token: 0x060020A0 RID: 8352 RVA: 0x00153F3B File Offset: 0x0015213B
 		public List<Vector3> points3
 		{
 			get
@@ -146,7 +146,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600204E RID: 8270 RVA: 0x000156B2 File Offset: 0x000138B2
+		// (get) Token: 0x060020A1 RID: 8353 RVA: 0x00153F62 File Offset: 0x00152162
 		private int pointsCount
 		{
 			get
@@ -160,8 +160,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600204F RID: 8271 RVA: 0x000156D3 File Offset: 0x000138D3
-		// (set) Token: 0x06002050 RID: 8272 RVA: 0x00154180 File Offset: 0x00152380
+		// (get) Token: 0x060020A2 RID: 8354 RVA: 0x00153F83 File Offset: 0x00152183
+		// (set) Token: 0x060020A3 RID: 8355 RVA: 0x00153F8C File Offset: 0x0015218C
 		public float lineWidth
 		{
 			get
@@ -181,8 +181,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002051 RID: 8273 RVA: 0x000156DB File Offset: 0x000138DB
-		// (set) Token: 0x06002052 RID: 8274 RVA: 0x000156E8 File Offset: 0x000138E8
+		// (get) Token: 0x060020A4 RID: 8356 RVA: 0x00153FD9 File Offset: 0x001521D9
+		// (set) Token: 0x060020A5 RID: 8357 RVA: 0x00153FE6 File Offset: 0x001521E6
 		public float maxWeldDistance
 		{
 			get
@@ -196,8 +196,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002053 RID: 8275 RVA: 0x000156F3 File Offset: 0x000138F3
-		// (set) Token: 0x06002054 RID: 8276 RVA: 0x000156FB File Offset: 0x000138FB
+		// (get) Token: 0x060020A6 RID: 8358 RVA: 0x00153FF1 File Offset: 0x001521F1
+		// (set) Token: 0x060020A7 RID: 8359 RVA: 0x00153FF9 File Offset: 0x001521F9
 		public string name
 		{
 			get
@@ -219,8 +219,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002055 RID: 8277 RVA: 0x00015732 File Offset: 0x00013932
-		// (set) Token: 0x06002056 RID: 8278 RVA: 0x0001573A File Offset: 0x0001393A
+		// (get) Token: 0x060020A8 RID: 8360 RVA: 0x00154030 File Offset: 0x00152230
+		// (set) Token: 0x060020A9 RID: 8361 RVA: 0x00154038 File Offset: 0x00152238
 		public Material material
 		{
 			get
@@ -238,8 +238,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002057 RID: 8279 RVA: 0x00015757 File Offset: 0x00013957
-		// (set) Token: 0x06002058 RID: 8280 RVA: 0x0001575F File Offset: 0x0001395F
+		// (get) Token: 0x060020AA RID: 8362 RVA: 0x00154055 File Offset: 0x00152255
+		// (set) Token: 0x060020AB RID: 8363 RVA: 0x0015405D File Offset: 0x0015225D
 		public Texture texture
 		{
 			get
@@ -262,8 +262,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002059 RID: 8281 RVA: 0x0001578D File Offset: 0x0001398D
-		// (set) Token: 0x0600205A RID: 8282 RVA: 0x000157AA File Offset: 0x000139AA
+		// (get) Token: 0x060020AC RID: 8364 RVA: 0x0015408B File Offset: 0x0015228B
+		// (set) Token: 0x060020AD RID: 8365 RVA: 0x001540A8 File Offset: 0x001522A8
 		public int layer
 		{
 			get
@@ -284,8 +284,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600205B RID: 8283 RVA: 0x000157CE File Offset: 0x000139CE
-		// (set) Token: 0x0600205C RID: 8284 RVA: 0x000157D6 File Offset: 0x000139D6
+		// (get) Token: 0x060020AE RID: 8366 RVA: 0x001540CC File Offset: 0x001522CC
+		// (set) Token: 0x060020AF RID: 8367 RVA: 0x001540D4 File Offset: 0x001522D4
 		public bool active
 		{
 			get
@@ -303,8 +303,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600205D RID: 8285 RVA: 0x000157F3 File Offset: 0x000139F3
-		// (set) Token: 0x0600205E RID: 8286 RVA: 0x001541D0 File Offset: 0x001523D0
+		// (get) Token: 0x060020B0 RID: 8368 RVA: 0x001540F1 File Offset: 0x001522F1
+		// (set) Token: 0x060020B1 RID: 8369 RVA: 0x001540FC File Offset: 0x001522FC
 		public LineType lineType
 		{
 			get
@@ -344,8 +344,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600205F RID: 8287 RVA: 0x000157FB File Offset: 0x000139FB
-		// (set) Token: 0x06002060 RID: 8288 RVA: 0x00015803 File Offset: 0x00013A03
+		// (get) Token: 0x060020B2 RID: 8370 RVA: 0x001541C0 File Offset: 0x001523C0
+		// (set) Token: 0x060020B3 RID: 8371 RVA: 0x001541C8 File Offset: 0x001523C8
 		public float capLength
 		{
 			get
@@ -364,8 +364,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002061 RID: 8289 RVA: 0x00015820 File Offset: 0x00013A20
-		// (set) Token: 0x06002062 RID: 8290 RVA: 0x00015828 File Offset: 0x00013A28
+		// (get) Token: 0x060020B4 RID: 8372 RVA: 0x001541E5 File Offset: 0x001523E5
+		// (set) Token: 0x060020B5 RID: 8373 RVA: 0x001541ED File Offset: 0x001523ED
 		public bool smoothWidth
 		{
 			get
@@ -379,8 +379,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002063 RID: 8291 RVA: 0x0001583D File Offset: 0x00013A3D
-		// (set) Token: 0x06002064 RID: 8292 RVA: 0x00154294 File Offset: 0x00152494
+		// (get) Token: 0x060020B6 RID: 8374 RVA: 0x00154202 File Offset: 0x00152402
+		// (set) Token: 0x060020B7 RID: 8375 RVA: 0x0015420C File Offset: 0x0015240C
 		public bool smoothColor
 		{
 			get
@@ -403,8 +403,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002065 RID: 8293 RVA: 0x00015845 File Offset: 0x00013A45
-		// (set) Token: 0x06002066 RID: 8294 RVA: 0x001542E8 File Offset: 0x001524E8
+		// (get) Token: 0x060020B8 RID: 8376 RVA: 0x0015425D File Offset: 0x0015245D
+		// (set) Token: 0x060020B9 RID: 8377 RVA: 0x00154268 File Offset: 0x00152468
 		public Joins joins
 		{
 			get
@@ -440,7 +440,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002067 RID: 8295 RVA: 0x0001584D File Offset: 0x00013A4D
+		// (get) Token: 0x060020BA RID: 8378 RVA: 0x001542E4 File Offset: 0x001524E4
 		public bool isAutoDrawing
 		{
 			get
@@ -450,8 +450,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002068 RID: 8296 RVA: 0x00015855 File Offset: 0x00013A55
-		// (set) Token: 0x06002069 RID: 8297 RVA: 0x0001585D File Offset: 0x00013A5D
+		// (get) Token: 0x060020BB RID: 8379 RVA: 0x001542EC File Offset: 0x001524EC
+		// (set) Token: 0x060020BC RID: 8380 RVA: 0x001542F4 File Offset: 0x001524F4
 		public int drawStart
 		{
 			get
@@ -469,8 +469,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600206A RID: 8298 RVA: 0x00015887 File Offset: 0x00013A87
-		// (set) Token: 0x0600206B RID: 8299 RVA: 0x0001588F File Offset: 0x00013A8F
+		// (get) Token: 0x060020BD RID: 8381 RVA: 0x0015431E File Offset: 0x0015251E
+		// (set) Token: 0x060020BE RID: 8382 RVA: 0x00154326 File Offset: 0x00152526
 		public int drawEnd
 		{
 			get
@@ -488,8 +488,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600206C RID: 8300 RVA: 0x000158BC File Offset: 0x00013ABC
-		// (set) Token: 0x0600206D RID: 8301 RVA: 0x000158E0 File Offset: 0x00013AE0
+		// (get) Token: 0x060020BF RID: 8383 RVA: 0x00154353 File Offset: 0x00152553
+		// (set) Token: 0x060020C0 RID: 8384 RVA: 0x00154377 File Offset: 0x00152577
 		public int endPointsUpdate
 		{
 			get
@@ -515,8 +515,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600206E RID: 8302 RVA: 0x00015906 File Offset: 0x00013B06
-		// (set) Token: 0x0600206F RID: 8303 RVA: 0x00154364 File Offset: 0x00152564
+		// (get) Token: 0x060020C1 RID: 8385 RVA: 0x0015439D File Offset: 0x0015259D
+		// (set) Token: 0x060020C2 RID: 8386 RVA: 0x001543A8 File Offset: 0x001525A8
 		public string endCap
 		{
 			get
@@ -558,8 +558,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002070 RID: 8304 RVA: 0x0001590E File Offset: 0x00013B0E
-		// (set) Token: 0x06002071 RID: 8305 RVA: 0x00015916 File Offset: 0x00013B16
+		// (get) Token: 0x060020C3 RID: 8387 RVA: 0x00154464 File Offset: 0x00152664
+		// (set) Token: 0x060020C4 RID: 8388 RVA: 0x0015446C File Offset: 0x0015266C
 		public bool continuousTexture
 		{
 			get
@@ -577,8 +577,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002072 RID: 8306 RVA: 0x00015928 File Offset: 0x00013B28
-		// (set) Token: 0x06002073 RID: 8307 RVA: 0x00015930 File Offset: 0x00013B30
+		// (get) Token: 0x060020C5 RID: 8389 RVA: 0x0015447E File Offset: 0x0015267E
+		// (set) Token: 0x060020C6 RID: 8390 RVA: 0x00154486 File Offset: 0x00152686
 		public Transform drawTransform
 		{
 			get
@@ -592,8 +592,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002074 RID: 8308 RVA: 0x00015939 File Offset: 0x00013B39
-		// (set) Token: 0x06002075 RID: 8309 RVA: 0x00015941 File Offset: 0x00013B41
+		// (get) Token: 0x060020C7 RID: 8391 RVA: 0x0015448F File Offset: 0x0015268F
+		// (set) Token: 0x060020C8 RID: 8392 RVA: 0x00154497 File Offset: 0x00152697
 		public bool useViewportCoords
 		{
 			get
@@ -612,8 +612,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002076 RID: 8310 RVA: 0x0001595D File Offset: 0x00013B5D
-		// (set) Token: 0x06002077 RID: 8311 RVA: 0x00015965 File Offset: 0x00013B65
+		// (get) Token: 0x060020C9 RID: 8393 RVA: 0x001544B3 File Offset: 0x001526B3
+		// (set) Token: 0x060020CA RID: 8394 RVA: 0x001544BB File Offset: 0x001526BB
 		[SerializeField]
 		public float textureScale
 		{
@@ -635,8 +635,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002078 RID: 8312 RVA: 0x00015990 File Offset: 0x00013B90
-		// (set) Token: 0x06002079 RID: 8313 RVA: 0x00015998 File Offset: 0x00013B98
+		// (get) Token: 0x060020CB RID: 8395 RVA: 0x001544E6 File Offset: 0x001526E6
+		// (set) Token: 0x060020CC RID: 8396 RVA: 0x001544EE File Offset: 0x001526EE
 		public float textureOffset
 		{
 			get
@@ -651,8 +651,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600207A RID: 8314 RVA: 0x000159A7 File Offset: 0x00013BA7
-		// (set) Token: 0x0600207B RID: 8315 RVA: 0x000159AF File Offset: 0x00013BAF
+		// (get) Token: 0x060020CD RID: 8397 RVA: 0x001544FD File Offset: 0x001526FD
+		// (set) Token: 0x060020CE RID: 8398 RVA: 0x00154505 File Offset: 0x00152705
 		public Matrix4x4 matrix
 		{
 			get
@@ -667,8 +667,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600207C RID: 8316 RVA: 0x000159CE File Offset: 0x00013BCE
-		// (set) Token: 0x0600207D RID: 8317 RVA: 0x000159F5 File Offset: 0x00013BF5
+		// (get) Token: 0x060020CF RID: 8399 RVA: 0x00154524 File Offset: 0x00152724
+		// (set) Token: 0x060020D0 RID: 8400 RVA: 0x0015454B File Offset: 0x0015274B
 		public int drawDepth
 		{
 			get
@@ -692,8 +692,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600207E RID: 8318 RVA: 0x00015A1C File Offset: 0x00013C1C
-		// (set) Token: 0x0600207F RID: 8319 RVA: 0x00015A24 File Offset: 0x00013C24
+		// (get) Token: 0x060020D1 RID: 8401 RVA: 0x00154572 File Offset: 0x00152772
+		// (set) Token: 0x060020D2 RID: 8402 RVA: 0x0015457A File Offset: 0x0015277A
 		public bool collider
 		{
 			get
@@ -709,8 +709,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002080 RID: 8320 RVA: 0x00015A44 File Offset: 0x00013C44
-		// (set) Token: 0x06002081 RID: 8321 RVA: 0x00015A4C File Offset: 0x00013C4C
+		// (get) Token: 0x060020D3 RID: 8403 RVA: 0x0015459A File Offset: 0x0015279A
+		// (set) Token: 0x060020D4 RID: 8404 RVA: 0x001545A2 File Offset: 0x001527A2
 		public bool trigger
 		{
 			get
@@ -728,8 +728,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002082 RID: 8322 RVA: 0x00015A79 File Offset: 0x00013C79
-		// (set) Token: 0x06002083 RID: 8323 RVA: 0x00015A81 File Offset: 0x00013C81
+		// (get) Token: 0x060020D5 RID: 8405 RVA: 0x001545CF File Offset: 0x001527CF
+		// (set) Token: 0x060020D6 RID: 8406 RVA: 0x001545D7 File Offset: 0x001527D7
 		public PhysicsMaterial2D physicsMaterial
 		{
 			get
@@ -745,8 +745,8 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002084 RID: 8324 RVA: 0x00015AA1 File Offset: 0x00013CA1
-		// (set) Token: 0x06002085 RID: 8325 RVA: 0x00154420 File Offset: 0x00152620
+		// (get) Token: 0x060020D7 RID: 8407 RVA: 0x001545F7 File Offset: 0x001527F7
+		// (set) Token: 0x060020D8 RID: 8408 RVA: 0x00154600 File Offset: 0x00152800
 		public bool alignOddWidthToPixels
 		{
 			get
@@ -762,7 +762,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002086 RID: 8326 RVA: 0x00015AA9 File Offset: 0x00013CA9
+		// (get) Token: 0x060020D9 RID: 8409 RVA: 0x00154636 File Offset: 0x00152836
 		public static Canvas canvas
 		{
 			get
@@ -776,7 +776,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002087 RID: 8327 RVA: 0x00015AC3 File Offset: 0x00013CC3
+		// (get) Token: 0x060020DA RID: 8410 RVA: 0x00154650 File Offset: 0x00152850
 		public static Vector3 camTransformPosition
 		{
 			get
@@ -786,7 +786,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002088 RID: 8328 RVA: 0x00015ACF File Offset: 0x00013CCF
+		// (get) Token: 0x060020DB RID: 8411 RVA: 0x0015465C File Offset: 0x0015285C
 		public static bool camTransformExists
 		{
 			get
@@ -796,7 +796,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002089 RID: 8329 RVA: 0x00015ADC File Offset: 0x00013CDC
+		// (get) Token: 0x060020DC RID: 8412 RVA: 0x00154669 File Offset: 0x00152869
 		public static LineManager lineManager
 		{
 			get

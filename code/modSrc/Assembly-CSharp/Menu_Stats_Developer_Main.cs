@@ -26,6 +26,10 @@ public class Menu_Stats_Developer_Main : MonoBehaviour
 		{
 			this.tS_ = this.main_.GetComponent<textScript>();
 		}
+		if (!this.genres_)
+		{
+			this.genres_ = this.main_.GetComponent<genres>();
+		}
 		if (!this.sfx_)
 		{
 			this.sfx_ = GameObject.Find("SFX").GetComponent<sfxScript>();
@@ -44,8 +48,27 @@ public class Menu_Stats_Developer_Main : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.pS_.GetName();
 		this.uiObjects[1].GetComponent<Image>().sprite = this.pS_.GetLogo();
 		this.guiMain_.DrawStarsColor(this.uiObjects[2], Mathf.RoundToInt(this.pS_.stars / 20f), Color.white);
-		this.uiObjects[3].GetComponent<Text>().text = this.pS_.GetDateString();
+		this.uiObjects[9].GetComponent<Image>().sprite = this.guiMain_.flagSprites[this.pS_.country];
 		this.uiObjects[4].GetComponent<Text>().text = this.tS_.GetText(685) + ": <b>" + this.pS_.GetFirmenwertString() + "</b>";
+		this.uiObjects[7].GetComponent<Image>().sprite = this.genres_.GetPic(this.pS_.fanGenre);
+		this.uiObjects[7].GetComponent<tooltip>().c = this.tS_.GetText(437) + ": <b>" + this.genres_.GetName(this.pS_.fanGenre) + "</b>";
+		this.uiObjects[3].GetComponent<Text>().text = this.pS_.GetDateString();
+		if (this.pS_.IsTochterfirma() && this.pS_.TochterfirmaGeschlossen())
+		{
+			Text component = this.uiObjects[3].GetComponent<Text>();
+			component.text = component.text + "\n<color=red><b>" + this.tS_.GetText(1969) + "</b></color>";
+		}
+		if (this.pS_.IsMyTochterfirma())
+		{
+			if (!this.uiObjects[8].activeSelf)
+			{
+				this.uiObjects[8].SetActive(true);
+			}
+		}
+		else if (this.uiObjects[8].activeSelf)
+		{
+			this.uiObjects[8].SetActive(false);
+		}
 		if (this.pS_.tf_geschlossen)
 		{
 			if (!this.uiObjects[6].activeSelf)
@@ -76,6 +99,14 @@ public class Menu_Stats_Developer_Main : MonoBehaviour
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
+	}
+
+	
+	public void BUTTON_Awards()
+	{
+		this.sfx_.PlaySound(3, true);
+		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[144]);
+		this.guiMain_.uiObjects[144].GetComponent<Menu_Stats_Awards>().Init(this.pS_);
 	}
 
 	
@@ -122,6 +153,9 @@ public class Menu_Stats_Developer_Main : MonoBehaviour
 
 	
 	private sfxScript sfx_;
+
+	
+	private genres genres_;
 
 	
 	private publisherScript pS_;

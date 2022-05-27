@@ -171,7 +171,14 @@ public class Menu_BuyLicence : MonoBehaviour
 					gameObject.name = this.licences_.licence_TYP[component.myID].ToString();
 					break;
 				case 4:
-					gameObject.name = this.licences_.licence_ANGEBOT[component.myID].ToString();
+					if (this.licences_.licence_GEKAUFT[component.myID] > 0)
+					{
+						gameObject.name = this.licences_.licence_GEKAUFT[component.myID].ToString();
+					}
+					else
+					{
+						gameObject.name = this.licences_.licence_ANGEBOT[component.myID].ToString();
+					}
 					break;
 				}
 			}

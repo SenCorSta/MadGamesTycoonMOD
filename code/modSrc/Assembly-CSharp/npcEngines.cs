@@ -51,7 +51,6 @@ public class npcEngines : MonoBehaviour
 				num++;
 			}
 		}
-		Debug.Log("NpcEngines Amount: " + num.ToString());
 		engineScript engineScript = null;
 		for (int j = 0; j < this.data.Length; j++)
 		{
@@ -59,8 +58,7 @@ public class npcEngines : MonoBehaviour
 			{
 				engineScript = this.eF_.CreateEngine();
 				engineScript.myID = int.Parse(this.data[j]);
-				engineScript.playerEngine = false;
-				engineScript.multiplayerSlot = -1;
+				engineScript.ownerID = -1;
 				engineScript.sellEngine = true;
 				engineScript.devPoints = 0f;
 				engineScript.Init();
@@ -195,8 +193,7 @@ public class npcEngines : MonoBehaviour
 				}
 				if (this.ParseData("[EOF]", j))
 				{
-					Debug.Log("NpcEngines.txt -> EOF");
-					return;
+					break;
 				}
 			}
 		}

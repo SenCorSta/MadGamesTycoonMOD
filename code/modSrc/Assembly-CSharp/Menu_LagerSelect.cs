@@ -150,7 +150,7 @@ public class Menu_LagerSelect : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && script_.publisherID == -1 && script_.GetLagerbestand() > 0;
+		return script_ && script_.publisherID == this.mS_.myID && !script_.inDevelopment && script_.GetLagerbestand() > 0;
 	}
 
 	

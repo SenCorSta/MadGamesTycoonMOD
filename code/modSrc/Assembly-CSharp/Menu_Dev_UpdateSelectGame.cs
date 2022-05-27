@@ -128,7 +128,7 @@ public class Menu_Dev_UpdateSelectGame : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.playerGame && !component.inDevelopment && component.isOnMarket && !component.typ_bundle && !component.typ_budget && !component.typ_bundleAddon && !component.typ_goty)
+				if (component && this.CheckGameData(component))
 				{
 					bool flag = true;
 					if (component.portID != -1 && this.uiObjects[7].GetComponent<Toggle>().isOn)
@@ -161,6 +161,12 @@ public class Menu_Dev_UpdateSelectGame : MonoBehaviour
 		}
 		this.DROPDOWN_Sort();
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
+	}
+
+	
+	public bool CheckGameData(gameScript script_)
+	{
+		return script_ && (script_.ownerID == this.mS_.myID || script_.publisherID == this.mS_.myID) && !script_.inDevelopment && script_.isOnMarket && !script_.typ_bundle && !script_.typ_budget && !script_.typ_bundleAddon && !script_.typ_goty;
 	}
 
 	

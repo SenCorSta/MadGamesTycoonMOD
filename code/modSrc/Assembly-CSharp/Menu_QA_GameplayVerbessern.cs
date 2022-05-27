@@ -206,7 +206,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.playerGame && !component.isOnMarket && component.inDevelopment)
+				if (component && component.developerID == this.mS_.myID && !component.isOnMarket && component.inDevelopment)
 				{
 					return component;
 				}

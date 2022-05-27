@@ -115,7 +115,7 @@ public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.playerGame && component.inDevelopment && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && this.CheckGameData(component) && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_QA_GameplayVerbessern component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_QA_GameplayVerbessern>();
 					component2.mS_ = this.mS_;
@@ -128,6 +128,12 @@ public class Menu_QA_GameplayVerbessernSelectGame : MonoBehaviour
 		}
 		this.DROPDOWN_Sort();
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
+	}
+
+	
+	public bool CheckGameData(gameScript script_)
+	{
+		return script_ && script_.developerID == this.mS_.myID && script_.inDevelopment;
 	}
 
 	

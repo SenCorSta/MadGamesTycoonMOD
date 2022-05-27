@@ -142,7 +142,7 @@ public class Menu_BuyEngine : MonoBehaviour
 			if (array[i])
 			{
 				engineScript component = array[i].GetComponent<engineScript>();
-				if (component && component.isUnlocked && !component.playerEngine && component.gekauft == gekauft && ((!component.playerEngine && component.multiplayerSlot == -1) || (component.multiplayerSlot != -1 && component.sellEngine)) && component.myID != 0 && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && component.isUnlocked && component.ownerID != this.mS_.myID && component.gekauft == gekauft && (component.OwnerIsNPC() || (component.EngineFromMitspieler() && component.sellEngine)) && component.myID != 0 && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_BuyEngine component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_BuyEngine>();
 					component2.eS_ = component;

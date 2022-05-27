@@ -1215,7 +1215,7 @@ public class buildRoomScript : MonoBehaviour
 	
 	private IEnumerator UpdatePathfindingNextFrame()
 	{
-		this.noPath = false;
+		this.noPath = true;
 		yield return new WaitForEndOfFrame();
 		yield return new WaitForEndOfFrame();
 		yield return new WaitForEndOfFrame();
@@ -1228,6 +1228,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 		yield return new WaitForEndOfFrame();
 		yield return new WaitForEndOfFrame();
+		this.noPath = false;
 		bool flag = true;
 		int num = 0;
 		for (int i = 0; i < mapScript.mapSizeX; i++)

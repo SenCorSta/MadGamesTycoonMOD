@@ -133,7 +133,7 @@ public class Menu_Dev_EnginePlatform : MonoBehaviour
 			if (array[j])
 			{
 				platformScript component = array[j].GetComponent<platformScript>();
-				if (component && (component.isUnlocked || component.playerConsole) && component.inBesitz && ((!component.vomMarktGenommen && component.tech >= this.menuDevEngine_.techLevel) || isOn) && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && (component.isUnlocked || component.ownerID == this.mS_.myID) && component.inBesitz && ((!component.vomMarktGenommen && component.tech >= this.menuDevEngine_.techLevel) || isOn) && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_DevEngine_Platform component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_DevEngine_Platform>();
 					component2.myID = component.myID;

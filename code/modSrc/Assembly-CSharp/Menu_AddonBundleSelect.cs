@@ -151,12 +151,12 @@ public class Menu_AddonBundleSelect : MonoBehaviour
 		{
 			if (this.slot == 0)
 			{
-				if (script_.playerGame && !script_.inDevelopment && !script_.isOnMarket && script_.gameTyp == 0 && !script_.typ_budget && script_.amountAddons > 0 && !script_.pubOffer && (script_.typ_standard || script_.typ_nachfolger || script_.typ_spinoff) && !script_.handy && !script_.arcade && this.HasUnusedAddons(script_.myID))
+				if (script_.ownerID == this.mS_.myID && !script_.inDevelopment && !script_.isOnMarket && script_.gameTyp == 0 && !script_.typ_budget && script_.amountAddons > 0 && !script_.pubOffer && !script_.schublade && (script_.typ_standard || script_.typ_nachfolger || script_.typ_spinoff) && !script_.handy && !script_.arcade && this.HasUnusedAddons(script_.myID))
 				{
 					return true;
 				}
 			}
-			else if (script_.playerGame && !script_.inDevelopment && !script_.isOnMarket && script_.gameTyp == 0 && !script_.bundle_created && (script_.typ_addon || script_.typ_addonStandalone) && script_.originalIP == this.menuAddonBundle_.games[0].myID && this.menuAddonBundle_.games[0] != script_ && this.menuAddonBundle_.games[1] != script_ && this.menuAddonBundle_.games[2] != script_ && this.menuAddonBundle_.games[3] != script_ && this.menuAddonBundle_.games[4] != script_ && !script_.handy && !script_.arcade)
+			else if (script_.ownerID == this.mS_.myID && script_.developerID == this.mS_.myID && !script_.inDevelopment && !script_.isOnMarket && script_.gameTyp == 0 && !script_.bundle_created && (script_.typ_addon || script_.typ_addonStandalone) && script_.originalIP == this.menuAddonBundle_.games[0].myID && this.menuAddonBundle_.games[0] != script_ && this.menuAddonBundle_.games[1] != script_ && this.menuAddonBundle_.games[2] != script_ && this.menuAddonBundle_.games[3] != script_ && this.menuAddonBundle_.games[4] != script_ && !script_.handy && !script_.arcade)
 			{
 				return true;
 			}
@@ -170,7 +170,7 @@ public class Menu_AddonBundleSelect : MonoBehaviour
 		for (int i = 0; i < this.mS_.games_.arrayGamesScripts.Length; i++)
 		{
 			gameScript gameScript = this.mS_.games_.arrayGamesScripts[i];
-			if (gameScript.playerGame && !gameScript.inDevelopment && !gameScript.isOnMarket && !gameScript.bundle_created && (gameScript.typ_addon || gameScript.typ_addonStandalone) && gameScript.originalIP == gameID)
+			if (gameScript.ownerID == this.mS_.myID && gameScript.developerID == this.mS_.myID && !gameScript.inDevelopment && !gameScript.isOnMarket && !gameScript.bundle_created && (gameScript.typ_addon || gameScript.typ_addonStandalone) && gameScript.originalIP == gameID)
 			{
 				return true;
 			}

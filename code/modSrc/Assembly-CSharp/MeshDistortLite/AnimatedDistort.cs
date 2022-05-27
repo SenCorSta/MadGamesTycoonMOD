@@ -8,8 +8,8 @@ namespace MeshDistortLite
 	public class AnimatedDistort : MonoBehaviour
 	{
 		
-		// (get) Token: 0x06002365 RID: 9061 RVA: 0x00018195 File Offset: 0x00016395
-		// (set) Token: 0x06002366 RID: 9062 RVA: 0x0001819F File Offset: 0x0001639F
+		// (get) Token: 0x060023B8 RID: 9144 RVA: 0x0017134A File Offset: 0x0016F54A
+		// (set) Token: 0x060023B9 RID: 9145 RVA: 0x00171354 File Offset: 0x0016F554
 		public int currentAnimation
 		{
 			get

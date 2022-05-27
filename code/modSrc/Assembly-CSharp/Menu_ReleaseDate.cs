@@ -106,7 +106,7 @@ public class Menu_ReleaseDate : MonoBehaviour
 		{
 			UnityEngine.Object.Destroy(this.task_.gameObject);
 		}
-		this.gS_.SetPublisher(-1);
+		this.gS_.SetPublisher(this.mS_.myID);
 		this.gS_.SetOnMarket();
 		this.gS_.releaseDate = Mathf.RoundToInt(this.uiObjects[2].GetComponent<Slider>().value);
 		if (!this.gS_.typ_budget && !this.gS_.typ_bundle && !this.gS_.typ_bundleAddon && !this.gS_.typ_goty)

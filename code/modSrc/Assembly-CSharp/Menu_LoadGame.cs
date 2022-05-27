@@ -65,20 +65,18 @@ public class Menu_LoadGame : MonoBehaviour
 	
 	private void LoadFile(int i)
 	{
-		string text = this.mS_.GetSavegameTitle() + i.ToString() + ".txt";
-		Debug.Log("Savegame: " + text);
+		string filePath = this.mS_.GetSavegameTitle() + i.ToString() + ".txt";
 		Transform child = this.uiObjects[0].transform.GetChild(i);
 		Transform child2 = child.transform.GetChild(0);
 		Transform child3 = child.transform.GetChild(1);
 		Transform child4 = child.transform.GetChild(2);
 		Transform child5 = child2.transform.GetChild(0);
-		if (ES3.FileExists(text))
+		if (ES3.FileExists(filePath))
 		{
-			string text2 = ES3.LoadRawString(text);
-			Debug.Log("Savegame 2: " + text);
-			if (text2.Length > 0 && text2[0] == '{')
+			string text = ES3.LoadRawString(filePath);
+			if (text.Length > 0 && text[0] == '{')
 			{
-				this.reader = ES3Reader.Create(text);
+				this.reader = ES3Reader.Create(filePath);
 				if (this.reader != null)
 				{
 					this.reader.Dispose();
@@ -185,6 +183,7 @@ public class Menu_LoadGame : MonoBehaviour
 		{
 			if (this.mpCalls_.isServer)
 			{
+				this.save_.loadingSavegame = true;
 				this.mS_.mpCalls_.SERVER_Send_Command(5);
 			}
 			PlayerPrefs.SetInt("LoadSavegame", -1);

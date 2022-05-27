@@ -99,7 +99,6 @@ public class publisher : MonoBehaviour
 				num++;
 			}
 		}
-		Debug.Log("Publisher Amount: " + num.ToString());
 		publisherScript publisherScript = null;
 		for (int j = 0; j < this.data.Length; j++)
 		{
@@ -135,6 +134,10 @@ public class publisher : MonoBehaviour
 				if (this.ParseData("[COMVAL]", j))
 				{
 					publisherScript.firmenwert = (long)int.Parse(this.data[j]);
+				}
+				if (this.ParseData("[COUNTRY]", j))
+				{
+					publisherScript.country = int.Parse(this.data[j]);
 				}
 				if (this.ParseData("[DEVELOPER]", j))
 				{
@@ -289,8 +292,7 @@ public class publisher : MonoBehaviour
 				}
 				if (this.ParseData("[EOF]", j))
 				{
-					Debug.Log("Publisher.txt -> EOF");
-					return;
+					break;
 				}
 			}
 		}

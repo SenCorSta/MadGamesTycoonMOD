@@ -106,7 +106,7 @@ public class Menu_Dev_XP : MonoBehaviour
 		if (this.gS_.publisherID != -1)
 		{
 			this.gS_.FindMyPublisher();
-			if (this.gS_.pS_ && this.gS_.pS_.GetRelation() < 100f && !this.gS_.pS_.IsMyTochterfirma() && this.gS_.reviewTotal >= 20 && ((!this.gS_.typ_addon && !this.gS_.typ_addonStandalone && !this.gS_.typ_mmoaddon) || UnityEngine.Random.Range(0, 100) < 30) && UnityEngine.Random.Range(0, 80) < this.gS_.reviewTotal)
+			if (this.gS_.pS_ && this.gS_.pS_.GetRelation() < 100f && !this.gS_.pS_.IsMyTochterfirma() && !this.gS_.pS_.isPlayer && this.gS_.reviewTotal >= 20 && ((!this.gS_.typ_addon && !this.gS_.typ_addonStandalone && !this.gS_.typ_mmoaddon) || UnityEngine.Random.Range(0, 100) < 30) && UnityEngine.Random.Range(0, 80) < this.gS_.reviewTotal)
 			{
 				this.gS_.pS_.relation += 20f;
 				Item_DevGame_PublisherBeziehung component = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[1], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_DevGame_PublisherBeziehung>();
@@ -135,7 +135,7 @@ public class Menu_Dev_XP : MonoBehaviour
 				if (array[j])
 				{
 					publisherScript component2 = array[j].GetComponent<publisherScript>();
-					if (component2 && component2.myID != this.gS_.publisherID && !component2.IsMyTochterfirma() && component2.GetRelation() > 0f)
+					if (component2 && component2.myID != this.gS_.publisherID && !component2.IsMyTochterfirma() && !component2.isPlayer && component2.GetRelation() > 0f)
 					{
 						component2.relation -= 20f;
 						Item_DevGame_PublisherBeziehung component3 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[2], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_DevGame_PublisherBeziehung>();

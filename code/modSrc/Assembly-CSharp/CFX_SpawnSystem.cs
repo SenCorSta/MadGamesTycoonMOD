@@ -73,7 +73,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 	}
 
 	
-	// (get) Token: 0x0600006C RID: 108 RVA: 0x000024B3 File Offset: 0x000006B3
+	// (get) Token: 0x0600006C RID: 108 RVA: 0x00003E26 File Offset: 0x00002026
 	public static bool AllObjectsLoaded
 	{
 		get

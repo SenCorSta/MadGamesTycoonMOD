@@ -117,7 +117,7 @@ public class Menu_PublisherExklusiv : MonoBehaviour
 			if (array[i])
 			{
 				publisherScript component = array[i].GetComponent<publisherScript>();
-				if (component.isUnlocked && component.publisher && component.GetRelation() >= 100f && !component.tochterfirma && !this.Exists(this.uiObjects[0], component.myID))
+				if (component.isUnlocked && component.publisher && !component.isPlayer && component.GetRelation() >= 100f && !component.IsTochterfirma() && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_PublisherExklusiv component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_PublisherExklusiv>();
 					component2.pS_ = component;

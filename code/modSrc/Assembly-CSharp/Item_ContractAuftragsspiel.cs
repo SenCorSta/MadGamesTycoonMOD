@@ -30,7 +30,7 @@ public class Item_ContractAuftragsspiel : MonoBehaviour
 	
 	private void MultiplayerUpdate()
 	{
-		if (this.platformScript_ && this.platformScript_.inBesitz && !this.platformScript_.playerConsole && this.platformScript_.multiplaySlot == -1)
+		if (this.platformScript_ && this.platformScript_.inBesitz && this.platformScript_.OwnerIsNPC())
 		{
 			this.uiObjects[8].GetComponent<Image>().color = Color.white;
 		}
@@ -95,7 +95,7 @@ public class Item_ContractAuftragsspiel : MonoBehaviour
 				this.platformScript_ = gameObject.GetComponent<platformScript>();
 				this.platformScript_.SetPic(this.uiObjects[8]);
 				this.uiObjects[8].GetComponent<tooltip>().c = this.platformScript_.GetTooltip();
-				if (!this.platformScript_.inBesitz && !this.platformScript_.playerConsole && this.platformScript_.multiplaySlot == -1)
+				if (!this.platformScript_.inBesitz && this.platformScript_.OwnerIsNPC())
 				{
 					this.uiObjects[8].GetComponent<Image>().color = Color.red;
 				}

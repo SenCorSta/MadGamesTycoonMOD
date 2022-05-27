@@ -147,7 +147,7 @@ public class Menu_BundleSelect : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && !script_.isOnMarket && script_.typ_budget && !script_.bundle_created && !script_.pubOffer && script_.gameTyp == 0 && !script_.typ_mmoaddon && !script_.typ_bundle && !script_.typ_addon && !script_.typ_addonStandalone && this.menuBundle_.games[0] != script_ && this.menuBundle_.games[1] != script_ && this.menuBundle_.games[2] != script_ && this.menuBundle_.games[3] != script_ && this.menuBundle_.games[4] != script_ && !script_.handy && !script_.arcade;
+		return script_ && script_.ownerID == this.mS_.myID && !script_.inDevelopment && !script_.isOnMarket && script_.typ_budget && !script_.bundle_created && !script_.pubOffer && !script_.schublade && script_.gameTyp == 0 && !script_.typ_mmoaddon && !script_.typ_bundle && !script_.typ_addon && !script_.typ_addonStandalone && this.menuBundle_.games[0] != script_ && this.menuBundle_.games[1] != script_ && this.menuBundle_.games[2] != script_ && this.menuBundle_.games[3] != script_ && this.menuBundle_.games[4] != script_ && !script_.handy && !script_.arcade;
 	}
 
 	

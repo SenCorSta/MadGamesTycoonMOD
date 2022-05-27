@@ -75,7 +75,7 @@ public class Menu_BuyEngine_Details : MonoBehaviour
 			spezialPlatformScript.SetPic(this.uiObjects[11]);
 			this.guiMain_.DrawStars(this.uiObjects[12], spezialPlatformScript.erfahrung);
 		}
-		if (!this.eS_.playerEngine && !this.eS_.gekauft)
+		if (this.eS_.ownerID != this.mS_.myID && !this.eS_.gekauft)
 		{
 			this.uiObjects[8].SetActive(true);
 			this.uiObjects[9].SetActive(false);
@@ -109,15 +109,15 @@ public class Menu_BuyEngine_Details : MonoBehaviour
 		this.mS_.Pay((long)this.eS_.preis, 5);
 		this.eS_.gekauft = true;
 		this.guiMain_.uiObjects[42].GetComponent<Menu_BuyEngine>().OnEnable();
-		if (this.eS_.multiplayerSlot != -1)
+		if (this.eS_.ownerID != -1)
 		{
 			if (this.mS_.mpCalls_.isServer)
 			{
-				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.mpCalls_.myID, this.eS_.multiplayerSlot, 1, this.eS_.preis);
+				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.myID, this.eS_.ownerID, 1, this.eS_.preis);
 			}
 			if (this.mS_.mpCalls_.isClient)
 			{
-				this.mS_.mpCalls_.CLIENT_Send_Payment(this.eS_.multiplayerSlot, 1, this.eS_.preis);
+				this.mS_.mpCalls_.CLIENT_Send_Payment(this.eS_.ownerID, 1, this.eS_.preis);
 			}
 		}
 		base.gameObject.SetActive(false);

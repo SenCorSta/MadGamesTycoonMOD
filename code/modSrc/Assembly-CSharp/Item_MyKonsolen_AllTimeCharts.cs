@@ -26,7 +26,7 @@ public class Item_MyKonsolen_AllTimeCharts : MonoBehaviour
 		{
 			return;
 		}
-		if (this.pS_.playerConsole)
+		if (this.pS_.ownerID == this.mS_.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
@@ -34,7 +34,7 @@ public class Item_MyKonsolen_AllTimeCharts : MonoBehaviour
 		{
 			base.GetComponent<Button>().interactable = false;
 		}
-		if (this.mS_.multiplayer && !this.pS_.playerConsole && this.pS_.multiplaySlot != -1)
+		if (this.mS_.multiplayer && this.pS_.PlatformFromMitspieler())
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[8];
 		}

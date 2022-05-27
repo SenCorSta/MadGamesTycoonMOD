@@ -144,7 +144,7 @@ public class Menu_MMOtoF2P : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_contractGame && !script_.inDevelopment && script_.gameTyp == 1 && !script_.mmoTOf2p_created && (script_.publisherID == -1 || (!script_.isOnMarket && script_.publisherID != -1)) && !script_.pubOffer;
+		return script_ && script_.ownerID == this.mS_.myID && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_contractGame && !script_.inDevelopment && script_.gameTyp == 1 && !script_.mmoTOf2p_created && (script_.publisherID == this.mS_.myID || (!script_.isOnMarket && script_.publisherID != this.mS_.myID)) && !script_.pubOffer;
 	}
 
 	

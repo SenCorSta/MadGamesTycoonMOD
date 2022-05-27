@@ -150,7 +150,7 @@ public class Menu_RemoveGameSelect : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && script_.isOnMarket && script_.publisherID == -1;
+		return script_ && script_.publisherID == this.mS_.myID && !script_.inDevelopment && script_.isOnMarket;
 	}
 
 	

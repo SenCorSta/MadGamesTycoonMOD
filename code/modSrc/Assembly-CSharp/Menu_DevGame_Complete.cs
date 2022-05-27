@@ -225,7 +225,7 @@ public class Menu_DevGame_Complete : MonoBehaviour
 			this.uiObjects[22].SetActive(true);
 			this.uiObjects[23].SetActive(false);
 			gameScript gameScript = this.gS_.FindVorgaengerScript();
-			if (gameScript && gameScript.publisherID != -1)
+			if (gameScript && gameScript.publisherID != this.mS_.myID)
 			{
 				this.uiObjects[11].GetComponent<Button>().interactable = false;
 			}
@@ -387,7 +387,7 @@ public class Menu_DevGame_Complete : MonoBehaviour
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[70]);
 		this.guiMain_.uiObjects[70].GetComponent<Menu_Dev_SelectPublisher>().Init(this.gS_, this.task_);
 		gameScript gameScript = this.gS_.FindVorgaengerScript();
-		if (gameScript && gameScript.publisherID != -1)
+		if (gameScript && gameScript.publisherID != this.mS_.myID)
 		{
 			this.guiMain_.uiObjects[70].GetComponent<Menu_Dev_SelectPublisher>().SelectPublisher(gameScript.publisherID);
 		}

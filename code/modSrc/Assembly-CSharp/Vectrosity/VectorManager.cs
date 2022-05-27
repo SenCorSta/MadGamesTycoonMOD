@@ -147,7 +147,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x06002178 RID: 8568 RVA: 0x00016593 File Offset: 0x00014793
+		// (get) Token: 0x060021CB RID: 8651 RVA: 0x0015EC5D File Offset: 0x0015CE5D
 		public static int arrayCount
 		{
 			get
@@ -190,7 +190,7 @@ namespace Vectrosity
 		}
 
 		
-		// (get) Token: 0x0600217B RID: 8571 RVA: 0x0001659A File Offset: 0x0001479A
+		// (get) Token: 0x060021CE RID: 8654 RVA: 0x0015ED3A File Offset: 0x0015CF3A
 		public static int arrayCount2
 		{
 			get

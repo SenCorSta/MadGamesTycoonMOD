@@ -62,15 +62,15 @@ public class Menu_W_BuyDevKit : MonoBehaviour
 		this.sfx_.PlaySound(3, true);
 		this.BUTTON_Abbrechen();
 		this.mS_.Pay((long)this.pS_.GetPrice(), 3);
-		if (this.pS_.multiplaySlot != -1)
+		if (this.mS_.multiplayer && !this.pS_.OwnerIsNPC())
 		{
 			if (this.mS_.mpCalls_.isServer)
 			{
-				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.mpCalls_.myID, this.pS_.multiplaySlot, 2, this.pS_.price);
+				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.myID, this.pS_.ownerID, 2, this.pS_.price);
 			}
 			if (this.mS_.mpCalls_.isClient)
 			{
-				this.mS_.mpCalls_.CLIENT_Send_Payment(this.pS_.multiplaySlot, 2, this.pS_.price);
+				this.mS_.mpCalls_.CLIENT_Send_Payment(this.pS_.ownerID, 2, this.pS_.price);
 			}
 		}
 		this.guiMain_.uiObjects[33].GetComponent<Menu_BuyDevKit>().TAB_DevKitsBuy(0);

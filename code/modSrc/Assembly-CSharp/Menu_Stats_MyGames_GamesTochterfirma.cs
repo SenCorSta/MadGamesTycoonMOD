@@ -126,7 +126,7 @@ public class Menu_Stats_MyGames_GamesTochterfirma : MonoBehaviour
 			{
 				script_.FindMyDeveloper();
 			}
-			if (script_.devS_ && script_.devS_.tochterfirma)
+			if (script_.devS_ && script_.devS_.IsMyTochterfirma())
 			{
 				return true;
 			}

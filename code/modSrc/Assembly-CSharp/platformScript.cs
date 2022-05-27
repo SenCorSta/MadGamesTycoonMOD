@@ -71,7 +71,7 @@ public class platformScript : MonoBehaviour
 	
 	public string GetName()
 	{
-		if (this.playerConsole || (this.multiplaySlot != -1 && this.mS_.multiplayer))
+		if (!this.OwnerIsNPC())
 		{
 			return this.myName;
 		}
@@ -81,36 +81,36 @@ public class platformScript : MonoBehaviour
 		{
 		case 0:
 			text = this.name_EN;
-			goto IL_A8;
+			goto IL_98;
 		case 1:
 			text = this.name_GE;
-			goto IL_A8;
+			goto IL_98;
 		case 2:
 			text = this.name_TU;
-			goto IL_A8;
+			goto IL_98;
 		case 3:
 			text = this.name_CH;
-			goto IL_A8;
+			goto IL_98;
 		case 4:
 			text = this.name_FR;
-			goto IL_A8;
+			goto IL_98;
 		case 5:
 		case 6:
 		case 7:
 			break;
 		case 8:
 			text = this.name_HU;
-			goto IL_A8;
+			goto IL_98;
 		default:
 			if (language == 16)
 			{
 				text = this.name_JA;
-				goto IL_A8;
+				goto IL_98;
 			}
 			break;
 		}
 		text = this.name_EN;
-		IL_A8:
+		IL_98:
 		if (text == null)
 		{
 			return this.name_EN;
@@ -125,15 +125,15 @@ public class platformScript : MonoBehaviour
 	
 	public string GetManufacturer()
 	{
-		if (this.playerConsole)
+		if (this.ownerID == this.mS_.myID)
 		{
-			return this.mS_.companyName;
+			return this.mS_.GetCompanyName();
 		}
-		if (this.mS_.multiplayer && this.multiplaySlot != -1)
+		if (this.mS_.multiplayer)
 		{
-			if (this.mS_.mpCalls_)
+			if (!this.OwnerIsNPC() && this.mS_.mpCalls_)
 			{
-				return this.mS_.mpCalls_.GetCompanyName(this.multiplaySlot);
+				return this.mS_.mpCalls_.GetCompanyName(this.ownerID);
 			}
 			return "";
 		}
@@ -145,36 +145,36 @@ public class platformScript : MonoBehaviour
 			{
 			case 0:
 				text = this.manufacturer_EN;
-				goto IL_DC;
+				goto IL_EC;
 			case 1:
 				text = this.manufacturer_GE;
-				goto IL_DC;
+				goto IL_EC;
 			case 2:
 				text = this.manufacturer_TU;
-				goto IL_DC;
+				goto IL_EC;
 			case 3:
 				text = this.manufacturer_CH;
-				goto IL_DC;
+				goto IL_EC;
 			case 4:
 				text = this.manufacturer_FR;
-				goto IL_DC;
+				goto IL_EC;
 			case 5:
 			case 6:
 			case 7:
 				break;
 			case 8:
 				text = this.manufacturer_HU;
-				goto IL_DC;
+				goto IL_EC;
 			default:
 				if (language == 16)
 				{
 					text = this.manufacturer_JA;
-					goto IL_DC;
+					goto IL_EC;
 				}
 				break;
 			}
 			text = this.manufacturer_EN;
-			IL_DC:
+			IL_EC:
 			if (text == null)
 			{
 				return this.manufacturer_EN;
@@ -190,7 +190,7 @@ public class platformScript : MonoBehaviour
 	
 	public void GetColor(GameObject go)
 	{
-		if (this.playerConsole)
+		if (this.ownerID == this.mS_.myID)
 		{
 			Material material = go.GetComponent<Image>().material;
 			material.SetFloat("_HsvShift", this.conHueShift);
@@ -201,7 +201,7 @@ public class platformScript : MonoBehaviour
 	
 	public void SetPic(GameObject go)
 	{
-		if (this.playerConsole || (this.multiplaySlot != -1 && this.mS_.multiplayer))
+		if (!this.OwnerIsNPC())
 		{
 			if (this.component_case != -1)
 			{
@@ -510,7 +510,7 @@ public class platformScript : MonoBehaviour
 			this.tech.ToString(),
 			"</color></b>\n"
 		});
-		if (this.playerConsole || (this.multiplaySlot != -1 && this.mS_.multiplayer))
+		if (!this.OwnerIsNPC())
 		{
 			text = string.Concat(new string[]
 			{
@@ -579,7 +579,7 @@ public class platformScript : MonoBehaviour
 				"</color>"
 			});
 		}
-		if (this.isUnlocked && (this.playerConsole || (this.multiplaySlot != -1 && this.mS_.multiplayer)))
+		if (this.isUnlocked && !this.OwnerIsNPC())
 		{
 			text = string.Concat(new string[]
 			{
@@ -628,7 +628,7 @@ public class platformScript : MonoBehaviour
 				"%</color>"
 			});
 		}
-		if (this.playerConsole && this.isUnlocked)
+		if (this.ownerID == this.mS_.myID && this.isUnlocked)
 		{
 			text += "\n";
 			text = string.Concat(new string[]
@@ -701,7 +701,7 @@ public class platformScript : MonoBehaviour
 		{
 			this.weeksOnMarket++;
 		}
-		if (this.npc)
+		if (this.OwnerIsNPC())
 		{
 			this.SellNPC();
 			return;
@@ -716,7 +716,7 @@ public class platformScript : MonoBehaviour
 		{
 			return;
 		}
-		if (this.npc)
+		if (this.OwnerIsNPC())
 		{
 			this.units += i;
 			this.units_max += i;
@@ -798,7 +798,7 @@ public class platformScript : MonoBehaviour
 	
 	private void SellPlayer()
 	{
-		if (!this.playerConsole)
+		if (this.ownerID != this.mS_.myID)
 		{
 			return;
 		}
@@ -1492,7 +1492,7 @@ public class platformScript : MonoBehaviour
 		this.date_year = this.mS_.year;
 		this.date_month = this.mS_.month;
 		this.InitUI();
-		if (this.playerConsole)
+		if (this.ownerID == this.mS_.myID)
 		{
 			this.mS_.AddStudioPoints(Mathf.RoundToInt(5f * this.review));
 			if (this.mS_.achScript_)
@@ -1527,7 +1527,7 @@ public class platformScript : MonoBehaviour
 	
 	public void InitUI()
 	{
-		if (!this.playerConsole)
+		if (this.ownerID != this.mS_.myID)
 		{
 			return;
 		}
@@ -1586,7 +1586,7 @@ public class platformScript : MonoBehaviour
 			if (array[i])
 			{
 				platformScript component = array[i].GetComponent<platformScript>();
-				if (component && component.playerConsole && component.isUnlocked && !component.vomMarktGenommen && component.typ == this.typ && component.tech >= this.tech)
+				if (component && component.ownerID == this.mS_.myID && component.isUnlocked && !component.vomMarktGenommen && component.typ == this.typ && component.tech >= this.tech)
 				{
 					num++;
 				}
@@ -1605,7 +1605,7 @@ public class platformScript : MonoBehaviour
 			if (array[i])
 			{
 				platformScript component = array[i].GetComponent<platformScript>();
-				if (component && component.playerConsole && component.isUnlocked && component.typ == this.typ && component.vomMarktGenommen && component.tech > this.tech)
+				if (component && component.ownerID == this.mS_.myID && component.isUnlocked && component.typ == this.typ && component.vomMarktGenommen && component.tech > this.tech)
 				{
 					num++;
 				}
@@ -1673,7 +1673,7 @@ public class platformScript : MonoBehaviour
 		if (!this.publisherBuyed[pS_.myID])
 		{
 			this.publisherBuyed[pS_.myID] = true;
-			if (this.playerConsole)
+			if (this.ownerID == this.mS_.myID)
 			{
 				this.mS_.Earn((long)this.price, 10);
 				string text = this.tS_.GetText(1659);
@@ -1682,9 +1682,9 @@ public class platformScript : MonoBehaviour
 				text = text + "\n<color=green><b>+" + this.mS_.GetMoney((long)this.price, true) + "</b></color>";
 				this.guiMain_.CreateTopNewsInfo(text);
 			}
-			if (this.mS_.multiplayer && !this.playerConsole && this.multiplaySlot != -1)
+			if (this.mS_.multiplayer && this.PlatformFromMitspieler())
 			{
-				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.mpCalls_.myID, this.multiplaySlot, 4, this.price);
+				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.myID, this.ownerID, 4, this.price);
 			}
 		}
 	}
@@ -1769,11 +1769,23 @@ public class platformScript : MonoBehaviour
 		{
 			result = 0f;
 		}
-		if (this.playerConsole || (this.multiplaySlot != -1 && this.mS_.multiplayer))
+		if (!this.OwnerIsNPC())
 		{
 			result = 0f;
 		}
 		return result;
+	}
+
+	
+	public bool OwnerIsNPC()
+	{
+		return this.ownerID < 100000;
+	}
+
+	
+	public bool PlatformFromMitspieler()
+	{
+		return this.mS_.multiplayer && this.ownerID >= 100000 && this.ownerID != this.mS_.myID && this.ownerID >= 100000;
 	}
 
 	
@@ -1813,6 +1825,9 @@ public class platformScript : MonoBehaviour
 	public int myID;
 
 	
+	public int ownerID = -1;
+
+	
 	public int date_year;
 
 	
@@ -1823,9 +1838,6 @@ public class platformScript : MonoBehaviour
 
 	
 	public int date_month_end;
-
-	
-	public bool npc;
 
 	
 	public int price;
@@ -1937,12 +1949,6 @@ public class platformScript : MonoBehaviour
 
 	
 	public string myName;
-
-	
-	public bool playerConsole;
-
-	
-	public int multiplaySlot = -1;
 
 	
 	public int gameID = -1;

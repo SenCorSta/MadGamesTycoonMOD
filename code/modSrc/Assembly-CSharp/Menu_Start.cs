@@ -85,7 +85,8 @@ public class Menu_Start : MonoBehaviour
 		this.mS_.multiplayer = false;
 		this.sfx_.PlaySound(3, true);
 		this.mS_.LoadContent();
-		this.mS_.mpCalls_.myID = 0;
+		this.mS_.myID = 100000;
+		this.mS_.myPubS_ = null;
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[159]);
 	}
 
@@ -130,8 +131,10 @@ public class Menu_Start : MonoBehaviour
 	
 	public void BUTTON_Multiplayer()
 	{
+		Debug.Log("1. BUTTON_Multiplayer()");
 		this.mS_.multiplayer = true;
-		this.mS_.mpCalls_.myID = -1;
+		this.mS_.myID = -1;
+		this.mS_.myPubS_ = null;
 		this.mS_.LoadContent();
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[201]);

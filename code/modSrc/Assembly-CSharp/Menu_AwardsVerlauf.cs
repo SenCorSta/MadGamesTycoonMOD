@@ -72,24 +72,20 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 		if (this.mS_.madGamesCon_BestGrafik.Count > this.seite)
 		{
-			this.FindWinners(this.mS_.madGamesCon_BestGrafik[this.seite], this.mS_.madGamesCon_BestSound[this.seite], this.mS_.madGamesCon_BestStudio[this.seite], this.mS_.madGamesCon_BestStudioPlayer[this.seite], this.mS_.madGamesCon_BestPublisher[this.seite], this.mS_.madGamesCon_BestPublisherPlayer[this.seite], this.mS_.madGamesCon_BestGame[this.seite], this.mS_.madGamesCon_BadGame[this.seite]);
+			this.FindWinners(this.mS_.madGamesCon_BestGrafik[this.seite], this.mS_.madGamesCon_BestSound[this.seite], this.mS_.madGamesCon_BestStudio[this.seite], this.mS_.madGamesCon_BestPublisher[this.seite], this.mS_.madGamesCon_BestGame[this.seite], this.mS_.madGamesCon_BadGame[this.seite]);
 		}
 		this.ShowAwards();
 	}
 
 	
-	public void FindWinners(int IDbestGrafik, int IDbestSound, int IDbestStudio, int bestStudioPlayer_, int IDbestPublisher, int bestPublisherPlayer_, int IDbestGame, int IDbadGame)
+	public void FindWinners(int IDbestGrafik, int IDbestSound, int IDbestStudio, int IDbestPublisher, int IDbestGame, int IDbadGame)
 	{
 		this.bestGrafik = null;
 		this.bestSound = null;
 		this.bestStudio = null;
-		this.bestStudioPlayer = -1;
 		this.bestPublisher = null;
-		this.bestPublisherPlayer = -1;
 		this.bestGame = null;
 		this.badGame = null;
-		this.bestStudioPlayer = bestStudioPlayer_;
-		this.bestPublisherPlayer = bestPublisherPlayer_;
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
 		if (array.Length != 0)
 		{
@@ -152,17 +148,17 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		gameScript gameScript = this.bestGrafik;
 		if (gameScript)
 		{
-			if (!gameScript.playerGame)
+			if (gameScript.ownerID == this.mS_.myID || gameScript.publisherID == this.mS_.myID)
 			{
-				this.uiObjects[0].GetComponent<Text>().text = gameScript.GetNameWithTag();
-				if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
-				{
-					this.uiObjects[0].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
-				}
+				this.uiObjects[0].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
 			}
 			else
 			{
-				this.uiObjects[0].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
+				this.uiObjects[0].GetComponent<Text>().text = gameScript.GetNameWithTag();
+				if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
+				{
+					this.uiObjects[0].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
+				}
 			}
 		}
 		else
@@ -172,17 +168,17 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		gameScript = this.bestSound;
 		if (gameScript)
 		{
-			if (!gameScript.playerGame)
+			if (gameScript.ownerID == this.mS_.myID || gameScript.publisherID == this.mS_.myID)
 			{
-				this.uiObjects[1].GetComponent<Text>().text = gameScript.GetNameWithTag();
-				if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
-				{
-					this.uiObjects[1].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
-				}
+				this.uiObjects[1].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
 			}
 			else
 			{
-				this.uiObjects[1].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
+				this.uiObjects[1].GetComponent<Text>().text = gameScript.GetNameWithTag();
+				if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
+				{
+					this.uiObjects[1].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
+				}
 			}
 		}
 		else
@@ -192,53 +188,51 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		publisherScript publisherScript = this.bestStudio;
 		if (publisherScript)
 		{
-			this.uiObjects[2].GetComponent<Text>().text = publisherScript.GetName();
-			this.uiObjects[12].GetComponent<Button>().interactable = true;
-		}
-		else
-		{
-			this.uiObjects[12].GetComponent<Button>().interactable = false;
-			if (!this.mS_.multiplayer || this.bestStudioPlayer == this.mS_.mpCalls_.myID)
+			if (publisherScript.myID != this.mS_.myID)
 			{
-				this.uiObjects[2].GetComponent<Text>().text = "<color=blue>" + this.mS_.companyName + "</color>";
-			}
-			else
-			{
-				this.uiObjects[2].GetComponent<Text>().text = "<color=magenta>" + this.mS_.mpCalls_.GetCompanyName(this.bestStudioPlayer) + "</color>";
-			}
-		}
-		publisherScript = this.bestPublisher;
-		if (publisherScript)
-		{
-			this.uiObjects[3].GetComponent<Text>().text = publisherScript.GetName();
-			this.uiObjects[13].GetComponent<Button>().interactable = true;
-		}
-		else
-		{
-			this.uiObjects[13].GetComponent<Button>().interactable = false;
-			if (!this.mS_.multiplayer || this.bestPublisherPlayer == this.mS_.mpCalls_.myID)
-			{
-				this.uiObjects[3].GetComponent<Text>().text = "<color=blue>" + this.mS_.companyName + "</color>";
-			}
-			else
-			{
-				this.uiObjects[3].GetComponent<Text>().text = "<color=magenta>" + this.mS_.mpCalls_.GetCompanyName(this.bestPublisherPlayer) + "</color>";
-			}
-		}
-		gameScript = this.bestGame;
-		if (gameScript)
-		{
-			if (!gameScript.playerGame)
-			{
-				this.uiObjects[4].GetComponent<Text>().text = gameScript.GetNameWithTag();
-				if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
+				this.uiObjects[2].GetComponent<Text>().text = publisherScript.GetName();
+				if (publisherScript.isPlayer)
 				{
-					this.uiObjects[4].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
+					this.uiObjects[2].GetComponent<Text>().text = "<color=magenta>" + publisherScript.GetName() + "</color>";
 				}
 			}
 			else
 			{
+				this.uiObjects[2].GetComponent<Text>().text = "<color=blue>" + publisherScript.GetName() + "</color>";
+			}
+			this.uiObjects[12].GetComponent<Button>().interactable = true;
+		}
+		publisherScript = this.bestPublisher;
+		if (publisherScript)
+		{
+			if (publisherScript.myID != this.mS_.myID)
+			{
+				this.uiObjects[3].GetComponent<Text>().text = publisherScript.GetName();
+				if (publisherScript.isPlayer)
+				{
+					this.uiObjects[3].GetComponent<Text>().text = "<color=magenta>" + publisherScript.GetName() + "</color>";
+				}
+			}
+			else
+			{
+				this.uiObjects[3].GetComponent<Text>().text = "<color=blue>" + publisherScript.GetName() + "</color>";
+			}
+			this.uiObjects[13].GetComponent<Button>().interactable = true;
+		}
+		gameScript = this.bestGame;
+		if (gameScript)
+		{
+			if (gameScript.ownerID == this.mS_.myID || gameScript.publisherID == this.mS_.myID)
+			{
 				this.uiObjects[4].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
+			}
+			else
+			{
+				this.uiObjects[4].GetComponent<Text>().text = gameScript.GetNameWithTag();
+				if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
+				{
+					this.uiObjects[4].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
+				}
 			}
 		}
 		else
@@ -248,13 +242,13 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		gameScript = this.badGame;
 		if (gameScript)
 		{
-			if (gameScript.playerGame)
+			if (gameScript.ownerID == this.mS_.myID || gameScript.publisherID == this.mS_.myID)
 			{
 				this.uiObjects[5].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>";
 				return;
 			}
 			this.uiObjects[5].GetComponent<Text>().text = gameScript.GetNameWithTag();
-			if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
+			if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
 			{
 				this.uiObjects[5].GetComponent<Text>().text = "<color=magenta>" + gameScript.GetNameWithTag() + "</color>";
 				return;
@@ -390,13 +384,7 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 	public publisherScript bestStudio;
 
 	
-	public int bestStudioPlayer;
-
-	
 	public publisherScript bestPublisher;
-
-	
-	public int bestPublisherPlayer;
 
 	
 	public gameScript bestGame;

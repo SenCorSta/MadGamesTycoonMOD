@@ -82,7 +82,7 @@ public class Item_DevGame_Platform : MonoBehaviour
 			base.gameObject.GetComponent<Button>().interactable = false;
 			return;
 		}
-		if (this.pS_.playerConsole && !this.pS_.isUnlocked)
+		if (this.pS_.ownerID == this.mS_.myID && !this.pS_.isUnlocked)
 		{
 			this.uiObjects[3].SetActive(true);
 			tooltip tooltip3 = this.tooltip_;

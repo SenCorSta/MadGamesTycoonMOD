@@ -131,20 +131,23 @@ public class Menu_MP_Awards : MonoBehaviour
 		{
 			return;
 		}
-		int[] array = new int[this.mpCalls_.playersMP[p].awards.Length];
-		array = (int[])this.mpCalls_.playersMP[p].awards.Clone();
-		this.uiObjects[0].GetComponent<Text>().text = array[4].ToString() + "x";
-		this.uiObjects[1].GetComponent<Text>().text = array[2].ToString() + "x";
-		this.uiObjects[2].GetComponent<Text>().text = array[3].ToString() + "x";
-		this.uiObjects[3].GetComponent<Text>().text = array[0].ToString() + "x";
-		this.uiObjects[4].GetComponent<Text>().text = array[1].ToString() + "x";
-		this.uiObjects[5].GetComponent<Text>().text = array[8].ToString() + "x";
-		this.uiObjects[6].GetComponent<Text>().text = array[7].ToString() + "x";
-		this.uiObjects[7].GetComponent<Text>().text = array[6].ToString() + "x";
-		this.uiObjects[8].GetComponent<Text>().text = array[5].ToString() + "x";
-		this.uiObjects[9].GetComponent<Text>().text = array[9].ToString() + "x";
-		this.uiObjects[10].GetComponent<Text>().text = array[10].ToString() + "x";
-		this.uiObjects[11].GetComponent<Text>().text = array[11].ToString() + "x";
+		GameObject gameObject = GameObject.Find("PUB_" + this.mpCalls_.playersMP[p].playerID.ToString());
+		if (gameObject)
+		{
+			publisherScript component = gameObject.GetComponent<publisherScript>();
+			this.uiObjects[0].GetComponent<Text>().text = component.awards[4].ToString() + "x";
+			this.uiObjects[1].GetComponent<Text>().text = component.awards[2].ToString() + "x";
+			this.uiObjects[2].GetComponent<Text>().text = component.awards[3].ToString() + "x";
+			this.uiObjects[3].GetComponent<Text>().text = component.awards[0].ToString() + "x";
+			this.uiObjects[4].GetComponent<Text>().text = component.awards[1].ToString() + "x";
+			this.uiObjects[5].GetComponent<Text>().text = component.awards[8].ToString() + "x";
+			this.uiObjects[6].GetComponent<Text>().text = component.awards[7].ToString() + "x";
+			this.uiObjects[7].GetComponent<Text>().text = component.awards[6].ToString() + "x";
+			this.uiObjects[8].GetComponent<Text>().text = component.awards[5].ToString() + "x";
+			this.uiObjects[9].GetComponent<Text>().text = component.awards[9].ToString() + "x";
+			this.uiObjects[10].GetComponent<Text>().text = component.awards[10].ToString() + "x";
+			this.uiObjects[11].GetComponent<Text>().text = component.awards[11].ToString() + "x";
+		}
 	}
 
 	

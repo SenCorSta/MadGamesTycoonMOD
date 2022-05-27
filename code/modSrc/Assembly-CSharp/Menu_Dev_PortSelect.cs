@@ -155,7 +155,7 @@ public class Menu_Dev_PortSelect : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		if (script_ && script_.playerGame && script_.portID == -1)
+		if (script_ && script_.ownerID == this.mS_.myID && script_.portID == -1)
 		{
 			int num = 0;
 			for (int i = 0; i < script_.portExist.Length; i++)

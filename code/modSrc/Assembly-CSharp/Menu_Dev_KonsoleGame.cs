@@ -154,7 +154,7 @@ public class Menu_Dev_KonsoleGame : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_contractGame && !script_.typ_mmoaddon && !script_.typ_goty && !script_.inDevelopment && !script_.schublade && script_.gameTyp == 0 && !script_.arcade && !script_.handy;
+		return script_ && script_.ownerID == this.mS_.myID && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_contractGame && !script_.typ_mmoaddon && !script_.typ_goty && !script_.inDevelopment && !script_.schublade && script_.gameTyp == 0 && !script_.arcade && !script_.handy;
 	}
 
 	

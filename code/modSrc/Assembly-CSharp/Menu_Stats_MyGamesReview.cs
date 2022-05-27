@@ -72,7 +72,7 @@ public class Menu_Stats_MyGamesReview : MonoBehaviour
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
 		{
-			if (parent_.transform.GetChild(i).GetComponent<Item_MyGames_Review>().game_.myID == id_)
+			if (parent_.transform.GetChild(i).gameObject.activeSelf && parent_.transform.GetChild(i).GetComponent<Item_MyGames_Review>().game_.myID == id_)
 			{
 				return true;
 			}
@@ -135,7 +135,18 @@ public class Menu_Stats_MyGamesReview : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && !script_.typ_budget && !script_.typ_goty && !script_.schublade;
+		if (script_ && (script_.ownerID == this.mS_.myID || script_.publisherID == this.mS_.myID))
+		{
+			if (this.uiObjects[6].GetComponent<Toggle>().isOn && script_.developerID != this.mS_.myID)
+			{
+				return false;
+			}
+			if (!script_.inDevelopment && !script_.typ_budget && !script_.typ_goty && !script_.schublade)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	
@@ -171,6 +182,16 @@ public class Menu_Stats_MyGamesReview : MonoBehaviour
 			}
 		}
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
+	}
+
+	
+	public void TOGGLE_OnlyMyGames()
+	{
+		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
+		{
+			this.uiObjects[0].transform.GetChild(i).gameObject.SetActive(false);
+		}
+		this.SetData();
 	}
 
 	

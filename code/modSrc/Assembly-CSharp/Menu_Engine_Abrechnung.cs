@@ -105,10 +105,6 @@ public class Menu_Engine_Abrechnung : MonoBehaviour
 		{
 			newValue = this.gS_.devS_.GetName();
 		}
-		if (this.gS_.developerID == -1)
-		{
-			newValue = this.mS_.companyName;
-		}
 		this.uiObjects[0].GetComponent<Text>().text = this.gS_.engineS_.GetName();
 		string text = this.tS_.GetText(502);
 		text = text.Replace("<NAME1>", newValue);

@@ -158,7 +158,7 @@ public class Menu_QA_NewSpielberichtSelectGame : MonoBehaviour
 		{
 			this.FindScripts();
 		}
-		return script_ && (script_.playerGame || script_.IsMyAuftragsspiel()) && !script_.inDevelopment && !script_.spielbericht && !script_.typ_bundle && !script_.typ_budget && !script_.pubOffer && !script_.typ_bundleAddon && !script_.typ_goty && !script_.schublade && (script_.typ_standard || script_.typ_nachfolger || script_.typ_spinoff) && !this.BereitsInAnderenRaumAktiv(script_.myID);
+		return script_ && script_.developerID == this.mS_.myID && !script_.inDevelopment && !script_.spielbericht && !script_.typ_bundle && !script_.typ_budget && !script_.pubOffer && !script_.typ_bundleAddon && !script_.typ_goty && !script_.schublade && (script_.typ_standard || script_.typ_nachfolger || script_.typ_spinoff) && !this.BereitsInAnderenRaumAktiv(script_.myID);
 	}
 
 	

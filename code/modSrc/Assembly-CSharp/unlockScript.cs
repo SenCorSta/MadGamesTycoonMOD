@@ -161,7 +161,7 @@ public class unlockScript : MonoBehaviour
 			if (array[n])
 			{
 				platformScript component = array[n].GetComponent<platformScript>();
-				if (component && ((this.mS_.multiplayer && !component.playerConsole && component.multiplaySlot == -1) || (!this.mS_.multiplayer && !component.playerConsole)))
+				if (component && component.OwnerIsNPC())
 				{
 					if (!component.isUnlocked)
 					{
@@ -214,7 +214,7 @@ public class unlockScript : MonoBehaviour
 			if (array[num2])
 			{
 				engineScript component2 = array[num2].GetComponent<engineScript>();
-				if (component2 && !component2.isUnlocked && !component2.playerEngine && component2.date_year == this.mS_.year && component2.date_month == this.mS_.month)
+				if (component2 && !component2.isUnlocked && component2.ownerID != this.mS_.myID && component2.date_year == this.mS_.year && component2.date_month == this.mS_.month)
 				{
 					component2.isUnlocked = true;
 					component2.InitNpcEngine();
@@ -424,7 +424,7 @@ public class unlockScript : MonoBehaviour
 						gameScript component7 = array[num9].GetComponent<gameScript>();
 						if (component7 && !component7.inDevelopment && !component7.schublade && !component7.pubAngebot && !component7.auftragsspiel)
 						{
-							if (component7.playerGame || component7.IsMyAuftragsspiel())
+							if (component7.developerID == this.mS_.myID || component7.IsMyAuftragsspiel())
 							{
 								num8++;
 								if (num8 >= 5 && !this.Get(28))
@@ -458,7 +458,7 @@ public class unlockScript : MonoBehaviour
 									}
 								}
 							}
-							if (!this.Get(26) && component7.playerGame && component7.reviewTotal >= 70)
+							if (!this.Get(26) && component7.developerID == this.mS_.myID && component7.reviewTotal >= 70)
 							{
 								this.unlock[26] = true;
 								if (showMessage)
@@ -468,7 +468,7 @@ public class unlockScript : MonoBehaviour
 									return;
 								}
 							}
-							if (!this.Get(66) && component7.playerGame && component7.sellsTotal >= 50000L)
+							if (!this.Get(66) && component7.developerID == this.mS_.myID && component7.sellsTotal >= 50000L)
 							{
 								this.unlock[66] = true;
 								if (showMessage)
@@ -478,7 +478,7 @@ public class unlockScript : MonoBehaviour
 									return;
 								}
 							}
-							if (!this.Get(67) && component7.playerGame && component7.isOnMarket)
+							if (!this.Get(67) && component7.developerID == this.mS_.myID && component7.isOnMarket)
 							{
 								this.unlock[67] = true;
 								if (showMessage)

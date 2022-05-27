@@ -116,7 +116,7 @@ public class Menu_Marketing_SelectKonsole : MonoBehaviour
 			if (array[i])
 			{
 				platformScript component = array[i].GetComponent<platformScript>();
-				if (component && component.playerConsole && !component.vomMarktGenommen && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && component.ownerID == this.mS_.myID && !component.vomMarktGenommen && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_Marketing_Konsole component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_Marketing_Konsole>();
 					component2.mS_ = this.mS_;

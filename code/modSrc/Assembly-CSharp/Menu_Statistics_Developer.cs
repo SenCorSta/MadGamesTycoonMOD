@@ -81,7 +81,7 @@ public class Menu_Statistics_Developer : MonoBehaviour
 			if (array[i])
 			{
 				publisherScript component = array[i].GetComponent<publisherScript>();
-				if (component.isUnlocked && component.developer && (!this.uiObjects[1].GetComponent<Toggle>().isOn || !component.IsMyTochterfirma()))
+				if (component.isUnlocked && component.developer && component.myID != this.mS_.myID && (!this.uiObjects[1].GetComponent<Toggle>().isOn || !component.IsMyTochterfirma()))
 				{
 					string text = component.GetName();
 					this.searchStringA = this.searchStringA.ToLower();
@@ -98,21 +98,6 @@ public class Menu_Statistics_Developer : MonoBehaviour
 						component2.genres_ = this.genres_;
 					}
 				}
-			}
-		}
-		if (this.mS_.multiplayer)
-		{
-			for (int j = 0; j < this.mS_.mpCalls_.playersMP.Count; j++)
-			{
-				int playerID = this.mS_.mpCalls_.playersMP[j].playerID;
-				Item_Stats_Developer component3 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_Stats_Developer>();
-				component3.pS_ = null;
-				component3.playerID = playerID;
-				component3.mS_ = this.mS_;
-				component3.tS_ = this.tS_;
-				component3.sfx_ = this.sfx_;
-				component3.guiMain_ = this.guiMain_;
-				component3.genres_ = this.genres_;
 			}
 		}
 		this.DROPDOWN_Sort();

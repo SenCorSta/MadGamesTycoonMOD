@@ -28,16 +28,20 @@ public class Item_BuyLicence : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = this.mS_.GetMoney((long)this.licences_.GetPrice(this.myID), true);
 		this.uiObjects[5].GetComponent<Image>().sprite = this.licences_.licenceSprites[this.licences_.licence_TYP[this.myID]];
 		this.guiMain_.DrawStars(this.uiObjects[2], Mathf.RoundToInt(this.licences_.licence_QUALITY[this.myID] / 20f));
-		string text = this.tS_.GetText(297);
-		text = text.Replace("<NUM>", this.licences_.licence_ANGEBOT[this.myID].ToString());
-		this.uiObjects[3].GetComponent<Text>().text = text;
 		this.uiObjects[4].GetComponent<Text>().text = this.licences_.GetTypString(this.myID);
 		this.tooltip_.c = this.licences_.GetTooltip(this.myID);
 		if (this.licences_.licence_GEKAUFT[this.myID] > 0)
 		{
 			base.GetComponent<Button>().interactable = false;
 			this.uiObjects[1].GetComponent<Text>().text = this.tS_.GetText(307);
+			string text = this.tS_.GetText(297);
+			text = text.Replace("<NUM>", this.licences_.licence_GEKAUFT[this.myID].ToString());
+			this.uiObjects[3].GetComponent<Text>().text = text;
+			return;
 		}
+		string text2 = this.tS_.GetText(297);
+		text2 = text2.Replace("<NUM>", this.licences_.licence_ANGEBOT[this.myID].ToString());
+		this.uiObjects[3].GetComponent<Text>().text = text2;
 	}
 
 	

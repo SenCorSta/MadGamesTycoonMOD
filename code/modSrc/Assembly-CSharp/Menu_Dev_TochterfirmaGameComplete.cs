@@ -234,11 +234,6 @@ public class Menu_Dev_TochterfirmaGameComplete : MonoBehaviour
 	
 	private void SelfpublishGame(gameScript game_)
 	{
-		game_.playerGame = true;
-		if (this.mS_.multiplayer)
-		{
-			game_.multiplayerSlot = this.mS_.mpCalls_.myID;
-		}
 		game_.pubOffer = true;
 		game_.costs_marketing = 0L;
 		game_.costs_mitarbeiter = 0L;

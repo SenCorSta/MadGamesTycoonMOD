@@ -127,7 +127,7 @@ public class Menu_Dev_AddonSelectGame : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.playerGame && !component.inDevelopment && component.isOnMarket && component.gameTyp == 0 && !component.handy && !component.arcade && !component.typ_goty && !component.typ_budget && !component.typ_bundle && !component.typ_bundleAddon && !component.pubOffer && (component.typ_standard || component.typ_nachfolger || component.typ_remaster || component.typ_spinoff))
+				if (component && this.CheckGameData(component))
 				{
 					string text = component.GetNameSimple();
 					this.searchStringA = this.searchStringA.ToLower();
@@ -148,6 +148,12 @@ public class Menu_Dev_AddonSelectGame : MonoBehaviour
 		}
 		this.DROPDOWN_Sort();
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
+	}
+
+	
+	public bool CheckGameData(gameScript script_)
+	{
+		return script_ && script_.ownerID == this.mS_.myID && script_.developerID == this.mS_.myID && !script_.inDevelopment && script_.isOnMarket && script_.gameTyp == 0 && !script_.handy && !script_.arcade && !script_.typ_goty && !script_.typ_budget && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.pubOffer && (script_.typ_standard || script_.typ_nachfolger || script_.typ_remaster || script_.typ_spinoff);
 	}
 
 	

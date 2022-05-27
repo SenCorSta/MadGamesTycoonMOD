@@ -923,6 +923,11 @@ public class Menu_Packung : MonoBehaviour
 				return;
 			}
 		}
+		int num = 0;
+		for (int i = 0; i < this.gS_.verkaufspreis.Length; i++)
+		{
+			num += this.verkaufspreis[i] - this.gS_.verkaufspreis[i];
+		}
 		this.gS_.standard_edition = (bool[])this.standard_edition.Clone();
 		this.gS_.deluxe_edition = (bool[])this.deluxe_edition.Clone();
 		this.gS_.collectors_edition = (bool[])this.collectors_edition.Clone();
@@ -938,6 +943,25 @@ public class Menu_Packung : MonoBehaviour
 			return;
 		}
 		base.gameObject.SetActive(false);
+		if (this.gS_.vorbestellungen > 0 && num > 0)
+		{
+			int num2 = this.gS_.vorbestellungen / 100 * num;
+			if (num2 > this.gS_.vorbestellungen)
+			{
+				num2 = this.gS_.vorbestellungen;
+			}
+			if (num2 > 0)
+			{
+				this.gS_.vorbestellungen -= num2;
+				if (this.gS_.vorbestellungen < 0)
+				{
+					this.gS_.vorbestellungen = 0;
+				}
+				string text = this.tS_.GetText(2013);
+				text = text.Replace("<NUM>", "<color=red>" + this.mS_.GetMoney((long)num2, false) + "</color>");
+				this.guiMain_.MessageBox(text, false);
+			}
+		}
 	}
 
 	

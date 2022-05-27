@@ -64,7 +64,7 @@ public class Menu_BudgetGamename : MonoBehaviour
 		{
 			return;
 		}
-		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag() + " <color=grey><i>" + this.tS_.GetText(1154 + i) + "</i></color>";
+		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameSimple() + " <color=grey><i>" + this.tS_.GetText(1154 + i) + "</i></color>";
 		for (int j = 0; j < this.uiObjects[1].transform.childCount; j++)
 		{
 			this.uiObjects[1].transform.GetChild(j).GetComponent<Button>().interactable = true;
@@ -99,10 +99,6 @@ public class Menu_BudgetGamename : MonoBehaviour
 		gameScript component = UnityEngine.Object.Instantiate<GameObject>(this.game_.gameObject).GetComponent<gameScript>();
 		this.games_.InitBudgetGame(component);
 		component.originalGameID = this.game_.myID;
-		if (this.mS_.multiplayer)
-		{
-			component.multiplayerSlot = this.mS_.mpCalls_.myID;
-		}
 		component.SetMyName(this.uiObjects[0].GetComponent<Text>().text);
 		component.typ_standard = false;
 		component.typ_budget = true;
@@ -119,7 +115,6 @@ public class Menu_BudgetGamename : MonoBehaviour
 		component.date_month = this.mS_.month;
 		component.spielbericht = false;
 		component.spielbericht_favorit = false;
-		component.hype = 0f;
 		component.sellsTotalStandard = 0L;
 		component.sellsTotalDeluxe = 0L;
 		component.sellsTotalCollectors = 0L;
@@ -128,12 +123,16 @@ public class Menu_BudgetGamename : MonoBehaviour
 		component.umsatzTotal = 0L;
 		component.umsatzInApp = 0L;
 		component.umsatzAbos = 0L;
+		component.tw_gewinnanteil = 0L;
 		component.costs_entwicklung = 0L;
 		component.costs_mitarbeiter = 0L;
 		component.costs_marketing = 0L;
 		component.costs_enginegebuehren = 0L;
 		component.costs_server = 0L;
 		component.costs_production = 0L;
+		component.costs_updates = 0L;
+		component.bestChartPosition = 0;
+		component.lastChartPosition = 0;
 		for (int i = 0; i < component.sellsPerWeek.Length; i++)
 		{
 			component.sellsPerWeek[i] = 0;

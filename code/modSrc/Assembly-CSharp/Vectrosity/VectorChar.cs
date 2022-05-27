@@ -7,7 +7,7 @@ namespace Vectrosity
 	public class VectorChar
 	{
 		
-		// (get) Token: 0x0600203F RID: 8255 RVA: 0x00150960 File Offset: 0x0014EB60
+		// (get) Token: 0x06002092 RID: 8338 RVA: 0x00150640 File Offset: 0x0014E840
 		public static Vector2[][] data
 		{
 			get

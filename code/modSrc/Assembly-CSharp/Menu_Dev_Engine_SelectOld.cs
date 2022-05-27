@@ -130,7 +130,7 @@ public class Menu_Dev_Engine_SelectOld : MonoBehaviour
 			if (array[i])
 			{
 				engineScript component = array[i].GetComponent<engineScript>();
-				if (component && component.playerEngine && component.Complete() && !component.archiv_engine)
+				if (component && component.ownerID == this.mS_.myID && component.Complete() && !component.archiv_engine)
 				{
 					string text = component.GetName();
 					this.searchStringA = this.searchStringA.ToLower();

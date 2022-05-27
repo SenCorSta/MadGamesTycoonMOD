@@ -168,7 +168,7 @@ namespace ReachableGames.PostLinerPro
 		private Queue<Transform> _recursiveList = new Queue<Transform>();
 
 		
-		// (Invoke) Token: 0x060023BF RID: 9151
+		// (Invoke) Token: 0x06002412 RID: 9234
 		private delegate void DoAction(Transform g);
 	}
 }

@@ -148,7 +148,7 @@ public class Menu_ProductionSelect : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && script_.isOnMarket && script_.retailVersion && script_.publisherID == -1 && script_.gameTyp != 2 && !script_.handy && !script_.arcade;
+		return script_ && script_.publisherID == this.mS_.myID && !script_.inDevelopment && script_.isOnMarket && script_.retailVersion && script_.gameTyp != 2 && !script_.handy && !script_.arcade;
 	}
 
 	

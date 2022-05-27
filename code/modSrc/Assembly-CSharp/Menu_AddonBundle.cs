@@ -212,10 +212,6 @@ public class Menu_AddonBundle : MonoBehaviour
 		}
 		gameScript component = UnityEngine.Object.Instantiate<GameObject>(this.games[0].gameObject).GetComponent<gameScript>();
 		this.games_.InitAddonBundle(component);
-		if (this.mS_.multiplayer)
-		{
-			component.multiplayerSlot = this.mS_.mpCalls_.myID;
-		}
 		component.SetMyName(this.uiObjects[0].GetComponent<InputField>().text);
 		component.developerID = -1;
 		component.publisherID = -1;
@@ -238,7 +234,6 @@ public class Menu_AddonBundle : MonoBehaviour
 		component.spielbericht_favorit = false;
 		component.userPositiv = 0;
 		component.userNegativ = 0;
-		component.hype = 0f;
 		component.reviewGameplayText = 0;
 		component.reviewGrafikText = 0;
 		component.reviewSoundText = 0;

@@ -583,18 +583,13 @@ public class Menu_Dev_MMOAddon : MonoBehaviour
 		int num2 = Mathf.RoundToInt((float)this.GetDevCosts());
 		this.mS_.Pay((long)num2, 18);
 		gameScript gameScript = this.games_.CreateNewGame(false, true);
-		if (this.mS_.multiplayer)
-		{
-			gameScript.multiplayerSlot = this.mS_.mpCalls_.myID;
-		}
 		gameScript.ownerID = this.mS_.myID;
 		gameScript.mainIP = this.gS_.mainIP;
 		gameScript.costs_entwicklung = (long)num2;
-		gameScript.playerGame = true;
 		gameScript.inDevelopment = true;
 		gameScript.SetMyName(this.uiObjects[12].GetComponent<InputField>().text);
 		gameScript.originalIP = this.gS_.myID;
-		gameScript.developerID = -1;
+		gameScript.developerID = this.mS_.myID;
 		gameScript.addonQuality = this.GetAddonQuality();
 		gameScript.beschreibung = this.g_Beschreibung;
 		gameScript.typ_mmoaddon = true;

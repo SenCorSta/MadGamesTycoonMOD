@@ -137,7 +137,7 @@ public class Menu_Stats_MyGamesVertriebeneSpiele : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && script_.pubOffer;
+		return script_ && script_.publisherID == this.mS_.myID && script_.pubOffer;
 	}
 
 	

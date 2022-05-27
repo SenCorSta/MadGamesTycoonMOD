@@ -136,7 +136,7 @@ public class Menu_Dev_Auftragsspiel : MonoBehaviour
 					{
 						component.FindMyPublisher();
 					}
-					if (component.pS_ && !component.pS_.tochterfirma && !this.Exists(this.uiObjects[0], component.myID))
+					if (component.pS_ && !component.pS_.IsTochterfirma() && !this.Exists(this.uiObjects[0], component.myID))
 					{
 						Item_ContractAuftragsspiel component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_ContractAuftragsspiel>();
 						component2.game_ = component;

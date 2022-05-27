@@ -259,11 +259,7 @@ public class Menu_Dev_Engine : MonoBehaviour
 			engineScript engineScript = this.eF_.CreateEngine();
 			engineScript.myID = this.mS_.GetNewID();
 			engineScript.myName = this.uiObjects[4].GetComponent<InputField>().text;
-			engineScript.playerEngine = true;
-			if (this.mS_.multiplayer)
-			{
-				engineScript.multiplayerSlot = this.mS_.mpCalls_.myID;
-			}
+			engineScript.ownerID = this.mS_.myID;
 			engineScript.spezialgenre = this.spezialgenre;
 			engineScript.spezialplatform = this.spezialplatform;
 			engineScript.spezialplatformUpdate = this.spezialplatform;

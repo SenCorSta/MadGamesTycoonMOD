@@ -72,7 +72,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
 		{
-			if (parent_.transform.GetChild(i).GetComponent<Item_MyGames_Umsatz>().game_.myID == id_)
+			if (parent_.transform.GetChild(i).gameObject.activeSelf && parent_.transform.GetChild(i).GetComponent<Item_MyGames_Umsatz>().game_.myID == id_)
 			{
 				return true;
 			}
@@ -119,7 +119,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && !component.inDevelopment && component.playerGame && !component.schublade && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && this.CheckGameData(component) && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_MyGames_Umsatz component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_MyGames_Umsatz>();
 					component2.mS_ = this.mS_;
@@ -137,6 +137,23 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		string text = this.tS_.GetText(297);
 		text = text.Replace("<NUM>", this.uiObjects[0].transform.childCount.ToString());
 		this.uiObjects[1].GetComponent<Text>().text = text;
+	}
+
+	
+	public bool CheckGameData(gameScript script_)
+	{
+		if (script_ && (script_.ownerID == this.mS_.myID || script_.publisherID == this.mS_.myID))
+		{
+			if (this.uiObjects[6].GetComponent<Toggle>().isOn && script_.developerID != this.mS_.myID)
+			{
+				return false;
+			}
+			if (!script_.inDevelopment && !script_.schublade)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	
@@ -179,6 +196,16 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 			}
 		}
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
+	}
+
+	
+	public void TOGGLE_OnlyMyGames()
+	{
+		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
+		{
+			this.uiObjects[0].transform.GetChild(i).gameObject.SetActive(false);
+		}
+		this.SetData();
 	}
 
 	

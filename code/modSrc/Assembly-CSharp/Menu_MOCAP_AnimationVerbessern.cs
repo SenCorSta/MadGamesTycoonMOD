@@ -206,7 +206,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.playerGame && !component.isOnMarket && component.inDevelopment && !this.WirdInAnderenRaumBearbeitet(0, component) && !this.WirdInAnderenRaumBearbeitet(1, component) && !this.WirdInAnderenRaumBearbeitet(2, component) && !this.WirdInAnderenRaumBearbeitet(3, component) && !this.WirdInAnderenRaumBearbeitet(4, component) && !this.WirdInAnderenRaumBearbeitet(5, component))
+				if (component && component.developerID == this.mS_.myID && !component.isOnMarket && component.inDevelopment && !this.WirdInAnderenRaumBearbeitet(0, component) && !this.WirdInAnderenRaumBearbeitet(1, component) && !this.WirdInAnderenRaumBearbeitet(2, component) && !this.WirdInAnderenRaumBearbeitet(3, component) && !this.WirdInAnderenRaumBearbeitet(4, component) && !this.WirdInAnderenRaumBearbeitet(5, component))
 				{
 					return component;
 				}

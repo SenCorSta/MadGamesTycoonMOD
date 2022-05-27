@@ -139,7 +139,7 @@ public class Menu_Stats_Publisher_Vertrieben : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.publisherID == this.pS_.myID && !script_.pubAngebot && !script_.auftragsspiel;
+		return script_ && script_.publisherID == this.pS_.myID && script_.developerID != this.pS_.myID && !script_.pubAngebot && !script_.auftragsspiel;
 	}
 
 	

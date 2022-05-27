@@ -317,24 +317,33 @@ public class contractWorkMain : MonoBehaviour
 	
 	private int GetRandomPublisherID()
 	{
+		int num = 0;
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
 		if (array.Length != 0)
 		{
 			bool flag = false;
 			while (!flag)
 			{
-				int num = UnityEngine.Random.Range(0, array.Length);
-				if (array[num])
+				int num2 = UnityEngine.Random.Range(0, array.Length);
+				if (array[num2])
 				{
-					publisherScript component = array[num].GetComponent<publisherScript>();
-					if (component && component.isUnlocked)
+					publisherScript component = array[num2].GetComponent<publisherScript>();
+					if (component)
 					{
-						return component.myID;
+						if (component.isUnlocked && !component.IsTochterfirma() && !component.isPlayer)
+						{
+							return component.myID;
+						}
+						num++;
+						if (num > 1000)
+						{
+							return 3;
+						}
 					}
 				}
 			}
 		}
-		return 0;
+		return 3;
 	}
 
 	
@@ -505,7 +514,7 @@ public class contractWorkMain : MonoBehaviour
 					{
 						this.mS_.games_.arrayGamesScripts[j].FindMyPublisher();
 					}
-					if (this.mS_.games_.arrayGamesScripts[j].pS_ && !this.mS_.games_.arrayGamesScripts[j].pS_.tochterfirma && this.mS_.games_.arrayGamesScripts[j].auftragsspiel && !this.mS_.games_.arrayGamesScripts[j].auftragsspiel_Inivs)
+					if (this.mS_.games_.arrayGamesScripts[j].pS_ && !this.mS_.games_.arrayGamesScripts[j].pS_.IsTochterfirma() && this.mS_.games_.arrayGamesScripts[j].auftragsspiel && !this.mS_.games_.arrayGamesScripts[j].auftragsspiel_Inivs)
 					{
 						num2++;
 						this.anzContractGames++;

@@ -71,7 +71,7 @@ public class Menu_Stats_MyGames_ArcadeSells : MonoBehaviour
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
 		{
-			if (parent_.transform.GetChild(i).GetComponent<Item_MyGames_Sells>().game_.myID == id_)
+			if (parent_.transform.GetChild(i).gameObject.activeSelf && parent_.transform.GetChild(i).GetComponent<Item_MyGames_Sells>().game_.myID == id_)
 			{
 				return true;
 			}
@@ -125,7 +125,18 @@ public class Menu_Stats_MyGames_ArcadeSells : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && !script_.schublade && script_.arcade && script_.gameTyp != 2;
+		if (script_ && (script_.ownerID == this.mS_.myID || script_.publisherID == this.mS_.myID))
+		{
+			if (this.uiObjects[6].GetComponent<Toggle>().isOn && script_.developerID != this.mS_.myID)
+			{
+				return false;
+			}
+			if (!script_.inDevelopment && !script_.schublade && script_.arcade && script_.gameTyp != 2)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	
@@ -133,6 +144,16 @@ public class Menu_Stats_MyGames_ArcadeSells : MonoBehaviour
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
+	}
+
+	
+	public void TOGGLE_OnlyMyGames()
+	{
+		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
+		{
+			this.uiObjects[0].transform.GetChild(i).gameObject.SetActive(false);
+		}
+		this.SetData();
 	}
 
 	

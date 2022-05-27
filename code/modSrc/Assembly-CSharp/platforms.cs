@@ -126,7 +126,6 @@ public class platforms : MonoBehaviour
 				num++;
 			}
 		}
-		Debug.Log("Platforms Amount: " + num.ToString());
 		platformScript platformScript = null;
 		for (int j = 0; j < this.data.Length; j++)
 		{
@@ -134,7 +133,7 @@ public class platforms : MonoBehaviour
 			{
 				platformScript = this.CreatePlatform();
 				platformScript.myID = int.Parse(this.data[j]);
-				platformScript.npc = true;
+				platformScript.ownerID = -1;
 				platformScript.date_year_end = 999999;
 				platformScript.date_month_end = 1;
 				platformScript.pic2_year = 999999;
@@ -395,8 +394,7 @@ public class platforms : MonoBehaviour
 				}
 				if (this.ParseData("[EOF]", j))
 				{
-					Debug.Log("Platforms.txt -> EOF");
-					return;
+					break;
 				}
 			}
 		}
@@ -474,11 +472,11 @@ public class platforms : MonoBehaviour
 				if (array[i])
 				{
 					platformScript component = array[i].GetComponent<platformScript>();
-					if (component.playerConsole && !component.isUnlocked)
+					if (component.ownerID == this.mS_.myID && !component.isUnlocked)
 					{
 						component.weeksInDevelopment++;
 					}
-					if (component.playerConsole && component.isUnlocked && !component.vomMarktGenommen)
+					if (component.ownerID == this.mS_.myID && component.isUnlocked && !component.vomMarktGenommen)
 					{
 						component.Sell();
 						this.mpCalls_.CLIENT_Send_Platform(component);
@@ -497,7 +495,7 @@ public class platforms : MonoBehaviour
 			if (array[j])
 			{
 				platformScript component2 = array[j].GetComponent<platformScript>();
-				if (component2.playerConsole && !component2.isUnlocked)
+				if (component2.ownerID == this.mS_.myID && !component2.isUnlocked)
 				{
 					component2.weeksInDevelopment++;
 				}

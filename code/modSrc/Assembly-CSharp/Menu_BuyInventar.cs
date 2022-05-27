@@ -55,6 +55,10 @@ public class Menu_BuyInventar : MonoBehaviour
 		{
 			this.guiMain_ = GameObject.Find("CanvasInGameMenu").GetComponent<GUI_Main>();
 		}
+		if (!this.camera_)
+		{
+			this.camera_ = GameObject.Find("CamMovement");
+		}
 	}
 
 	
@@ -78,7 +82,11 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 		this.mS_.snapObject = this.uiObjects[3].GetComponent<Toggle>().isOn;
 		this.mS_.snapRotation = this.uiObjects[5].GetComponent<Toggle>().isOn;
-		if (Input.GetMouseButtonUp(1) && this.timerRightMousebutton < 0.2f)
+		if (Input.GetMouseButtonDown(1))
+		{
+			this.lastCameraPosition = this.camera_.transform.position;
+		}
+		if (Input.GetMouseButtonUp(1) && this.timerRightMousebutton < 0.2f && Vector3.Distance(this.lastCameraPosition, this.camera_.transform.position) < 0.01f)
 		{
 			this.BUTTON_Abwahl();
 		}
@@ -669,6 +677,9 @@ public class Menu_BuyInventar : MonoBehaviour
 	public GameObject[] uiPrefabs;
 
 	
+	private GameObject camera_;
+
+	
 	private GameObject main_;
 
 	
@@ -706,4 +717,7 @@ public class Menu_BuyInventar : MonoBehaviour
 
 	
 	private float timerRightMousebutton;
+
+	
+	private Vector3 lastCameraPosition;
 }

@@ -30,11 +30,11 @@ public class Item_EngineSchenken : MonoBehaviour
 		});
 		this.uiObjects[2].GetComponent<Text>().text = text;
 		this.uiObjects[4].GetComponent<Text>().text = "";
-		if (!this.eS_.sellEngine || !this.eS_.playerEngine)
+		if (!this.eS_.sellEngine || this.eS_.OwnerIsNPC())
 		{
 			this.uiObjects[5].SetActive(false);
 		}
-		if (this.eS_.sellEngine && this.eS_.playerEngine)
+		if (this.eS_.sellEngine && this.eS_.myID == this.mS_.myID)
 		{
 			this.uiObjects[5].SetActive(true);
 		}

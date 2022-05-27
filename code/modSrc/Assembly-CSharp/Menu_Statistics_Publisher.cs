@@ -81,7 +81,7 @@ public class Menu_Statistics_Publisher : MonoBehaviour
 			if (array[i])
 			{
 				publisherScript component = array[i].GetComponent<publisherScript>();
-				if (component.isUnlocked && component.publisher && !component.onlyMobile && (!this.uiObjects[1].GetComponent<Toggle>().isOn || !component.IsMyTochterfirma()))
+				if (component.isUnlocked && component.publisher && !component.onlyMobile && component.myID != this.mS_.myID && (!this.uiObjects[1].GetComponent<Toggle>().isOn || !component.IsMyTochterfirma()))
 				{
 					string text = component.GetName();
 					this.searchStringA = this.searchStringA.ToLower();

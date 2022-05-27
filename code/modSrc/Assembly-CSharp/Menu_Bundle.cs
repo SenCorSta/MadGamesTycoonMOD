@@ -188,18 +188,13 @@ public class Menu_Bundle : MonoBehaviour
 		}
 		gameScript gameScript = this.games_.CreateNewGame(false, true);
 		this.games_.FindGames();
-		if (this.mS_.multiplayer)
-		{
-			gameScript.multiplayerSlot = this.mS_.mpCalls_.myID;
-		}
 		gameScript.SetMyName(this.uiObjects[0].GetComponent<InputField>().text);
 		gameScript.ownerID = this.mS_.myID;
-		gameScript.playerGame = true;
 		gameScript.typ_standard = false;
 		gameScript.typ_bundle = true;
 		gameScript.warBeiAwards = true;
-		gameScript.developerID = -1;
-		gameScript.publisherID = -1;
+		gameScript.developerID = this.mS_.myID;
+		gameScript.publisherID = this.mS_.myID;
 		gameScript.date_year = this.mS_.year;
 		gameScript.date_month = this.mS_.month;
 		gameScript.usk = 0;

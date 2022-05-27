@@ -83,9 +83,29 @@ public class roomButtonScript : MonoBehaviour
 	}
 
 	
+	public void MouseEnter()
+	{
+		if (this.guiMain_.IsRoomMenuOpen())
+		{
+			this.mouseOver = false;
+			return;
+		}
+		Debug.Log("KKKKKKKKKKK");
+		this.mouseOver = true;
+		base.StartCoroutine(this.iSetAsLastSibling());
+	}
+
+	
+	public void MouseLeave()
+	{
+		Debug.Log("SSSSSSS");
+		this.mouseOver = false;
+	}
+
+	
 	private void SortGuiY()
 	{
-		if (this.uiObjects[2].activeInHierarchy)
+		if (this.uiObjects[2].activeInHierarchy || this.mouseOver)
 		{
 			base.StartCoroutine(this.iSetAsLastSibling());
 			return;
@@ -1822,6 +1842,9 @@ public class roomButtonScript : MonoBehaviour
 
 	
 	private RectTransform myRectTransform;
+
+	
+	private bool mouseOver;
 
 	
 	private bool invisible;

@@ -14,7 +14,7 @@ public class Item_Firmenlogo : MonoBehaviour
 	
 	public void SetData()
 	{
-		if (this.guiMain_.uiObjects[47].activeSelf && this.mS_.logo == this.myID)
+		if (this.guiMain_.uiObjects[47].activeSelf && this.mS_.GetCompanyLogoID() == this.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 			this.uiObjects[0].GetComponent<Animation>().Play();
@@ -24,7 +24,7 @@ public class Item_Firmenlogo : MonoBehaviour
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 			this.uiObjects[0].GetComponent<Animation>().Play();
 		}
-		if (this.guiMain_.uiObjects[201].activeSelf && this.mS_.logo == this.myID)
+		if (this.guiMain_.uiObjects[201].activeSelf && this.mS_.GetCompanyLogoID() == this.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 			this.uiObjects[0].GetComponent<Animation>().Play();

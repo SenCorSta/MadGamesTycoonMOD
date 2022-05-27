@@ -146,7 +146,7 @@ public class Menu_QA_ShowSpielberichtSelectGame : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && (script_.playerGame || script_.IsMyAuftragsspiel()) && !script_.archiv_spielbericht && script_.spielbericht && !script_.typ_budget && !script_.typ_goty;
+		return script_ && script_.developerID == this.mS_.myID && !script_.archiv_spielbericht && script_.spielbericht && !script_.typ_budget && !script_.typ_goty;
 	}
 
 	

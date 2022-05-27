@@ -137,7 +137,7 @@ public class Menu_HandyPreis : MonoBehaviour
 		this.gS_.verkaufspreis[3] = Mathf.RoundToInt(this.uiObjects[2].GetComponent<Slider>().value);
 		if (!this.guiMain_.uiObjects[308].activeSelf)
 		{
-			this.gS_.SetPublisher(-1);
+			this.gS_.SetPublisher(this.mS_.myID);
 			this.gS_.SetOnMarket();
 			this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[71]);
 			this.guiMain_.uiObjects[71].GetComponent<Menu_Dev_XP>().Init(this.gS_);

@@ -374,7 +374,7 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && script_.mainIP == this.gS_.myID;
+		return script_ && script_.mainIP == this.gS_.myID;
 	}
 
 	
@@ -446,7 +446,7 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 				{
 					this.mS_.mpCalls_.SERVER_Send_GameData(this.gS_);
 				}
-				if (this.mS_.mpCalls_.isClient && this.gS_.playerGame)
+				if (this.mS_.mpCalls_.isClient && this.gS_.ownerID == this.mS_.myID)
 				{
 					this.mS_.mpCalls_.CLIENT_Send_GameData(this.gS_);
 				}

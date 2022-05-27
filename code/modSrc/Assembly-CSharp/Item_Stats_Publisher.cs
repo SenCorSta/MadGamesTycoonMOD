@@ -43,14 +43,38 @@ public class Item_Stats_Publisher : MonoBehaviour
 		this.guiMain_.DrawStars(this.uiObjects[3], Mathf.RoundToInt(this.pS_.stars / 20f));
 		this.guiMain_.DrawStarsColor(this.uiObjects[4], Mathf.RoundToInt(this.pS_.GetRelation() / 20f), this.guiMain_.colors[5]);
 		this.tooltip_.c = this.pS_.GetTooltip();
-		base.gameObject.GetComponent<Image>().color = Color.white;
 		if (this.pS_.IsMyTochterfirma())
 		{
-			base.gameObject.GetComponent<Image>().color = this.guiMain_.colors[4];
+			if (!this.uiObjects[8].activeSelf)
+			{
+				this.uiObjects[8].SetActive(true);
+			}
 		}
-		if (this.pS_.tf_geschlossen)
+		else if (this.uiObjects[8].activeSelf)
 		{
-			base.gameObject.GetComponent<Image>().color = this.guiMain_.colors[25];
+			this.uiObjects[8].SetActive(false);
+		}
+		if (this.pS_.isPlayer)
+		{
+			if (!this.uiObjects[9].activeSelf)
+			{
+				this.uiObjects[9].SetActive(true);
+			}
+		}
+		else if (this.uiObjects[9].activeSelf)
+		{
+			this.uiObjects[9].SetActive(false);
+		}
+		if (!this.pS_.isPlayer && !this.pS_.IsTochterfirma())
+		{
+			if (!this.uiObjects[7].activeSelf)
+			{
+				this.uiObjects[7].SetActive(true);
+			}
+		}
+		else if (this.uiObjects[7].activeSelf)
+		{
+			this.uiObjects[7].SetActive(false);
 		}
 		if (this.pS_.tf_geschlossen)
 		{

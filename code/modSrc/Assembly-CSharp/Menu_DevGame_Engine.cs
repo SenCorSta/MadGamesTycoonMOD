@@ -137,7 +137,7 @@ public class Menu_DevGame_Engine : MonoBehaviour
 			if (array[i])
 			{
 				engineScript component = array[i].GetComponent<engineScript>();
-				if (component && !component.archiv_engine && ((component.isUnlocked && component.gekauft) || (component.playerEngine && component.devPointsStart <= 0f) || (component.playerEngine && component.updating)))
+				if (component && !component.archiv_engine && ((component.isUnlocked && component.gekauft) || (component.ownerID == this.mS_.myID && component.devPointsStart <= 0f) || (component.ownerID == this.mS_.myID && component.updating)))
 				{
 					string text = component.GetName();
 					this.searchStringA = this.searchStringA.ToLower();
@@ -191,7 +191,7 @@ public class Menu_DevGame_Engine : MonoBehaviour
 					gameObject.name = component.eS_.GetGamesAmount().ToString();
 					break;
 				case 5:
-					if (component.eS_.playerEngine)
+					if (component.eS_.ownerID == this.mS_.myID)
 					{
 						gameObject.name = "2";
 					}

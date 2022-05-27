@@ -29,7 +29,19 @@ public class mpCalls : MonoBehaviour
 		{
 			return "---";
 		}
-		return player_mp.companyName;
+		if (!player_mp.myPubScript_)
+		{
+			GameObject gameObject = GameObject.Find("PUB_" + id_.ToString());
+			if (gameObject)
+			{
+				player_mp.myPubScript_ = gameObject.GetComponent<publisherScript>();
+			}
+		}
+		if (player_mp.myPubScript_)
+		{
+			return player_mp.myPubScript_.GetName();
+		}
+		return "";
 	}
 
 	
@@ -80,7 +92,19 @@ public class mpCalls : MonoBehaviour
 		{
 			return 0;
 		}
-		return player_mp.companyLogo;
+		if (!player_mp.myPubScript_)
+		{
+			GameObject gameObject = GameObject.Find("PUB_" + id_.ToString());
+			if (gameObject)
+			{
+				player_mp.myPubScript_ = gameObject.GetComponent<publisherScript>();
+			}
+		}
+		if (player_mp.myPubScript_)
+		{
+			return player_mp.myPubScript_.logoID;
+		}
+		return 0;
 	}
 
 	
@@ -91,7 +115,19 @@ public class mpCalls : MonoBehaviour
 		{
 			return 0;
 		}
-		return player_mp.companyCountry;
+		if (!player_mp.myPubScript_)
+		{
+			GameObject gameObject = GameObject.Find("PUB_" + id_.ToString());
+			if (gameObject)
+			{
+				player_mp.myPubScript_ = gameObject.GetComponent<publisherScript>();
+			}
+		}
+		if (player_mp.myPubScript_)
+		{
+			return player_mp.myPubScript_.country;
+		}
+		return 0;
 	}
 
 	
@@ -104,7 +140,7 @@ public class mpCalls : MonoBehaviour
 	
 	public void SetPause(bool b)
 	{
-		player_mp player_mp = this.FindPlayer(this.myID);
+		player_mp player_mp = this.FindPlayer(this.mS_.myID);
 		if (player_mp == null)
 		{
 			return;
@@ -241,12 +277,12 @@ public class mpCalls : MonoBehaviour
 		{
 			return;
 		}
-		if (this.isClient && this.myID != -1 && !NetworkClient.isConnected)
+		if (this.isClient && this.mS_.myID != -1 && !NetworkClient.isConnected)
 		{
 			this.guiMain_.MessageBox(this.tS_.GetText(1039), false);
 			this.mpMain_.StopNetwork();
 			this.mS_.multiplayer = false;
-			this.myID = -1;
+			this.mS_.myID = -1;
 			this.playersMP.Clear();
 		}
 		bool flag = this.isServer;
@@ -271,7 +307,7 @@ public class mpCalls : MonoBehaviour
 	
 	private void Send1Sec()
 	{
-		if (this.myID != -1)
+		if (this.mS_.myID != -1)
 		{
 			this.timer += Time.deltaTime;
 			if (this.timer < 1f)
@@ -279,7 +315,7 @@ public class mpCalls : MonoBehaviour
 				return;
 			}
 			this.timer = 0f;
-			player_mp player_mp = this.FindPlayer(this.myID);
+			player_mp player_mp = this.FindPlayer(this.mS_.myID);
 			if (player_mp == null)
 			{
 				return;
@@ -310,7 +346,7 @@ public class mpCalls : MonoBehaviour
 	
 	private void Send10Sec()
 	{
-		if (this.myID != -1)
+		if (this.mS_.myID != -1)
 		{
 			this.timer10Secs += Time.deltaTime;
 			if (this.timer10Secs < 10f)
@@ -320,13 +356,11 @@ public class mpCalls : MonoBehaviour
 			this.timer10Secs = 0f;
 			if (this.isServer)
 			{
-				this.SERVER_Send_Forschung(this.myID);
-				this.SERVER_Send_AllAwards();
+				this.SERVER_Send_Forschung(this.mS_.myID);
 			}
 			if (this.isClient)
 			{
 				this.CLIENT_Send_Forschung();
-				this.CLIENT_Send_AllAwards();
 			}
 		}
 	}
@@ -356,18 +390,22 @@ public class mpCalls : MonoBehaviour
 			mpPlayer_.connectionToClient.Disconnect();
 			return -1;
 		}
-		int num = UnityEngine.Random.Range(1, 100000000);
+		int num = 100000 + this.playersMP.Count;
 		this.playersMP.Add(new player_mp(num));
+		publisherScript myPubScript_ = this.mS_.CreatePlayerPublisher(num);
+		player_mp player_mp = this.FindPlayer(num);
+		player_mp.myPubScript_ = myPubScript_;
+		Debug.Log("PLAYER-ID: " + num);
 		if (this.playersMP.Count <= 1)
 		{
-			player_mp player_mp = this.FindPlayer(num);
-			this.myID = num;
-			player_mp.playerID = num;
+			this.mS_.myID = num;
+			player_mp.playerID = this.mS_.myID;
 			player_mp.playerName = this.mS_.playerName;
-			player_mp.companyName = this.mS_.companyName;
-			player_mp.companyLogo = this.mS_.logo;
-			player_mp.companyCountry = this.mS_.country;
 			player_mp.playerReady = true;
+			this.mS_.SetCompanyName(this.mpMain_.uiObjects[12].GetComponent<InputField>().text);
+			this.mS_.SetCompanyLogoID(0);
+			this.mS_.SetCountryID(0);
+			this.mS_.SetFanGenreID(0);
 		}
 		else
 		{
@@ -451,6 +489,11 @@ public class mpCalls : MonoBehaviour
 	{
 		for (int i = 0; i < this.playersMP.Count; i++)
 		{
+			GameObject gameObject = GameObject.Find("PUB_" + playerID_.ToString());
+			if (gameObject)
+			{
+				UnityEngine.Object.Destroy(gameObject);
+			}
 			if (this.playersMP[i].playerID == playerID_)
 			{
 				this.playersMP.RemoveAt(i);
@@ -496,10 +539,8 @@ public class mpCalls : MonoBehaviour
 		NetworkClient.RegisterHandler<mpCalls.s_Help>(new Action<NetworkConnection, mpCalls.s_Help>(this.SERVER_Get_Help), true);
 		NetworkClient.RegisterHandler<mpCalls.s_GenreDesign>(new Action<NetworkConnection, mpCalls.s_GenreDesign>(this.SERVER_Get_GenreDesign), true);
 		NetworkClient.RegisterHandler<mpCalls.s_GenreCombination>(new Action<NetworkConnection, mpCalls.s_GenreCombination>(this.SERVER_Get_GenreCombination), true);
-		NetworkClient.RegisterHandler<mpCalls.s_AllAwards>(new Action<NetworkConnection, mpCalls.s_AllAwards>(this.SERVER_Get_AllAwards), true);
 		NetworkClient.RegisterHandler<mpCalls.s_GenreBeliebtheit>(new Action<NetworkConnection, mpCalls.s_GenreBeliebtheit>(this.SERVER_Get_GenreBeliebtheit), true);
 		NetworkClient.RegisterHandler<mpCalls.s_PlayerLeave>(new Action<NetworkConnection, mpCalls.s_PlayerLeave>(this.SERVER_Get_PlayerLeave), true);
-		NetworkClient.RegisterHandler<mpCalls.s_ChangeID>(new Action<NetworkConnection, mpCalls.s_ChangeID>(this.SERVER_Get_ChangeID), true);
 		NetworkClient.RegisterHandler<mpCalls.s_AddPlayer>(new Action<NetworkConnection, mpCalls.s_AddPlayer>(this.SERVER_Get_AddPlayer), true);
 		NetworkClient.RegisterHandler<mpCalls.s_Platform>(new Action<NetworkConnection, mpCalls.s_Platform>(this.SERVER_Get_Platform), true);
 		NetworkClient.RegisterHandler<mpCalls.s_exklusivKonsolenSells>(new Action<NetworkConnection, mpCalls.s_exklusivKonsolenSells>(this.SERVER_Get_ExklusivKonsolenSells), true);
@@ -549,10 +590,8 @@ public class mpCalls : MonoBehaviour
 		NetworkClient.UnregisterHandler<mpCalls.s_Help>();
 		NetworkClient.UnregisterHandler<mpCalls.s_GenreDesign>();
 		NetworkClient.UnregisterHandler<mpCalls.s_GenreCombination>();
-		NetworkClient.UnregisterHandler<mpCalls.s_AllAwards>();
 		NetworkClient.UnregisterHandler<mpCalls.s_GenreBeliebtheit>();
 		NetworkClient.UnregisterHandler<mpCalls.s_PlayerLeave>();
-		NetworkClient.UnregisterHandler<mpCalls.s_ChangeID>();
 		NetworkClient.UnregisterHandler<mpCalls.s_AddPlayer>();
 		NetworkClient.UnregisterHandler<mpCalls.s_Platform>();
 		NetworkClient.UnregisterHandler<mpCalls.s_exklusivKonsolenSells>();
@@ -587,11 +626,10 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.RegisterHandler<mpCalls.c_Object>(new Action<NetworkConnection, mpCalls.c_Object>(this.CLIENT_Get_Object), true);
 		NetworkServer.RegisterHandler<mpCalls.c_ObjectDelete>(new Action<NetworkConnection, mpCalls.c_ObjectDelete>(this.CLIENT_Get_ObjectDelete), true);
 		NetworkServer.RegisterHandler<mpCalls.c_Help>(new Action<NetworkConnection, mpCalls.c_Help>(this.CLIENT_Get_Help), true);
-		NetworkServer.RegisterHandler<mpCalls.c_AllAwards>(new Action<NetworkConnection, mpCalls.c_AllAwards>(this.CLIENT_Get_AllAwards), true);
-		NetworkServer.RegisterHandler<mpCalls.c_ChangeID>(new Action<NetworkConnection, mpCalls.c_ChangeID>(this.CLIENT_Get_ChangeID), true);
 		NetworkServer.RegisterHandler<mpCalls.c_Platform>(new Action<NetworkConnection, mpCalls.c_Platform>(this.CLIENT_Get_Platform), true);
 		NetworkServer.RegisterHandler<mpCalls.c_exklusivKonsolenSells>(new Action<NetworkConnection, mpCalls.c_exklusivKonsolenSells>(this.CLIENT_Get_ExklusivKonsolenSells), true);
 		NetworkServer.RegisterHandler<mpCalls.c_Forschung>(new Action<NetworkConnection, mpCalls.c_Forschung>(this.CLIENT_Get_Forschung), true);
+		NetworkServer.RegisterHandler<mpCalls.c_Publisher>(new Action<NetworkConnection, mpCalls.c_Publisher>(this.CLIENT_Get_Publisher), true);
 	}
 
 	
@@ -612,11 +650,10 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.UnregisterHandler<mpCalls.c_Object>();
 		NetworkServer.UnregisterHandler<mpCalls.c_ObjectDelete>();
 		NetworkServer.UnregisterHandler<mpCalls.c_Help>();
-		NetworkServer.UnregisterHandler<mpCalls.c_AllAwards>();
-		NetworkServer.UnregisterHandler<mpCalls.c_ChangeID>();
 		NetworkServer.UnregisterHandler<mpCalls.c_Platform>();
 		NetworkServer.UnregisterHandler<mpCalls.c_exklusivKonsolenSells>();
 		NetworkServer.UnregisterHandler<mpCalls.c_Forschung>();
+		NetworkServer.UnregisterHandler<mpCalls.c_Publisher>();
 	}
 
 	
@@ -625,7 +662,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("CLIENT_Send_Object_Delete()");
 		NetworkClient.Send<mpCalls.c_ObjectDelete>(new mpCalls.c_ObjectDelete
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			objectID = id_
 		}, 0);
 	}
@@ -659,7 +696,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("CLIENT_Send_Object()");
 		NetworkClient.Send<mpCalls.c_Object>(new mpCalls.c_Object
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			objectID = id_,
 			typ = typ_,
 			x = x_,
@@ -699,7 +736,7 @@ public class mpCalls : MonoBehaviour
 		}
 		NetworkClient.Send<mpCalls.c_Map>(new mpCalls.c_Map
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			x = (byte)posx,
 			y = (byte)posy,
 			id = this.mapScript_.mapRoomID[posx, posy],
@@ -761,12 +798,90 @@ public class mpCalls : MonoBehaviour
 	}
 
 	
+	public void CLIENT_Send_Publisher(publisherScript script_)
+	{
+		Debug.Log("CLIENT_Send_Publisher()");
+		if (script_)
+		{
+			NetworkClient.Send<mpCalls.c_Publisher>(new mpCalls.c_Publisher
+			{
+				myID = script_.myID,
+				isUnlocked = script_.isUnlocked,
+				name_EN = script_.name_EN,
+				name_GE = script_.name_GE,
+				name_TU = script_.name_TU,
+				name_CH = script_.name_CH,
+				name_FR = script_.name_FR,
+				name_JA = script_.name_JA,
+				date_year = script_.date_year,
+				date_month = script_.date_month,
+				stars = script_.stars,
+				logoID = script_.logoID,
+				developer = script_.developer,
+				publisher = script_.publisher,
+				onlyMobile = script_.onlyMobile,
+				share = script_.share,
+				fanGenre = script_.fanGenre,
+				firmenwert = script_.firmenwert,
+				notForSale = script_.notForSale,
+				lockToBuy = script_.lockToBuy,
+				isPlayer = script_.isPlayer,
+				ownerID = script_.ownerID,
+				country = script_.country,
+				awards = (int[])script_.awards.Clone()
+			}, 0);
+			return;
+		}
+		Debug.Log("ERROR: CLIENT_Send_Publisher() -> Missing PublisherScript");
+	}
+
+	
+	public void CLIENT_Get_Publisher(NetworkConnection conn, mpCalls.c_Publisher msg)
+	{
+		if (this.save_.loadingSavegame)
+		{
+			return;
+		}
+		Debug.Log("CLIENT_Get_Publisher() " + UnityEngine.Random.Range(0, 10000).ToString());
+		GameObject gameObject = GameObject.Find("PUB_" + msg.myID.ToString());
+		if (gameObject)
+		{
+			publisherScript component = gameObject.GetComponent<publisherScript>();
+			component.myID = msg.myID;
+			component.isUnlocked = msg.isUnlocked;
+			component.name_EN = msg.name_EN;
+			component.name_GE = msg.name_GE;
+			component.name_TU = msg.name_TU;
+			component.name_CH = msg.name_CH;
+			component.name_FR = msg.name_FR;
+			component.name_JA = msg.name_JA;
+			component.date_year = msg.date_year;
+			component.date_month = msg.date_month;
+			component.stars = msg.stars;
+			component.logoID = msg.logoID;
+			component.developer = msg.developer;
+			component.publisher = msg.publisher;
+			component.onlyMobile = msg.onlyMobile;
+			component.share = msg.share;
+			component.fanGenre = msg.fanGenre;
+			component.firmenwert = msg.firmenwert;
+			component.notForSale = msg.notForSale;
+			component.lockToBuy = msg.lockToBuy;
+			component.isPlayer = msg.isPlayer;
+			component.ownerID = msg.ownerID;
+			component.country = msg.country;
+			component.awards = (int[])msg.awards.Clone();
+			this.SERVER_Send_Publisher(component);
+		}
+	}
+
+	
 	public void CLIENT_Send_Payment(int toPlayer, int what, int money)
 	{
 		Debug.Log("CLIENT_Send_Payment()");
 		NetworkClient.Send<mpCalls.c_Payment>(new mpCalls.c_Payment
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			toPlayerID = toPlayer,
 			what = what,
 			money = money
@@ -777,7 +892,7 @@ public class mpCalls : MonoBehaviour
 	public void CLIENT_Get_Payment(NetworkConnection conn, mpCalls.c_Payment msg)
 	{
 		Debug.Log("CLIENT_Get_Payment()");
-		if (msg.toPlayerID != this.myID)
+		if (msg.toPlayerID != this.mS_.myID)
 		{
 			this.SERVER_Send_Payment(msg.playerID, msg.toPlayerID, msg.what, msg.money);
 			return;
@@ -814,70 +929,10 @@ public class mpCalls : MonoBehaviour
 	}
 
 	
-	public void CLIENT_Send_ChangeID(int newID_)
-	{
-		Debug.Log("CLIENT_Send_ChangeID()");
-		NetworkClient.Send<mpCalls.c_ChangeID>(new mpCalls.c_ChangeID
-		{
-			playerID = this.myID,
-			newID = newID_
-		}, 0);
-		player_mp player_mp = this.FindPlayer(this.myID);
-		if (player_mp == null)
-		{
-			return;
-		}
-		player_mp.playerID = newID_;
-		this.myID = newID_;
-	}
-
-	
-	public void CLIENT_Get_ChangeID(NetworkConnection conn, mpCalls.c_ChangeID msg)
-	{
-		Debug.Log("CLIENT_Get_ChangeID()");
-		player_mp player_mp = this.FindPlayer(msg.playerID);
-		if (player_mp == null)
-		{
-			return;
-		}
-		player_mp.playerID = msg.newID;
-		this.SERVER_Send_ChangeID(msg.playerID, msg.newID);
-	}
-
-	
-	public void CLIENT_Send_AllAwards()
-	{
-		Debug.Log("CLIENT_Send_AllAwards()");
-		player_mp player_mp = this.FindPlayer(this.myID);
-		if (player_mp == null)
-		{
-			return;
-		}
-		player_mp.awards = (int[])this.mS_.awards.Clone();
-		NetworkClient.Send<mpCalls.c_AllAwards>(new mpCalls.c_AllAwards
-		{
-			playerID = this.myID,
-			awards = (int[])this.mS_.awards.Clone()
-		}, 0);
-	}
-
-	
-	public void CLIENT_Get_AllAwards(NetworkConnection conn, mpCalls.c_AllAwards msg)
-	{
-		Debug.Log("CLIENT_Get_AllAwards()");
-		player_mp player_mp = this.FindPlayer(msg.playerID);
-		if (player_mp == null)
-		{
-			return;
-		}
-		player_mp.awards = (int[])msg.awards.Clone();
-	}
-
-	
 	public void CLIENT_Send_Forschung()
 	{
 		Debug.Log("CLIENT_Send_Forschung()");
-		player_mp player_mp = this.FindPlayer(this.myID);
+		player_mp player_mp = this.FindPlayer(this.mS_.myID);
 		if (player_mp == null)
 		{
 			return;
@@ -1006,7 +1061,7 @@ public class mpCalls : MonoBehaviour
 		{
 			NetworkClient.Send<mpCalls.c_Forschung>(new mpCalls.c_Forschung
 			{
-				playerID = this.myID,
+				playerID = this.mS_.myID,
 				forschungSonstiges = (bool[])player_mp.forschungSonstiges.Clone(),
 				genres = (bool[])player_mp.genres.Clone(),
 				themes = (bool[])player_mp.themes.Clone(),
@@ -1022,6 +1077,10 @@ public class mpCalls : MonoBehaviour
 	public void CLIENT_Get_Forschung(NetworkConnection conn, mpCalls.c_Forschung msg)
 	{
 		Debug.Log("CLIENT_Get_Forschung()");
+		if (this.save_.loadingSavegame)
+		{
+			return;
+		}
 		player_mp player_mp = this.FindPlayer(msg.playerID);
 		if (player_mp == null)
 		{
@@ -1043,7 +1102,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("CLIENT_Send_Help()");
 		NetworkClient.Send<mpCalls.c_Help>(new mpCalls.c_Help
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			toPlayerID = toPlayer,
 			what = what,
 			valueA = valueA,
@@ -1056,7 +1115,7 @@ public class mpCalls : MonoBehaviour
 	public void CLIENT_Get_Help(NetworkConnection conn, mpCalls.c_Help msg)
 	{
 		Debug.Log("CLIENT_Get_Help()");
-		if (msg.toPlayerID == this.myID)
+		if (msg.toPlayerID == this.mS_.myID)
 		{
 			switch (msg.what)
 			{
@@ -1127,7 +1186,7 @@ public class mpCalls : MonoBehaviour
 					this.hardwareFeatures_.hardFeat_RES_POINTS_LEFT[msg.valueA] = 0f;
 					break;
 				}
-				this.SERVER_Send_Forschung(this.myID);
+				this.SERVER_Send_Forschung(this.mS_.myID);
 				this.guiMain_.AddChat(msg.playerID, "<color=green>" + text + "</color>");
 				return;
 			}
@@ -1152,7 +1211,6 @@ public class mpCalls : MonoBehaviour
 			date_month = script_.date_month,
 			date_year_end = script_.date_year_end,
 			date_month_end = script_.date_month_end,
-			npc = script_.npc,
 			price = script_.price,
 			dev_costs = script_.dev_costs,
 			tech = script_.tech,
@@ -1186,8 +1244,7 @@ public class mpCalls : MonoBehaviour
 			internet = script_.internet,
 			powerFromMarket = script_.powerFromMarket,
 			myName = script_.myName,
-			playerConsole = script_.playerConsole,
-			multiplaySlot = script_.multiplaySlot,
+			ownerID = script_.ownerID,
 			gameID = script_.gameID,
 			anzController = script_.anzController,
 			conHueShift = script_.conHueShift,
@@ -1231,7 +1288,7 @@ public class mpCalls : MonoBehaviour
 		if (gameObject)
 		{
 			platformScript = gameObject.GetComponent<platformScript>();
-			if (platformScript.playerConsole)
+			if (platformScript.ownerID == this.mS_.myID)
 			{
 				return;
 			}
@@ -1240,7 +1297,6 @@ public class mpCalls : MonoBehaviour
 			platformScript.date_month = msg.date_month;
 			platformScript.date_year_end = msg.date_year_end;
 			platformScript.date_month_end = msg.date_month_end;
-			platformScript.npc = msg.npc;
 			platformScript.price = msg.price;
 			platformScript.dev_costs = msg.dev_costs;
 			platformScript.tech = msg.tech;
@@ -1273,8 +1329,7 @@ public class mpCalls : MonoBehaviour
 			platformScript.internet = msg.internet;
 			platformScript.powerFromMarket = msg.powerFromMarket;
 			platformScript.myName = msg.myName;
-			platformScript.playerConsole = false;
-			platformScript.multiplaySlot = msg.multiplaySlot;
+			platformScript.ownerID = msg.ownerID;
 			platformScript.gameID = msg.gameID;
 			platformScript.anzController = msg.anzController;
 			platformScript.conHueShift = msg.conHueShift;
@@ -1314,7 +1369,6 @@ public class mpCalls : MonoBehaviour
 			platformScript.date_month = msg.date_month;
 			platformScript.date_year_end = msg.date_year_end;
 			platformScript.date_month_end = msg.date_month_end;
-			platformScript.npc = msg.npc;
 			platformScript.price = msg.price;
 			platformScript.dev_costs = msg.dev_costs;
 			platformScript.tech = msg.tech;
@@ -1347,8 +1401,7 @@ public class mpCalls : MonoBehaviour
 			platformScript.internet = msg.internet;
 			platformScript.powerFromMarket = msg.powerFromMarket;
 			platformScript.myName = msg.myName;
-			platformScript.playerConsole = false;
-			platformScript.multiplaySlot = msg.multiplaySlot;
+			platformScript.ownerID = msg.ownerID;
 			platformScript.gameID = msg.gameID;
 			platformScript.anzController = msg.anzController;
 			platformScript.conHueShift = msg.conHueShift;
@@ -1380,14 +1433,14 @@ public class mpCalls : MonoBehaviour
 			platformScript.review = msg.review;
 			platformScript.performancePoints = msg.performancePoints;
 			platformScript.Init();
-			if (platformScript.multiplaySlot != -1 && !platformScript.vomMarktGenommen)
+			if (!platformScript.OwnerIsNPC() && !platformScript.vomMarktGenommen)
 			{
 				this.guiMain_.CreateTopNewsPlatform(platformScript);
 				string text = this.tS_.GetText(1629);
 				text = text.Replace("<NAME>", msg.myName);
-				this.guiMain_.AddChat(msg.multiplaySlot, text);
+				this.guiMain_.AddChat(msg.ownerID, text);
 			}
-			if (platformScript.multiplaySlot != -1 && platformScript.vomMarktGenommen)
+			if (!platformScript.OwnerIsNPC() && platformScript.vomMarktGenommen)
 			{
 				this.guiMain_.CreateTopNewsPlatformRemove(platformScript);
 			}
@@ -1402,8 +1455,7 @@ public class mpCalls : MonoBehaviour
 		NetworkClient.Send<mpCalls.c_Engine>(new mpCalls.c_Engine
 		{
 			myID = script_.myID,
-			playerEngine = script_.playerEngine,
-			multiplayerSlot = script_.multiplayerSlot,
+			ownerID = script_.ownerID,
 			isUnlocked = script_.isUnlocked,
 			gekauft = script_.gekauft,
 			myName = script_.myName,
@@ -1425,15 +1477,14 @@ public class mpCalls : MonoBehaviour
 		if (gameObject)
 		{
 			engineScript = gameObject.GetComponent<engineScript>();
-			if (engineScript.playerEngine)
+			if (engineScript.ownerID == this.mS_.myID)
 			{
 				return;
 			}
 			engineScript.myID = msg.myID;
-			engineScript.playerEngine = false;
-			engineScript.multiplayerSlot = msg.multiplayerSlot;
+			engineScript.ownerID = msg.ownerID;
 			engineScript.isUnlocked = msg.isUnlocked;
-			if (msg.multiplayerSlot != -1)
+			if (msg.ownerID != -1)
 			{
 				engineScript.isUnlocked = true;
 			}
@@ -1450,10 +1501,9 @@ public class mpCalls : MonoBehaviour
 		{
 			engineScript = this.eF_.CreateEngine();
 			engineScript.myID = msg.myID;
-			engineScript.playerEngine = false;
-			engineScript.multiplayerSlot = msg.multiplayerSlot;
+			engineScript.ownerID = msg.ownerID;
 			engineScript.isUnlocked = msg.isUnlocked;
-			if (msg.multiplayerSlot != -1)
+			if (msg.ownerID != -1)
 			{
 				engineScript.isUnlocked = true;
 			}
@@ -1469,7 +1519,7 @@ public class mpCalls : MonoBehaviour
 			this.guiMain_.CreateTopNewsNpcEngine(engineScript.GetName());
 			string text = this.tS_.GetText(1270);
 			text = text.Replace("<NAME>", msg.myName);
-			this.guiMain_.AddChat(msg.multiplayerSlot, text);
+			this.guiMain_.AddChat(msg.ownerID, text);
 		}
 		this.SERVER_Send_Engine(engineScript);
 	}
@@ -1480,7 +1530,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("CLIENT_Send_Chat()");
 		NetworkClient.Send<mpCalls.c_Chat>(new mpCalls.c_Chat
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			text = c
 		}, 0);
 	}
@@ -1499,7 +1549,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("CLIENT_Send_Money()");
 		NetworkClient.Send<mpCalls.c_Money>(new mpCalls.c_Money
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			money = this.mS_.money,
 			fans = this.genres_.GetAmountFans()
 		}, 0);
@@ -1509,6 +1559,10 @@ public class mpCalls : MonoBehaviour
 	public void CLIENT_Get_Money(NetworkConnection conn, mpCalls.c_Money msg)
 	{
 		Debug.Log("CLIENT_Get_Money()");
+		if (this.save_.loadingSavegame)
+		{
+			return;
+		}
 		player_mp player_mp = this.FindPlayer(msg.playerID);
 		if (player_mp == null)
 		{
@@ -1569,7 +1623,6 @@ public class mpCalls : MonoBehaviour
 			bestAbonnements = script_.bestAbonnements,
 			bestChartPosition = script_.bestChartPosition,
 			exklusivKonsolenSells = script_.exklusivKonsolenSells,
-			multiplayerSlot = script_.multiplayerSlot,
 			ipPunkte = script_.ipPunkte,
 			pubAngebot = script_.pubAngebot,
 			pubAngebot_Weeks = script_.pubAngebot_Weeks,
@@ -1617,7 +1670,6 @@ public class mpCalls : MonoBehaviour
 			component.bestAbonnements = msg.bestAbonnements;
 			component.bestChartPosition = msg.bestChartPosition;
 			component.exklusivKonsolenSells = msg.exklusivKonsolenSells;
-			component.multiplayerSlot = msg.multiplayerSlot;
 			component.ipPunkte = msg.ipPunkte;
 			component.pubAngebot = msg.pubAngebot;
 			component.pubAngebot_Weeks = msg.pubAngebot_Weeks;
@@ -1650,8 +1702,6 @@ public class mpCalls : MonoBehaviour
 			gameID = script_.myID,
 			myName = script_.GetNameSimple(),
 			ipName = script_.ipName,
-			playerGame = script_.playerGame,
-			multiplayerSlot = script_.multiplayerSlot,
 			inDevelopment = script_.inDevelopment,
 			developerID = script_.developerID,
 			publisherID = script_.publisherID,
@@ -1788,13 +1838,6 @@ public class mpCalls : MonoBehaviour
 	
 	public void CLIENT_Get_Game(NetworkConnection conn, mpCalls.c_Game msg)
 	{
-		Debug.Log(string.Concat(new object[]
-		{
-			"CLIENT_Get_Game() ",
-			msg.myName,
-			" ",
-			msg.gameID
-		}));
 		GameObject game = this.GetGame(msg.gameID);
 		gameScript gameScript;
 		if (!game)
@@ -1808,8 +1851,6 @@ public class mpCalls : MonoBehaviour
 		gameScript.myID = msg.gameID;
 		gameScript.SetMyName(msg.myName);
 		gameScript.ipName = msg.ipName;
-		gameScript.playerGame = false;
-		gameScript.multiplayerSlot = msg.multiplayerSlot;
 		gameScript.inDevelopment = msg.inDevelopment;
 		gameScript.developerID = msg.developerID;
 		gameScript.publisherID = msg.publisherID;
@@ -1947,7 +1988,7 @@ public class mpCalls : MonoBehaviour
 			gameScript.SetOnMarket();
 		}
 		this.games_.FindGames();
-		if (this.mS_.newsSetting[0] && gameScript.isOnMarket && gameScript.multiplayerSlot != -1)
+		if (this.mS_.newsSetting[0] && gameScript.isOnMarket && gameScript.GameFromMitspieler())
 		{
 			string text = this.tS_.GetText(494);
 			text = text.Replace("<NAME1>", gameScript.GetDeveloperName());
@@ -1955,7 +1996,7 @@ public class mpCalls : MonoBehaviour
 			this.guiMain_.CreateTopNewsInfo(text);
 			text = this.tS_.GetText(1269);
 			text = text.Replace("<NAME>", msg.myName);
-			this.guiMain_.AddChat(msg.multiplayerSlot, text);
+			this.guiMain_.AddChat(gameScript.GetIdFromMitspieler(), text);
 		}
 		this.games_.UpdateChartsWeek();
 		this.guiMain_.UpdateCharts();
@@ -1966,7 +2007,7 @@ public class mpCalls : MonoBehaviour
 	{
 		NetworkClient.Send<mpCalls.c_BuyLizenz>(new mpCalls.c_BuyLizenz
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			objectID = objectID_
 		}, 0);
 	}
@@ -1984,7 +2025,7 @@ public class mpCalls : MonoBehaviour
 	{
 		NetworkClient.Send<mpCalls.c_DeleteArbeitsmarkt>(new mpCalls.c_DeleteArbeitsmarkt
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			objectID = objectID_,
 			eingestellt = eingestellt
 		}, 0);
@@ -2008,7 +2049,7 @@ public class mpCalls : MonoBehaviour
 		this.FindScripts();
 		NetworkClient.Send<mpCalls.c_Command>(new mpCalls.c_Command
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			command = command
 		}, 0);
 	}
@@ -2045,11 +2086,8 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("CLIENT_Send_PlayerInfos");
 		NetworkClient.Send<mpCalls.c_PlayerInfos>(new mpCalls.c_PlayerInfos
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			playerName = this.mS_.playerName,
-			companyName = this.mS_.companyName,
-			logo = this.mS_.logo,
-			country = this.mS_.country,
 			ready = this.mpMain_.uiObjects[51].GetComponent<Toggle>().isOn
 		}, 0);
 	}
@@ -2058,40 +2096,19 @@ public class mpCalls : MonoBehaviour
 	public void CLIENT_Get_PlayerInfos(NetworkConnection conn, mpCalls.c_PlayerInfos msg)
 	{
 		Debug.Log("CLIENT_Get_PlayerInfos");
+		if (this.save_.loadingSavegame)
+		{
+			return;
+		}
 		player_mp player_mp = this.FindPlayer(msg.playerID);
 		if (player_mp == null)
 		{
 			return;
 		}
 		player_mp.playerName = msg.playerName;
-		player_mp.companyName = msg.companyName;
-		player_mp.companyLogo = msg.logo;
-		player_mp.companyCountry = msg.country;
 		player_mp.ready = msg.ready;
+		player_mp.myPubScript_;
 		this.SERVER_Send_PlayerInfos();
-	}
-
-	
-	public void SERVER_Send_ChangeID(int playerID_, int newPlayerID_)
-	{
-		Debug.Log("SERVER_Send_ChangeID()");
-		NetworkServer.SendToAll<mpCalls.s_ChangeID>(new mpCalls.s_ChangeID
-		{
-			playerID = playerID_,
-			newID = newPlayerID_
-		}, 0, false);
-	}
-
-	
-	public void SERVER_Get_ChangeID(NetworkConnection conn, mpCalls.s_ChangeID msg)
-	{
-		Debug.Log("SERVER_Get_ChangeID()");
-		player_mp player_mp = this.FindPlayer(msg.playerID);
-		if (player_mp == null)
-		{
-			return;
-		}
-		player_mp.playerID = msg.newID;
 	}
 
 	
@@ -2110,6 +2127,11 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("SERVER_Get_PlayerLeave()");
 		for (int i = 0; i < this.playersMP.Count; i++)
 		{
+			GameObject gameObject = GameObject.Find("PUB_" + msg.playerID.ToString());
+			if (gameObject)
+			{
+				UnityEngine.Object.Destroy(gameObject);
+			}
 			if (this.playersMP[i].playerID == msg.playerID)
 			{
 				this.playersMP.RemoveAt(i);
@@ -2160,7 +2182,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("SERVER_Send_ObjectDelete()");
 		NetworkServer.SendToAll<mpCalls.s_ObjectDelete>(new mpCalls.s_ObjectDelete
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			objectID = objectID_
 		}, 0, false);
 	}
@@ -2190,7 +2212,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("SERVER_Send_Object()");
 		NetworkServer.SendToAll<mpCalls.s_Object>(new mpCalls.s_Object
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			objectID = id_,
 			typ = typ_,
 			x = x_,
@@ -2222,7 +2244,7 @@ public class mpCalls : MonoBehaviour
 		}
 		NetworkServer.SendToAll<mpCalls.s_Map>(new mpCalls.s_Map
 		{
-			playerID = this.myID,
+			playerID = this.mS_.myID,
 			x = (byte)posx,
 			y = (byte)posy,
 			id = this.mapScript_.mapRoomID[posx, posy],
@@ -2303,7 +2325,7 @@ public class mpCalls : MonoBehaviour
 	public void SERVER_Get_EngineAbrechnung(NetworkConnection conn, mpCalls.s_EngineAbrechnung msg)
 	{
 		Debug.Log("SERVER_Get_EngineAbrechnung()");
-		if (msg.toPlayerID != this.myID)
+		if (msg.toPlayerID != this.mS_.myID)
 		{
 			return;
 		}
@@ -2318,7 +2340,7 @@ public class mpCalls : MonoBehaviour
 	}
 
 	
-	public void SERVER_Send_Award(int bestGrafik_, int bestSound_, int bestStudio_, int bestStudioPlayer_, int bestPublisher_, int bestPublisherPlayer_, int bestGame_, int badGame_)
+	public void SERVER_Send_Award(int bestGrafik_, int bestSound_, int bestStudio_, int bestPublisher_, int bestGame_, int badGame_)
 	{
 		Debug.Log("SERVER_Send_Award()");
 		NetworkServer.SendToAll<mpCalls.s_Awards>(new mpCalls.s_Awards
@@ -2326,9 +2348,7 @@ public class mpCalls : MonoBehaviour
 			bestGrafik = bestGrafik_,
 			bestSound = bestSound_,
 			bestStudio = bestStudio_,
-			bestStudioPlayer = bestStudioPlayer_,
 			bestPublisher = bestPublisher_,
-			bestPublisherPlayer = bestPublisherPlayer_,
 			bestGame = bestGame_,
 			badGame = badGame_
 		}, 0, false);
@@ -2340,7 +2360,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("SERVER_Get_Awards()");
 		Menu_Awards component = this.guiMain_.uiObjects[143].GetComponent<Menu_Awards>();
 		component.gameObject.SetActive(true);
-		component.Multiplayer_FindWinners(msg.bestGrafik, msg.bestSound, msg.bestStudio, msg.bestStudioPlayer, msg.bestPublisher, msg.bestPublisherPlayer, msg.bestGame, msg.badGame);
+		component.Multiplayer_FindWinners(msg.bestGrafik, msg.bestSound, msg.bestStudio, msg.bestPublisher, msg.bestGame, msg.badGame);
 		this.mS_.MadGamesAward(true);
 	}
 
@@ -2361,7 +2381,7 @@ public class mpCalls : MonoBehaviour
 	public void SERVER_Get_Payment(NetworkConnection conn, mpCalls.s_Payment msg)
 	{
 		Debug.Log("SERVER_Get_Payment()");
-		if (msg.toPlayerID != this.myID)
+		if (msg.toPlayerID != this.mS_.myID)
 		{
 			return;
 		}
@@ -2471,45 +2491,13 @@ public class mpCalls : MonoBehaviour
 	}
 
 	
-	public void SERVER_Send_AllAwards()
-	{
-		Debug.Log("SERVER_Send_AllAwards()");
-		player_mp player_mp = this.FindPlayer(this.myID);
-		if (player_mp == null)
-		{
-			return;
-		}
-		player_mp.awards = (int[])this.mS_.awards.Clone();
-		for (int i = 0; i < this.playersMP.Count; i++)
-		{
-			NetworkServer.SendToAll<mpCalls.s_AllAwards>(new mpCalls.s_AllAwards
-			{
-				playerID = this.playersMP[i].playerID,
-				awards = (int[])this.playersMP[i].awards.Clone()
-			}, 0, false);
-		}
-	}
-
-	
-	public void SERVER_Get_AllAwards(NetworkConnection conn, mpCalls.s_AllAwards msg)
-	{
-		Debug.Log("SERVER_Get_AllAwards()");
-		player_mp player_mp = this.FindPlayer(msg.playerID);
-		if (player_mp == null)
-		{
-			return;
-		}
-		player_mp.awards = (int[])msg.awards.Clone();
-	}
-
-	
 	public void SERVER_Send_Forschung(int playerID_)
 	{
 		Debug.Log("SERVER_Send_Forschung()");
 		bool flag = false;
-		if (playerID_ == this.myID)
+		if (playerID_ == this.mS_.myID)
 		{
-			player_mp player_mp = this.FindPlayer(this.myID);
+			player_mp player_mp = this.FindPlayer(this.mS_.myID);
 			if (player_mp == null)
 			{
 				return;
@@ -2628,7 +2616,7 @@ public class mpCalls : MonoBehaviour
 	public void SERVER_Get_Forschung(NetworkConnection conn, mpCalls.s_Forschung msg)
 	{
 		Debug.Log("SERVER_Get_Forschung()");
-		if (msg.playerID == this.myID)
+		if (msg.playerID == this.mS_.myID)
 		{
 			return;
 		}
@@ -2682,7 +2670,7 @@ public class mpCalls : MonoBehaviour
 	public void SERVER_Get_Help(NetworkConnection conn, mpCalls.s_Help msg)
 	{
 		Debug.Log("SERVER_Get_Help()");
-		if (msg.toPlayerID != this.myID)
+		if (msg.toPlayerID != this.mS_.myID)
 		{
 			return;
 		}
@@ -2775,7 +2763,6 @@ public class mpCalls : MonoBehaviour
 			date_month = script_.date_month,
 			date_year_end = script_.date_year_end,
 			date_month_end = script_.date_month_end,
-			npc = script_.npc,
 			price = script_.price,
 			dev_costs = script_.dev_costs,
 			tech = script_.tech,
@@ -2809,8 +2796,7 @@ public class mpCalls : MonoBehaviour
 			internet = script_.internet,
 			powerFromMarket = script_.powerFromMarket,
 			myName = script_.myName,
-			playerConsole = script_.playerConsole,
-			multiplaySlot = script_.multiplaySlot,
+			ownerID = script_.ownerID,
 			gameID = script_.gameID,
 			anzController = script_.anzController,
 			conHueShift = script_.conHueShift,
@@ -2858,7 +2844,6 @@ public class mpCalls : MonoBehaviour
 			platformScript.date_month = msg.date_month;
 			platformScript.date_year_end = msg.date_year_end;
 			platformScript.date_month_end = msg.date_month_end;
-			platformScript.npc = msg.npc;
 			platformScript.price = msg.price;
 			platformScript.dev_costs = msg.dev_costs;
 			platformScript.tech = msg.tech;
@@ -2892,8 +2877,7 @@ public class mpCalls : MonoBehaviour
 			platformScript.internet = msg.internet;
 			platformScript.powerFromMarket = msg.powerFromMarket;
 			platformScript.myName = msg.myName;
-			platformScript.playerConsole = false;
-			platformScript.multiplaySlot = msg.multiplaySlot;
+			platformScript.ownerID = msg.ownerID;
 			platformScript.gameID = msg.gameID;
 			platformScript.anzController = msg.anzController;
 			platformScript.conHueShift = msg.conHueShift;
@@ -2930,21 +2914,21 @@ public class mpCalls : MonoBehaviour
 				platformScript.isUnlocked = true;
 				platformScript.inBesitz = true;
 			}
-			if (platformScript.multiplaySlot != -1 && !platformScript.vomMarktGenommen)
+			if (!platformScript.OwnerIsNPC() && !platformScript.vomMarktGenommen)
 			{
 				this.guiMain_.CreateTopNewsPlatform(platformScript);
 				string text = this.tS_.GetText(1629);
 				text = text.Replace("<NAME>", msg.myName);
-				this.guiMain_.AddChat(msg.multiplaySlot, text);
+				this.guiMain_.AddChat(msg.ownerID, text);
 			}
-			if (platformScript.multiplaySlot != -1 && platformScript.vomMarktGenommen)
+			if (!platformScript.OwnerIsNPC() && platformScript.vomMarktGenommen)
 			{
 				this.guiMain_.CreateTopNewsPlatformRemove(platformScript);
 			}
 			return;
 		}
 		platformScript component = gameObject.GetComponent<platformScript>();
-		if (component.playerConsole)
+		if (component.ownerID == this.mS_.myID)
 		{
 			return;
 		}
@@ -2953,7 +2937,6 @@ public class mpCalls : MonoBehaviour
 		component.date_month = msg.date_month;
 		component.date_year_end = msg.date_year_end;
 		component.date_month_end = msg.date_month_end;
-		component.npc = msg.npc;
 		component.price = msg.price;
 		component.dev_costs = msg.dev_costs;
 		component.tech = msg.tech;
@@ -2987,8 +2970,7 @@ public class mpCalls : MonoBehaviour
 		component.internet = msg.internet;
 		component.powerFromMarket = msg.powerFromMarket;
 		component.myName = msg.myName;
-		component.playerConsole = false;
-		component.multiplaySlot = msg.multiplaySlot;
+		component.ownerID = msg.ownerID;
 		component.gameID = msg.gameID;
 		component.anzController = msg.anzController;
 		component.conHueShift = msg.conHueShift;
@@ -3028,8 +3010,7 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.SendToAll<mpCalls.s_Engine>(new mpCalls.s_Engine
 		{
 			engineID = script_.myID,
-			playerEngine = script_.playerEngine,
-			multiplayerSlot = script_.multiplayerSlot,
+			ownerID = script_.ownerID,
 			isUnlocked = script_.isUnlocked,
 			gekauft = script_.gekauft,
 			myName = script_.myName,
@@ -3051,10 +3032,9 @@ public class mpCalls : MonoBehaviour
 		{
 			engineScript engineScript = this.eF_.CreateEngine();
 			engineScript.myID = msg.engineID;
-			engineScript.playerEngine = false;
-			engineScript.multiplayerSlot = msg.multiplayerSlot;
+			engineScript.ownerID = msg.ownerID;
 			engineScript.isUnlocked = msg.isUnlocked;
-			if (msg.multiplayerSlot != -1)
+			if (msg.ownerID != -1)
 			{
 				engineScript.isUnlocked = true;
 			}
@@ -3071,19 +3051,18 @@ public class mpCalls : MonoBehaviour
 			this.guiMain_.CreateTopNewsNpcEngine(engineScript.GetName());
 			string text = this.tS_.GetText(1270);
 			text = text.Replace("<NAME>", msg.myName);
-			this.guiMain_.AddChat(msg.multiplayerSlot, text);
+			this.guiMain_.AddChat(msg.ownerID, text);
 			return;
 		}
 		engineScript component = gameObject.GetComponent<engineScript>();
-		if (component.playerEngine)
+		if (component.ownerID == this.mS_.myID)
 		{
 			return;
 		}
 		component.myID = msg.engineID;
-		component.playerEngine = false;
-		component.multiplayerSlot = msg.multiplayerSlot;
+		component.ownerID = msg.ownerID;
 		component.isUnlocked = msg.isUnlocked;
-		if (msg.multiplayerSlot != -1)
+		if (msg.ownerID != -1)
 		{
 			component.isUnlocked = true;
 		}
@@ -3135,7 +3114,7 @@ public class mpCalls : MonoBehaviour
 		if (game)
 		{
 			gameScript component = game.GetComponent<gameScript>();
-			if (component.playerGame)
+			if (component.ownerID == this.mS_.myID || component.publisherID == this.mS_.myID)
 			{
 				return;
 			}
@@ -3169,7 +3148,6 @@ public class mpCalls : MonoBehaviour
 			bestAbonnements = script_.bestAbonnements,
 			bestChartPosition = script_.bestChartPosition,
 			exklusivKonsolenSells = script_.exklusivKonsolenSells,
-			multiplayerSlot = script_.multiplayerSlot,
 			ipPunkte = script_.ipPunkte,
 			pubAngebot = script_.pubAngebot,
 			pubAngebot_Weeks = script_.pubAngebot_Weeks,
@@ -3199,7 +3177,7 @@ public class mpCalls : MonoBehaviour
 		if (game)
 		{
 			gameScript component = game.GetComponent<gameScript>();
-			if (component.playerGame)
+			if (component.ownerID == this.mS_.myID || component.publisherID == this.mS_.myID)
 			{
 				return;
 			}
@@ -3222,7 +3200,6 @@ public class mpCalls : MonoBehaviour
 			component.bestAbonnements = msg.bestAbonnements;
 			component.bestChartPosition = msg.bestChartPosition;
 			component.exklusivKonsolenSells = msg.exklusivKonsolenSells;
-			component.multiplayerSlot = msg.multiplayerSlot;
 			component.ipPunkte = msg.ipPunkte;
 			component.pubAngebot = msg.pubAngebot;
 			component.pubAngebot_Weeks = msg.pubAngebot_Weeks;
@@ -3369,7 +3346,7 @@ public class mpCalls : MonoBehaviour
 		{
 			return;
 		}
-		if (player_mp.playerID == this.myID)
+		if (player_mp.playerID == this.mS_.myID)
 		{
 			Debug.Log("SERVER_Send_Genres(): Abbruch! Nicht zu Server senden.");
 			return;
@@ -3895,8 +3872,7 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.SendToAll<mpCalls.s_NpcEngine>(new mpCalls.s_NpcEngine
 		{
 			myID = script_.myID,
-			playerEngine = script_.playerEngine,
-			multiplayerSlot = script_.multiplayerSlot,
+			ownerID = script_.ownerID,
 			isUnlocked = script_.isUnlocked,
 			gekauft = script_.gekauft,
 			myName = script_.myName,
@@ -3938,8 +3914,7 @@ public class mpCalls : MonoBehaviour
 		{
 			engineScript component = gameObject.GetComponent<engineScript>();
 			component.myID = msg.myID;
-			component.playerEngine = msg.playerEngine;
-			component.multiplayerSlot = msg.multiplayerSlot;
+			component.ownerID = msg.ownerID;
 			component.isUnlocked = msg.isUnlocked;
 			component.gekauft = msg.gekauft;
 			component.myName = msg.myName;
@@ -3973,8 +3948,7 @@ public class mpCalls : MonoBehaviour
 		}
 		engineScript engineScript = this.eF_.CreateEngine();
 		engineScript.myID = msg.myID;
-		engineScript.playerEngine = msg.playerEngine;
-		engineScript.multiplayerSlot = msg.multiplayerSlot;
+		engineScript.ownerID = msg.ownerID;
 		engineScript.isUnlocked = msg.isUnlocked;
 		engineScript.gekauft = msg.gekauft;
 		engineScript.myName = msg.myName;
@@ -4086,7 +4060,8 @@ public class mpCalls : MonoBehaviour
 	{
 		Debug.Log("SERVER_Send_Firmenwert()");
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
-		long[] array2 = new long[array.Length];
+		int[] array2 = new int[array.Length];
+		long[] array3 = new long[array.Length];
 		for (int i = 0; i < array.Length; i++)
 		{
 			if (array[i])
@@ -4094,13 +4069,15 @@ public class mpCalls : MonoBehaviour
 				publisherScript component = array[i].GetComponent<publisherScript>();
 				if (component)
 				{
-					array2[component.myID] = component.firmenwert;
+					array2[i] = component.myID;
+					array3[i] = component.firmenwert;
 				}
 			}
 		}
 		NetworkServer.SendToAll<mpCalls.s_Firmenwert>(new mpCalls.s_Firmenwert
 		{
-			firmenwert = (long[])array2.Clone()
+			publisherID = (int[])array2.Clone(),
+			firmenwert = (long[])array3.Clone()
 		}, 0, false);
 	}
 
@@ -4114,7 +4091,13 @@ public class mpCalls : MonoBehaviour
 			publisherScript component = array[i].GetComponent<publisherScript>();
 			if (component)
 			{
-				component.firmenwert = msg.firmenwert[component.myID];
+				for (int j = 0; j < msg.publisherID.Length; j++)
+				{
+					if (msg.publisherID[j] == component.myID)
+					{
+						component.firmenwert = msg.firmenwert[j];
+					}
+				}
 			}
 		}
 	}
@@ -4123,29 +4106,38 @@ public class mpCalls : MonoBehaviour
 	public void SERVER_Send_Publisher(publisherScript script_)
 	{
 		Debug.Log("SERVER_Send_Publisher()");
-		NetworkServer.SendToAll<mpCalls.s_Publisher>(new mpCalls.s_Publisher
+		if (script_)
 		{
-			myID = script_.myID,
-			isUnlocked = script_.isUnlocked,
-			name_EN = script_.name_EN,
-			name_GE = script_.name_GE,
-			name_TU = script_.name_TU,
-			name_CH = script_.name_CH,
-			name_FR = script_.name_FR,
-			name_JA = script_.name_JA,
-			date_year = script_.date_year,
-			date_month = script_.date_month,
-			stars = script_.stars,
-			logoID = script_.logoID,
-			developer = script_.developer,
-			publisher = script_.publisher,
-			onlyMobile = script_.onlyMobile,
-			share = script_.share,
-			fanGenre = script_.fanGenre,
-			firmenwert = script_.firmenwert,
-			notForSale = script_.notForSale,
-			lockToBuy = script_.lockToBuy
-		}, 0, false);
+			NetworkServer.SendToAll<mpCalls.s_Publisher>(new mpCalls.s_Publisher
+			{
+				myID = script_.myID,
+				isUnlocked = script_.isUnlocked,
+				name_EN = script_.name_EN,
+				name_GE = script_.name_GE,
+				name_TU = script_.name_TU,
+				name_CH = script_.name_CH,
+				name_FR = script_.name_FR,
+				name_JA = script_.name_JA,
+				date_year = script_.date_year,
+				date_month = script_.date_month,
+				stars = script_.stars,
+				logoID = script_.logoID,
+				developer = script_.developer,
+				publisher = script_.publisher,
+				onlyMobile = script_.onlyMobile,
+				share = script_.share,
+				fanGenre = script_.fanGenre,
+				firmenwert = script_.firmenwert,
+				notForSale = script_.notForSale,
+				lockToBuy = script_.lockToBuy,
+				isPlayer = script_.isPlayer,
+				ownerID = script_.ownerID,
+				country = script_.country,
+				awards = (int[])script_.awards.Clone()
+			}, 0, false);
+			return;
+		}
+		Debug.Log("ERROR: SERVER_Send_Publisher() -> Missing PublisherScript");
 	}
 
 	
@@ -4176,6 +4168,10 @@ public class mpCalls : MonoBehaviour
 			component.firmenwert = msg.firmenwert;
 			component.notForSale = msg.notForSale;
 			component.lockToBuy = msg.lockToBuy;
+			component.isPlayer = msg.isPlayer;
+			component.ownerID = msg.ownerID;
+			component.country = msg.country;
+			component.awards = (int[])msg.awards.Clone();
 			return;
 		}
 		publisherScript publisherScript = this.publisher_.CreatePublisher();
@@ -4199,6 +4195,10 @@ public class mpCalls : MonoBehaviour
 		publisherScript.firmenwert = msg.firmenwert;
 		publisherScript.notForSale = msg.notForSale;
 		publisherScript.lockToBuy = msg.lockToBuy;
+		publisherScript.isPlayer = msg.isPlayer;
+		publisherScript.ownerID = msg.ownerID;
+		publisherScript.country = msg.country;
+		publisherScript.awards = (int[])msg.awards.Clone();
 		publisherScript.Init();
 	}
 
@@ -4211,8 +4211,6 @@ public class mpCalls : MonoBehaviour
 			gameID = script_.myID,
 			myName = script_.GetNameSimple(),
 			ipName = script_.ipName,
-			playerGame = script_.playerGame,
-			multiplayerSlot = script_.multiplayerSlot,
 			inDevelopment = script_.inDevelopment,
 			developerID = script_.developerID,
 			publisherID = script_.publisherID,
@@ -4350,10 +4348,6 @@ public class mpCalls : MonoBehaviour
 	public void SERVER_Get_Game(NetworkConnection conn, mpCalls.s_Game msg)
 	{
 		Debug.Log("SERVER_Get_Game()");
-		if (msg.multiplayerSlot == this.myID)
-		{
-			return;
-		}
 		GameObject game = this.GetGame(msg.gameID);
 		gameScript gameScript;
 		if (!game)
@@ -4363,12 +4357,14 @@ public class mpCalls : MonoBehaviour
 		else
 		{
 			gameScript = game.GetComponent<gameScript>();
+			if (gameScript.IsMyGame() || gameScript.IsMyAuftragsspiel())
+			{
+				return;
+			}
 		}
 		gameScript.myID = msg.gameID;
 		gameScript.SetMyName(msg.myName);
 		gameScript.ipName = msg.ipName;
-		gameScript.playerGame = false;
-		gameScript.multiplayerSlot = msg.multiplayerSlot;
 		gameScript.inDevelopment = msg.inDevelopment;
 		gameScript.developerID = msg.developerID;
 		gameScript.publisherID = msg.publisherID;
@@ -4508,14 +4504,14 @@ public class mpCalls : MonoBehaviour
 		this.games_.FindGames();
 		if (this.mS_.newsSetting[0] && gameScript.isOnMarket)
 		{
-			if (gameScript.multiplayerSlot == -1)
+			if (!gameScript.GameFromMitspieler())
 			{
 				string text = this.tS_.GetText(494);
 				text = text.Replace("<NAME1>", gameScript.GetPublisherName());
 				text = text.Replace("<NAME2>", gameScript.GetNameWithTag());
 				this.guiMain_.CreateTopNewsInfo(text);
 			}
-			if (gameScript.multiplayerSlot != -1)
+			else
 			{
 				string text2 = this.tS_.GetText(494);
 				text2 = text2.Replace("<NAME1>", gameScript.GetDeveloperName());
@@ -4523,7 +4519,7 @@ public class mpCalls : MonoBehaviour
 				this.guiMain_.CreateTopNewsInfo(text2);
 				text2 = this.tS_.GetText(1269);
 				text2 = text2.Replace("<NAME>", msg.myName);
-				this.guiMain_.AddChat(msg.multiplayerSlot, text2);
+				this.guiMain_.AddChat(gameScript.GetIdFromMitspieler(), text2);
 			}
 		}
 		this.games_.UpdateChartsWeek();
@@ -4581,7 +4577,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("SERVER_Send_Office()");
 		NetworkServer.SendToAll<mpCalls.s_Office>(new mpCalls.s_Office
 		{
-			office = this.mpMain_.uiObjects[33].GetComponent<Dropdown>().value + 3
+			office = this.mS_.office
 		}, 0, false);
 	}
 
@@ -4593,7 +4589,7 @@ public class mpCalls : MonoBehaviour
 		this.mS_.office = msg.office;
 		if (this.guiMain_.uiObjects[201].activeSelf)
 		{
-			this.guiMain_.uiObjects[201].GetComponent<mpMain>().uiObjects[33].GetComponent<Dropdown>().value = this.mS_.office - 3;
+			this.guiMain_.uiObjects[201].GetComponent<mpMain>().uiObjects[33].GetComponent<Dropdown>().value = this.mS_.GetDropdownSlotFromMapID(this.mS_.office);
 		}
 	}
 
@@ -4937,7 +4933,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("SERVER_Get_ID()");
 		if (msg.version == this.mS_.buildVersion)
 		{
-			this.myID = msg.id;
+			this.mS_.myID = msg.id;
 			this.CLIENT_Send_PlayerInfos();
 			return;
 		}
@@ -4967,6 +4963,8 @@ public class mpCalls : MonoBehaviour
 			return;
 		}
 		this.playersMP.Add(new player_mp(msg.playerID));
+		publisherScript myPubScript_ = this.mS_.CreatePlayerPublisher(msg.playerID);
+		this.FindPlayer(msg.playerID).myPubScript_ = myPubScript_;
 	}
 
 	
@@ -4979,9 +4977,6 @@ public class mpCalls : MonoBehaviour
 			{
 				id = this.playersMP[i].playerID,
 				playerName = this.playersMP[i].playerName,
-				companyName = this.playersMP[i].companyName,
-				logo = this.playersMP[i].companyLogo,
-				country = this.playersMP[i].companyCountry,
 				ready = this.playersMP[i].ready
 			}, 0, false);
 		}
@@ -4997,9 +4992,6 @@ public class mpCalls : MonoBehaviour
 			return;
 		}
 		player_mp.playerName = msg.playerName;
-		player_mp.companyName = msg.companyName;
-		player_mp.companyLogo = msg.logo;
-		player_mp.companyCountry = msg.country;
 		player_mp.ready = msg.ready;
 	}
 
@@ -5081,9 +5073,6 @@ public class mpCalls : MonoBehaviour
 	public List<player_mp> playersMP = new List<player_mp>();
 
 	
-	public int myID = -1;
-
-	
 	public mpPlayer[] players = new mpPlayer[4];
 
 	
@@ -5159,6 +5148,82 @@ public class mpCalls : MonoBehaviour
 	private anitCheat antiCheat_;
 
 	
+	public struct c_Publisher : NetworkMessage
+	{
+		
+		public int myID;
+
+		
+		public bool isUnlocked;
+
+		
+		public string name_EN;
+
+		
+		public string name_GE;
+
+		
+		public string name_TU;
+
+		
+		public string name_CH;
+
+		
+		public string name_FR;
+
+		
+		public string name_JA;
+
+		
+		public int date_year;
+
+		
+		public int date_month;
+
+		
+		public float stars;
+
+		
+		public int logoID;
+
+		
+		public bool developer;
+
+		
+		public bool publisher;
+
+		
+		public bool onlyMobile;
+
+		
+		public float share;
+
+		
+		public int fanGenre;
+
+		
+		public long firmenwert;
+
+		
+		public bool notForSale;
+
+		
+		public int lockToBuy;
+
+		
+		public bool isPlayer;
+
+		
+		public int ownerID;
+
+		
+		public int country;
+
+		
+		public int[] awards;
+	}
+
+	
 	public struct c_Forschung : NetworkMessage
 	{
 		
@@ -5184,26 +5249,6 @@ public class mpCalls : MonoBehaviour
 
 		
 		public bool[] hardwareFeatures;
-	}
-
-	
-	public struct c_ChangeID : NetworkMessage
-	{
-		
-		public int playerID;
-
-		
-		public int newID;
-	}
-
-	
-	public struct c_AllAwards : NetworkMessage
-	{
-		
-		public int playerID;
-
-		
-		public int[] awards;
 	}
 
 	
@@ -5327,10 +5372,7 @@ public class mpCalls : MonoBehaviour
 		public int myID;
 
 		
-		public bool playerEngine;
-
-		
-		public int multiplayerSlot;
+		public int ownerID;
 
 		
 		public bool isUnlocked;
@@ -5377,9 +5419,6 @@ public class mpCalls : MonoBehaviour
 
 		
 		public int date_month_end;
-
-		
-		public bool npc;
 
 		
 		public int price;
@@ -5487,10 +5526,7 @@ public class mpCalls : MonoBehaviour
 		public string myName;
 
 		
-		public bool playerConsole;
-
-		
-		public int multiplaySlot;
+		public int ownerID;
 
 		
 		public int gameID;
@@ -5635,15 +5671,6 @@ public class mpCalls : MonoBehaviour
 		public string playerName;
 
 		
-		public string companyName;
-
-		
-		public int logo;
-
-		
-		public int country;
-
-		
 		public bool ready;
 	}
 
@@ -5744,9 +5771,6 @@ public class mpCalls : MonoBehaviour
 		public long exklusivKonsolenSells;
 
 		
-		public int multiplayerSlot;
-
-		
 		public float ipPunkte;
 
 		
@@ -5809,9 +5833,6 @@ public class mpCalls : MonoBehaviour
 
 		
 		public bool playerGame;
-
-		
-		public int multiplayerSlot;
 
 		
 		public bool inDevelopment;
@@ -6212,16 +6233,6 @@ public class mpCalls : MonoBehaviour
 	}
 
 	
-	public struct s_ChangeID : NetworkMessage
-	{
-		
-		public int playerID;
-
-		
-		public int newID;
-	}
-
-	
 	public struct s_Forschung : NetworkMessage
 	{
 		
@@ -6261,16 +6272,6 @@ public class mpCalls : MonoBehaviour
 	{
 		
 		public float[] genreBeliebtheit;
-	}
-
-	
-	public struct s_AllAwards : NetworkMessage
-	{
-		
-		public int playerID;
-
-		
-		public int[] awards;
 	}
 
 	
@@ -6463,13 +6464,7 @@ public class mpCalls : MonoBehaviour
 		public int bestStudio;
 
 		
-		public int bestStudioPlayer;
-
-		
 		public int bestPublisher;
-
-		
-		public int bestPublisherPlayer;
 
 		
 		public int bestGame;
@@ -6501,10 +6496,7 @@ public class mpCalls : MonoBehaviour
 		public int engineID;
 
 		
-		public bool playerEngine;
-
-		
-		public int multiplayerSlot;
+		public int ownerID;
 
 		
 		public bool isUnlocked;
@@ -6551,9 +6543,6 @@ public class mpCalls : MonoBehaviour
 
 		
 		public int date_month_end;
-
-		
-		public bool npc;
 
 		
 		public int price;
@@ -6661,10 +6650,7 @@ public class mpCalls : MonoBehaviour
 		public string myName;
 
 		
-		public bool playerConsole;
-
-		
-		public int multiplaySlot;
+		public int ownerID;
 
 		
 		public int gameID;
@@ -7672,10 +7658,7 @@ public class mpCalls : MonoBehaviour
 		public int myID;
 
 		
-		public bool playerEngine;
-
-		
-		public int multiplayerSlot;
+		public int ownerID;
 
 		
 		public bool isUnlocked;
@@ -7769,6 +7752,9 @@ public class mpCalls : MonoBehaviour
 	public struct s_Firmenwert : NetworkMessage
 	{
 		
+		public int[] publisherID;
+
+		
 		public long[] firmenwert;
 	}
 
@@ -7834,6 +7820,18 @@ public class mpCalls : MonoBehaviour
 
 		
 		public int lockToBuy;
+
+		
+		public bool isPlayer;
+
+		
+		public int ownerID;
+
+		
+		public int country;
+
+		
+		public int[] awards;
 	}
 
 	
@@ -7910,9 +7908,6 @@ public class mpCalls : MonoBehaviour
 		public long exklusivKonsolenSells;
 
 		
-		public int multiplayerSlot;
-
-		
 		public float ipPunkte;
 
 		
@@ -7978,9 +7973,6 @@ public class mpCalls : MonoBehaviour
 
 		
 		public bool playerGame;
-
-		
-		public int multiplayerSlot;
 
 		
 		public bool inDevelopment;
@@ -8463,15 +8455,6 @@ public class mpCalls : MonoBehaviour
 
 		
 		public string playerName;
-
-		
-		public string companyName;
-
-		
-		public int logo;
-
-		
-		public int country;
 
 		
 		public bool ready;

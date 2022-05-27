@@ -129,7 +129,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		for (int j = 0; j < this.mpCalls_.playersMP.Count; j++)
 		{
 			int playerID = this.mpCalls_.playersMP[j].playerID;
-			if (playerID == this.mpCalls_.myID)
+			if (playerID == this.mS_.myID)
 			{
 				if (this.uiPlayerButtons[j].activeSelf)
 				{
@@ -207,7 +207,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 			if (array[i])
 			{
 				engineScript component = array[i].GetComponent<engineScript>();
-				if (component && component.myID != 0 && component.playerEngine && component.Complete() && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && component.myID != 0 && component.ownerID == this.mS_.myID && component.Complete() && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_EngineSchenken component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_EngineSchenken>();
 					component2.eS_ = component;
@@ -295,7 +295,7 @@ public class Menu_MP_EngineSchenken : MonoBehaviour
 		this.sfx_.PlaySound(3, true);
 		if (this.mpCalls_.isServer)
 		{
-			this.mpCalls_.SERVER_Send_Help(this.mpCalls_.myID, this.mpCalls_.playersMP[this.selectedPlayer].playerID, 1, this.selectedEngine.myID, 0, 0);
+			this.mpCalls_.SERVER_Send_Help(this.mS_.myID, this.mpCalls_.playersMP[this.selectedPlayer].playerID, 1, this.selectedEngine.myID, 0, 0);
 		}
 		else
 		{

@@ -119,7 +119,7 @@ public class Menu_MesseSelectGame : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && (script_.inDevelopment || script_.isOnMarket || script_.schublade) && !script_.typ_contractGame;
+		return script_ && (script_.ownerID == this.mS_.myID || script_.developerID == this.mS_.myID || script_.publisherID == this.mS_.myID) && (script_.inDevelopment || script_.isOnMarket || script_.schublade) && !script_.typ_contractGame;
 	}
 
 	

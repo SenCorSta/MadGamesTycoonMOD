@@ -145,6 +145,7 @@ public class Menu_NewGame : MonoBehaviour
 		list = new List<string>();
 		list.Add(this.tS_.GetText(1770) + " " + this.tS_.GetText(1772));
 		list.Add(this.tS_.GetText(1771));
+		list.Add(this.tS_.GetText(2012));
 		list.Add(this.tS_.GetText(1773));
 		this.uiObjects[8].GetComponent<Dropdown>().ClearOptions();
 		this.uiObjects[8].GetComponent<Dropdown>().AddOptions(list);

@@ -66,8 +66,8 @@ public class Menu_Firmenname : MonoBehaviour
 	public void Init()
 	{
 		this.FindScripts();
-		this.uiObjects[0].GetComponent<InputField>().text = this.mS_.companyName;
-		this.SetLogo(this.mS_.logo);
+		this.uiObjects[0].GetComponent<InputField>().text = this.mS_.GetCompanyName();
+		this.SetLogo(this.mS_.GetCompanyLogoID());
 	}
 
 	
@@ -93,26 +93,9 @@ public class Menu_Firmenname : MonoBehaviour
 			this.guiMain_.MessageBox(this.tS_.GetText(814), false);
 			return;
 		}
-		this.mS_.logo = this.logo;
-		this.mS_.companyName = this.uiObjects[0].GetComponent<InputField>().text;
+		this.mS_.SetCompanyName(this.uiObjects[0].GetComponent<InputField>().text);
+		this.mS_.SetCompanyLogoID(this.logo);
 		this.guiMain_.SetMainGuiData();
-		if (this.mS_.multiplayer)
-		{
-			if (this.mS_.mpCalls_.isServer)
-			{
-				player_mp player_mp = this.mS_.mpCalls_.FindPlayer(this.mS_.mpCalls_.myID);
-				if (player_mp != null)
-				{
-					player_mp.companyName = this.mS_.companyName;
-					player_mp.companyLogo = this.mS_.logo;
-				}
-				this.mS_.mpCalls_.SERVER_Send_PlayerInfos();
-			}
-			if (this.mS_.mpCalls_.isClient)
-			{
-				this.mS_.mpCalls_.CLIENT_Send_PlayerInfos();
-			}
-		}
 		this.BUTTON_Abbrechen();
 	}
 

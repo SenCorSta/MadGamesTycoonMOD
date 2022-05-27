@@ -1181,17 +1181,14 @@ public class characterScript : MonoBehaviour
 			return;
 		}
 		this.AddMotivation(-0.02f * this.mS_.GetDeltaTime());
-		int personal_pausen = this.mS_.personal_pausen;
-		if (personal_pausen != 1)
+		switch (this.mS_.personal_pausen)
 		{
-			if (personal_pausen == 2)
-			{
-				this.AddMotivation(-0.02f * this.mS_.GetDeltaTime());
-			}
-		}
-		else
-		{
+		case 1:
 			this.AddMotivation(-0.01f * this.mS_.GetDeltaTime());
+			break;
+		case 2:
+			this.AddMotivation(-0.02f * this.mS_.GetDeltaTime());
+			break;
 		}
 		if (!this.perks[20] && this.roomS_ && this.roomS_.IsCrunchtimeRead())
 		{
@@ -1374,26 +1371,25 @@ public class characterScript : MonoBehaviour
 		{
 			return;
 		}
-		if (flag)
+		if (!flag)
 		{
-			return;
-		}
-		switch (UnityEngine.Random.Range(0, 4))
-		{
-		case 0:
-			this.GoToGhostObject(4, false);
-			return;
-		case 1:
-			this.GoToGhostObject(5, false);
-			return;
-		case 2:
-			this.GoToGhostObject(6, false);
-			return;
-		case 3:
-			this.GoToGhostObject(7, false);
-			return;
-		default:
-			return;
+			switch (UnityEngine.Random.Range(0, 4))
+			{
+			case 0:
+				this.GoToGhostObject(4, false);
+				return;
+			case 1:
+				this.GoToGhostObject(5, false);
+				return;
+			case 2:
+				this.GoToGhostObject(6, false);
+				return;
+			case 3:
+				this.GoToGhostObject(7, false);
+				break;
+			default:
+				return;
+			}
 		}
 	}
 
@@ -2183,17 +2179,14 @@ public class characterScript : MonoBehaviour
 	private float GetWorkSpeed()
 	{
 		float num = 0.01f * ((this.s_motivation + 10f) * 0.5f);
-		int personal_druck = this.mS_.personal_druck;
-		if (personal_druck != 1)
+		switch (this.mS_.personal_druck)
 		{
-			if (personal_druck == 2)
-			{
-				num *= 1.5f;
-			}
-		}
-		else
-		{
+		case 1:
 			num *= 1.25f;
+			break;
+		case 2:
+			num *= 1.5f;
+			break;
 		}
 		if (this.perks[29])
 		{
@@ -2216,17 +2209,14 @@ public class characterScript : MonoBehaviour
 	
 	private float GetWorkResult(float f)
 	{
-		int personal_druck = this.mS_.personal_druck;
-		if (personal_druck != 1)
+		switch (this.mS_.personal_druck)
 		{
-			if (personal_druck == 2)
-			{
-				f *= 0.6f;
-			}
-		}
-		else
-		{
+		case 1:
 			f *= 0.8f;
+			break;
+		case 2:
+			f *= 0.6f;
+			break;
 		}
 		return this.mS_.Round(f, 1);
 	}
@@ -2758,133 +2748,133 @@ public class characterScript : MonoBehaviour
 		}
 		if (rS_.typ == 3)
 		{
-			float num4 = UnityEngine.Random.Range(0.1f, this.s_gamedesign * 0.1f) * num2;
-			num4 = this.GetWorkResult(num4);
+			float num3 = UnityEngine.Random.Range(0.1f, this.s_gamedesign * 0.1f) * num2;
+			num3 = this.GetWorkResult(num3);
 			if (this.perks[28])
 			{
-				num4 *= 2f;
+				num3 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Gameplay, num4, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Gameplay, num3, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num4);
+			taskContractWork.Work(num3);
 			this.Learn(true, false, false, false, false, false, false, false);
 			if (critic)
 			{
-				num4 = UnityEngine.Random.Range(0.1f, this.s_gamedesign * 0.1f);
-				num4 = this.GetWorkResult(num4);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Gameplay, num4, num, 13));
+				num3 = UnityEngine.Random.Range(0.1f, this.s_gamedesign * 0.1f);
+				num3 = this.GetWorkResult(num3);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Gameplay, num3, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num4);
+				taskContractWork.Work(num3);
 			}
 			return true;
 		}
 		if (rS_.typ == 4)
 		{
-			float num5 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f) * num2;
-			num5 = this.GetWorkResult(num5);
+			float num3 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f) * num2;
+			num3 = this.GetWorkResult(num3);
 			if (this.perks[28])
 			{
-				num5 *= 2f;
+				num3 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num5, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num3, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num5);
+			taskContractWork.Work(num3);
 			this.Learn(false, false, true, false, false, false, false, false);
 			if (critic)
 			{
-				num5 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f);
-				num5 = this.GetWorkResult(num5);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num5, num, 13));
+				num3 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f);
+				num3 = this.GetWorkResult(num3);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num3, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num5);
+				taskContractWork.Work(num3);
 			}
 			return true;
 		}
 		if (rS_.typ == 5)
 		{
-			float num6 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f) * num2;
-			num6 = this.GetWorkResult(num6);
+			float num3 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f) * num2;
+			num3 = this.GetWorkResult(num3);
 			if (this.perks[28])
 			{
-				num6 *= 2f;
+				num3 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num6, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num3, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num6);
+			taskContractWork.Work(num3);
 			this.Learn(false, false, false, true, false, false, false, false);
 			if (critic)
 			{
-				num6 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f);
-				num6 = this.GetWorkResult(num6);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num6, num, 13));
+				num3 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f);
+				num3 = this.GetWorkResult(num3);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num3, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num6);
+				taskContractWork.Work(num3);
 			}
 			return true;
 		}
 		if (rS_.typ == 10)
 		{
-			float num7 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f) * num2;
-			num7 = this.GetWorkResult(num7);
+			float num3 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f) * num2;
+			num3 = this.GetWorkResult(num3);
 			if (this.perks[28])
 			{
-				num7 *= 2f;
+				num3 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num7, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num3, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num7);
+			taskContractWork.Work(num3);
 			this.Learn(false, true, false, false, false, false, false, false);
 			if (critic)
 			{
-				num7 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f);
-				num7 = this.GetWorkResult(num7);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num7, num, 13));
+				num3 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f);
+				num3 = this.GetWorkResult(num3);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num3, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num7);
+				taskContractWork.Work(num3);
 			}
 			return true;
 		}
 		if (rS_.typ == 17)
 		{
-			float num8 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f) * num2;
-			num8 = this.GetWorkResult(num8);
+			float num3 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f) * num2;
+			num3 = this.GetWorkResult(num3);
 			if (this.perks[28])
 			{
-				num8 *= 2f;
+				num3 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_ProdArcade, num8, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_ProdArcade, num3, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num8);
+			taskContractWork.Work(num3);
 			this.Learn(false, false, false, false, false, false, true, false);
 			if (critic)
 			{
-				num8 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f);
-				num8 = this.GetWorkResult(num8);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_ProdArcade, num8, num, 13));
+				num3 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f);
+				num3 = this.GetWorkResult(num3);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_ProdArcade, num3, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num8);
+				taskContractWork.Work(num3);
 			}
 			return true;
 		}
 		if (rS_.typ == 8)
 		{
-			float num9 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f) * num2;
-			num9 = this.GetWorkResult(num9);
+			float num3 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f) * num2;
+			num3 = this.GetWorkResult(num3);
 			if (this.perks[28])
 			{
-				num9 *= 2f;
+				num3 *= 2f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Hardware, num9, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Hardware, num3, num, 13));
 			num += 0.4f;
-			taskContractWork.Work(num9);
+			taskContractWork.Work(num3);
 			this.Learn(false, false, false, false, false, false, true, false);
 			if (critic)
 			{
-				num9 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f);
-				num9 = this.GetWorkResult(num9);
-				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Hardware, num9, num, 13));
+				num3 = UnityEngine.Random.Range(0.1f, this.s_technik * 0.1f);
+				num3 = this.GetWorkResult(num3);
+				base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Hardware, num3, num, 13));
 				num += 0.4f;
-				taskContractWork.Work(num9);
+				taskContractWork.Work(num3);
 			}
 			return true;
 		}
@@ -3741,49 +3731,49 @@ public class characterScript : MonoBehaviour
 		}
 		if (num3 == 1 || num4 == 1)
 		{
-			float num7 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f) * num5;
-			num7 = this.GetWorkResult(num7);
+			float num6 = UnityEngine.Random.Range(0.1f, this.s_grafik * 0.1f) * num5;
+			num6 = this.GetWorkResult(num6);
 			if (this.perks[23] && taskGame.gS_.retro)
 			{
-				num7 *= 2f;
+				num6 *= 2f;
 			}
 			if (taskGame.gS_.devPoints <= 0f)
 			{
-				num7 *= 0.1f;
+				num6 *= 0.1f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num7, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Grafik, num6, num, 13));
 			num += 0.4f;
-			taskGame.Work(num7, 1);
+			taskGame.Work(num6, 1);
 			this.Learn(false, false, true, false, false, false, false, false);
 		}
 		if (num3 == 2 || num4 == 2)
 		{
-			float num8 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f) * num5;
-			num8 = this.GetWorkResult(num8);
+			float num6 = UnityEngine.Random.Range(0.1f, this.s_sound * 0.1f) * num5;
+			num6 = this.GetWorkResult(num6);
 			if (taskGame.gS_.devPoints <= 0f)
 			{
-				num8 *= 0.1f;
+				num6 *= 0.1f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num8, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Sound, num6, num, 13));
 			num += 0.4f;
-			taskGame.Work(num8, 2);
+			taskGame.Work(num6, 2);
 			this.Learn(false, false, false, true, false, false, false, false);
 		}
 		if (num3 == 3 || num4 == 3)
 		{
-			float num9 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f) * num5;
-			num9 = this.GetWorkResult(num9);
+			float num6 = UnityEngine.Random.Range(0.1f, this.s_programmieren * 0.1f) * num5;
+			num6 = this.GetWorkResult(num6);
 			if (this.perks[24] && taskGame.gS_.portID != -1)
 			{
-				num9 *= 2f;
+				num6 *= 2f;
 			}
 			if (taskGame.gS_.devPoints <= 0f)
 			{
-				num9 *= 0.1f;
+				num6 *= 0.1f;
 			}
-			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num9, num, 13));
+			base.StartCoroutine(this.CreatePopInSeconds(this.ePop_Technik, num6, num, 13));
 			num += 0.4f;
-			taskGame.Work(num9, 3);
+			taskGame.Work(num6, 3);
 			this.Learn(false, true, false, false, false, false, false, false);
 		}
 		if (this.perks[1] && UnityEngine.Random.Range(0, 30) == 1)
@@ -4078,28 +4068,28 @@ public class characterScript : MonoBehaviour
 						{
 						case 14:
 							num += 1000;
-							goto IL_11C;
+							goto IL_116;
 						case 15:
 							num += 2000;
-							goto IL_11C;
+							goto IL_116;
 						case 18:
 							num -= 500;
-							goto IL_11C;
+							goto IL_116;
 						case 19:
 							num -= 500;
-							goto IL_11C;
+							goto IL_116;
 						case 20:
 							num -= 500;
-							goto IL_11C;
+							goto IL_116;
 						case 21:
 							num -= 500;
-							goto IL_11C;
+							goto IL_116;
 						case 22:
 							num -= 500;
-							goto IL_11C;
+							goto IL_116;
 						case 27:
 							num -= 500;
-							goto IL_11C;
+							goto IL_116;
 						}
 						num += 500;
 					}
@@ -4113,7 +4103,7 @@ public class characterScript : MonoBehaviour
 					num = num;
 				}
 			}
-			IL_11C:;
+			IL_116:;
 		}
 		if (num < 1000)
 		{

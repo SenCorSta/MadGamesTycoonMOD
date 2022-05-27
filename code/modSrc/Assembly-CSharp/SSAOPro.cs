@@ -10,7 +10,7 @@ using UnityEngine;
 public class SSAOPro : MonoBehaviour
 {
 	
-	// (get) Token: 0x06000076 RID: 118 RVA: 0x00002556 File Offset: 0x00000756
+	// (get) Token: 0x06000076 RID: 118 RVA: 0x00004189 File Offset: 0x00002389
 	public Material Material
 	{
 		get
@@ -27,7 +27,7 @@ public class SSAOPro : MonoBehaviour
 	}
 
 	
-	// (get) Token: 0x06000077 RID: 119 RVA: 0x00002585 File Offset: 0x00000785
+	// (get) Token: 0x06000077 RID: 119 RVA: 0x000041B8 File Offset: 0x000023B8
 	public Shader ShaderSSAO
 	{
 		get

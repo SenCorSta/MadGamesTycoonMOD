@@ -88,13 +88,13 @@ public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 	public void Init()
 	{
 		this.FindScripts();
-		this.uiObjects[14].GetComponent<Text>().text = this.tS_.GetText(245) + "<color=blue><b>\n" + this.genres_.GetName(this.mS_.companySpecialGenre) + "</b></color>";
-		this.uiObjects[15].GetComponent<Image>().sprite = this.genres_.GetPic(this.mS_.companySpecialGenre);
+		this.uiObjects[14].GetComponent<Text>().text = this.tS_.GetText(245) + "<color=blue><b>\n" + this.genres_.GetName(this.mS_.GetFanGenreID()) + "</b></color>";
+		this.uiObjects[15].GetComponent<Image>().sprite = this.genres_.GetPic(this.mS_.GetFanGenreID());
 		string text = this.tS_.GetText(481);
 		text = text.Replace("<TIME>", this.mS_.trendWeeks.ToString());
 		this.uiObjects[5].GetComponent<Text>().text = text;
 		text = this.tS_.GetText(1911);
-		text = text.Replace("<NAME>", "<color=blue>" + this.genres_.GetName(this.mS_.companySpecialGenre) + "</color>");
+		text = text.Replace("<NAME>", "<color=blue>" + this.genres_.GetName(this.mS_.GetFanGenreID()) + "</color>");
 		this.uiObjects[8].GetComponent<tooltip>().c = text;
 		for (int i = 0; i < 5; i++)
 		{

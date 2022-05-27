@@ -116,7 +116,7 @@ public class Menu_MesseSelectKonsole : MonoBehaviour
 	
 	public bool CheckGameData(platformScript script_)
 	{
-		return script_ && script_.playerConsole && !script_.vomMarktGenommen;
+		return script_ && script_.ownerID == this.mS_.myID && !script_.vomMarktGenommen;
 	}
 
 	

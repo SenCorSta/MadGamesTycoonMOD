@@ -135,7 +135,7 @@ public class Menu_BuyDevKit : MonoBehaviour
 			if (array[i])
 			{
 				platformScript component = array[i].GetComponent<platformScript>();
-				if (component && component.isUnlocked && component.inBesitz == inBesitz && (component.npc || component.thridPartyGames || component.playerConsole) && (!component.vomMarktGenommen || isOn) && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && component.isUnlocked && component.inBesitz == inBesitz && (component.OwnerIsNPC() || component.thridPartyGames || !component.OwnerIsNPC()) && (!component.vomMarktGenommen || isOn) && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_Platform_BuyDevKit component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_Platform_BuyDevKit>();
 					component2.myID = component.myID;

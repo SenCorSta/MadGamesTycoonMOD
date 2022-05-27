@@ -155,7 +155,7 @@ public class Menu_Dev_SpinoffSelect : MonoBehaviour
 	
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && script_.mainIP == script_.myID && !script_.typ_nachfolger && !script_.pubOffer && !script_.auftragsspiel;
+		return script_ && script_.ownerID == this.mS_.myID && !script_.inDevelopment && script_.mainIP == script_.myID && !script_.typ_nachfolger && !script_.pubOffer && !script_.auftragsspiel;
 	}
 
 	

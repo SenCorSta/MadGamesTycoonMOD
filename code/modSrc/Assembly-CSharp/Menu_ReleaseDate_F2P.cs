@@ -114,7 +114,7 @@ public class Menu_ReleaseDate_F2P : MonoBehaviour
 		}
 		else
 		{
-			this.gS_.SetPublisher(-1);
+			this.gS_.SetPublisher(this.mS_.myID);
 			this.gS_.SetOnMarket();
 			this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[71]);
 			this.guiMain_.uiObjects[71].GetComponent<Menu_Dev_XP>().Init(this.gS_);

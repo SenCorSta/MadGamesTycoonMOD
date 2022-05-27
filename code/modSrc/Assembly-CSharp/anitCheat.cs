@@ -58,7 +58,6 @@ public class anitCheat : MonoBehaviour
 				num++;
 			}
 		}
-		Debug.Log("AntiCheat Amount: " + num.ToString());
 		antiCheatScript antiCheatScript = null;
 		for (int j = 0; j < this.data.Length; j++)
 		{
@@ -176,8 +175,7 @@ public class anitCheat : MonoBehaviour
 				}
 				if (this.ParseData("[EOF]", j))
 				{
-					Debug.Log("AntiCheat.txt -> EOF");
-					return;
+					break;
 				}
 			}
 		}

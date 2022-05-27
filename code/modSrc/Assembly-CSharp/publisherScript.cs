@@ -196,11 +196,15 @@ public class publisherScript : MonoBehaviour
 	
 	public float GetRelation()
 	{
-		if (!this.IsMyTochterfirma())
+		if (this.myID == this.mS_.myID)
 		{
-			return this.relation;
+			return 100f;
 		}
-		return 100f;
+		if (this.IsMyTochterfirma())
+		{
+			return 100f;
+		}
+		return this.relation;
 	}
 
 	
@@ -215,21 +219,27 @@ public class publisherScript : MonoBehaviour
 	}
 
 	
-	public bool IsMyTochterfirma()
+	public bool IsTochterfirma()
 	{
-		return !this.mS_.multiplayer && this.tochterfirma;
+		return this.ownerID != -1;
 	}
 
 	
-	public void SetAsTochterfirma()
+	public bool IsMyTochterfirma()
 	{
-		this.tochterfirma = true;
+		return this.ownerID == this.mS_.myID;
+	}
+
+	
+	public void SetAsTochterfirma(int id_)
+	{
+		this.ownerID = id_;
 	}
 
 	
 	public void RemoveTochterfirma()
 	{
-		this.tochterfirma = false;
+		this.ownerID = -1;
 	}
 
 	
@@ -323,7 +333,7 @@ public class publisherScript : MonoBehaviour
 					num = 48f;
 				}
 				num -= (float)(this.developmentSpeed * 2);
-				if (this.tochterfirma)
+				if (this.IsTochterfirma())
 				{
 					switch (this.tf_entwicklungsdauer)
 					{
@@ -352,7 +362,7 @@ public class publisherScript : MonoBehaviour
 		}
 		else
 		{
-			this.newGameInWeeks = 2;
+			this.newGameInWeeks = 1;
 		}
 		this.newGameInWeeksORG = this.newGameInWeeks;
 	}
@@ -368,7 +378,7 @@ public class publisherScript : MonoBehaviour
 		{
 			return null;
 		}
-		if (this.tochterfirma && this.tf_geschlossen)
+		if (this.IsTochterfirma() && this.tf_geschlossen)
 		{
 			return null;
 		}
@@ -402,8 +412,6 @@ public class publisherScript : MonoBehaviour
 		}
 		bool flag = false;
 		gameScript gameScript = this.games_.CreateNewGame(false, true);
-		gameScript.playerGame = false;
-		gameScript.multiplayerSlot = -1;
 		gameScript.inDevelopment = false;
 		gameScript.developerID = this.myID;
 		gameScript.ownerID = this.myID;
@@ -436,7 +444,7 @@ public class publisherScript : MonoBehaviour
 			num = 3;
 			this.nextGameMMOAddon = false;
 		}
-		if (this.tochterfirma)
+		if (this.IsTochterfirma())
 		{
 			if (!this.tf_allowAddon && num == 2)
 			{
@@ -504,12 +512,22 @@ public class publisherScript : MonoBehaviour
 			}
 			if (num == 6)
 			{
-				for (int i = 0; i < this.tf_ipFocus.Length; i++)
+				int i = 0;
+				while (i < this.tf_ipFocus.Length)
 				{
 					if (this.tf_ipFocus[i] != -1)
 					{
 						num = 0;
+						if (!this.tf_noSpinoffs && UnityEngine.Random.Range(0, 100) > 50)
+						{
+							num = 7;
+							break;
+						}
 						break;
+					}
+					else
+					{
+						i++;
 					}
 				}
 			}
@@ -639,6 +657,7 @@ public class publisherScript : MonoBehaviour
 					if (!gameScript.sonderIP)
 					{
 						this.SetTheme(gameScript);
+						gameScript.gameMainTheme = gameForNachfolger.gameMainTheme;
 					}
 					else
 					{
@@ -751,7 +770,7 @@ public class publisherScript : MonoBehaviour
 			if (addon)
 			{
 				addon.FindMyEngineNew();
-				if (addon.engineS_ && !addon.engineS_.playerEngine && addon.engineS_.multiplayerSlot == -1)
+				if (addon.engineS_ && addon.engineS_.OwnerIsNPC())
 				{
 					flag = true;
 					gameScript.SetMyName(addon.GetNameSimple() + " - " + this.tS_.GetRandomNPCAddonName());
@@ -834,7 +853,7 @@ public class publisherScript : MonoBehaviour
 			if (mmoaddon)
 			{
 				mmoaddon.FindMyEngineNew();
-				if (mmoaddon.engineS_ && !mmoaddon.engineS_.playerEngine && mmoaddon.engineS_.multiplayerSlot == -1)
+				if (mmoaddon.engineS_ && mmoaddon.engineS_.OwnerIsNPC())
 				{
 					flag = true;
 					gameScript.SetMyName(mmoaddon.GetNameSimple() + " - " + this.tS_.GetRandomNPCAddonName());
@@ -912,7 +931,7 @@ public class publisherScript : MonoBehaviour
 			if (gameForBudget && this.publisher)
 			{
 				gameForBudget.FindMyEngineNew();
-				if (gameForBudget.engineS_ && !gameForBudget.engineS_.playerEngine && gameForBudget.engineS_.multiplayerSlot == -1)
+				if (gameForBudget.engineS_ && gameForBudget.engineS_.OwnerIsNPC())
 				{
 					flag = true;
 					gameForBudget.budget_created = true;
@@ -1108,7 +1127,7 @@ public class publisherScript : MonoBehaviour
 			if (goty && this.publisher)
 			{
 				goty.FindMyEngineNew();
-				if (goty.engineS_ && !goty.engineS_.playerEngine && goty.engineS_.multiplayerSlot == -1)
+				if (goty.engineS_ && goty.engineS_.OwnerIsNPC())
 				{
 					flag = true;
 					goty.goty_created = true;
@@ -1200,7 +1219,7 @@ public class publisherScript : MonoBehaviour
 			if (portForHandy && this.unlock_.Get(65))
 			{
 				portForHandy.FindMyEngineNew();
-				if (portForHandy.engineS_ && !portForHandy.engineS_.playerEngine && portForHandy.engineS_.multiplayerSlot == -1)
+				if (portForHandy.engineS_ && portForHandy.engineS_.OwnerIsNPC())
 				{
 					flag = true;
 					portForHandy.portExist[1] = true;
@@ -1280,7 +1299,7 @@ public class publisherScript : MonoBehaviour
 				if (portForArcade && this.publisher)
 				{
 					portForArcade.FindMyEngineNew();
-					if (portForArcade.engineS_ && !portForArcade.engineS_.playerEngine && portForArcade.engineS_.multiplayerSlot == -1)
+					if (portForArcade.engineS_ && portForArcade.engineS_.OwnerIsNPC())
 					{
 						flag = true;
 						portForArcade.portExist[2] = true;
@@ -1363,9 +1382,16 @@ public class publisherScript : MonoBehaviour
 				UnityEngine.Object.Destroy(gameScript.gameObject);
 				this.games_.FindGames();
 			}
+			if (this.IsTochterfirma() && this.amountTrys < 10)
+			{
+				Debug.Log("Amount Trys: " + this.amountTrys.ToString());
+				this.amountTrys++;
+				this.newGameInWeeks = 1;
+				this.CreateNewGame2(forceContractGame);
+			}
 			return null;
 		}
-		if (this.tochterfirma && this.IsMyTochterfirma() && (gameScript.gameTyp == 0 || gameScript.gameTyp == 1) && !gameScript.arcade && !gameScript.handy && (gameScript.typ_standard || gameScript.typ_remaster || gameScript.typ_nachfolger || gameScript.typ_spinoff || gameScript.typ_budget || gameScript.typ_goty || gameScript.typ_addon || gameScript.typ_addonStandalone))
+		if (this.IsTochterfirma() && this.IsMyTochterfirma() && (gameScript.gameTyp == 0 || gameScript.gameTyp == 1) && !gameScript.arcade && !gameScript.handy && (gameScript.typ_standard || gameScript.typ_remaster || gameScript.typ_nachfolger || gameScript.typ_spinoff || gameScript.typ_budget || gameScript.typ_goty || gameScript.typ_addon || gameScript.typ_addonStandalone))
 		{
 			int reviewTotal = gameScript.reviewTotal;
 			if (gameScript.reviewTotal <= 0)
@@ -1396,7 +1422,7 @@ public class publisherScript : MonoBehaviour
 			{
 				script_.verkaufspreis[0] = UnityEngine.Random.Range(400, 800);
 			}
-			if (((this.mS_.globalEvent != 2 && !script_.sonderIP && !this.tochterfirma) || forceContractGame) && script_.engineID == 0 && script_.gameTyp == 0 && !script_.arcade && !script_.handy && !script_.retro && !script_.typ_remaster && !script_.typ_budget && !script_.typ_goty && !script_.typ_bundle && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_mmoaddon && (script_.typ_standard || script_.typ_nachfolger || script_.typ_spinoff) && this.mS_.contractWorkMain_ && (UnityEngine.Random.Range(0, 100) > 80 || (UnityEngine.Random.Range(0, 100) > 50 && this.mS_.contractWorkMain_.anzContractGames < 3) || forceContractGame))
+			if (((this.mS_.globalEvent != 2 && !script_.sonderIP && !this.IsTochterfirma()) || forceContractGame) && script_.engineID == 0 && script_.gameTyp == 0 && !script_.arcade && !script_.handy && !script_.retro && !script_.typ_remaster && !script_.typ_budget && !script_.typ_goty && !script_.typ_bundle && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_mmoaddon && (script_.typ_standard || script_.typ_nachfolger || script_.typ_spinoff) && this.mS_.contractWorkMain_ && (UnityEngine.Random.Range(0, 100) > 80 || (UnityEngine.Random.Range(0, 100) > 50 && this.mS_.contractWorkMain_.anzContractGames < 3) || forceContractGame))
 			{
 				script_.auftragsspiel = true;
 				script_.exklusiv = true;
@@ -1410,7 +1436,7 @@ public class publisherScript : MonoBehaviour
 				this.nextGameMMOAddon = false;
 			}
 		}
-		else if (!this.tochterfirma && this.mS_.pubOffersAmount < this.mS_.GetStudioLevel(this.mS_.studioPoints) / 2 + 1 && UnityEngine.Random.Range(0, 100) > 50 && script_.gameTyp == 0 && !script_.arcade && !script_.handy && !script_.typ_budget && !script_.typ_goty && !script_.typ_bundle && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_mmoaddon && (script_.typ_standard || script_.typ_remaster || script_.typ_nachfolger || script_.typ_spinoff))
+		else if (!this.IsTochterfirma() && this.mS_.pubOffersAmount < this.mS_.GetStudioLevel(this.mS_.studioPoints) / 2 + 1 && UnityEngine.Random.Range(0, 100) > 50 && script_.gameTyp == 0 && !script_.arcade && !script_.handy && !script_.typ_budget && !script_.typ_goty && !script_.typ_bundle && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_mmoaddon && (script_.typ_standard || script_.typ_remaster || script_.typ_nachfolger || script_.typ_spinoff))
 		{
 			this.mS_.pubOffersAmount++;
 			script_.pubAngebot = true;
@@ -1441,7 +1467,7 @@ public class publisherScript : MonoBehaviour
 			script_.FindMyPlatforms();
 			for (int j = 0; j < script_.gamePlatformScript.Length; j++)
 			{
-				if (script_.gamePlatformScript[j] && script_.gamePlatformScript[j].playerConsole)
+				if (script_.gamePlatformScript[j] && script_.gamePlatformScript[j].ownerID == this.mS_.myID)
 				{
 					flag = true;
 					break;
@@ -1493,7 +1519,7 @@ public class publisherScript : MonoBehaviour
 			{
 				num = 1;
 			}
-			if (this.tochterfirma)
+			if (this.IsTochterfirma())
 			{
 				if (!this.tf_allowMMO && num == 0)
 				{
@@ -1534,7 +1560,7 @@ public class publisherScript : MonoBehaviour
 					}
 				}
 			}
-			else if (this.unlock_.Get(21))
+			else if (this.gF_.gameplayFeatures_UNLOCK[23])
 			{
 				script_.gameTyp = 1;
 				script_.aboPreis = 5;
@@ -1563,7 +1589,7 @@ public class publisherScript : MonoBehaviour
 		{
 			num = 3;
 		}
-		if (this.tochterfirma)
+		if (this.IsTochterfirma())
 		{
 			if (this.tf_noArcade && num == 4)
 			{
@@ -1586,7 +1612,7 @@ public class publisherScript : MonoBehaviour
 		{
 			num = 0;
 		}
-		if (this.tochterfirma && this.tf_onlyPlayerConsole)
+		if (this.IsTochterfirma() && this.tf_onlyPlayerConsole)
 		{
 			num = 1;
 			if (UnityEngine.Random.Range(0, 100) > 50)
@@ -1624,7 +1650,7 @@ public class publisherScript : MonoBehaviour
 	
 	private void SetGameSize(gameScript script_)
 	{
-		if (!this.tochterfirma)
+		if (!this.IsTochterfirma())
 		{
 			if (this.mS_.year >= 1978 && (UnityEngine.Random.Range(0, 100) > 50 || script_.sonderIP))
 			{
@@ -1749,7 +1775,7 @@ public class publisherScript : MonoBehaviour
 			if (array[i])
 			{
 				engineScript component = array[i].GetComponent<engineScript>();
-				if (component && component.isUnlocked && !component.playerEngine && component.multiplayerSlot == -1)
+				if (component && component.isUnlocked && component.OwnerIsNPC())
 				{
 					if (num < component.preis)
 					{
@@ -1783,7 +1809,7 @@ public class publisherScript : MonoBehaviour
 					if (UnityEngine.Random.Range(0, 100) < 50)
 					{
 						bool flag = false;
-						if (component2.playerEngine || component2.multiplayerSlot != -1)
+						if (!component2.OwnerIsNPC())
 						{
 							flag = true;
 						}
@@ -1802,7 +1828,7 @@ public class publisherScript : MonoBehaviour
 				}
 			}
 		}
-		if (this.tochterfirma && this.tf_engine != -1 && this.tf_engine != 0)
+		if (this.IsTochterfirma() && this.tf_engine != -1 && this.tf_engine != 0)
 		{
 			GameObject gameObject = GameObject.Find("ENGINE_" + this.tf_engine.ToString());
 			if (gameObject)
@@ -1833,7 +1859,7 @@ public class publisherScript : MonoBehaviour
 			gS_.costs_entwicklung += (long)this.eF_.GetDevCosts(gS_.gameEngineFeature[1]);
 			gS_.costs_entwicklung += (long)this.eF_.GetDevCosts(gS_.gameEngineFeature[2]);
 			gS_.costs_entwicklung += (long)this.eF_.GetDevCosts(gS_.gameEngineFeature[3]);
-			if (engineScript.playerEngine || engineScript.multiplayerSlot != -1)
+			if (!engineScript.OwnerIsNPC())
 			{
 				engineScript.SellPlayerEngine(this);
 			}
@@ -1846,16 +1872,15 @@ public class publisherScript : MonoBehaviour
 		int num = 0;
 		int num2 = 0;
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
-		if (this.tochterfirma)
+		if (this.IsTochterfirma() && !this.tf_onlyPlayerConsole && (this.tf_platformFocus[0] != -1 || this.tf_platformFocus[1] != -1 || this.tf_platformFocus[2] != -1 || this.tf_platformFocus[3] != -1))
 		{
 			for (int n = 0; n < array.Length; n++)
 			{
 				if (array[n])
 				{
 					platformScript component = array[n].GetComponent<platformScript>();
-					if (component && ((gS_.handy && component.typ == 3) || (gS_.arcade && component.typ == 4) || (!gS_.handy && !gS_.arcade && component.typ == 0) || (!gS_.handy && !gS_.arcade && component.typ == 1) || (!gS_.handy && !gS_.arcade && component.typ == 2)) && component.isUnlocked && component.playerConsole && ((gS_.retro && component.vomMarktGenommen) || (!gS_.retro && !component.vomMarktGenommen)) && (gS_.gameTyp == 0 || (gS_.gameTyp == 1 && component.internet) || (gS_.gameTyp == 2 && component.internet)))
+					if (component && (this.tf_platformFocus[0] == component.myID || this.tf_platformFocus[1] == component.myID || this.tf_platformFocus[2] == component.myID || this.tf_platformFocus[3] == component.myID) && ((gS_.handy && component.typ == 3) || (gS_.arcade && component.typ == 4) || (!gS_.handy && !gS_.arcade && component.typ == 0) || (!gS_.handy && !gS_.arcade && component.typ == 1) || (!gS_.handy && !gS_.arcade && component.typ == 2)) && component.isUnlocked && ((gS_.retro && component.vomMarktGenommen) || (!gS_.retro && !component.vomMarktGenommen)) && (gS_.gameTyp == 0 || (gS_.gameTyp == 1 && component.internet) || (gS_.gameTyp == 2 && component.internet)))
 					{
-						num = component.myID;
 						gS_.gamePlatform[num2] = component.myID;
 						gS_.gamePlatformScript[num2] = component;
 						gS_.costs_entwicklung += (long)component.dev_costs;
@@ -1874,33 +1899,16 @@ public class publisherScript : MonoBehaviour
 				}
 			}
 		}
-		if (this.tochterfirma && this.tf_onlyPlayerConsole)
-		{
-			if (num2 != 0)
-			{
-				if (num2 == 1 && gS_.herstellerExklusiv)
-				{
-					gS_.herstellerExklusiv = false;
-					gS_.exklusiv = true;
-				}
-				this.ClearPlatforms(gS_);
-				return;
-			}
-			if (gS_.herstellerExklusiv)
-			{
-				gS_.herstellerExklusiv = false;
-				gS_.exklusiv = true;
-			}
-		}
-		if (this.tochterfirma && !this.tf_onlyPlayerConsole && (this.tf_platformFocus[0] != -1 || this.tf_platformFocus[1] != -1 || this.tf_platformFocus[2] != -1 || this.tf_platformFocus[3] != -1))
+		if (this.IsTochterfirma())
 		{
 			for (int j = 0; j < array.Length; j++)
 			{
 				if (array[j])
 				{
 					platformScript component2 = array[j].GetComponent<platformScript>();
-					if (component2 && (this.tf_platformFocus[0] == component2.myID || this.tf_platformFocus[1] == component2.myID || this.tf_platformFocus[2] == component2.myID || this.tf_platformFocus[3] == component2.myID) && ((gS_.handy && component2.typ == 3) || (gS_.arcade && component2.typ == 4) || (!gS_.handy && !gS_.arcade && component2.typ == 0) || (!gS_.handy && !gS_.arcade && component2.typ == 1) || (!gS_.handy && !gS_.arcade && component2.typ == 2)) && component2.isUnlocked && ((gS_.retro && component2.vomMarktGenommen) || (!gS_.retro && !component2.vomMarktGenommen)) && (gS_.gameTyp == 0 || (gS_.gameTyp == 1 && component2.internet) || (gS_.gameTyp == 2 && component2.internet)))
+					if (component2 && gS_.gamePlatform[0] != component2.myID && gS_.gamePlatform[1] != component2.myID && gS_.gamePlatform[2] != component2.myID && gS_.gamePlatform[3] != component2.myID && ((gS_.handy && component2.typ == 3) || (gS_.arcade && component2.typ == 4) || (!gS_.handy && !gS_.arcade && component2.typ == 0) || (!gS_.handy && !gS_.arcade && component2.typ == 1) || (!gS_.handy && !gS_.arcade && component2.typ == 2)) && component2.isUnlocked && component2.ownerID == this.mS_.myID && ((gS_.retro && component2.vomMarktGenommen) || (!gS_.retro && !component2.vomMarktGenommen)) && (gS_.gameTyp == 0 || (gS_.gameTyp == 1 && component2.internet) || (gS_.gameTyp == 2 && component2.internet)))
 					{
+						num = component2.myID;
 						gS_.gamePlatform[num2] = component2.myID;
 						gS_.gamePlatformScript[num2] = component2;
 						gS_.costs_entwicklung += (long)component2.dev_costs;
@@ -1919,6 +1927,24 @@ public class publisherScript : MonoBehaviour
 				}
 			}
 		}
+		if (this.IsTochterfirma() && this.tf_onlyPlayerConsole)
+		{
+			if (num2 != 0)
+			{
+				if (num2 == 1 && gS_.herstellerExklusiv)
+				{
+					gS_.herstellerExklusiv = false;
+					gS_.exklusiv = true;
+				}
+				this.ClearPlatforms(gS_);
+				return;
+			}
+			if (gS_.herstellerExklusiv)
+			{
+				gS_.herstellerExklusiv = false;
+				gS_.exklusiv = true;
+			}
+		}
 		if (this.ownPlatform)
 		{
 			for (int k = 0; k < array.Length; k++)
@@ -1926,7 +1952,7 @@ public class publisherScript : MonoBehaviour
 				if (array[k])
 				{
 					platformScript component3 = array[k].GetComponent<platformScript>();
-					if (component3 && ((gS_.handy && component3.typ == 3) || (gS_.arcade && component3.typ == 4) || (!gS_.handy && !gS_.arcade && component3.typ == 0) || (!gS_.handy && !gS_.arcade && component3.typ == 1) || (!gS_.handy && !gS_.arcade && component3.typ == 2)) && component3.isUnlocked && ((gS_.retro && component3.vomMarktGenommen) || (!gS_.retro && !component3.vomMarktGenommen)) && (gS_.gameTyp == 0 || (gS_.gameTyp == 1 && component3.internet) || (gS_.gameTyp == 2 && component3.internet)) && component3.npc)
+					if (component3 && gS_.gamePlatform[0] != component3.myID && gS_.gamePlatform[1] != component3.myID && gS_.gamePlatform[2] != component3.myID && gS_.gamePlatform[3] != component3.myID && ((gS_.handy && component3.typ == 3) || (gS_.arcade && component3.typ == 4) || (!gS_.handy && !gS_.arcade && component3.typ == 0) || (!gS_.handy && !gS_.arcade && component3.typ == 1) || (!gS_.handy && !gS_.arcade && component3.typ == 2)) && component3.isUnlocked && ((gS_.retro && component3.vomMarktGenommen) || (!gS_.retro && !component3.vomMarktGenommen)) && (gS_.gameTyp == 0 || (gS_.gameTyp == 1 && component3.internet) || (gS_.gameTyp == 2 && component3.internet)) && component3.OwnerIsNPC())
 					{
 						num = component3.myID;
 						bool flag = false;
@@ -1975,7 +2001,7 @@ public class publisherScript : MonoBehaviour
 			for (int m = 0; m < this.platformList.Count; m++)
 			{
 				platformScript script_ = this.platformList[m].script_;
-				if (script_ && gS_.gamePlatform[0] != script_.myID && gS_.gamePlatform[1] != script_.myID && gS_.gamePlatform[2] != script_.myID && gS_.gamePlatform[3] != script_.myID && ((gS_.handy && script_.typ == 3) || (gS_.arcade && script_.typ == 4) || (!gS_.handy && !gS_.arcade && script_.typ == 0) || (!gS_.handy && !gS_.arcade && script_.typ == 1) || (!gS_.handy && !gS_.arcade && script_.typ == 2)) && script_.isUnlocked && ((gS_.retro && script_.vomMarktGenommen) || (!gS_.retro && !script_.vomMarktGenommen)) && (gS_.gameTyp == 0 || (gS_.gameTyp == 1 && script_.internet) || (gS_.gameTyp == 2 && script_.internet)) && (script_.npc || (script_.thridPartyGames && UnityEngine.Random.Range(0, script_.price) < UnityEngine.Random.Range(0, this.platforms_.GetDurchschnittsDevKitPreis()) && (UnityEngine.Random.Range(0f, 100f + script_.GetMarktanteil()) > 60f || script_.GetMarktanteil() > 30f))))
+				if (script_ && gS_.gamePlatform[0] != script_.myID && gS_.gamePlatform[1] != script_.myID && gS_.gamePlatform[2] != script_.myID && gS_.gamePlatform[3] != script_.myID && ((gS_.handy && script_.typ == 3) || (gS_.arcade && script_.typ == 4) || (!gS_.handy && !gS_.arcade && script_.typ == 0) || (!gS_.handy && !gS_.arcade && script_.typ == 1) || (!gS_.handy && !gS_.arcade && script_.typ == 2)) && script_.isUnlocked && ((gS_.retro && script_.vomMarktGenommen) || (!gS_.retro && !script_.vomMarktGenommen)) && (gS_.gameTyp == 0 || (gS_.gameTyp == 1 && script_.internet) || (gS_.gameTyp == 2 && script_.internet)) && (script_.OwnerIsNPC() || (script_.thridPartyGames && UnityEngine.Random.Range(0, script_.price) < UnityEngine.Random.Range(0, this.platforms_.GetDurchschnittsDevKitPreis()) && (UnityEngine.Random.Range(0f, 100f + script_.GetMarktanteil()) > 60f || script_.GetMarktanteil() > 30f))))
 				{
 					num = script_.myID;
 					bool flag2 = false;
@@ -1983,12 +2009,12 @@ public class publisherScript : MonoBehaviour
 					{
 						flag2 = true;
 					}
-					if (UnityEngine.Random.Range(0, 100) > 50 || script_.playerConsole || script_.multiplaySlot != -1 || flag2)
+					if (UnityEngine.Random.Range(0, 100) > 50 || script_.ownerID == this.mS_.myID || !script_.OwnerIsNPC() || flag2)
 					{
 						gS_.gamePlatform[num2] = script_.myID;
 						gS_.gamePlatformScript[num2] = script_;
 						gS_.costs_entwicklung += (long)script_.dev_costs;
-						if (script_.playerConsole || script_.multiplaySlot != -1)
+						if (!script_.OwnerIsNPC())
 						{
 							script_.SellPlayerKonsoleToNPC(this);
 						}
@@ -2131,7 +2157,7 @@ public class publisherScript : MonoBehaviour
 		script_.points_grafik += UnityEngine.Random.Range(num2, num2 * num);
 		script_.points_sound += UnityEngine.Random.Range(num2, num2 * num);
 		script_.points_technik += UnityEngine.Random.Range(num2, num2 * num);
-		if (this.tochterfirma)
+		if (this.IsTochterfirma())
 		{
 			switch (this.tf_entwicklungsdauer)
 			{
@@ -2156,7 +2182,7 @@ public class publisherScript : MonoBehaviour
 			script_.points_sound *= 0.3f;
 			script_.points_technik *= 0.3f;
 		}
-		if (UnityEngine.Random.Range(0, 100) > 70 && this.stars < 70f && !script_.sonderIP && !this.tochterfirma)
+		if (UnityEngine.Random.Range(0, 100) > 70 && this.stars < 70f && !script_.sonderIP && !this.IsTochterfirma())
 		{
 			script_.points_gameplay *= 0.3f;
 			script_.points_grafik *= 0.3f;
@@ -2164,7 +2190,7 @@ public class publisherScript : MonoBehaviour
 			script_.points_technik *= 0.3f;
 		}
 		script_.points_bugs = 0f;
-		if (this.publisher && !script_.sonderIP && !this.tochterfirma && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_budget && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.typ_goty && !script_.typ_mmoaddon && ((!this.mS_.badGameThisYear && UnityEngine.Random.Range(0, 100) > 70) || (!this.mS_.badGameThisYear && this.mS_.month > 3)))
+		if (this.publisher && !script_.sonderIP && !this.IsTochterfirma() && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_budget && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.typ_goty && !script_.typ_mmoaddon && ((!this.mS_.badGameThisYear && UnityEngine.Random.Range(0, 100) > 70) || (!this.mS_.badGameThisYear && this.mS_.month > 3)))
 		{
 			this.mS_.badGameThisYear = true;
 			script_.points_bugs = (float)UnityEngine.Random.Range(250, 500);
@@ -2214,21 +2240,46 @@ public class publisherScript : MonoBehaviour
 		{
 			for (int i = 0; i < script_.Designschwerpunkt.Length; i++)
 			{
-				script_.Designschwerpunkt[i] = this.genres_.genres_FOCUS[UnityEngine.Random.Range(0, this.genres_.genres_UNLOCK.Length), i];
+				script_.Designschwerpunkt[i] = 0;
 			}
-			for (int j = 0; j < script_.Designausrichtung.Length; j++)
+			int num = 0;
+			for (int j = 0; j < 10000; j++)
 			{
-				script_.Designausrichtung[j] = UnityEngine.Random.Range(0, 11);
+				int num2 = UnityEngine.Random.Range(0, script_.Designschwerpunkt.Length);
+				if (script_.Designschwerpunkt[num2] < 10)
+				{
+					script_.Designschwerpunkt[num2]++;
+					num++;
+				}
+				if (num >= 40)
+				{
+					break;
+				}
+				if (j >= 9999)
+				{
+					Debug.Log(string.Concat(new object[]
+					{
+						"NOTAUSSTIEG! ",
+						script_.GetNameSimple(),
+						" / ",
+						script_.myID
+					}));
+					break;
+				}
+			}
+			for (int k = 0; k < script_.Designausrichtung.Length; k++)
+			{
+				script_.Designausrichtung[k] = UnityEngine.Random.Range(0, 11);
 			}
 			return;
 		}
-		for (int k = 0; k < script_.Designschwerpunkt.Length; k++)
+		for (int l = 0; l < script_.Designschwerpunkt.Length; l++)
 		{
-			script_.Designschwerpunkt[k] = this.genres_.genres_FOCUS[script_.maingenre, k];
+			script_.Designschwerpunkt[l] = this.genres_.genres_FOCUS[script_.maingenre, l];
 		}
-		for (int l = 0; l < script_.Designausrichtung.Length; l++)
+		for (int m = 0; m < script_.Designausrichtung.Length; m++)
 		{
-			script_.Designausrichtung[l] = UnityEngine.Random.Range(0, 11);
+			script_.Designausrichtung[m] = UnityEngine.Random.Range(0, 11);
 		}
 	}
 
@@ -2257,7 +2308,7 @@ public class publisherScript : MonoBehaviour
 				break;
 			}
 		}
-		if (this.tochterfirma && this.tf_gameGenre != 0 && this.genres_.genres_UNLOCK[this.tf_gameGenre - 1])
+		if (this.IsTochterfirma() && this.tf_gameGenre != 0 && this.genres_.genres_UNLOCK[this.tf_gameGenre - 1])
 		{
 			script_.maingenre = this.tf_gameGenre - 1;
 		}
@@ -2351,7 +2402,7 @@ public class publisherScript : MonoBehaviour
 				break;
 			}
 		}
-		if (this.tochterfirma && this.tf_gameTopic != -1)
+		if (this.IsTochterfirma() && this.tf_gameTopic != -1)
 		{
 			script_.gameMainTheme = this.tf_gameTopic;
 		}
@@ -2389,7 +2440,7 @@ public class publisherScript : MonoBehaviour
 	
 	private bool IpFokusCheck(gameScript script_)
 	{
-		if (!this.tochterfirma)
+		if (!this.IsTochterfirma())
 		{
 			return true;
 		}
@@ -2413,7 +2464,7 @@ public class publisherScript : MonoBehaviour
 		List<gameScript> list = new List<gameScript>();
 		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
 		{
-			if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].IsMyIP(this) && this.IpFokusCheck(this.games_.arrayGamesScripts[i]) && !this.games_.arrayGamesScripts[i].inDevelopment && this.games_.arrayGamesScripts[i].portID == -1 && !this.games_.arrayGamesScripts[i].pubAngebot && !this.games_.arrayGamesScripts[i].auftragsspiel && !this.games_.arrayGamesScripts[i].isOnMarket && this.games_.arrayGamesScripts[i].sellsTotal > 1000L && !this.games_.arrayGamesScripts[i].nachfolger_created && !this.games_.arrayGamesScripts[i].sonderIP && this.games_.arrayGamesScripts[i].typ_standard && this.games_.arrayGamesScripts[i].mainIP == this.games_.arrayGamesScripts[i].myID)
+			if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].IsMyIP(this) && this.IpFokusCheck(this.games_.arrayGamesScripts[i]) && !this.games_.arrayGamesScripts[i].inDevelopment && this.games_.arrayGamesScripts[i].portID == -1 && !this.games_.arrayGamesScripts[i].pubAngebot && !this.games_.arrayGamesScripts[i].auftragsspiel && this.games_.arrayGamesScripts[i].sellsTotal > 1000L && !this.games_.arrayGamesScripts[i].nachfolger_created && !this.games_.arrayGamesScripts[i].sonderIP && this.games_.arrayGamesScripts[i].typ_standard && this.games_.arrayGamesScripts[i].mainIP == this.games_.arrayGamesScripts[i].myID)
 			{
 				list.Add(this.games_.arrayGamesScripts[i]);
 				if (this.games_.arrayGamesScripts[i].reviewTotal > 70)
@@ -2591,7 +2642,7 @@ public class publisherScript : MonoBehaviour
 		if (UnityEngine.Random.Range(0, 20) == 1)
 		{
 			this.exklusivLaufzeit = 12 * UnityEngine.Random.Range(2, 11);
-			if (!this.tochterfirma)
+			if (!this.IsTochterfirma())
 			{
 				int num = UnityEngine.Random.Range(0, this.genres_.genres_LEVEL.Length);
 				if (this.genres_.genres_UNLOCK[num])
@@ -2613,7 +2664,7 @@ public class publisherScript : MonoBehaviour
 	
 	public bool TochterfirmaGeschlossen()
 	{
-		return this.tochterfirma && (!this.tochterfirma || this.tf_geschlossen) && (this.tochterfirma && this.tf_geschlossen);
+		return this.IsTochterfirma() && (!this.IsTochterfirma() || this.tf_geschlossen) && (this.IsTochterfirma() && this.tf_geschlossen);
 	}
 
 	
@@ -2666,11 +2717,16 @@ public class publisherScript : MonoBehaviour
 	public string GetTooltip()
 	{
 		string text = "<b><size=18>" + this.GetName() + "</size></b>";
+		if (this.isPlayer)
+		{
+			text = text + "\n<b><size=15><color=green>" + this.tS_.GetText(2004) + "</color></size></b>";
+		}
 		if (this.IsMyTochterfirma())
 		{
 			text = text + "\n<b><size=15><color=green>" + this.tS_.GetText(1924) + "</color></size></b>";
 		}
 		text = text + "\n<b>" + this.GetDeveloperPublisherString() + "</b>";
+		text = text + "\n<b>" + this.tS_.GetCountry(this.country) + "</b>";
 		text = text + "\n<b>" + this.GetDateString() + "</b>";
 		if (this.publisher)
 		{
@@ -2687,6 +2743,15 @@ public class publisherScript : MonoBehaviour
 				this.tS_.GetText(437),
 				": <color=blue>",
 				this.genres_.GetName(this.fanGenre),
+				"</color>"
+			});
+			text = string.Concat(new string[]
+			{
+				text,
+				"\n",
+				this.tS_.GetText(271),
+				": <color=blue>",
+				this.mS_.GetMoney((long)Mathf.RoundToInt((float)this.GetAmountGames()), false),
 				"</color>"
 			});
 			text = string.Concat(new string[]
@@ -2787,7 +2852,7 @@ public class publisherScript : MonoBehaviour
 		{
 			for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
 			{
-				if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].publisherID == this.myID && !this.games_.arrayGamesScripts[i].pubAngebot && !this.games_.arrayGamesScripts[i].auftragsspiel)
+				if (this.games_.arrayGamesScripts[i] && this.games_.arrayGamesScripts[i].publisherID == this.myID && this.games_.arrayGamesScripts[i].ownerID != this.myID && !this.games_.arrayGamesScripts[i].pubAngebot && !this.games_.arrayGamesScripts[i].auftragsspiel)
 				{
 					num++;
 				}
@@ -2899,6 +2964,12 @@ public class publisherScript : MonoBehaviour
 	public bool isUnlocked;
 
 	
+	public bool isPlayer;
+
+	
+	public int ownerID;
+
+	
 	public string name_EN;
 
 	
@@ -2971,13 +3042,13 @@ public class publisherScript : MonoBehaviour
 	public bool notForSale;
 
 	
-	public bool tochterfirma;
-
-	
 	public int lockToBuy;
 
 	
-	public int multiplayerID;
+	public int country;
+
+	
+	public int[] awards;
 
 	
 	public bool tf_geschlossen;
@@ -3056,6 +3127,15 @@ public class publisherScript : MonoBehaviour
 
 	
 	public int[] tf_platformFocus;
+
+	
+	public long awards_bestStudioPoints;
+
+	
+	public long awards_bestPublisherPoints;
+
+	
+	public int amountTrys;
 
 	
 	private bool nextGameAddon;

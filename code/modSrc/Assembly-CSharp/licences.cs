@@ -39,7 +39,6 @@ public class licences : MonoBehaviour
 		{
 			"\n"[0]
 		});
-		Debug.Log("Licence Amount: " + this.data.Length.ToString());
 		int num = this.data.Length;
 		this.licence_EN = new string[num];
 		this.licence_TYP = new int[num];
