@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200017E RID: 382
 public class Menu_OverwriteSavegame : MonoBehaviour
 {
-	// Token: 0x06000E5C RID: 3676 RVA: 0x0009B54C File Offset: 0x0009974C
+	// Token: 0x06000E5C RID: 3676 RVA: 0x0009B558 File Offset: 0x00099758
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000E5D RID: 3677 RVA: 0x0009B554 File Offset: 0x00099754
+	// Token: 0x06000E5D RID: 3677 RVA: 0x0009B560 File Offset: 0x00099760
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,21 +36,21 @@ public class Menu_OverwriteSavegame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E5E RID: 3678 RVA: 0x0009B5FE File Offset: 0x000997FE
+	// Token: 0x06000E5E RID: 3678 RVA: 0x0009B60A File Offset: 0x0009980A
 	public void Init(int slot_, string saveGameName)
 	{
 		this.slot = slot_;
 		this.uiObjects[0].GetComponent<Text>().text = saveGameName;
 	}
 
-	// Token: 0x06000E5F RID: 3679 RVA: 0x0009B61A File Offset: 0x0009981A
+	// Token: 0x06000E5F RID: 3679 RVA: 0x0009B626 File Offset: 0x00099826
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000E60 RID: 3680 RVA: 0x0009B638 File Offset: 0x00099838
+	// Token: 0x06000E60 RID: 3680 RVA: 0x0009B644 File Offset: 0x00099844
 	public void BUTTON_Yes()
 	{
 		ES3.DeleteFile(this.mS_.GetSavegameTitle() + this.slot.ToString() + ".txt");

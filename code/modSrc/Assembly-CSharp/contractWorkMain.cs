@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000329 RID: 809
 public class contractWorkMain : MonoBehaviour
 {
-	// Token: 0x06001CC0 RID: 7360 RVA: 0x0011D4CE File Offset: 0x0011B6CE
+	// Token: 0x06001CC0 RID: 7360 RVA: 0x0011D4EA File Offset: 0x0011B6EA
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001CC1 RID: 7361 RVA: 0x0011D4D8 File Offset: 0x0011B6D8
+	// Token: 0x06001CC1 RID: 7361 RVA: 0x0011D4F4 File Offset: 0x0011B6F4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -56,7 +56,7 @@ public class contractWorkMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001CC2 RID: 7362 RVA: 0x0011D614 File Offset: 0x0011B814
+	// Token: 0x06001CC2 RID: 7362 RVA: 0x0011D630 File Offset: 0x0011B830
 	public contractAuftragsspiel CreateContractGame()
 	{
 		contractAuftragsspiel component = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[1]).GetComponent<contractAuftragsspiel>();
@@ -66,7 +66,7 @@ public class contractWorkMain : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x06001CC3 RID: 7363 RVA: 0x0011D64C File Offset: 0x0011B84C
+	// Token: 0x06001CC3 RID: 7363 RVA: 0x0011D668 File Offset: 0x0011B868
 	public contractWork CreateContractWork()
 	{
 		contractWork component = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0]).GetComponent<contractWork>();
@@ -81,7 +81,7 @@ public class contractWorkMain : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001CC5 RID: 7365 RVA: 0x0011D684 File Offset: 0x0011B884
+	// Token: 0x06001CC5 RID: 7365 RVA: 0x0011D6A0 File Offset: 0x0011B8A0
 	private int GetGameSize()
 	{
 		if (this.fS_.IsErforscht(0) && UnityEngine.Random.Range(0, 100) > 70)
@@ -103,7 +103,7 @@ public class contractWorkMain : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001CC6 RID: 7366 RVA: 0x0011D738 File Offset: 0x0011B938
+	// Token: 0x06001CC6 RID: 7366 RVA: 0x0011D754 File Offset: 0x0011B954
 	private int GetGameGenre()
 	{
 		int result = 0;
@@ -121,7 +121,7 @@ public class contractWorkMain : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001CC7 RID: 7367 RVA: 0x0011D780 File Offset: 0x0011B980
+	// Token: 0x06001CC7 RID: 7367 RVA: 0x0011D79C File Offset: 0x0011B99C
 	private int GetPlatform()
 	{
 		int result = 0;
@@ -144,7 +144,7 @@ public class contractWorkMain : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001CC8 RID: 7368 RVA: 0x0011D800 File Offset: 0x0011BA00
+	// Token: 0x06001CC8 RID: 7368 RVA: 0x0011D81C File Offset: 0x0011BA1C
 	public void UpdateContractWork(bool forceNewContract)
 	{
 		this.FindScripts();
@@ -314,7 +314,7 @@ public class contractWorkMain : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x06001CC9 RID: 7369 RVA: 0x0011DE4C File Offset: 0x0011C04C
+	// Token: 0x06001CC9 RID: 7369 RVA: 0x0011DE68 File Offset: 0x0011C068
 	private int GetRandomPublisherID()
 	{
 		int num = 0;
@@ -346,7 +346,7 @@ public class contractWorkMain : MonoBehaviour
 		return 3;
 	}
 
-	// Token: 0x06001CCA RID: 7370 RVA: 0x0011DECC File Offset: 0x0011C0CC
+	// Token: 0x06001CCA RID: 7370 RVA: 0x0011DEE8 File Offset: 0x0011C0E8
 	public void UpdateGUI()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("ContractWork");

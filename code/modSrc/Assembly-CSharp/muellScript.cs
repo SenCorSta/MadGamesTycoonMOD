@@ -4,14 +4,14 @@ using UnityEngine;
 // Token: 0x020002F9 RID: 761
 public class muellScript : MonoBehaviour
 {
-	// Token: 0x06001AB5 RID: 6837 RVA: 0x0010CFD5 File Offset: 0x0010B1D5
+	// Token: 0x06001AB5 RID: 6837 RVA: 0x0010CFF1 File Offset: 0x0010B1F1
 	private void Start()
 	{
 		this.FindScripts();
 		this.mS_.findMuell = true;
 	}
 
-	// Token: 0x06001AB6 RID: 6838 RVA: 0x0010CFE9 File Offset: 0x0010B1E9
+	// Token: 0x06001AB6 RID: 6838 RVA: 0x0010D005 File Offset: 0x0010B205
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -24,7 +24,7 @@ public class muellScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AB7 RID: 6839 RVA: 0x0010D026 File Offset: 0x0010B226
+	// Token: 0x06001AB7 RID: 6839 RVA: 0x0010D042 File Offset: 0x0010B242
 	private void OnDestroy()
 	{
 		if (this.mS_)

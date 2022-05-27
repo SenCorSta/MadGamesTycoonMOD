@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x020001BE RID: 446
 public class Menu_Awards : MonoBehaviour
 {
-	// Token: 0x060010CF RID: 4303 RVA: 0x000B2363 File Offset: 0x000B0563
+	// Token: 0x060010CF RID: 4303 RVA: 0x000B236F File Offset: 0x000B056F
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010D0 RID: 4304 RVA: 0x000B236C File Offset: 0x000B056C
+	// Token: 0x060010D0 RID: 4304 RVA: 0x000B2378 File Offset: 0x000B0578
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class Menu_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D1 RID: 4305 RVA: 0x000B2492 File Offset: 0x000B0692
+	// Token: 0x060010D1 RID: 4305 RVA: 0x000B249E File Offset: 0x000B069E
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -62,7 +62,7 @@ public class Menu_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D2 RID: 4306 RVA: 0x000B24B0 File Offset: 0x000B06B0
+	// Token: 0x060010D2 RID: 4306 RVA: 0x000B24BC File Offset: 0x000B06BC
 	public void Multiplayer_FindWinners(int IDbestGrafik, int IDbestSound, int IDbestStudio, int IDbestPublisher, int IDbestGame, int IDbadGame)
 	{
 		this.bestGrafik = null;
@@ -113,7 +113,7 @@ public class Menu_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D3 RID: 4307 RVA: 0x000B259C File Offset: 0x000B079C
+	// Token: 0x060010D3 RID: 4307 RVA: 0x000B25A8 File Offset: 0x000B07A8
 	public void Init()
 	{
 		this.FindScripts();
@@ -185,7 +185,7 @@ public class Menu_Awards : MonoBehaviour
 		base.StartCoroutine(this.ShowAwards());
 	}
 
-	// Token: 0x060010D4 RID: 4308 RVA: 0x000B284C File Offset: 0x000B0A4C
+	// Token: 0x060010D4 RID: 4308 RVA: 0x000B2858 File Offset: 0x000B0A58
 	private void AddVerlauf()
 	{
 		int bestGrafik_ = -1;
@@ -221,7 +221,7 @@ public class Menu_Awards : MonoBehaviour
 		this.mS_.AddMadGameConvetionVerlauf(bestGrafik_, bestSound_, bestStudio_, bestPublisher_, bestGame_, badBame_);
 	}
 
-	// Token: 0x060010D5 RID: 4309 RVA: 0x000B2912 File Offset: 0x000B0B12
+	// Token: 0x060010D5 RID: 4309 RVA: 0x000B291E File Offset: 0x000B0B1E
 	private IEnumerator ShowAwards()
 	{
 		if (this.mS_.settings_ && this.mS_.settings_.hideAwards)
@@ -516,7 +516,7 @@ public class Menu_Awards : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060010D6 RID: 4310 RVA: 0x000B2924 File Offset: 0x000B0B24
+	// Token: 0x060010D6 RID: 4310 RVA: 0x000B2930 File Offset: 0x000B0B30
 	private void SetAsTeilgenommen()
 	{
 		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
@@ -528,13 +528,13 @@ public class Menu_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D7 RID: 4311 RVA: 0x000B2988 File Offset: 0x000B0B88
+	// Token: 0x060010D7 RID: 4311 RVA: 0x000B2994 File Offset: 0x000B0B94
 	private bool CheckGame(gameScript script_)
 	{
 		return script_ && !script_.inDevelopment && !script_.schublade && !script_.pubAngebot && !script_.auftragsspiel && (script_.typ_standard || script_.typ_nachfolger || script_.typ_remaster || script_.typ_spinoff) && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_mmoaddon && !script_.typ_bundle && !script_.typ_budget && !script_.typ_bundleAddon && !script_.typ_goty && script_.weeksOnMarket > 0;
 	}
 
-	// Token: 0x060010D8 RID: 4312 RVA: 0x000B2A24 File Offset: 0x000B0C24
+	// Token: 0x060010D8 RID: 4312 RVA: 0x000B2A30 File Offset: 0x000B0C30
 	private gameScript GetBesteGrafik()
 	{
 		int num = -1;
@@ -562,7 +562,7 @@ public class Menu_Awards : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060010D9 RID: 4313 RVA: 0x000B2B18 File Offset: 0x000B0D18
+	// Token: 0x060010D9 RID: 4313 RVA: 0x000B2B24 File Offset: 0x000B0D24
 	private gameScript GetBesterSound()
 	{
 		int num = -1;
@@ -590,7 +590,7 @@ public class Menu_Awards : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060010DA RID: 4314 RVA: 0x000B2C0C File Offset: 0x000B0E0C
+	// Token: 0x060010DA RID: 4314 RVA: 0x000B2C18 File Offset: 0x000B0E18
 	private gameScript GetBestesSpiel()
 	{
 		int num = -1;
@@ -622,7 +622,7 @@ public class Menu_Awards : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060010DB RID: 4315 RVA: 0x000B2D08 File Offset: 0x000B0F08
+	// Token: 0x060010DB RID: 4315 RVA: 0x000B2D14 File Offset: 0x000B0F14
 	private gameScript GetBadGame(gameScript bestGame_)
 	{
 		int num = -1;
@@ -654,7 +654,7 @@ public class Menu_Awards : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060010DC RID: 4316 RVA: 0x000B2E30 File Offset: 0x000B1030
+	// Token: 0x060010DC RID: 4316 RVA: 0x000B2E3C File Offset: 0x000B103C
 	private publisherScript GetBestesStudio()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
@@ -701,7 +701,7 @@ public class Menu_Awards : MonoBehaviour
 		return publisherScript;
 	}
 
-	// Token: 0x060010DD RID: 4317 RVA: 0x000B3094 File Offset: 0x000B1294
+	// Token: 0x060010DD RID: 4317 RVA: 0x000B30A0 File Offset: 0x000B12A0
 	private publisherScript GetBesterPublisher()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
@@ -719,13 +719,13 @@ public class Menu_Awards : MonoBehaviour
 				}
 				if (this.games_.arrayGamesScripts[j].pS_)
 				{
-					if (!this.games_.arrayGamesScripts[j].devS_.isPlayer)
+					if (!this.games_.arrayGamesScripts[j].pS_.isPlayer)
 					{
-						this.games_.arrayGamesScripts[j].devS_.awards_bestPublisherPoints += this.games_.arrayGamesScripts[j].sellsTotal;
+						this.games_.arrayGamesScripts[j].pS_.awards_bestPublisherPoints += this.games_.arrayGamesScripts[j].sellsTotal;
 					}
 					else if (this.games_.arrayGamesScripts[j].reviewTotal >= 80)
 					{
-						this.games_.arrayGamesScripts[j].devS_.awards_bestPublisherPoints += this.games_.arrayGamesScripts[j].sellsTotal;
+						this.games_.arrayGamesScripts[j].pS_.awards_bestPublisherPoints += this.games_.arrayGamesScripts[j].sellsTotal;
 					}
 				}
 			}
@@ -748,7 +748,7 @@ public class Menu_Awards : MonoBehaviour
 		return publisherScript;
 	}
 
-	// Token: 0x060010DE RID: 4318 RVA: 0x000B3326 File Offset: 0x000B1526
+	// Token: 0x060010DE RID: 4318 RVA: 0x000B3332 File Offset: 0x000B1532
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -761,7 +761,7 @@ public class Menu_Awards : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060010DF RID: 4319 RVA: 0x000B3365 File Offset: 0x000B1565
+	// Token: 0x060010DF RID: 4319 RVA: 0x000B3371 File Offset: 0x000B1571
 	public void BUTTON_Yes()
 	{
 		this.BUTTON_Abbrechen();

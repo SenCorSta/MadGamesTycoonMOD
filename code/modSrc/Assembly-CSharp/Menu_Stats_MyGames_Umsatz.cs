@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x0200024B RID: 587
 public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 {
-	// Token: 0x060016C2 RID: 5826 RVA: 0x000E52BA File Offset: 0x000E34BA
+	// Token: 0x060016C2 RID: 5826 RVA: 0x000E52E6 File Offset: 0x000E34E6
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060016C3 RID: 5827 RVA: 0x000E52C4 File Offset: 0x000E34C4
+	// Token: 0x060016C3 RID: 5827 RVA: 0x000E52F0 File Offset: 0x000E34F0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060016C4 RID: 5828 RVA: 0x000E538C File Offset: 0x000E358C
+	// Token: 0x060016C4 RID: 5828 RVA: 0x000E53B8 File Offset: 0x000E35B8
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -51,7 +51,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060016C5 RID: 5829 RVA: 0x000E53C4 File Offset: 0x000E35C4
+	// Token: 0x060016C5 RID: 5829 RVA: 0x000E53F0 File Offset: 0x000E35F0
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -67,7 +67,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060016C6 RID: 5830 RVA: 0x000E5410 File Offset: 0x000E3610
+	// Token: 0x060016C6 RID: 5830 RVA: 0x000E543C File Offset: 0x000E363C
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -80,13 +80,13 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060016C7 RID: 5831 RVA: 0x000E546C File Offset: 0x000E366C
+	// Token: 0x060016C7 RID: 5831 RVA: 0x000E5498 File Offset: 0x000E3698
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060016C8 RID: 5832 RVA: 0x000E5474 File Offset: 0x000E3674
+	// Token: 0x060016C8 RID: 5832 RVA: 0x000E54A0 File Offset: 0x000E36A0
 	public void Init()
 	{
 		this.FindScripts();
@@ -94,7 +94,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060016C9 RID: 5833 RVA: 0x000E5488 File Offset: 0x000E3688
+	// Token: 0x060016C9 RID: 5833 RVA: 0x000E54B4 File Offset: 0x000E36B4
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[4].name);
@@ -110,7 +110,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.uiObjects[4].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x060016CA RID: 5834 RVA: 0x000E5558 File Offset: 0x000E3758
+	// Token: 0x060016CA RID: 5834 RVA: 0x000E5584 File Offset: 0x000E3784
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -139,7 +139,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x060016CB RID: 5835 RVA: 0x000E56B8 File Offset: 0x000E38B8
+	// Token: 0x060016CB RID: 5835 RVA: 0x000E56E4 File Offset: 0x000E38E4
 	public bool CheckGameData(gameScript script_)
 	{
 		if (script_ && (script_.ownerID == this.mS_.myID || script_.publisherID == this.mS_.myID))
@@ -156,14 +156,14 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060016CC RID: 5836 RVA: 0x000E572F File Offset: 0x000E392F
+	// Token: 0x060016CC RID: 5836 RVA: 0x000E575B File Offset: 0x000E395B
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060016CD RID: 5837 RVA: 0x000E574C File Offset: 0x000E394C
+	// Token: 0x060016CD RID: 5837 RVA: 0x000E5778 File Offset: 0x000E3978
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[4].GetComponent<Dropdown>().value;
@@ -198,7 +198,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x060016CE RID: 5838 RVA: 0x000E5888 File Offset: 0x000E3A88
+	// Token: 0x060016CE RID: 5838 RVA: 0x000E58B4 File Offset: 0x000E3AB4
 	public void TOGGLE_OnlyMyGames()
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)

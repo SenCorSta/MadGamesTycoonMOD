@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x020002F3 RID: 755
 public class lockDestroy : MonoBehaviour
 {
-	// Token: 0x06001A98 RID: 6808 RVA: 0x0010BEA8 File Offset: 0x0010A0A8
+	// Token: 0x06001A98 RID: 6808 RVA: 0x0010BEC4 File Offset: 0x0010A0C4
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001A99 RID: 6809 RVA: 0x0010BEB0 File Offset: 0x0010A0B0
+	// Token: 0x06001A99 RID: 6809 RVA: 0x0010BECC File Offset: 0x0010A0CC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -35,7 +35,7 @@ public class lockDestroy : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A9A RID: 6810 RVA: 0x0010BF54 File Offset: 0x0010A154
+	// Token: 0x06001A9A RID: 6810 RVA: 0x0010BF70 File Offset: 0x0010A170
 	private void OnEnable()
 	{
 		this.FindScripts();

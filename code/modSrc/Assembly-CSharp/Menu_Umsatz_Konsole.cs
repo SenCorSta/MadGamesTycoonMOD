@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200019C RID: 412
 public class Menu_Umsatz_Konsole : MonoBehaviour
 {
-	// Token: 0x06000F9F RID: 3999 RVA: 0x000A645F File Offset: 0x000A465F
+	// Token: 0x06000F9F RID: 3999 RVA: 0x000A646B File Offset: 0x000A466B
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FA0 RID: 4000 RVA: 0x000A6468 File Offset: 0x000A4668
+	// Token: 0x06000FA0 RID: 4000 RVA: 0x000A6474 File Offset: 0x000A4674
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -72,7 +72,7 @@ public class Menu_Umsatz_Konsole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FA1 RID: 4001 RVA: 0x000A6624 File Offset: 0x000A4824
+	// Token: 0x06000FA1 RID: 4001 RVA: 0x000A6630 File Offset: 0x000A4830
 	public void Init(platformScript plat_)
 	{
 		this.FindScripts();
@@ -117,7 +117,7 @@ public class Menu_Umsatz_Konsole : MonoBehaviour
 		this.uiObjects[5].GetComponent<Text>().text = "<color=green>" + this.mS_.GetMoney(this.pS_.GetGesamtGewinn(), true) + "</color>";
 	}
 
-	// Token: 0x06000FA2 RID: 4002 RVA: 0x000A691E File Offset: 0x000A4B1E
+	// Token: 0x06000FA2 RID: 4002 RVA: 0x000A692A File Offset: 0x000A4B2A
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -126,7 +126,7 @@ public class Menu_Umsatz_Konsole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FA3 RID: 4003 RVA: 0x000A693C File Offset: 0x000A4B3C
+	// Token: 0x06000FA3 RID: 4003 RVA: 0x000A6948 File Offset: 0x000A4B48
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);

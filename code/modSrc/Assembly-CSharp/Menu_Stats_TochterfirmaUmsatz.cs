@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200025E RID: 606
 public class Menu_Stats_TochterfirmaUmsatz : MonoBehaviour
 {
-	// Token: 0x0600179F RID: 6047 RVA: 0x000ED1F9 File Offset: 0x000EB3F9
+	// Token: 0x0600179F RID: 6047 RVA: 0x000ED225 File Offset: 0x000EB425
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060017A0 RID: 6048 RVA: 0x000ED204 File Offset: 0x000EB404
+	// Token: 0x060017A0 RID: 6048 RVA: 0x000ED230 File Offset: 0x000EB430
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_Stats_TochterfirmaUmsatz : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017A1 RID: 6049 RVA: 0x000ED2B0 File Offset: 0x000EB4B0
+	// Token: 0x060017A1 RID: 6049 RVA: 0x000ED2DC File Offset: 0x000EB4DC
 	public void Init(publisherScript script_)
 	{
 		this.FindScripts();
@@ -53,7 +53,7 @@ public class Menu_Stats_TochterfirmaUmsatz : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017A2 RID: 6050 RVA: 0x000ED364 File Offset: 0x000EB564
+	// Token: 0x060017A2 RID: 6050 RVA: 0x000ED390 File Offset: 0x000EB590
 	private long InitBalken()
 	{
 		long num = 0L;
@@ -95,7 +95,7 @@ public class Menu_Stats_TochterfirmaUmsatz : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060017A3 RID: 6051 RVA: 0x000ED4E5 File Offset: 0x000EB6E5
+	// Token: 0x060017A3 RID: 6051 RVA: 0x000ED511 File Offset: 0x000EB711
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);

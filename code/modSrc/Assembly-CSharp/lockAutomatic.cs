@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x020002F2 RID: 754
 public class lockAutomatic : MonoBehaviour
 {
-	// Token: 0x06001A96 RID: 6806 RVA: 0x0010BC54 File Offset: 0x00109E54
+	// Token: 0x06001A96 RID: 6806 RVA: 0x0010BC70 File Offset: 0x00109E70
 	private void OnEnable()
 	{
 		if (this.uiRoom)

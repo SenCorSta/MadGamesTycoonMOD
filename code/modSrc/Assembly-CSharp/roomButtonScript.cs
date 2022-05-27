@@ -6,14 +6,14 @@ using UnityEngine.UI;
 // Token: 0x02000277 RID: 631
 public class roomButtonScript : MonoBehaviour
 {
-	// Token: 0x0600187C RID: 6268 RVA: 0x000F2A19 File Offset: 0x000F0C19
+	// Token: 0x0600187C RID: 6268 RVA: 0x000F2A45 File Offset: 0x000F0C45
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x0600187D RID: 6269 RVA: 0x000F2A28 File Offset: 0x000F0C28
+	// Token: 0x0600187D RID: 6269 RVA: 0x000F2A54 File Offset: 0x000F0C54
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -54,7 +54,7 @@ public class roomButtonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600187E RID: 6270 RVA: 0x000F2B4C File Offset: 0x000F0D4C
+	// Token: 0x0600187E RID: 6270 RVA: 0x000F2B78 File Offset: 0x000F0D78
 	private void Init()
 	{
 		this.myRectTransform = base.gameObject.GetComponent<RectTransform>();
@@ -82,7 +82,7 @@ public class roomButtonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600187F RID: 6271 RVA: 0x000F2CAF File Offset: 0x000F0EAF
+	// Token: 0x0600187F RID: 6271 RVA: 0x000F2CDB File Offset: 0x000F0EDB
 	public void MouseEnter()
 	{
 		if (this.guiMain_.IsRoomMenuOpen())
@@ -95,14 +95,14 @@ public class roomButtonScript : MonoBehaviour
 		base.StartCoroutine(this.iSetAsLastSibling());
 	}
 
-	// Token: 0x06001880 RID: 6272 RVA: 0x000F2CE4 File Offset: 0x000F0EE4
+	// Token: 0x06001880 RID: 6272 RVA: 0x000F2D10 File Offset: 0x000F0F10
 	public void MouseLeave()
 	{
 		Debug.Log("SSSSSSS");
 		this.mouseOver = false;
 	}
 
-	// Token: 0x06001881 RID: 6273 RVA: 0x000F2CF8 File Offset: 0x000F0EF8
+	// Token: 0x06001881 RID: 6273 RVA: 0x000F2D24 File Offset: 0x000F0F24
 	private void SortGuiY()
 	{
 		if (this.uiObjects[2].activeInHierarchy || this.mouseOver)
@@ -118,7 +118,7 @@ public class roomButtonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001882 RID: 6274 RVA: 0x000F2D9E File Offset: 0x000F0F9E
+	// Token: 0x06001882 RID: 6274 RVA: 0x000F2DCA File Offset: 0x000F0FCA
 	private IEnumerator iSetAsLastSibling()
 	{
 		yield return new WaitForEndOfFrame();
@@ -126,7 +126,7 @@ public class roomButtonScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001883 RID: 6275 RVA: 0x000F2DB0 File Offset: 0x000F0FB0
+	// Token: 0x06001883 RID: 6275 RVA: 0x000F2DDC File Offset: 0x000F0FDC
 	private void Update()
 	{
 		this.SortGuiY();
@@ -283,7 +283,7 @@ public class roomButtonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001884 RID: 6276 RVA: 0x000F3319 File Offset: 0x000F1519
+	// Token: 0x06001884 RID: 6276 RVA: 0x000F3345 File Offset: 0x000F1545
 	private void OnDisable()
 	{
 		if (!this.rS_)
@@ -296,7 +296,7 @@ public class roomButtonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001885 RID: 6277 RVA: 0x000F334C File Offset: 0x000F154C
+	// Token: 0x06001885 RID: 6277 RVA: 0x000F3378 File Offset: 0x000F1578
 	private void OnEnable()
 	{
 		if (!this.rS_)
@@ -309,7 +309,7 @@ public class roomButtonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001886 RID: 6278 RVA: 0x000F3380 File Offset: 0x000F1580
+	// Token: 0x06001886 RID: 6278 RVA: 0x000F33AC File Offset: 0x000F15AC
 	public bool CloseAllMenus()
 	{
 		for (int i = 0; i < this.uiOptions.Length; i++)
@@ -323,7 +323,7 @@ public class roomButtonScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001887 RID: 6279 RVA: 0x000F33D0 File Offset: 0x000F15D0
+	// Token: 0x06001887 RID: 6279 RVA: 0x000F33FC File Offset: 0x000F15FC
 	public bool IsMenuOpen()
 	{
 		for (int i = 0; i < this.uiOptions.Length; i++)
@@ -336,7 +336,7 @@ public class roomButtonScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001888 RID: 6280 RVA: 0x000F3414 File Offset: 0x000F1614
+	// Token: 0x06001888 RID: 6280 RVA: 0x000F3440 File Offset: 0x000F1640
 	private void RemoveMenus()
 	{
 		switch (this.rS_.typ)
@@ -618,7 +618,7 @@ public class roomButtonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001889 RID: 6281 RVA: 0x000F3E30 File Offset: 0x000F2030
+	// Token: 0x06001889 RID: 6281 RVA: 0x000F3E5C File Offset: 0x000F205C
 	public void BUTTON_Main()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1058,7 +1058,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(!activeSelf);
 	}
 
-	// Token: 0x0600188A RID: 6282 RVA: 0x000F49D4 File Offset: 0x000F2BD4
+	// Token: 0x0600188A RID: 6282 RVA: 0x000F4A00 File Offset: 0x000F2C00
 	public void BUTTON_AutoUpdate()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1072,7 +1072,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.MessageBox(this.tS_.GetText(1286), true);
 	}
 
-	// Token: 0x0600188B RID: 6283 RVA: 0x000F4A60 File Offset: 0x000F2C60
+	// Token: 0x0600188B RID: 6283 RVA: 0x000F4A8C File Offset: 0x000F2C8C
 	public void BUTTON_RenameRoom()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1081,7 +1081,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[17].GetComponent<Menu_RenameRoom>().Init(this.rS_);
 	}
 
-	// Token: 0x0600188C RID: 6284 RVA: 0x000F4AB8 File Offset: 0x000F2CB8
+	// Token: 0x0600188C RID: 6284 RVA: 0x000F4AE4 File Offset: 0x000F2CE4
 	public void BUTTON_DemolishRoom()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1090,7 +1090,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[18].GetComponent<Menu_DemolishRoom>().Init(this.rS_);
 	}
 
-	// Token: 0x0600188D RID: 6285 RVA: 0x000F4B10 File Offset: 0x000F2D10
+	// Token: 0x0600188D RID: 6285 RVA: 0x000F4B3C File Offset: 0x000F2D3C
 	public void BUTTON_RedesignRoom()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1100,7 +1100,7 @@ public class roomButtonScript : MonoBehaviour
 		this.brS_.CreateOldRoomLayout(this.rS_);
 	}
 
-	// Token: 0x0600188E RID: 6286 RVA: 0x000F4B80 File Offset: 0x000F2D80
+	// Token: 0x0600188E RID: 6286 RVA: 0x000F4BAC File Offset: 0x000F2DAC
 	public void BUTTON_MoveRoom()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1110,21 +1110,21 @@ public class roomButtonScript : MonoBehaviour
 		this.brS_.MoveRoom(this.rS_);
 	}
 
-	// Token: 0x0600188F RID: 6287 RVA: 0x000F4BEE File Offset: 0x000F2DEE
+	// Token: 0x0600188F RID: 6287 RVA: 0x000F4C1A File Offset: 0x000F2E1A
 	public void BUTTON_PauseRoom()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.rS_.pause = !this.rS_.pause;
 	}
 
-	// Token: 0x06001890 RID: 6288 RVA: 0x000F4C16 File Offset: 0x000F2E16
+	// Token: 0x06001890 RID: 6288 RVA: 0x000F4C42 File Offset: 0x000F2E42
 	public void BUTTON_LockKIRoom()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.rS_.lockKI = !this.rS_.lockKI;
 	}
 
-	// Token: 0x06001891 RID: 6289 RVA: 0x000F4C40 File Offset: 0x000F2E40
+	// Token: 0x06001891 RID: 6289 RVA: 0x000F4C6C File Offset: 0x000F2E6C
 	public void BUTTON_RoomPersonal()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1133,7 +1133,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[26].GetComponent<Menu_Personal_InRoom>().Init(this.rS_.myID);
 	}
 
-	// Token: 0x06001892 RID: 6290 RVA: 0x000F4CA4 File Offset: 0x000F2EA4
+	// Token: 0x06001892 RID: 6290 RVA: 0x000F4CD0 File Offset: 0x000F2ED0
 	public void BUTTON_Verschiebe_Task()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1143,7 +1143,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[25].GetComponent<Menu_Verschiebe_Task>().rS_ = this.rS_;
 	}
 
-	// Token: 0x06001893 RID: 6291 RVA: 0x000F4D10 File Offset: 0x000F2F10
+	// Token: 0x06001893 RID: 6291 RVA: 0x000F4D3C File Offset: 0x000F2F3C
 	public void BUTTON_Unterstuetzen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1153,7 +1153,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[74].GetComponent<Menu_Unterstuetzen>().rS_ = this.rS_;
 	}
 
-	// Token: 0x06001894 RID: 6292 RVA: 0x000F4D7C File Offset: 0x000F2F7C
+	// Token: 0x06001894 RID: 6292 RVA: 0x000F4DA8 File Offset: 0x000F2FA8
 	public void BUTTON_LagerRestbestand()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1162,7 +1162,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[225].GetComponent<Menu_LagerSelect>().Init(this.rS_);
 	}
 
-	// Token: 0x06001895 RID: 6293 RVA: 0x000F4DE0 File Offset: 0x000F2FE0
+	// Token: 0x06001895 RID: 6293 RVA: 0x000F4E0C File Offset: 0x000F300C
 	public void BUTTON_Forschung(int i)
 	{
 		if ((i == 4 || i == 6) && !this.forschungSonstiges_.IsErforscht(39))
@@ -1175,7 +1175,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[21].GetComponent<Menu_Forschung>().Init(this.rS_.myID, i);
 	}
 
-	// Token: 0x06001896 RID: 6294 RVA: 0x000F4E5C File Offset: 0x000F305C
+	// Token: 0x06001896 RID: 6294 RVA: 0x000F4E88 File Offset: 0x000F3088
 	public void BUTTON_Forschung_AutoEnd()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1188,7 +1188,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x06001897 RID: 6295 RVA: 0x000F4ECC File Offset: 0x000F30CC
+	// Token: 0x06001897 RID: 6295 RVA: 0x000F4EF8 File Offset: 0x000F30F8
 	public void BUTTON_Spielbericht_AutoEnd()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1201,7 +1201,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x06001898 RID: 6296 RVA: 0x000F4F3C File Offset: 0x000F313C
+	// Token: 0x06001898 RID: 6296 RVA: 0x000F4F68 File Offset: 0x000F3168
 	public void BUTTON_GameUpdate_AutoEnd()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1214,7 +1214,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x06001899 RID: 6297 RVA: 0x000F4FAC File Offset: 0x000F31AC
+	// Token: 0x06001899 RID: 6297 RVA: 0x000F4FD8 File Offset: 0x000F31D8
 	public void BUTTON_F2PUpdate_AutoEnd()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1227,7 +1227,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x0600189A RID: 6298 RVA: 0x000F501C File Offset: 0x000F321C
+	// Token: 0x0600189A RID: 6298 RVA: 0x000F5048 File Offset: 0x000F3248
 	public void BUTTON_Dev_Game()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1236,7 +1236,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[57].GetComponent<Menu_DevGameMain>().Init(this.rS_);
 	}
 
-	// Token: 0x0600189B RID: 6299 RVA: 0x000F507C File Offset: 0x000F327C
+	// Token: 0x0600189B RID: 6299 RVA: 0x000F50A8 File Offset: 0x000F32A8
 	public void BUTTON_Dev_Game_GameplayFeatures()
 	{
 		GameObject gameObject = GameObject.Find("Task_" + this.rS_.taskID);
@@ -1261,7 +1261,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.OpenMenu(false);
 	}
 
-	// Token: 0x0600189C RID: 6300 RVA: 0x000F5144 File Offset: 0x000F3344
+	// Token: 0x0600189C RID: 6300 RVA: 0x000F5170 File Offset: 0x000F3370
 	public void BUTTON_Dev_Game_Entwicklungsbericht()
 	{
 		GameObject gameObject = GameObject.Find("Task_" + this.rS_.taskID);
@@ -1286,7 +1286,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.OpenMenu(false);
 	}
 
-	// Token: 0x0600189D RID: 6301 RVA: 0x000F520C File Offset: 0x000F340C
+	// Token: 0x0600189D RID: 6301 RVA: 0x000F5238 File Offset: 0x000F3438
 	public void BUTTON_Dev_Game_Abschliessen()
 	{
 		GameObject gameObject = GameObject.Find("Task_" + this.rS_.taskID.ToString());
@@ -1296,7 +1296,7 @@ public class roomButtonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600189E RID: 6302 RVA: 0x000F524C File Offset: 0x000F344C
+	// Token: 0x0600189E RID: 6302 RVA: 0x000F5278 File Offset: 0x000F3478
 	public void BUTTON_Dev_Konsole_Abschliessen()
 	{
 		GameObject gameObject = GameObject.Find("Task_" + this.rS_.taskID.ToString());
@@ -1306,7 +1306,7 @@ public class roomButtonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600189F RID: 6303 RVA: 0x000F528C File Offset: 0x000F348C
+	// Token: 0x0600189F RID: 6303 RVA: 0x000F52B8 File Offset: 0x000F34B8
 	public void BUTTON_Dev_ChangeDesignprioritaet()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1331,7 +1331,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.OpenMenu(false);
 	}
 
-	// Token: 0x060018A0 RID: 6304 RVA: 0x000F5354 File Offset: 0x000F3554
+	// Token: 0x060018A0 RID: 6304 RVA: 0x000F5380 File Offset: 0x000F3580
 	public void BUTTON_Dev_ChangeCopyProtect()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1356,7 +1356,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.OpenMenu(false);
 	}
 
-	// Token: 0x060018A1 RID: 6305 RVA: 0x000F541C File Offset: 0x000F361C
+	// Token: 0x060018A1 RID: 6305 RVA: 0x000F5448 File Offset: 0x000F3648
 	public void BUTTON_Dev_ChangePlatform()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1381,7 +1381,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.OpenMenu(false);
 	}
 
-	// Token: 0x060018A2 RID: 6306 RVA: 0x000F54E0 File Offset: 0x000F36E0
+	// Token: 0x060018A2 RID: 6306 RVA: 0x000F550C File Offset: 0x000F370C
 	public void BUTTON_Dev_Auftrag()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1390,7 +1390,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[95].GetComponent<Menu_Dev_Auftrag>().Init(this.rS_);
 	}
 
-	// Token: 0x060018A3 RID: 6307 RVA: 0x000F5540 File Offset: 0x000F3740
+	// Token: 0x060018A3 RID: 6307 RVA: 0x000F556C File Offset: 0x000F376C
 	public void BUTTON_GFX_Auftrag()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1399,7 +1399,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[96].GetComponent<Menu_Dev_AuftragSelect>().Init(this.rS_);
 	}
 
-	// Token: 0x060018A4 RID: 6308 RVA: 0x000F55A0 File Offset: 0x000F37A0
+	// Token: 0x060018A4 RID: 6308 RVA: 0x000F55CC File Offset: 0x000F37CC
 	public void BUTTON_WERK_Auftrag()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1408,7 +1408,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[96].GetComponent<Menu_Dev_AuftragSelect>().Init(this.rS_);
 	}
 
-	// Token: 0x060018A5 RID: 6309 RVA: 0x000F5600 File Offset: 0x000F3800
+	// Token: 0x060018A5 RID: 6309 RVA: 0x000F562C File Offset: 0x000F382C
 	public void BUTTON_PROD_Auftrag()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1417,7 +1417,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[96].GetComponent<Menu_Dev_AuftragSelect>().Init(this.rS_);
 	}
 
-	// Token: 0x060018A6 RID: 6310 RVA: 0x000F5660 File Offset: 0x000F3860
+	// Token: 0x060018A6 RID: 6310 RVA: 0x000F568C File Offset: 0x000F388C
 	public void BUTTON_HARD_Auftrag()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1426,7 +1426,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[96].GetComponent<Menu_Dev_AuftragSelect>().Init(this.rS_);
 	}
 
-	// Token: 0x060018A7 RID: 6311 RVA: 0x000F56C0 File Offset: 0x000F38C0
+	// Token: 0x060018A7 RID: 6311 RVA: 0x000F56EC File Offset: 0x000F38EC
 	public void BUTTON_Dev_Engines()
 	{
 		if (!this.unlock_.Get(58))
@@ -1439,7 +1439,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[36].GetComponent<Menu_Dev_EngineMain>().Init(this.rS_);
 	}
 
-	// Token: 0x060018A8 RID: 6312 RVA: 0x000F5730 File Offset: 0x000F3930
+	// Token: 0x060018A8 RID: 6312 RVA: 0x000F575C File Offset: 0x000F395C
 	public void BUTTON_Dev_Addons()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1448,7 +1448,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[104].GetComponent<Menu_Dev_Addon>().Init(this.rS_);
 	}
 
-	// Token: 0x060018A9 RID: 6313 RVA: 0x000F5790 File Offset: 0x000F3990
+	// Token: 0x060018A9 RID: 6313 RVA: 0x000F57BC File Offset: 0x000F39BC
 	public void BUTTON_Unterstuetzung_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1463,7 +1463,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x060018AA RID: 6314 RVA: 0x000F5818 File Offset: 0x000F3A18
+	// Token: 0x060018AA RID: 6314 RVA: 0x000F5844 File Offset: 0x000F3A44
 	public void BUTTON_Marketing_Mitarbeitersuche()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1472,7 +1472,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[344].GetComponent<Menu_Mitarbeitersuche>().Init(this.rS_);
 	}
 
-	// Token: 0x060018AB RID: 6315 RVA: 0x000F587C File Offset: 0x000F3A7C
+	// Token: 0x060018AB RID: 6315 RVA: 0x000F58A8 File Offset: 0x000F3AA8
 	public void BUTTON_Marketing_NeueKampagne()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1481,7 +1481,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[88].GetComponent<Menu_Marketing_Main>().Init(this.rS_);
 	}
 
-	// Token: 0x060018AC RID: 6316 RVA: 0x000F58DC File Offset: 0x000F3ADC
+	// Token: 0x060018AC RID: 6316 RVA: 0x000F5908 File Offset: 0x000F3B08
 	public void BUTTON_Marketing_SpezialKampagne()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1490,7 +1490,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[294].GetComponent<Menu_MarketingSpezial>().Init(this.rS_);
 	}
 
-	// Token: 0x060018AD RID: 6317 RVA: 0x000F5940 File Offset: 0x000F3B40
+	// Token: 0x060018AD RID: 6317 RVA: 0x000F596C File Offset: 0x000F3B6C
 	public void BUTTON_Marketing_Marktforschung()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1499,7 +1499,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[230].GetComponent<Menu_Marktforschung>().Init(this.rS_);
 	}
 
-	// Token: 0x060018AE RID: 6318 RVA: 0x000F59A4 File Offset: 0x000F3BA4
+	// Token: 0x060018AE RID: 6318 RVA: 0x000F59D0 File Offset: 0x000F3BD0
 	public void BUTTON_Support_Fankampagne()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1508,7 +1508,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[139].GetComponent<Menu_Support_Fankampagne>().Init(this.rS_);
 	}
 
-	// Token: 0x060018AF RID: 6319 RVA: 0x000F5A08 File Offset: 0x000F3C08
+	// Token: 0x060018AF RID: 6319 RVA: 0x000F5A34 File Offset: 0x000F3C34
 	public void BUTTON_Support_Anrufe()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1517,7 +1517,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[141].GetComponent<Menu_Support_Anrufe>().Init(this.rS_);
 	}
 
-	// Token: 0x060018B0 RID: 6320 RVA: 0x000F5A6C File Offset: 0x000F3C6C
+	// Token: 0x060018B0 RID: 6320 RVA: 0x000F5A98 File Offset: 0x000F3C98
 	public void BUTTON_Support_Fanshop()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1526,7 +1526,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[368].GetComponent<Menu_Support_Fanshop>().Init(this.rS_);
 	}
 
-	// Token: 0x060018B1 RID: 6321 RVA: 0x000F5AD0 File Offset: 0x000F3CD0
+	// Token: 0x060018B1 RID: 6321 RVA: 0x000F5AFC File Offset: 0x000F3CFC
 	public void BUTTON_Support_AutoEnd()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1539,7 +1539,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x060018B2 RID: 6322 RVA: 0x000F5B58 File Offset: 0x000F3D58
+	// Token: 0x060018B2 RID: 6322 RVA: 0x000F5B84 File Offset: 0x000F3D84
 	public void BUTTON_Marketing_AutoEnd()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1552,7 +1552,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x060018B3 RID: 6323 RVA: 0x000F5BC8 File Offset: 0x000F3DC8
+	// Token: 0x060018B3 RID: 6323 RVA: 0x000F5BF4 File Offset: 0x000F3DF4
 	public void BUTTON_Mitarbeitersuche_AutoEnd()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1565,7 +1565,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x060018B4 RID: 6324 RVA: 0x000F5C38 File Offset: 0x000F3E38
+	// Token: 0x060018B4 RID: 6324 RVA: 0x000F5C64 File Offset: 0x000F3E64
 	public void BUTTON_Production_AutoEnd()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1582,7 +1582,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x060018B5 RID: 6325 RVA: 0x000F5CE8 File Offset: 0x000F3EE8
+	// Token: 0x060018B5 RID: 6325 RVA: 0x000F5D14 File Offset: 0x000F3F14
 	public void BUTTON_Training_NeuerKurs()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1591,7 +1591,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[92].GetComponent<Menu_Training_Select>().Init(this.rS_);
 	}
 
-	// Token: 0x060018B6 RID: 6326 RVA: 0x000F5D48 File Offset: 0x000F3F48
+	// Token: 0x060018B6 RID: 6326 RVA: 0x000F5D74 File Offset: 0x000F3F74
 	public void BUTTON_Training_AutoEnd()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1604,7 +1604,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x060018B7 RID: 6327 RVA: 0x000F5DB8 File Offset: 0x000F3FB8
+	// Token: 0x060018B7 RID: 6327 RVA: 0x000F5DE4 File Offset: 0x000F3FE4
 	public void BUTTON_QA_Bugfixing()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1613,7 +1613,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[171].GetComponent<Menu_QA_BugfixingSelectGame>().Init(this.rS_);
 	}
 
-	// Token: 0x060018B8 RID: 6328 RVA: 0x000F5E1C File Offset: 0x000F401C
+	// Token: 0x060018B8 RID: 6328 RVA: 0x000F5E48 File Offset: 0x000F4048
 	public void BUTTON_QA_GameplayVerbessern()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1622,7 +1622,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[172].GetComponent<Menu_QA_GameplayVerbessern>().Init(this.rS_);
 	}
 
-	// Token: 0x060018B9 RID: 6329 RVA: 0x000F5E80 File Offset: 0x000F4080
+	// Token: 0x060018B9 RID: 6329 RVA: 0x000F5EAC File Offset: 0x000F40AC
 	public void BUTTON_QA_Spielbericht()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1631,7 +1631,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[180].GetComponent<Menu_QA_SpielberichtMain>().Init(this.rS_);
 	}
 
-	// Token: 0x060018BA RID: 6330 RVA: 0x000F5EE4 File Offset: 0x000F40E4
+	// Token: 0x060018BA RID: 6330 RVA: 0x000F5F10 File Offset: 0x000F4110
 	public void BUTTON_GFX_Polishing()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1640,7 +1640,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[279].GetComponent<Menu_ROOM_Polishing>().Init(this.rS_);
 	}
 
-	// Token: 0x060018BB RID: 6331 RVA: 0x000F5F48 File Offset: 0x000F4148
+	// Token: 0x060018BB RID: 6331 RVA: 0x000F5F74 File Offset: 0x000F4174
 	public void BUTTON_GFX_GrafikVerbessern()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1649,7 +1649,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[174].GetComponent<Menu_GFX_GrafikVerbessern>().Init(this.rS_);
 	}
 
-	// Token: 0x060018BC RID: 6332 RVA: 0x000F5FAC File Offset: 0x000F41AC
+	// Token: 0x060018BC RID: 6332 RVA: 0x000F5FD8 File Offset: 0x000F41D8
 	public void BUTTON_SFX_SoundsVerbessern()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1658,7 +1658,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[176].GetComponent<Menu_SFX_SoundVerbessern>().Init(this.rS_);
 	}
 
-	// Token: 0x060018BD RID: 6333 RVA: 0x000F6010 File Offset: 0x000F4210
+	// Token: 0x060018BD RID: 6333 RVA: 0x000F603C File Offset: 0x000F423C
 	public void BUTTON_MOCAP_AnimationVerbessern()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1667,7 +1667,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[178].GetComponent<Menu_MOCAP_AnimationVerbessern>().Init(this.rS_);
 	}
 
-	// Token: 0x060018BE RID: 6334 RVA: 0x000F6074 File Offset: 0x000F4274
+	// Token: 0x060018BE RID: 6334 RVA: 0x000F60A0 File Offset: 0x000F42A0
 	public void BUTTON_PROD_Packung()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1676,7 +1676,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[220].GetComponent<Menu_PackungSelect>().Init(this.rS_);
 	}
 
-	// Token: 0x060018BF RID: 6335 RVA: 0x000F60D8 File Offset: 0x000F42D8
+	// Token: 0x060018BF RID: 6335 RVA: 0x000F6104 File Offset: 0x000F4304
 	public void BUTTON_PROD_Produce()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1685,7 +1685,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[221].GetComponent<Menu_ProductionSelect>().Init(this.rS_);
 	}
 
-	// Token: 0x060018C0 RID: 6336 RVA: 0x000F613B File Offset: 0x000F433B
+	// Token: 0x060018C0 RID: 6336 RVA: 0x000F6167 File Offset: 0x000F4367
 	public void BUTTON_SERVER_AboPreis()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1693,7 +1693,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[245]);
 	}
 
-	// Token: 0x060018C1 RID: 6337 RVA: 0x000F6174 File Offset: 0x000F4374
+	// Token: 0x060018C1 RID: 6337 RVA: 0x000F61A0 File Offset: 0x000F43A0
 	public void BUTTON_SERVER_Shutdown()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1702,7 +1702,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[244].GetComponent<Menu_W_ServerDown>().Init(this.rS_);
 	}
 
-	// Token: 0x060018C2 RID: 6338 RVA: 0x000F61D7 File Offset: 0x000F43D7
+	// Token: 0x060018C2 RID: 6338 RVA: 0x000F6203 File Offset: 0x000F4403
 	public void BUTTON_SERVER_F2P()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1710,7 +1710,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.MessageBox(this.tS_.GetText(408), true);
 	}
 
-	// Token: 0x060018C3 RID: 6339 RVA: 0x000F6210 File Offset: 0x000F4410
+	// Token: 0x060018C3 RID: 6339 RVA: 0x000F623C File Offset: 0x000F443C
 	public void BUTTON_SERVER_MMOtoF2P()
 	{
 		if (!this.unlock_.Get(22))
@@ -1722,7 +1722,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[285]);
 	}
 
-	// Token: 0x060018C4 RID: 6340 RVA: 0x000F61D7 File Offset: 0x000F43D7
+	// Token: 0x060018C4 RID: 6340 RVA: 0x000F6203 File Offset: 0x000F4403
 	public void BUTTON_SERVER_GamePass()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1730,7 +1730,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.MessageBox(this.tS_.GetText(408), true);
 	}
 
-	// Token: 0x060018C5 RID: 6341 RVA: 0x000F6264 File Offset: 0x000F4464
+	// Token: 0x060018C5 RID: 6341 RVA: 0x000F6290 File Offset: 0x000F4490
 	public void BUTTON_WERK_Produce()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1739,7 +1739,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[304].GetComponent<Menu_ProductionArcadeSelect>().Init(this.rS_);
 	}
 
-	// Token: 0x060018C6 RID: 6342 RVA: 0x000F62C8 File Offset: 0x000F44C8
+	// Token: 0x060018C6 RID: 6342 RVA: 0x000F62F4 File Offset: 0x000F44F4
 	public void BUTTON_HARD_NeueKonsoleEntwickeln()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1748,7 +1748,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.uiObjects[317].GetComponent<Menu_Dev_KonsoleMain>().Init(this.rS_);
 	}
 
-	// Token: 0x060018C7 RID: 6343 RVA: 0x000F632C File Offset: 0x000F452C
+	// Token: 0x060018C7 RID: 6343 RVA: 0x000F6358 File Offset: 0x000F4558
 	public void BUTTON_HARD_Entwicklungsbericht()
 	{
 		GameObject gameObject = GameObject.Find("Task_" + this.rS_.taskID);
@@ -1773,7 +1773,7 @@ public class roomButtonScript : MonoBehaviour
 		this.guiMain_.OpenMenu(false);
 	}
 
-	// Token: 0x060018C8 RID: 6344 RVA: 0x000F63FC File Offset: 0x000F45FC
+	// Token: 0x060018C8 RID: 6344 RVA: 0x000F6428 File Offset: 0x000F4628
 	public void BUTTON_ContractWork_AutoEnd()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -1786,7 +1786,7 @@ public class roomButtonScript : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x060018C9 RID: 6345 RVA: 0x000F646C File Offset: 0x000F466C
+	// Token: 0x060018C9 RID: 6345 RVA: 0x000F6498 File Offset: 0x000F4698
 	public void BUTTON_Aufgabe_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);

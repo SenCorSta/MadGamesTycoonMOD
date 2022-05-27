@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x02000300 RID: 768
 public class soundScript : MonoBehaviour
 {
-	// Token: 0x06001ADA RID: 6874 RVA: 0x0010DFC8 File Offset: 0x0010C1C8
+	// Token: 0x06001ADA RID: 6874 RVA: 0x0010DFE4 File Offset: 0x0010C1E4
 	private void Start()
 	{
 		if (!this.main_)
@@ -27,7 +27,7 @@ public class soundScript : MonoBehaviour
 		this.myRenderer = base.GetComponent<MeshRenderer>();
 	}
 
-	// Token: 0x06001ADB RID: 6875 RVA: 0x0010E064 File Offset: 0x0010C264
+	// Token: 0x06001ADB RID: 6875 RVA: 0x0010E080 File Offset: 0x0010C280
 	private void Update()
 	{
 		if (this.muteOnPausedGame && this.mS_.GetGameSpeed() <= 0f)

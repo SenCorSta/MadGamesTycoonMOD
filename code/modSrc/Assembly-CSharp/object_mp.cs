@@ -3,7 +3,7 @@
 // Token: 0x020002C8 RID: 712
 public class object_mp
 {
-	// Token: 0x060019CD RID: 6605 RVA: 0x001073A5 File Offset: 0x001055A5
+	// Token: 0x060019CD RID: 6605 RVA: 0x00107329 File Offset: 0x00105529
 	public object_mp(int id_, int typ_, float posX_, float posY_, float rotation_)
 	{
 		this.id = id_;

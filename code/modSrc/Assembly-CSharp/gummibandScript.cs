@@ -6,7 +6,7 @@ using UnityEngine.UI;
 // Token: 0x020002EC RID: 748
 public class gummibandScript : MonoBehaviour
 {
-	// Token: 0x06001A77 RID: 6775 RVA: 0x0010B130 File Offset: 0x00109330
+	// Token: 0x06001A77 RID: 6775 RVA: 0x0010B100 File Offset: 0x00109300
 	private void Start()
 	{
 		if (!this.mS_)
@@ -31,14 +31,14 @@ public class gummibandScript : MonoBehaviour
 		this.myImage.enabled = false;
 	}
 
-	// Token: 0x06001A78 RID: 6776 RVA: 0x0010B1FF File Offset: 0x001093FF
+	// Token: 0x06001A78 RID: 6776 RVA: 0x0010B1CF File Offset: 0x001093CF
 	private void Update()
 	{
 		this.UpdateInput();
 		this.UpdateGFX();
 	}
 
-	// Token: 0x06001A79 RID: 6777 RVA: 0x0010B210 File Offset: 0x00109410
+	// Token: 0x06001A79 RID: 6777 RVA: 0x0010B1E0 File Offset: 0x001093E0
 	private void UpdateGFX()
 	{
 		if (!this.myImage.enabled)
@@ -67,7 +67,7 @@ public class gummibandScript : MonoBehaviour
 		this.rT.sizeDelta = this.vSize / this.settings_.uiScale;
 	}
 
-	// Token: 0x06001A7A RID: 6778 RVA: 0x0010B3D4 File Offset: 0x001095D4
+	// Token: 0x06001A7A RID: 6778 RVA: 0x0010B3A4 File Offset: 0x001095A4
 	private void UpdateInput()
 	{
 		if (this.isActive && this.guiMain_.menuOpen)
@@ -112,7 +112,7 @@ public class gummibandScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A7B RID: 6779 RVA: 0x0010B534 File Offset: 0x00109734
+	// Token: 0x06001A7B RID: 6779 RVA: 0x0010B504 File Offset: 0x00109704
 	private void SelectCharacters()
 	{
 		for (int i = 0; i < this.mS_.arrayCharacters.Length; i++)
@@ -130,7 +130,7 @@ public class gummibandScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A7C RID: 6780 RVA: 0x0010B633 File Offset: 0x00109833
+	// Token: 0x06001A7C RID: 6780 RVA: 0x0010B603 File Offset: 0x00109803
 	private IEnumerator DisableEndOfFrame()
 	{
 		yield return new WaitForEndOfFrame();

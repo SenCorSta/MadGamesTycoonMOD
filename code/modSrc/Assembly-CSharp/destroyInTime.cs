@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020002E2 RID: 738
 public class destroyInTime : MonoBehaviour
 {
-	// Token: 0x06001A57 RID: 6743 RVA: 0x0010A8C2 File Offset: 0x00108AC2
+	// Token: 0x06001A57 RID: 6743 RVA: 0x0010A892 File Offset: 0x00108A92
 	private void Update()
 	{
 		this.timer += Time.deltaTime;

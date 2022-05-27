@@ -6,20 +6,20 @@ using UnityEngine.SceneManagement;
 // Token: 0x02000283 RID: 643
 public class Menu_WaitForPlayers : MonoBehaviour
 {
-	// Token: 0x06001920 RID: 6432 RVA: 0x000F9598 File Offset: 0x000F7798
+	// Token: 0x06001920 RID: 6432 RVA: 0x000F95C4 File Offset: 0x000F77C4
 	private void Awake()
 	{
 		this.manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
 		this.mpCalls_ = GameObject.Find("NetworkManager").GetComponent<mpCalls>();
 	}
 
-	// Token: 0x06001921 RID: 6433 RVA: 0x000F95C4 File Offset: 0x000F77C4
+	// Token: 0x06001921 RID: 6433 RVA: 0x000F95F0 File Offset: 0x000F77F0
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001922 RID: 6434 RVA: 0x000F95CC File Offset: 0x000F77CC
+	// Token: 0x06001922 RID: 6434 RVA: 0x000F95F8 File Offset: 0x000F77F8
 	private void OnEnable()
 	{
 		if (this.mpCalls_.isClient)
@@ -28,7 +28,7 @@ public class Menu_WaitForPlayers : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001923 RID: 6435 RVA: 0x000F95E8 File Offset: 0x000F77E8
+	// Token: 0x06001923 RID: 6435 RVA: 0x000F9614 File Offset: 0x000F7814
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class Menu_WaitForPlayers : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001924 RID: 6436 RVA: 0x000F9694 File Offset: 0x000F7894
+	// Token: 0x06001924 RID: 6436 RVA: 0x000F96C0 File Offset: 0x000F78C0
 	private void Update()
 	{
 		if (!this.mS_.multiplayer)
@@ -79,7 +79,7 @@ public class Menu_WaitForPlayers : MonoBehaviour
 		Debug.Log("WaitForPlayers() CLOSE");
 	}
 
-	// Token: 0x06001925 RID: 6437 RVA: 0x000F9728 File Offset: 0x000F7928
+	// Token: 0x06001925 RID: 6437 RVA: 0x000F9754 File Offset: 0x000F7954
 	public void BUTTON_Close()
 	{
 		this.FindScripts();

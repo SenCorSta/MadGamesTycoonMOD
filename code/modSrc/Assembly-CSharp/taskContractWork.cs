@@ -4,19 +4,19 @@ using UnityEngine;
 // Token: 0x0200030A RID: 778
 public class taskContractWork : MonoBehaviour
 {
-	// Token: 0x06001B2B RID: 6955 RVA: 0x0010F640 File Offset: 0x0010D840
+	// Token: 0x06001B2B RID: 6955 RVA: 0x0010F65C File Offset: 0x0010D85C
 	private void Awake()
 	{
 		base.transform.position = new Vector3(210f, 0f, 0f);
 	}
 
-	// Token: 0x06001B2C RID: 6956 RVA: 0x0010F661 File Offset: 0x0010D861
+	// Token: 0x06001B2C RID: 6956 RVA: 0x0010F67D File Offset: 0x0010D87D
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001B2D RID: 6957 RVA: 0x0010F66C File Offset: 0x0010D86C
+	// Token: 0x06001B2D RID: 6957 RVA: 0x0010F688 File Offset: 0x0010D888
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class taskContractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B2E RID: 6958 RVA: 0x0010F712 File Offset: 0x0010D912
+	// Token: 0x06001B2E RID: 6958 RVA: 0x0010F72E File Offset: 0x0010D92E
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -51,13 +51,13 @@ public class taskContractWork : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001B2F RID: 6959 RVA: 0x0010F743 File Offset: 0x0010D943
+	// Token: 0x06001B2F RID: 6959 RVA: 0x0010F75F File Offset: 0x0010D95F
 	private void Update()
 	{
 		this.FindMyContractWork();
 	}
 
-	// Token: 0x06001B30 RID: 6960 RVA: 0x0010F74C File Offset: 0x0010D94C
+	// Token: 0x06001B30 RID: 6960 RVA: 0x0010F768 File Offset: 0x0010D968
 	private void FindMyContractWork()
 	{
 		if (!this.contract_)
@@ -72,19 +72,19 @@ public class taskContractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B31 RID: 6961 RVA: 0x0010F7A1 File Offset: 0x0010D9A1
+	// Token: 0x06001B31 RID: 6961 RVA: 0x0010F7BD File Offset: 0x0010D9BD
 	public float GetProzent()
 	{
 		return 100f / this.points * (this.points - this.pointsLeft);
 	}
 
-	// Token: 0x06001B32 RID: 6962 RVA: 0x0010F7BD File Offset: 0x0010D9BD
+	// Token: 0x06001B32 RID: 6962 RVA: 0x0010F7D9 File Offset: 0x0010D9D9
 	public Sprite GetPic()
 	{
 		return this.guiMain_.uiSprites[10];
 	}
 
-	// Token: 0x06001B33 RID: 6963 RVA: 0x0010F7CD File Offset: 0x0010D9CD
+	// Token: 0x06001B33 RID: 6963 RVA: 0x0010F7E9 File Offset: 0x0010D9E9
 	public string GetName()
 	{
 		this.FindMyContractWork();
@@ -95,7 +95,7 @@ public class taskContractWork : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06001B34 RID: 6964 RVA: 0x0010F7F3 File Offset: 0x0010D9F3
+	// Token: 0x06001B34 RID: 6964 RVA: 0x0010F80F File Offset: 0x0010DA0F
 	public int GetStrafe()
 	{
 		this.FindMyContractWork();
@@ -106,7 +106,7 @@ public class taskContractWork : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001B35 RID: 6965 RVA: 0x0010F815 File Offset: 0x0010DA15
+	// Token: 0x06001B35 RID: 6965 RVA: 0x0010F831 File Offset: 0x0010DA31
 	public void Work(float f)
 	{
 		if (this.pointsLeft > 0f)
@@ -120,7 +120,7 @@ public class taskContractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B36 RID: 6966 RVA: 0x0010F850 File Offset: 0x0010DA50
+	// Token: 0x06001B36 RID: 6966 RVA: 0x0010F86C File Offset: 0x0010DA6C
 	private void Complete()
 	{
 		this.FindMyContractWork();
@@ -188,7 +188,7 @@ public class taskContractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B37 RID: 6967 RVA: 0x0010FB2C File Offset: 0x0010DD2C
+	// Token: 0x06001B37 RID: 6967 RVA: 0x0010FB48 File Offset: 0x0010DD48
 	private bool DoAutomatic(int art_)
 	{
 		if (!this.automatic)
@@ -246,7 +246,7 @@ public class taskContractWork : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001B38 RID: 6968 RVA: 0x0010FD9C File Offset: 0x0010DF9C
+	// Token: 0x06001B38 RID: 6968 RVA: 0x0010FDB8 File Offset: 0x0010DFB8
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -263,7 +263,7 @@ public class taskContractWork : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001B39 RID: 6969 RVA: 0x0010FDFC File Offset: 0x0010DFFC
+	// Token: 0x06001B39 RID: 6969 RVA: 0x0010FE18 File Offset: 0x0010E018
 	public void Abbrechen()
 	{
 		this.FindMyContractWork();

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001C2 RID: 450
 public class Menu_GameTabFilter : MonoBehaviour
 {
-	// Token: 0x060010F2 RID: 4338 RVA: 0x000B4324 File Offset: 0x000B2524
+	// Token: 0x060010F2 RID: 4338 RVA: 0x000B4330 File Offset: 0x000B2530
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010F3 RID: 4339 RVA: 0x000B432C File Offset: 0x000B252C
+	// Token: 0x060010F3 RID: 4339 RVA: 0x000B4338 File Offset: 0x000B2538
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,20 +40,20 @@ public class Menu_GameTabFilter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010F4 RID: 4340 RVA: 0x000B43E4 File Offset: 0x000B25E4
+	// Token: 0x060010F4 RID: 4340 RVA: 0x000B43F0 File Offset: 0x000B25F0
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.SetToggles();
 	}
 
-	// Token: 0x060010F5 RID: 4341 RVA: 0x000B43F2 File Offset: 0x000B25F2
+	// Token: 0x060010F5 RID: 4341 RVA: 0x000B43FE File Offset: 0x000B25FE
 	public void Init(bool isMenuOpen_)
 	{
 		this.isMenuOpen = isMenuOpen_;
 	}
 
-	// Token: 0x060010F6 RID: 4342 RVA: 0x000B43FC File Offset: 0x000B25FC
+	// Token: 0x060010F6 RID: 4342 RVA: 0x000B4408 File Offset: 0x000B2608
 	private void SetToggles()
 	{
 		for (int i = 0; i < this.mS_.gameTabFilter.Length; i++)
@@ -62,7 +62,7 @@ public class Menu_GameTabFilter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010F7 RID: 4343 RVA: 0x000B4440 File Offset: 0x000B2640
+	// Token: 0x060010F7 RID: 4343 RVA: 0x000B444C File Offset: 0x000B264C
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -73,7 +73,7 @@ public class Menu_GameTabFilter : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060010F8 RID: 4344 RVA: 0x000B4470 File Offset: 0x000B2670
+	// Token: 0x060010F8 RID: 4344 RVA: 0x000B447C File Offset: 0x000B267C
 	public void BUTTON_OK()
 	{
 		for (int i = 0; i < this.mS_.gameTabFilter.Length; i++)

@@ -4,14 +4,14 @@ using UnityEngine;
 // Token: 0x020002FF RID: 767
 public class serverLamp : MonoBehaviour
 {
-	// Token: 0x06001AD4 RID: 6868 RVA: 0x0010DD34 File Offset: 0x0010BF34
+	// Token: 0x06001AD4 RID: 6868 RVA: 0x0010DD50 File Offset: 0x0010BF50
 	private void Start()
 	{
 		this.FindScripts();
 		this.FindRenderer();
 	}
 
-	// Token: 0x06001AD5 RID: 6869 RVA: 0x0010DD44 File Offset: 0x0010BF44
+	// Token: 0x06001AD5 RID: 6869 RVA: 0x0010DD60 File Offset: 0x0010BF60
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -25,7 +25,7 @@ public class serverLamp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AD6 RID: 6870 RVA: 0x0010DDA4 File Offset: 0x0010BFA4
+	// Token: 0x06001AD6 RID: 6870 RVA: 0x0010DDC0 File Offset: 0x0010BFC0
 	private void FindRenderer()
 	{
 		this.goLamps_Renderer = new Renderer[this.goLamps.Length];
@@ -38,7 +38,7 @@ public class serverLamp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AD7 RID: 6871 RVA: 0x0010DDFC File Offset: 0x0010BFFC
+	// Token: 0x06001AD7 RID: 6871 RVA: 0x0010DE18 File Offset: 0x0010C018
 	private void Update()
 	{
 		this.timer += this.mS_.GetDeltaTime();
@@ -75,7 +75,7 @@ public class serverLamp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AD8 RID: 6872 RVA: 0x0010DF24 File Offset: 0x0010C124
+	// Token: 0x06001AD8 RID: 6872 RVA: 0x0010DF40 File Offset: 0x0010C140
 	private void FindRoomScript()
 	{
 		if (this.rS_)

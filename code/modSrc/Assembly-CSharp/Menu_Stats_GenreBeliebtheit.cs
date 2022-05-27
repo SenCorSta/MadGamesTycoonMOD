@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200023D RID: 573
 public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 {
-	// Token: 0x06001615 RID: 5653 RVA: 0x000E1447 File Offset: 0x000DF647
+	// Token: 0x06001615 RID: 5653 RVA: 0x000E1473 File Offset: 0x000DF673
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001616 RID: 5654 RVA: 0x000E1450 File Offset: 0x000DF650
+	// Token: 0x06001616 RID: 5654 RVA: 0x000E147C File Offset: 0x000DF67C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -52,13 +52,13 @@ public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001617 RID: 5655 RVA: 0x000E1572 File Offset: 0x000DF772
+	// Token: 0x06001617 RID: 5655 RVA: 0x000E159E File Offset: 0x000DF79E
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001618 RID: 5656 RVA: 0x000E157A File Offset: 0x000DF77A
+	// Token: 0x06001618 RID: 5656 RVA: 0x000E15A6 File Offset: 0x000DF7A6
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -68,7 +68,7 @@ public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001619 RID: 5657 RVA: 0x000E15B4 File Offset: 0x000DF7B4
+	// Token: 0x06001619 RID: 5657 RVA: 0x000E15E0 File Offset: 0x000DF7E0
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -84,7 +84,7 @@ public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x0600161A RID: 5658 RVA: 0x000E1600 File Offset: 0x000DF800
+	// Token: 0x0600161A RID: 5658 RVA: 0x000E162C File Offset: 0x000DF82C
 	public void Init()
 	{
 		this.FindScripts();
@@ -142,7 +142,7 @@ public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[4]);
 	}
 
-	// Token: 0x0600161B RID: 5659 RVA: 0x000E195B File Offset: 0x000DFB5B
+	// Token: 0x0600161B RID: 5659 RVA: 0x000E1987 File Offset: 0x000DFB87
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);

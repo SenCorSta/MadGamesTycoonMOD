@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x02000255 RID: 597
 public class Menu_Stats_ShowMyIPs : MonoBehaviour
 {
-	// Token: 0x0600173A RID: 5946 RVA: 0x000E8DA5 File Offset: 0x000E6FA5
+	// Token: 0x0600173A RID: 5946 RVA: 0x000E8DD1 File Offset: 0x000E6FD1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600173B RID: 5947 RVA: 0x000E8DB0 File Offset: 0x000E6FB0
+	// Token: 0x0600173B RID: 5947 RVA: 0x000E8DDC File Offset: 0x000E6FDC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600173C RID: 5948 RVA: 0x000E8E78 File Offset: 0x000E7078
+	// Token: 0x0600173C RID: 5948 RVA: 0x000E8EA4 File Offset: 0x000E70A4
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -50,7 +50,7 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600173D RID: 5949 RVA: 0x000E8EAC File Offset: 0x000E70AC
+	// Token: 0x0600173D RID: 5949 RVA: 0x000E8ED8 File Offset: 0x000E70D8
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -63,14 +63,14 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600173E RID: 5950 RVA: 0x000E8F08 File Offset: 0x000E7108
+	// Token: 0x0600173E RID: 5950 RVA: 0x000E8F34 File Offset: 0x000E7134
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.InitDropdowns();
 	}
 
-	// Token: 0x0600173F RID: 5951 RVA: 0x000E8F18 File Offset: 0x000E7118
+	// Token: 0x0600173F RID: 5951 RVA: 0x000E8F44 File Offset: 0x000E7144
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -87,7 +87,7 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001740 RID: 5952 RVA: 0x000E9010 File Offset: 0x000E7210
+	// Token: 0x06001740 RID: 5952 RVA: 0x000E903C File Offset: 0x000E723C
 	public void Init(gameScript game_)
 	{
 		this.FindScripts();
@@ -108,7 +108,7 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001741 RID: 5953 RVA: 0x000E9118 File Offset: 0x000E7318
+	// Token: 0x06001741 RID: 5953 RVA: 0x000E9144 File Offset: 0x000E7344
 	private void ResetDaten()
 	{
 		this.gameAnzahl = 0;
@@ -131,7 +131,7 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 		this.gesamtAusgaben = 0f;
 	}
 
-	// Token: 0x06001742 RID: 5954 RVA: 0x000E91C4 File Offset: 0x000E73C4
+	// Token: 0x06001742 RID: 5954 RVA: 0x000E91F0 File Offset: 0x000E73F0
 	private void ShowDaten()
 	{
 		string text = this.tS_.GetText(297);
@@ -272,7 +272,7 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001743 RID: 5955 RVA: 0x000E987C File Offset: 0x000E7A7C
+	// Token: 0x06001743 RID: 5955 RVA: 0x000E98A8 File Offset: 0x000E7AA8
 	private void SetData()
 	{
 		if (!this.gS_)
@@ -371,13 +371,13 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 		this.ShowDaten();
 	}
 
-	// Token: 0x06001744 RID: 5956 RVA: 0x000E9B7E File Offset: 0x000E7D7E
+	// Token: 0x06001744 RID: 5956 RVA: 0x000E9BAA File Offset: 0x000E7DAA
 	public bool CheckGameData(gameScript script_)
 	{
 		return script_ && script_.mainIP == this.gS_.myID;
 	}
 
-	// Token: 0x06001745 RID: 5957 RVA: 0x000E9BA0 File Offset: 0x000E7DA0
+	// Token: 0x06001745 RID: 5957 RVA: 0x000E9BCC File Offset: 0x000E7DCC
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -431,7 +431,7 @@ public class Menu_Stats_ShowMyIPs : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06001746 RID: 5958 RVA: 0x000E9D5C File Offset: 0x000E7F5C
+	// Token: 0x06001746 RID: 5958 RVA: 0x000E9D88 File Offset: 0x000E7F88
 	public void BUTTON_Close()
 	{
 		if (this.gS_)

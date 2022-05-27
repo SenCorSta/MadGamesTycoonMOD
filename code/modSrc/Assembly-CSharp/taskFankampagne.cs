@@ -4,19 +4,19 @@ using UnityEngine;
 // Token: 0x0200030D RID: 781
 public class taskFankampagne : MonoBehaviour
 {
-	// Token: 0x06001B57 RID: 6999 RVA: 0x001108F7 File Offset: 0x0010EAF7
+	// Token: 0x06001B57 RID: 6999 RVA: 0x00110913 File Offset: 0x0010EB13
 	private void Awake()
 	{
 		base.transform.position = new Vector3(190f, 0f, 0f);
 	}
 
-	// Token: 0x06001B58 RID: 7000 RVA: 0x00110918 File Offset: 0x0010EB18
+	// Token: 0x06001B58 RID: 7000 RVA: 0x00110934 File Offset: 0x0010EB34
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001B59 RID: 7001 RVA: 0x00110920 File Offset: 0x0010EB20
+	// Token: 0x06001B59 RID: 7001 RVA: 0x0011093C File Offset: 0x0010EB3C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class taskFankampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B5A RID: 7002 RVA: 0x001109C6 File Offset: 0x0010EBC6
+	// Token: 0x06001B5A RID: 7002 RVA: 0x001109E2 File Offset: 0x0010EBE2
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -51,20 +51,20 @@ public class taskFankampagne : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001B5B RID: 7003 RVA: 0x001109F7 File Offset: 0x0010EBF7
+	// Token: 0x06001B5B RID: 7003 RVA: 0x00110A13 File Offset: 0x0010EC13
 	public float GetProzent()
 	{
 		return 100f / this.points * (this.points - this.pointsLeft);
 	}
 
-	// Token: 0x06001B5C RID: 7004 RVA: 0x00110A13 File Offset: 0x0010EC13
+	// Token: 0x06001B5C RID: 7004 RVA: 0x00110A2F File Offset: 0x0010EC2F
 	public Sprite GetPic()
 	{
 		this.FindScripts();
 		return this.guiMain_.uiObjects[139].GetComponent<Menu_Support_Fankampagne>().sprites[this.kampagne];
 	}
 
-	// Token: 0x06001B5D RID: 7005 RVA: 0x00110A3D File Offset: 0x0010EC3D
+	// Token: 0x06001B5D RID: 7005 RVA: 0x00110A59 File Offset: 0x0010EC59
 	public void Work(float f)
 	{
 		if (this.pointsLeft > 0f)
@@ -78,7 +78,7 @@ public class taskFankampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B5E RID: 7006 RVA: 0x00110A78 File Offset: 0x0010EC78
+	// Token: 0x06001B5E RID: 7006 RVA: 0x00110A94 File Offset: 0x0010EC94
 	private void Complete()
 	{
 		int roomID_ = -1;
@@ -103,7 +103,7 @@ public class taskFankampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B5F RID: 7007 RVA: 0x00110B78 File Offset: 0x0010ED78
+	// Token: 0x06001B5F RID: 7007 RVA: 0x00110B94 File Offset: 0x0010ED94
 	private bool DoAutomatic()
 	{
 		if (!this.automatic)
@@ -121,7 +121,7 @@ public class taskFankampagne : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001B60 RID: 7008 RVA: 0x00110C1C File Offset: 0x0010EE1C
+	// Token: 0x06001B60 RID: 7008 RVA: 0x00110C38 File Offset: 0x0010EE38
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -138,13 +138,13 @@ public class taskFankampagne : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001B61 RID: 7009 RVA: 0x00110C7B File Offset: 0x0010EE7B
+	// Token: 0x06001B61 RID: 7009 RVA: 0x00110C97 File Offset: 0x0010EE97
 	public int GetRueckgeld()
 	{
 		return Mathf.RoundToInt((float)this.guiMain_.uiObjects[139].GetComponent<Menu_Support_Fankampagne>().preise[this.kampagne] * ((100f - this.GetProzent()) * 0.01f));
 	}
 
-	// Token: 0x06001B62 RID: 7010 RVA: 0x00110CB8 File Offset: 0x0010EEB8
+	// Token: 0x06001B62 RID: 7010 RVA: 0x00110CD4 File Offset: 0x0010EED4
 	public void Abbrechen()
 	{
 		int rueckgeld = this.GetRueckgeld();

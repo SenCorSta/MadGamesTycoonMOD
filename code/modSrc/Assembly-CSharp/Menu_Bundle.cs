@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001F3 RID: 499
 public class Menu_Bundle : MonoBehaviour
 {
-	// Token: 0x060012F5 RID: 4853 RVA: 0x000C8E39 File Offset: 0x000C7039
+	// Token: 0x060012F5 RID: 4853 RVA: 0x000C8E55 File Offset: 0x000C7055
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060012F6 RID: 4854 RVA: 0x000C8E44 File Offset: 0x000C7044
+	// Token: 0x060012F6 RID: 4854 RVA: 0x000C8E60 File Offset: 0x000C7060
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_Bundle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012F7 RID: 4855 RVA: 0x000C8F2A File Offset: 0x000C712A
+	// Token: 0x060012F7 RID: 4855 RVA: 0x000C8F46 File Offset: 0x000C7146
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060012F8 RID: 4856 RVA: 0x000C8F34 File Offset: 0x000C7134
+	// Token: 0x060012F8 RID: 4856 RVA: 0x000C8F50 File Offset: 0x000C7150
 	public void Init()
 	{
 		this.FindScripts();
@@ -60,7 +60,7 @@ public class Menu_Bundle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012F9 RID: 4857 RVA: 0x000C8F6C File Offset: 0x000C716C
+	// Token: 0x060012F9 RID: 4857 RVA: 0x000C8F88 File Offset: 0x000C7188
 	public void SetGame(int slot, gameScript script_)
 	{
 		this.games[slot] = script_;
@@ -83,13 +83,13 @@ public class Menu_Bundle : MonoBehaviour
 		this.guiMain_.DrawStarsColor(this.uiObjects[1], Mathf.RoundToInt(this.GetQuality()), Color.white);
 	}
 
-	// Token: 0x060012FA RID: 4858 RVA: 0x000C9115 File Offset: 0x000C7315
+	// Token: 0x060012FA RID: 4858 RVA: 0x000C9131 File Offset: 0x000C7331
 	public float GetQuality()
 	{
 		return this.GetTotalReview() / 20f;
 	}
 
-	// Token: 0x060012FB RID: 4859 RVA: 0x000C9124 File Offset: 0x000C7324
+	// Token: 0x060012FB RID: 4859 RVA: 0x000C9140 File Offset: 0x000C7340
 	public float GetTotalReview()
 	{
 		float num = 0f;
@@ -111,7 +111,7 @@ public class Menu_Bundle : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060012FC RID: 4860 RVA: 0x000C9189 File Offset: 0x000C7389
+	// Token: 0x060012FC RID: 4860 RVA: 0x000C91A5 File Offset: 0x000C73A5
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -119,7 +119,7 @@ public class Menu_Bundle : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060012FD RID: 4861 RVA: 0x000C91B0 File Offset: 0x000C73B0
+	// Token: 0x060012FD RID: 4861 RVA: 0x000C91CC File Offset: 0x000C73CC
 	public void BUTTON_Game(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -127,14 +127,14 @@ public class Menu_Bundle : MonoBehaviour
 		this.guiMain_.uiObjects[268].GetComponent<Menu_BundleSelect>().Init(i);
 	}
 
-	// Token: 0x060012FE RID: 4862 RVA: 0x000C9202 File Offset: 0x000C7402
+	// Token: 0x060012FE RID: 4862 RVA: 0x000C921E File Offset: 0x000C741E
 	public void BUTTON_Remove(int i)
 	{
 		this.sfx_.PlaySound(3, true);
 		this.SetGame(i, null);
 	}
 
-	// Token: 0x060012FF RID: 4863 RVA: 0x000C921C File Offset: 0x000C741C
+	// Token: 0x060012FF RID: 4863 RVA: 0x000C9238 File Offset: 0x000C7438
 	public void BUTTON_OK()
 	{
 		int num = 0;
@@ -176,7 +176,7 @@ public class Menu_Bundle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001300 RID: 4864 RVA: 0x000C9354 File Offset: 0x000C7554
+	// Token: 0x06001300 RID: 4864 RVA: 0x000C9370 File Offset: 0x000C7570
 	private void CreateBundleGame()
 	{
 		for (int i = 0; i < this.games.Length; i++)

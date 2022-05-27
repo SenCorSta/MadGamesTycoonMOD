@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x0200033D RID: 829
 public class roomDataScript : MonoBehaviour
 {
-	// Token: 0x06001DFD RID: 7677 RVA: 0x0012B0FE File Offset: 0x001292FE
+	// Token: 0x06001DFD RID: 7677 RVA: 0x0012B11A File Offset: 0x0012931A
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001DFE RID: 7678 RVA: 0x0012B108 File Offset: 0x00129308
+	// Token: 0x06001DFE RID: 7678 RVA: 0x0012B124 File Offset: 0x00129324
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -22,13 +22,13 @@ public class roomDataScript : MonoBehaviour
 		this.tS_ = this.main_.GetComponent<textScript>();
 	}
 
-	// Token: 0x06001DFF RID: 7679 RVA: 0x0012B155 File Offset: 0x00129355
+	// Token: 0x06001DFF RID: 7679 RVA: 0x0012B171 File Offset: 0x00129371
 	public int GetPrice(int i)
 	{
 		return this.roomData_PRICE[i];
 	}
 
-	// Token: 0x06001E00 RID: 7680 RVA: 0x0012B160 File Offset: 0x00129360
+	// Token: 0x06001E00 RID: 7680 RVA: 0x0012B17C File Offset: 0x0012937C
 	public string GetName(int i)
 	{
 		switch (i)
@@ -69,7 +69,7 @@ public class roomDataScript : MonoBehaviour
 		return "<Missing>";
 	}
 
-	// Token: 0x06001E01 RID: 7681 RVA: 0x0012B2A8 File Offset: 0x001294A8
+	// Token: 0x06001E01 RID: 7681 RVA: 0x0012B2C4 File Offset: 0x001294C4
 	public bool KeineMitarbeiter(int roomTyp)
 	{
 		bool result = false;

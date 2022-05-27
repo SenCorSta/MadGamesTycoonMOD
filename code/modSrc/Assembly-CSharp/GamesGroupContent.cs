@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001BD RID: 445
 public class GamesGroupContent : MonoBehaviour
 {
-	// Token: 0x060010C8 RID: 4296 RVA: 0x000B19DD File Offset: 0x000AFBDD
+	// Token: 0x060010C8 RID: 4296 RVA: 0x000B19E9 File Offset: 0x000AFBE9
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010C9 RID: 4297 RVA: 0x000B19E8 File Offset: 0x000AFBE8
+	// Token: 0x060010C9 RID: 4297 RVA: 0x000B19F4 File Offset: 0x000AFBF4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,13 +40,13 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CA RID: 4298 RVA: 0x000B19DD File Offset: 0x000AFBDD
+	// Token: 0x060010CA RID: 4298 RVA: 0x000B19E9 File Offset: 0x000AFBE9
 	private void OnEnable()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010CB RID: 4299 RVA: 0x000B1AA0 File Offset: 0x000AFCA0
+	// Token: 0x060010CB RID: 4299 RVA: 0x000B1AAC File Offset: 0x000AFCAC
 	private void Update()
 	{
 		if (!this.mS_)
@@ -196,7 +196,7 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CC RID: 4300 RVA: 0x000B1F80 File Offset: 0x000B0180
+	// Token: 0x060010CC RID: 4300 RVA: 0x000B1F8C File Offset: 0x000B018C
 	private void SetTabKonsole(GameObject go, konsoleTab script_)
 	{
 		if (this.uiTabs[0].GetComponent<Toggle>().isOn || this.uiTabs[4].GetComponent<Toggle>().isOn)
@@ -213,7 +213,7 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CD RID: 4301 RVA: 0x000B1FD4 File Offset: 0x000B01D4
+	// Token: 0x060010CD RID: 4301 RVA: 0x000B1FE0 File Offset: 0x000B01E0
 	private void SetTab(GameObject go, gameTab script_)
 	{
 		if (!this.uiTabs[0].GetComponent<Toggle>().isOn)

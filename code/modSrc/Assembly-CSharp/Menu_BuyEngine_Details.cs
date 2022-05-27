@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200018D RID: 397
 public class Menu_BuyEngine_Details : MonoBehaviour
 {
-	// Token: 0x06000F19 RID: 3865 RVA: 0x000A0434 File Offset: 0x0009E634
+	// Token: 0x06000F19 RID: 3865 RVA: 0x000A0440 File Offset: 0x0009E640
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F1A RID: 3866 RVA: 0x000A043C File Offset: 0x0009E63C
+	// Token: 0x06000F1A RID: 3866 RVA: 0x000A0448 File Offset: 0x0009E648
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_BuyEngine_Details : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F1B RID: 3867 RVA: 0x000A0522 File Offset: 0x0009E722
+	// Token: 0x06000F1B RID: 3867 RVA: 0x000A052E File Offset: 0x0009E72E
 	public void Init(engineScript s)
 	{
 		this.FindScripts();
@@ -52,7 +52,7 @@ public class Menu_BuyEngine_Details : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000F1C RID: 3868 RVA: 0x000A0538 File Offset: 0x0009E738
+	// Token: 0x06000F1C RID: 3868 RVA: 0x000A0544 File Offset: 0x0009E744
 	private void SetData()
 	{
 		if (!this.eS_)
@@ -85,7 +85,7 @@ public class Menu_BuyEngine_Details : MonoBehaviour
 		this.uiObjects[9].SetActive(true);
 	}
 
-	// Token: 0x06000F1D RID: 3869 RVA: 0x000A07AD File Offset: 0x0009E9AD
+	// Token: 0x06000F1D RID: 3869 RVA: 0x000A07B9 File Offset: 0x0009E9B9
 	private void Update()
 	{
 		if (!this.mS_.multiplayer)
@@ -95,14 +95,14 @@ public class Menu_BuyEngine_Details : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000F1E RID: 3870 RVA: 0x000A07C3 File Offset: 0x0009E9C3
+	// Token: 0x06000F1E RID: 3870 RVA: 0x000A07CF File Offset: 0x0009E9CF
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000F1F RID: 3871 RVA: 0x000A07E0 File Offset: 0x0009E9E0
+	// Token: 0x06000F1F RID: 3871 RVA: 0x000A07EC File Offset: 0x0009E9EC
 	public void BUTTON_Kaufen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -123,7 +123,7 @@ public class Menu_BuyEngine_Details : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000F20 RID: 3872 RVA: 0x000A08D0 File Offset: 0x0009EAD0
+	// Token: 0x06000F20 RID: 3872 RVA: 0x000A08DC File Offset: 0x0009EADC
 	public void BUTTON_ShowFeatures()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -131,7 +131,7 @@ public class Menu_BuyEngine_Details : MonoBehaviour
 		this.guiMain_.uiObjects[44].GetComponent<Menu_Engine_ShowFeatures>().Init(this.eS_);
 	}
 
-	// Token: 0x06000F21 RID: 3873 RVA: 0x000A0924 File Offset: 0x0009EB24
+	// Token: 0x06000F21 RID: 3873 RVA: 0x000A0930 File Offset: 0x0009EB30
 	public void BUTTON_ShowGames()
 	{
 		this.sfx_.PlaySound(3, true);

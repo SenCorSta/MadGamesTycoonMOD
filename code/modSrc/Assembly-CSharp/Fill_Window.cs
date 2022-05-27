@@ -5,14 +5,14 @@ using UnityEngine.UI;
 // Token: 0x020002CE RID: 718
 public class Fill_Window : MonoBehaviour
 {
-	// Token: 0x06001A03 RID: 6659 RVA: 0x001090F9 File Offset: 0x001072F9
+	// Token: 0x06001A03 RID: 6659 RVA: 0x001090C9 File Offset: 0x001072C9
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x06001A04 RID: 6660 RVA: 0x00109108 File Offset: 0x00107308
+	// Token: 0x06001A04 RID: 6660 RVA: 0x001090D8 File Offset: 0x001072D8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -29,7 +29,7 @@ public class Fill_Window : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A05 RID: 6661 RVA: 0x00109172 File Offset: 0x00107372
+	// Token: 0x06001A05 RID: 6661 RVA: 0x00109142 File Offset: 0x00107342
 	private void Init()
 	{
 		base.GetComponent<Image>().material = this.guiMain_.matFill_Window;

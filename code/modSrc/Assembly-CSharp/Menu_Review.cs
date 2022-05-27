@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000199 RID: 409
 public class Menu_Review : MonoBehaviour
 {
-	// Token: 0x06000F84 RID: 3972 RVA: 0x000A4AFB File Offset: 0x000A2CFB
+	// Token: 0x06000F84 RID: 3972 RVA: 0x000A4B07 File Offset: 0x000A2D07
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F85 RID: 3973 RVA: 0x000A4B04 File Offset: 0x000A2D04
+	// Token: 0x06000F85 RID: 3973 RVA: 0x000A4B10 File Offset: 0x000A2D10
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -52,7 +52,7 @@ public class Menu_Review : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F86 RID: 3974 RVA: 0x000A4C28 File Offset: 0x000A2E28
+	// Token: 0x06000F86 RID: 3974 RVA: 0x000A4C34 File Offset: 0x000A2E34
 	private void Update()
 	{
 		if (this.game_)
@@ -66,7 +66,7 @@ public class Menu_Review : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F87 RID: 3975 RVA: 0x000A4D00 File Offset: 0x000A2F00
+	// Token: 0x06000F87 RID: 3975 RVA: 0x000A4D0C File Offset: 0x000A2F0C
 	private void ShowRewards(bool playSound)
 	{
 		if (this.game_.typ_addon || this.game_.typ_addonStandalone || this.game_.typ_bundle || this.game_.typ_mmoaddon || this.game_.typ_bundleAddon)
@@ -106,14 +106,14 @@ public class Menu_Review : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F88 RID: 3976 RVA: 0x000A4E22 File Offset: 0x000A3022
+	// Token: 0x06000F88 RID: 3976 RVA: 0x000A4E2E File Offset: 0x000A302E
 	public void InitContractGame(gameScript s_)
 	{
 		this.Init(s_);
 		this.showContractAbrechnung = true;
 	}
 
-	// Token: 0x06000F89 RID: 3977 RVA: 0x000A4E34 File Offset: 0x000A3034
+	// Token: 0x06000F89 RID: 3977 RVA: 0x000A4E40 File Offset: 0x000A3040
 	public void Init(gameScript s_)
 	{
 		this.FindScripts();
@@ -227,7 +227,7 @@ public class Menu_Review : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F8A RID: 3978 RVA: 0x000A5564 File Offset: 0x000A3764
+	// Token: 0x06000F8A RID: 3978 RVA: 0x000A5570 File Offset: 0x000A3770
 	public void BUTTON_Close()
 	{
 		if (this.game_ && Mathf.RoundToInt(this.reviewTotalLerp) != this.game_.reviewTotal)
@@ -260,7 +260,7 @@ public class Menu_Review : MonoBehaviour
 		this.showContractAbrechnung = false;
 	}
 
-	// Token: 0x06000F8B RID: 3979 RVA: 0x000A58D8 File Offset: 0x000A3AD8
+	// Token: 0x06000F8B RID: 3979 RVA: 0x000A58E4 File Offset: 0x000A3AE4
 	public void BUTTON_Spielbeschreibung()
 	{
 		this.sfx_.PlaySound(3, true);

@@ -5,21 +5,21 @@ using UnityEngine.UI;
 // Token: 0x020002CD RID: 717
 public class AmountContracts : MonoBehaviour
 {
-	// Token: 0x060019FE RID: 6654 RVA: 0x00108FF8 File Offset: 0x001071F8
+	// Token: 0x060019FE RID: 6654 RVA: 0x00108FC8 File Offset: 0x001071C8
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x060019FF RID: 6655 RVA: 0x00108FF8 File Offset: 0x001071F8
+	// Token: 0x060019FF RID: 6655 RVA: 0x00108FC8 File Offset: 0x001071C8
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x06001A00 RID: 6656 RVA: 0x00109008 File Offset: 0x00107208
+	// Token: 0x06001A00 RID: 6656 RVA: 0x00108FD8 File Offset: 0x001071D8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class AmountContracts : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A01 RID: 6657 RVA: 0x001090B4 File Offset: 0x001072B4
+	// Token: 0x06001A01 RID: 6657 RVA: 0x00109084 File Offset: 0x00107284
 	private void Init()
 	{
 		base.gameObject.GetComponent<Text>().text = "[" + this.mS_.GetAmountContracts(this.contractTyp).ToString() + "] ";

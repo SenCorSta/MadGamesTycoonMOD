@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x020001FB RID: 507
 public class Menu_KonsolePreisSelect : MonoBehaviour
 {
-	// Token: 0x06001350 RID: 4944 RVA: 0x000CBFC9 File Offset: 0x000CA1C9
+	// Token: 0x06001350 RID: 4944 RVA: 0x000CBFF5 File Offset: 0x000CA1F5
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001351 RID: 4945 RVA: 0x000CBFD4 File Offset: 0x000CA1D4
+	// Token: 0x06001351 RID: 4945 RVA: 0x000CC000 File Offset: 0x000CA200
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_KonsolePreisSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001352 RID: 4946 RVA: 0x000CC0BA File Offset: 0x000CA2BA
+	// Token: 0x06001352 RID: 4946 RVA: 0x000CC0E6 File Offset: 0x000CA2E6
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -55,7 +55,7 @@ public class Menu_KonsolePreisSelect : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001353 RID: 4947 RVA: 0x000CC0F4 File Offset: 0x000CA2F4
+	// Token: 0x06001353 RID: 4947 RVA: 0x000CC120 File Offset: 0x000CA320
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -71,7 +71,7 @@ public class Menu_KonsolePreisSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001354 RID: 4948 RVA: 0x000CC140 File Offset: 0x000CA340
+	// Token: 0x06001354 RID: 4948 RVA: 0x000CC16C File Offset: 0x000CA36C
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -84,7 +84,7 @@ public class Menu_KonsolePreisSelect : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001355 RID: 4949 RVA: 0x000CC19C File Offset: 0x000CA39C
+	// Token: 0x06001355 RID: 4949 RVA: 0x000CC1C8 File Offset: 0x000CA3C8
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -92,7 +92,7 @@ public class Menu_KonsolePreisSelect : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x06001356 RID: 4950 RVA: 0x000CC1B0 File Offset: 0x000CA3B0
+	// Token: 0x06001356 RID: 4950 RVA: 0x000CC1DC File Offset: 0x000CA3DC
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -110,7 +110,7 @@ public class Menu_KonsolePreisSelect : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001357 RID: 4951 RVA: 0x000CC2B8 File Offset: 0x000CA4B8
+	// Token: 0x06001357 RID: 4951 RVA: 0x000CC2E4 File Offset: 0x000CA4E4
 	public void Init()
 	{
 		this.FindScripts();
@@ -121,7 +121,7 @@ public class Menu_KonsolePreisSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001358 RID: 4952 RVA: 0x000CC30C File Offset: 0x000CA50C
+	// Token: 0x06001358 RID: 4952 RVA: 0x000CC338 File Offset: 0x000CA538
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -146,13 +146,13 @@ public class Menu_KonsolePreisSelect : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06001359 RID: 4953 RVA: 0x000CC416 File Offset: 0x000CA616
+	// Token: 0x06001359 RID: 4953 RVA: 0x000CC442 File Offset: 0x000CA642
 	public bool CheckPlatformData(platformScript script_)
 	{
 		return script_ && script_.ownerID == this.mS_.myID && !script_.vomMarktGenommen && script_.isUnlocked;
 	}
 
-	// Token: 0x0600135A RID: 4954 RVA: 0x000CC448 File Offset: 0x000CA648
+	// Token: 0x0600135A RID: 4954 RVA: 0x000CC474 File Offset: 0x000CA674
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -205,7 +205,7 @@ public class Menu_KonsolePreisSelect : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x0600135B RID: 4955 RVA: 0x000CC623 File Offset: 0x000CA823
+	// Token: 0x0600135B RID: 4955 RVA: 0x000CC64F File Offset: 0x000CA84F
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);

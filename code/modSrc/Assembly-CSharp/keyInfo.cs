@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x02000274 RID: 628
 public class keyInfo : MonoBehaviour
 {
-	// Token: 0x06001870 RID: 6256 RVA: 0x000F252C File Offset: 0x000F072C
+	// Token: 0x06001870 RID: 6256 RVA: 0x000F2558 File Offset: 0x000F0758
 	private void Start()
 	{
 		string text = "";

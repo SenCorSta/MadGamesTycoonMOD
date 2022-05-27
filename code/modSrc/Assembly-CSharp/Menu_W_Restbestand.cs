@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000207 RID: 519
 public class Menu_W_Restbestand : MonoBehaviour
 {
-	// Token: 0x060013D6 RID: 5078 RVA: 0x000CFA69 File Offset: 0x000CDC69
+	// Token: 0x060013D6 RID: 5078 RVA: 0x000CFA95 File Offset: 0x000CDC95
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060013D7 RID: 5079 RVA: 0x000CFA74 File Offset: 0x000CDC74
+	// Token: 0x060013D7 RID: 5079 RVA: 0x000CFAA0 File Offset: 0x000CDCA0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_W_Restbestand : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013D8 RID: 5080 RVA: 0x000CFB65 File Offset: 0x000CDD65
+	// Token: 0x060013D8 RID: 5080 RVA: 0x000CFB91 File Offset: 0x000CDD91
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060013D9 RID: 5081 RVA: 0x000CFB70 File Offset: 0x000CDD70
+	// Token: 0x060013D9 RID: 5081 RVA: 0x000CFB9C File Offset: 0x000CDD9C
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -66,7 +66,7 @@ public class Menu_W_Restbestand : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060013DA RID: 5082 RVA: 0x000CFBBC File Offset: 0x000CDDBC
+	// Token: 0x060013DA RID: 5082 RVA: 0x000CFBE8 File Offset: 0x000CDDE8
 	public void Init(gameScript gS_)
 	{
 		this.FindScripts();
@@ -75,7 +75,7 @@ public class Menu_W_Restbestand : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060013DB RID: 5083 RVA: 0x000CFBD8 File Offset: 0x000CDDD8
+	// Token: 0x060013DB RID: 5083 RVA: 0x000CFC04 File Offset: 0x000CDE04
 	private void SetData()
 	{
 		if (this.game_)
@@ -103,7 +103,7 @@ public class Menu_W_Restbestand : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013DC RID: 5084 RVA: 0x000CFCE5 File Offset: 0x000CDEE5
+	// Token: 0x060013DC RID: 5084 RVA: 0x000CFD11 File Offset: 0x000CDF11
 	private int GetSumme(gameScript script_)
 	{
 		if (!script_)
@@ -114,14 +114,14 @@ public class Menu_W_Restbestand : MonoBehaviour
 		return Mathf.RoundToInt(0.029000001f * (float)script_.reviewTotal * (float)script_.GetLagerbestand());
 	}
 
-	// Token: 0x060013DD RID: 5085 RVA: 0x000CFD15 File Offset: 0x000CDF15
+	// Token: 0x060013DD RID: 5085 RVA: 0x000CFD41 File Offset: 0x000CDF41
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060013DE RID: 5086 RVA: 0x000CFD30 File Offset: 0x000CDF30
+	// Token: 0x060013DE RID: 5086 RVA: 0x000CFD5C File Offset: 0x000CDF5C
 	public void BUTTON_Yes()
 	{
 		if (this.game_)

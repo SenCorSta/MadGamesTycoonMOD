@@ -3,7 +3,7 @@
 // Token: 0x0200021A RID: 538
 public class BestIPsList
 {
-	// Token: 0x060014B7 RID: 5303 RVA: 0x000D673A File Offset: 0x000D493A
+	// Token: 0x060014B7 RID: 5303 RVA: 0x000D6766 File Offset: 0x000D4966
 	public BestIPsList(int gameID_, float wert_, gameScript s_)
 	{
 		this.gameID = gameID_;

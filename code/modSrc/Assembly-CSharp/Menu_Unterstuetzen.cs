@@ -6,13 +6,13 @@ using Vectrosity;
 // Token: 0x020001BB RID: 443
 public class Menu_Unterstuetzen : MonoBehaviour
 {
-	// Token: 0x060010B8 RID: 4280 RVA: 0x000B0C8F File Offset: 0x000AEE8F
+	// Token: 0x060010B8 RID: 4280 RVA: 0x000B0C9B File Offset: 0x000AEE9B
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010B9 RID: 4281 RVA: 0x000B0C98 File Offset: 0x000AEE98
+	// Token: 0x060010B9 RID: 4281 RVA: 0x000B0CA4 File Offset: 0x000AEEA4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -49,14 +49,14 @@ public class Menu_Unterstuetzen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010BA RID: 4282 RVA: 0x000B0DA4 File Offset: 0x000AEFA4
+	// Token: 0x060010BA RID: 4282 RVA: 0x000B0DB0 File Offset: 0x000AEFB0
 	private void Update()
 	{
 		this.DrawLine();
 		this.MouseMovement();
 	}
 
-	// Token: 0x060010BB RID: 4283 RVA: 0x000B0DB4 File Offset: 0x000AEFB4
+	// Token: 0x060010BB RID: 4283 RVA: 0x000B0DC0 File Offset: 0x000AEFC0
 	private void MouseMovement()
 	{
 		if (!this.mS_)
@@ -114,7 +114,7 @@ public class Menu_Unterstuetzen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010BC RID: 4284 RVA: 0x000B0FF4 File Offset: 0x000AF1F4
+	// Token: 0x060010BC RID: 4284 RVA: 0x000B1000 File Offset: 0x000AF200
 	public void BUTTON_Close()
 	{
 		this.initLine = false;
@@ -132,7 +132,7 @@ public class Menu_Unterstuetzen : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060010BD RID: 4285 RVA: 0x000B1064 File Offset: 0x000AF264
+	// Token: 0x060010BD RID: 4285 RVA: 0x000B1070 File Offset: 0x000AF270
 	private void Accept(roomScript script_)
 	{
 		if (this.rS_ == script_)
@@ -159,7 +159,7 @@ public class Menu_Unterstuetzen : MonoBehaviour
 		this.BUTTON_Close();
 	}
 
-	// Token: 0x060010BE RID: 4286 RVA: 0x000B113C File Offset: 0x000AF33C
+	// Token: 0x060010BE RID: 4286 RVA: 0x000B1148 File Offset: 0x000AF348
 	private void DrawLine()
 	{
 		if (this.rS_ && this.mS_.settings_)

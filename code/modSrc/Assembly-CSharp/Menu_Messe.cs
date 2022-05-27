@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001CC RID: 460
 public class Menu_Messe : MonoBehaviour
 {
-	// Token: 0x06001169 RID: 4457 RVA: 0x000B8205 File Offset: 0x000B6405
+	// Token: 0x06001169 RID: 4457 RVA: 0x000B8211 File Offset: 0x000B6411
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600116A RID: 4458 RVA: 0x000B8210 File Offset: 0x000B6410
+	// Token: 0x0600116A RID: 4458 RVA: 0x000B821C File Offset: 0x000B641C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_Messe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116B RID: 4459 RVA: 0x000B82BC File Offset: 0x000B64BC
+	// Token: 0x0600116B RID: 4459 RVA: 0x000B82C8 File Offset: 0x000B64C8
 	public void Init()
 	{
 		this.FindScripts();
@@ -68,7 +68,7 @@ public class Menu_Messe : MonoBehaviour
 		this.sfx_.PlaySound(50, false);
 	}
 
-	// Token: 0x0600116C RID: 4460 RVA: 0x000B8485 File Offset: 0x000B6685
+	// Token: 0x0600116C RID: 4460 RVA: 0x000B8491 File Offset: 0x000B6691
 	private void Update()
 	{
 		if (!base.gameObject.activeSelf)
@@ -81,7 +81,7 @@ public class Menu_Messe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116D RID: 4461 RVA: 0x000B84B0 File Offset: 0x000B66B0
+	// Token: 0x0600116D RID: 4461 RVA: 0x000B84BC File Offset: 0x000B66BC
 	public int GetPrice(int i)
 	{
 		int num = this.mS_.year - 1975;
@@ -92,7 +92,7 @@ public class Menu_Messe : MonoBehaviour
 		return this.price[i] * num + 5000;
 	}
 
-	// Token: 0x0600116E RID: 4462 RVA: 0x000B84E8 File Offset: 0x000B66E8
+	// Token: 0x0600116E RID: 4462 RVA: 0x000B84F4 File Offset: 0x000B66F4
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -104,7 +104,7 @@ public class Menu_Messe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116F RID: 4463 RVA: 0x000B854C File Offset: 0x000B674C
+	// Token: 0x0600116F RID: 4463 RVA: 0x000B8558 File Offset: 0x000B6758
 	public void BUTTON_Stand(int i)
 	{
 		this.sfx_.PlaySound(3, true);

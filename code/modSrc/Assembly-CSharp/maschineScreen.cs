@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x020002F6 RID: 758
 public class maschineScreen : MonoBehaviour
 {
-	// Token: 0x06001AA8 RID: 6824 RVA: 0x0010C9C7 File Offset: 0x0010ABC7
+	// Token: 0x06001AA8 RID: 6824 RVA: 0x0010C9E3 File Offset: 0x0010ABE3
 	private void Start()
 	{
 		this.mS_ = GameObject.FindGameObjectWithTag("Main").GetComponent<mainScript>();
 	}
 
-	// Token: 0x06001AA9 RID: 6825 RVA: 0x0010C9E0 File Offset: 0x0010ABE0
+	// Token: 0x06001AA9 RID: 6825 RVA: 0x0010C9FC File Offset: 0x0010ABFC
 	private void Update()
 	{
 		this.timer += this.mS_.GetDeltaTime();

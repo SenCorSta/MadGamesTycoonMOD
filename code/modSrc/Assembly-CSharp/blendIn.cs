@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020002D7 RID: 727
 public class blendIn : MonoBehaviour
 {
-	// Token: 0x06001A28 RID: 6696 RVA: 0x00109E98 File Offset: 0x00108098
+	// Token: 0x06001A28 RID: 6696 RVA: 0x00109E68 File Offset: 0x00108068
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001A29 RID: 6697 RVA: 0x00109EA0 File Offset: 0x001080A0
+	// Token: 0x06001A29 RID: 6697 RVA: 0x00109E70 File Offset: 0x00108070
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,13 +36,13 @@ public class blendIn : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A2A RID: 6698 RVA: 0x00109F4A File Offset: 0x0010814A
+	// Token: 0x06001A2A RID: 6698 RVA: 0x00109F1A File Offset: 0x0010811A
 	private void OnEnable()
 	{
 		this.uiObjects[0].GetComponent<Image>().fillAmount = 1f;
 	}
 
-	// Token: 0x06001A2B RID: 6699 RVA: 0x00109F64 File Offset: 0x00108164
+	// Token: 0x06001A2B RID: 6699 RVA: 0x00109F34 File Offset: 0x00108134
 	private void Update()
 	{
 		if (this.uiObjects[0].GetComponent<Image>().fillAmount > 0f)

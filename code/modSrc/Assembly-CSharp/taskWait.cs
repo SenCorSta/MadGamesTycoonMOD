@@ -4,19 +4,19 @@ using UnityEngine;
 // Token: 0x02000320 RID: 800
 public class taskWait : MonoBehaviour
 {
-	// Token: 0x06001C63 RID: 7267 RVA: 0x001181D3 File Offset: 0x001163D3
+	// Token: 0x06001C63 RID: 7267 RVA: 0x001181EF File Offset: 0x001163EF
 	private void Awake()
 	{
 		base.transform.position = new Vector3(260f, 0f, 0f);
 	}
 
-	// Token: 0x06001C64 RID: 7268 RVA: 0x001181F4 File Offset: 0x001163F4
+	// Token: 0x06001C64 RID: 7268 RVA: 0x00118210 File Offset: 0x00116410
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001C65 RID: 7269 RVA: 0x001181FC File Offset: 0x001163FC
+	// Token: 0x06001C65 RID: 7269 RVA: 0x00118218 File Offset: 0x00116418
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class taskWait : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C66 RID: 7270 RVA: 0x001182A2 File Offset: 0x001164A2
+	// Token: 0x06001C66 RID: 7270 RVA: 0x001182BE File Offset: 0x001164BE
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -51,13 +51,13 @@ public class taskWait : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001C67 RID: 7271 RVA: 0x001182D3 File Offset: 0x001164D3
+	// Token: 0x06001C67 RID: 7271 RVA: 0x001182EF File Offset: 0x001164EF
 	private void Update()
 	{
 		this.AutomaticWait(this.art);
 	}
 
-	// Token: 0x06001C68 RID: 7272 RVA: 0x001182E4 File Offset: 0x001164E4
+	// Token: 0x06001C68 RID: 7272 RVA: 0x00118300 File Offset: 0x00116500
 	public Sprite GetPic()
 	{
 		this.FindScripts();
@@ -68,7 +68,7 @@ public class taskWait : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06001C69 RID: 7273 RVA: 0x00118314 File Offset: 0x00116514
+	// Token: 0x06001C69 RID: 7273 RVA: 0x00118330 File Offset: 0x00116530
 	private void AutomaticWait(int art_)
 	{
 		if (art_ == -1)

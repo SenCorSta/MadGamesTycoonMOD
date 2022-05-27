@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x0200027B RID: 635
 public class setFont : MonoBehaviour
 {
-	// Token: 0x060018F8 RID: 6392 RVA: 0x000F8B83 File Offset: 0x000F6D83
+	// Token: 0x060018F8 RID: 6392 RVA: 0x000F8BAF File Offset: 0x000F6DAF
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -18,7 +18,7 @@ public class setFont : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018F9 RID: 6393 RVA: 0x000F8BC0 File Offset: 0x000F6DC0
+	// Token: 0x060018F9 RID: 6393 RVA: 0x000F8BEC File Offset: 0x000F6DEC
 	private void OnEnable()
 	{
 		this.FindScripts();

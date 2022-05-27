@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001A1 RID: 417
 public class Menu_W_BuyLicence : MonoBehaviour
 {
-	// Token: 0x06000FBD RID: 4029 RVA: 0x000A7563 File Offset: 0x000A5763
+	// Token: 0x06000FBD RID: 4029 RVA: 0x000A756F File Offset: 0x000A576F
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FBE RID: 4030 RVA: 0x000A756C File Offset: 0x000A576C
+	// Token: 0x06000FBE RID: 4030 RVA: 0x000A7578 File Offset: 0x000A5778
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_W_BuyLicence : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FBF RID: 4031 RVA: 0x000A7634 File Offset: 0x000A5834
+	// Token: 0x06000FBF RID: 4031 RVA: 0x000A7640 File Offset: 0x000A5840
 	public void Init(int id)
 	{
 		this.FindScripts();
@@ -48,7 +48,7 @@ public class Menu_W_BuyLicence : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.licences_.GetTooltip(this.myID);
 	}
 
-	// Token: 0x06000FC0 RID: 4032 RVA: 0x000A7666 File Offset: 0x000A5866
+	// Token: 0x06000FC0 RID: 4032 RVA: 0x000A7672 File Offset: 0x000A5872
 	private void Update()
 	{
 		if (this.licences_.licence_ANGEBOT[this.myID] <= 0)
@@ -58,14 +58,14 @@ public class Menu_W_BuyLicence : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FC1 RID: 4033 RVA: 0x000A7684 File Offset: 0x000A5884
+	// Token: 0x06000FC1 RID: 4033 RVA: 0x000A7690 File Offset: 0x000A5890
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FC2 RID: 4034 RVA: 0x000A769F File Offset: 0x000A589F
+	// Token: 0x06000FC2 RID: 4034 RVA: 0x000A76AB File Offset: 0x000A58AB
 	public void BUTTON_Yes()
 	{
 		this.licences_.Buy(this.myID);

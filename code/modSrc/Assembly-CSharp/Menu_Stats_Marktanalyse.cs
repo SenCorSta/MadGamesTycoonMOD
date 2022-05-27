@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x02000240 RID: 576
 public class Menu_Stats_Marktanalyse : MonoBehaviour
 {
-	// Token: 0x06001633 RID: 5683 RVA: 0x000E1F24 File Offset: 0x000E0124
+	// Token: 0x06001633 RID: 5683 RVA: 0x000E1F50 File Offset: 0x000E0150
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001634 RID: 5684 RVA: 0x000E1F2C File Offset: 0x000E012C
+	// Token: 0x06001634 RID: 5684 RVA: 0x000E1F58 File Offset: 0x000E0158
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class Menu_Stats_Marktanalyse : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001635 RID: 5685 RVA: 0x000E204E File Offset: 0x000E024E
+	// Token: 0x06001635 RID: 5685 RVA: 0x000E207A File Offset: 0x000E027A
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -61,7 +61,7 @@ public class Menu_Stats_Marktanalyse : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x06001636 RID: 5686 RVA: 0x000E2064 File Offset: 0x000E0264
+	// Token: 0x06001636 RID: 5686 RVA: 0x000E2090 File Offset: 0x000E0290
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -74,7 +74,7 @@ public class Menu_Stats_Marktanalyse : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001637 RID: 5687 RVA: 0x000E20F4 File Offset: 0x000E02F4
+	// Token: 0x06001637 RID: 5687 RVA: 0x000E2120 File Offset: 0x000E0320
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -84,7 +84,7 @@ public class Menu_Stats_Marktanalyse : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001638 RID: 5688 RVA: 0x000E212C File Offset: 0x000E032C
+	// Token: 0x06001638 RID: 5688 RVA: 0x000E2158 File Offset: 0x000E0358
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -100,7 +100,7 @@ public class Menu_Stats_Marktanalyse : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x06001639 RID: 5689 RVA: 0x000E2178 File Offset: 0x000E0378
+	// Token: 0x06001639 RID: 5689 RVA: 0x000E21A4 File Offset: 0x000E03A4
 	public void Init()
 	{
 		this.FindScripts();
@@ -140,14 +140,14 @@ public class Menu_Stats_Marktanalyse : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[4]);
 	}
 
-	// Token: 0x0600163A RID: 5690 RVA: 0x000E2404 File Offset: 0x000E0604
+	// Token: 0x0600163A RID: 5690 RVA: 0x000E2430 File Offset: 0x000E0630
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600163B RID: 5691 RVA: 0x000E2420 File Offset: 0x000E0620
+	// Token: 0x0600163B RID: 5691 RVA: 0x000E244C File Offset: 0x000E064C
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -187,7 +187,7 @@ public class Menu_Stats_Marktanalyse : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x0600163C RID: 5692 RVA: 0x000E2534 File Offset: 0x000E0734
+	// Token: 0x0600163C RID: 5692 RVA: 0x000E2560 File Offset: 0x000E0760
 	public void BUTTON_Search()
 	{
 		if (!base.gameObject.activeSelf)

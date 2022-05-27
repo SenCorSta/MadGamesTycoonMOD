@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000272 RID: 626
 public class Menu_Training_Select : MonoBehaviour
 {
-	// Token: 0x0600185D RID: 6237 RVA: 0x000F1DB5 File Offset: 0x000EFFB5
+	// Token: 0x0600185D RID: 6237 RVA: 0x000F1DE1 File Offset: 0x000EFFE1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600185E RID: 6238 RVA: 0x000F1DC0 File Offset: 0x000EFFC0
+	// Token: 0x0600185E RID: 6238 RVA: 0x000F1DEC File Offset: 0x000EFFEC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_Training_Select : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600185F RID: 6239 RVA: 0x000F1E6A File Offset: 0x000F006A
+	// Token: 0x0600185F RID: 6239 RVA: 0x000F1E96 File Offset: 0x000F0096
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -45,14 +45,14 @@ public class Menu_Training_Select : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001860 RID: 6240 RVA: 0x000F1E9C File Offset: 0x000F009C
+	// Token: 0x06001860 RID: 6240 RVA: 0x000F1EC8 File Offset: 0x000F00C8
 	public void Init(roomScript room_)
 	{
 		this.FindScripts();
 		this.rS_ = room_;
 	}
 
-	// Token: 0x06001861 RID: 6241 RVA: 0x000F1EAB File Offset: 0x000F00AB
+	// Token: 0x06001861 RID: 6241 RVA: 0x000F1ED7 File Offset: 0x000F00D7
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);

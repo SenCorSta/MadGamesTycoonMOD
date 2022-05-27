@@ -5,13 +5,13 @@ using UnityEngine;
 // Token: 0x02000322 RID: 802
 public class arbeitsmarkt : MonoBehaviour
 {
-	// Token: 0x06001C71 RID: 7281 RVA: 0x00118BC3 File Offset: 0x00116DC3
+	// Token: 0x06001C71 RID: 7281 RVA: 0x00118BDF File Offset: 0x00116DDF
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001C72 RID: 7282 RVA: 0x00118BCC File Offset: 0x00116DCC
+	// Token: 0x06001C72 RID: 7282 RVA: 0x00118BE8 File Offset: 0x00116DE8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -32,7 +32,7 @@ public class arbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C73 RID: 7283 RVA: 0x00118C54 File Offset: 0x00116E54
+	// Token: 0x06001C73 RID: 7283 RVA: 0x00118C70 File Offset: 0x00116E70
 	public charArbeitsmarkt CreateArbeitsmarktItem()
 	{
 		charArbeitsmarkt component = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0]).GetComponent<charArbeitsmarkt>();
@@ -43,7 +43,7 @@ public class arbeitsmarkt : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x06001C74 RID: 7284 RVA: 0x00118CA4 File Offset: 0x00116EA4
+	// Token: 0x06001C74 RID: 7284 RVA: 0x00118CC0 File Offset: 0x00116EC0
 	public void ArbeitsmarktUpdaten()
 	{
 		if (this.mS_.multiplayer && this.mS_.mpCalls_.isClient)
@@ -97,7 +97,7 @@ public class arbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C75 RID: 7285 RVA: 0x00118DCC File Offset: 0x00116FCC
+	// Token: 0x06001C75 RID: 7285 RVA: 0x00118DE8 File Offset: 0x00116FE8
 	private IEnumerator Remove(charArbeitsmarkt script_)
 	{
 		yield return new WaitForEndOfFrame();

@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x02000195 RID: 405
 public class Menu_GameFromMarket : MonoBehaviour
 {
-	// Token: 0x06000F64 RID: 3940 RVA: 0x000A274D File Offset: 0x000A094D
+	// Token: 0x06000F64 RID: 3940 RVA: 0x000A2759 File Offset: 0x000A0959
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F65 RID: 3941 RVA: 0x000A2758 File Offset: 0x000A0958
+	// Token: 0x06000F65 RID: 3941 RVA: 0x000A2764 File Offset: 0x000A0964
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -69,7 +69,7 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F66 RID: 3942 RVA: 0x000A28F8 File Offset: 0x000A0AF8
+	// Token: 0x06000F66 RID: 3942 RVA: 0x000A2904 File Offset: 0x000A0B04
 	public void Init(gameScript game_, bool selbstVomMarktGenommen)
 	{
 		this.FindScripts();
@@ -329,7 +329,7 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F67 RID: 3943 RVA: 0x000A3447 File Offset: 0x000A1647
+	// Token: 0x06000F67 RID: 3943 RVA: 0x000A3453 File Offset: 0x000A1653
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -338,7 +338,7 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F68 RID: 3944 RVA: 0x000A3464 File Offset: 0x000A1664
+	// Token: 0x06000F68 RID: 3944 RVA: 0x000A3470 File Offset: 0x000A1670
 	public void BUTTON_Close()
 	{
 		this.FindScripts();

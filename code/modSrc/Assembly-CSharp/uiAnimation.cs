@@ -9,7 +9,7 @@ public class uiAnimation : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001AE6 RID: 6886 RVA: 0x0010E1C0 File Offset: 0x0010C3C0
+	// Token: 0x06001AE6 RID: 6886 RVA: 0x0010E1DC File Offset: 0x0010C3DC
 	private void OnEnable()
 	{
 		Debug.Log("LKJK" + UnityEngine.Random.Range(0, 100000).ToString() + " " + base.gameObject.name);

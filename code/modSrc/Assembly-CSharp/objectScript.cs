@@ -6,7 +6,7 @@ using UnityEngine.UI;
 // Token: 0x02000336 RID: 822
 public class objectScript : MonoBehaviour
 {
-	// Token: 0x06001DA9 RID: 7593 RVA: 0x00127973 File Offset: 0x00125B73
+	// Token: 0x06001DA9 RID: 7593 RVA: 0x0012798F File Offset: 0x00125B8F
 	private void Start()
 	{
 		this.FindScripts();
@@ -18,7 +18,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DAA RID: 7594 RVA: 0x001279A0 File Offset: 0x00125BA0
+	// Token: 0x06001DAA RID: 7594 RVA: 0x001279BC File Offset: 0x00125BBC
 	private void OnDestroy()
 	{
 		if (this.multiplayerObject)
@@ -84,7 +84,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DAB RID: 7595 RVA: 0x00127B5C File Offset: 0x00125D5C
+	// Token: 0x06001DAB RID: 7595 RVA: 0x00127B78 File Offset: 0x00125D78
 	public void InitNewObject(int typ_)
 	{
 		this.FindScripts();
@@ -97,7 +97,7 @@ public class objectScript : MonoBehaviour
 		this.PickUp();
 	}
 
-	// Token: 0x06001DAC RID: 7596 RVA: 0x00127BE5 File Offset: 0x00125DE5
+	// Token: 0x06001DAC RID: 7596 RVA: 0x00127C01 File Offset: 0x00125E01
 	public void InitObjectFromSavegame()
 	{
 		this.FindScripts();
@@ -106,7 +106,7 @@ public class objectScript : MonoBehaviour
 		this.gekauft = true;
 	}
 
-	// Token: 0x06001DAD RID: 7597 RVA: 0x00127C1C File Offset: 0x00125E1C
+	// Token: 0x06001DAD RID: 7597 RVA: 0x00127C38 File Offset: 0x00125E38
 	public void InitGhostObject(int typ_)
 	{
 		this.FindScripts();
@@ -117,7 +117,7 @@ public class objectScript : MonoBehaviour
 		this.gekauft = true;
 	}
 
-	// Token: 0x06001DAE RID: 7598 RVA: 0x00127C7C File Offset: 0x00125E7C
+	// Token: 0x06001DAE RID: 7598 RVA: 0x00127C98 File Offset: 0x00125E98
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -158,7 +158,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DAF RID: 7599 RVA: 0x00127DB4 File Offset: 0x00125FB4
+	// Token: 0x06001DAF RID: 7599 RVA: 0x00127DD0 File Offset: 0x00125FD0
 	private void RemoveObjects()
 	{
 		for (int i = 0; i < this.removeObjects.Length; i++)
@@ -170,7 +170,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB0 RID: 7600 RVA: 0x00127DF0 File Offset: 0x00125FF0
+	// Token: 0x06001DB0 RID: 7600 RVA: 0x00127E0C File Offset: 0x0012600C
 	private void InitGFX()
 	{
 		if (this.GFX.Length == 0)
@@ -188,14 +188,14 @@ public class objectScript : MonoBehaviour
 		this.GFX[num].SetActive(true);
 	}
 
-	// Token: 0x06001DB1 RID: 7601 RVA: 0x00127E48 File Offset: 0x00126048
+	// Token: 0x06001DB1 RID: 7601 RVA: 0x00127E64 File Offset: 0x00126064
 	public void UpdateMe()
 	{
 		this.MouseMovement();
 		this.UpdateUnkorrekterRoom();
 	}
 
-	// Token: 0x06001DB2 RID: 7602 RVA: 0x00127E56 File Offset: 0x00126056
+	// Token: 0x06001DB2 RID: 7602 RVA: 0x00127E72 File Offset: 0x00126072
 	public void WakeUpObject()
 	{
 		if (this.rigidbody.IsSleeping())
@@ -204,7 +204,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB3 RID: 7603 RVA: 0x00127E70 File Offset: 0x00126070
+	// Token: 0x06001DB3 RID: 7603 RVA: 0x00127E8C File Offset: 0x0012608C
 	public void UpdateUnkorrekterRoom()
 	{
 		if (!this.gekauft)
@@ -273,7 +273,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB4 RID: 7604 RVA: 0x001280DC File Offset: 0x001262DC
+	// Token: 0x06001DB4 RID: 7604 RVA: 0x001280F8 File Offset: 0x001262F8
 	public void PickUp()
 	{
 		this.collisionAmount = 0;
@@ -283,7 +283,7 @@ public class objectScript : MonoBehaviour
 		this.SetLayer(11, base.gameObject.transform.GetChild(0));
 	}
 
-	// Token: 0x06001DB5 RID: 7605 RVA: 0x00128134 File Offset: 0x00126334
+	// Token: 0x06001DB5 RID: 7605 RVA: 0x00128150 File Offset: 0x00126350
 	private void SetLayer(int newLayer, Transform trans)
 	{
 		trans.gameObject.layer = newLayer;
@@ -301,7 +301,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB6 RID: 7606 RVA: 0x001281CC File Offset: 0x001263CC
+	// Token: 0x06001DB6 RID: 7606 RVA: 0x001281E8 File Offset: 0x001263E8
 	public void MouseMovement()
 	{
 		if (!this.picked)
@@ -567,13 +567,13 @@ public class objectScript : MonoBehaviour
 		base.StartCoroutine(this.CheckCollideWithDelay(oldPosition));
 	}
 
-	// Token: 0x06001DB7 RID: 7607 RVA: 0x00128BFF File Offset: 0x00126DFF
+	// Token: 0x06001DB7 RID: 7607 RVA: 0x00128C1B File Offset: 0x00126E1B
 	public static float SnapTo(float a, float snap)
 	{
 		return Mathf.Round(a / snap) * snap;
 	}
 
-	// Token: 0x06001DB8 RID: 7608 RVA: 0x00128C0B File Offset: 0x00126E0B
+	// Token: 0x06001DB8 RID: 7608 RVA: 0x00128C27 File Offset: 0x00126E27
 	private void OnCollisionEnter(Collision collision)
 	{
 		this.mCamS_.SetOutlineColor(1, 0.3f, 1);
@@ -584,7 +584,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB9 RID: 7609 RVA: 0x00128C3C File Offset: 0x00126E3C
+	// Token: 0x06001DB9 RID: 7609 RVA: 0x00128C58 File Offset: 0x00126E58
 	private void OnCollisionStay(Collision collision)
 	{
 		this.mCamS_.SetOutlineColor(1, 0.3f, 1);
@@ -623,7 +623,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DBA RID: 7610 RVA: 0x00128DE4 File Offset: 0x00126FE4
+	// Token: 0x06001DBA RID: 7610 RVA: 0x00128E00 File Offset: 0x00127000
 	private void OnCollisionExit(Collision collision)
 	{
 		if (this.picked)
@@ -656,7 +656,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DBB RID: 7611 RVA: 0x00128EC0 File Offset: 0x001270C0
+	// Token: 0x06001DBB RID: 7611 RVA: 0x00128EDC File Offset: 0x001270DC
 	private IEnumerator CheckCollideWithDelay(Vector3 pos)
 	{
 		this.checkCollideWithDelay = true;
@@ -678,7 +678,7 @@ public class objectScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001DBC RID: 7612 RVA: 0x00128ED8 File Offset: 0x001270D8
+	// Token: 0x06001DBC RID: 7612 RVA: 0x00128EF4 File Offset: 0x001270F4
 	private bool IsCorrectRoomForThisObject(Vector3 pos)
 	{
 		int num = Mathf.RoundToInt(pos.x);
@@ -766,7 +766,7 @@ public class objectScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001DBD RID: 7613 RVA: 0x0012908C File Offset: 0x0012728C
+	// Token: 0x06001DBD RID: 7613 RVA: 0x001290A8 File Offset: 0x001272A8
 	public void PlatziereObject(Vector3 pos, bool fromSavegame, bool updatePathfinding)
 	{
 		if (!fromSavegame)
@@ -878,7 +878,7 @@ public class objectScript : MonoBehaviour
 		this.RemoveTilesView();
 	}
 
-	// Token: 0x06001DBE RID: 7614 RVA: 0x00129477 File Offset: 0x00127677
+	// Token: 0x06001DBE RID: 7614 RVA: 0x00129493 File Offset: 0x00127693
 	public bool ReOpenBuyInventarMenu()
 	{
 		this.FindScripts();
@@ -891,7 +891,7 @@ public class objectScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DBF RID: 7615 RVA: 0x001294B4 File Offset: 0x001276B4
+	// Token: 0x06001DBF RID: 7615 RVA: 0x001294D0 File Offset: 0x001276D0
 	private void RemoveTilesView()
 	{
 		Transform transform = base.transform.Find("TilesView");
@@ -901,7 +901,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC0 RID: 7616 RVA: 0x001294E5 File Offset: 0x001276E5
+	// Token: 0x06001DC0 RID: 7616 RVA: 0x00129501 File Offset: 0x00127701
 	private IEnumerator DestroyUnnoetigeComponents()
 	{
 		yield return new WaitForSeconds(2f);
@@ -909,7 +909,7 @@ public class objectScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001DC1 RID: 7617 RVA: 0x001294F4 File Offset: 0x001276F4
+	// Token: 0x06001DC1 RID: 7617 RVA: 0x00129510 File Offset: 0x00127710
 	public void MouseOver()
 	{
 		this.SetOutlineLayer();
@@ -919,14 +919,14 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC2 RID: 7618 RVA: 0x00129511 File Offset: 0x00127711
+	// Token: 0x06001DC2 RID: 7618 RVA: 0x0012952D File Offset: 0x0012772D
 	public void MouseLeave()
 	{
 		this.DisableOutlineLayer();
 		this.guiMain.DisableObjectTooltip();
 	}
 
-	// Token: 0x06001DC3 RID: 7619 RVA: 0x00129524 File Offset: 0x00127724
+	// Token: 0x06001DC3 RID: 7619 RVA: 0x00129540 File Offset: 0x00127740
 	public void SetOutlineLayer()
 	{
 		if (!this.outline)
@@ -937,7 +937,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC4 RID: 7620 RVA: 0x00129560 File Offset: 0x00127760
+	// Token: 0x06001DC4 RID: 7620 RVA: 0x0012957C File Offset: 0x0012777C
 	private void DisableOutlineLayer()
 	{
 		if (this.outline)
@@ -947,31 +947,31 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC5 RID: 7621 RVA: 0x00129589 File Offset: 0x00127789
+	// Token: 0x06001DC5 RID: 7621 RVA: 0x001295A5 File Offset: 0x001277A5
 	public void SetBesetzt(int i)
 	{
 		this.besetztCharID = i;
 	}
 
-	// Token: 0x06001DC6 RID: 7622 RVA: 0x00129592 File Offset: 0x00127792
+	// Token: 0x06001DC6 RID: 7622 RVA: 0x001295AE File Offset: 0x001277AE
 	public void SetUnbesetzt(int i)
 	{
 		this.besetztCharID = -1;
 	}
 
-	// Token: 0x06001DC7 RID: 7623 RVA: 0x0012959B File Offset: 0x0012779B
+	// Token: 0x06001DC7 RID: 7623 RVA: 0x001295B7 File Offset: 0x001277B7
 	public bool IsUnbesetzt()
 	{
 		return this.besetztCharID == -1;
 	}
 
-	// Token: 0x06001DC8 RID: 7624 RVA: 0x001295A9 File Offset: 0x001277A9
+	// Token: 0x06001DC8 RID: 7624 RVA: 0x001295C5 File Offset: 0x001277C5
 	public int GetVerkaufspreis()
 	{
 		return Mathf.RoundToInt((float)this.preis * 0.5f);
 	}
 
-	// Token: 0x06001DC9 RID: 7625 RVA: 0x001295C0 File Offset: 0x001277C0
+	// Token: 0x06001DC9 RID: 7625 RVA: 0x001295DC File Offset: 0x001277DC
 	public void Monatskosten()
 	{
 		if (this.monatsKosten <= 0)
@@ -1000,7 +1000,7 @@ public class objectScript : MonoBehaviour
 		base.StartCoroutine(this.guiMain.MoneyPopEnumerate(num, base.transform.position, false));
 	}
 
-	// Token: 0x06001DCA RID: 7626 RVA: 0x00129684 File Offset: 0x00127884
+	// Token: 0x06001DCA RID: 7626 RVA: 0x001296A0 File Offset: 0x001278A0
 	public void AddAufladungen()
 	{
 		if (this.aufladungenMax > this.aufladungenAkt)
@@ -1009,7 +1009,7 @@ public class objectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DCB RID: 7627 RVA: 0x001296A0 File Offset: 0x001278A0
+	// Token: 0x06001DCB RID: 7627 RVA: 0x001296BC File Offset: 0x001278BC
 	private string GetTooltip()
 	{
 		this.FindScripts();
@@ -1024,7 +1024,7 @@ public class objectScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06001DCC RID: 7628 RVA: 0x00129750 File Offset: 0x00127950
+	// Token: 0x06001DCC RID: 7628 RVA: 0x0012976C File Offset: 0x0012796C
 	private string GetQualitatStars(int i)
 	{
 		string result;
@@ -1055,7 +1055,7 @@ public class objectScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001DCD RID: 7629 RVA: 0x001297BC File Offset: 0x001279BC
+	// Token: 0x06001DCD RID: 7629 RVA: 0x001297D8 File Offset: 0x001279D8
 	public int GetServerplatz()
 	{
 		int num = this.serverplatz;
@@ -1096,7 +1096,7 @@ public class objectScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06001DCE RID: 7630 RVA: 0x0012990E File Offset: 0x00127B0E
+	// Token: 0x06001DCE RID: 7630 RVA: 0x0012992A File Offset: 0x00127B2A
 	public int GetRoomID()
 	{
 		return this.myRoomID;

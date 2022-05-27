@@ -5,13 +5,13 @@ using UnityEngine;
 // Token: 0x02000340 RID: 832
 public class savegameScript : MonoBehaviour
 {
-	// Token: 0x06001E72 RID: 7794 RVA: 0x00130F83 File Offset: 0x0012F183
+	// Token: 0x06001E72 RID: 7794 RVA: 0x00130F9F File Offset: 0x0012F19F
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001E73 RID: 7795 RVA: 0x00130F8C File Offset: 0x0012F18C
+	// Token: 0x06001E73 RID: 7795 RVA: 0x00130FA8 File Offset: 0x0012F1A8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -144,13 +144,13 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E74 RID: 7796 RVA: 0x0013130A File Offset: 0x0012F50A
+	// Token: 0x06001E74 RID: 7796 RVA: 0x00131326 File Offset: 0x0012F526
 	public void SaveMultiplayer(int i)
 	{
 		base.StartCoroutine(this.SaveMultiplayerDelay(i));
 	}
 
-	// Token: 0x06001E75 RID: 7797 RVA: 0x0013131A File Offset: 0x0012F51A
+	// Token: 0x06001E75 RID: 7797 RVA: 0x00131336 File Offset: 0x0012F536
 	public IEnumerator SaveMultiplayerDelay(int i)
 	{
 		if (this.mS_.mpCalls_.isServer)
@@ -172,7 +172,7 @@ public class savegameScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001E76 RID: 7798 RVA: 0x00131330 File Offset: 0x0012F530
+	// Token: 0x06001E76 RID: 7798 RVA: 0x0013134C File Offset: 0x0012F54C
 	public void Save(int i)
 	{
 		if (this.mS_.multiplayer)
@@ -222,7 +222,7 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E77 RID: 7799 RVA: 0x0013152C File Offset: 0x0012F72C
+	// Token: 0x06001E77 RID: 7799 RVA: 0x00131548 File Offset: 0x0012F748
 	public int GetOfficeFromSavegame(int i)
 	{
 		string filePath = this.mS_.GetSavegameTitle() + i.ToString() + ".txt";
@@ -239,7 +239,7 @@ public class savegameScript : MonoBehaviour
 		return array[21];
 	}
 
-	// Token: 0x06001E78 RID: 7800 RVA: 0x001315B8 File Offset: 0x0012F7B8
+	// Token: 0x06001E78 RID: 7800 RVA: 0x001315D4 File Offset: 0x0012F7D4
 	public void Load(int i)
 	{
 		this.loadingSavegame = true;
@@ -314,10 +314,6 @@ public class savegameScript : MonoBehaviour
 		if (!this.mS_.multiplayer)
 		{
 			base.StartCoroutine(this.IENUM_UpdateCharacters());
-		}
-		if (this.mS_.savegameVersion == 15)
-		{
-			this.mS_.savegameVersion = 16;
 		}
 		this.mS_.settings_TutorialOff = true;
 		this.loadingSavegame = false;

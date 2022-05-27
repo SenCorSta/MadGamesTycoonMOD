@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001A7 RID: 423
 public class Menu_Marketing_GameKampagne : MonoBehaviour
 {
-	// Token: 0x06000FED RID: 4077 RVA: 0x000A8AAB File Offset: 0x000A6CAB
+	// Token: 0x06000FED RID: 4077 RVA: 0x000A8AB7 File Offset: 0x000A6CB7
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FEE RID: 4078 RVA: 0x000A8AB4 File Offset: 0x000A6CB4
+	// Token: 0x06000FEE RID: 4078 RVA: 0x000A8AC0 File Offset: 0x000A6CC0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_Marketing_GameKampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FEF RID: 4079 RVA: 0x000A8BA0 File Offset: 0x000A6DA0
+	// Token: 0x06000FEF RID: 4079 RVA: 0x000A8BAC File Offset: 0x000A6DAC
 	private void Update()
 	{
 		if (this.selectedKampagne == -1 || this.selectedGame == null)
@@ -58,7 +58,7 @@ public class Menu_Marketing_GameKampagne : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000FF0 RID: 4080 RVA: 0x000A8BF4 File Offset: 0x000A6DF4
+	// Token: 0x06000FF0 RID: 4080 RVA: 0x000A8C00 File Offset: 0x000A6E00
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -74,7 +74,7 @@ public class Menu_Marketing_GameKampagne : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000FF1 RID: 4081 RVA: 0x000A8C40 File Offset: 0x000A6E40
+	// Token: 0x06000FF1 RID: 4081 RVA: 0x000A8C4C File Offset: 0x000A6E4C
 	public void Init(roomScript roomS_)
 	{
 		this.FindScripts();
@@ -171,7 +171,7 @@ public class Menu_Marketing_GameKampagne : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000FF2 RID: 4082 RVA: 0x000A90E8 File Offset: 0x000A72E8
+	// Token: 0x06000FF2 RID: 4082 RVA: 0x000A90F4 File Offset: 0x000A72F4
 	private void SetData()
 	{
 		if (this.selectedGame)
@@ -188,14 +188,14 @@ public class Menu_Marketing_GameKampagne : MonoBehaviour
 		this.uiObjects[26].GetComponent<Image>().sprite = this.guiMain_.uiSprites[3];
 	}
 
-	// Token: 0x06000FF3 RID: 4083 RVA: 0x000A91FE File Offset: 0x000A73FE
+	// Token: 0x06000FF3 RID: 4083 RVA: 0x000A920A File Offset: 0x000A740A
 	public void SetGame(gameScript script_)
 	{
 		this.selectedGame = script_;
 		this.SetData();
 	}
 
-	// Token: 0x06000FF4 RID: 4084 RVA: 0x000A9210 File Offset: 0x000A7410
+	// Token: 0x06000FF4 RID: 4084 RVA: 0x000A921C File Offset: 0x000A741C
 	private void SetButtonColor(int i)
 	{
 		this.uiObjects[2].GetComponent<Image>().color = Color.white;
@@ -232,7 +232,7 @@ public class Menu_Marketing_GameKampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FF5 RID: 4085 RVA: 0x000A93A4 File Offset: 0x000A75A4
+	// Token: 0x06000FF5 RID: 4085 RVA: 0x000A93B0 File Offset: 0x000A75B0
 	public gameScript FindGame()
 	{
 		if (this.selectedGame && (this.selectedGame.developerID == this.mS_.myID || this.selectedGame.publisherID == this.mS_.myID) && (this.selectedGame.isOnMarket || this.selectedGame.inDevelopment) && !this.selectedGame.typ_contractGame)
@@ -254,14 +254,14 @@ public class Menu_Marketing_GameKampagne : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000FF6 RID: 4086 RVA: 0x000A9491 File Offset: 0x000A7691
+	// Token: 0x06000FF6 RID: 4086 RVA: 0x000A949D File Offset: 0x000A769D
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FF7 RID: 4087 RVA: 0x000A94AC File Offset: 0x000A76AC
+	// Token: 0x06000FF7 RID: 4087 RVA: 0x000A94B8 File Offset: 0x000A76B8
 	public void BUTTON_Select(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -269,7 +269,7 @@ public class Menu_Marketing_GameKampagne : MonoBehaviour
 		this.SetButtonColor(i);
 	}
 
-	// Token: 0x06000FF8 RID: 4088 RVA: 0x000A94C9 File Offset: 0x000A76C9
+	// Token: 0x06000FF8 RID: 4088 RVA: 0x000A94D5 File Offset: 0x000A76D5
 	public void BUTTON_SelectGame()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -277,7 +277,7 @@ public class Menu_Marketing_GameKampagne : MonoBehaviour
 		this.guiMain_.uiObjects[90].GetComponent<Menu_Marketing_SelectGame>().Init();
 	}
 
-	// Token: 0x06000FF9 RID: 4089 RVA: 0x000A950C File Offset: 0x000A770C
+	// Token: 0x06000FF9 RID: 4089 RVA: 0x000A9518 File Offset: 0x000A7718
 	public void BUTTON_OK()
 	{
 		if (!this.selectedGame)
@@ -319,7 +319,7 @@ public class Menu_Marketing_GameKampagne : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FFA RID: 4090 RVA: 0x000A969C File Offset: 0x000A789C
+	// Token: 0x06000FFA RID: 4090 RVA: 0x000A96A8 File Offset: 0x000A78A8
 	public void TOGGLE_Auto()
 	{
 		if (!this.uiObjects[14].GetComponent<Toggle>().isOn)

@@ -5,7 +5,7 @@ using UnityEngine.Rendering.PostProcessing;
 // Token: 0x020002CC RID: 716
 public class PostProcessing : MonoBehaviour
 {
-	// Token: 0x060019F9 RID: 6649 RVA: 0x00108DE0 File Offset: 0x00106FE0
+	// Token: 0x060019F9 RID: 6649 RVA: 0x00108DB0 File Offset: 0x00106FB0
 	private void Start()
 	{
 		this.chromatic = ScriptableObject.CreateInstance<ChromaticAberration>();
@@ -27,7 +27,7 @@ public class PostProcessing : MonoBehaviour
 		});
 	}
 
-	// Token: 0x060019FA RID: 6650 RVA: 0x00108EF1 File Offset: 0x001070F1
+	// Token: 0x060019FA RID: 6650 RVA: 0x00108EC1 File Offset: 0x001070C1
 	public void BlendIn()
 	{
 		this.blend = 1f;
@@ -35,7 +35,7 @@ public class PostProcessing : MonoBehaviour
 		this.vignette.intensity.value = 1f;
 	}
 
-	// Token: 0x060019FB RID: 6651 RVA: 0x00108F28 File Offset: 0x00107128
+	// Token: 0x060019FB RID: 6651 RVA: 0x00108EF8 File Offset: 0x001070F8
 	private void Update()
 	{
 		this.blend -= Time.deltaTime * 1f;
@@ -43,7 +43,7 @@ public class PostProcessing : MonoBehaviour
 		this.vignette.intensity.value = this.blend;
 	}
 
-	// Token: 0x060019FC RID: 6652 RVA: 0x00108F79 File Offset: 0x00107179
+	// Token: 0x060019FC RID: 6652 RVA: 0x00108F49 File Offset: 0x00107149
 	private void OnDestroy()
 	{
 		RuntimeUtilities.DestroyVolume(this.volumeChromatic, true, true);

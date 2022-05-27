@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x020001B0 RID: 432
 public class Menu_BuyInventar : MonoBehaviour
 {
-	// Token: 0x0600105B RID: 4187 RVA: 0x000AD067 File Offset: 0x000AB267
+	// Token: 0x0600105B RID: 4187 RVA: 0x000AD073 File Offset: 0x000AB273
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600105C RID: 4188 RVA: 0x000AD070 File Offset: 0x000AB270
+	// Token: 0x0600105C RID: 4188 RVA: 0x000AD07C File Offset: 0x000AB27C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -61,7 +61,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600105D RID: 4189 RVA: 0x000AD1D4 File Offset: 0x000AB3D4
+	// Token: 0x0600105D RID: 4189 RVA: 0x000AD1E0 File Offset: 0x000AB3E0
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -73,7 +73,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600105E RID: 4190 RVA: 0x000AD25C File Offset: 0x000AB45C
+	// Token: 0x0600105E RID: 4190 RVA: 0x000AD268 File Offset: 0x000AB468
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -98,14 +98,14 @@ public class Menu_BuyInventar : MonoBehaviour
 		this.timerRightMousebutton = 0f;
 	}
 
-	// Token: 0x0600105F RID: 4191 RVA: 0x000AD338 File Offset: 0x000AB538
+	// Token: 0x0600105F RID: 4191 RVA: 0x000AD344 File Offset: 0x000AB544
 	public void OpenDropdown()
 	{
 		this.FindScripts();
 		this.uiObjects[0].SetActive(true);
 	}
 
-	// Token: 0x06001060 RID: 4192 RVA: 0x000AD34E File Offset: 0x000AB54E
+	// Token: 0x06001060 RID: 4192 RVA: 0x000AD35A File Offset: 0x000AB55A
 	public void CloseDropdown()
 	{
 		this.FindScripts();
@@ -113,13 +113,13 @@ public class Menu_BuyInventar : MonoBehaviour
 		this.uiObjects[0].SetActive(false);
 	}
 
-	// Token: 0x06001061 RID: 4193 RVA: 0x000AD371 File Offset: 0x000AB571
+	// Token: 0x06001061 RID: 4193 RVA: 0x000AD37D File Offset: 0x000AB57D
 	private void CreatePlaceholder()
 	{
 		UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[1]).transform.parent = this.uiObjects[2].transform;
 	}
 
-	// Token: 0x06001062 RID: 4194 RVA: 0x000AD398 File Offset: 0x000AB598
+	// Token: 0x06001062 RID: 4194 RVA: 0x000AD3A4 File Offset: 0x000AB5A4
 	private void CreateInventarKaufenButton(int typ)
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0]);
@@ -134,7 +134,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		component.typ = typ;
 	}
 
-	// Token: 0x06001063 RID: 4195 RVA: 0x000AD430 File Offset: 0x000AB630
+	// Token: 0x06001063 RID: 4195 RVA: 0x000AD43C File Offset: 0x000AB63C
 	private void CreateFilter(string c, int filterArrayID)
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[2]);
@@ -154,7 +154,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001064 RID: 4196 RVA: 0x000AD4F9 File Offset: 0x000AB6F9
+	// Token: 0x06001064 RID: 4196 RVA: 0x000AD505 File Offset: 0x000AB705
 	public IEnumerator iButton_Click(Filter_InventarKaufen script_)
 	{
 		yield return new WaitForEndOfFrame();
@@ -162,7 +162,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001065 RID: 4197 RVA: 0x000AD508 File Offset: 0x000AB708
+	// Token: 0x06001065 RID: 4197 RVA: 0x000AD514 File Offset: 0x000AB714
 	public void BUTTON_SelectInventar(int room)
 	{
 		this.buyInventar = room;
@@ -531,7 +531,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001066 RID: 4198 RVA: 0x000AE2BC File Offset: 0x000AC4BC
+	// Token: 0x06001066 RID: 4198 RVA: 0x000AE2C8 File Offset: 0x000AC4C8
 	private void CreateInventarKaufenButtons_STANDARD(int room)
 	{
 		this.CreateFilter(this.tS_.GetText(1875), 44);
@@ -624,7 +624,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		this.CreateInventarKaufenButton(177);
 	}
 
-	// Token: 0x06001067 RID: 4199 RVA: 0x000AE610 File Offset: 0x000AC810
+	// Token: 0x06001067 RID: 4199 RVA: 0x000AE61C File Offset: 0x000AC81C
 	public void BUTTON_CloseSelectInventar(bool resetScrollbar)
 	{
 		if (resetScrollbar)
@@ -654,7 +654,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001068 RID: 4200 RVA: 0x000AE6F5 File Offset: 0x000AC8F5
+	// Token: 0x06001068 RID: 4200 RVA: 0x000AE701 File Offset: 0x000AC901
 	public void BUTTON_Abwahl()
 	{
 		if (this.mS_.pickedObject)
@@ -663,7 +663,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001069 RID: 4201 RVA: 0x000AE719 File Offset: 0x000AC919
+	// Token: 0x06001069 RID: 4201 RVA: 0x000AE725 File Offset: 0x000AC925
 	public void DisableAllMenus()
 	{
 		this.uiObjects[0].SetActive(false);

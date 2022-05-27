@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020002E4 RID: 740
 public class destroyRandomValue : MonoBehaviour
 {
-	// Token: 0x06001A5B RID: 6747 RVA: 0x0010A91B File Offset: 0x00108B1B
+	// Token: 0x06001A5B RID: 6747 RVA: 0x0010A8EB File Offset: 0x00108AEB
 	private void Start()
 	{
 		if (UnityEngine.Random.Range(0, 100) < this.rand)

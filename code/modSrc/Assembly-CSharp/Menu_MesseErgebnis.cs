@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001CD RID: 461
 public class Menu_MesseErgebnis : MonoBehaviour
 {
-	// Token: 0x06001171 RID: 4465 RVA: 0x000B859E File Offset: 0x000B679E
+	// Token: 0x06001171 RID: 4465 RVA: 0x000B85AA File Offset: 0x000B67AA
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001172 RID: 4466 RVA: 0x000B85A8 File Offset: 0x000B67A8
+	// Token: 0x06001172 RID: 4466 RVA: 0x000B85B4 File Offset: 0x000B67B4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_MesseErgebnis : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001173 RID: 4467 RVA: 0x000B867C File Offset: 0x000B687C
+	// Token: 0x06001173 RID: 4467 RVA: 0x000B8688 File Offset: 0x000B6888
 	public void Init()
 	{
 		this.FindScripts();
@@ -76,7 +76,7 @@ public class Menu_MesseErgebnis : MonoBehaviour
 		this.uiObjects[6].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06001174 RID: 4468 RVA: 0x000B8810 File Offset: 0x000B6A10
+	// Token: 0x06001174 RID: 4468 RVA: 0x000B881C File Offset: 0x000B6A1C
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -105,7 +105,7 @@ public class Menu_MesseErgebnis : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = this.mS_.GetMoney((long)Mathf.RoundToInt(this.besucherIst), false);
 	}
 
-	// Token: 0x06001175 RID: 4469 RVA: 0x000B897C File Offset: 0x000B6B7C
+	// Token: 0x06001175 RID: 4469 RVA: 0x000B8988 File Offset: 0x000B6B88
 	public void BUTTON_Abbrechen()
 	{
 		if (this.mS_.multiplayer && this.mS_.mpCalls_.isClient)

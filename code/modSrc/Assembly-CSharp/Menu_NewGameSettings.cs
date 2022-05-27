@@ -5,14 +5,14 @@ using UnityEngine.UI;
 // Token: 0x0200017C RID: 380
 public class Menu_NewGameSettings : MonoBehaviour
 {
-	// Token: 0x06000E35 RID: 3637 RVA: 0x00098AD4 File Offset: 0x00096CD4
+	// Token: 0x06000E35 RID: 3637 RVA: 0x00098AE0 File Offset: 0x00096CE0
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x06000E36 RID: 3638 RVA: 0x00098AE4 File Offset: 0x00096CE4
+	// Token: 0x06000E36 RID: 3638 RVA: 0x00098AF0 File Offset: 0x00096CF0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -65,7 +65,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E37 RID: 3639 RVA: 0x00098C50 File Offset: 0x00096E50
+	// Token: 0x06000E37 RID: 3639 RVA: 0x00098C5C File Offset: 0x00096E5C
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -78,21 +78,21 @@ public class Menu_NewGameSettings : MonoBehaviour
 		this.uiObjects[0].GetComponent<Toggle>().interactable = true;
 	}
 
-	// Token: 0x06000E38 RID: 3640 RVA: 0x00098CC6 File Offset: 0x00096EC6
+	// Token: 0x06000E38 RID: 3640 RVA: 0x00098CD2 File Offset: 0x00096ED2
 	public void Init()
 	{
 		this.FindScripts();
 		this.TOGGLE_RandomEvents();
 	}
 
-	// Token: 0x06000E39 RID: 3641 RVA: 0x00098CD4 File Offset: 0x00096ED4
+	// Token: 0x06000E39 RID: 3641 RVA: 0x00098CE0 File Offset: 0x00096EE0
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000E3A RID: 3642 RVA: 0x00098CF0 File Offset: 0x00096EF0
+	// Token: 0x06000E3A RID: 3642 RVA: 0x00098CFC File Offset: 0x00096EFC
 	public void BUTTON_OK()
 	{
 		this.FindScripts();
@@ -350,7 +350,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000E3B RID: 3643 RVA: 0x00099AF4 File Offset: 0x00097CF4
+	// Token: 0x06000E3B RID: 3643 RVA: 0x00099B00 File Offset: 0x00097D00
 	private void InitStartjahr(int startjahr)
 	{
 		if (startjahr != 1976)
@@ -396,7 +396,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E3C RID: 3644 RVA: 0x00099C48 File Offset: 0x00097E48
+	// Token: 0x06000E3C RID: 3644 RVA: 0x00099C54 File Offset: 0x00097E54
 	private void SetFirmenwert(int startjahr)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
@@ -413,7 +413,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E3D RID: 3645 RVA: 0x00099CA8 File Offset: 0x00097EA8
+	// Token: 0x06000E3D RID: 3645 RVA: 0x00099CB4 File Offset: 0x00097EB4
 	private void SetRandomPlattformPop()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -465,7 +465,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E3E RID: 3646 RVA: 0x00099E2C File Offset: 0x0009802C
+	// Token: 0x06000E3E RID: 3646 RVA: 0x00099E38 File Offset: 0x00098038
 	private void SendAllPlatforms()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -482,7 +482,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E3F RID: 3647 RVA: 0x00099E80 File Offset: 0x00098080
+	// Token: 0x06000E3F RID: 3647 RVA: 0x00099E8C File Offset: 0x0009808C
 	private void SendAllPublisher()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
@@ -499,7 +499,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E40 RID: 3648 RVA: 0x00099ED4 File Offset: 0x000980D4
+	// Token: 0x06000E40 RID: 3648 RVA: 0x00099EE0 File Offset: 0x000980E0
 	private void SendAllCopyProtect()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("CopyProtect");
@@ -516,7 +516,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E41 RID: 3649 RVA: 0x00099F28 File Offset: 0x00098128
+	// Token: 0x06000E41 RID: 3649 RVA: 0x00099F34 File Offset: 0x00098134
 	private void SendAllAntiCheat()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("AntiCheat");
@@ -533,7 +533,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E42 RID: 3650 RVA: 0x00099F7C File Offset: 0x0009817C
+	// Token: 0x06000E42 RID: 3650 RVA: 0x00099F88 File Offset: 0x00098188
 	private void SendAllnpcEngines()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Engine");
@@ -550,7 +550,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E43 RID: 3651 RVA: 0x00099FD0 File Offset: 0x000981D0
+	// Token: 0x06000E43 RID: 3651 RVA: 0x00099FDC File Offset: 0x000981DC
 	private void UnlockPC()
 	{
 		GameObject gameObject = GameObject.Find("PLATFORM_17");
@@ -560,7 +560,7 @@ public class Menu_NewGameSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E44 RID: 3652 RVA: 0x00099FFC File Offset: 0x000981FC
+	// Token: 0x06000E44 RID: 3652 RVA: 0x0009A008 File Offset: 0x00098208
 	public void TOGGLE_RandomEvents()
 	{
 		if (this.uiObjects[1].GetComponent<Toggle>().isOn)

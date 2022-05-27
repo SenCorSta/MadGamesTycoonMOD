@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001C3 RID: 451
 public class Menu_MP_Awards : MonoBehaviour
 {
-	// Token: 0x060010FA RID: 4346 RVA: 0x000B44DC File Offset: 0x000B26DC
+	// Token: 0x060010FA RID: 4346 RVA: 0x000B44E8 File Offset: 0x000B26E8
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010FB RID: 4347 RVA: 0x000B44E4 File Offset: 0x000B26E4
+	// Token: 0x060010FB RID: 4347 RVA: 0x000B44F0 File Offset: 0x000B26F0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_MP_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010FC RID: 4348 RVA: 0x000B45CE File Offset: 0x000B27CE
+	// Token: 0x060010FC RID: 4348 RVA: 0x000B45DA File Offset: 0x000B27DA
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060010FD RID: 4349 RVA: 0x000B45D6 File Offset: 0x000B27D6
+	// Token: 0x060010FD RID: 4349 RVA: 0x000B45E2 File Offset: 0x000B27E2
 	public void Init()
 	{
 		this.selectedPlayer = -1;
@@ -58,14 +58,14 @@ public class Menu_MP_Awards : MonoBehaviour
 		this.InitPlayerButtons();
 	}
 
-	// Token: 0x060010FE RID: 4350 RVA: 0x000B45EB File Offset: 0x000B27EB
+	// Token: 0x060010FE RID: 4350 RVA: 0x000B45F7 File Offset: 0x000B27F7
 	private void Update()
 	{
 		this.UpdatePlayerButtons();
 		this.SetData(this.selectedPlayer);
 	}
 
-	// Token: 0x060010FF RID: 4351 RVA: 0x000B4600 File Offset: 0x000B2800
+	// Token: 0x060010FF RID: 4351 RVA: 0x000B460C File Offset: 0x000B280C
 	public void UpdatePlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -84,7 +84,7 @@ public class Menu_MP_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001100 RID: 4352 RVA: 0x000B4670 File Offset: 0x000B2870
+	// Token: 0x06001100 RID: 4352 RVA: 0x000B467C File Offset: 0x000B287C
 	public void InitPlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -110,21 +110,21 @@ public class Menu_MP_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001101 RID: 4353 RVA: 0x000B4768 File Offset: 0x000B2968
+	// Token: 0x06001101 RID: 4353 RVA: 0x000B4774 File Offset: 0x000B2974
 	public void BUTTON_Player(int p)
 	{
 		this.sfx_.PlaySound(12, true);
 		this.selectedPlayer = p;
 	}
 
-	// Token: 0x06001102 RID: 4354 RVA: 0x000B477F File Offset: 0x000B297F
+	// Token: 0x06001102 RID: 4354 RVA: 0x000B478B File Offset: 0x000B298B
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001103 RID: 4355 RVA: 0x000B479C File Offset: 0x000B299C
+	// Token: 0x06001103 RID: 4355 RVA: 0x000B47A8 File Offset: 0x000B29A8
 	private void SetData(int p)
 	{
 		if (p >= this.mpCalls_.playersMP.Count)

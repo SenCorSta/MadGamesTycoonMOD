@@ -5,14 +5,14 @@ using UnityEngine.UI;
 // Token: 0x020002F4 RID: 756
 public class maschieneScript : MonoBehaviour
 {
-	// Token: 0x06001A9C RID: 6812 RVA: 0x0010BFEC File Offset: 0x0010A1EC
+	// Token: 0x06001A9C RID: 6812 RVA: 0x0010C008 File Offset: 0x0010A208
 	private void Start()
 	{
 		this.FindScripts();
 		this.InitUI();
 	}
 
-	// Token: 0x06001A9D RID: 6813 RVA: 0x0010BFFC File Offset: 0x0010A1FC
+	// Token: 0x06001A9D RID: 6813 RVA: 0x0010C018 File Offset: 0x0010A218
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A9E RID: 6814 RVA: 0x0010C121 File Offset: 0x0010A321
+	// Token: 0x06001A9E RID: 6814 RVA: 0x0010C13D File Offset: 0x0010A33D
 	private void OnDestroy()
 	{
 		if (this.myUI)
@@ -62,7 +62,7 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A9F RID: 6815 RVA: 0x0010C13C File Offset: 0x0010A33C
+	// Token: 0x06001A9F RID: 6815 RVA: 0x0010C158 File Offset: 0x0010A358
 	private void InitUI()
 	{
 		this.myUI = UnityEngine.Object.Instantiate<GameObject>(this.uiMaschiene, new Vector3(99999f, 99999f, 0f), Quaternion.identity);
@@ -74,7 +74,7 @@ public class maschieneScript : MonoBehaviour
 		this.uiWorkProgress_Image = this.uiWorkProgress.GetComponent<Image>();
 	}
 
-	// Token: 0x06001AA0 RID: 6816 RVA: 0x0010C208 File Offset: 0x0010A408
+	// Token: 0x06001AA0 RID: 6816 RVA: 0x0010C224 File Offset: 0x0010A424
 	private void UpdateUI(bool show)
 	{
 		if (this.guiMain.menuOpen || this.oS_.picked || !show)
@@ -114,7 +114,7 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AA1 RID: 6817 RVA: 0x0010C36C File Offset: 0x0010A56C
+	// Token: 0x06001AA1 RID: 6817 RVA: 0x0010C388 File Offset: 0x0010A588
 	private void Update()
 	{
 		if (!this.oS_)
@@ -151,7 +151,7 @@ public class maschieneScript : MonoBehaviour
 		this.myAnimation[1]["maschineLight"].speed = 0f;
 	}
 
-	// Token: 0x06001AA2 RID: 6818 RVA: 0x0010C4B8 File Offset: 0x0010A6B8
+	// Token: 0x06001AA2 RID: 6818 RVA: 0x0010C4D4 File Offset: 0x0010A6D4
 	private bool UpdateMaschine()
 	{
 		if (!this.oS_.isMaschine)
@@ -209,7 +209,7 @@ public class maschieneScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001AA3 RID: 6819 RVA: 0x0010C668 File Offset: 0x0010A868
+	// Token: 0x06001AA3 RID: 6819 RVA: 0x0010C684 File Offset: 0x0010A884
 	private void UpdateDisketten()
 	{
 		this.updateDisketteTimer += Time.deltaTime;

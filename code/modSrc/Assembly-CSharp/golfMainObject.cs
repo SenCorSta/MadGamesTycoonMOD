@@ -9,7 +9,7 @@ public class golfMainObject : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001A70 RID: 6768 RVA: 0x0010AF38 File Offset: 0x00109138
+	// Token: 0x06001A70 RID: 6768 RVA: 0x0010AF08 File Offset: 0x00109108
 	public void RandomRotation()
 	{
 		if (this.mainObject)

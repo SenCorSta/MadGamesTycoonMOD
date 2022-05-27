@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001E2 RID: 482
 public class Menu_MitarberKuendigt : MonoBehaviour
 {
-	// Token: 0x0600123E RID: 4670 RVA: 0x000C1661 File Offset: 0x000BF861
+	// Token: 0x0600123E RID: 4670 RVA: 0x000C166D File Offset: 0x000BF86D
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600123F RID: 4671 RVA: 0x000C166C File Offset: 0x000BF86C
+	// Token: 0x0600123F RID: 4671 RVA: 0x000C1678 File Offset: 0x000BF878
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_MitarberKuendigt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001240 RID: 4672 RVA: 0x000C1734 File Offset: 0x000BF934
+	// Token: 0x06001240 RID: 4672 RVA: 0x000C1740 File Offset: 0x000BF940
 	public void Init(characterScript cS_)
 	{
 		Debug.Log("MITARBEITER KÜNDIGT: " + cS_.myName);
@@ -66,7 +66,7 @@ public class Menu_MitarberKuendigt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001241 RID: 4673 RVA: 0x000C17E8 File Offset: 0x000BF9E8
+	// Token: 0x06001241 RID: 4673 RVA: 0x000C17F4 File Offset: 0x000BF9F4
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -75,7 +75,7 @@ public class Menu_MitarberKuendigt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001242 RID: 4674 RVA: 0x000C1803 File Offset: 0x000BFA03
+	// Token: 0x06001242 RID: 4674 RVA: 0x000C180F File Offset: 0x000BFA0F
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -83,13 +83,13 @@ public class Menu_MitarberKuendigt : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x06001243 RID: 4675 RVA: 0x000C1829 File Offset: 0x000BFA29
+	// Token: 0x06001243 RID: 4675 RVA: 0x000C1835 File Offset: 0x000BFA35
 	public void BUTTON_Yes()
 	{
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x06001244 RID: 4676 RVA: 0x000C1834 File Offset: 0x000BFA34
+	// Token: 0x06001244 RID: 4676 RVA: 0x000C1840 File Offset: 0x000BFA40
 	public void BUTTON_JumpToRoom()
 	{
 		if (this.rS_ && this.guiMain_ && this.guiMain_.camera_)

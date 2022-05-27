@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000270 RID: 624
 public class Menu_Support_Fankampagne : MonoBehaviour
 {
-	// Token: 0x06001849 RID: 6217 RVA: 0x000F142D File Offset: 0x000EF62D
+	// Token: 0x06001849 RID: 6217 RVA: 0x000F1459 File Offset: 0x000EF659
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600184A RID: 6218 RVA: 0x000F1438 File Offset: 0x000EF638
+	// Token: 0x0600184A RID: 6218 RVA: 0x000F1464 File Offset: 0x000EF664
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600184B RID: 6219 RVA: 0x000F1522 File Offset: 0x000EF722
+	// Token: 0x0600184B RID: 6219 RVA: 0x000F154E File Offset: 0x000EF74E
 	private void Update()
 	{
 		if (this.selectedKampagne == -1)
@@ -55,7 +55,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		this.uiObjects[25].GetComponent<Button>().interactable = true;
 	}
 
-	// Token: 0x0600184C RID: 6220 RVA: 0x000F1558 File Offset: 0x000EF758
+	// Token: 0x0600184C RID: 6220 RVA: 0x000F1584 File Offset: 0x000EF784
 	public void Init(roomScript roomS_)
 	{
 		this.FindScripts();
@@ -76,7 +76,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		this.uiObjects[21].GetComponent<Text>().text = "+" + this.fans[5].ToString();
 	}
 
-	// Token: 0x0600184D RID: 6221 RVA: 0x000F1784 File Offset: 0x000EF984
+	// Token: 0x0600184D RID: 6221 RVA: 0x000F17B0 File Offset: 0x000EF9B0
 	private void SetButtonColor(int i)
 	{
 		this.uiObjects[2].GetComponent<Image>().color = Color.white;
@@ -113,7 +113,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600184E RID: 6222 RVA: 0x000F1918 File Offset: 0x000EFB18
+	// Token: 0x0600184E RID: 6222 RVA: 0x000F1944 File Offset: 0x000EFB44
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -121,7 +121,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600184F RID: 6223 RVA: 0x000F193E File Offset: 0x000EFB3E
+	// Token: 0x0600184F RID: 6223 RVA: 0x000F196A File Offset: 0x000EFB6A
 	public void BUTTON_Select(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -129,7 +129,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		this.SetButtonColor(i);
 	}
 
-	// Token: 0x06001850 RID: 6224 RVA: 0x000F195C File Offset: 0x000EFB5C
+	// Token: 0x06001850 RID: 6224 RVA: 0x000F1988 File Offset: 0x000EFB88
 	public void BUTTON_OK()
 	{
 		if (this.selectedKampagne == -1)

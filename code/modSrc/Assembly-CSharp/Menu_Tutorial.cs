@@ -5,14 +5,14 @@ using UnityEngine.UI;
 // Token: 0x02000182 RID: 386
 public class Menu_Tutorial : MonoBehaviour
 {
-	// Token: 0x06000E82 RID: 3714 RVA: 0x0009C106 File Offset: 0x0009A306
+	// Token: 0x06000E82 RID: 3714 RVA: 0x0009C112 File Offset: 0x0009A312
 	private void Start()
 	{
 		this.FindScripts();
 		this.BUTTON_Next(0);
 	}
 
-	// Token: 0x06000E83 RID: 3715 RVA: 0x0009C118 File Offset: 0x0009A318
+	// Token: 0x06000E83 RID: 3715 RVA: 0x0009C124 File Offset: 0x0009A324
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,14 +41,14 @@ public class Menu_Tutorial : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E84 RID: 3716 RVA: 0x0009C1D0 File Offset: 0x0009A3D0
+	// Token: 0x06000E84 RID: 3716 RVA: 0x0009C1DC File Offset: 0x0009A3DC
 	public void BUTTON_Next(int i)
 	{
 		this.sfx_.PlaySound(3, true);
 		this.SetStep(this.step + i);
 	}
 
-	// Token: 0x06000E85 RID: 3717 RVA: 0x0009C1F0 File Offset: 0x0009A3F0
+	// Token: 0x06000E85 RID: 3717 RVA: 0x0009C1FC File Offset: 0x0009A3FC
 	public void SetStep(int s)
 	{
 		base.gameObject.GetComponent<Animation>().Play();
@@ -89,7 +89,7 @@ public class Menu_Tutorial : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E86 RID: 3718 RVA: 0x0009C310 File Offset: 0x0009A510
+	// Token: 0x06000E86 RID: 3718 RVA: 0x0009C31C File Offset: 0x0009A51C
 	private void DisableAllArrows()
 	{
 		for (int i = 0; i < this.arrows.Length; i++)

@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x020001AB RID: 427
 public class Menu_Marketing_SelectKonsole : MonoBehaviour
 {
-	// Token: 0x0600101F RID: 4127 RVA: 0x000AAAB8 File Offset: 0x000A8CB8
+	// Token: 0x0600101F RID: 4127 RVA: 0x000AAAC4 File Offset: 0x000A8CC4
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001020 RID: 4128 RVA: 0x000AAAC0 File Offset: 0x000A8CC0
+	// Token: 0x06001020 RID: 4128 RVA: 0x000AAACC File Offset: 0x000A8CCC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_Marketing_SelectKonsole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001021 RID: 4129 RVA: 0x000AAB88 File Offset: 0x000A8D88
+	// Token: 0x06001021 RID: 4129 RVA: 0x000AAB94 File Offset: 0x000A8D94
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -51,7 +51,7 @@ public class Menu_Marketing_SelectKonsole : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001022 RID: 4130 RVA: 0x000AABC0 File Offset: 0x000A8DC0
+	// Token: 0x06001022 RID: 4130 RVA: 0x000AABCC File Offset: 0x000A8DCC
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -67,7 +67,7 @@ public class Menu_Marketing_SelectKonsole : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001023 RID: 4131 RVA: 0x000AAC0C File Offset: 0x000A8E0C
+	// Token: 0x06001023 RID: 4131 RVA: 0x000AAC18 File Offset: 0x000A8E18
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -80,13 +80,13 @@ public class Menu_Marketing_SelectKonsole : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001024 RID: 4132 RVA: 0x000AAC68 File Offset: 0x000A8E68
+	// Token: 0x06001024 RID: 4132 RVA: 0x000AAC74 File Offset: 0x000A8E74
 	private void OnEnable()
 	{
 		this.InitDropdowns();
 	}
 
-	// Token: 0x06001025 RID: 4133 RVA: 0x000AAC70 File Offset: 0x000A8E70
+	// Token: 0x06001025 RID: 4133 RVA: 0x000AAC7C File Offset: 0x000A8E7C
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -100,14 +100,14 @@ public class Menu_Marketing_SelectKonsole : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001026 RID: 4134 RVA: 0x000AAD16 File Offset: 0x000A8F16
+	// Token: 0x06001026 RID: 4134 RVA: 0x000AAD22 File Offset: 0x000A8F22
 	public void Init()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x06001027 RID: 4135 RVA: 0x000AAD24 File Offset: 0x000A8F24
+	// Token: 0x06001027 RID: 4135 RVA: 0x000AAD30 File Offset: 0x000A8F30
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -131,14 +131,14 @@ public class Menu_Marketing_SelectKonsole : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06001028 RID: 4136 RVA: 0x000AAE37 File Offset: 0x000A9037
+	// Token: 0x06001028 RID: 4136 RVA: 0x000AAE43 File Offset: 0x000A9043
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001029 RID: 4137 RVA: 0x000AAE54 File Offset: 0x000A9054
+	// Token: 0x06001029 RID: 4137 RVA: 0x000AAE60 File Offset: 0x000A9060
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;

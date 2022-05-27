@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001F1 RID: 497
 public class Menu_BudgetGamename : MonoBehaviour
 {
-	// Token: 0x060012E0 RID: 4832 RVA: 0x000C8323 File Offset: 0x000C6523
+	// Token: 0x060012E0 RID: 4832 RVA: 0x000C8337 File Offset: 0x000C6537
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060012E1 RID: 4833 RVA: 0x000C832C File Offset: 0x000C652C
+	// Token: 0x060012E1 RID: 4833 RVA: 0x000C8340 File Offset: 0x000C6540
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_BudgetGamename : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012E2 RID: 4834 RVA: 0x000C83F4 File Offset: 0x000C65F4
+	// Token: 0x060012E2 RID: 4834 RVA: 0x000C8408 File Offset: 0x000C6608
 	public void Init(gameScript gS_)
 	{
 		this.FindScripts();
@@ -48,14 +48,14 @@ public class Menu_BudgetGamename : MonoBehaviour
 		this.BUTTON_Name(this.lastName);
 	}
 
-	// Token: 0x060012E3 RID: 4835 RVA: 0x000C840F File Offset: 0x000C660F
+	// Token: 0x060012E3 RID: 4835 RVA: 0x000C8423 File Offset: 0x000C6623
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060012E4 RID: 4836 RVA: 0x000C842C File Offset: 0x000C662C
+	// Token: 0x060012E4 RID: 4836 RVA: 0x000C8440 File Offset: 0x000C6640
 	public void BUTTON_Name(int i)
 	{
 		this.lastName = i;
@@ -72,7 +72,7 @@ public class Menu_BudgetGamename : MonoBehaviour
 		this.uiObjects[1].transform.GetChild(i).GetComponent<Button>().interactable = false;
 	}
 
-	// Token: 0x060012E5 RID: 4837 RVA: 0x000C84F4 File Offset: 0x000C66F4
+	// Token: 0x060012E5 RID: 4837 RVA: 0x000C8508 File Offset: 0x000C6708
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -92,7 +92,7 @@ public class Menu_BudgetGamename : MonoBehaviour
 		this.CreateBudgetGame();
 	}
 
-	// Token: 0x060012E6 RID: 4838 RVA: 0x000C8580 File Offset: 0x000C6780
+	// Token: 0x060012E6 RID: 4838 RVA: 0x000C8594 File Offset: 0x000C6794
 	private void CreateBudgetGame()
 	{
 		this.game_.budget_created = true;

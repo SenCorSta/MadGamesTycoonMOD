@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001F6 RID: 502
 public class Menu_GOTYGamename : MonoBehaviour
 {
-	// Token: 0x06001316 RID: 4886 RVA: 0x000CA286 File Offset: 0x000C8486
+	// Token: 0x06001316 RID: 4886 RVA: 0x000CA2AA File Offset: 0x000C84AA
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001317 RID: 4887 RVA: 0x000CA290 File Offset: 0x000C8490
+	// Token: 0x06001317 RID: 4887 RVA: 0x000CA2B4 File Offset: 0x000C84B4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_GOTYGamename : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001318 RID: 4888 RVA: 0x000CA358 File Offset: 0x000C8558
+	// Token: 0x06001318 RID: 4888 RVA: 0x000CA37C File Offset: 0x000C857C
 	public void Init(gameScript gS_)
 	{
 		this.FindScripts();
@@ -48,14 +48,14 @@ public class Menu_GOTYGamename : MonoBehaviour
 		this.BUTTON_Name(this.lastName);
 	}
 
-	// Token: 0x06001319 RID: 4889 RVA: 0x000CA373 File Offset: 0x000C8573
+	// Token: 0x06001319 RID: 4889 RVA: 0x000CA397 File Offset: 0x000C8597
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600131A RID: 4890 RVA: 0x000CA390 File Offset: 0x000C8590
+	// Token: 0x0600131A RID: 4890 RVA: 0x000CA3B4 File Offset: 0x000C85B4
 	public void BUTTON_Name(int i)
 	{
 		this.lastName = i;
@@ -82,7 +82,7 @@ public class Menu_GOTYGamename : MonoBehaviour
 		this.uiObjects[1].transform.GetChild(i).GetComponent<Button>().interactable = false;
 	}
 
-	// Token: 0x0600131B RID: 4891 RVA: 0x000CA49C File Offset: 0x000C869C
+	// Token: 0x0600131B RID: 4891 RVA: 0x000CA4C0 File Offset: 0x000C86C0
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -110,7 +110,7 @@ public class Menu_GOTYGamename : MonoBehaviour
 		this.CreateGotyGame();
 	}
 
-	// Token: 0x0600131C RID: 4892 RVA: 0x000CA570 File Offset: 0x000C8770
+	// Token: 0x0600131C RID: 4892 RVA: 0x000CA594 File Offset: 0x000C8794
 	private void CreateGotyGame()
 	{
 		this.game_.goty_created = true;

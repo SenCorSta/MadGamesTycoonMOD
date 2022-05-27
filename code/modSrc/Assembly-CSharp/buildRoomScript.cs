@@ -7,7 +7,7 @@ using UnityEngine;
 // Token: 0x02000324 RID: 804
 public class buildRoomScript : MonoBehaviour
 {
-	// Token: 0x06001C7D RID: 7293 RVA: 0x00118E74 File Offset: 0x00117074
+	// Token: 0x06001C7D RID: 7293 RVA: 0x00118E90 File Offset: 0x00117090
 	private void Awake()
 	{
 		this.mapOld = new int[mapScript.mapSizeX, mapScript.mapSizeY];
@@ -19,14 +19,14 @@ public class buildRoomScript : MonoBehaviour
 		this.doorsPlaced = new bool[mapScript.mapSizeX, mapScript.mapSizeY];
 	}
 
-	// Token: 0x06001C7E RID: 7294 RVA: 0x00118F14 File Offset: 0x00117114
+	// Token: 0x06001C7E RID: 7294 RVA: 0x00118F30 File Offset: 0x00117130
 	private void Start()
 	{
 		this.FindScripts();
 		this.InitPointers();
 	}
 
-	// Token: 0x06001C7F RID: 7295 RVA: 0x00118F24 File Offset: 0x00117124
+	// Token: 0x06001C7F RID: 7295 RVA: 0x00118F40 File Offset: 0x00117140
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -63,7 +63,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C80 RID: 7296 RVA: 0x00119020 File Offset: 0x00117220
+	// Token: 0x06001C80 RID: 7296 RVA: 0x0011903C File Offset: 0x0011723C
 	private void InitPointers()
 	{
 		for (int i = 0; i < this.pointersInstantiate.Length; i++)
@@ -76,7 +76,7 @@ public class buildRoomScript : MonoBehaviour
 		this.DisableAllPointers();
 	}
 
-	// Token: 0x06001C81 RID: 7297 RVA: 0x0011906C File Offset: 0x0011726C
+	// Token: 0x06001C81 RID: 7297 RVA: 0x00119088 File Offset: 0x00117288
 	public void DisableAllPointers()
 	{
 		for (int i = 0; i < this.pointersInstantiate.Length; i++)
@@ -88,7 +88,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C82 RID: 7298 RVA: 0x001190AC File Offset: 0x001172AC
+	// Token: 0x06001C82 RID: 7298 RVA: 0x001190C8 File Offset: 0x001172C8
 	private void Update()
 	{
 		if (!this.activ)
@@ -109,7 +109,7 @@ public class buildRoomScript : MonoBehaviour
 		this.CreateRoomVorschau_MoveRoom();
 	}
 
-	// Token: 0x06001C83 RID: 7299 RVA: 0x00119105 File Offset: 0x00117305
+	// Token: 0x06001C83 RID: 7299 RVA: 0x00119121 File Offset: 0x00117321
 	public void SetActive()
 	{
 		this.activ = true;
@@ -119,7 +119,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C84 RID: 7300 RVA: 0x00119135 File Offset: 0x00117335
+	// Token: 0x06001C84 RID: 7300 RVA: 0x00119151 File Offset: 0x00117351
 	public void SetInactive()
 	{
 		this.activ = false;
@@ -131,7 +131,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C85 RID: 7301 RVA: 0x00119174 File Offset: 0x00117374
+	// Token: 0x06001C85 RID: 7301 RVA: 0x00119190 File Offset: 0x00117390
 	private void GetMousePosition()
 	{
 		this.makeUpdate = false;
@@ -167,7 +167,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C86 RID: 7302 RVA: 0x00119310 File Offset: 0x00117510
+	// Token: 0x06001C86 RID: 7302 RVA: 0x0011932C File Offset: 0x0011752C
 	private void SetPointer()
 	{
 		if (this.guiMain.IsMouseOverGUI())
@@ -349,7 +349,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C87 RID: 7303 RVA: 0x00119910 File Offset: 0x00117B10
+	// Token: 0x06001C87 RID: 7303 RVA: 0x0011992C File Offset: 0x00117B2C
 	private void DisableAllPointers(int a, int b, int c)
 	{
 		for (int i = 0; i < this.pointersInstantiate.Length; i++)
@@ -361,7 +361,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C88 RID: 7304 RVA: 0x0011995C File Offset: 0x00117B5C
+	// Token: 0x06001C88 RID: 7304 RVA: 0x00119978 File Offset: 0x00117B78
 	private void SetDoor()
 	{
 		if (this.modus != 2)
@@ -487,7 +487,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C89 RID: 7305 RVA: 0x00119D54 File Offset: 0x00117F54
+	// Token: 0x06001C89 RID: 7305 RVA: 0x00119D70 File Offset: 0x00117F70
 	private void SetWindow()
 	{
 		if (this.modus != 3)
@@ -593,7 +593,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C8A RID: 7306 RVA: 0x0011A0EC File Offset: 0x001182EC
+	// Token: 0x06001C8A RID: 7306 RVA: 0x0011A108 File Offset: 0x00118308
 	private void RemoveWindow(int i)
 	{
 		for (int j = 0; j < mapScript.mapSizeX; j++)
@@ -609,7 +609,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C8B RID: 7307 RVA: 0x0011A158 File Offset: 0x00118358
+	// Token: 0x06001C8B RID: 7307 RVA: 0x0011A174 File Offset: 0x00118374
 	private void RemoveDoor(int i)
 	{
 		for (int j = 0; j < mapScript.mapSizeX; j++)
@@ -625,7 +625,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C8C RID: 7308 RVA: 0x0011A1C4 File Offset: 0x001183C4
+	// Token: 0x06001C8C RID: 7308 RVA: 0x0011A1E0 File Offset: 0x001183E0
 	private void ResizeRoom_Move()
 	{
 		if (this.modus != 4)
@@ -732,7 +732,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C8D RID: 7309 RVA: 0x0011A58C File Offset: 0x0011878C
+	// Token: 0x06001C8D RID: 7309 RVA: 0x0011A5A8 File Offset: 0x001187A8
 	private void ResizeRoom()
 	{
 		if (this.modus != 0 && this.modus != 1)
@@ -923,7 +923,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C8E RID: 7310 RVA: 0x0011AB24 File Offset: 0x00118D24
+	// Token: 0x06001C8E RID: 7310 RVA: 0x0011AB40 File Offset: 0x00118D40
 	public void CreateRoomVorschau_MoveRoom()
 	{
 		if (this.modus != 4)
@@ -960,7 +960,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C8F RID: 7311 RVA: 0x0011AC50 File Offset: 0x00118E50
+	// Token: 0x06001C8F RID: 7311 RVA: 0x0011AC6C File Offset: 0x00118E6C
 	public void CreateRoomVorschau()
 	{
 		if (this.modus == 4)
@@ -1212,7 +1212,7 @@ public class buildRoomScript : MonoBehaviour
 		this.sfx_.PlaySound(36, true);
 	}
 
-	// Token: 0x06001C90 RID: 7312 RVA: 0x0011B9B2 File Offset: 0x00119BB2
+	// Token: 0x06001C90 RID: 7312 RVA: 0x0011B9CE File Offset: 0x00119BCE
 	private IEnumerator UpdatePathfindingNextFrame()
 	{
 		this.noPath = true;
@@ -1285,7 +1285,7 @@ public class buildRoomScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001C91 RID: 7313 RVA: 0x0011B9C4 File Offset: 0x00119BC4
+	// Token: 0x06001C91 RID: 7313 RVA: 0x0011B9E0 File Offset: 0x00119BE0
 	public void OnPathComplete(Path p)
 	{
 		Debug.Log("Got Callback");
@@ -1330,7 +1330,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C92 RID: 7314 RVA: 0x0011BB50 File Offset: 0x00119D50
+	// Token: 0x06001C92 RID: 7314 RVA: 0x0011BB6C File Offset: 0x00119D6C
 	public bool IsDoor()
 	{
 		for (int i = 0; i < mapScript.mapSizeX; i++)
@@ -1346,7 +1346,7 @@ public class buildRoomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001C93 RID: 7315 RVA: 0x0011BB90 File Offset: 0x00119D90
+	// Token: 0x06001C93 RID: 7315 RVA: 0x0011BBAC File Offset: 0x00119DAC
 	public void CreateRoom(int typ_, int price)
 	{
 		int num = UnityEngine.Random.Range(100, 999999999);
@@ -1410,7 +1410,7 @@ public class buildRoomScript : MonoBehaviour
 		this.replaceRoomID = -1;
 	}
 
-	// Token: 0x06001C94 RID: 7316 RVA: 0x0011BE88 File Offset: 0x0011A088
+	// Token: 0x06001C94 RID: 7316 RVA: 0x0011BEA4 File Offset: 0x0011A0A4
 	public float GetBiggestRoomQuad()
 	{
 		float num = 0f;
@@ -1431,7 +1431,7 @@ public class buildRoomScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06001C95 RID: 7317 RVA: 0x0011BEDC File Offset: 0x0011A0DC
+	// Token: 0x06001C95 RID: 7317 RVA: 0x0011BEF8 File Offset: 0x0011A0F8
 	public Vector3 FindUiPosition()
 	{
 		float num = 0f;
@@ -1456,7 +1456,7 @@ public class buildRoomScript : MonoBehaviour
 		return new Vector3(x, -0.5f, z);
 	}
 
-	// Token: 0x06001C96 RID: 7318 RVA: 0x0011BF74 File Offset: 0x0011A174
+	// Token: 0x06001C96 RID: 7318 RVA: 0x0011BF90 File Offset: 0x0011A190
 	public Vector3 FindUiPositionExtern(int id)
 	{
 		float num = 0f;
@@ -1481,7 +1481,7 @@ public class buildRoomScript : MonoBehaviour
 		return new Vector3(x, -0.5f, z);
 	}
 
-	// Token: 0x06001C97 RID: 7319 RVA: 0x0011C014 File Offset: 0x0011A214
+	// Token: 0x06001C97 RID: 7319 RVA: 0x0011C030 File Offset: 0x0011A230
 	private float QuaderSizeTest(int x, int y)
 	{
 		float result = 0f;
@@ -1494,7 +1494,7 @@ public class buildRoomScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001C98 RID: 7320 RVA: 0x0011C044 File Offset: 0x0011A244
+	// Token: 0x06001C98 RID: 7320 RVA: 0x0011C060 File Offset: 0x0011A260
 	private float QuaderSizeTestExtern(int x, int y, int id)
 	{
 		float result = 0f;
@@ -1507,7 +1507,7 @@ public class buildRoomScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001C99 RID: 7321 RVA: 0x0011C074 File Offset: 0x0011A274
+	// Token: 0x06001C99 RID: 7321 RVA: 0x0011C090 File Offset: 0x0011A290
 	private bool QuaderSize(int px, int py, int size)
 	{
 		for (int i = px; i < px + size; i++)
@@ -1527,7 +1527,7 @@ public class buildRoomScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001C9A RID: 7322 RVA: 0x0011C0BC File Offset: 0x0011A2BC
+	// Token: 0x06001C9A RID: 7322 RVA: 0x0011C0D8 File Offset: 0x0011A2D8
 	private bool QuaderSizeExtern(int px, int py, int size, int id)
 	{
 		for (int i = px; i < px + size; i++)
@@ -1547,7 +1547,7 @@ public class buildRoomScript : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001C9B RID: 7323 RVA: 0x0011C10A File Offset: 0x0011A30A
+	// Token: 0x06001C9B RID: 7323 RVA: 0x0011C126 File Offset: 0x0011A326
 	private IEnumerator CreateParticle(int x, int y, float t)
 	{
 		yield return new WaitForSeconds(t);
@@ -1555,7 +1555,7 @@ public class buildRoomScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001C9C RID: 7324 RVA: 0x0011C12E File Offset: 0x0011A32E
+	// Token: 0x06001C9C RID: 7324 RVA: 0x0011C14A File Offset: 0x0011A34A
 	public IEnumerator CreateParticleDemolish(int x, int y, float t)
 	{
 		yield return new WaitForSeconds(t);
@@ -1563,7 +1563,7 @@ public class buildRoomScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001C9D RID: 7325 RVA: 0x0011C154 File Offset: 0x0011A354
+	// Token: 0x06001C9D RID: 7325 RVA: 0x0011C170 File Offset: 0x0011A370
 	public bool ExistRoom()
 	{
 		for (int i = 0; i < mapScript.mapSizeX; i++)
@@ -1579,7 +1579,7 @@ public class buildRoomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001C9E RID: 7326 RVA: 0x0011C194 File Offset: 0x0011A394
+	// Token: 0x06001C9E RID: 7326 RVA: 0x0011C1B0 File Offset: 0x0011A3B0
 	private int GetMergedMap(int x, int y)
 	{
 		if (this.mapRemove[x, y] > 0)
@@ -1593,7 +1593,7 @@ public class buildRoomScript : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001C9F RID: 7327 RVA: 0x0011C1CC File Offset: 0x0011A3CC
+	// Token: 0x06001C9F RID: 7327 RVA: 0x0011C1E8 File Offset: 0x0011A3E8
 	public int AmountTiles()
 	{
 		int num = 0;
@@ -1610,7 +1610,7 @@ public class buildRoomScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06001CA0 RID: 7328 RVA: 0x0011C230 File Offset: 0x0011A430
+	// Token: 0x06001CA0 RID: 7328 RVA: 0x0011C24C File Offset: 0x0011A44C
 	private bool ErrorCut()
 	{
 		bool flag = false;
@@ -1688,13 +1688,13 @@ public class buildRoomScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001CA1 RID: 7329 RVA: 0x0011C4D7 File Offset: 0x0011A6D7
+	// Token: 0x06001CA1 RID: 7329 RVA: 0x0011C4F3 File Offset: 0x0011A6F3
 	private bool OutOfMap(int x, int y)
 	{
 		return x < 0 || x >= mapScript.mapSizeX || y < 0 || y >= mapScript.mapSizeY;
 	}
 
-	// Token: 0x06001CA2 RID: 7330 RVA: 0x0011C4FC File Offset: 0x0011A6FC
+	// Token: 0x06001CA2 RID: 7330 RVA: 0x0011C518 File Offset: 0x0011A718
 	public void Remove_DeleteMap()
 	{
 		for (int i = 0; i < mapScript.mapSizeX; i++)
@@ -1714,7 +1714,7 @@ public class buildRoomScript : MonoBehaviour
 		this.makeUpdate = true;
 	}
 
-	// Token: 0x06001CA3 RID: 7331 RVA: 0x0011C574 File Offset: 0x0011A774
+	// Token: 0x06001CA3 RID: 7331 RVA: 0x0011C590 File Offset: 0x0011A790
 	private void DeleteComplete()
 	{
 		Debug.Log("DeleteComplete()");
@@ -1736,7 +1736,7 @@ public class buildRoomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001CA4 RID: 7332 RVA: 0x0011C630 File Offset: 0x0011A830
+	// Token: 0x06001CA4 RID: 7332 RVA: 0x0011C64C File Offset: 0x0011A84C
 	public void CreateOldRoomLayout(roomScript script_)
 	{
 		this.moneyRedesign = 0;
@@ -1773,7 +1773,7 @@ public class buildRoomScript : MonoBehaviour
 		this.CreateRoomVorschau();
 	}
 
-	// Token: 0x06001CA5 RID: 7333 RVA: 0x0011C86C File Offset: 0x0011AA6C
+	// Token: 0x06001CA5 RID: 7333 RVA: 0x0011C888 File Offset: 0x0011AA88
 	private Vector2 GetAussenrand()
 	{
 		for (int i = 0; i < mapScript.mapSizeX; i++)
@@ -1789,7 +1789,7 @@ public class buildRoomScript : MonoBehaviour
 		return new Vector2(0f, 0f);
 	}
 
-	// Token: 0x06001CA6 RID: 7334 RVA: 0x0011C8C4 File Offset: 0x0011AAC4
+	// Token: 0x06001CA6 RID: 7334 RVA: 0x0011C8E0 File Offset: 0x0011AAE0
 	public void MoveRoom(roomScript script_)
 	{
 		this.moveRoomScript_ = script_;

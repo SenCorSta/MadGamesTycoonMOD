@@ -7,7 +7,7 @@ using UnityEngine.Rendering.PostProcessing;
 // Token: 0x0200032B RID: 811
 public class mainCameraScript : MonoBehaviour
 {
-	// Token: 0x06001CD0 RID: 7376 RVA: 0x0011E771 File Offset: 0x0011C971
+	// Token: 0x06001CD0 RID: 7376 RVA: 0x0011E78D File Offset: 0x0011C98D
 	private void Start()
 	{
 		this.cmS_ = base.transform.root.gameObject.GetComponent<cameraMovementScript>();
@@ -15,13 +15,13 @@ public class mainCameraScript : MonoBehaviour
 		this.InitPostProcess();
 	}
 
-	// Token: 0x06001CD1 RID: 7377 RVA: 0x0011E7A5 File Offset: 0x0011C9A5
+	// Token: 0x06001CD1 RID: 7377 RVA: 0x0011E7C1 File Offset: 0x0011C9C1
 	private void InitPostProcess()
 	{
 		this.postVolume.profile.TryGetSettings<PostLiner>(out this.postLiner);
 	}
 
-	// Token: 0x06001CD2 RID: 7378 RVA: 0x0011E7C0 File Offset: 0x0011C9C0
+	// Token: 0x06001CD2 RID: 7378 RVA: 0x0011E7DC File Offset: 0x0011C9DC
 	public void SetOutlineColor(int fillColor_, float fillBlend_, int outlineColor_)
 	{
 		if (this.postLiner == null)
@@ -34,20 +34,20 @@ public class mainCameraScript : MonoBehaviour
 		this.postLiner.outlineColor.Override(this.colorParameter[outlineColor_]);
 	}
 
-	// Token: 0x06001CD3 RID: 7379 RVA: 0x0011E82D File Offset: 0x0011CA2D
+	// Token: 0x06001CD3 RID: 7379 RVA: 0x0011E849 File Offset: 0x0011CA49
 	private void Update()
 	{
 		this.CameraInput();
 		this.LookAtCameraMovement();
 	}
 
-	// Token: 0x06001CD4 RID: 7380 RVA: 0x0011E83B File Offset: 0x0011CA3B
+	// Token: 0x06001CD4 RID: 7380 RVA: 0x0011E857 File Offset: 0x0011CA57
 	private void LookAtCameraMovement()
 	{
 		base.transform.LookAt(base.transform.parent.transform);
 	}
 
-	// Token: 0x06001CD5 RID: 7381 RVA: 0x0011E858 File Offset: 0x0011CA58
+	// Token: 0x06001CD5 RID: 7381 RVA: 0x0011E874 File Offset: 0x0011CA74
 	private void CameraInput()
 	{
 		if (!this.cmS_.guiMain_)

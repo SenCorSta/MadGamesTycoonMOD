@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x02000222 RID: 546
 public class Menu_Statistics_AllTimeCharts : MonoBehaviour
 {
-	// Token: 0x06001501 RID: 5377 RVA: 0x000D8121 File Offset: 0x000D6321
+	// Token: 0x06001501 RID: 5377 RVA: 0x000D814D File Offset: 0x000D634D
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001502 RID: 5378 RVA: 0x000D812C File Offset: 0x000D632C
+	// Token: 0x06001502 RID: 5378 RVA: 0x000D8158 File Offset: 0x000D6358
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_Statistics_AllTimeCharts : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001503 RID: 5379 RVA: 0x000D8212 File Offset: 0x000D6412
+	// Token: 0x06001503 RID: 5379 RVA: 0x000D823E File Offset: 0x000D643E
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -54,7 +54,7 @@ public class Menu_Statistics_AllTimeCharts : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001504 RID: 5380 RVA: 0x000D8244 File Offset: 0x000D6444
+	// Token: 0x06001504 RID: 5380 RVA: 0x000D8270 File Offset: 0x000D6470
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -73,20 +73,20 @@ public class Menu_Statistics_AllTimeCharts : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001505 RID: 5381 RVA: 0x000D82AF File Offset: 0x000D64AF
+	// Token: 0x06001505 RID: 5381 RVA: 0x000D82DB File Offset: 0x000D64DB
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001506 RID: 5382 RVA: 0x000D82B7 File Offset: 0x000D64B7
+	// Token: 0x06001506 RID: 5382 RVA: 0x000D82E3 File Offset: 0x000D64E3
 	public void Init()
 	{
 		this.FindScripts();
 		this.TAB_Select(0);
 	}
 
-	// Token: 0x06001507 RID: 5383 RVA: 0x000D82C8 File Offset: 0x000D64C8
+	// Token: 0x06001507 RID: 5383 RVA: 0x000D82F4 File Offset: 0x000D64F4
 	private void SetData()
 	{
 		List<gameScript> list = new List<gameScript>();
@@ -121,14 +121,14 @@ public class Menu_Statistics_AllTimeCharts : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06001508 RID: 5384 RVA: 0x000D87AF File Offset: 0x000D69AF
+	// Token: 0x06001508 RID: 5384 RVA: 0x000D87DB File Offset: 0x000D69DB
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001509 RID: 5385 RVA: 0x000D87CC File Offset: 0x000D69CC
+	// Token: 0x06001509 RID: 5385 RVA: 0x000D87F8 File Offset: 0x000D69F8
 	public void TAB_Select(int t)
 	{
 		this.TAB = t;

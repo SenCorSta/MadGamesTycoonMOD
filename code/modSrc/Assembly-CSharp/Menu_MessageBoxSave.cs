@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001B4 RID: 436
 public class Menu_MessageBoxSave : MonoBehaviour
 {
-	// Token: 0x0600107E RID: 4222 RVA: 0x000AF05A File Offset: 0x000AD25A
+	// Token: 0x0600107E RID: 4222 RVA: 0x000AF066 File Offset: 0x000AD266
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600107F RID: 4223 RVA: 0x000AF064 File Offset: 0x000AD264
+	// Token: 0x0600107F RID: 4223 RVA: 0x000AF070 File Offset: 0x000AD270
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_MessageBoxSave : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001080 RID: 4224 RVA: 0x000AF110 File Offset: 0x000AD310
+	// Token: 0x06001080 RID: 4224 RVA: 0x000AF11C File Offset: 0x000AD31C
 	public void Init(int id_, bool close)
 	{
 		this.FindScripts();
@@ -61,14 +61,14 @@ public class Menu_MessageBoxSave : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.tS_.GetText(1443);
 	}
 
-	// Token: 0x06001081 RID: 4225 RVA: 0x000AF1C7 File Offset: 0x000AD3C7
+	// Token: 0x06001081 RID: 4225 RVA: 0x000AF1D3 File Offset: 0x000AD3D3
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001082 RID: 4226 RVA: 0x000AF1E4 File Offset: 0x000AD3E4
+	// Token: 0x06001082 RID: 4226 RVA: 0x000AF1F0 File Offset: 0x000AD3F0
 	public void BUTTON_Yes()
 	{
 		if (this.uiObjects[1].GetComponent<Toggle>().isOn)
@@ -82,7 +82,7 @@ public class Menu_MessageBoxSave : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x06001083 RID: 4227 RVA: 0x000AF23C File Offset: 0x000AD43C
+	// Token: 0x06001083 RID: 4227 RVA: 0x000AF248 File Offset: 0x000AD448
 	public void BUTTON_No()
 	{
 		if (this.uiObjects[1].GetComponent<Toggle>().isOn)

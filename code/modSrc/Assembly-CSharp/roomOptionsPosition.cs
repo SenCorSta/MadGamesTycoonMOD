@@ -9,7 +9,7 @@ public class roomOptionsPosition : MonoBehaviour
 	{
 	}
 
-	// Token: 0x060018D2 RID: 6354 RVA: 0x000F6538 File Offset: 0x000F4738
+	// Token: 0x060018D2 RID: 6354 RVA: 0x000F6564 File Offset: 0x000F4764
 	private void FindScripts()
 	{
 		if (!this.settings_)
@@ -26,14 +26,14 @@ public class roomOptionsPosition : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018D3 RID: 6355 RVA: 0x000F65A3 File Offset: 0x000F47A3
+	// Token: 0x060018D3 RID: 6355 RVA: 0x000F65CF File Offset: 0x000F47CF
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.rect.anchoredPosition = new Vector2(90f, -40f);
 	}
 
-	// Token: 0x060018D4 RID: 6356 RVA: 0x000F65C8 File Offset: 0x000F47C8
+	// Token: 0x060018D4 RID: 6356 RVA: 0x000F65F4 File Offset: 0x000F47F4
 	private void Update()
 	{
 		float x = 174f;

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001F5 RID: 501
 public class Menu_BundleView : MonoBehaviour
 {
-	// Token: 0x0600130F RID: 4879 RVA: 0x000C9EA2 File Offset: 0x000C80A2
+	// Token: 0x0600130F RID: 4879 RVA: 0x000C9EC6 File Offset: 0x000C80C6
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001310 RID: 4880 RVA: 0x000C9EAC File Offset: 0x000C80AC
+	// Token: 0x06001310 RID: 4880 RVA: 0x000C9ED0 File Offset: 0x000C80D0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_BundleView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001311 RID: 4881 RVA: 0x000C9F94 File Offset: 0x000C8194
+	// Token: 0x06001311 RID: 4881 RVA: 0x000C9FB8 File Offset: 0x000C81B8
 	public void Init(gameScript script_)
 	{
 		this.FindScripts();
@@ -63,7 +63,7 @@ public class Menu_BundleView : MonoBehaviour
 		this.uiObjects[28].GetComponent<Text>().text = "<color=red>" + this.mS_.GetMoney(this.gS_.GetGesamtGewinn(), true) + "</color>";
 	}
 
-	// Token: 0x06001312 RID: 4882 RVA: 0x000CA094 File Offset: 0x000C8294
+	// Token: 0x06001312 RID: 4882 RVA: 0x000CA0B8 File Offset: 0x000C82B8
 	public void SetGame(int slot, gameScript script_)
 	{
 		if (!script_)
@@ -87,13 +87,13 @@ public class Menu_BundleView : MonoBehaviour
 		this.guiMain_.DrawStarsColor(this.uiObjects[1], Mathf.RoundToInt(this.GetQuality()), Color.white);
 	}
 
-	// Token: 0x06001313 RID: 4883 RVA: 0x000CA25A File Offset: 0x000C845A
+	// Token: 0x06001313 RID: 4883 RVA: 0x000CA27E File Offset: 0x000C847E
 	public float GetQuality()
 	{
 		return (float)(this.gS_.reviewTotal / 20);
 	}
 
-	// Token: 0x06001314 RID: 4884 RVA: 0x000CA26B File Offset: 0x000C846B
+	// Token: 0x06001314 RID: 4884 RVA: 0x000CA28F File Offset: 0x000C848F
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);

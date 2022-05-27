@@ -7,13 +7,13 @@ using UnityEngine.UI;
 // Token: 0x02000339 RID: 825
 public class pickCharacterScript : MonoBehaviour
 {
-	// Token: 0x06001DDC RID: 7644 RVA: 0x00129B07 File Offset: 0x00127D07
+	// Token: 0x06001DDC RID: 7644 RVA: 0x00129B23 File Offset: 0x00127D23
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001DDD RID: 7645 RVA: 0x00129B10 File Offset: 0x00127D10
+	// Token: 0x06001DDD RID: 7645 RVA: 0x00129B2C File Offset: 0x00127D2C
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -58,14 +58,14 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DDE RID: 7646 RVA: 0x00129C49 File Offset: 0x00127E49
+	// Token: 0x06001DDE RID: 7646 RVA: 0x00129C65 File Offset: 0x00127E65
 	private void Update()
 	{
 		this.Pick();
 		this.MouseMovement();
 	}
 
-	// Token: 0x06001DDF RID: 7647 RVA: 0x00129C58 File Offset: 0x00127E58
+	// Token: 0x06001DDF RID: 7647 RVA: 0x00129C74 File Offset: 0x00127E74
 	private void Pick()
 	{
 		if (this.gummiS_.isActive)
@@ -115,13 +115,13 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DE0 RID: 7648 RVA: 0x00129E49 File Offset: 0x00128049
+	// Token: 0x06001DE0 RID: 7648 RVA: 0x00129E65 File Offset: 0x00128065
 	public void PickFromExternObject(GameObject go)
 	{
 		base.StartCoroutine(this.PickChar(go));
 	}
 
-	// Token: 0x06001DE1 RID: 7649 RVA: 0x00129E59 File Offset: 0x00128059
+	// Token: 0x06001DE1 RID: 7649 RVA: 0x00129E75 File Offset: 0x00128075
 	public IEnumerator PickChar(GameObject go)
 	{
 		yield return new WaitForEndOfFrame();
@@ -147,7 +147,7 @@ public class pickCharacterScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001DE2 RID: 7650 RVA: 0x00129E70 File Offset: 0x00128070
+	// Token: 0x06001DE2 RID: 7650 RVA: 0x00129E8C File Offset: 0x0012808C
 	private void SetLayer(int newLayer, Transform trans)
 	{
 		trans.gameObject.layer = newLayer;
@@ -162,7 +162,7 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DE3 RID: 7651 RVA: 0x00129EEC File Offset: 0x001280EC
+	// Token: 0x06001DE3 RID: 7651 RVA: 0x00129F08 File Offset: 0x00128108
 	public bool ESC_DropChar()
 	{
 		if (this.mS_.pickedChars.Count == 1 && this.oldRoomID != -1 && this.oldPosition.x != (float)Mathf.RoundToInt(9999f))
@@ -186,7 +186,7 @@ public class pickCharacterScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DE4 RID: 7652 RVA: 0x00129FD0 File Offset: 0x001281D0
+	// Token: 0x06001DE4 RID: 7652 RVA: 0x00129FEC File Offset: 0x001281EC
 	private void MouseMovement()
 	{
 		if (!this.mS_)
@@ -334,7 +334,7 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DE5 RID: 7653 RVA: 0x0012A554 File Offset: 0x00128754
+	// Token: 0x06001DE5 RID: 7653 RVA: 0x0012A570 File Offset: 0x00128770
 	private void PickupGroupWithKey()
 	{
 		if (Input.GetKey(KeyCode.LeftShift))
@@ -390,7 +390,7 @@ public class pickCharacterScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DE6 RID: 7654 RVA: 0x0012A658 File Offset: 0x00128858
+	// Token: 0x06001DE6 RID: 7654 RVA: 0x0012A674 File Offset: 0x00128874
 	private void SelectGroup(int g)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Character");

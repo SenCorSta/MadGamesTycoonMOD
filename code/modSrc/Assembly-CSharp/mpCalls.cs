@@ -8,7 +8,7 @@ using UnityEngine.UI;
 // Token: 0x02000284 RID: 644
 public class mpCalls : MonoBehaviour
 {
-	// Token: 0x06001927 RID: 6439 RVA: 0x000F97B4 File Offset: 0x000F79B4
+	// Token: 0x06001927 RID: 6439 RVA: 0x000F97E0 File Offset: 0x000F79E0
 	public player_mp FindPlayer(int id_)
 	{
 		for (int i = 0; i < this.playersMP.Count; i++)
@@ -21,7 +21,7 @@ public class mpCalls : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06001928 RID: 6440 RVA: 0x000F97FC File Offset: 0x000F79FC
+	// Token: 0x06001928 RID: 6440 RVA: 0x000F9828 File Offset: 0x000F7A28
 	public string GetCompanyName(int id_)
 	{
 		player_mp player_mp = this.FindPlayer(id_);
@@ -44,7 +44,7 @@ public class mpCalls : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06001929 RID: 6441 RVA: 0x000F9870 File Offset: 0x000F7A70
+	// Token: 0x06001929 RID: 6441 RVA: 0x000F989C File Offset: 0x000F7A9C
 	public string GetPlayerName(int id_)
 	{
 		player_mp player_mp = this.FindPlayer(id_);
@@ -55,14 +55,14 @@ public class mpCalls : MonoBehaviour
 		return player_mp.playerName;
 	}
 
-	// Token: 0x0600192A RID: 6442 RVA: 0x000F9894 File Offset: 0x000F7A94
+	// Token: 0x0600192A RID: 6442 RVA: 0x000F98C0 File Offset: 0x000F7AC0
 	public bool GetReady(int id_)
 	{
 		player_mp player_mp = this.FindPlayer(id_);
 		return player_mp != null && player_mp.ready;
 	}
 
-	// Token: 0x0600192B RID: 6443 RVA: 0x000F98B4 File Offset: 0x000F7AB4
+	// Token: 0x0600192B RID: 6443 RVA: 0x000F98E0 File Offset: 0x000F7AE0
 	public long GetMoney(int id_)
 	{
 		player_mp player_mp = this.FindPlayer(id_);
@@ -73,7 +73,7 @@ public class mpCalls : MonoBehaviour
 		return player_mp.money;
 	}
 
-	// Token: 0x0600192C RID: 6444 RVA: 0x000F98D8 File Offset: 0x000F7AD8
+	// Token: 0x0600192C RID: 6444 RVA: 0x000F9904 File Offset: 0x000F7B04
 	public int GetFans(int id_)
 	{
 		player_mp player_mp = this.FindPlayer(id_);
@@ -84,7 +84,7 @@ public class mpCalls : MonoBehaviour
 		return player_mp.fans;
 	}
 
-	// Token: 0x0600192D RID: 6445 RVA: 0x000F98F8 File Offset: 0x000F7AF8
+	// Token: 0x0600192D RID: 6445 RVA: 0x000F9924 File Offset: 0x000F7B24
 	public int GetLogo(int id_)
 	{
 		player_mp player_mp = this.FindPlayer(id_);
@@ -107,7 +107,7 @@ public class mpCalls : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x0600192E RID: 6446 RVA: 0x000F9964 File Offset: 0x000F7B64
+	// Token: 0x0600192E RID: 6446 RVA: 0x000F9990 File Offset: 0x000F7B90
 	public int GetCountry(int id_)
 	{
 		player_mp player_mp = this.FindPlayer(id_);
@@ -130,14 +130,14 @@ public class mpCalls : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x0600192F RID: 6447 RVA: 0x000F99D0 File Offset: 0x000F7BD0
+	// Token: 0x0600192F RID: 6447 RVA: 0x000F99FC File Offset: 0x000F7BFC
 	public bool GetPause(int id_)
 	{
 		player_mp player_mp = this.FindPlayer(id_);
 		return player_mp != null && player_mp.playerPause;
 	}
 
-	// Token: 0x06001930 RID: 6448 RVA: 0x000F99F0 File Offset: 0x000F7BF0
+	// Token: 0x06001930 RID: 6448 RVA: 0x000F9A1C File Offset: 0x000F7C1C
 	public void SetPause(bool b)
 	{
 		player_mp player_mp = this.FindPlayer(this.mS_.myID);
@@ -148,7 +148,7 @@ public class mpCalls : MonoBehaviour
 		player_mp.playerPause = b;
 	}
 
-	// Token: 0x06001931 RID: 6449 RVA: 0x000F9A1C File Offset: 0x000F7C1C
+	// Token: 0x06001931 RID: 6449 RVA: 0x000F9A48 File Offset: 0x000F7C48
 	public bool GetAllPlayersReady()
 	{
 		for (int i = 1; i < this.playersMP.Count; i++)
@@ -161,7 +161,7 @@ public class mpCalls : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001932 RID: 6450 RVA: 0x000F9A58 File Offset: 0x000F7C58
+	// Token: 0x06001932 RID: 6450 RVA: 0x000F9A84 File Offset: 0x000F7C84
 	public void SetPlayersUnready()
 	{
 		for (int i = 1; i < this.playersMP.Count; i++)
@@ -170,13 +170,13 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001933 RID: 6451 RVA: 0x000F9A8D File Offset: 0x000F7C8D
+	// Token: 0x06001933 RID: 6451 RVA: 0x000F9AB9 File Offset: 0x000F7CB9
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001934 RID: 6452 RVA: 0x000F9A98 File Offset: 0x000F7C98
+	// Token: 0x06001934 RID: 6452 RVA: 0x000F9AC4 File Offset: 0x000F7CC4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -269,7 +269,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001935 RID: 6453 RVA: 0x000F9D4C File Offset: 0x000F7F4C
+	// Token: 0x06001935 RID: 6453 RVA: 0x000F9D78 File Offset: 0x000F7F78
 	private void Update()
 	{
 		this.FindScripts();
@@ -290,7 +290,7 @@ public class mpCalls : MonoBehaviour
 		this.Send10Sec();
 	}
 
-	// Token: 0x06001936 RID: 6454 RVA: 0x000F9DE8 File Offset: 0x000F7FE8
+	// Token: 0x06001936 RID: 6454 RVA: 0x000F9E14 File Offset: 0x000F8014
 	private void UpdateTimeout()
 	{
 		for (int i = 1; i < this.playersMP.Count; i++)
@@ -304,7 +304,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001937 RID: 6455 RVA: 0x000F9E58 File Offset: 0x000F8058
+	// Token: 0x06001937 RID: 6455 RVA: 0x000F9E84 File Offset: 0x000F8084
 	private void Send1Sec()
 	{
 		if (this.mS_.myID != -1)
@@ -343,7 +343,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001938 RID: 6456 RVA: 0x000F9F24 File Offset: 0x000F8124
+	// Token: 0x06001938 RID: 6456 RVA: 0x000F9F50 File Offset: 0x000F8150
 	private void Send10Sec()
 	{
 		if (this.mS_.myID != -1)
@@ -365,7 +365,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001939 RID: 6457 RVA: 0x000F9F94 File Offset: 0x000F8194
+	// Token: 0x06001939 RID: 6457 RVA: 0x000F9FC0 File Offset: 0x000F81C0
 	public bool AutoPause()
 	{
 		if (this.mS_ && this.mS_.multiplayer && this.mS_.settings_autoPauseForMultiplayer)
@@ -381,7 +381,7 @@ public class mpCalls : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600193A RID: 6458 RVA: 0x000F9FF4 File Offset: 0x000F81F4
+	// Token: 0x0600193A RID: 6458 RVA: 0x000FA020 File Offset: 0x000F8220
 	public int AddPlayer(mpPlayer mpPlayer_)
 	{
 		Debug.Log("AddPlayer()");
@@ -484,11 +484,16 @@ public class mpCalls : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600193B RID: 6459 RVA: 0x000FA26C File Offset: 0x000F846C
+	// Token: 0x0600193B RID: 6459 RVA: 0x000FA298 File Offset: 0x000F8498
 	public void RemovePlayer(int playerID_)
 	{
 		for (int i = 0; i < this.playersMP.Count; i++)
 		{
+			GameObject gameObject = GameObject.Find("PUB_" + playerID_.ToString());
+			if (gameObject)
+			{
+				UnityEngine.Object.Destroy(gameObject);
+			}
 			if (this.playersMP[i].playerID == playerID_)
 			{
 				this.playersMP.RemoveAt(i);
@@ -498,7 +503,7 @@ public class mpCalls : MonoBehaviour
 		this.SERVER_Send_PlayerLeave(playerID_);
 	}
 
-	// Token: 0x0600193C RID: 6460 RVA: 0x000FA2B8 File Offset: 0x000F84B8
+	// Token: 0x0600193C RID: 6460 RVA: 0x000FA30C File Offset: 0x000F850C
 	public void SetupClient()
 	{
 		this.UnregisterServer();
@@ -551,7 +556,7 @@ public class mpCalls : MonoBehaviour
 		NetworkClient.RegisterHandler<mpCalls.s_Firmenwert>(new Action<NetworkConnection, mpCalls.s_Firmenwert>(this.SERVER_Get_Firmenwert), true);
 	}
 
-	// Token: 0x0600193D RID: 6461 RVA: 0x000FA61C File Offset: 0x000F881C
+	// Token: 0x0600193D RID: 6461 RVA: 0x000FA670 File Offset: 0x000F8870
 	public void UnregisterClient()
 	{
 		NetworkClient.UnregisterHandler<mpCalls.s_PlayerInfos>();
@@ -602,7 +607,7 @@ public class mpCalls : MonoBehaviour
 		NetworkClient.UnregisterHandler<mpCalls.s_Firmenwert>();
 	}
 
-	// Token: 0x0600193E RID: 6462 RVA: 0x000FA740 File Offset: 0x000F8940
+	// Token: 0x0600193E RID: 6462 RVA: 0x000FA794 File Offset: 0x000F8994
 	public void SetupServer()
 	{
 		this.UnregisterClient();
@@ -627,7 +632,7 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.RegisterHandler<mpCalls.c_Publisher>(new Action<NetworkConnection, mpCalls.c_Publisher>(this.CLIENT_Get_Publisher), true);
 	}
 
-	// Token: 0x0600193F RID: 6463 RVA: 0x000FA8AC File Offset: 0x000F8AAC
+	// Token: 0x0600193F RID: 6463 RVA: 0x000FA900 File Offset: 0x000F8B00
 	public void UnregisterServer()
 	{
 		NetworkServer.UnregisterHandler<mpCalls.c_PlayerInfos>();
@@ -651,7 +656,7 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.UnregisterHandler<mpCalls.c_Publisher>();
 	}
 
-	// Token: 0x06001940 RID: 6464 RVA: 0x000FA918 File Offset: 0x000F8B18
+	// Token: 0x06001940 RID: 6464 RVA: 0x000FA96C File Offset: 0x000F8B6C
 	public void CLIENT_Send_ObjectDelete(int id_)
 	{
 		Debug.Log("CLIENT_Send_Object_Delete()");
@@ -662,7 +667,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001941 RID: 6465 RVA: 0x000FA958 File Offset: 0x000F8B58
+	// Token: 0x06001941 RID: 6465 RVA: 0x000FA9AC File Offset: 0x000F8BAC
 	public void CLIENT_Get_ObjectDelete(NetworkConnection conn, mpCalls.c_ObjectDelete msg)
 	{
 		Debug.Log("CLIENT_Get_ObjectDelete()");
@@ -685,7 +690,7 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.SendToAll<mpCalls.c_ObjectDelete>(msg, 0, false);
 	}
 
-	// Token: 0x06001942 RID: 6466 RVA: 0x000FA9E8 File Offset: 0x000F8BE8
+	// Token: 0x06001942 RID: 6466 RVA: 0x000FAA3C File Offset: 0x000F8C3C
 	public void CLIENT_Send_Object(int id_, int typ_, float x_, float y_, float rot_)
 	{
 		Debug.Log("CLIENT_Send_Object()");
@@ -700,7 +705,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001943 RID: 6467 RVA: 0x000FAA4C File Offset: 0x000F8C4C
+	// Token: 0x06001943 RID: 6467 RVA: 0x000FAAA0 File Offset: 0x000F8CA0
 	public void CLIENT_Get_Object(NetworkConnection conn, mpCalls.c_Object msg)
 	{
 		Debug.Log("CLIENT_Get_Object()");
@@ -720,7 +725,7 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.SendToAll<mpCalls.c_Object>(msg, 0, false);
 	}
 
-	// Token: 0x06001944 RID: 6468 RVA: 0x000FAB00 File Offset: 0x000F8D00
+	// Token: 0x06001944 RID: 6468 RVA: 0x000FAB54 File Offset: 0x000F8D54
 	public void CLIENT_Send_Map(int posx, int posy)
 	{
 		Debug.Log("CLIENT_Send_Map()");
@@ -741,7 +746,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001945 RID: 6469 RVA: 0x000FABD4 File Offset: 0x000F8DD4
+	// Token: 0x06001945 RID: 6469 RVA: 0x000FAC28 File Offset: 0x000F8E28
 	public void CLIENT_Get_Map(NetworkConnection conn, mpCalls.c_Map msg)
 	{
 		Debug.Log("CLIENT_Get_Map()");
@@ -765,7 +770,7 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.SendToAll<mpCalls.c_Map>(msg, 0, false);
 	}
 
-	// Token: 0x06001946 RID: 6470 RVA: 0x000FACDC File Offset: 0x000F8EDC
+	// Token: 0x06001946 RID: 6470 RVA: 0x000FAD30 File Offset: 0x000F8F30
 	public void CLIENT_Send_Trend()
 	{
 		Debug.Log("CLIENT_Send_Trend()");
@@ -779,7 +784,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001947 RID: 6471 RVA: 0x000FAD5C File Offset: 0x000F8F5C
+	// Token: 0x06001947 RID: 6471 RVA: 0x000FADB0 File Offset: 0x000F8FB0
 	public void CLIENT_Get_Trend(NetworkConnection conn, mpCalls.c_Trend msg)
 	{
 		Debug.Log("CLIENT_Get_Trend()");
@@ -792,7 +797,7 @@ public class mpCalls : MonoBehaviour
 		this.SERVER_Send_Trend();
 	}
 
-	// Token: 0x06001948 RID: 6472 RVA: 0x000FADDC File Offset: 0x000F8FDC
+	// Token: 0x06001948 RID: 6472 RVA: 0x000FAE30 File Offset: 0x000F9030
 	public void CLIENT_Send_Publisher(publisherScript script_)
 	{
 		Debug.Log("CLIENT_Send_Publisher()");
@@ -830,76 +835,47 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("ERROR: CLIENT_Send_Publisher() -> Missing PublisherScript");
 	}
 
-	// Token: 0x06001949 RID: 6473 RVA: 0x000FAF5C File Offset: 0x000F915C
+	// Token: 0x06001949 RID: 6473 RVA: 0x000FAFB0 File Offset: 0x000F91B0
 	public void CLIENT_Get_Publisher(NetworkConnection conn, mpCalls.c_Publisher msg)
 	{
-		Debug.Log("CLIENT_Get_Publisher()");
+		if (this.save_.loadingSavegame)
+		{
+			return;
+		}
+		Debug.Log("CLIENT_Get_Publisher() " + UnityEngine.Random.Range(0, 10000).ToString());
 		GameObject gameObject = GameObject.Find("PUB_" + msg.myID.ToString());
-		publisherScript publisherScript;
 		if (gameObject)
 		{
-			publisherScript = gameObject.GetComponent<publisherScript>();
-			publisherScript.myID = msg.myID;
-			publisherScript.isUnlocked = msg.isUnlocked;
-			publisherScript.name_EN = msg.name_EN;
-			publisherScript.name_GE = msg.name_GE;
-			publisherScript.name_TU = msg.name_TU;
-			publisherScript.name_CH = msg.name_CH;
-			publisherScript.name_FR = msg.name_FR;
-			publisherScript.name_JA = msg.name_JA;
-			publisherScript.date_year = msg.date_year;
-			publisherScript.date_month = msg.date_month;
-			publisherScript.stars = msg.stars;
-			publisherScript.logoID = msg.logoID;
-			publisherScript.developer = msg.developer;
-			publisherScript.publisher = msg.publisher;
-			publisherScript.onlyMobile = msg.onlyMobile;
-			publisherScript.share = msg.share;
-			publisherScript.fanGenre = msg.fanGenre;
-			publisherScript.firmenwert = msg.firmenwert;
-			publisherScript.notForSale = msg.notForSale;
-			publisherScript.lockToBuy = msg.lockToBuy;
-			publisherScript.isPlayer = msg.isPlayer;
-			publisherScript.ownerID = msg.ownerID;
-			publisherScript.country = msg.country;
-			publisherScript.awards = (int[])msg.awards.Clone();
-		}
-		else
-		{
-			publisherScript = this.publisher_.CreatePublisher();
-			publisherScript.myID = msg.myID;
-			publisherScript.isUnlocked = msg.isUnlocked;
-			publisherScript.name_EN = msg.name_EN;
-			publisherScript.name_GE = msg.name_GE;
-			publisherScript.name_TU = msg.name_TU;
-			publisherScript.name_CH = msg.name_CH;
-			publisherScript.name_FR = msg.name_FR;
-			publisherScript.name_JA = msg.name_JA;
-			publisherScript.date_year = msg.date_year;
-			publisherScript.date_month = msg.date_month;
-			publisherScript.stars = msg.stars;
-			publisherScript.logoID = msg.logoID;
-			publisherScript.developer = msg.developer;
-			publisherScript.publisher = msg.publisher;
-			publisherScript.onlyMobile = msg.onlyMobile;
-			publisherScript.share = msg.share;
-			publisherScript.fanGenre = msg.fanGenre;
-			publisherScript.firmenwert = msg.firmenwert;
-			publisherScript.notForSale = msg.notForSale;
-			publisherScript.lockToBuy = msg.lockToBuy;
-			publisherScript.isPlayer = msg.isPlayer;
-			publisherScript.ownerID = msg.ownerID;
-			publisherScript.country = msg.country;
-			publisherScript.awards = (int[])msg.awards.Clone();
-			publisherScript.Init();
-		}
-		if (publisherScript)
-		{
-			this.SERVER_Send_Publisher(publisherScript);
+			publisherScript component = gameObject.GetComponent<publisherScript>();
+			component.myID = msg.myID;
+			component.isUnlocked = msg.isUnlocked;
+			component.name_EN = msg.name_EN;
+			component.name_GE = msg.name_GE;
+			component.name_TU = msg.name_TU;
+			component.name_CH = msg.name_CH;
+			component.name_FR = msg.name_FR;
+			component.name_JA = msg.name_JA;
+			component.date_year = msg.date_year;
+			component.date_month = msg.date_month;
+			component.stars = msg.stars;
+			component.logoID = msg.logoID;
+			component.developer = msg.developer;
+			component.publisher = msg.publisher;
+			component.onlyMobile = msg.onlyMobile;
+			component.share = msg.share;
+			component.fanGenre = msg.fanGenre;
+			component.firmenwert = msg.firmenwert;
+			component.notForSale = msg.notForSale;
+			component.lockToBuy = msg.lockToBuy;
+			component.isPlayer = msg.isPlayer;
+			component.ownerID = msg.ownerID;
+			component.country = msg.country;
+			component.awards = (int[])msg.awards.Clone();
+			this.SERVER_Send_Publisher(component);
 		}
 	}
 
-	// Token: 0x0600194A RID: 6474 RVA: 0x000FB220 File Offset: 0x000F9420
+	// Token: 0x0600194A RID: 6474 RVA: 0x000FB150 File Offset: 0x000F9350
 	public void CLIENT_Send_Payment(int toPlayer, int what, int money)
 	{
 		Debug.Log("CLIENT_Send_Payment()");
@@ -912,7 +888,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x0600194B RID: 6475 RVA: 0x000FB270 File Offset: 0x000F9470
+	// Token: 0x0600194B RID: 6475 RVA: 0x000FB1A0 File Offset: 0x000F93A0
 	public void CLIENT_Get_Payment(NetworkConnection conn, mpCalls.c_Payment msg)
 	{
 		Debug.Log("CLIENT_Get_Payment()");
@@ -952,7 +928,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600194C RID: 6476 RVA: 0x000FB40C File Offset: 0x000F960C
+	// Token: 0x0600194C RID: 6476 RVA: 0x000FB33C File Offset: 0x000F953C
 	public void CLIENT_Send_Forschung()
 	{
 		Debug.Log("CLIENT_Send_Forschung()");
@@ -1097,10 +1073,14 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600194D RID: 6477 RVA: 0x000FB944 File Offset: 0x000F9B44
+	// Token: 0x0600194D RID: 6477 RVA: 0x000FB874 File Offset: 0x000F9A74
 	public void CLIENT_Get_Forschung(NetworkConnection conn, mpCalls.c_Forschung msg)
 	{
 		Debug.Log("CLIENT_Get_Forschung()");
+		if (this.save_.loadingSavegame)
+		{
+			return;
+		}
 		player_mp player_mp = this.FindPlayer(msg.playerID);
 		if (player_mp == null)
 		{
@@ -1116,7 +1096,7 @@ public class mpCalls : MonoBehaviour
 		this.SERVER_Send_Forschung(msg.playerID);
 	}
 
-	// Token: 0x0600194E RID: 6478 RVA: 0x000FBA14 File Offset: 0x000F9C14
+	// Token: 0x0600194E RID: 6478 RVA: 0x000FB950 File Offset: 0x000F9B50
 	public void CLIENT_Send_Help(int toPlayer, int what, int valueA, int valueB, int valueC)
 	{
 		Debug.Log("CLIENT_Send_Help()");
@@ -1131,7 +1111,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x0600194F RID: 6479 RVA: 0x000FBA78 File Offset: 0x000F9C78
+	// Token: 0x0600194F RID: 6479 RVA: 0x000FB9B4 File Offset: 0x000F9BB4
 	public void CLIENT_Get_Help(NetworkConnection conn, mpCalls.c_Help msg)
 	{
 		Debug.Log("CLIENT_Get_Help()");
@@ -1220,7 +1200,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001950 RID: 6480 RVA: 0x000FBE50 File Offset: 0x000FA050
+	// Token: 0x06001950 RID: 6480 RVA: 0x000FBD8C File Offset: 0x000F9F8C
 	public void CLIENT_Send_Platform(platformScript script_)
 	{
 		Debug.Log("CLIENT_Send_Platform()");
@@ -1299,7 +1279,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001951 RID: 6481 RVA: 0x000FC224 File Offset: 0x000FA424
+	// Token: 0x06001951 RID: 6481 RVA: 0x000FC160 File Offset: 0x000FA360
 	public void CLIENT_Get_Platform(NetworkConnection conn, mpCalls.c_Platform msg)
 	{
 		Debug.Log("CLIENT_Get_Platform()");
@@ -1468,7 +1448,7 @@ public class mpCalls : MonoBehaviour
 		this.SERVER_Send_Platform(platformScript);
 	}
 
-	// Token: 0x06001952 RID: 6482 RVA: 0x000FC994 File Offset: 0x000FAB94
+	// Token: 0x06001952 RID: 6482 RVA: 0x000FC8D0 File Offset: 0x000FAAD0
 	public void CLIENT_Send_Engine(engineScript script_)
 	{
 		Debug.Log("CLIENT_Send_Engine()");
@@ -1488,7 +1468,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001953 RID: 6483 RVA: 0x000FCA4C File Offset: 0x000FAC4C
+	// Token: 0x06001953 RID: 6483 RVA: 0x000FC988 File Offset: 0x000FAB88
 	public void CLIENT_Get_Engine(NetworkConnection conn, mpCalls.c_Engine msg)
 	{
 		Debug.Log("CLIENT_Get_Engine()");
@@ -1544,7 +1524,7 @@ public class mpCalls : MonoBehaviour
 		this.SERVER_Send_Engine(engineScript);
 	}
 
-	// Token: 0x06001954 RID: 6484 RVA: 0x000FCC48 File Offset: 0x000FAE48
+	// Token: 0x06001954 RID: 6484 RVA: 0x000FCB84 File Offset: 0x000FAD84
 	public void CLIENT_Send_Chat(string c)
 	{
 		Debug.Log("CLIENT_Send_Chat()");
@@ -1555,7 +1535,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001955 RID: 6485 RVA: 0x000FCC88 File Offset: 0x000FAE88
+	// Token: 0x06001955 RID: 6485 RVA: 0x000FCBC4 File Offset: 0x000FADC4
 	public void CLIENT_Get_Chat(NetworkConnection conn, mpCalls.c_Chat msg)
 	{
 		Debug.Log("CLIENT_Get_Chat()");
@@ -1563,7 +1543,7 @@ public class mpCalls : MonoBehaviour
 		this.SERVER_Send_Chat(msg.playerID, msg.text);
 	}
 
-	// Token: 0x06001956 RID: 6486 RVA: 0x000FCCC0 File Offset: 0x000FAEC0
+	// Token: 0x06001956 RID: 6486 RVA: 0x000FCBFC File Offset: 0x000FADFC
 	public void CLIENT_Send_Money()
 	{
 		Debug.Log("CLIENT_Send_Money()");
@@ -1575,10 +1555,14 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001957 RID: 6487 RVA: 0x000FCD1C File Offset: 0x000FAF1C
+	// Token: 0x06001957 RID: 6487 RVA: 0x000FCC58 File Offset: 0x000FAE58
 	public void CLIENT_Get_Money(NetworkConnection conn, mpCalls.c_Money msg)
 	{
 		Debug.Log("CLIENT_Get_Money()");
+		if (this.save_.loadingSavegame)
+		{
+			return;
+		}
 		player_mp player_mp = this.FindPlayer(msg.playerID);
 		if (player_mp == null)
 		{
@@ -1589,7 +1573,7 @@ public class mpCalls : MonoBehaviour
 		player_mp.fans = msg.fans;
 	}
 
-	// Token: 0x06001958 RID: 6488 RVA: 0x000FCD68 File Offset: 0x000FAF68
+	// Token: 0x06001958 RID: 6488 RVA: 0x000FCCB4 File Offset: 0x000FAEB4
 	public void CLIENT_Send_ExklusivKonsolenSells(gameScript script_, long i)
 	{
 		Debug.Log("CLIENT_Send_ExklusivKonsolenSells()");
@@ -1600,7 +1584,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001959 RID: 6489 RVA: 0x000FCDA4 File Offset: 0x000FAFA4
+	// Token: 0x06001959 RID: 6489 RVA: 0x000FCCF0 File Offset: 0x000FAEF0
 	public void CLIENT_Get_ExklusivKonsolenSells(NetworkConnection conn, mpCalls.c_exklusivKonsolenSells msg)
 	{
 		Debug.Log("CLIENT_Get_ExklusivKonsolenSells()");
@@ -1614,7 +1598,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600195A RID: 6490 RVA: 0x000FCE04 File Offset: 0x000FB004
+	// Token: 0x0600195A RID: 6490 RVA: 0x000FCD50 File Offset: 0x000FAF50
 	public void CLIENT_Send_GameData(gameScript script_)
 	{
 		Debug.Log("CLIENT_Send_GameData()");
@@ -1659,7 +1643,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x0600195B RID: 6491 RVA: 0x000FD008 File Offset: 0x000FB208
+	// Token: 0x0600195B RID: 6491 RVA: 0x000FCF54 File Offset: 0x000FB154
 	public void CLIENT_Get_GameData(NetworkConnection conn, mpCalls.c_GameData msg)
 	{
 		Debug.Log("CLIENT_Get_GameData()");
@@ -1709,7 +1693,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600195C RID: 6492 RVA: 0x000FD218 File Offset: 0x000FB418
+	// Token: 0x0600195C RID: 6492 RVA: 0x000FD164 File Offset: 0x000FB364
 	public void CLIENT_Send_Game(gameScript script_)
 	{
 		Debug.Log("CLIENT_Send_Game()");
@@ -1851,7 +1835,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x0600195D RID: 6493 RVA: 0x000FD98C File Offset: 0x000FBB8C
+	// Token: 0x0600195D RID: 6493 RVA: 0x000FD8D8 File Offset: 0x000FBAD8
 	public void CLIENT_Get_Game(NetworkConnection conn, mpCalls.c_Game msg)
 	{
 		GameObject game = this.GetGame(msg.gameID);
@@ -2018,7 +2002,7 @@ public class mpCalls : MonoBehaviour
 		this.guiMain_.UpdateCharts();
 	}
 
-	// Token: 0x0600195E RID: 6494 RVA: 0x000FE164 File Offset: 0x000FC364
+	// Token: 0x0600195E RID: 6494 RVA: 0x000FE0B0 File Offset: 0x000FC2B0
 	public void CLIENT_Send_BuyLizenz(int objectID_)
 	{
 		NetworkClient.Send<mpCalls.c_BuyLizenz>(new mpCalls.c_BuyLizenz
@@ -2028,7 +2012,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x0600195F RID: 6495 RVA: 0x000FE19A File Offset: 0x000FC39A
+	// Token: 0x0600195F RID: 6495 RVA: 0x000FE0E6 File Offset: 0x000FC2E6
 	public void CLIENT_Get_BuyLizenz(NetworkConnection conn, mpCalls.c_BuyLizenz msg)
 	{
 		Debug.Log("CLIENT_Get_BuyLizenz");
@@ -2036,7 +2020,7 @@ public class mpCalls : MonoBehaviour
 		this.SERVER_Send_Lizenz(msg.objectID);
 	}
 
-	// Token: 0x06001960 RID: 6496 RVA: 0x000FE1C8 File Offset: 0x000FC3C8
+	// Token: 0x06001960 RID: 6496 RVA: 0x000FE114 File Offset: 0x000FC314
 	public void CLIENT_Send_DeleteArbeitsmarkt(int objectID_, bool eingestellt)
 	{
 		NetworkClient.Send<mpCalls.c_DeleteArbeitsmarkt>(new mpCalls.c_DeleteArbeitsmarkt
@@ -2047,7 +2031,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001961 RID: 6497 RVA: 0x000FE208 File Offset: 0x000FC408
+	// Token: 0x06001961 RID: 6497 RVA: 0x000FE154 File Offset: 0x000FC354
 	public void CLIENT_Get_DeleteArbeitsmarkt(NetworkConnection conn, mpCalls.c_DeleteArbeitsmarkt msg)
 	{
 		Debug.Log("CLIENT_Get_DeleteArbeitsmarkt");
@@ -2058,7 +2042,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001962 RID: 6498 RVA: 0x000FE254 File Offset: 0x000FC454
+	// Token: 0x06001962 RID: 6498 RVA: 0x000FE1A0 File Offset: 0x000FC3A0
 	public void CLIENT_Send_Command(int command)
 	{
 		Debug.Log("CLIENT_Send_Command() " + command);
@@ -2070,7 +2054,7 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001963 RID: 6499 RVA: 0x000FE2A8 File Offset: 0x000FC4A8
+	// Token: 0x06001963 RID: 6499 RVA: 0x000FE1F4 File Offset: 0x000FC3F4
 	public void CLIENT_Get_Command(NetworkConnection conn, mpCalls.c_Command msg)
 	{
 		Debug.Log("CLIENT_Get_Command");
@@ -2095,7 +2079,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001964 RID: 6500 RVA: 0x000FE304 File Offset: 0x000FC504
+	// Token: 0x06001964 RID: 6500 RVA: 0x000FE250 File Offset: 0x000FC450
 	public void CLIENT_Send_PlayerInfos()
 	{
 		this.FindScripts();
@@ -2108,10 +2092,14 @@ public class mpCalls : MonoBehaviour
 		}, 0);
 	}
 
-	// Token: 0x06001965 RID: 6501 RVA: 0x000FE374 File Offset: 0x000FC574
+	// Token: 0x06001965 RID: 6501 RVA: 0x000FE2C0 File Offset: 0x000FC4C0
 	public void CLIENT_Get_PlayerInfos(NetworkConnection conn, mpCalls.c_PlayerInfos msg)
 	{
 		Debug.Log("CLIENT_Get_PlayerInfos");
+		if (this.save_.loadingSavegame)
+		{
+			return;
+		}
 		player_mp player_mp = this.FindPlayer(msg.playerID);
 		if (player_mp == null)
 		{
@@ -2123,7 +2111,7 @@ public class mpCalls : MonoBehaviour
 		this.SERVER_Send_PlayerInfos();
 	}
 
-	// Token: 0x06001966 RID: 6502 RVA: 0x000FE3C8 File Offset: 0x000FC5C8
+	// Token: 0x06001966 RID: 6502 RVA: 0x000FE320 File Offset: 0x000FC520
 	public void SERVER_Send_PlayerLeave(int playerID_)
 	{
 		Debug.Log("SERVER_Send_PlayerLeave()");
@@ -2133,12 +2121,17 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001967 RID: 6503 RVA: 0x000FE3F8 File Offset: 0x000FC5F8
+	// Token: 0x06001967 RID: 6503 RVA: 0x000FE350 File Offset: 0x000FC550
 	public void SERVER_Get_PlayerLeave(NetworkConnection conn, mpCalls.s_PlayerLeave msg)
 	{
 		Debug.Log("SERVER_Get_PlayerLeave()");
 		for (int i = 0; i < this.playersMP.Count; i++)
 		{
+			GameObject gameObject = GameObject.Find("PUB_" + msg.playerID.ToString());
+			if (gameObject)
+			{
+				UnityEngine.Object.Destroy(gameObject);
+			}
 			if (this.playersMP[i].playerID == msg.playerID)
 			{
 				this.playersMP.RemoveAt(i);
@@ -2147,7 +2140,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001968 RID: 6504 RVA: 0x000FE44C File Offset: 0x000FC64C
+	// Token: 0x06001968 RID: 6504 RVA: 0x000FE3D0 File Offset: 0x000FC5D0
 	public void SERVER_Send_PlatformData(platformScript script_)
 	{
 		Debug.Log("SERVER_Send_PlatformData()");
@@ -2161,7 +2154,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001969 RID: 6505 RVA: 0x000FE4B4 File Offset: 0x000FC6B4
+	// Token: 0x06001969 RID: 6505 RVA: 0x000FE438 File Offset: 0x000FC638
 	public void SERVER_Get_PlatformData(NetworkConnection conn, mpCalls.s_PlatformData msg)
 	{
 		Debug.Log("SERVER_Get_PlatformData()");
@@ -2183,7 +2176,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600196A RID: 6506 RVA: 0x000FE538 File Offset: 0x000FC738
+	// Token: 0x0600196A RID: 6506 RVA: 0x000FE4BC File Offset: 0x000FC6BC
 	public void SERVER_Send_ObjectDelete(int objectID_)
 	{
 		Debug.Log("SERVER_Send_ObjectDelete()");
@@ -2194,7 +2187,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600196B RID: 6507 RVA: 0x000FE57C File Offset: 0x000FC77C
+	// Token: 0x0600196B RID: 6507 RVA: 0x000FE500 File Offset: 0x000FC700
 	public void SERVER_Get_ObjectDelete(NetworkConnection conn, mpCalls.s_ObjectDelete msg)
 	{
 		Debug.Log("SERVER_Get_ObjectDelete()");
@@ -2213,7 +2206,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600196C RID: 6508 RVA: 0x000FE5E0 File Offset: 0x000FC7E0
+	// Token: 0x0600196C RID: 6508 RVA: 0x000FE564 File Offset: 0x000FC764
 	public void SERVER_Send_Object(int id_, int typ_, float x_, float y_, float rot_)
 	{
 		Debug.Log("SERVER_Send_Object()");
@@ -2228,7 +2221,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600196D RID: 6509 RVA: 0x000FE644 File Offset: 0x000FC844
+	// Token: 0x0600196D RID: 6509 RVA: 0x000FE5C8 File Offset: 0x000FC7C8
 	public void SERVER_Get_Object(NetworkConnection conn, mpCalls.s_Object msg)
 	{
 		Debug.Log("SERVER_Get_Object()");
@@ -2240,7 +2233,7 @@ public class mpCalls : MonoBehaviour
 		player_mp.objects.Add(new object_mp(msg.objectID, msg.typ, msg.x, msg.y, msg.rot));
 	}
 
-	// Token: 0x0600196E RID: 6510 RVA: 0x000FE69C File Offset: 0x000FC89C
+	// Token: 0x0600196E RID: 6510 RVA: 0x000FE620 File Offset: 0x000FC820
 	public void SERVER_Send_Map(int posx, int posy)
 	{
 		Debug.Log("SERVER_Send_Map()");
@@ -2261,7 +2254,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600196F RID: 6511 RVA: 0x000FE770 File Offset: 0x000FC970
+	// Token: 0x0600196F RID: 6511 RVA: 0x000FE6F4 File Offset: 0x000FC8F4
 	public void SERVER_Get_Map(NetworkConnection conn, mpCalls.s_Map msg)
 	{
 		Debug.Log("SERVER_Get_Map()");
@@ -2276,7 +2269,7 @@ public class mpCalls : MonoBehaviour
 		player_mp.mapWindows[(int)msg.x, (int)msg.y] = (int)msg.window;
 	}
 
-	// Token: 0x06001970 RID: 6512 RVA: 0x000FE80C File Offset: 0x000FCA0C
+	// Token: 0x06001970 RID: 6512 RVA: 0x000FE790 File Offset: 0x000FC990
 	public void SERVER_Send_GlobalEvent(int eventID, int wochen)
 	{
 		Debug.Log("SERVER_Send_GlobalEvent()");
@@ -2287,7 +2280,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001971 RID: 6513 RVA: 0x000FE844 File Offset: 0x000FCA44
+	// Token: 0x06001971 RID: 6513 RVA: 0x000FE7C8 File Offset: 0x000FC9C8
 	public void SERVER_Get_GlobalEvent(NetworkConnection conn, mpCalls.s_GlobalEvent msg)
 	{
 		Debug.Log("SERVER_Get_GlobalEvent()");
@@ -2297,7 +2290,7 @@ public class mpCalls : MonoBehaviour
 		base.StartCoroutine(this.iSERVER_Get_GlobalEvent(msg.eventID, msg.wochen));
 	}
 
-	// Token: 0x06001972 RID: 6514 RVA: 0x000FE89C File Offset: 0x000FCA9C
+	// Token: 0x06001972 RID: 6514 RVA: 0x000FE820 File Offset: 0x000FCA20
 	private IEnumerator iSERVER_Get_GlobalEvent(int eventID, int wochen)
 	{
 		bool done = false;
@@ -2317,7 +2310,7 @@ public class mpCalls : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001973 RID: 6515 RVA: 0x000FE8B4 File Offset: 0x000FCAB4
+	// Token: 0x06001973 RID: 6515 RVA: 0x000FE838 File Offset: 0x000FCA38
 	public void SERVER_Send_EngineAbrechnung(int toPlayer, int gameID)
 	{
 		Debug.Log("SERVER_Send_EngineAbrechnung()");
@@ -2328,7 +2321,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001974 RID: 6516 RVA: 0x000FE8EC File Offset: 0x000FCAEC
+	// Token: 0x06001974 RID: 6516 RVA: 0x000FE870 File Offset: 0x000FCA70
 	public void SERVER_Get_EngineAbrechnung(NetworkConnection conn, mpCalls.s_EngineAbrechnung msg)
 	{
 		Debug.Log("SERVER_Get_EngineAbrechnung()");
@@ -2346,7 +2339,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001975 RID: 6517 RVA: 0x000FE94C File Offset: 0x000FCB4C
+	// Token: 0x06001975 RID: 6517 RVA: 0x000FE8D0 File Offset: 0x000FCAD0
 	public void SERVER_Send_Award(int bestGrafik_, int bestSound_, int bestStudio_, int bestPublisher_, int bestGame_, int badGame_)
 	{
 		Debug.Log("SERVER_Send_Award()");
@@ -2361,7 +2354,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001976 RID: 6518 RVA: 0x000FE9A8 File Offset: 0x000FCBA8
+	// Token: 0x06001976 RID: 6518 RVA: 0x000FE92C File Offset: 0x000FCB2C
 	public void SERVER_Get_Awards(NetworkConnection conn, mpCalls.s_Awards msg)
 	{
 		Debug.Log("SERVER_Get_Awards()");
@@ -2371,7 +2364,7 @@ public class mpCalls : MonoBehaviour
 		this.mS_.MadGamesAward(true);
 	}
 
-	// Token: 0x06001977 RID: 6519 RVA: 0x000FEA18 File Offset: 0x000FCC18
+	// Token: 0x06001977 RID: 6519 RVA: 0x000FE99C File Offset: 0x000FCB9C
 	public void SERVER_Send_Payment(int playerID_, int toPlayerID_, int what, int money)
 	{
 		Debug.Log("SERVER_Send_Payment()");
@@ -2384,7 +2377,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001978 RID: 6520 RVA: 0x000FEA60 File Offset: 0x000FCC60
+	// Token: 0x06001978 RID: 6520 RVA: 0x000FE9E4 File Offset: 0x000FCBE4
 	public void SERVER_Get_Payment(NetworkConnection conn, mpCalls.s_Payment msg)
 	{
 		Debug.Log("SERVER_Get_Payment()");
@@ -2429,7 +2422,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001979 RID: 6521 RVA: 0x000FEC0C File Offset: 0x000FCE0C
+	// Token: 0x06001979 RID: 6521 RVA: 0x000FEB90 File Offset: 0x000FCD90
 	public void SERVER_Send_GenreCombination(int genre_)
 	{
 		Debug.Log("SERVER_Send_GenreCombination()");
@@ -2445,7 +2438,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600197A RID: 6522 RVA: 0x000FEC84 File Offset: 0x000FCE84
+	// Token: 0x0600197A RID: 6522 RVA: 0x000FEC08 File Offset: 0x000FCE08
 	public void SERVER_Get_GenreCombination(NetworkConnection conn, mpCalls.s_GenreCombination msg)
 	{
 		Debug.Log("SERVER_Get_GenreCombination()");
@@ -2459,7 +2452,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600197B RID: 6523 RVA: 0x000FED00 File Offset: 0x000FCF00
+	// Token: 0x0600197B RID: 6523 RVA: 0x000FEC84 File Offset: 0x000FCE84
 	public void SERVER_Send_GenreDesign(int genre_, int f0, int f1, int f2, int f3, int f4, int f5, int f6, int f7, int a0, int a1, int a2)
 	{
 		Debug.Log("SERVER_Send_GenreDesign()");
@@ -2480,7 +2473,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600197C RID: 6524 RVA: 0x000FED90 File Offset: 0x000FCF90
+	// Token: 0x0600197C RID: 6524 RVA: 0x000FED14 File Offset: 0x000FCF14
 	public void SERVER_Get_GenreDesign(NetworkConnection conn, mpCalls.s_GenreDesign msg)
 	{
 		Debug.Log("SERVER_Get_GenreDesign()");
@@ -2497,7 +2490,7 @@ public class mpCalls : MonoBehaviour
 		this.genres_.genres_ALIGN[msg.genreSlot, 2] = msg.genres_align2;
 	}
 
-	// Token: 0x0600197D RID: 6525 RVA: 0x000FEEE8 File Offset: 0x000FD0E8
+	// Token: 0x0600197D RID: 6525 RVA: 0x000FEE6C File Offset: 0x000FD06C
 	public void SERVER_Send_Forschung(int playerID_)
 	{
 		Debug.Log("SERVER_Send_Forschung()");
@@ -2619,7 +2612,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600197E RID: 6526 RVA: 0x000FF308 File Offset: 0x000FD508
+	// Token: 0x0600197E RID: 6526 RVA: 0x000FF28C File Offset: 0x000FD48C
 	public void SERVER_Get_Forschung(NetworkConnection conn, mpCalls.s_Forschung msg)
 	{
 		Debug.Log("SERVER_Get_Forschung()");
@@ -2641,7 +2634,7 @@ public class mpCalls : MonoBehaviour
 		player_mp.hardwareFeatures = (bool[])msg.hardwareFeatures.Clone();
 	}
 
-	// Token: 0x0600197F RID: 6527 RVA: 0x000FF3E0 File Offset: 0x000FD5E0
+	// Token: 0x0600197F RID: 6527 RVA: 0x000FF364 File Offset: 0x000FD564
 	public void SERVER_Send_GenreBeliebtheit()
 	{
 		Debug.Log("SERVER_Send_GenreBeliebtheit()");
@@ -2651,14 +2644,14 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001980 RID: 6528 RVA: 0x000FF423 File Offset: 0x000FD623
+	// Token: 0x06001980 RID: 6528 RVA: 0x000FF3A7 File Offset: 0x000FD5A7
 	public void SERVER_Get_GenreBeliebtheit(NetworkConnection conn, mpCalls.s_GenreBeliebtheit msg)
 	{
 		Debug.Log("SERVER_GenreBeliebtheit()");
 		this.genres_.genres_BELIEBTHEIT = (float[])msg.genreBeliebtheit.Clone();
 	}
 
-	// Token: 0x06001981 RID: 6529 RVA: 0x000FF44C File Offset: 0x000FD64C
+	// Token: 0x06001981 RID: 6529 RVA: 0x000FF3D0 File Offset: 0x000FD5D0
 	public void SERVER_Send_Help(int playerID_, int toPlayerID_, int what, int valueA, int valueB, int valueC)
 	{
 		Debug.Log("SERVER_Send_Help()");
@@ -2673,7 +2666,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001982 RID: 6530 RVA: 0x000FF4A8 File Offset: 0x000FD6A8
+	// Token: 0x06001982 RID: 6530 RVA: 0x000FF42C File Offset: 0x000FD62C
 	public void SERVER_Get_Help(NetworkConnection conn, mpCalls.s_Help msg)
 	{
 		Debug.Log("SERVER_Get_Help()");
@@ -2759,7 +2752,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001983 RID: 6531 RVA: 0x000FF848 File Offset: 0x000FDA48
+	// Token: 0x06001983 RID: 6531 RVA: 0x000FF7CC File Offset: 0x000FD9CC
 	public void SERVER_Send_Platform(platformScript script_)
 	{
 		Debug.Log("SERVER_Send_Platform()");
@@ -2838,7 +2831,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001984 RID: 6532 RVA: 0x000FFC1C File Offset: 0x000FDE1C
+	// Token: 0x06001984 RID: 6532 RVA: 0x000FFBA0 File Offset: 0x000FDDA0
 	public void SERVER_Get_Platform(NetworkConnection conn, mpCalls.s_Platform msg)
 	{
 		Debug.Log("SERVER_Get_Platform()");
@@ -3010,7 +3003,7 @@ public class mpCalls : MonoBehaviour
 		component.performancePoints = msg.performancePoints;
 	}
 
-	// Token: 0x06001985 RID: 6533 RVA: 0x001003BC File Offset: 0x000FE5BC
+	// Token: 0x06001985 RID: 6533 RVA: 0x00100340 File Offset: 0x000FE540
 	public void SERVER_Send_Engine(engineScript script_)
 	{
 		Debug.Log("SERVER_Send_Engine()");
@@ -3030,7 +3023,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001986 RID: 6534 RVA: 0x00100474 File Offset: 0x000FE674
+	// Token: 0x06001986 RID: 6534 RVA: 0x001003F8 File Offset: 0x000FE5F8
 	public void SERVER_Get_Engine(NetworkConnection conn, mpCalls.s_Engine msg)
 	{
 		Debug.Log("SERVER_Get_Engine()");
@@ -3084,7 +3077,7 @@ public class mpCalls : MonoBehaviour
 		component.specialPlatformS_ = null;
 	}
 
-	// Token: 0x06001987 RID: 6535 RVA: 0x00100670 File Offset: 0x000FE870
+	// Token: 0x06001987 RID: 6535 RVA: 0x001005F4 File Offset: 0x000FE7F4
 	public void SERVER_Send_Chat(int playerID_, string c)
 	{
 		Debug.Log("SERVER_Send_Chat()");
@@ -3095,14 +3088,14 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001988 RID: 6536 RVA: 0x001006A7 File Offset: 0x000FE8A7
+	// Token: 0x06001988 RID: 6536 RVA: 0x0010062B File Offset: 0x000FE82B
 	public void SERVER_Get_Chat(NetworkConnection conn, mpCalls.s_Chat msg)
 	{
 		Debug.Log("SERVER_Get_Chat()");
 		this.guiMain_.AddChat(msg.playerID, msg.text);
 	}
 
-	// Token: 0x06001989 RID: 6537 RVA: 0x001006CC File Offset: 0x000FE8CC
+	// Token: 0x06001989 RID: 6537 RVA: 0x00100650 File Offset: 0x000FE850
 	public void SERVER_Send_ExklusivKonsolenSells(gameScript script_, long i)
 	{
 		Debug.Log("SERVER_Send_ExklusivKonsolenSells()");
@@ -3113,7 +3106,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600198A RID: 6538 RVA: 0x00100708 File Offset: 0x000FE908
+	// Token: 0x0600198A RID: 6538 RVA: 0x0010068C File Offset: 0x000FE88C
 	public void SERVER_Get_ExklusivKonsolenSells(NetworkConnection conn, mpCalls.s_exklusivKonsolenSells msg)
 	{
 		Debug.Log("SERVER_Get_ExklusivKonsolenSells()");
@@ -3130,7 +3123,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600198B RID: 6539 RVA: 0x00100784 File Offset: 0x000FE984
+	// Token: 0x0600198B RID: 6539 RVA: 0x00100708 File Offset: 0x000FE908
 	public void SERVER_Send_GameData(gameScript script_)
 	{
 		Debug.Log("SERVER_Send_GameData()");
@@ -3176,7 +3169,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600198C RID: 6540 RVA: 0x00100998 File Offset: 0x000FEB98
+	// Token: 0x0600198C RID: 6540 RVA: 0x0010091C File Offset: 0x000FEB1C
 	public void SERVER_Get_GameData(NetworkConnection conn, mpCalls.s_GameData msg)
 	{
 		Debug.Log("SERVER_Get_GameData()");
@@ -3230,7 +3223,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600198D RID: 6541 RVA: 0x00100BD4 File Offset: 0x000FEDD4
+	// Token: 0x0600198D RID: 6541 RVA: 0x00100B58 File Offset: 0x000FED58
 	public void SERVER_Send_GameplayFeatures()
 	{
 		Debug.Log("SERVER_Send_GameplayFeatures()");
@@ -3288,7 +3281,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600198E RID: 6542 RVA: 0x00101158 File Offset: 0x000FF358
+	// Token: 0x0600198E RID: 6542 RVA: 0x001010DC File Offset: 0x000FF2DC
 	public void SERVER_Get_GameplayFeatures(NetworkConnection conn, mpCalls.s_GameplayFeatures msg)
 	{
 		Debug.Log("SERVER_Get_GameplayFeatures()");
@@ -3344,7 +3337,7 @@ public class mpCalls : MonoBehaviour
 		this.gF_.Init();
 	}
 
-	// Token: 0x0600198F RID: 6543 RVA: 0x00101688 File Offset: 0x000FF888
+	// Token: 0x0600198F RID: 6543 RVA: 0x0010160C File Offset: 0x000FF80C
 	public void SERVER_Send_Genres(int id_, mpPlayer mpPlayer_)
 	{
 		Debug.Log("SERVER_Send_Genres()");
@@ -3415,7 +3408,7 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.SendToClientOfPlayer<mpCalls.s_Genres>(mpPlayer_.netIdentity, msg, 0);
 	}
 
-	// Token: 0x06001990 RID: 6544 RVA: 0x00101C74 File Offset: 0x000FFE74
+	// Token: 0x06001990 RID: 6544 RVA: 0x00101BF8 File Offset: 0x000FFDF8
 	public void SERVER_Get_Genres(NetworkConnection conn, mpCalls.s_Genres msg)
 	{
 		Debug.Log("SERVER_Get_Genres()");
@@ -3476,7 +3469,7 @@ public class mpCalls : MonoBehaviour
 		this.mpMain_.InitDropdowns();
 	}
 
-	// Token: 0x06001991 RID: 6545 RVA: 0x001021F0 File Offset: 0x001003F0
+	// Token: 0x06001991 RID: 6545 RVA: 0x00102174 File Offset: 0x00100374
 	public void SERVER_Send_EngineFeatures()
 	{
 		Debug.Log("SERVER_Send_EngineFeatures()");
@@ -3532,7 +3525,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001992 RID: 6546 RVA: 0x0010273C File Offset: 0x0010093C
+	// Token: 0x06001992 RID: 6546 RVA: 0x001026C0 File Offset: 0x001008C0
 	public void SERVER_Get_EngineFeatures(NetworkConnection conn, mpCalls.s_EngineFeatures msg)
 	{
 		Debug.Log("SERVER_Get_EngineFeatures()");
@@ -3586,7 +3579,7 @@ public class mpCalls : MonoBehaviour
 		this.eF_.Init();
 	}
 
-	// Token: 0x06001993 RID: 6547 RVA: 0x00102C54 File Offset: 0x00100E54
+	// Token: 0x06001993 RID: 6547 RVA: 0x00102BD8 File Offset: 0x00100DD8
 	public void SERVER_Send_HardwareFeatures()
 	{
 		Debug.Log("SERVER_Send_HardwareFeatures()");
@@ -3639,7 +3632,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001994 RID: 6548 RVA: 0x0010314C File Offset: 0x0010134C
+	// Token: 0x06001994 RID: 6548 RVA: 0x001030D0 File Offset: 0x001012D0
 	public void SERVER_Get_HardwareFeatures(NetworkConnection conn, mpCalls.s_HardwareFeatures msg)
 	{
 		Debug.Log("SERVER_Get_HardwareFeatures()");
@@ -3690,7 +3683,7 @@ public class mpCalls : MonoBehaviour
 		this.hardwareFeatures_.Init();
 	}
 
-	// Token: 0x06001995 RID: 6549 RVA: 0x00103614 File Offset: 0x00101814
+	// Token: 0x06001995 RID: 6549 RVA: 0x00103598 File Offset: 0x00101798
 	public void SERVER_Send_Hardware()
 	{
 		Debug.Log("SERVER_Send_Hardware()");
@@ -3745,7 +3738,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001996 RID: 6550 RVA: 0x00103B44 File Offset: 0x00101D44
+	// Token: 0x06001996 RID: 6550 RVA: 0x00103AC8 File Offset: 0x00101CC8
 	public void SERVER_Get_Hardware(NetworkConnection conn, mpCalls.s_Hardware msg)
 	{
 		Debug.Log("SERVER_Get_Hardware()");
@@ -3798,7 +3791,7 @@ public class mpCalls : MonoBehaviour
 		this.hardware_.Init();
 	}
 
-	// Token: 0x06001997 RID: 6551 RVA: 0x00104040 File Offset: 0x00102240
+	// Token: 0x06001997 RID: 6551 RVA: 0x00103FC4 File Offset: 0x001021C4
 	public void SERVER_Send_AntiCheat(antiCheatScript script_)
 	{
 		Debug.Log("SERVER_Send_AntiCheat()");
@@ -3824,7 +3817,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x06001998 RID: 6552 RVA: 0x00104144 File Offset: 0x00102344
+	// Token: 0x06001998 RID: 6552 RVA: 0x001040C8 File Offset: 0x001022C8
 	public void SERVER_Get_AntiCheat(NetworkConnection conn, mpCalls.s_AntiCheat msg)
 	{
 		Debug.Log("SERVER_Get_AntiCheat()");
@@ -3872,7 +3865,7 @@ public class mpCalls : MonoBehaviour
 		antiCheatScript.Init();
 	}
 
-	// Token: 0x06001999 RID: 6553 RVA: 0x00104330 File Offset: 0x00102530
+	// Token: 0x06001999 RID: 6553 RVA: 0x001042B4 File Offset: 0x001024B4
 	public void SERVER_Send_NpcEngine(engineScript script_)
 	{
 		Debug.Log("SERVER_Send_NpcEngine()");
@@ -3912,7 +3905,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600199A RID: 6554 RVA: 0x00104508 File Offset: 0x00102708
+	// Token: 0x0600199A RID: 6554 RVA: 0x0010448C File Offset: 0x0010268C
 	public void SERVER_Get_NpcEngine(NetworkConnection conn, mpCalls.s_NpcEngine msg)
 	{
 		Debug.Log("SERVER_Get_NpcEngine()");
@@ -3988,7 +3981,7 @@ public class mpCalls : MonoBehaviour
 		engineScript.Init();
 	}
 
-	// Token: 0x0600199B RID: 6555 RVA: 0x00104880 File Offset: 0x00102A80
+	// Token: 0x0600199B RID: 6555 RVA: 0x00104804 File Offset: 0x00102A04
 	public void SERVER_Send_CopyProtect(copyProtectScript script_)
 	{
 		Debug.Log("SERVER_Send_CopyProtect()");
@@ -4014,7 +4007,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600199C RID: 6556 RVA: 0x00104984 File Offset: 0x00102B84
+	// Token: 0x0600199C RID: 6556 RVA: 0x00104908 File Offset: 0x00102B08
 	public void SERVER_Get_CopyProtect(NetworkConnection conn, mpCalls.s_CopyProtect msg)
 	{
 		Debug.Log("SERVER_Get_CopyProtect()");
@@ -4062,7 +4055,7 @@ public class mpCalls : MonoBehaviour
 		copyProtectScript.Init();
 	}
 
-	// Token: 0x0600199D RID: 6557 RVA: 0x00104B70 File Offset: 0x00102D70
+	// Token: 0x0600199D RID: 6557 RVA: 0x00104AF4 File Offset: 0x00102CF4
 	public void SERVER_Send_Firmenwert()
 	{
 		Debug.Log("SERVER_Send_Firmenwert()");
@@ -4088,7 +4081,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x0600199E RID: 6558 RVA: 0x00104C18 File Offset: 0x00102E18
+	// Token: 0x0600199E RID: 6558 RVA: 0x00104B9C File Offset: 0x00102D9C
 	public void SERVER_Get_Firmenwert(NetworkConnection conn, mpCalls.s_Firmenwert msg)
 	{
 		Debug.Log("SERVER_Get_Firmenwert()");
@@ -4109,7 +4102,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600199F RID: 6559 RVA: 0x00104C8C File Offset: 0x00102E8C
+	// Token: 0x0600199F RID: 6559 RVA: 0x00104C10 File Offset: 0x00102E10
 	public void SERVER_Send_Publisher(publisherScript script_)
 	{
 		Debug.Log("SERVER_Send_Publisher()");
@@ -4147,7 +4140,7 @@ public class mpCalls : MonoBehaviour
 		Debug.Log("ERROR: SERVER_Send_Publisher() -> Missing PublisherScript");
 	}
 
-	// Token: 0x060019A0 RID: 6560 RVA: 0x00104E0C File Offset: 0x0010300C
+	// Token: 0x060019A0 RID: 6560 RVA: 0x00104D90 File Offset: 0x00102F90
 	public void SERVER_Get_Publisher(NetworkConnection conn, mpCalls.s_Publisher msg)
 	{
 		Debug.Log("SERVER_Get_Publisher()");
@@ -4209,7 +4202,7 @@ public class mpCalls : MonoBehaviour
 		publisherScript.Init();
 	}
 
-	// Token: 0x060019A1 RID: 6561 RVA: 0x001050B4 File Offset: 0x001032B4
+	// Token: 0x060019A1 RID: 6561 RVA: 0x00105038 File Offset: 0x00103238
 	public void SERVER_Send_Game(gameScript script_)
 	{
 		Debug.Log("SERVER_Send_Game()");
@@ -4351,7 +4344,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019A2 RID: 6562 RVA: 0x00105828 File Offset: 0x00103A28
+	// Token: 0x060019A2 RID: 6562 RVA: 0x001057AC File Offset: 0x001039AC
 	public void SERVER_Get_Game(NetworkConnection conn, mpCalls.s_Game msg)
 	{
 		Debug.Log("SERVER_Get_Game()");
@@ -4533,7 +4526,7 @@ public class mpCalls : MonoBehaviour
 		this.guiMain_.UpdateCharts();
 	}
 
-	// Token: 0x060019A3 RID: 6563 RVA: 0x00106060 File Offset: 0x00104260
+	// Token: 0x060019A3 RID: 6563 RVA: 0x00105FE4 File Offset: 0x001041E4
 	public void SERVER_Send_Lizenz(int i)
 	{
 		Debug.Log("SERVER_Send_Lizenz()");
@@ -4545,7 +4538,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019A4 RID: 6564 RVA: 0x001060B8 File Offset: 0x001042B8
+	// Token: 0x060019A4 RID: 6564 RVA: 0x0010603C File Offset: 0x0010423C
 	public void SERVER_Get_Lizenz(NetworkConnection conn, mpCalls.s_Lizenz msg)
 	{
 		Debug.Log("SERVER_Get_Lizenz()");
@@ -4556,7 +4549,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019A5 RID: 6565 RVA: 0x00106114 File Offset: 0x00104314
+	// Token: 0x060019A5 RID: 6565 RVA: 0x00106098 File Offset: 0x00104298
 	public void SERVER_Send_Difficulty()
 	{
 		Debug.Log("SERVER_Send_Difficulty()");
@@ -4566,7 +4559,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019A6 RID: 6566 RVA: 0x00106150 File Offset: 0x00104350
+	// Token: 0x060019A6 RID: 6566 RVA: 0x001060D4 File Offset: 0x001042D4
 	public void SERVER_Get_Difficulty(NetworkConnection conn, mpCalls.s_Difficulty msg)
 	{
 		Debug.Log("SERVER_Get_Difficulty()");
@@ -4578,7 +4571,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019A7 RID: 6567 RVA: 0x001061CC File Offset: 0x001043CC
+	// Token: 0x060019A7 RID: 6567 RVA: 0x00106150 File Offset: 0x00104350
 	public void SERVER_Send_Office()
 	{
 		Debug.Log("SERVER_Send_Office()");
@@ -4588,7 +4581,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019A8 RID: 6568 RVA: 0x00106208 File Offset: 0x00104408
+	// Token: 0x060019A8 RID: 6568 RVA: 0x0010618C File Offset: 0x0010438C
 	public void SERVER_Get_Office(NetworkConnection conn, mpCalls.s_Office msg)
 	{
 		Debug.Log("SERVER_Get_Office()");
@@ -4600,7 +4593,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019A9 RID: 6569 RVA: 0x0010628C File Offset: 0x0010448C
+	// Token: 0x060019A9 RID: 6569 RVA: 0x00106210 File Offset: 0x00104410
 	public void SERVER_Send_Startjahr()
 	{
 		Debug.Log("SERVER_Send_Startjahr()");
@@ -4610,7 +4603,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019AA RID: 6570 RVA: 0x001062D4 File Offset: 0x001044D4
+	// Token: 0x060019AA RID: 6570 RVA: 0x00106258 File Offset: 0x00104458
 	public void SERVER_Get_Startjahr(NetworkConnection conn, mpCalls.s_Startjahr msg)
 	{
 		Debug.Log("SERVER_Get_Startjahr()");
@@ -4621,7 +4614,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019AB RID: 6571 RVA: 0x00106338 File Offset: 0x00104538
+	// Token: 0x060019AB RID: 6571 RVA: 0x001062BC File Offset: 0x001044BC
 	public void SERVER_Send_Spielgeschwindigkeit()
 	{
 		Debug.Log("SERVER_Send_Spielgeschwindigkeit()");
@@ -4631,7 +4624,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019AC RID: 6572 RVA: 0x00106380 File Offset: 0x00104580
+	// Token: 0x060019AC RID: 6572 RVA: 0x00106304 File Offset: 0x00104504
 	public void SERVER_Get_Spielgeschwindigkeit(NetworkConnection conn, mpCalls.s_Spielgeschwindigkeit msg)
 	{
 		Debug.Log("SERVER_Send_Spielgeschwindigkeit()");
@@ -4642,7 +4635,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019AD RID: 6573 RVA: 0x001063E4 File Offset: 0x001045E4
+	// Token: 0x060019AD RID: 6573 RVA: 0x00106368 File Offset: 0x00104568
 	public void SERVER_Send_Trend()
 	{
 		Debug.Log("SERVER_Send_Trend()");
@@ -4660,7 +4653,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019AE RID: 6574 RVA: 0x001064B0 File Offset: 0x001046B0
+	// Token: 0x060019AE RID: 6574 RVA: 0x00106434 File Offset: 0x00104634
 	public void SERVER_Get_Trend(NetworkConnection conn, mpCalls.s_Trend msg)
 	{
 		Debug.Log("SERVER_Get_Trend()");
@@ -4676,7 +4669,7 @@ public class mpCalls : MonoBehaviour
 		this.mS_.ShowTrendNews();
 	}
 
-	// Token: 0x060019AF RID: 6575 RVA: 0x0010656C File Offset: 0x0010476C
+	// Token: 0x060019AF RID: 6575 RVA: 0x001064F0 File Offset: 0x001046F0
 	public void SERVER_Send_DeleteArbeitsmarkt(int objectID_, bool eingestellt)
 	{
 		Debug.Log("SERVER_Send_DeleteArbeitsmarkt()");
@@ -4687,7 +4680,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019B0 RID: 6576 RVA: 0x001065A4 File Offset: 0x001047A4
+	// Token: 0x060019B0 RID: 6576 RVA: 0x00106528 File Offset: 0x00104728
 	public void SERVER_Get_DeleteArbeitsmarkt(NetworkConnection conn, mpCalls.s_DeleteArbeitsmarkt msg)
 	{
 		Debug.Log("SERVER_Get_DeleteArbeitsmarkt()");
@@ -4700,7 +4693,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019B1 RID: 6577 RVA: 0x00106600 File Offset: 0x00104800
+	// Token: 0x060019B1 RID: 6577 RVA: 0x00106584 File Offset: 0x00104784
 	public void SERVER_Send_CreateArbeitsmarkt(charArbeitsmarkt script_)
 	{
 		Debug.Log("SERVER_Send_CreateArbeitsmarkt()");
@@ -4734,7 +4727,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019B2 RID: 6578 RVA: 0x00106778 File Offset: 0x00104978
+	// Token: 0x060019B2 RID: 6578 RVA: 0x001066FC File Offset: 0x001048FC
 	public void SERVER_Get_CreateArbeitsmarkt(NetworkConnection conn, mpCalls.s_CreateArbeitsmarkt msg)
 	{
 		Debug.Log("SERVER_Get_CreateArbeitsmarkt()");
@@ -4772,7 +4765,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019B3 RID: 6579 RVA: 0x00106940 File Offset: 0x00104B40
+	// Token: 0x060019B3 RID: 6579 RVA: 0x001068C4 File Offset: 0x00104AC4
 	public void SERVER_Send_GameSpeed(int speed)
 	{
 		Debug.Log("SERVER_Send_GameSpeed()");
@@ -4782,14 +4775,14 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019B4 RID: 6580 RVA: 0x0010696F File Offset: 0x00104B6F
+	// Token: 0x060019B4 RID: 6580 RVA: 0x001068F3 File Offset: 0x00104AF3
 	public void SERVER_Get_GameSpeed(NetworkConnection conn, mpCalls.s_GameSpeed msg)
 	{
 		Debug.Log("SERVER_Get_GameSpeed()");
 		this.mS_.SetGameSpeed((float)msg.speed);
 	}
 
-	// Token: 0x060019B5 RID: 6581 RVA: 0x00106990 File Offset: 0x00104B90
+	// Token: 0x060019B5 RID: 6581 RVA: 0x00106914 File Offset: 0x00104B14
 	public void SERVER_Send_Command(int command)
 	{
 		Debug.Log("SERVER_Send_Command() " + command.ToString());
@@ -4799,7 +4792,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019B6 RID: 6582 RVA: 0x001069CC File Offset: 0x00104BCC
+	// Token: 0x060019B6 RID: 6582 RVA: 0x00106950 File Offset: 0x00104B50
 	public void SERVER_Get_Command(NetworkConnection conn, mpCalls.s_Command msg)
 	{
 		this.FindScripts();
@@ -4881,7 +4874,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019B7 RID: 6583 RVA: 0x00106DBC File Offset: 0x00104FBC
+	// Token: 0x060019B7 RID: 6583 RVA: 0x00106D40 File Offset: 0x00104F40
 	public void SERVER_Send_Load(int saveID)
 	{
 		Debug.Log("SERVER_Send_Load() " + saveID.ToString());
@@ -4891,7 +4884,7 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019B8 RID: 6584 RVA: 0x00106DF8 File Offset: 0x00104FF8
+	// Token: 0x060019B8 RID: 6584 RVA: 0x00106D7C File Offset: 0x00104F7C
 	public void SERVER_Get_Load(NetworkConnection conn, mpCalls.s_Load msg)
 	{
 		Debug.Log("SERVER_Get_Load()");
@@ -4900,7 +4893,7 @@ public class mpCalls : MonoBehaviour
 		this.guiMain_.uiObjects[150].GetComponent<Menu_LoadGame>().BUTTON_LoadGame(msg.saveID);
 	}
 
-	// Token: 0x060019B9 RID: 6585 RVA: 0x00106E68 File Offset: 0x00105068
+	// Token: 0x060019B9 RID: 6585 RVA: 0x00106DEC File Offset: 0x00104FEC
 	public void SERVER_Send_Save(int saveID)
 	{
 		Debug.Log("SERVER_Send_Save() " + saveID.ToString());
@@ -4910,14 +4903,14 @@ public class mpCalls : MonoBehaviour
 		}, 0, false);
 	}
 
-	// Token: 0x060019BA RID: 6586 RVA: 0x00106EA3 File Offset: 0x001050A3
+	// Token: 0x060019BA RID: 6586 RVA: 0x00106E27 File Offset: 0x00105027
 	public void SERVER_Get_Save(NetworkConnection conn, mpCalls.s_Save msg)
 	{
 		Debug.Log("SERVER_Get_Save()");
 		this.save_.Save(msg.saveID);
 	}
 
-	// Token: 0x060019BB RID: 6587 RVA: 0x00106EC0 File Offset: 0x001050C0
+	// Token: 0x060019BB RID: 6587 RVA: 0x00106E44 File Offset: 0x00105044
 	public void SERVER_Send_ID(int id_, mpPlayer mpPlayer_)
 	{
 		Debug.Log("SERVER_Send_ID");
@@ -4934,7 +4927,7 @@ public class mpCalls : MonoBehaviour
 		NetworkServer.SendToClientOfPlayer<mpCalls.s_PlayerID>(mpPlayer_.netIdentity, msg, 0);
 	}
 
-	// Token: 0x060019BC RID: 6588 RVA: 0x00106F1C File Offset: 0x0010511C
+	// Token: 0x060019BC RID: 6588 RVA: 0x00106EA0 File Offset: 0x001050A0
 	public void SERVER_Get_ID(NetworkConnection conn, mpCalls.s_PlayerID msg)
 	{
 		Debug.Log("SERVER_Get_ID()");
@@ -4948,7 +4941,7 @@ public class mpCalls : MonoBehaviour
 		this.mpMain_.BUTTON_Close();
 	}
 
-	// Token: 0x060019BD RID: 6589 RVA: 0x00106F8C File Offset: 0x0010518C
+	// Token: 0x060019BD RID: 6589 RVA: 0x00106F10 File Offset: 0x00105110
 	public void SERVER_Send_AddPlayer()
 	{
 		Debug.Log("SERVER_Send_AddPlayer");
@@ -4961,7 +4954,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019BE RID: 6590 RVA: 0x00106FE4 File Offset: 0x001051E4
+	// Token: 0x060019BE RID: 6590 RVA: 0x00106F68 File Offset: 0x00105168
 	public void SERVER_Get_AddPlayer(NetworkConnection conn, mpCalls.s_AddPlayer msg)
 	{
 		Debug.Log("SERVER_Get_AddPlayer");
@@ -4974,7 +4967,7 @@ public class mpCalls : MonoBehaviour
 		this.FindPlayer(msg.playerID).myPubScript_ = myPubScript_;
 	}
 
-	// Token: 0x060019BF RID: 6591 RVA: 0x00107044 File Offset: 0x00105244
+	// Token: 0x060019BF RID: 6591 RVA: 0x00106FC8 File Offset: 0x001051C8
 	public void SERVER_Send_PlayerInfos()
 	{
 		Debug.Log("SERVER_Send_PlayerInfos");
@@ -4989,7 +4982,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019C0 RID: 6592 RVA: 0x001070CC File Offset: 0x001052CC
+	// Token: 0x060019C0 RID: 6592 RVA: 0x00107050 File Offset: 0x00105250
 	public void SERVER_Get_PlayerInfos(NetworkConnection conn, mpCalls.s_PlayerInfos msg)
 	{
 		Debug.Log("SERVER_Get_PlayerInfos");
@@ -5002,7 +4995,7 @@ public class mpCalls : MonoBehaviour
 		player_mp.ready = msg.ready;
 	}
 
-	// Token: 0x060019C1 RID: 6593 RVA: 0x0010710C File Offset: 0x0010530C
+	// Token: 0x060019C1 RID: 6593 RVA: 0x00107090 File Offset: 0x00105290
 	public void SERVER_Send_Money()
 	{
 		for (int i = 0; i < this.playersMP.Count; i++)
@@ -5016,7 +5009,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019C2 RID: 6594 RVA: 0x00107188 File Offset: 0x00105388
+	// Token: 0x060019C2 RID: 6594 RVA: 0x0010710C File Offset: 0x0010530C
 	public void SERVER_Get_Money(NetworkConnection conn, mpCalls.s_Money msg)
 	{
 		Debug.Log("SERVER_Get_Money");
@@ -5029,7 +5022,7 @@ public class mpCalls : MonoBehaviour
 		player_mp.fans = msg.fans;
 	}
 
-	// Token: 0x060019C3 RID: 6595 RVA: 0x001071C8 File Offset: 0x001053C8
+	// Token: 0x060019C3 RID: 6595 RVA: 0x0010714C File Offset: 0x0010534C
 	public void SERVER_Send_AutoPause()
 	{
 		for (int i = 0; i < this.playersMP.Count; i++)
@@ -5042,7 +5035,7 @@ public class mpCalls : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019C4 RID: 6596 RVA: 0x0010722C File Offset: 0x0010542C
+	// Token: 0x060019C4 RID: 6596 RVA: 0x001071B0 File Offset: 0x001053B0
 	public void SERVER_Get_AutoPause(NetworkConnection conn, mpCalls.s_AutoPause msg)
 	{
 		Debug.Log("SERVER_Get_Autopause");
@@ -5054,7 +5047,7 @@ public class mpCalls : MonoBehaviour
 		player_mp.playerPause = msg.pause;
 	}
 
-	// Token: 0x060019C5 RID: 6597 RVA: 0x00107260 File Offset: 0x00105460
+	// Token: 0x060019C5 RID: 6597 RVA: 0x001071E4 File Offset: 0x001053E4
 	private GameObject GetGame(int id_)
 	{
 		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)

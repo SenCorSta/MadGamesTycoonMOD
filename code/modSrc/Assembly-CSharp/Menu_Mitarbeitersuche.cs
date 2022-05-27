@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x020001E0 RID: 480
 public class Menu_Mitarbeitersuche : MonoBehaviour
 {
-	// Token: 0x06001229 RID: 4649 RVA: 0x000C0917 File Offset: 0x000BEB17
+	// Token: 0x06001229 RID: 4649 RVA: 0x000C0923 File Offset: 0x000BEB23
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600122A RID: 4650 RVA: 0x000C0920 File Offset: 0x000BEB20
+	// Token: 0x0600122A RID: 4650 RVA: 0x000C092C File Offset: 0x000BEB2C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600122B RID: 4651 RVA: 0x000C0A08 File Offset: 0x000BEC08
+	// Token: 0x0600122B RID: 4651 RVA: 0x000C0A14 File Offset: 0x000BEC14
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -72,7 +72,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x0600122C RID: 4652 RVA: 0x000C0BCD File Offset: 0x000BEDCD
+	// Token: 0x0600122C RID: 4652 RVA: 0x000C0BD9 File Offset: 0x000BEDD9
 	public void Init(roomScript room_)
 	{
 		this.rS_ = room_;
@@ -81,7 +81,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600122D RID: 4653 RVA: 0x000C0BE8 File Offset: 0x000BEDE8
+	// Token: 0x0600122D RID: 4653 RVA: 0x000C0BF4 File Offset: 0x000BEDF4
 	private void SetData()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -96,7 +96,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		this.uiObjects[6].GetComponent<Image>().color = this.GetValColor(this.workPoints[value]);
 	}
 
-	// Token: 0x0600122E RID: 4654 RVA: 0x000C0D18 File Offset: 0x000BEF18
+	// Token: 0x0600122E RID: 4654 RVA: 0x000C0D24 File Offset: 0x000BEF24
 	public float GetChance(int i)
 	{
 		this.FindScripts();
@@ -115,7 +115,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600122F RID: 4655 RVA: 0x000C0D9C File Offset: 0x000BEF9C
+	// Token: 0x0600122F RID: 4655 RVA: 0x000C0DA8 File Offset: 0x000BEFA8
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -133,7 +133,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x06001230 RID: 4656 RVA: 0x000C0E10 File Offset: 0x000BF010
+	// Token: 0x06001230 RID: 4656 RVA: 0x000C0E1C File Offset: 0x000BF01C
 	public void DROPDOWN_Erfahrung()
 	{
 		PlayerPrefs.SetInt(this.uiObjects[0].name, this.uiObjects[0].GetComponent<Dropdown>().value);
@@ -141,7 +141,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001231 RID: 4657 RVA: 0x000C0E6C File Offset: 0x000BF06C
+	// Token: 0x06001231 RID: 4657 RVA: 0x000C0E78 File Offset: 0x000BF078
 	public void DROPDOWN_Profession()
 	{
 		PlayerPrefs.SetInt(this.uiObjects[0].name, this.uiObjects[0].GetComponent<Dropdown>().value);
@@ -149,7 +149,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001232 RID: 4658 RVA: 0x000C0EC7 File Offset: 0x000BF0C7
+	// Token: 0x06001232 RID: 4658 RVA: 0x000C0ED3 File Offset: 0x000BF0D3
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -157,7 +157,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001233 RID: 4659 RVA: 0x000C0EF0 File Offset: 0x000BF0F0
+	// Token: 0x06001233 RID: 4659 RVA: 0x000C0EFC File Offset: 0x000BF0FC
 	public void BUTTON_OK()
 	{
 		if (!this.rS_)

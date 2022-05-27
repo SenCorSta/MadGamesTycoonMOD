@@ -4,19 +4,19 @@ using UnityEngine;
 // Token: 0x02000317 RID: 791
 public class taskMitarbeitersuche : MonoBehaviour
 {
-	// Token: 0x06001BE4 RID: 7140 RVA: 0x00115296 File Offset: 0x00113496
+	// Token: 0x06001BE4 RID: 7140 RVA: 0x001152B2 File Offset: 0x001134B2
 	private void Awake()
 	{
 		base.transform.position = new Vector3(80f, 0f, 0f);
 	}
 
-	// Token: 0x06001BE5 RID: 7141 RVA: 0x001152B7 File Offset: 0x001134B7
+	// Token: 0x06001BE5 RID: 7141 RVA: 0x001152D3 File Offset: 0x001134D3
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001BE6 RID: 7142 RVA: 0x001152C0 File Offset: 0x001134C0
+	// Token: 0x06001BE6 RID: 7142 RVA: 0x001152DC File Offset: 0x001134DC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class taskMitarbeitersuche : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BE7 RID: 7143 RVA: 0x00115384 File Offset: 0x00113584
+	// Token: 0x06001BE7 RID: 7143 RVA: 0x001153A0 File Offset: 0x001135A0
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -55,20 +55,20 @@ public class taskMitarbeitersuche : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001BE8 RID: 7144 RVA: 0x001153B5 File Offset: 0x001135B5
+	// Token: 0x06001BE8 RID: 7144 RVA: 0x001153D1 File Offset: 0x001135D1
 	public float GetProzent()
 	{
 		return 100f / this.points * (this.points - this.pointsLeft);
 	}
 
-	// Token: 0x06001BE9 RID: 7145 RVA: 0x001153D1 File Offset: 0x001135D1
+	// Token: 0x06001BE9 RID: 7145 RVA: 0x001153ED File Offset: 0x001135ED
 	public Sprite GetPic()
 	{
 		this.FindScripts();
 		return this.guiMain_.uiSprites[44];
 	}
 
-	// Token: 0x06001BEA RID: 7146 RVA: 0x001153E7 File Offset: 0x001135E7
+	// Token: 0x06001BEA RID: 7146 RVA: 0x00115403 File Offset: 0x00113603
 	public void Work(float f)
 	{
 		if (this.pointsLeft > 0f)
@@ -82,7 +82,7 @@ public class taskMitarbeitersuche : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BEB RID: 7147 RVA: 0x00115424 File Offset: 0x00113624
+	// Token: 0x06001BEB RID: 7147 RVA: 0x00115440 File Offset: 0x00113640
 	private void Complete()
 	{
 		if (this.mS_.multiplayer && this.guiMain_.menuOpen)
@@ -132,7 +132,7 @@ public class taskMitarbeitersuche : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BEC RID: 7148 RVA: 0x001155E8 File Offset: 0x001137E8
+	// Token: 0x06001BEC RID: 7148 RVA: 0x00115604 File Offset: 0x00113804
 	private bool DoAutomatic()
 	{
 		if (!this.automatic)
@@ -150,7 +150,7 @@ public class taskMitarbeitersuche : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001BED RID: 7149 RVA: 0x0011568C File Offset: 0x0011388C
+	// Token: 0x06001BED RID: 7149 RVA: 0x001156A8 File Offset: 0x001138A8
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -167,13 +167,13 @@ public class taskMitarbeitersuche : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001BEE RID: 7150 RVA: 0x001156EB File Offset: 0x001138EB
+	// Token: 0x06001BEE RID: 7150 RVA: 0x00115707 File Offset: 0x00113907
 	public int GetRueckgeld()
 	{
 		return Mathf.RoundToInt((float)this.guiMain_.uiObjects[344].GetComponent<Menu_Mitarbeitersuche>().price[this.berufserfahrung] * ((100f - this.GetProzent()) * 0.01f));
 	}
 
-	// Token: 0x06001BEF RID: 7151 RVA: 0x00115728 File Offset: 0x00113928
+	// Token: 0x06001BEF RID: 7151 RVA: 0x00115744 File Offset: 0x00113944
 	public void Abbrechen()
 	{
 		int rueckgeld = this.GetRueckgeld();

@@ -5,14 +5,14 @@ using UnityEngine;
 // Token: 0x020002EF RID: 751
 public class loadResources : MonoBehaviour
 {
-	// Token: 0x06001A85 RID: 6789 RVA: 0x0010B6AA File Offset: 0x001098AA
+	// Token: 0x06001A85 RID: 6789 RVA: 0x0010B67A File Offset: 0x0010987A
 	private void Start()
 	{
 		this.FindScripts();
 		this.LoadLogos();
 	}
 
-	// Token: 0x06001A86 RID: 6790 RVA: 0x0010B6B8 File Offset: 0x001098B8
+	// Token: 0x06001A86 RID: 6790 RVA: 0x0010B688 File Offset: 0x00109888
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -25,7 +25,7 @@ public class loadResources : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A87 RID: 6791 RVA: 0x0010B6F8 File Offset: 0x001098F8
+	// Token: 0x06001A87 RID: 6791 RVA: 0x0010B6C8 File Offset: 0x001098C8
 	private void LoadLogos()
 	{
 		string text = Application.dataPath + "/Extern/CompanyLogos/";

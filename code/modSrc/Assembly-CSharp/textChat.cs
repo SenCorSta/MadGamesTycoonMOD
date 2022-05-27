@@ -9,7 +9,7 @@ public class textChat : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001AE3 RID: 6883 RVA: 0x0010E192 File Offset: 0x0010C392
+	// Token: 0x06001AE3 RID: 6883 RVA: 0x0010E1AE File Offset: 0x0010C3AE
 	private void Update()
 	{
 		this.timer += Time.deltaTime;

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000194 RID: 404
 public class Menu_Firmenname : MonoBehaviour
 {
-	// Token: 0x06000F5A RID: 3930 RVA: 0x000A24F6 File Offset: 0x000A06F6
+	// Token: 0x06000F5A RID: 3930 RVA: 0x000A2502 File Offset: 0x000A0702
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F5B RID: 3931 RVA: 0x000A2500 File Offset: 0x000A0700
+	// Token: 0x06000F5B RID: 3931 RVA: 0x000A250C File Offset: 0x000A070C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,14 +44,14 @@ public class Menu_Firmenname : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F5C RID: 3932 RVA: 0x000A25DA File Offset: 0x000A07DA
+	// Token: 0x06000F5C RID: 3932 RVA: 0x000A25E6 File Offset: 0x000A07E6
 	private void OnEnable()
 	{
 		this.Init();
 		this.cmS_.disableMovement = true;
 	}
 
-	// Token: 0x06000F5D RID: 3933 RVA: 0x000A25EE File Offset: 0x000A07EE
+	// Token: 0x06000F5D RID: 3933 RVA: 0x000A25FA File Offset: 0x000A07FA
 	private void OnDisable()
 	{
 		this.FindScripts();
@@ -62,7 +62,7 @@ public class Menu_Firmenname : MonoBehaviour
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x06000F5E RID: 3934 RVA: 0x000A2610 File Offset: 0x000A0810
+	// Token: 0x06000F5E RID: 3934 RVA: 0x000A261C File Offset: 0x000A081C
 	public void Init()
 	{
 		this.FindScripts();
@@ -70,14 +70,14 @@ public class Menu_Firmenname : MonoBehaviour
 		this.SetLogo(this.mS_.GetCompanyLogoID());
 	}
 
-	// Token: 0x06000F5F RID: 3935 RVA: 0x000A2646 File Offset: 0x000A0846
+	// Token: 0x06000F5F RID: 3935 RVA: 0x000A2652 File Offset: 0x000A0852
 	public void BUTTON_Firmenlogo()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[48]);
 	}
 
-	// Token: 0x06000F60 RID: 3936 RVA: 0x000A266E File Offset: 0x000A086E
+	// Token: 0x06000F60 RID: 3936 RVA: 0x000A267A File Offset: 0x000A087A
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -85,7 +85,7 @@ public class Menu_Firmenname : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000F61 RID: 3937 RVA: 0x000A2694 File Offset: 0x000A0894
+	// Token: 0x06000F61 RID: 3937 RVA: 0x000A26A0 File Offset: 0x000A08A0
 	public void BUTTON_Yes()
 	{
 		if (this.uiObjects[0].GetComponent<InputField>().text.Length <= 0)
@@ -99,7 +99,7 @@ public class Menu_Firmenname : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x06000F62 RID: 3938 RVA: 0x000A2717 File Offset: 0x000A0917
+	// Token: 0x06000F62 RID: 3938 RVA: 0x000A2723 File Offset: 0x000A0923
 	public void SetLogo(int i)
 	{
 		this.uiObjects[1].GetComponent<Image>().sprite = this.guiMain_.GetCompanyLogo(i);

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200033B RID: 827
 public class pickObjectScript : MonoBehaviour
 {
-	// Token: 0x06001DEE RID: 7662 RVA: 0x0012A7EE File Offset: 0x001289EE
+	// Token: 0x06001DEE RID: 7662 RVA: 0x0012A80A File Offset: 0x00128A0A
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001DEF RID: 7663 RVA: 0x0012A7F8 File Offset: 0x001289F8
+	// Token: 0x06001DEF RID: 7663 RVA: 0x0012A814 File Offset: 0x00128A14
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -44,14 +44,14 @@ public class pickObjectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DF0 RID: 7664 RVA: 0x0012A8D8 File Offset: 0x00128AD8
+	// Token: 0x06001DF0 RID: 7664 RVA: 0x0012A8F4 File Offset: 0x00128AF4
 	private void Update()
 	{
 		this.Pick();
 		this.disableMouseButton = false;
 	}
 
-	// Token: 0x06001DF1 RID: 7665 RVA: 0x0012A8E8 File Offset: 0x00128AE8
+	// Token: 0x06001DF1 RID: 7665 RVA: 0x0012A904 File Offset: 0x00128B04
 	private void Pick()
 	{
 		if (this.gummiS_.isActive)
@@ -156,7 +156,7 @@ public class pickObjectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DF2 RID: 7666 RVA: 0x0012ACA3 File Offset: 0x00128EA3
+	// Token: 0x06001DF2 RID: 7666 RVA: 0x0012ACBF File Offset: 0x00128EBF
 	private void Unpick()
 	{
 		if (this.hitOld.transform)
@@ -166,7 +166,7 @@ public class pickObjectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DF3 RID: 7667 RVA: 0x0012ACE0 File Offset: 0x00128EE0
+	// Token: 0x06001DF3 RID: 7667 RVA: 0x0012ACFC File Offset: 0x00128EFC
 	public void Click(GameObject go)
 	{
 		this.guiMain.OpenMenu(false);

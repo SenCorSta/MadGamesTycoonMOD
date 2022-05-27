@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200019E RID: 414
 public class Menu_W_BuyAntiCheat : MonoBehaviour
 {
-	// Token: 0x06000FAB RID: 4011 RVA: 0x000A70B4 File Offset: 0x000A52B4
+	// Token: 0x06000FAB RID: 4011 RVA: 0x000A70C0 File Offset: 0x000A52C0
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FAC RID: 4012 RVA: 0x000A70BC File Offset: 0x000A52BC
+	// Token: 0x06000FAC RID: 4012 RVA: 0x000A70C8 File Offset: 0x000A52C8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_W_BuyAntiCheat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FAD RID: 4013 RVA: 0x000A7166 File Offset: 0x000A5366
+	// Token: 0x06000FAD RID: 4013 RVA: 0x000A7172 File Offset: 0x000A5372
 	public void Init(antiCheatScript script_)
 	{
 		if (!script_)
@@ -47,14 +47,14 @@ public class Menu_W_BuyAntiCheat : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.acS_.GetTooltip();
 	}
 
-	// Token: 0x06000FAE RID: 4014 RVA: 0x000A7195 File Offset: 0x000A5395
+	// Token: 0x06000FAE RID: 4014 RVA: 0x000A71A1 File Offset: 0x000A53A1
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FAF RID: 4015 RVA: 0x000A71B0 File Offset: 0x000A53B0
+	// Token: 0x06000FAF RID: 4015 RVA: 0x000A71BC File Offset: 0x000A53BC
 	public void BUTTON_Yes()
 	{
 		this.acS_.inBesitz = true;

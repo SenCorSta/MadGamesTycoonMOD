@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000183 RID: 387
 public class Menu_Achivements : MonoBehaviour
 {
-	// Token: 0x06000E88 RID: 3720 RVA: 0x0009C35C File Offset: 0x0009A55C
+	// Token: 0x06000E88 RID: 3720 RVA: 0x0009C368 File Offset: 0x0009A568
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000E89 RID: 3721 RVA: 0x0009C364 File Offset: 0x0009A564
+	// Token: 0x06000E89 RID: 3721 RVA: 0x0009C370 File Offset: 0x0009A570
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_Achivements : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E8A RID: 3722 RVA: 0x0009C42C File Offset: 0x0009A62C
+	// Token: 0x06000E8A RID: 3722 RVA: 0x0009C438 File Offset: 0x0009A638
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -49,20 +49,20 @@ public class Menu_Achivements : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E8B RID: 3723 RVA: 0x0009C45E File Offset: 0x0009A65E
+	// Token: 0x06000E8B RID: 3723 RVA: 0x0009C46A File Offset: 0x0009A66A
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06000E8C RID: 3724 RVA: 0x0009C466 File Offset: 0x0009A666
+	// Token: 0x06000E8C RID: 3724 RVA: 0x0009C472 File Offset: 0x0009A672
 	public void Init()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x06000E8D RID: 3725 RVA: 0x0009C474 File Offset: 0x0009A674
+	// Token: 0x06000E8D RID: 3725 RVA: 0x0009C480 File Offset: 0x0009A680
 	private void SetData()
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
@@ -160,13 +160,13 @@ public class Menu_Achivements : MonoBehaviour
 		this.uiObjects[7].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06000E8E RID: 3726 RVA: 0x0009C96D File Offset: 0x0009AB6D
+	// Token: 0x06000E8E RID: 3726 RVA: 0x0009C979 File Offset: 0x0009AB79
 	public void TOGGLE_Ausblenden()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000E8F RID: 3727 RVA: 0x0009C975 File Offset: 0x0009AB75
+	// Token: 0x06000E8F RID: 3727 RVA: 0x0009C981 File Offset: 0x0009AB81
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);

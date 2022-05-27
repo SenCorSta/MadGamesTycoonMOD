@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x0200018F RID: 399
 public class Menu_BuyLicenceMain : MonoBehaviour
 {
-	// Token: 0x06000F31 RID: 3889 RVA: 0x000A0FBC File Offset: 0x0009F1BC
+	// Token: 0x06000F31 RID: 3889 RVA: 0x000A0FC8 File Offset: 0x0009F1C8
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F32 RID: 3890 RVA: 0x000A0FC4 File Offset: 0x0009F1C4
+	// Token: 0x06000F32 RID: 3890 RVA: 0x000A0FD0 File Offset: 0x0009F1D0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -35,7 +35,7 @@ public class Menu_BuyLicenceMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F33 RID: 3891 RVA: 0x000A106E File Offset: 0x0009F26E
+	// Token: 0x06000F33 RID: 3891 RVA: 0x000A107A File Offset: 0x0009F27A
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -46,14 +46,14 @@ public class Menu_BuyLicenceMain : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000F34 RID: 3892 RVA: 0x000A10A9 File Offset: 0x0009F2A9
+	// Token: 0x06000F34 RID: 3892 RVA: 0x000A10B5 File Offset: 0x0009F2B5
 	public void BUTTON_BuyLicence()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[52]);
 	}
 
-	// Token: 0x06000F35 RID: 3893 RVA: 0x000A10D1 File Offset: 0x0009F2D1
+	// Token: 0x06000F35 RID: 3893 RVA: 0x000A10DD File Offset: 0x0009F2DD
 	public void BUTTON_SellLicence()
 	{
 		this.sfx_.PlaySound(3, true);

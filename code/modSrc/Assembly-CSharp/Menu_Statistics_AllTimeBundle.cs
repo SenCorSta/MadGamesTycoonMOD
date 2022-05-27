@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000221 RID: 545
 public class Menu_Statistics_AllTimeBundle : MonoBehaviour
 {
-	// Token: 0x060014F7 RID: 5367 RVA: 0x000D7DD9 File Offset: 0x000D5FD9
+	// Token: 0x060014F7 RID: 5367 RVA: 0x000D7E05 File Offset: 0x000D6005
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060014F8 RID: 5368 RVA: 0x000D7DE4 File Offset: 0x000D5FE4
+	// Token: 0x060014F8 RID: 5368 RVA: 0x000D7E10 File Offset: 0x000D6010
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_Statistics_AllTimeBundle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060014F9 RID: 5369 RVA: 0x000D7EAC File Offset: 0x000D60AC
+	// Token: 0x060014F9 RID: 5369 RVA: 0x000D7ED8 File Offset: 0x000D60D8
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -50,7 +50,7 @@ public class Menu_Statistics_AllTimeBundle : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060014FA RID: 5370 RVA: 0x000D7EE4 File Offset: 0x000D60E4
+	// Token: 0x060014FA RID: 5370 RVA: 0x000D7F10 File Offset: 0x000D6110
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -66,7 +66,7 @@ public class Menu_Statistics_AllTimeBundle : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060014FB RID: 5371 RVA: 0x000D7F30 File Offset: 0x000D6130
+	// Token: 0x060014FB RID: 5371 RVA: 0x000D7F5C File Offset: 0x000D615C
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -85,20 +85,20 @@ public class Menu_Statistics_AllTimeBundle : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060014FC RID: 5372 RVA: 0x000D7FA6 File Offset: 0x000D61A6
+	// Token: 0x060014FC RID: 5372 RVA: 0x000D7FD2 File Offset: 0x000D61D2
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060014FD RID: 5373 RVA: 0x000D7FAE File Offset: 0x000D61AE
+	// Token: 0x060014FD RID: 5373 RVA: 0x000D7FDA File Offset: 0x000D61DA
 	public void Init()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x060014FE RID: 5374 RVA: 0x000D7FBC File Offset: 0x000D61BC
+	// Token: 0x060014FE RID: 5374 RVA: 0x000D7FE8 File Offset: 0x000D61E8
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -125,7 +125,7 @@ public class Menu_Statistics_AllTimeBundle : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x060014FF RID: 5375 RVA: 0x000D8106 File Offset: 0x000D6306
+	// Token: 0x060014FF RID: 5375 RVA: 0x000D8132 File Offset: 0x000D6332
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);

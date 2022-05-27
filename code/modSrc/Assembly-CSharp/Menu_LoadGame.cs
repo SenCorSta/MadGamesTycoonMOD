@@ -183,6 +183,7 @@ public class Menu_LoadGame : MonoBehaviour
 		{
 			if (this.mpCalls_.isServer)
 			{
+				this.save_.loadingSavegame = true;
 				this.mS_.mpCalls_.SERVER_Send_Command(5);
 			}
 			PlayerPrefs.SetInt("LoadSavegame", -1);
@@ -193,7 +194,7 @@ public class Menu_LoadGame : MonoBehaviour
 		SceneManager.LoadScene("scene01");
 	}
 
-	// Token: 0x06000DE2 RID: 3554 RVA: 0x00095C78 File Offset: 0x00093E78
+	// Token: 0x06000DE2 RID: 3554 RVA: 0x00095C84 File Offset: 0x00093E84
 	public void BUTTON_DeleteSaveGame(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -201,7 +202,7 @@ public class Menu_LoadGame : MonoBehaviour
 		this.guiMain_.uiObjects[153].GetComponent<Menu_DeleteSaveGame>().Init(i, this.save_.LoadSaveGameName(i));
 	}
 
-	// Token: 0x06000DE3 RID: 3555 RVA: 0x00095CD1 File Offset: 0x00093ED1
+	// Token: 0x06000DE3 RID: 3555 RVA: 0x00095CDD File Offset: 0x00093EDD
 	public void BUTTON_DeleteAllSaveGames()
 	{
 		this.sfx_.PlaySound(3, true);

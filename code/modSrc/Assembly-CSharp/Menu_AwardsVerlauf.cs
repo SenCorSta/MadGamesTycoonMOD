@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000215 RID: 533
 public class Menu_AwardsVerlauf : MonoBehaviour
 {
-	// Token: 0x06001486 RID: 5254 RVA: 0x000D4D7D File Offset: 0x000D2F7D
+	// Token: 0x06001486 RID: 5254 RVA: 0x000D4DA9 File Offset: 0x000D2FA9
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001487 RID: 5255 RVA: 0x000D4D88 File Offset: 0x000D2F88
+	// Token: 0x06001487 RID: 5255 RVA: 0x000D4DB4 File Offset: 0x000D2FB4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -48,13 +48,13 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001488 RID: 5256 RVA: 0x000D4E8C File Offset: 0x000D308C
+	// Token: 0x06001488 RID: 5256 RVA: 0x000D4EB8 File Offset: 0x000D30B8
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001489 RID: 5257 RVA: 0x000D4E94 File Offset: 0x000D3094
+	// Token: 0x06001489 RID: 5257 RVA: 0x000D4EC0 File Offset: 0x000D30C0
 	public void Init()
 	{
 		this.FindScripts();
@@ -77,7 +77,7 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		this.ShowAwards();
 	}
 
-	// Token: 0x0600148A RID: 5258 RVA: 0x000D4FA8 File Offset: 0x000D31A8
+	// Token: 0x0600148A RID: 5258 RVA: 0x000D4FD4 File Offset: 0x000D31D4
 	public void FindWinners(int IDbestGrafik, int IDbestSound, int IDbestStudio, int IDbestPublisher, int IDbestGame, int IDbadGame)
 	{
 		this.bestGrafik = null;
@@ -128,7 +128,7 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600148B RID: 5259 RVA: 0x000D5094 File Offset: 0x000D3294
+	// Token: 0x0600148B RID: 5259 RVA: 0x000D50C0 File Offset: 0x000D32C0
 	private void ShowAwards()
 	{
 		if (!this.bestGrafik)
@@ -260,7 +260,7 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600148C RID: 5260 RVA: 0x000D5670 File Offset: 0x000D3870
+	// Token: 0x0600148C RID: 5260 RVA: 0x000D569C File Offset: 0x000D389C
 	public void BUTTON_Seite(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -276,14 +276,14 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x0600148D RID: 5261 RVA: 0x000D56E0 File Offset: 0x000D38E0
+	// Token: 0x0600148D RID: 5261 RVA: 0x000D570C File Offset: 0x000D390C
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600148E RID: 5262 RVA: 0x000D56FC File Offset: 0x000D38FC
+	// Token: 0x0600148E RID: 5262 RVA: 0x000D5728 File Offset: 0x000D3928
 	public void BUTTON_ShowGame(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -325,7 +325,7 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600148F RID: 5263 RVA: 0x000D5834 File Offset: 0x000D3A34
+	// Token: 0x0600148F RID: 5263 RVA: 0x000D5860 File Offset: 0x000D3A60
 	public void BUTTON_ShowStudio()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -336,7 +336,7 @@ public class Menu_AwardsVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001490 RID: 5264 RVA: 0x000D5894 File Offset: 0x000D3A94
+	// Token: 0x06001490 RID: 5264 RVA: 0x000D58C0 File Offset: 0x000D3AC0
 	public void BUTTON_ShowPublisher()
 	{
 		this.sfx_.PlaySound(3, true);

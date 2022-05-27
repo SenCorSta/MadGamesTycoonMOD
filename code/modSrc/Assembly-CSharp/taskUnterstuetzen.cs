@@ -4,19 +4,19 @@ using UnityEngine;
 // Token: 0x0200031E RID: 798
 public class taskUnterstuetzen : MonoBehaviour
 {
-	// Token: 0x06001C47 RID: 7239 RVA: 0x001178E5 File Offset: 0x00115AE5
+	// Token: 0x06001C47 RID: 7239 RVA: 0x00117901 File Offset: 0x00115B01
 	private void Awake()
 	{
 		base.transform.position = new Vector3(250f, 0f, 0f);
 	}
 
-	// Token: 0x06001C48 RID: 7240 RVA: 0x00117906 File Offset: 0x00115B06
+	// Token: 0x06001C48 RID: 7240 RVA: 0x00117922 File Offset: 0x00115B22
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001C49 RID: 7241 RVA: 0x00117910 File Offset: 0x00115B10
+	// Token: 0x06001C49 RID: 7241 RVA: 0x0011792C File Offset: 0x00115B2C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class taskUnterstuetzen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C4A RID: 7242 RVA: 0x00117A14 File Offset: 0x00115C14
+	// Token: 0x06001C4A RID: 7242 RVA: 0x00117A30 File Offset: 0x00115C30
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -63,13 +63,13 @@ public class taskUnterstuetzen : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001C4B RID: 7243 RVA: 0x00117A45 File Offset: 0x00115C45
+	// Token: 0x06001C4B RID: 7243 RVA: 0x00117A61 File Offset: 0x00115C61
 	private void Update()
 	{
 		this.FindMyRoom();
 	}
 
-	// Token: 0x06001C4C RID: 7244 RVA: 0x00117A50 File Offset: 0x00115C50
+	// Token: 0x06001C4C RID: 7244 RVA: 0x00117A6C File Offset: 0x00115C6C
 	private void FindMyRoom()
 	{
 		if (!this.rS_)
@@ -84,7 +84,7 @@ public class taskUnterstuetzen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C4D RID: 7245 RVA: 0x00117AA5 File Offset: 0x00115CA5
+	// Token: 0x06001C4D RID: 7245 RVA: 0x00117AC1 File Offset: 0x00115CC1
 	public bool IsCrunchtime()
 	{
 		return this.rS_ && this.rS_.IsCrunchtimeRead();
@@ -105,7 +105,7 @@ public class taskUnterstuetzen : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001C51 RID: 7249 RVA: 0x00117AC1 File Offset: 0x00115CC1
+	// Token: 0x06001C51 RID: 7249 RVA: 0x00117ADD File Offset: 0x00115CDD
 	public void Abbrechen()
 	{
 		this.FindScripts();

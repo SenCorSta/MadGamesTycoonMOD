@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x02000276 RID: 630
 public class objectTooltip : MonoBehaviour
 {
-	// Token: 0x06001877 RID: 6263 RVA: 0x000F278C File Offset: 0x000F098C
+	// Token: 0x06001877 RID: 6263 RVA: 0x000F27B8 File Offset: 0x000F09B8
 	private void Start()
 	{
 		this.myText = this.tooltipText.GetComponent<Text>();
@@ -14,7 +14,7 @@ public class objectTooltip : MonoBehaviour
 		this.rt_tooltipText = this.tooltipText.GetComponent<RectTransform>();
 	}
 
-	// Token: 0x06001878 RID: 6264 RVA: 0x000F27DD File Offset: 0x000F09DD
+	// Token: 0x06001878 RID: 6264 RVA: 0x000F2809 File Offset: 0x000F0A09
 	public void SetActive(objectScript script_)
 	{
 		if (!script_)
@@ -27,7 +27,7 @@ public class objectTooltip : MonoBehaviour
 		this.tooltipEnabled = true;
 	}
 
-	// Token: 0x06001879 RID: 6265 RVA: 0x000F2807 File Offset: 0x000F0A07
+	// Token: 0x06001879 RID: 6265 RVA: 0x000F2833 File Offset: 0x000F0A33
 	public void SetInactive()
 	{
 		this.timer = 0f;
@@ -35,7 +35,7 @@ public class objectTooltip : MonoBehaviour
 		this.myText.text = "";
 	}
 
-	// Token: 0x0600187A RID: 6266 RVA: 0x000F282C File Offset: 0x000F0A2C
+	// Token: 0x0600187A RID: 6266 RVA: 0x000F2858 File Offset: 0x000F0A58
 	private void Update()
 	{
 		if (!this.tooltipEnabled)

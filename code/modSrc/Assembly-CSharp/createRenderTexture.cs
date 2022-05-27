@@ -5,14 +5,14 @@ using UnityEngine.UI;
 // Token: 0x020002DD RID: 733
 public class createRenderTexture : MonoBehaviour
 {
-	// Token: 0x06001A3D RID: 6717 RVA: 0x0010A327 File Offset: 0x00108527
+	// Token: 0x06001A3D RID: 6717 RVA: 0x0010A2F7 File Offset: 0x001084F7
 	private void Start()
 	{
 		this.CreateNewTexture();
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001A3E RID: 6718 RVA: 0x0010A33B File Offset: 0x0010853B
+	// Token: 0x06001A3E RID: 6718 RVA: 0x0010A30B File Offset: 0x0010850B
 	private void Update()
 	{
 		if (this.screenW != Screen.width)
@@ -27,7 +27,7 @@ public class createRenderTexture : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A3F RID: 6719 RVA: 0x0010A365 File Offset: 0x00108565
+	// Token: 0x06001A3F RID: 6719 RVA: 0x0010A335 File Offset: 0x00108535
 	private void OnEnable()
 	{
 		if (this.cameraOutlineImage)
@@ -36,7 +36,7 @@ public class createRenderTexture : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A40 RID: 6720 RVA: 0x0010A380 File Offset: 0x00108580
+	// Token: 0x06001A40 RID: 6720 RVA: 0x0010A350 File Offset: 0x00108550
 	private void OnDisable()
 	{
 		if (this.cameraOutlineImage)
@@ -45,7 +45,7 @@ public class createRenderTexture : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A41 RID: 6721 RVA: 0x0010A39C File Offset: 0x0010859C
+	// Token: 0x06001A41 RID: 6721 RVA: 0x0010A36C File Offset: 0x0010856C
 	private void CreateNewTexture()
 	{
 		this.rt = new RenderTexture(Screen.width, Screen.height, 16, RenderTextureFormat.ARGB32);

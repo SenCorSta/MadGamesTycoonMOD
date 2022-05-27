@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001AF RID: 431
 public class Menu_BuildRoom : MonoBehaviour
 {
-	// Token: 0x06001046 RID: 4166 RVA: 0x000AC4DF File Offset: 0x000AA6DF
+	// Token: 0x06001046 RID: 4166 RVA: 0x000AC4EB File Offset: 0x000AA6EB
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001047 RID: 4167 RVA: 0x000AC4E8 File Offset: 0x000AA6E8
+	// Token: 0x06001047 RID: 4167 RVA: 0x000AC4F4 File Offset: 0x000AA6F4
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -36,7 +36,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001048 RID: 4168 RVA: 0x000AC5D2 File Offset: 0x000AA7D2
+	// Token: 0x06001048 RID: 4168 RVA: 0x000AC5DE File Offset: 0x000AA7DE
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -46,14 +46,14 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001049 RID: 4169 RVA: 0x000AC5F3 File Offset: 0x000AA7F3
+	// Token: 0x06001049 RID: 4169 RVA: 0x000AC5FF File Offset: 0x000AA7FF
 	private void OnDisable()
 	{
 		this.uiObjects[27].SetActive(false);
 		this.uiObjects[29].SetActive(false);
 	}
 
-	// Token: 0x0600104A RID: 4170 RVA: 0x000AC613 File Offset: 0x000AA813
+	// Token: 0x0600104A RID: 4170 RVA: 0x000AC61F File Offset: 0x000AA81F
 	private void Update()
 	{
 		if (this.mS_.multiplayer && !this.guiMain_.menuOpen)
@@ -63,7 +63,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.Update_DesignRoomMenu();
 	}
 
-	// Token: 0x0600104B RID: 4171 RVA: 0x000AC644 File Offset: 0x000AA844
+	// Token: 0x0600104B RID: 4171 RVA: 0x000AC650 File Offset: 0x000AA850
 	private void Update_DesignRoomMenu()
 	{
 		if (!Input.GetMouseButton(0) && this.buildRoomScript_.modus == 0 && Input.GetKeyDown(KeyCode.LeftShift))
@@ -119,7 +119,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600104C RID: 4172 RVA: 0x000AC89C File Offset: 0x000AAA9C
+	// Token: 0x0600104C RID: 4172 RVA: 0x000AC8A8 File Offset: 0x000AAAA8
 	public int AnzahlArbeitsplaetze()
 	{
 		float num = 3.3f;
@@ -150,7 +150,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		return num3;
 	}
 
-	// Token: 0x0600104D RID: 4173 RVA: 0x000AC8F8 File Offset: 0x000AAAF8
+	// Token: 0x0600104D RID: 4173 RVA: 0x000AC904 File Offset: 0x000AAB04
 	private int GetRoomPrice()
 	{
 		int num = this.buildRoomScript_.AmountTiles();
@@ -163,7 +163,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		return num2;
 	}
 
-	// Token: 0x0600104E RID: 4174 RVA: 0x000AC93C File Offset: 0x000AAB3C
+	// Token: 0x0600104E RID: 4174 RVA: 0x000AC948 File Offset: 0x000AAB48
 	private void UpdateSizePanel()
 	{
 		if ((this.buildRoomScript_.modus == 0 || this.buildRoomScript_.modus == 1) && !this.guiMain_.IsMouseOverGUI() && Input.GetMouseButton(0))
@@ -185,7 +185,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600104F RID: 4175 RVA: 0x000ACA74 File Offset: 0x000AAC74
+	// Token: 0x0600104F RID: 4175 RVA: 0x000ACA80 File Offset: 0x000AAC80
 	private void UpdateCloseButton()
 	{
 		if (this.buildRoomScript_.replaceRoomID == -1)
@@ -213,7 +213,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001050 RID: 4176 RVA: 0x000ACB08 File Offset: 0x000AAD08
+	// Token: 0x06001050 RID: 4176 RVA: 0x000ACB14 File Offset: 0x000AAD14
 	private void UpdateAcceptButton()
 	{
 		Button component = this.uiObjects[17].GetComponent<Button>();
@@ -283,7 +283,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001051 RID: 4177 RVA: 0x000ACD30 File Offset: 0x000AAF30
+	// Token: 0x06001051 RID: 4177 RVA: 0x000ACD3C File Offset: 0x000AAF3C
 	public void BUTTON_AcceptRoomDesign()
 	{
 		if (!this.mS_.settings_TutorialOff && this.roomTyp == 1)
@@ -300,7 +300,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.guiMain_.DROPDOWN_BuyInventar(this.roomTyp);
 	}
 
-	// Token: 0x06001052 RID: 4178 RVA: 0x000ACDC8 File Offset: 0x000AAFC8
+	// Token: 0x06001052 RID: 4178 RVA: 0x000ACDD4 File Offset: 0x000AAFD4
 	private void ResetButtonColors()
 	{
 		this.uiObjects[19].GetComponent<Image>().color = this.colors[1];
@@ -309,7 +309,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.uiObjects[22].GetComponent<Image>().color = this.colors[1];
 	}
 
-	// Token: 0x06001053 RID: 4179 RVA: 0x000ACE51 File Offset: 0x000AB051
+	// Token: 0x06001053 RID: 4179 RVA: 0x000ACE5D File Offset: 0x000AB05D
 	public void BUTTON_SetRoom()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -318,7 +318,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.uiObjects[19].GetComponent<Image>().color = this.colors[0];
 	}
 
-	// Token: 0x06001054 RID: 4180 RVA: 0x000ACE91 File Offset: 0x000AB091
+	// Token: 0x06001054 RID: 4180 RVA: 0x000ACE9D File Offset: 0x000AB09D
 	public void BUTTON_RemoveRoom()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -327,7 +327,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.uiObjects[20].GetComponent<Image>().color = this.colors[0];
 	}
 
-	// Token: 0x06001055 RID: 4181 RVA: 0x000ACED1 File Offset: 0x000AB0D1
+	// Token: 0x06001055 RID: 4181 RVA: 0x000ACEDD File Offset: 0x000AB0DD
 	public void BUTTON_SetDoor()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -336,7 +336,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.uiObjects[21].GetComponent<Image>().color = this.colors[0];
 	}
 
-	// Token: 0x06001056 RID: 4182 RVA: 0x000ACF11 File Offset: 0x000AB111
+	// Token: 0x06001056 RID: 4182 RVA: 0x000ACF1D File Offset: 0x000AB11D
 	public void BUTTON_SetWindow()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -345,13 +345,13 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.uiObjects[22].GetComponent<Image>().color = this.colors[0];
 	}
 
-	// Token: 0x06001057 RID: 4183 RVA: 0x000ACF51 File Offset: 0x000AB151
+	// Token: 0x06001057 RID: 4183 RVA: 0x000ACF5D File Offset: 0x000AB15D
 	public void BUTTON_Grab()
 	{
 		this.buildRoomScript_.modus = 4;
 	}
 
-	// Token: 0x06001058 RID: 4184 RVA: 0x000ACF60 File Offset: 0x000AB160
+	// Token: 0x06001058 RID: 4184 RVA: 0x000ACF6C File Offset: 0x000AB16C
 	public void BUTTON_SelectRoom(int i)
 	{
 		this.FindScripts();
@@ -365,7 +365,7 @@ public class Menu_BuildRoom : MonoBehaviour
 		this.mS_.SetBuildGrid(true);
 	}
 
-	// Token: 0x06001059 RID: 4185 RVA: 0x000ACFD0 File Offset: 0x000AB1D0
+	// Token: 0x06001059 RID: 4185 RVA: 0x000ACFDC File Offset: 0x000AB1DC
 	public void Close_DesignRoom()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Room");

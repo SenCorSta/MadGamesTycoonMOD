@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x0200025F RID: 607
 public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 {
-	// Token: 0x060017A5 RID: 6053 RVA: 0x000ED500 File Offset: 0x000EB700
+	// Token: 0x060017A5 RID: 6053 RVA: 0x000ED52C File Offset: 0x000EB72C
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060017A6 RID: 6054 RVA: 0x000ED508 File Offset: 0x000EB708
+	// Token: 0x060017A6 RID: 6054 RVA: 0x000ED534 File Offset: 0x000EB734
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017A7 RID: 6055 RVA: 0x000ED5D0 File Offset: 0x000EB7D0
+	// Token: 0x060017A7 RID: 6055 RVA: 0x000ED5FC File Offset: 0x000EB7FC
 	public void Init(publisherScript script_)
 	{
 		this.FindScripts();
@@ -49,14 +49,14 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.UpdateData();
 	}
 
-	// Token: 0x060017A8 RID: 6056 RVA: 0x000ED5E8 File Offset: 0x000EB7E8
+	// Token: 0x060017A8 RID: 6056 RVA: 0x000ED614 File Offset: 0x000EB814
 	private void Update()
 	{
 		this.uiObjects[7].GetComponent<Text>().text = this.tS_.GetText(685) + ": <b>" + this.pS_.GetFirmenwertString() + "</b>";
 		this.uiObjects[14].GetComponent<Text>().text = this.tS_.GetText(1934) + ": <b>" + this.mS_.GetMoney(this.pS_.GetVerwaltungskosten(), true) + "</b>";
 	}
 
-	// Token: 0x060017A9 RID: 6057 RVA: 0x000ED67C File Offset: 0x000EB87C
+	// Token: 0x060017A9 RID: 6057 RVA: 0x000ED6A8 File Offset: 0x000EB8A8
 	public void UpdateData()
 	{
 		if (!this.pS_)
@@ -162,7 +162,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.UpdateGewinnanteilTooltip();
 	}
 
-	// Token: 0x060017AA RID: 6058 RVA: 0x000EDC28 File Offset: 0x000EBE28
+	// Token: 0x060017AA RID: 6058 RVA: 0x000EDC54 File Offset: 0x000EBE54
 	private void UpdateGewinnanteilTooltip()
 	{
 		string text = this.tS_.GetText(1991);
@@ -170,7 +170,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.uiObjects[22].GetComponent<tooltip>().c = text;
 	}
 
-	// Token: 0x060017AB RID: 6059 RVA: 0x000EDC92 File Offset: 0x000EBE92
+	// Token: 0x060017AB RID: 6059 RVA: 0x000EDCBE File Offset: 0x000EBEBE
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -178,7 +178,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060017AC RID: 6060 RVA: 0x000EDCC8 File Offset: 0x000EBEC8
+	// Token: 0x060017AC RID: 6060 RVA: 0x000EDCF4 File Offset: 0x000EBEF4
 	public void BUTTON_Rename()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -186,7 +186,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.guiMain_.uiObjects[391].GetComponent<Menu_TochterfirmaRename>().Init(this.pS_);
 	}
 
-	// Token: 0x060017AD RID: 6061 RVA: 0x000EDD20 File Offset: 0x000EBF20
+	// Token: 0x060017AD RID: 6061 RVA: 0x000EDD4C File Offset: 0x000EBF4C
 	public void BUTTON_Awards()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -194,7 +194,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.guiMain_.uiObjects[144].GetComponent<Menu_Stats_Awards>().Init(this.pS_);
 	}
 
-	// Token: 0x060017AE RID: 6062 RVA: 0x000EDD78 File Offset: 0x000EBF78
+	// Token: 0x060017AE RID: 6062 RVA: 0x000EDDA4 File Offset: 0x000EBFA4
 	public void BUTTON_Games()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -202,7 +202,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.guiMain_.uiObjects[360].GetComponent<Menu_Stats_Developer_Games>().Init(this.pS_);
 	}
 
-	// Token: 0x060017AF RID: 6063 RVA: 0x000EDDD0 File Offset: 0x000EBFD0
+	// Token: 0x060017AF RID: 6063 RVA: 0x000EDDFC File Offset: 0x000EBFFC
 	public void BUTTON_IPs()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -210,7 +210,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.guiMain_.uiObjects[361].GetComponent<Menu_Stats_Developer_IPs>().Init(this.pS_);
 	}
 
-	// Token: 0x060017B0 RID: 6064 RVA: 0x000EDE28 File Offset: 0x000EC028
+	// Token: 0x060017B0 RID: 6064 RVA: 0x000EDE54 File Offset: 0x000EC054
 	public void BUTTON_IpChange()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -218,7 +218,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.guiMain_.uiObjects[403].GetComponent<Menu_Stats_TochterfirmaIpTausch>().Init(this.pS_);
 	}
 
-	// Token: 0x060017B1 RID: 6065 RVA: 0x000EDE80 File Offset: 0x000EC080
+	// Token: 0x060017B1 RID: 6065 RVA: 0x000EDEAC File Offset: 0x000EC0AC
 	public void BUTTON_Settings()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -226,7 +226,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.guiMain_.uiObjects[393].GetComponent<Menu_Stats_TochterfirmaSettings>().Init(this.pS_);
 	}
 
-	// Token: 0x060017B2 RID: 6066 RVA: 0x000EDED8 File Offset: 0x000EC0D8
+	// Token: 0x060017B2 RID: 6066 RVA: 0x000EDF04 File Offset: 0x000EC104
 	public void BUTTON_Vertrieben()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -234,7 +234,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.guiMain_.uiObjects[374].GetComponent<Menu_Stats_Publisher_Vertrieben>().Init(this.pS_);
 	}
 
-	// Token: 0x060017B3 RID: 6067 RVA: 0x000EDF30 File Offset: 0x000EC130
+	// Token: 0x060017B3 RID: 6067 RVA: 0x000EDF5C File Offset: 0x000EC15C
 	public void BUTTON_Umsatz()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -242,7 +242,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.guiMain_.uiObjects[396].GetComponent<Menu_Stats_TochterfirmaUmsatz>().Init(this.pS_);
 	}
 
-	// Token: 0x060017B4 RID: 6068 RVA: 0x000EDF88 File Offset: 0x000EC188
+	// Token: 0x060017B4 RID: 6068 RVA: 0x000EDFB4 File Offset: 0x000EC1B4
 	public void BUTTON_FirmaVerkaufen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -250,7 +250,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.guiMain_.uiObjects[395].GetComponent<Menu_W_FirmaVerkaufen>().Init(this.pS_);
 	}
 
-	// Token: 0x060017B5 RID: 6069 RVA: 0x000EDFDF File Offset: 0x000EC1DF
+	// Token: 0x060017B5 RID: 6069 RVA: 0x000EE00B File Offset: 0x000EC20B
 	public void BUTTON_FirmaSchiessen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -261,7 +261,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		this.UpdateData();
 	}
 
-	// Token: 0x060017B6 RID: 6070 RVA: 0x000EE01C File Offset: 0x000EC21C
+	// Token: 0x060017B6 RID: 6070 RVA: 0x000EE048 File Offset: 0x000EC248
 	public void BUTTON_FirmaAufwerten()
 	{
 		if (this.pS_)
@@ -272,7 +272,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017B7 RID: 6071 RVA: 0x000EE080 File Offset: 0x000EC280
+	// Token: 0x060017B7 RID: 6071 RVA: 0x000EE0AC File Offset: 0x000EC2AC
 	public void BUTTON_FirmaAufwertenPublisher()
 	{
 		if (this.pS_)
@@ -283,7 +283,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017B8 RID: 6072 RVA: 0x000EE0E4 File Offset: 0x000EC2E4
+	// Token: 0x060017B8 RID: 6072 RVA: 0x000EE110 File Offset: 0x000EC310
 	public void BUTTON_FirmaAufwertenDeveloper()
 	{
 		if (this.pS_)
@@ -294,7 +294,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017B9 RID: 6073 RVA: 0x000EE148 File Offset: 0x000EC348
+	// Token: 0x060017B9 RID: 6073 RVA: 0x000EE174 File Offset: 0x000EC374
 	private IEnumerator iMinusGewinnbeteiligung(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -305,7 +305,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060017BA RID: 6074 RVA: 0x000EE160 File Offset: 0x000EC360
+	// Token: 0x060017BA RID: 6074 RVA: 0x000EE18C File Offset: 0x000EC38C
 	public void BUTTON_MinusGewinnbeteiligung(int i)
 	{
 		if (this.pS_)
@@ -321,7 +321,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017BB RID: 6075 RVA: 0x000EE1D1 File Offset: 0x000EC3D1
+	// Token: 0x060017BB RID: 6075 RVA: 0x000EE1FD File Offset: 0x000EC3FD
 	private IEnumerator iPlusGewinnbeteiligung(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -332,7 +332,7 @@ public class Menu_Stats_Tochterfirma_Main : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060017BC RID: 6076 RVA: 0x000EE1E8 File Offset: 0x000EC3E8
+	// Token: 0x060017BC RID: 6076 RVA: 0x000EE214 File Offset: 0x000EC414
 	public void BUTTON_PlusGewinnbeteiligung(int i)
 	{
 		if (this.pS_)

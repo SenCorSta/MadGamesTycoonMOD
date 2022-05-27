@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200019F RID: 415
 public class Menu_W_BuyCopyProtect : MonoBehaviour
 {
-	// Token: 0x06000FB1 RID: 4017 RVA: 0x000A7203 File Offset: 0x000A5403
+	// Token: 0x06000FB1 RID: 4017 RVA: 0x000A720F File Offset: 0x000A540F
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FB2 RID: 4018 RVA: 0x000A720C File Offset: 0x000A540C
+	// Token: 0x06000FB2 RID: 4018 RVA: 0x000A7218 File Offset: 0x000A5418
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_W_BuyCopyProtect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FB3 RID: 4019 RVA: 0x000A72B6 File Offset: 0x000A54B6
+	// Token: 0x06000FB3 RID: 4019 RVA: 0x000A72C2 File Offset: 0x000A54C2
 	public void Init(copyProtectScript script_)
 	{
 		if (!script_)
@@ -47,14 +47,14 @@ public class Menu_W_BuyCopyProtect : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.cpS_.GetTooltip();
 	}
 
-	// Token: 0x06000FB4 RID: 4020 RVA: 0x000A72E5 File Offset: 0x000A54E5
+	// Token: 0x06000FB4 RID: 4020 RVA: 0x000A72F1 File Offset: 0x000A54F1
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FB5 RID: 4021 RVA: 0x000A7300 File Offset: 0x000A5500
+	// Token: 0x06000FB5 RID: 4021 RVA: 0x000A730C File Offset: 0x000A550C
 	public void BUTTON_Yes()
 	{
 		this.cpS_.inBesitz = true;

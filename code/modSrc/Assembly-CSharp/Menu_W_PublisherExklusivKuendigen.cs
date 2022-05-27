@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001A3 RID: 419
 public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 {
-	// Token: 0x06000FCA RID: 4042 RVA: 0x000A793D File Offset: 0x000A5B3D
+	// Token: 0x06000FCA RID: 4042 RVA: 0x000A7949 File Offset: 0x000A5B49
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FCB RID: 4043 RVA: 0x000A7948 File Offset: 0x000A5B48
+	// Token: 0x06000FCB RID: 4043 RVA: 0x000A7954 File Offset: 0x000A5B54
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,13 +36,13 @@ public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FCC RID: 4044 RVA: 0x000A79F2 File Offset: 0x000A5BF2
+	// Token: 0x06000FCC RID: 4044 RVA: 0x000A79FE File Offset: 0x000A5BFE
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06000FCD RID: 4045 RVA: 0x000A79FC File Offset: 0x000A5BFC
+	// Token: 0x06000FCD RID: 4045 RVA: 0x000A7A08 File Offset: 0x000A5C08
 	public void Init()
 	{
 		this.FindScripts();
@@ -65,7 +65,7 @@ public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06000FCE RID: 4046 RVA: 0x000A7B4C File Offset: 0x000A5D4C
+	// Token: 0x06000FCE RID: 4046 RVA: 0x000A7B58 File Offset: 0x000A5D58
 	public long GetStrafzahlung()
 	{
 		if (this.pS_)
@@ -75,7 +75,7 @@ public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 		return 0L;
 	}
 
-	// Token: 0x06000FCF RID: 4047 RVA: 0x000A7BD3 File Offset: 0x000A5DD3
+	// Token: 0x06000FCF RID: 4047 RVA: 0x000A7BDF File Offset: 0x000A5DDF
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -83,7 +83,7 @@ public class Menu_W_PublisherExklusivKuendigen : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FD0 RID: 4048 RVA: 0x000A7BFC File Offset: 0x000A5DFC
+	// Token: 0x06000FD0 RID: 4048 RVA: 0x000A7C08 File Offset: 0x000A5E08
 	public void BUTTON_Kuendigen()
 	{
 		this.sfx_.PlaySound(3, true);

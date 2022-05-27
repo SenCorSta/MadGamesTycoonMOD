@@ -4,19 +4,19 @@ using UnityEngine;
 // Token: 0x0200032A RID: 810
 public class lookToCamera : MonoBehaviour
 {
-	// Token: 0x06001CCC RID: 7372 RVA: 0x0011E6D8 File Offset: 0x0011C8D8
+	// Token: 0x06001CCC RID: 7372 RVA: 0x0011E6F4 File Offset: 0x0011C8F4
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001CCD RID: 7373 RVA: 0x0011E6E0 File Offset: 0x0011C8E0
+	// Token: 0x06001CCD RID: 7373 RVA: 0x0011E6FC File Offset: 0x0011C8FC
 	private void FindScripts()
 	{
 		this.camera_ = GameObject.Find("Camera");
 	}
 
-	// Token: 0x06001CCE RID: 7374 RVA: 0x0011E6F4 File Offset: 0x0011C8F4
+	// Token: 0x06001CCE RID: 7374 RVA: 0x0011E710 File Offset: 0x0011C910
 	private void Update()
 	{
 		base.gameObject.transform.rotation = this.camera_.transform.rotation;

@@ -4,19 +4,19 @@ using UnityEngine;
 // Token: 0x02000312 RID: 786
 public class taskGrafikVerbessern : MonoBehaviour
 {
-	// Token: 0x06001B9B RID: 7067 RVA: 0x00113654 File Offset: 0x00111854
+	// Token: 0x06001B9B RID: 7067 RVA: 0x00113670 File Offset: 0x00111870
 	private void Awake()
 	{
 		base.transform.position = new Vector3(130f, 0f, 0f);
 	}
 
-	// Token: 0x06001B9C RID: 7068 RVA: 0x00113675 File Offset: 0x00111875
+	// Token: 0x06001B9C RID: 7068 RVA: 0x00113691 File Offset: 0x00111891
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001B9D RID: 7069 RVA: 0x00113680 File Offset: 0x00111880
+	// Token: 0x06001B9D RID: 7069 RVA: 0x0011369C File Offset: 0x0011189C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -49,7 +49,7 @@ public class taskGrafikVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B9E RID: 7070 RVA: 0x0011376D File Offset: 0x0011196D
+	// Token: 0x06001B9E RID: 7070 RVA: 0x00113789 File Offset: 0x00111989
 	private void Update()
 	{
 		this.FindMyObject();
@@ -57,7 +57,7 @@ public class taskGrafikVerbessern : MonoBehaviour
 		this.GamePublished();
 	}
 
-	// Token: 0x06001B9F RID: 7071 RVA: 0x00113781 File Offset: 0x00111981
+	// Token: 0x06001B9F RID: 7071 RVA: 0x0011379D File Offset: 0x0011199D
 	private void GamePublished()
 	{
 		if (this.gS_ && !this.gS_.inDevelopment)
@@ -66,7 +66,7 @@ public class taskGrafikVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BA0 RID: 7072 RVA: 0x001137A3 File Offset: 0x001119A3
+	// Token: 0x06001BA0 RID: 7072 RVA: 0x001137BF File Offset: 0x001119BF
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -76,7 +76,7 @@ public class taskGrafikVerbessern : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001BA1 RID: 7073 RVA: 0x001137D4 File Offset: 0x001119D4
+	// Token: 0x06001BA1 RID: 7073 RVA: 0x001137F0 File Offset: 0x001119F0
 	private void FindMyObject()
 	{
 		if (this.gS_)
@@ -94,7 +94,7 @@ public class taskGrafikVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BA2 RID: 7074 RVA: 0x00113834 File Offset: 0x00111A34
+	// Token: 0x06001BA2 RID: 7074 RVA: 0x00113850 File Offset: 0x00111A50
 	private void FindMyRoom()
 	{
 		if (!this.gS_)
@@ -139,19 +139,19 @@ public class taskGrafikVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BA3 RID: 7075 RVA: 0x00113939 File Offset: 0x00111B39
+	// Token: 0x06001BA3 RID: 7075 RVA: 0x00113955 File Offset: 0x00111B55
 	public float GetProzent()
 	{
 		return 100f / this.points * (this.points - this.pointsLeft);
 	}
 
-	// Token: 0x06001BA4 RID: 7076 RVA: 0x00113955 File Offset: 0x00111B55
+	// Token: 0x06001BA4 RID: 7076 RVA: 0x00113971 File Offset: 0x00111B71
 	public Sprite GetPic()
 	{
 		return this.games_.gameAdds[this.aktuellerAdd + 6];
 	}
 
-	// Token: 0x06001BA5 RID: 7077 RVA: 0x0011396C File Offset: 0x00111B6C
+	// Token: 0x06001BA5 RID: 7077 RVA: 0x00113988 File Offset: 0x00111B88
 	public void Work(float f)
 	{
 		if (this.pointsLeft > 0f)
@@ -169,7 +169,7 @@ public class taskGrafikVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BA6 RID: 7078 RVA: 0x001139D8 File Offset: 0x00111BD8
+	// Token: 0x06001BA6 RID: 7078 RVA: 0x001139F4 File Offset: 0x00111BF4
 	public void FindNewAdd()
 	{
 		this.FindScripts();
@@ -194,7 +194,7 @@ public class taskGrafikVerbessern : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06001BA7 RID: 7079 RVA: 0x00113A90 File Offset: 0x00111C90
+	// Token: 0x06001BA7 RID: 7079 RVA: 0x00113AAC File Offset: 0x00111CAC
 	private void Complete()
 	{
 		this.FindMyObject();
@@ -218,7 +218,7 @@ public class taskGrafikVerbessern : MonoBehaviour
 		this.FindNewAdd();
 	}
 
-	// Token: 0x06001BA8 RID: 7080 RVA: 0x00113B8C File Offset: 0x00111D8C
+	// Token: 0x06001BA8 RID: 7080 RVA: 0x00113BA8 File Offset: 0x00111DA8
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -235,7 +235,7 @@ public class taskGrafikVerbessern : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001BA9 RID: 7081 RVA: 0x00113BEC File Offset: 0x00111DEC
+	// Token: 0x06001BA9 RID: 7081 RVA: 0x00113C08 File Offset: 0x00111E08
 	public int GetRueckgeld()
 	{
 		float num = 0f;
@@ -249,7 +249,7 @@ public class taskGrafikVerbessern : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x06001BAA RID: 7082 RVA: 0x00113C34 File Offset: 0x00111E34
+	// Token: 0x06001BAA RID: 7082 RVA: 0x00113C50 File Offset: 0x00111E50
 	public void Abbrechen()
 	{
 		int rueckgeld = this.GetRueckgeld();

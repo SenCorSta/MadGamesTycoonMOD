@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200022F RID: 559
 public class Menu_Stats_Aboverlauf : MonoBehaviour
 {
-	// Token: 0x06001590 RID: 5520 RVA: 0x000DBEFB File Offset: 0x000DA0FB
+	// Token: 0x06001590 RID: 5520 RVA: 0x000DBF27 File Offset: 0x000DA127
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001591 RID: 5521 RVA: 0x000DBF04 File Offset: 0x000DA104
+	// Token: 0x06001591 RID: 5521 RVA: 0x000DBF30 File Offset: 0x000DA130
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_Stats_Aboverlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001592 RID: 5522 RVA: 0x000DBFEA File Offset: 0x000DA1EA
+	// Token: 0x06001592 RID: 5522 RVA: 0x000DC016 File Offset: 0x000DA216
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001593 RID: 5523 RVA: 0x000DBFF2 File Offset: 0x000DA1F2
+	// Token: 0x06001593 RID: 5523 RVA: 0x000DC01E File Offset: 0x000DA21E
 	private void Update()
 	{
 		if (!this.mS_.multiplayer)
@@ -60,7 +60,7 @@ public class Menu_Stats_Aboverlauf : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x06001594 RID: 5524 RVA: 0x000DC008 File Offset: 0x000DA208
+	// Token: 0x06001594 RID: 5524 RVA: 0x000DC034 File Offset: 0x000DA234
 	public void Init()
 	{
 		this.FindScripts();
@@ -74,7 +74,7 @@ public class Menu_Stats_Aboverlauf : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.tS_.GetText(700) + ": <color=red>" + this.mS_.GetMoney(num, false) + "</color>";
 	}
 
-	// Token: 0x06001595 RID: 5525 RVA: 0x000DC0C0 File Offset: 0x000DA2C0
+	// Token: 0x06001595 RID: 5525 RVA: 0x000DC0EC File Offset: 0x000DA2EC
 	private void InitBalken()
 	{
 		float num = 400f;
@@ -116,7 +116,7 @@ public class Menu_Stats_Aboverlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001596 RID: 5526 RVA: 0x000DC2F0 File Offset: 0x000DA4F0
+	// Token: 0x06001596 RID: 5526 RVA: 0x000DC31C File Offset: 0x000DA51C
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);

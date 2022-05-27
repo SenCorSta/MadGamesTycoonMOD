@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020002D3 RID: 723
 public class animationSpeed : MonoBehaviour
 {
-	// Token: 0x06001A17 RID: 6679 RVA: 0x00109720 File Offset: 0x00107920
+	// Token: 0x06001A17 RID: 6679 RVA: 0x001096F0 File Offset: 0x001078F0
 	private void Start()
 	{
 		this.myAnimation = base.GetComponent<Animation>();
@@ -19,7 +19,7 @@ public class animationSpeed : MonoBehaviour
 		this.SetAnimationSpeed();
 	}
 
-	// Token: 0x06001A18 RID: 6680 RVA: 0x0010977A File Offset: 0x0010797A
+	// Token: 0x06001A18 RID: 6680 RVA: 0x0010974A File Offset: 0x0010794A
 	private void Update()
 	{
 		if (this.oldGamespeed != this.mS_.GetGameSpeed())
@@ -29,7 +29,7 @@ public class animationSpeed : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A19 RID: 6681 RVA: 0x001097A6 File Offset: 0x001079A6
+	// Token: 0x06001A19 RID: 6681 RVA: 0x00109776 File Offset: 0x00107976
 	private void SetAnimationSpeed()
 	{
 		this.myAnimation[this.animationString].speed = this.mS_.GetGameSpeed();

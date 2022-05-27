@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x0200023B RID: 571
 public class Menu_Stats_Finanzen : MonoBehaviour
 {
-	// Token: 0x06001603 RID: 5635 RVA: 0x000E0FD0 File Offset: 0x000DF1D0
+	// Token: 0x06001603 RID: 5635 RVA: 0x000E0FFC File Offset: 0x000DF1FC
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001604 RID: 5636 RVA: 0x000E0FD8 File Offset: 0x000DF1D8
+	// Token: 0x06001604 RID: 5636 RVA: 0x000E1004 File Offset: 0x000DF204
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -35,7 +35,7 @@ public class Menu_Stats_Finanzen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001605 RID: 5637 RVA: 0x000E1082 File Offset: 0x000DF282
+	// Token: 0x06001605 RID: 5637 RVA: 0x000E10AE File Offset: 0x000DF2AE
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -43,28 +43,28 @@ public class Menu_Stats_Finanzen : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001606 RID: 5638 RVA: 0x000E10A8 File Offset: 0x000DF2A8
+	// Token: 0x06001606 RID: 5638 RVA: 0x000E10D4 File Offset: 0x000DF2D4
 	public void BUTTON_Monatsbilanz()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[132]);
 	}
 
-	// Token: 0x06001607 RID: 5639 RVA: 0x000E10D3 File Offset: 0x000DF2D3
+	// Token: 0x06001607 RID: 5639 RVA: 0x000E10FF File Offset: 0x000DF2FF
 	public void BUTTON_Jahresbilanz()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[133]);
 	}
 
-	// Token: 0x06001608 RID: 5640 RVA: 0x000E10FE File Offset: 0x000DF2FE
+	// Token: 0x06001608 RID: 5640 RVA: 0x000E112A File Offset: 0x000DF32A
 	public void BUTTON_Finanzverlauf()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[134]);
 	}
 
-	// Token: 0x06001609 RID: 5641 RVA: 0x000E1129 File Offset: 0x000DF329
+	// Token: 0x06001609 RID: 5641 RVA: 0x000E1155 File Offset: 0x000DF355
 	public void BUTTON_Monatsverlauf()
 	{
 		this.sfx_.PlaySound(3, true);

@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x02000328 RID: 808
 public class cameraMovementScript : MonoBehaviour
 {
-	// Token: 0x06001CBA RID: 7354 RVA: 0x0011CE04 File Offset: 0x0011B004
+	// Token: 0x06001CBA RID: 7354 RVA: 0x0011CE20 File Offset: 0x0011B020
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001CBB RID: 7355 RVA: 0x0011CE0C File Offset: 0x0011B00C
+	// Token: 0x06001CBB RID: 7355 RVA: 0x0011CE28 File Offset: 0x0011B028
 	private void FindScripts()
 	{
 		if (!this.guiMain_)
@@ -23,7 +23,7 @@ public class cameraMovementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001CBC RID: 7356 RVA: 0x0011CE5D File Offset: 0x0011B05D
+	// Token: 0x06001CBC RID: 7356 RVA: 0x0011CE79 File Offset: 0x0011B079
 	public void FindCameraLimits()
 	{
 		this.cameraLimitA = GameObject.Find("CameraLimitA");
@@ -35,13 +35,13 @@ public class cameraMovementScript : MonoBehaviour
 		this.cameraLimitB;
 	}
 
-	// Token: 0x06001CBD RID: 7357 RVA: 0x0011CE99 File Offset: 0x0011B099
+	// Token: 0x06001CBD RID: 7357 RVA: 0x0011CEB5 File Offset: 0x0011B0B5
 	private void Update()
 	{
 		this.CameraInput();
 	}
 
-	// Token: 0x06001CBE RID: 7358 RVA: 0x0011CEA4 File Offset: 0x0011B0A4
+	// Token: 0x06001CBE RID: 7358 RVA: 0x0011CEC0 File Offset: 0x0011B0C0
 	private void CameraInput()
 	{
 		if (this.disableMovement || this.guiMain_.selectInputField)

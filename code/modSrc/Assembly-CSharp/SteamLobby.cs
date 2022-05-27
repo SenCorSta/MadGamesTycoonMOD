@@ -6,7 +6,7 @@ using UnityEngine;
 // Token: 0x02000305 RID: 773
 public class SteamLobby : MonoBehaviour
 {
-	// Token: 0x06001AEA RID: 6890 RVA: 0x0010E2A4 File Offset: 0x0010C4A4
+	// Token: 0x06001AEA RID: 6890 RVA: 0x0010E2C0 File Offset: 0x0010C4C0
 	private void Start()
 	{
 		this.FindScripts();
@@ -15,7 +15,7 @@ public class SteamLobby : MonoBehaviour
 		this.lobbyEntered = Callback<LobbyEnter_t>.Create(new Callback<LobbyEnter_t>.DispatchDelegate(this.OnLobbyEntered));
 	}
 
-	// Token: 0x06001AEB RID: 6891 RVA: 0x0010E2FC File Offset: 0x0010C4FC
+	// Token: 0x06001AEB RID: 6891 RVA: 0x0010E318 File Offset: 0x0010C518
 	private void FindScripts()
 	{
 		if (!this.guiMain_)
@@ -37,26 +37,26 @@ public class SteamLobby : MonoBehaviour
 		this.networkManager = base.GetComponent<NetworkManager>();
 	}
 
-	// Token: 0x06001AEC RID: 6892 RVA: 0x0010E396 File Offset: 0x0010C596
+	// Token: 0x06001AEC RID: 6892 RVA: 0x0010E3B2 File Offset: 0x0010C5B2
 	public void HostLobby()
 	{
 		Debug.Log("3. HostLobby()");
 		SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, this.networkManager.maxConnections);
 	}
 
-	// Token: 0x06001AED RID: 6893 RVA: 0x0010E3B4 File Offset: 0x0010C5B4
+	// Token: 0x06001AED RID: 6893 RVA: 0x0010E3D0 File Offset: 0x0010C5D0
 	public void LockLobby(bool b)
 	{
 		SteamMatchmaking.SetLobbyJoinable(new CSteamID(this.lobbyID), b);
 	}
 
-	// Token: 0x06001AEE RID: 6894 RVA: 0x0010E3C8 File Offset: 0x0010C5C8
+	// Token: 0x06001AEE RID: 6894 RVA: 0x0010E3E4 File Offset: 0x0010C5E4
 	public void LeaveLobby()
 	{
 		SteamMatchmaking.LeaveLobby(new CSteamID(this.lobbyID));
 	}
 
-	// Token: 0x06001AEF RID: 6895 RVA: 0x0010E3DC File Offset: 0x0010C5DC
+	// Token: 0x06001AEF RID: 6895 RVA: 0x0010E3F8 File Offset: 0x0010C5F8
 	private void OnLobbyCreated(LobbyCreated_t callback)
 	{
 		Debug.Log("4. OnLobbyCreated()");
@@ -70,13 +70,13 @@ public class SteamLobby : MonoBehaviour
 		this.lobbyID = callback.m_ulSteamIDLobby;
 	}
 
-	// Token: 0x06001AF0 RID: 6896 RVA: 0x0010E448 File Offset: 0x0010C648
+	// Token: 0x06001AF0 RID: 6896 RVA: 0x0010E464 File Offset: 0x0010C664
 	private void OnGameLobbyJoinRequested(GameLobbyJoinRequested_t callback)
 	{
 		SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
 	}
 
-	// Token: 0x06001AF1 RID: 6897 RVA: 0x0010E458 File Offset: 0x0010C658
+	// Token: 0x06001AF1 RID: 6897 RVA: 0x0010E474 File Offset: 0x0010C674
 	private void OnLobbyEntered(LobbyEnter_t callback)
 	{
 		if (NetworkServer.active)
@@ -95,7 +95,7 @@ public class SteamLobby : MonoBehaviour
 		this.networkManager.StartClient();
 	}
 
-	// Token: 0x06001AF2 RID: 6898 RVA: 0x0010E4F8 File Offset: 0x0010C6F8
+	// Token: 0x06001AF2 RID: 6898 RVA: 0x0010E514 File Offset: 0x0010C714
 	private void RemoveContentFromClient()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");

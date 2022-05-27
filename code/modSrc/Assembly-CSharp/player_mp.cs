@@ -4,7 +4,7 @@ using System.Collections.Generic;
 // Token: 0x020002C9 RID: 713
 public class player_mp
 {
-	// Token: 0x060019CE RID: 6606 RVA: 0x001073D4 File Offset: 0x001055D4
+	// Token: 0x060019CE RID: 6606 RVA: 0x00107358 File Offset: 0x00105558
 	public player_mp(int playerID_)
 	{
 		this.myPubScript_ = null;

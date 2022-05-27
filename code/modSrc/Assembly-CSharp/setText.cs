@@ -10,7 +10,7 @@ public class setText : MonoBehaviour
 	{
 	}
 
-	// Token: 0x060018FC RID: 6396 RVA: 0x000F8BF4 File Offset: 0x000F6DF4
+	// Token: 0x060018FC RID: 6396 RVA: 0x000F8C20 File Offset: 0x000F6E20
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -21,7 +21,7 @@ public class setText : MonoBehaviour
 		base.GetComponent<Text>().text = this.c;
 	}
 
-	// Token: 0x060018FD RID: 6397 RVA: 0x000F8C48 File Offset: 0x000F6E48
+	// Token: 0x060018FD RID: 6397 RVA: 0x000F8C74 File Offset: 0x000F6E74
 	private void SetText()
 	{
 		if (this.textArray.Length > 0 && this.textID > -1)
@@ -31,7 +31,7 @@ public class setText : MonoBehaviour
 		base.GetComponent<Text>().text = this.c;
 	}
 
-	// Token: 0x060018FE RID: 6398 RVA: 0x000F8C94 File Offset: 0x000F6E94
+	// Token: 0x060018FE RID: 6398 RVA: 0x000F8CC0 File Offset: 0x000F6EC0
 	private void FindScripts()
 	{
 		if (!this.main_)

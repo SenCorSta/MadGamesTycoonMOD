@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020002F5 RID: 757
 public class maschineAnimSound : MonoBehaviour
 {
-	// Token: 0x06001AA5 RID: 6821 RVA: 0x0010C91F File Offset: 0x0010AB1F
+	// Token: 0x06001AA5 RID: 6821 RVA: 0x0010C93B File Offset: 0x0010AB3B
 	private void Start()
 	{
 		if (!this.main_)
@@ -17,7 +17,7 @@ public class maschineAnimSound : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AA6 RID: 6822 RVA: 0x0010C95C File Offset: 0x0010AB5C
+	// Token: 0x06001AA6 RID: 6822 RVA: 0x0010C978 File Offset: 0x0010AB78
 	private void Update()
 	{
 		if (!this.myAnimation.isPlaying)

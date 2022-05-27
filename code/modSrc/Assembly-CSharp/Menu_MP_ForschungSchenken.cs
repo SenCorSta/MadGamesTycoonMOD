@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x020001C5 RID: 453
 public class Menu_MP_ForschungSchenken : MonoBehaviour
 {
-	// Token: 0x06001115 RID: 4373 RVA: 0x000B53E2 File Offset: 0x000B35E2
+	// Token: 0x06001115 RID: 4373 RVA: 0x000B53EE File Offset: 0x000B35EE
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001116 RID: 4374 RVA: 0x000B53EC File Offset: 0x000B35EC
+	// Token: 0x06001116 RID: 4374 RVA: 0x000B53F8 File Offset: 0x000B35F8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -77,7 +77,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001117 RID: 4375 RVA: 0x000B55C6 File Offset: 0x000B37C6
+	// Token: 0x06001117 RID: 4375 RVA: 0x000B55D2 File Offset: 0x000B37D2
 	private void OnEnable()
 	{
 		this.selectedForschung = -1;
@@ -88,7 +88,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.InitPlayerButtons();
 	}
 
-	// Token: 0x06001118 RID: 4376 RVA: 0x000B5600 File Offset: 0x000B3800
+	// Token: 0x06001118 RID: 4376 RVA: 0x000B560C File Offset: 0x000B380C
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -106,7 +106,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.UpdatePlayerButtons();
 	}
 
-	// Token: 0x06001119 RID: 4377 RVA: 0x000B5674 File Offset: 0x000B3874
+	// Token: 0x06001119 RID: 4377 RVA: 0x000B5680 File Offset: 0x000B3880
 	public void UpdatePlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -125,7 +125,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600111A RID: 4378 RVA: 0x000B56E4 File Offset: 0x000B38E4
+	// Token: 0x0600111A RID: 4378 RVA: 0x000B56F0 File Offset: 0x000B38F0
 	public void InitPlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -161,14 +161,14 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600111B RID: 4379 RVA: 0x000B580F File Offset: 0x000B3A0F
+	// Token: 0x0600111B RID: 4379 RVA: 0x000B581B File Offset: 0x000B3A1B
 	public void BUTTON_Player(int p)
 	{
 		this.sfx_.PlaySound(12, true);
 		this.selectedPlayer = p;
 	}
 
-	// Token: 0x0600111C RID: 4380 RVA: 0x000B5828 File Offset: 0x000B3A28
+	// Token: 0x0600111C RID: 4380 RVA: 0x000B5834 File Offset: 0x000B3A34
 	public void Init(int i)
 	{
 		this.FindScripts();
@@ -455,7 +455,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x0600111D RID: 4381 RVA: 0x000B64F4 File Offset: 0x000B46F4
+	// Token: 0x0600111D RID: 4381 RVA: 0x000B6500 File Offset: 0x000B4700
 	private void CreateItem(int id_)
 	{
 		if (this.fS_.IsErforscht(id_))
@@ -472,7 +472,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600111E RID: 4382 RVA: 0x000B659C File Offset: 0x000B479C
+	// Token: 0x0600111E RID: 4382 RVA: 0x000B65A8 File Offset: 0x000B47A8
 	public void BUTTON_Search()
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
@@ -483,14 +483,14 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.Init(this.forschungsTyp);
 	}
 
-	// Token: 0x0600111F RID: 4383 RVA: 0x000B6608 File Offset: 0x000B4808
+	// Token: 0x0600111F RID: 4383 RVA: 0x000B6614 File Offset: 0x000B4814
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001120 RID: 4384 RVA: 0x000B6624 File Offset: 0x000B4824
+	// Token: 0x06001120 RID: 4384 RVA: 0x000B6630 File Offset: 0x000B4830
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[6].name);
@@ -503,7 +503,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.uiObjects[6].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001121 RID: 4385 RVA: 0x000B66C4 File Offset: 0x000B48C4
+	// Token: 0x06001121 RID: 4385 RVA: 0x000B66D0 File Offset: 0x000B48D0
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[6].GetComponent<Dropdown>().value;
@@ -597,7 +597,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06001122 RID: 4386 RVA: 0x000B6A80 File Offset: 0x000B4C80
+	// Token: 0x06001122 RID: 4386 RVA: 0x000B6A8C File Offset: 0x000B4C8C
 	public void BUTTON_Ok()
 	{
 		if (this.selectedForschung == -1)

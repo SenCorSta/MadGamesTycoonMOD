@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x02000281 RID: 641
 public class Menu_MultiplayerLobbyInGame : MonoBehaviour
 {
-	// Token: 0x06001914 RID: 6420 RVA: 0x000F919B File Offset: 0x000F739B
+	// Token: 0x06001914 RID: 6420 RVA: 0x000F91C7 File Offset: 0x000F73C7
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001915 RID: 6421 RVA: 0x000F91A4 File Offset: 0x000F73A4
+	// Token: 0x06001915 RID: 6421 RVA: 0x000F91D0 File Offset: 0x000F73D0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_MultiplayerLobbyInGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001916 RID: 6422 RVA: 0x000F9294 File Offset: 0x000F7494
+	// Token: 0x06001916 RID: 6422 RVA: 0x000F92C0 File Offset: 0x000F74C0
 	public void OnEnable()
 	{
 		this.FindScripts();
@@ -63,7 +63,7 @@ public class Menu_MultiplayerLobbyInGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001917 RID: 6423 RVA: 0x000F92F8 File Offset: 0x000F74F8
+	// Token: 0x06001917 RID: 6423 RVA: 0x000F9324 File Offset: 0x000F7524
 	private void Update()
 	{
 		for (int i = 0; i < this.mpCalls_.playersMP.Count; i++)

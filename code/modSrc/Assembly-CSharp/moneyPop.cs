@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000275 RID: 629
 public class moneyPop : MonoBehaviour
 {
-	// Token: 0x06001872 RID: 6258 RVA: 0x000F259C File Offset: 0x000F079C
+	// Token: 0x06001872 RID: 6258 RVA: 0x000F25C8 File Offset: 0x000F07C8
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001873 RID: 6259 RVA: 0x000F25A4 File Offset: 0x000F07A4
+	// Token: 0x06001873 RID: 6259 RVA: 0x000F25D0 File Offset: 0x000F07D0
 	private void FindScripts()
 	{
 		if (!this.rT_)
@@ -28,7 +28,7 @@ public class moneyPop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001874 RID: 6260 RVA: 0x000F2621 File Offset: 0x000F0821
+	// Token: 0x06001874 RID: 6260 RVA: 0x000F264D File Offset: 0x000F084D
 	public void Init(Vector3 v)
 	{
 		this.FindScripts();
@@ -37,7 +37,7 @@ public class moneyPop : MonoBehaviour
 		this.anim_.Play();
 	}
 
-	// Token: 0x06001875 RID: 6261 RVA: 0x000F2654 File Offset: 0x000F0854
+	// Token: 0x06001875 RID: 6261 RVA: 0x000F2680 File Offset: 0x000F0880
 	private void Update()
 	{
 		if (base.transform.position.x >= 99998f)

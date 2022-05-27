@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020002F7 RID: 759
 public class moCapChar : MonoBehaviour
 {
-	// Token: 0x06001AAB RID: 6827 RVA: 0x0010CA54 File Offset: 0x0010AC54
+	// Token: 0x06001AAB RID: 6827 RVA: 0x0010CA70 File Offset: 0x0010AC70
 	private void Start()
 	{
 		this.localPos = base.transform.localPosition;
@@ -38,7 +38,7 @@ public class moCapChar : MonoBehaviour
 		this.skin.material = this.clothScript_.matColor_Skin[UnityEngine.Random.Range(0, this.clothScript_.matColor_Skin.Length)];
 	}
 
-	// Token: 0x06001AAC RID: 6828 RVA: 0x0010CB74 File Offset: 0x0010AD74
+	// Token: 0x06001AAC RID: 6828 RVA: 0x0010CB90 File Offset: 0x0010AD90
 	private void Update()
 	{
 		if (!this.mS_)
@@ -127,7 +127,7 @@ public class moCapChar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AAD RID: 6829 RVA: 0x0010CF08 File Offset: 0x0010B108
+	// Token: 0x06001AAD RID: 6829 RVA: 0x0010CF24 File Offset: 0x0010B124
 	private IEnumerator RemoveChar()
 	{
 		yield return new WaitForSeconds(1f);

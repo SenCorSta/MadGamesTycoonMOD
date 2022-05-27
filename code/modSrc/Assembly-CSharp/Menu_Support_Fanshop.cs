@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000271 RID: 625
 public class Menu_Support_Fanshop : MonoBehaviour
 {
-	// Token: 0x06001853 RID: 6227 RVA: 0x000F1A8E File Offset: 0x000EFC8E
+	// Token: 0x06001853 RID: 6227 RVA: 0x000F1ABA File Offset: 0x000EFCBA
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001854 RID: 6228 RVA: 0x000F1A98 File Offset: 0x000EFC98
+	// Token: 0x06001854 RID: 6228 RVA: 0x000F1AC4 File Offset: 0x000EFCC4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_Support_Fanshop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001855 RID: 6229 RVA: 0x000F1B7E File Offset: 0x000EFD7E
+	// Token: 0x06001855 RID: 6229 RVA: 0x000F1BAA File Offset: 0x000EFDAA
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001856 RID: 6230 RVA: 0x000F1B88 File Offset: 0x000EFD88
+	// Token: 0x06001856 RID: 6230 RVA: 0x000F1BB4 File Offset: 0x000EFDB4
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -66,7 +66,7 @@ public class Menu_Support_Fanshop : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001857 RID: 6231 RVA: 0x000F1BD4 File Offset: 0x000EFDD4
+	// Token: 0x06001857 RID: 6231 RVA: 0x000F1C00 File Offset: 0x000EFE00
 	public void Init(roomScript script_)
 	{
 		this.FindScripts();
@@ -74,7 +74,7 @@ public class Menu_Support_Fanshop : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001858 RID: 6232 RVA: 0x000F1BEC File Offset: 0x000EFDEC
+	// Token: 0x06001858 RID: 6232 RVA: 0x000F1C18 File Offset: 0x000EFE18
 	private void SetData()
 	{
 		if (!this.rS_)
@@ -102,14 +102,14 @@ public class Menu_Support_Fanshop : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = ">10.0";
 	}
 
-	// Token: 0x06001859 RID: 6233 RVA: 0x000F1CEC File Offset: 0x000EFEEC
+	// Token: 0x06001859 RID: 6233 RVA: 0x000F1D18 File Offset: 0x000EFF18
 	public void BUTTON_Fanshop()
 	{
 		this.sfx_.PlaySound(3, false);
 		this.guiMain_.uiObjects[366].SetActive(true);
 	}
 
-	// Token: 0x0600185A RID: 6234 RVA: 0x000F1D12 File Offset: 0x000EFF12
+	// Token: 0x0600185A RID: 6234 RVA: 0x000F1D3E File Offset: 0x000EFF3E
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -117,7 +117,7 @@ public class Menu_Support_Fanshop : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600185B RID: 6235 RVA: 0x000F1D38 File Offset: 0x000EFF38
+	// Token: 0x0600185B RID: 6235 RVA: 0x000F1D64 File Offset: 0x000EFF64
 	public void BUTTON_Start()
 	{
 		this.sfx_.PlaySound(3, true);

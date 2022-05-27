@@ -4,14 +4,14 @@ using UnityEngine;
 // Token: 0x020002E6 RID: 742
 public class doorScript : MonoBehaviour
 {
-	// Token: 0x06001A60 RID: 6752 RVA: 0x0010A996 File Offset: 0x00108B96
+	// Token: 0x06001A60 RID: 6752 RVA: 0x0010A966 File Offset: 0x00108B66
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x06001A61 RID: 6753 RVA: 0x0010A9A4 File Offset: 0x00108BA4
+	// Token: 0x06001A61 RID: 6753 RVA: 0x0010A974 File Offset: 0x00108B74
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -23,14 +23,14 @@ public class doorScript : MonoBehaviour
 		this.mapS_ = this.main_.GetComponent<mapScript>();
 	}
 
-	// Token: 0x06001A62 RID: 6754 RVA: 0x0010A9F4 File Offset: 0x00108BF4
+	// Token: 0x06001A62 RID: 6754 RVA: 0x0010A9C4 File Offset: 0x00108BC4
 	private void Init()
 	{
 		GameObject gameObject = base.transform.parent.gameObject;
 		this.roomID = this.mapS_.mapRoomID[Mathf.RoundToInt(gameObject.transform.position.x), Mathf.RoundToInt(gameObject.transform.position.z)];
 	}
 
-	// Token: 0x06001A63 RID: 6755 RVA: 0x0010AA54 File Offset: 0x00108C54
+	// Token: 0x06001A63 RID: 6755 RVA: 0x0010AA24 File Offset: 0x00108C24
 	private void Update()
 	{
 		if (this.oldGamespeed != this.mS_.GetGameSpeed())

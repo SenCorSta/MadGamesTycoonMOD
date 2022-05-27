@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020002F0 RID: 752
 public class loadSavegame : MonoBehaviour
 {
-	// Token: 0x06001A89 RID: 6793 RVA: 0x0010B773 File Offset: 0x00109973
+	// Token: 0x06001A89 RID: 6793 RVA: 0x0010B743 File Offset: 0x00109943
 	private void Start()
 	{
 		this.FindScripts();
@@ -20,7 +20,7 @@ public class loadSavegame : MonoBehaviour
 		this.guiMain_.uiObjects[151].SetActive(true);
 	}
 
-	// Token: 0x06001A8A RID: 6794 RVA: 0x0010B7A4 File Offset: 0x001099A4
+	// Token: 0x06001A8A RID: 6794 RVA: 0x0010B774 File Offset: 0x00109974
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class loadSavegame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A8B RID: 6795 RVA: 0x0010B88C File Offset: 0x00109A8C
+	// Token: 0x06001A8B RID: 6795 RVA: 0x0010B85C File Offset: 0x00109A5C
 	private bool ShouldSavegameLoad()
 	{
 		int @int = PlayerPrefs.GetInt("LoadSavegame", -1);
@@ -66,7 +66,7 @@ public class loadSavegame : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001A8C RID: 6796 RVA: 0x0010B8C8 File Offset: 0x00109AC8
+	// Token: 0x06001A8C RID: 6796 RVA: 0x0010B898 File Offset: 0x00109A98
 	private bool ShouldMultiplayerSavegameLoad()
 	{
 		int @int = PlayerPrefs.GetInt("LoadMPSavegame", -1);
@@ -81,9 +81,13 @@ public class loadSavegame : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001A8D RID: 6797 RVA: 0x0010B91D File Offset: 0x00109B1D
+	// Token: 0x06001A8D RID: 6797 RVA: 0x0010B8ED File Offset: 0x00109AED
 	private IEnumerator LoadSaveGameAfterOneFrame(int i)
 	{
+		if (this.mS_.multiplayer)
+		{
+			this.save_.loadingSavegame = true;
+		}
 		this.sfX_.SetRandomMusic();
 		this.guiMain_.uiObjects[152].SetActive(true);
 		this.guiMain_.uiObjects[151].SetActive(false);
@@ -106,12 +110,20 @@ public class loadSavegame : MonoBehaviour
 			this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[202]);
 			if (this.mpCalls_.isServer)
 			{
+				if (this.mS_.multiplayer)
+				{
+					this.save_.loadingSavegame = true;
+				}
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				this.mpCalls_.SERVER_Send_Load(this.mS_.multiplayerSaveID);
+				if (this.mS_.multiplayer)
+				{
+					this.save_.loadingSavegame = false;
+				}
 			}
 			else
 			{

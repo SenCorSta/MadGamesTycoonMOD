@@ -6,13 +6,13 @@ using UnityEngine;
 // Token: 0x02000333 RID: 819
 public class mapScript : MonoBehaviour
 {
-	// Token: 0x06001D7F RID: 7551 RVA: 0x0012484A File Offset: 0x00122A4A
+	// Token: 0x06001D7F RID: 7551 RVA: 0x00124866 File Offset: 0x00122A66
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001D80 RID: 7552 RVA: 0x00124854 File Offset: 0x00122A54
+	// Token: 0x06001D80 RID: 7552 RVA: 0x00124870 File Offset: 0x00122A70
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -41,14 +41,14 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D81 RID: 7553 RVA: 0x00124908 File Offset: 0x00122B08
+	// Token: 0x06001D81 RID: 7553 RVA: 0x00124924 File Offset: 0x00122B24
 	private void Update()
 	{
 		this.UpdateMapMuell(false);
 		this.UpdateMapFilter(false);
 	}
 
-	// Token: 0x06001D82 RID: 7554 RVA: 0x00124918 File Offset: 0x00122B18
+	// Token: 0x06001D82 RID: 7554 RVA: 0x00124934 File Offset: 0x00122B34
 	public void InitBuilding(bool fromSavegame)
 	{
 		Debug.Log("InitBuilding()");
@@ -189,7 +189,7 @@ public class mapScript : MonoBehaviour
 		this.UpdatePathfindingInstant();
 	}
 
-	// Token: 0x06001D83 RID: 7555 RVA: 0x00124EB8 File Offset: 0x001230B8
+	// Token: 0x06001D83 RID: 7555 RVA: 0x00124ED4 File Offset: 0x001230D4
 	public void CreateRoomsForBuildingsToBuy()
 	{
 		roomScript roomScript = null;
@@ -230,7 +230,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D84 RID: 7556 RVA: 0x00125010 File Offset: 0x00123210
+	// Token: 0x06001D84 RID: 7556 RVA: 0x0012502C File Offset: 0x0012322C
 	public void RemoveRoom(int id_, bool particle)
 	{
 		Debug.Log("RemoveRoom()");
@@ -282,19 +282,19 @@ public class mapScript : MonoBehaviour
 		this.CreateWalls(-1);
 	}
 
-	// Token: 0x06001D85 RID: 7557 RVA: 0x001252D2 File Offset: 0x001234D2
+	// Token: 0x06001D85 RID: 7557 RVA: 0x001252EE File Offset: 0x001234EE
 	public void UpdatePathfindingInstant()
 	{
 		base.StartCoroutine(this.UpdatePathfindingInstantNextFrame());
 	}
 
-	// Token: 0x06001D86 RID: 7558 RVA: 0x001252E1 File Offset: 0x001234E1
+	// Token: 0x06001D86 RID: 7558 RVA: 0x001252FD File Offset: 0x001234FD
 	public void UpdatePathfinding()
 	{
 		base.StartCoroutine(this.UpdatePathfindingNextFrame());
 	}
 
-	// Token: 0x06001D87 RID: 7559 RVA: 0x001252F0 File Offset: 0x001234F0
+	// Token: 0x06001D87 RID: 7559 RVA: 0x0012530C File Offset: 0x0012350C
 	private IEnumerator UpdatePathfindingNextFrame()
 	{
 		yield return new WaitForEndOfFrame();
@@ -311,7 +311,7 @@ public class mapScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001D88 RID: 7560 RVA: 0x001252FF File Offset: 0x001234FF
+	// Token: 0x06001D88 RID: 7560 RVA: 0x0012531B File Offset: 0x0012351B
 	private IEnumerator UpdatePathfindingInstantNextFrame()
 	{
 		yield return new WaitForEndOfFrame();
@@ -328,7 +328,7 @@ public class mapScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001D89 RID: 7561 RVA: 0x00125310 File Offset: 0x00123510
+	// Token: 0x06001D89 RID: 7561 RVA: 0x0012532C File Offset: 0x0012352C
 	public void CreateWalls(int buildingID)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Room");
@@ -375,7 +375,7 @@ public class mapScript : MonoBehaviour
 		this.guiMain_.filterToggles = -1;
 	}
 
-	// Token: 0x06001D8A RID: 7562 RVA: 0x001254EC File Offset: 0x001236EC
+	// Token: 0x06001D8A RID: 7562 RVA: 0x00125508 File Offset: 0x00123708
 	public void CreateWalls_Multiplayer(int playerID_)
 	{
 		player_mp player_mp = this.mS_.mpCalls_.FindPlayer(playerID_);
@@ -401,7 +401,7 @@ public class mapScript : MonoBehaviour
 		this.guiMain_.filterToggles = -1;
 	}
 
-	// Token: 0x06001D8B RID: 7563 RVA: 0x001255C8 File Offset: 0x001237C8
+	// Token: 0x06001D8B RID: 7563 RVA: 0x001255E4 File Offset: 0x001237E4
 	private void InstantiateMap(int x, int y, GameObject room, roomScript script_)
 	{
 		if (this.mapBlockDoor[x, y] != 0)
@@ -587,7 +587,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D8C RID: 7564 RVA: 0x00126098 File Offset: 0x00124298
+	// Token: 0x06001D8C RID: 7564 RVA: 0x001260B4 File Offset: 0x001242B4
 	private void InstantiateMap_Multiplayer(player_mp p, int x, int y, int roomID_MP, int roomTYP_MP)
 	{
 		if (this.mapBlockDoor[x, y] != 0)
@@ -753,7 +753,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D8D RID: 7565 RVA: 0x00126AD4 File Offset: 0x00124CD4
+	// Token: 0x06001D8D RID: 7565 RVA: 0x00126AF0 File Offset: 0x00124CF0
 	private int GetFloorPrefab(int roomTyp)
 	{
 		switch (roomTyp)
@@ -799,7 +799,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D8E RID: 7566 RVA: 0x00126B68 File Offset: 0x00124D68
+	// Token: 0x06001D8E RID: 7566 RVA: 0x00126B84 File Offset: 0x00124D84
 	private int GetWallPrefab(int roomTyp)
 	{
 		switch (roomTyp)
@@ -845,7 +845,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D8F RID: 7567 RVA: 0x00126BFC File Offset: 0x00124DFC
+	// Token: 0x06001D8F RID: 7567 RVA: 0x00126C18 File Offset: 0x00124E18
 	private int GetEdgeOutPrefab(int roomTyp)
 	{
 		switch (roomTyp)
@@ -891,7 +891,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D90 RID: 7568 RVA: 0x00126C90 File Offset: 0x00124E90
+	// Token: 0x06001D90 RID: 7568 RVA: 0x00126CAC File Offset: 0x00124EAC
 	private int GetDoorPrefab(int roomTyp)
 	{
 		switch (roomTyp)
@@ -935,7 +935,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D91 RID: 7569 RVA: 0x00126D20 File Offset: 0x00124F20
+	// Token: 0x06001D91 RID: 7569 RVA: 0x00126D3C File Offset: 0x00124F3C
 	private int GetWindowPrefab(int roomTyp)
 	{
 		switch (roomTyp)
@@ -981,13 +981,13 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D92 RID: 7570 RVA: 0x00126DB4 File Offset: 0x00124FB4
+	// Token: 0x06001D92 RID: 7570 RVA: 0x00126DD0 File Offset: 0x00124FD0
 	private void SetRoomParent(GameObject go)
 	{
 		go.transform.SetParent(this.ROOMS.transform, true);
 	}
 
-	// Token: 0x06001D93 RID: 7571 RVA: 0x00126DD0 File Offset: 0x00124FD0
+	// Token: 0x06001D93 RID: 7571 RVA: 0x00126DEC File Offset: 0x00124FEC
 	private void SetRoomParent_Multiplayer(GameObject go)
 	{
 		go.transform.SetParent(this.ROOMS_MP.transform, true);
@@ -996,7 +996,7 @@ public class mapScript : MonoBehaviour
 		UnityEngine.Object.Destroy(go);
 	}
 
-	// Token: 0x06001D94 RID: 7572 RVA: 0x00126E34 File Offset: 0x00125034
+	// Token: 0x06001D94 RID: 7572 RVA: 0x00126E50 File Offset: 0x00125050
 	public int GetAmountRooms(int t)
 	{
 		int num = 0;
@@ -1012,7 +1012,7 @@ public class mapScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06001D95 RID: 7573 RVA: 0x00126E73 File Offset: 0x00125073
+	// Token: 0x06001D95 RID: 7573 RVA: 0x00126E8F File Offset: 0x0012508F
 	public GameObject CreateObject(int t)
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.prefabsInventar[t]);
@@ -1021,7 +1021,7 @@ public class mapScript : MonoBehaviour
 		return gameObject;
 	}
 
-	// Token: 0x06001D96 RID: 7574 RVA: 0x00126EB0 File Offset: 0x001250B0
+	// Token: 0x06001D96 RID: 7574 RVA: 0x00126ECC File Offset: 0x001250CC
 	public Vector2 FindRandomFloorInMyBuilding(int id)
 	{
 		List<Vector2> list = new List<Vector2>();
@@ -1038,7 +1038,7 @@ public class mapScript : MonoBehaviour
 		return list[UnityEngine.Random.Range(0, list.Count)];
 	}
 
-	// Token: 0x06001D97 RID: 7575 RVA: 0x00126F28 File Offset: 0x00125128
+	// Token: 0x06001D97 RID: 7575 RVA: 0x00126F44 File Offset: 0x00125144
 	public Vector2 FindRandomFloor()
 	{
 		List<Vector2> list = new List<Vector2>();
@@ -1055,13 +1055,13 @@ public class mapScript : MonoBehaviour
 		return list[UnityEngine.Random.Range(0, list.Count)];
 	}
 
-	// Token: 0x06001D98 RID: 7576 RVA: 0x00126F90 File Offset: 0x00125190
+	// Token: 0x06001D98 RID: 7576 RVA: 0x00126FAC File Offset: 0x001251AC
 	public bool IsInMapLimit(int x, int y)
 	{
 		return x >= 0 && x <= mapScript.mapSizeX && y >= 0 && y <= mapScript.mapSizeY;
 	}
 
-	// Token: 0x06001D99 RID: 7577 RVA: 0x00126FB0 File Offset: 0x001251B0
+	// Token: 0x06001D99 RID: 7577 RVA: 0x00126FCC File Offset: 0x001251CC
 	public void UpdateMapMuell(bool force)
 	{
 		if (!force)
@@ -1132,7 +1132,7 @@ public class mapScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D9A RID: 7578 RVA: 0x001272BC File Offset: 0x001254BC
+	// Token: 0x06001D9A RID: 7578 RVA: 0x001272D8 File Offset: 0x001254D8
 	public void UpdateMapFilter(bool force)
 	{
 		if (!force)

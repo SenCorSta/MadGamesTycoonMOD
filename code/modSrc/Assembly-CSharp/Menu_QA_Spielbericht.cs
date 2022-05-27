@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200020D RID: 525
 public class Menu_QA_Spielbericht : MonoBehaviour
 {
-	// Token: 0x0600142E RID: 5166 RVA: 0x000D2237 File Offset: 0x000D0437
+	// Token: 0x0600142E RID: 5166 RVA: 0x000D2263 File Offset: 0x000D0463
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600142F RID: 5167 RVA: 0x000D2240 File Offset: 0x000D0440
+	// Token: 0x0600142F RID: 5167 RVA: 0x000D226C File Offset: 0x000D046C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -48,7 +48,7 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001430 RID: 5168 RVA: 0x000D2344 File Offset: 0x000D0544
+	// Token: 0x06001430 RID: 5168 RVA: 0x000D2370 File Offset: 0x000D0570
 	private void Update()
 	{
 		if (this.uiObjects[32].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -57,7 +57,7 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001431 RID: 5169 RVA: 0x000D2378 File Offset: 0x000D0578
+	// Token: 0x06001431 RID: 5169 RVA: 0x000D23A4 File Offset: 0x000D05A4
 	public void Init(gameScript game_)
 	{
 		this.FindScripts();
@@ -146,7 +146,7 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001432 RID: 5170 RVA: 0x000D2904 File Offset: 0x000D0B04
+	// Token: 0x06001432 RID: 5170 RVA: 0x000D2930 File Offset: 0x000D0B30
 	public void UpdateDesignSettings()
 	{
 		for (int i = 0; i < this.uiDesignschwerpunkte.Length; i++)
@@ -183,14 +183,14 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001433 RID: 5171 RVA: 0x000D2B41 File Offset: 0x000D0D41
+	// Token: 0x06001433 RID: 5171 RVA: 0x000D2B6D File Offset: 0x000D0D6D
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001434 RID: 5172 RVA: 0x000D2B5C File Offset: 0x000D0D5C
+	// Token: 0x06001434 RID: 5172 RVA: 0x000D2B88 File Offset: 0x000D0D88
 	public void BUTTON_Spielbeschreibung()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -198,7 +198,7 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		this.guiMain_.uiObjects[199].GetComponent<Menu_Dev_ShowBeschreibung>().Init(this.gS_);
 	}
 
-	// Token: 0x06001435 RID: 5173 RVA: 0x000D2BB4 File Offset: 0x000D0DB4
+	// Token: 0x06001435 RID: 5173 RVA: 0x000D2BE0 File Offset: 0x000D0DE0
 	public void BUTTON_Review()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -206,7 +206,7 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		this.guiMain_.uiObjects[46].GetComponent<Menu_Review>().Init(this.gS_);
 	}
 
-	// Token: 0x06001436 RID: 5174 RVA: 0x000D2C00 File Offset: 0x000D0E00
+	// Token: 0x06001436 RID: 5174 RVA: 0x000D2C2C File Offset: 0x000D0E2C
 	public void BUTTON_Fanbriefe()
 	{
 		this.sfx_.PlaySound(3, true);

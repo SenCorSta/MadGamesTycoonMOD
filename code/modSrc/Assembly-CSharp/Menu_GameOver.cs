@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 // Token: 0x020001C1 RID: 449
 public class Menu_GameOver : MonoBehaviour
 {
-	// Token: 0x060010ED RID: 4333 RVA: 0x000B4217 File Offset: 0x000B2417
+	// Token: 0x060010ED RID: 4333 RVA: 0x000B4223 File Offset: 0x000B2423
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010EE RID: 4334 RVA: 0x000B4220 File Offset: 0x000B2420
+	// Token: 0x060010EE RID: 4334 RVA: 0x000B422C File Offset: 0x000B242C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_GameOver : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010EF RID: 4335 RVA: 0x000B42CA File Offset: 0x000B24CA
+	// Token: 0x060010EF RID: 4335 RVA: 0x000B42D6 File Offset: 0x000B24D6
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -45,7 +45,7 @@ public class Menu_GameOver : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010F0 RID: 4336 RVA: 0x000B42E5 File Offset: 0x000B24E5
+	// Token: 0x060010F0 RID: 4336 RVA: 0x000B42F1 File Offset: 0x000B24F1
 	public void BUTTON_Yes()
 	{
 		if (this.mS_.multiplayer)

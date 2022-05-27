@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200026F RID: 623
 public class Menu_Support_Anrufe : MonoBehaviour
 {
-	// Token: 0x06001840 RID: 6208 RVA: 0x000F1142 File Offset: 0x000EF342
+	// Token: 0x06001840 RID: 6208 RVA: 0x000F116E File Offset: 0x000EF36E
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001841 RID: 6209 RVA: 0x000F114C File Offset: 0x000EF34C
+	// Token: 0x06001841 RID: 6209 RVA: 0x000F1178 File Offset: 0x000EF378
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,13 +40,13 @@ public class Menu_Support_Anrufe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001842 RID: 6210 RVA: 0x000F1214 File Offset: 0x000EF414
+	// Token: 0x06001842 RID: 6210 RVA: 0x000F1240 File Offset: 0x000EF440
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001843 RID: 6211 RVA: 0x000F121C File Offset: 0x000EF41C
+	// Token: 0x06001843 RID: 6211 RVA: 0x000F1248 File Offset: 0x000EF448
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -62,7 +62,7 @@ public class Menu_Support_Anrufe : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001844 RID: 6212 RVA: 0x000F1268 File Offset: 0x000EF468
+	// Token: 0x06001844 RID: 6212 RVA: 0x000F1294 File Offset: 0x000EF494
 	public void Init(roomScript script_)
 	{
 		this.FindScripts();
@@ -70,7 +70,7 @@ public class Menu_Support_Anrufe : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001845 RID: 6213 RVA: 0x000F1280 File Offset: 0x000EF480
+	// Token: 0x06001845 RID: 6213 RVA: 0x000F12AC File Offset: 0x000EF4AC
 	private void SetData()
 	{
 		if (!this.rS_)
@@ -87,7 +87,7 @@ public class Menu_Support_Anrufe : MonoBehaviour
 		this.uiObjects[3].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06001846 RID: 6214 RVA: 0x000F1388 File Offset: 0x000EF588
+	// Token: 0x06001846 RID: 6214 RVA: 0x000F13B4 File Offset: 0x000EF5B4
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -95,7 +95,7 @@ public class Menu_Support_Anrufe : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001847 RID: 6215 RVA: 0x000F13B0 File Offset: 0x000EF5B0
+	// Token: 0x06001847 RID: 6215 RVA: 0x000F13DC File Offset: 0x000EF5DC
 	public void BUTTON_Start()
 	{
 		this.sfx_.PlaySound(3, true);

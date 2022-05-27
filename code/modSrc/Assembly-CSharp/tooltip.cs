@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x0200027E RID: 638
 public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler
 {
-	// Token: 0x06001903 RID: 6403 RVA: 0x000F8D87 File Offset: 0x000F6F87
+	// Token: 0x06001903 RID: 6403 RVA: 0x000F8DB3 File Offset: 0x000F6FB3
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001904 RID: 6404 RVA: 0x000F8D90 File Offset: 0x000F6F90
+	// Token: 0x06001904 RID: 6404 RVA: 0x000F8DBC File Offset: 0x000F6FBC
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -41,7 +41,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001905 RID: 6405 RVA: 0x000F8E44 File Offset: 0x000F7044
+	// Token: 0x06001905 RID: 6405 RVA: 0x000F8E70 File Offset: 0x000F7070
 	private void Update()
 	{
 		if (this.guiMain_.selectInputField)
@@ -88,7 +88,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001906 RID: 6406 RVA: 0x000F8FA4 File Offset: 0x000F71A4
+	// Token: 0x06001906 RID: 6406 RVA: 0x000F8FD0 File Offset: 0x000F71D0
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		this.FindScripts();
@@ -129,7 +129,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001907 RID: 6407 RVA: 0x000F90C3 File Offset: 0x000F72C3
+	// Token: 0x06001907 RID: 6407 RVA: 0x000F90EF File Offset: 0x000F72EF
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		if (this.guiTooltip)
@@ -138,7 +138,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001908 RID: 6408 RVA: 0x000F90C3 File Offset: 0x000F72C3
+	// Token: 0x06001908 RID: 6408 RVA: 0x000F90EF File Offset: 0x000F72EF
 	public void OnDisable()
 	{
 		if (this.guiTooltip)

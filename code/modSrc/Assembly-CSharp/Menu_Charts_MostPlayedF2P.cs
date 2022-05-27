@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x0200021B RID: 539
 public class Menu_Charts_MostPlayedF2P : MonoBehaviour
 {
-	// Token: 0x060014B8 RID: 5304 RVA: 0x000D6757 File Offset: 0x000D4957
+	// Token: 0x060014B8 RID: 5304 RVA: 0x000D6783 File Offset: 0x000D4983
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060014B9 RID: 5305 RVA: 0x000D6760 File Offset: 0x000D4960
+	// Token: 0x060014B9 RID: 5305 RVA: 0x000D678C File Offset: 0x000D498C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_Charts_MostPlayedF2P : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060014BA RID: 5306 RVA: 0x000D6828 File Offset: 0x000D4A28
+	// Token: 0x060014BA RID: 5306 RVA: 0x000D6854 File Offset: 0x000D4A54
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -50,13 +50,13 @@ public class Menu_Charts_MostPlayedF2P : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060014BB RID: 5307 RVA: 0x000D685A File Offset: 0x000D4A5A
+	// Token: 0x060014BB RID: 5307 RVA: 0x000D6886 File Offset: 0x000D4A86
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060014BC RID: 5308 RVA: 0x000D6864 File Offset: 0x000D4A64
+	// Token: 0x060014BC RID: 5308 RVA: 0x000D6890 File Offset: 0x000D4A90
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -69,7 +69,7 @@ public class Menu_Charts_MostPlayedF2P : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x060014BD RID: 5309 RVA: 0x000D68F4 File Offset: 0x000D4AF4
+	// Token: 0x060014BD RID: 5309 RVA: 0x000D6920 File Offset: 0x000D4B20
 	public void Init()
 	{
 		this.FindScripts();
@@ -80,7 +80,7 @@ public class Menu_Charts_MostPlayedF2P : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060014BE RID: 5310 RVA: 0x000D6920 File Offset: 0x000D4B20
+	// Token: 0x060014BE RID: 5310 RVA: 0x000D694C File Offset: 0x000D4B4C
 	private void SetData()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -116,14 +116,14 @@ public class Menu_Charts_MostPlayedF2P : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x060014BF RID: 5311 RVA: 0x000D6AA4 File Offset: 0x000D4CA4
+	// Token: 0x060014BF RID: 5311 RVA: 0x000D6AD0 File Offset: 0x000D4CD0
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060014C0 RID: 5312 RVA: 0x000D6AC0 File Offset: 0x000D4CC0
+	// Token: 0x060014C0 RID: 5312 RVA: 0x000D6AEC File Offset: 0x000D4CEC
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;

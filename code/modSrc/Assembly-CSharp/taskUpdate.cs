@@ -4,19 +4,19 @@ using UnityEngine;
 // Token: 0x0200031F RID: 799
 public class taskUpdate : MonoBehaviour
 {
-	// Token: 0x06001C53 RID: 7251 RVA: 0x00117AEA File Offset: 0x00115CEA
+	// Token: 0x06001C53 RID: 7251 RVA: 0x00117B06 File Offset: 0x00115D06
 	private void Awake()
 	{
 		base.transform.position = new Vector3(30f, 0f, 0f);
 	}
 
-	// Token: 0x06001C54 RID: 7252 RVA: 0x00117B0B File Offset: 0x00115D0B
+	// Token: 0x06001C54 RID: 7252 RVA: 0x00117B27 File Offset: 0x00115D27
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001C55 RID: 7253 RVA: 0x00117B14 File Offset: 0x00115D14
+	// Token: 0x06001C55 RID: 7253 RVA: 0x00117B30 File Offset: 0x00115D30
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,14 +41,14 @@ public class taskUpdate : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C56 RID: 7254 RVA: 0x00117BBA File Offset: 0x00115DBA
+	// Token: 0x06001C56 RID: 7254 RVA: 0x00117BD6 File Offset: 0x00115DD6
 	private void Update()
 	{
 		this.FindMyObject();
 		this.CheckAbbruch();
 	}
 
-	// Token: 0x06001C57 RID: 7255 RVA: 0x00117BC8 File Offset: 0x00115DC8
+	// Token: 0x06001C57 RID: 7255 RVA: 0x00117BE4 File Offset: 0x00115DE4
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -58,7 +58,7 @@ public class taskUpdate : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001C58 RID: 7256 RVA: 0x00117BFC File Offset: 0x00115DFC
+	// Token: 0x06001C58 RID: 7256 RVA: 0x00117C18 File Offset: 0x00115E18
 	private void CheckAbbruch()
 	{
 		if (!this.gS_)
@@ -85,7 +85,7 @@ public class taskUpdate : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C59 RID: 7257 RVA: 0x00117CD4 File Offset: 0x00115ED4
+	// Token: 0x06001C59 RID: 7257 RVA: 0x00117CF0 File Offset: 0x00115EF0
 	private void FindMyObject()
 	{
 		if (this.gS_)
@@ -99,19 +99,19 @@ public class taskUpdate : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C5A RID: 7258 RVA: 0x00117D1E File Offset: 0x00115F1E
+	// Token: 0x06001C5A RID: 7258 RVA: 0x00117D3A File Offset: 0x00115F3A
 	public float GetProzent()
 	{
 		return 100f / this.points * (this.points - this.pointsLeft);
 	}
 
-	// Token: 0x06001C5B RID: 7259 RVA: 0x00117D3A File Offset: 0x00115F3A
+	// Token: 0x06001C5B RID: 7259 RVA: 0x00117D56 File Offset: 0x00115F56
 	public Sprite GetPic()
 	{
 		return this.guiMain_.uiSprites[15];
 	}
 
-	// Token: 0x06001C5C RID: 7260 RVA: 0x00117D4A File Offset: 0x00115F4A
+	// Token: 0x06001C5C RID: 7260 RVA: 0x00117D66 File Offset: 0x00115F66
 	public void Work(float f)
 	{
 		if (this.pointsLeft > 0f)
@@ -125,7 +125,7 @@ public class taskUpdate : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C5D RID: 7261 RVA: 0x00117D88 File Offset: 0x00115F88
+	// Token: 0x06001C5D RID: 7261 RVA: 0x00117DA4 File Offset: 0x00115FA4
 	private void Complete()
 	{
 		this.FindMyObject();
@@ -172,7 +172,7 @@ public class taskUpdate : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C5E RID: 7262 RVA: 0x00117F94 File Offset: 0x00116194
+	// Token: 0x06001C5E RID: 7262 RVA: 0x00117FB0 File Offset: 0x001161B0
 	private bool DoAutomatic()
 	{
 		if (!this.automatic)
@@ -205,7 +205,7 @@ public class taskUpdate : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001C5F RID: 7263 RVA: 0x00118084 File Offset: 0x00116284
+	// Token: 0x06001C5F RID: 7263 RVA: 0x001180A0 File Offset: 0x001162A0
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -222,13 +222,13 @@ public class taskUpdate : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001C60 RID: 7264 RVA: 0x001180E3 File Offset: 0x001162E3
+	// Token: 0x06001C60 RID: 7264 RVA: 0x001180FF File Offset: 0x001162FF
 	public int GetRueckgeld()
 	{
 		return Mathf.RoundToInt((float)this.devCosts * ((100f - this.GetProzent()) * 0.01f));
 	}
 
-	// Token: 0x06001C61 RID: 7265 RVA: 0x00118104 File Offset: 0x00116304
+	// Token: 0x06001C61 RID: 7265 RVA: 0x00118120 File Offset: 0x00116320
 	public void Abbrechen()
 	{
 		this.FindMyObject();

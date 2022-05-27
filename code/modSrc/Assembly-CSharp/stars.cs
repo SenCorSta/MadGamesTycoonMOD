@@ -10,7 +10,7 @@ public class stars : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001901 RID: 6401 RVA: 0x000F8D20 File Offset: 0x000F6F20
+	// Token: 0x06001901 RID: 6401 RVA: 0x000F8D4C File Offset: 0x000F6F4C
 	private void Update()
 	{
 		for (int i = 0; i < this.myObjects.Length; i++)

@@ -4,14 +4,14 @@ using UnityEngine;
 // Token: 0x020002D2 RID: 722
 public class animateMaterial : MonoBehaviour
 {
-	// Token: 0x06001A13 RID: 6675 RVA: 0x00109630 File Offset: 0x00107830
+	// Token: 0x06001A13 RID: 6675 RVA: 0x00109600 File Offset: 0x00107800
 	private void Start()
 	{
 		this.FindScripts();
 		this.myRenderer = base.GetComponent<MeshRenderer>();
 	}
 
-	// Token: 0x06001A14 RID: 6676 RVA: 0x00109644 File Offset: 0x00107844
+	// Token: 0x06001A14 RID: 6676 RVA: 0x00109614 File Offset: 0x00107814
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -24,7 +24,7 @@ public class animateMaterial : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A15 RID: 6677 RVA: 0x00109684 File Offset: 0x00107884
+	// Token: 0x06001A15 RID: 6677 RVA: 0x00109654 File Offset: 0x00107854
 	private void Update()
 	{
 		this.timer += this.speed * this.mS_.GetDeltaTime();

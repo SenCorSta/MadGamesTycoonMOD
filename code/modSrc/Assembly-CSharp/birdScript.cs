@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x020002D6 RID: 726
 public class birdScript : MonoBehaviour
 {
-	// Token: 0x06001A24 RID: 6692 RVA: 0x00109BB5 File Offset: 0x00107DB5
+	// Token: 0x06001A24 RID: 6692 RVA: 0x00109B85 File Offset: 0x00107D85
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001A25 RID: 6693 RVA: 0x00109BBD File Offset: 0x00107DBD
+	// Token: 0x06001A25 RID: 6693 RVA: 0x00109B8D File Offset: 0x00107D8D
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -23,7 +23,7 @@ public class birdScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A26 RID: 6694 RVA: 0x00109BFC File Offset: 0x00107DFC
+	// Token: 0x06001A26 RID: 6694 RVA: 0x00109BCC File Offset: 0x00107DCC
 	private void Update()
 	{
 		base.transform.Translate(Vector3.forward * this.mS_.GetDeltaTime() * this.speed);

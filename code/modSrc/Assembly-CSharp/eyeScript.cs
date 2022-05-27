@@ -4,14 +4,14 @@ using UnityEngine;
 // Token: 0x020002E7 RID: 743
 public class eyeScript : MonoBehaviour
 {
-	// Token: 0x06001A65 RID: 6757 RVA: 0x0010ADB2 File Offset: 0x00108FB2
+	// Token: 0x06001A65 RID: 6757 RVA: 0x0010AD82 File Offset: 0x00108F82
 	private void Start()
 	{
 		this.myCamera = GameObject.Find("Camera");
 		this.myAnimation = base.GetComponent<Animation>();
 	}
 
-	// Token: 0x06001A66 RID: 6758 RVA: 0x0010ADD0 File Offset: 0x00108FD0
+	// Token: 0x06001A66 RID: 6758 RVA: 0x0010ADA0 File Offset: 0x00108FA0
 	private void Update()
 	{
 		this.timer += Time.deltaTime;

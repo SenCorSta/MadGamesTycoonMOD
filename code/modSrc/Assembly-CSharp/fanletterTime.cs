@@ -9,7 +9,7 @@ public class fanletterTime : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001A69 RID: 6761 RVA: 0x0010AE50 File Offset: 0x00109050
+	// Token: 0x06001A69 RID: 6761 RVA: 0x0010AE20 File Offset: 0x00109020
 	public void Init(float f)
 	{
 		this.anzeigeDauer = f;
@@ -17,7 +17,7 @@ public class fanletterTime : MonoBehaviour
 		this.pause = false;
 	}
 
-	// Token: 0x06001A6A RID: 6762 RVA: 0x0010AE6C File Offset: 0x0010906C
+	// Token: 0x06001A6A RID: 6762 RVA: 0x0010AE3C File Offset: 0x0010903C
 	private void Update()
 	{
 		this.timer += Time.deltaTime;

@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x020001CA RID: 458
 public class Menu_MP_LizenzSchenken : MonoBehaviour
 {
-	// Token: 0x0600114F RID: 4431 RVA: 0x000B76DA File Offset: 0x000B58DA
+	// Token: 0x0600114F RID: 4431 RVA: 0x000B76E6 File Offset: 0x000B58E6
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001150 RID: 4432 RVA: 0x000B76E4 File Offset: 0x000B58E4
+	// Token: 0x06001150 RID: 4432 RVA: 0x000B76F0 File Offset: 0x000B58F0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001151 RID: 4433 RVA: 0x000B780A File Offset: 0x000B5A0A
+	// Token: 0x06001151 RID: 4433 RVA: 0x000B7816 File Offset: 0x000B5A16
 	private void OnEnable()
 	{
 		this.selectedLizenz = -1;
@@ -63,7 +63,7 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		this.InitPlayerButtons();
 	}
 
-	// Token: 0x06001152 RID: 4434 RVA: 0x000B782C File Offset: 0x000B5A2C
+	// Token: 0x06001152 RID: 4434 RVA: 0x000B7838 File Offset: 0x000B5A38
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -79,7 +79,7 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001153 RID: 4435 RVA: 0x000B78FC File Offset: 0x000B5AFC
+	// Token: 0x06001153 RID: 4435 RVA: 0x000B7908 File Offset: 0x000B5B08
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -98,7 +98,7 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001154 RID: 4436 RVA: 0x000B7978 File Offset: 0x000B5B78
+	// Token: 0x06001154 RID: 4436 RVA: 0x000B7984 File Offset: 0x000B5B84
 	public void UpdatePlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -117,7 +117,7 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001155 RID: 4437 RVA: 0x000B79E8 File Offset: 0x000B5BE8
+	// Token: 0x06001155 RID: 4437 RVA: 0x000B79F4 File Offset: 0x000B5BF4
 	public void InitPlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -153,14 +153,14 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001156 RID: 4438 RVA: 0x000B7B13 File Offset: 0x000B5D13
+	// Token: 0x06001156 RID: 4438 RVA: 0x000B7B1F File Offset: 0x000B5D1F
 	public void BUTTON_Player(int p)
 	{
 		this.sfx_.PlaySound(12, true);
 		this.selectedPlayer = p;
 	}
 
-	// Token: 0x06001157 RID: 4439 RVA: 0x000B7B2C File Offset: 0x000B5D2C
+	// Token: 0x06001157 RID: 4439 RVA: 0x000B7B38 File Offset: 0x000B5D38
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -176,7 +176,7 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001158 RID: 4440 RVA: 0x000B7B78 File Offset: 0x000B5D78
+	// Token: 0x06001158 RID: 4440 RVA: 0x000B7B84 File Offset: 0x000B5D84
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -189,7 +189,7 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001159 RID: 4441 RVA: 0x000B7BD0 File Offset: 0x000B5DD0
+	// Token: 0x06001159 RID: 4441 RVA: 0x000B7BDC File Offset: 0x000B5DDC
 	public void Init()
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
@@ -199,7 +199,7 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600115A RID: 4442 RVA: 0x000B7C20 File Offset: 0x000B5E20
+	// Token: 0x0600115A RID: 4442 RVA: 0x000B7C2C File Offset: 0x000B5E2C
 	private void SetData()
 	{
 		for (int i = 0; i < this.licences_.licence_GEKAUFT.Length; i++)
@@ -220,7 +220,7 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[4]);
 	}
 
-	// Token: 0x0600115B RID: 4443 RVA: 0x000B7D14 File Offset: 0x000B5F14
+	// Token: 0x0600115B RID: 4443 RVA: 0x000B7D20 File Offset: 0x000B5F20
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -260,14 +260,14 @@ public class Menu_MP_LizenzSchenken : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x0600115C RID: 4444 RVA: 0x000B7E8B File Offset: 0x000B608B
+	// Token: 0x0600115C RID: 4444 RVA: 0x000B7E97 File Offset: 0x000B6097
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600115D RID: 4445 RVA: 0x000B7EA8 File Offset: 0x000B60A8
+	// Token: 0x0600115D RID: 4445 RVA: 0x000B7EB4 File Offset: 0x000B60B4
 	public void BUTTON_Ok()
 	{
 		if (this.selectedLizenz <= -1)

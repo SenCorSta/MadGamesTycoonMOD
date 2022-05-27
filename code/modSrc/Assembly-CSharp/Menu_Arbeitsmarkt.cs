@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x020001DE RID: 478
 public class Menu_Arbeitsmarkt : MonoBehaviour
 {
-	// Token: 0x06001205 RID: 4613 RVA: 0x000BD78D File Offset: 0x000BB98D
+	// Token: 0x06001205 RID: 4613 RVA: 0x000BD799 File Offset: 0x000BB999
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001206 RID: 4614 RVA: 0x000BD798 File Offset: 0x000BB998
+	// Token: 0x06001206 RID: 4614 RVA: 0x000BD7A4 File Offset: 0x000BB9A4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001207 RID: 4615 RVA: 0x000BD880 File Offset: 0x000BBA80
+	// Token: 0x06001207 RID: 4615 RVA: 0x000BD88C File Offset: 0x000BBA8C
 	private void Update()
 	{
 		string text = this.tS_.GetText(198);
@@ -59,7 +59,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001208 RID: 4616 RVA: 0x000BD93C File Offset: 0x000BBB3C
+	// Token: 0x06001208 RID: 4616 RVA: 0x000BD948 File Offset: 0x000BBB48
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -75,7 +75,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001209 RID: 4617 RVA: 0x000BD988 File Offset: 0x000BBB88
+	// Token: 0x06001209 RID: 4617 RVA: 0x000BD994 File Offset: 0x000BBB94
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -88,13 +88,13 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600120A RID: 4618 RVA: 0x000BD9E4 File Offset: 0x000BBBE4
+	// Token: 0x0600120A RID: 4618 RVA: 0x000BD9F0 File Offset: 0x000BBBF0
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x0600120B RID: 4619 RVA: 0x000BD9EC File Offset: 0x000BBBEC
+	// Token: 0x0600120B RID: 4619 RVA: 0x000BD9F8 File Offset: 0x000BBBF8
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -118,7 +118,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x0600120C RID: 4620 RVA: 0x000BDB53 File Offset: 0x000BBD53
+	// Token: 0x0600120C RID: 4620 RVA: 0x000BDB5F File Offset: 0x000BBD5F
 	public void Init()
 	{
 		this.FindScripts();
@@ -126,7 +126,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600120D RID: 4621 RVA: 0x000BDB68 File Offset: 0x000BBD68
+	// Token: 0x0600120D RID: 4621 RVA: 0x000BDB74 File Offset: 0x000BBD74
 	private void SetData()
 	{
 		int num = 0;
@@ -157,7 +157,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[6]);
 	}
 
-	// Token: 0x0600120E RID: 4622 RVA: 0x000BDC7F File Offset: 0x000BBE7F
+	// Token: 0x0600120E RID: 4622 RVA: 0x000BDC8B File Offset: 0x000BBE8B
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -165,7 +165,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600120F RID: 4623 RVA: 0x000BDCA8 File Offset: 0x000BBEA8
+	// Token: 0x0600120F RID: 4623 RVA: 0x000BDCB4 File Offset: 0x000BBEB4
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -397,7 +397,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06001210 RID: 4624 RVA: 0x000BE760 File Offset: 0x000BC960
+	// Token: 0x06001210 RID: 4624 RVA: 0x000BE76C File Offset: 0x000BC96C
 	public void TOGGLE_All()
 	{
 		this.sfx_.PlaySound(12, true);
@@ -412,7 +412,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001211 RID: 4625 RVA: 0x000BE7E4 File Offset: 0x000BC9E4
+	// Token: 0x06001211 RID: 4625 RVA: 0x000BE7F0 File Offset: 0x000BC9F0
 	public void BUTTON_Einstellen()
 	{
 		bool flag = false;
@@ -452,7 +452,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001212 RID: 4626 RVA: 0x000BE9D8 File Offset: 0x000BCBD8
+	// Token: 0x06001212 RID: 4626 RVA: 0x000BE9E4 File Offset: 0x000BCBE4
 	public int GetAmountSelected()
 	{
 		this.AnzahlBewerber();
@@ -468,7 +468,7 @@ public class Menu_Arbeitsmarkt : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06001213 RID: 4627 RVA: 0x000BEA4C File Offset: 0x000BCC4C
+	// Token: 0x06001213 RID: 4627 RVA: 0x000BEA58 File Offset: 0x000BCC58
 	private void AnzahlBewerber()
 	{
 		int num = 0;

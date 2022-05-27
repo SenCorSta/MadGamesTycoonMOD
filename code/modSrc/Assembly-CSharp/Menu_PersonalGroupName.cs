@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001E4 RID: 484
 public class Menu_PersonalGroupName : MonoBehaviour
 {
-	// Token: 0x0600124C RID: 4684 RVA: 0x000C1ADD File Offset: 0x000BFCDD
+	// Token: 0x0600124C RID: 4684 RVA: 0x000C1AE9 File Offset: 0x000BFCE9
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600124D RID: 4685 RVA: 0x000C1AE8 File Offset: 0x000BFCE8
+	// Token: 0x0600124D RID: 4685 RVA: 0x000C1AF4 File Offset: 0x000BFCF4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,14 +44,14 @@ public class Menu_PersonalGroupName : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600124E RID: 4686 RVA: 0x000C1BC2 File Offset: 0x000BFDC2
+	// Token: 0x0600124E RID: 4686 RVA: 0x000C1BCE File Offset: 0x000BFDCE
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.cmS_.disableMovement = true;
 	}
 
-	// Token: 0x0600124F RID: 4687 RVA: 0x000C1BD6 File Offset: 0x000BFDD6
+	// Token: 0x0600124F RID: 4687 RVA: 0x000C1BE2 File Offset: 0x000BFDE2
 	private void OnDisable()
 	{
 		this.FindScripts();
@@ -62,7 +62,7 @@ public class Menu_PersonalGroupName : MonoBehaviour
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x06001250 RID: 4688 RVA: 0x000C1BF8 File Offset: 0x000BFDF8
+	// Token: 0x06001250 RID: 4688 RVA: 0x000C1C04 File Offset: 0x000BFE04
 	public void Init(int group_)
 	{
 		this.FindScripts();
@@ -75,14 +75,14 @@ public class Menu_PersonalGroupName : MonoBehaviour
 		this.uiObjects[0].GetComponent<InputField>().text = "";
 	}
 
-	// Token: 0x06001251 RID: 4689 RVA: 0x000C1C68 File Offset: 0x000BFE68
+	// Token: 0x06001251 RID: 4689 RVA: 0x000C1C74 File Offset: 0x000BFE74
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001252 RID: 4690 RVA: 0x000C1C84 File Offset: 0x000BFE84
+	// Token: 0x06001252 RID: 4690 RVA: 0x000C1C90 File Offset: 0x000BFE90
 	public void BUTTON_Yes()
 	{
 		this.mS_.personal_group_names[this.group] = this.uiObjects[0].GetComponent<InputField>().text;

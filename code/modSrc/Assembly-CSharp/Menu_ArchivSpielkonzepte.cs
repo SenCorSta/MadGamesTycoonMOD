@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x02000188 RID: 392
 public class Menu_ArchivSpielkonzepte : MonoBehaviour
 {
-	// Token: 0x06000ECD RID: 3789 RVA: 0x0009E1A5 File Offset: 0x0009C3A5
+	// Token: 0x06000ECD RID: 3789 RVA: 0x0009E1B1 File Offset: 0x0009C3B1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000ECE RID: 3790 RVA: 0x0009E1B0 File Offset: 0x0009C3B0
+	// Token: 0x06000ECE RID: 3790 RVA: 0x0009E1BC File Offset: 0x0009C3BC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000ECF RID: 3791 RVA: 0x0009E296 File Offset: 0x0009C496
+	// Token: 0x06000ECF RID: 3791 RVA: 0x0009E2A2 File Offset: 0x0009C4A2
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -55,7 +55,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000ED0 RID: 3792 RVA: 0x0009E2D0 File Offset: 0x0009C4D0
+	// Token: 0x06000ED0 RID: 3792 RVA: 0x0009E2DC File Offset: 0x0009C4DC
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -81,7 +81,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		this.SetData(true);
 	}
 
-	// Token: 0x06000ED1 RID: 3793 RVA: 0x0009E334 File Offset: 0x0009C534
+	// Token: 0x06000ED1 RID: 3793 RVA: 0x0009E340 File Offset: 0x0009C540
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -94,7 +94,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000ED2 RID: 3794 RVA: 0x0009E390 File Offset: 0x0009C590
+	// Token: 0x06000ED2 RID: 3794 RVA: 0x0009E39C File Offset: 0x0009C59C
 	public void OnEnable()
 	{
 		this.FindScripts();
@@ -102,7 +102,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		this.TAB_NoArchiv(0);
 	}
 
-	// Token: 0x06000ED3 RID: 3795 RVA: 0x0009E3A8 File Offset: 0x0009C5A8
+	// Token: 0x06000ED3 RID: 3795 RVA: 0x0009E3B4 File Offset: 0x0009C5B4
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -118,7 +118,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06000ED4 RID: 3796 RVA: 0x0009E47C File Offset: 0x0009C67C
+	// Token: 0x06000ED4 RID: 3796 RVA: 0x0009E488 File Offset: 0x0009C688
 	private void Init(bool gekauft)
 	{
 		this.FindScripts();
@@ -129,7 +129,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		this.SetData(gekauft);
 	}
 
-	// Token: 0x06000ED5 RID: 3797 RVA: 0x0009E4D4 File Offset: 0x0009C6D4
+	// Token: 0x06000ED5 RID: 3797 RVA: 0x0009E4E0 File Offset: 0x0009C6E0
 	private void SetData(bool archiv_)
 	{
 		bool isOn = this.uiObjects[6].GetComponent<Toggle>().isOn;
@@ -155,13 +155,13 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06000ED6 RID: 3798 RVA: 0x0009E614 File Offset: 0x0009C814
+	// Token: 0x06000ED6 RID: 3798 RVA: 0x0009E620 File Offset: 0x0009C820
 	public bool CheckGameData(gameScript script_)
 	{
 		return script_ && (script_.developerID == this.mS_.myID || script_.IsMyAuftragsspiel()) && !script_.typ_budget && !script_.typ_bundle && !script_.typ_bundleAddon && !script_.typ_goty && !script_.pubOffer;
 	}
 
-	// Token: 0x06000ED7 RID: 3799 RVA: 0x0009E670 File Offset: 0x0009C870
+	// Token: 0x06000ED7 RID: 3799 RVA: 0x0009E67C File Offset: 0x0009C87C
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -205,7 +205,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06000ED8 RID: 3800 RVA: 0x0009E7DC File Offset: 0x0009C9DC
+	// Token: 0x06000ED8 RID: 3800 RVA: 0x0009E7E8 File Offset: 0x0009C9E8
 	public void BUTTON_All()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -224,14 +224,14 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000ED9 RID: 3801 RVA: 0x0009E84B File Offset: 0x0009CA4B
+	// Token: 0x06000ED9 RID: 3801 RVA: 0x0009E857 File Offset: 0x0009CA57
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000EDA RID: 3802 RVA: 0x0009E866 File Offset: 0x0009CA66
+	// Token: 0x06000EDA RID: 3802 RVA: 0x0009E872 File Offset: 0x0009CA72
 	public void TAB_NoArchiv(int t)
 	{
 		this.TAB = t;
@@ -240,7 +240,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		this.Init(false);
 	}
 
-	// Token: 0x06000EDB RID: 3803 RVA: 0x0009E897 File Offset: 0x0009CA97
+	// Token: 0x06000EDB RID: 3803 RVA: 0x0009E8A3 File Offset: 0x0009CAA3
 	public void TAB_Archiv(int t)
 	{
 		this.TAB = t;
@@ -249,7 +249,7 @@ public class Menu_ArchivSpielkonzepte : MonoBehaviour
 		this.Init(true);
 	}
 
-	// Token: 0x06000EDC RID: 3804 RVA: 0x0009E8C8 File Offset: 0x0009CAC8
+	// Token: 0x06000EDC RID: 3804 RVA: 0x0009E8D4 File Offset: 0x0009CAD4
 	public void TOGGLE_AuftragsspieleAusblenden()
 	{
 		if (this.TAB == 0)

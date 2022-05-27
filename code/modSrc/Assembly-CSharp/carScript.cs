@@ -9,7 +9,7 @@ public class carScript : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001A37 RID: 6711 RVA: 0x0010A090 File Offset: 0x00108290
+	// Token: 0x06001A37 RID: 6711 RVA: 0x0010A060 File Offset: 0x00108260
 	private void Update()
 	{
 		if (!this.aktuellesCar)

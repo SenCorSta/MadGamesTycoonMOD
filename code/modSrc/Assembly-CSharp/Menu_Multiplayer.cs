@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x020001D1 RID: 465
 public class Menu_Multiplayer : MonoBehaviour
 {
-	// Token: 0x06001198 RID: 4504 RVA: 0x000B9D07 File Offset: 0x000B7F07
+	// Token: 0x06001198 RID: 4504 RVA: 0x000B9D13 File Offset: 0x000B7F13
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001199 RID: 4505 RVA: 0x000B9D10 File Offset: 0x000B7F10
+	// Token: 0x06001199 RID: 4505 RVA: 0x000B9D1C File Offset: 0x000B7F1C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -39,19 +39,19 @@ public class Menu_Multiplayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600119A RID: 4506 RVA: 0x000B9DD8 File Offset: 0x000B7FD8
+	// Token: 0x0600119A RID: 4506 RVA: 0x000B9DE4 File Offset: 0x000B7FE4
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x0600119B RID: 4507 RVA: 0x000B9D07 File Offset: 0x000B7F07
+	// Token: 0x0600119B RID: 4507 RVA: 0x000B9D13 File Offset: 0x000B7F13
 	public void Init()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600119C RID: 4508 RVA: 0x000B9DE0 File Offset: 0x000B7FE0
+	// Token: 0x0600119C RID: 4508 RVA: 0x000B9DEC File Offset: 0x000B7FEC
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -59,21 +59,21 @@ public class Menu_Multiplayer : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600119D RID: 4509 RVA: 0x000B9E06 File Offset: 0x000B8006
+	// Token: 0x0600119D RID: 4509 RVA: 0x000B9E12 File Offset: 0x000B8012
 	public void BUTTON_Unterstuetzen()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[260]);
 	}
 
-	// Token: 0x0600119E RID: 4510 RVA: 0x000B9E31 File Offset: 0x000B8031
+	// Token: 0x0600119E RID: 4510 RVA: 0x000B9E3D File Offset: 0x000B803D
 	public void BUTTON_Sabotieren()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.MessageBox(this.tS_.GetText(408), false);
 	}
 
-	// Token: 0x0600119F RID: 4511 RVA: 0x000B9E5C File Offset: 0x000B805C
+	// Token: 0x0600119F RID: 4511 RVA: 0x000B9E68 File Offset: 0x000B8068
 	public void BUTTON_Awards()
 	{
 		this.sfx_.PlaySound(3, true);

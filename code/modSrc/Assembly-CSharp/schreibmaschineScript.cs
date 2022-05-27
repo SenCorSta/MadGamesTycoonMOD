@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x020002FE RID: 766
 public class schreibmaschineScript : MonoBehaviour
 {
-	// Token: 0x06001AD0 RID: 6864 RVA: 0x0010DB49 File Offset: 0x0010BD49
+	// Token: 0x06001AD0 RID: 6864 RVA: 0x0010DB65 File Offset: 0x0010BD65
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001AD1 RID: 6865 RVA: 0x0010DB54 File Offset: 0x0010BD54
+	// Token: 0x06001AD1 RID: 6865 RVA: 0x0010DB70 File Offset: 0x0010BD70
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class schreibmaschineScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AD2 RID: 6866 RVA: 0x0010DC04 File Offset: 0x0010BE04
+	// Token: 0x06001AD2 RID: 6866 RVA: 0x0010DC20 File Offset: 0x0010BE20
 	private void Update()
 	{
 		if (!this.oS_)

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020001D3 RID: 467
 public class Menu_NewsSetting : MonoBehaviour
 {
-	// Token: 0x060011A8 RID: 4520 RVA: 0x000BA1E4 File Offset: 0x000B83E4
+	// Token: 0x060011A8 RID: 4520 RVA: 0x000BA1F0 File Offset: 0x000B83F0
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060011A9 RID: 4521 RVA: 0x000BA1EC File Offset: 0x000B83EC
+	// Token: 0x060011A9 RID: 4521 RVA: 0x000BA1F8 File Offset: 0x000B83F8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,14 +40,14 @@ public class Menu_NewsSetting : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011AA RID: 4522 RVA: 0x000BA2A4 File Offset: 0x000B84A4
+	// Token: 0x060011AA RID: 4522 RVA: 0x000BA2B0 File Offset: 0x000B84B0
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x060011AB RID: 4523 RVA: 0x000BA2B4 File Offset: 0x000B84B4
+	// Token: 0x060011AB RID: 4523 RVA: 0x000BA2C0 File Offset: 0x000B84C0
 	private void Init()
 	{
 		this.uiObjects[0].GetComponent<Toggle>().isOn = this.mS_.newsSetting[0];
@@ -62,7 +62,7 @@ public class Menu_NewsSetting : MonoBehaviour
 		this.uiObjects[9].GetComponent<Toggle>().isOn = this.mS_.newsSetting[9];
 	}
 
-	// Token: 0x060011AC RID: 4524 RVA: 0x000BA3F9 File Offset: 0x000B85F9
+	// Token: 0x060011AC RID: 4524 RVA: 0x000BA405 File Offset: 0x000B8605
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -70,7 +70,7 @@ public class Menu_NewsSetting : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060011AD RID: 4525 RVA: 0x000BA420 File Offset: 0x000B8620
+	// Token: 0x060011AD RID: 4525 RVA: 0x000BA42C File Offset: 0x000B862C
 	public void BUTTON_OK()
 	{
 		this.mS_.newsSetting[0] = this.uiObjects[0].GetComponent<Toggle>().isOn;

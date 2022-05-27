@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200023A RID: 570
 public class Menu_Stats_FinanzVerlaufMonat : MonoBehaviour
 {
-	// Token: 0x060015FB RID: 5627 RVA: 0x000E0C89 File Offset: 0x000DEE89
+	// Token: 0x060015FB RID: 5627 RVA: 0x000E0CB5 File Offset: 0x000DEEB5
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060015FC RID: 5628 RVA: 0x000E0C94 File Offset: 0x000DEE94
+	// Token: 0x060015FC RID: 5628 RVA: 0x000E0CC0 File Offset: 0x000DEEC0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_Stats_FinanzVerlaufMonat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060015FD RID: 5629 RVA: 0x000E0D7A File Offset: 0x000DEF7A
+	// Token: 0x060015FD RID: 5629 RVA: 0x000E0DA6 File Offset: 0x000DEFA6
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060015FE RID: 5630 RVA: 0x000E0D82 File Offset: 0x000DEF82
+	// Token: 0x060015FE RID: 5630 RVA: 0x000E0DAE File Offset: 0x000DEFAE
 	private void Update()
 	{
 		if (!this.mS_.multiplayer)
@@ -60,7 +60,7 @@ public class Menu_Stats_FinanzVerlaufMonat : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x060015FF RID: 5631 RVA: 0x000E0D98 File Offset: 0x000DEF98
+	// Token: 0x060015FF RID: 5631 RVA: 0x000E0DC4 File Offset: 0x000DEFC4
 	public void Init()
 	{
 		this.FindScripts();
@@ -73,7 +73,7 @@ public class Menu_Stats_FinanzVerlaufMonat : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.tS_.GetText(724) + ": <color=red>" + this.mS_.GetMoney(num, true) + "</color>";
 	}
 
-	// Token: 0x06001600 RID: 5632 RVA: 0x000E0E34 File Offset: 0x000DF034
+	// Token: 0x06001600 RID: 5632 RVA: 0x000E0E60 File Offset: 0x000DF060
 	private long InitBalken()
 	{
 		long num = 0L;
@@ -115,7 +115,7 @@ public class Menu_Stats_FinanzVerlaufMonat : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06001601 RID: 5633 RVA: 0x000E0FB5 File Offset: 0x000DF1B5
+	// Token: 0x06001601 RID: 5633 RVA: 0x000E0FE1 File Offset: 0x000DF1E1
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000197 RID: 407
 public class Menu_Immobilien : MonoBehaviour
 {
-	// Token: 0x06000F70 RID: 3952 RVA: 0x000A4241 File Offset: 0x000A2441
+	// Token: 0x06000F70 RID: 3952 RVA: 0x000A424D File Offset: 0x000A244D
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F71 RID: 3953 RVA: 0x000A424C File Offset: 0x000A244C
+	// Token: 0x06000F71 RID: 3953 RVA: 0x000A4258 File Offset: 0x000A2458
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_Immobilien : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F72 RID: 3954 RVA: 0x000A4338 File Offset: 0x000A2538
+	// Token: 0x06000F72 RID: 3954 RVA: 0x000A4344 File Offset: 0x000A2544
 	public void Init(roomScript script_)
 	{
 		this.FindScripts();
@@ -61,7 +61,7 @@ public class Menu_Immobilien : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06000F73 RID: 3955 RVA: 0x000A43CD File Offset: 0x000A25CD
+	// Token: 0x06000F73 RID: 3955 RVA: 0x000A43D9 File Offset: 0x000A25D9
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -69,7 +69,7 @@ public class Menu_Immobilien : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x06000F74 RID: 3956 RVA: 0x000A43F4 File Offset: 0x000A25F4
+	// Token: 0x06000F74 RID: 3956 RVA: 0x000A4400 File Offset: 0x000A2600
 	public void BUTTON_OK()
 	{
 		int preis = this.GetPreis();
@@ -85,7 +85,7 @@ public class Menu_Immobilien : MonoBehaviour
 		this.BUTTON_Close();
 	}
 
-	// Token: 0x06000F75 RID: 3957 RVA: 0x000A446C File Offset: 0x000A266C
+	// Token: 0x06000F75 RID: 3957 RVA: 0x000A4478 File Offset: 0x000A2678
 	private int GetPreis()
 	{
 		int count = this.rS_.listGameObjects.Count;

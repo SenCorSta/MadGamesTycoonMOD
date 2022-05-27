@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x020002DC RID: 732
 public class computerScreenScript : MonoBehaviour
 {
-	// Token: 0x06001A39 RID: 6713 RVA: 0x0010A119 File Offset: 0x00108319
+	// Token: 0x06001A39 RID: 6713 RVA: 0x0010A0E9 File Offset: 0x001082E9
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001A3A RID: 6714 RVA: 0x0010A124 File Offset: 0x00108324
+	// Token: 0x06001A3A RID: 6714 RVA: 0x0010A0F4 File Offset: 0x001082F4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class computerScreenScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A3B RID: 6715 RVA: 0x0010A1D4 File Offset: 0x001083D4
+	// Token: 0x06001A3B RID: 6715 RVA: 0x0010A1A4 File Offset: 0x001083A4
 	private void Update()
 	{
 		if (!this.force)

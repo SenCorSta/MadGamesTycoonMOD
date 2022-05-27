@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200023E RID: 574
 public class Menu_Stats_History : MonoBehaviour
 {
-	// Token: 0x0600161D RID: 5661 RVA: 0x000E1990 File Offset: 0x000DFB90
+	// Token: 0x0600161D RID: 5661 RVA: 0x000E19BC File Offset: 0x000DFBBC
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600161E RID: 5662 RVA: 0x000E1998 File Offset: 0x000DFB98
+	// Token: 0x0600161E RID: 5662 RVA: 0x000E19C4 File Offset: 0x000DFBC4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_Stats_History : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600161F RID: 5663 RVA: 0x000E1A7E File Offset: 0x000DFC7E
+	// Token: 0x0600161F RID: 5663 RVA: 0x000E1AAA File Offset: 0x000DFCAA
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001620 RID: 5664 RVA: 0x000E1A88 File Offset: 0x000DFC88
+	// Token: 0x06001620 RID: 5664 RVA: 0x000E1AB4 File Offset: 0x000DFCB4
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -60,7 +60,7 @@ public class Menu_Stats_History : MonoBehaviour
 		this.uiObjects[4].GetComponent<Text>().text = (this.seite + 1).ToString() + " / " + (this.mS_.history.Count / 100 + 1).ToString();
 	}
 
-	// Token: 0x06001621 RID: 5665 RVA: 0x000E1B10 File Offset: 0x000DFD10
+	// Token: 0x06001621 RID: 5665 RVA: 0x000E1B3C File Offset: 0x000DFD3C
 	public void Init()
 	{
 		this.FindScripts();
@@ -79,14 +79,14 @@ public class Menu_Stats_History : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001622 RID: 5666 RVA: 0x000E1BDF File Offset: 0x000DFDDF
+	// Token: 0x06001622 RID: 5666 RVA: 0x000E1C0B File Offset: 0x000DFE0B
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001623 RID: 5667 RVA: 0x000E1BFC File Offset: 0x000DFDFC
+	// Token: 0x06001623 RID: 5667 RVA: 0x000E1C28 File Offset: 0x000DFE28
 	public void BUTTON_Seite(int i)
 	{
 		this.sfx_.PlaySound(3, true);
