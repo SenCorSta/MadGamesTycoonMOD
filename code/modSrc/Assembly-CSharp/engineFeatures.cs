@@ -6,13 +6,13 @@ using UnityEngine;
 // Token: 0x0200004F RID: 79
 public class engineFeatures : MonoBehaviour
 {
-	// Token: 0x060001B9 RID: 441 RVA: 0x00003068 File Offset: 0x00001268
+	// Token: 0x060001B9 RID: 441 RVA: 0x0001960D File Offset: 0x0001780D
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060001BA RID: 442 RVA: 0x0002F36C File Offset: 0x0002D56C
+	// Token: 0x060001BA RID: 442 RVA: 0x00019618 File Offset: 0x00017818
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -45,13 +45,13 @@ public class engineFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001BB RID: 443 RVA: 0x00003070 File Offset: 0x00001270
+	// Token: 0x060001BB RID: 443 RVA: 0x000196E6 File Offset: 0x000178E6
 	public void Init()
 	{
 		this.engineFeatures_PIC = new Sprite[this.engineFeatures_UNLOCK.Length];
 	}
 
-	// Token: 0x060001BC RID: 444 RVA: 0x0002F43C File Offset: 0x0002D63C
+	// Token: 0x060001BC RID: 444 RVA: 0x000196FC File Offset: 0x000178FC
 	public int GetOutdatetAmount(int usedFeature_)
 	{
 		int num = 0;
@@ -65,7 +65,7 @@ public class engineFeatures : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060001BD RID: 445 RVA: 0x0002F494 File Offset: 0x0002D694
+	// Token: 0x060001BD RID: 445 RVA: 0x00019754 File Offset: 0x00017954
 	public void LoadEngineFeatures(string filename)
 	{
 		int num = 0;
@@ -84,7 +84,6 @@ public class engineFeatures : MonoBehaviour
 				num2++;
 			}
 		}
-		Debug.Log("Engine Features Amount: " + num2.ToString());
 		this.engineFeatures_PIC = new Sprite[num2];
 		this.engineFeatures_TYP = new int[num2];
 		this.engineFeatures_RES_POINTS = new int[num2];
@@ -371,14 +370,13 @@ public class engineFeatures : MonoBehaviour
 			}
 			if (this.ParseData("[EOF]", j))
 			{
-				Debug.Log("EngineFeatures.txt -> EOF");
-				return;
+				break;
 			}
 			num++;
 		}
 	}
 
-	// Token: 0x060001BE RID: 446 RVA: 0x0002FEDC File Offset: 0x0002E0DC
+	// Token: 0x060001BE RID: 446 RVA: 0x0001A17C File Offset: 0x0001837C
 	private bool ParseData(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -390,7 +388,7 @@ public class engineFeatures : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060001BF RID: 447 RVA: 0x00003085 File Offset: 0x00001285
+	// Token: 0x060001BF RID: 447 RVA: 0x0001A1DC File Offset: 0x000183DC
 	private bool ParseDataDontCutLastChar(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -401,7 +399,7 @@ public class engineFeatures : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060001C0 RID: 448 RVA: 0x0002FF3C File Offset: 0x0002E13C
+	// Token: 0x060001C0 RID: 448 RVA: 0x0001A20C File Offset: 0x0001840C
 	public string GetName(int i)
 	{
 		string text = "";
@@ -525,7 +523,7 @@ public class engineFeatures : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x060001C1 RID: 449 RVA: 0x00030138 File Offset: 0x0002E338
+	// Token: 0x060001C1 RID: 449 RVA: 0x0001A408 File Offset: 0x00018608
 	public string GetDesc(int i)
 	{
 		string text = "";
@@ -649,7 +647,7 @@ public class engineFeatures : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x060001C2 RID: 450 RVA: 0x00030334 File Offset: 0x0002E534
+	// Token: 0x060001C2 RID: 450 RVA: 0x0001A604 File Offset: 0x00018804
 	public int GetGameplay(int i)
 	{
 		float num = (float)this.engineFeatures_LEVEL[i] * 0.1f;
@@ -657,7 +655,7 @@ public class engineFeatures : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x060001C3 RID: 451 RVA: 0x0003036C File Offset: 0x0002E56C
+	// Token: 0x060001C3 RID: 451 RVA: 0x0001A63C File Offset: 0x0001883C
 	public int GetGraphic(int i)
 	{
 		float num = (float)this.engineFeatures_LEVEL[i] * 0.1f;
@@ -665,7 +663,7 @@ public class engineFeatures : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x060001C4 RID: 452 RVA: 0x000303A4 File Offset: 0x0002E5A4
+	// Token: 0x060001C4 RID: 452 RVA: 0x0001A674 File Offset: 0x00018874
 	public int GetSound(int i)
 	{
 		float num = (float)this.engineFeatures_LEVEL[i] * 0.1f;
@@ -673,7 +671,7 @@ public class engineFeatures : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x060001C5 RID: 453 RVA: 0x000303DC File Offset: 0x0002E5DC
+	// Token: 0x060001C5 RID: 453 RVA: 0x0001A6AC File Offset: 0x000188AC
 	public int GetTechnik(int i)
 	{
 		float num = (float)this.engineFeatures_LEVEL[i] * 0.1f;
@@ -681,7 +679,7 @@ public class engineFeatures : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x060001C6 RID: 454 RVA: 0x00030414 File Offset: 0x0002E614
+	// Token: 0x060001C6 RID: 454 RVA: 0x0001A6E4 File Offset: 0x000188E4
 	public int GetDevCosts(int i)
 	{
 		float num = (float)this.engineFeatures_LEVEL[i] * 0.1f;
@@ -689,20 +687,20 @@ public class engineFeatures : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x060001C7 RID: 455 RVA: 0x0003044C File Offset: 0x0002E64C
+	// Token: 0x060001C7 RID: 455 RVA: 0x0001A71C File Offset: 0x0001891C
 	public int GetDevCostsForEngine(int i)
 	{
 		float num = (float)this.mS_.difficulty;
 		return Mathf.RoundToInt((float)(Mathf.RoundToInt((float)this.engineFeatures_DEV_COSTS[i] * (1.25f + num * 0.2f)) / 200 * 200));
 	}
 
-	// Token: 0x060001C8 RID: 456 RVA: 0x000030B5 File Offset: 0x000012B5
+	// Token: 0x060001C8 RID: 456 RVA: 0x0001A764 File Offset: 0x00018964
 	public int GetPrice(int i)
 	{
 		return this.engineFeatures_PRICE[i];
 	}
 
-	// Token: 0x060001C9 RID: 457 RVA: 0x000030BF File Offset: 0x000012BF
+	// Token: 0x060001C9 RID: 457 RVA: 0x0001A76E File Offset: 0x0001896E
 	public int GetDevPointsForEngine(int i)
 	{
 		if (i == -1)
@@ -712,7 +710,7 @@ public class engineFeatures : MonoBehaviour
 		return 10 + this.engineFeatures_RES_POINTS[i] / 5;
 	}
 
-	// Token: 0x060001CA RID: 458 RVA: 0x000030D4 File Offset: 0x000012D4
+	// Token: 0x060001CA RID: 458 RVA: 0x0001A783 File Offset: 0x00018983
 	public int GetDevPointsForGame(int i)
 	{
 		if (i == -1)
@@ -722,43 +720,43 @@ public class engineFeatures : MonoBehaviour
 		return 10 + this.engineFeatures_RES_POINTS[i] / 10;
 	}
 
-	// Token: 0x060001CB RID: 459 RVA: 0x000030EA File Offset: 0x000012EA
+	// Token: 0x060001CB RID: 459 RVA: 0x0001A799 File Offset: 0x00018999
 	public int GetTypGrafik()
 	{
 		return 0;
 	}
 
-	// Token: 0x060001CC RID: 460 RVA: 0x000030ED File Offset: 0x000012ED
+	// Token: 0x060001CC RID: 460 RVA: 0x0001A79C File Offset: 0x0001899C
 	public int GetTypSound()
 	{
 		return 1;
 	}
 
-	// Token: 0x060001CD RID: 461 RVA: 0x000030F0 File Offset: 0x000012F0
+	// Token: 0x060001CD RID: 461 RVA: 0x0001A79F File Offset: 0x0001899F
 	public int GetTypKI()
 	{
 		return 2;
 	}
 
-	// Token: 0x060001CE RID: 462 RVA: 0x000030F3 File Offset: 0x000012F3
+	// Token: 0x060001CE RID: 462 RVA: 0x0001A7A2 File Offset: 0x000189A2
 	public int GetTypPhysik()
 	{
 		return 3;
 	}
 
-	// Token: 0x060001CF RID: 463 RVA: 0x000030F6 File Offset: 0x000012F6
+	// Token: 0x060001CF RID: 463 RVA: 0x0001A7A5 File Offset: 0x000189A5
 	public bool IsErforscht(int i)
 	{
 		return this.engineFeatures_RES_POINTS_LEFT[i] <= 0f;
 	}
 
-	// Token: 0x060001D0 RID: 464 RVA: 0x0000310A File Offset: 0x0000130A
+	// Token: 0x060001D0 RID: 464 RVA: 0x0001A7B9 File Offset: 0x000189B9
 	public float GetProzent(int i)
 	{
 		return 100f / (float)this.engineFeatures_RES_POINTS[i] * ((float)this.engineFeatures_RES_POINTS[i] - this.engineFeatures_RES_POINTS_LEFT[i]);
 	}
 
-	// Token: 0x060001D1 RID: 465 RVA: 0x00030494 File Offset: 0x0002E694
+	// Token: 0x060001D1 RID: 465 RVA: 0x0001A7E0 File Offset: 0x000189E0
 	public void UnlockAll()
 	{
 		for (int i = 0; i < this.engineFeatures_UNLOCK.Length; i++)
@@ -768,13 +766,13 @@ public class engineFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001D2 RID: 466 RVA: 0x0000312E File Offset: 0x0000132E
+	// Token: 0x060001D2 RID: 466 RVA: 0x0001A816 File Offset: 0x00018A16
 	public bool ForschungGestartet(int i)
 	{
 		return this.engineFeatures_RES_POINTS_LEFT[i] != (float)this.engineFeatures_RES_POINTS[i];
 	}
 
-	// Token: 0x060001D3 RID: 467 RVA: 0x00003146 File Offset: 0x00001346
+	// Token: 0x060001D3 RID: 467 RVA: 0x0001A82E File Offset: 0x00018A2E
 	public bool Pay(int i)
 	{
 		if (!this.ForschungGestartet(i))
@@ -788,7 +786,7 @@ public class engineFeatures : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060001D4 RID: 468 RVA: 0x000304CC File Offset: 0x0002E6CC
+	// Token: 0x060001D4 RID: 468 RVA: 0x0001A868 File Offset: 0x00018A68
 	public bool BereitsInAnderenRaumAktiv(int s)
 	{
 		for (int i = 0; i < this.mS_.arrayRooms.Length; i++)
@@ -809,7 +807,7 @@ public class engineFeatures : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060001D5 RID: 469 RVA: 0x00030558 File Offset: 0x0002E758
+	// Token: 0x060001D5 RID: 469 RVA: 0x0001A8F4 File Offset: 0x00018AF4
 	public string GetTooltip(int i)
 	{
 		string text = "<b>" + this.GetName(i) + "</b>\n";
@@ -861,7 +859,7 @@ public class engineFeatures : MonoBehaviour
 		});
 	}
 
-	// Token: 0x060001D6 RID: 470 RVA: 0x000307C8 File Offset: 0x0002E9C8
+	// Token: 0x060001D6 RID: 470 RVA: 0x0001AB64 File Offset: 0x00018D64
 	public engineScript CreateEngine()
 	{
 		if (!this.mS_)
@@ -881,7 +879,7 @@ public class engineFeatures : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x060001D7 RID: 471 RVA: 0x00030860 File Offset: 0x0002EA60
+	// Token: 0x060001D7 RID: 471 RVA: 0x0001ABFC File Offset: 0x00018DFC
 	public Sprite GetTypPic(int i)
 	{
 		if (this.engineFeatures_ICONFILE[i] == null)

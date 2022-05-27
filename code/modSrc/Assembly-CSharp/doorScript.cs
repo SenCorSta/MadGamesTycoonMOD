@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002E3 RID: 739
+// Token: 0x020002E6 RID: 742
 public class doorScript : MonoBehaviour
 {
-	// Token: 0x06001A16 RID: 6678 RVA: 0x0001198E File Offset: 0x0000FB8E
+	// Token: 0x06001A60 RID: 6752 RVA: 0x0010A996 File Offset: 0x00108B96
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x06001A17 RID: 6679 RVA: 0x0010E97C File Offset: 0x0010CB7C
+	// Token: 0x06001A61 RID: 6753 RVA: 0x0010A9A4 File Offset: 0x00108BA4
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -23,14 +23,14 @@ public class doorScript : MonoBehaviour
 		this.mapS_ = this.main_.GetComponent<mapScript>();
 	}
 
-	// Token: 0x06001A18 RID: 6680 RVA: 0x0010E9CC File Offset: 0x0010CBCC
+	// Token: 0x06001A62 RID: 6754 RVA: 0x0010A9F4 File Offset: 0x00108BF4
 	private void Init()
 	{
 		GameObject gameObject = base.transform.parent.gameObject;
 		this.roomID = this.mapS_.mapRoomID[Mathf.RoundToInt(gameObject.transform.position.x), Mathf.RoundToInt(gameObject.transform.position.z)];
 	}
 
-	// Token: 0x06001A19 RID: 6681 RVA: 0x0010EA2C File Offset: 0x0010CC2C
+	// Token: 0x06001A63 RID: 6755 RVA: 0x0010AA54 File Offset: 0x00108C54
 	private void Update()
 	{
 		if (this.oldGamespeed != this.mS_.GetGameSpeed())
@@ -108,30 +108,30 @@ public class doorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002147 RID: 8519
+	// Token: 0x04002161 RID: 8545
 	private GameObject main_;
 
-	// Token: 0x04002148 RID: 8520
+	// Token: 0x04002162 RID: 8546
 	private mainScript mS_;
 
-	// Token: 0x04002149 RID: 8521
+	// Token: 0x04002163 RID: 8547
 	private mapScript mapS_;
 
-	// Token: 0x0400214A RID: 8522
+	// Token: 0x04002164 RID: 8548
 	public Animation myAnim;
 
-	// Token: 0x0400214B RID: 8523
+	// Token: 0x04002165 RID: 8549
 	public int roomID = -1;
 
-	// Token: 0x0400214C RID: 8524
+	// Token: 0x04002166 RID: 8550
 	private bool isOpen;
 
-	// Token: 0x0400214D RID: 8525
+	// Token: 0x04002167 RID: 8551
 	private float oldGamespeed;
 
-	// Token: 0x0400214E RID: 8526
+	// Token: 0x04002168 RID: 8552
 	public bool buildingDoor;
 
-	// Token: 0x0400214F RID: 8527
+	// Token: 0x04002169 RID: 8553
 	private float updateTimer;
 }

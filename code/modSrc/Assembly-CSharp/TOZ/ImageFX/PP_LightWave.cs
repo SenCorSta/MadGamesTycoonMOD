@@ -3,24 +3,24 @@ using UnityEngine;
 
 namespace TOZ.ImageFX
 {
-	// Token: 0x020003C6 RID: 966
+	// Token: 0x020003C9 RID: 969
 	[ExecuteInEditMode]
 	public sealed class PP_LightWave : PostProcessBase
 	{
-		// Token: 0x06002301 RID: 8961 RVA: 0x00017999 File Offset: 0x00015B99
+		// Token: 0x06002354 RID: 9044 RVA: 0x001703A6 File Offset: 0x0016E5A6
 		private void Awake()
 		{
 			this.shd = Shader.Find("Hidden/TOZ/ImageFX/LightWave");
 		}
 
-		// Token: 0x06002302 RID: 8962 RVA: 0x000179AB File Offset: 0x00015BAB
+		// Token: 0x06002355 RID: 9045 RVA: 0x001703B8 File Offset: 0x0016E5B8
 		private void OnRenderImage(RenderTexture src, RenderTexture dest)
 		{
 			this.ApplyVariables();
 			Graphics.Blit(src, dest, this.mat);
 		}
 
-		// Token: 0x06002303 RID: 8963 RVA: 0x0016E1F4 File Offset: 0x0016C3F4
+		// Token: 0x06002356 RID: 9046 RVA: 0x001703D0 File Offset: 0x0016E5D0
 		private void ApplyVariables()
 		{
 			this.mat.SetFloat("_Red", this.Red);
@@ -28,13 +28,13 @@ namespace TOZ.ImageFX
 			this.mat.SetFloat("_Blue", this.Blue);
 		}
 
-		// Token: 0x04002D34 RID: 11572
+		// Token: 0x04002D4A RID: 11594
 		public float Red = 4f;
 
-		// Token: 0x04002D35 RID: 11573
+		// Token: 0x04002D4B RID: 11595
 		public float Green = 4f;
 
-		// Token: 0x04002D36 RID: 11574
+		// Token: 0x04002D4C RID: 11596
 		public float Blue = 4f;
 	}
 }

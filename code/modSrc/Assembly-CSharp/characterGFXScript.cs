@@ -4,12 +4,12 @@ using UnityEngine;
 // Token: 0x02000041 RID: 65
 public class characterGFXScript : MonoBehaviour
 {
-	// Token: 0x060000EE RID: 238 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x060000EE RID: 238 RVA: 0x00002715 File Offset: 0x00000915
 	private void Start()
 	{
 	}
 
-	// Token: 0x060000EF RID: 239 RVA: 0x00022938 File Offset: 0x00020B38
+	// Token: 0x060000EF RID: 239 RVA: 0x0000C52C File Offset: 0x0000A72C
 	public void Init(bool forcedClothes)
 	{
 		this.cS_ = base.transform.root.GetComponent<characterScript>();
@@ -80,7 +80,7 @@ public class characterGFXScript : MonoBehaviour
 		UnityEngine.Object.Destroy(this);
 	}
 
-	// Token: 0x060000F0 RID: 240 RVA: 0x00022C60 File Offset: 0x00020E60
+	// Token: 0x060000F0 RID: 240 RVA: 0x0000C854 File Offset: 0x0000AA54
 	private void SetEyes(bool force, int model1)
 	{
 		int num = 0;
@@ -120,7 +120,7 @@ public class characterGFXScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F1 RID: 241 RVA: 0x00022D74 File Offset: 0x00020F74
+	// Token: 0x060000F1 RID: 241 RVA: 0x0000C968 File Offset: 0x0000AB68
 	private void SetHairs(bool force, int model1)
 	{
 		if (!force)
@@ -158,7 +158,7 @@ public class characterGFXScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F2 RID: 242 RVA: 0x00022E7C File Offset: 0x0002107C
+	// Token: 0x060000F2 RID: 242 RVA: 0x0000CA70 File Offset: 0x0000AC70
 	private void SetBeard(bool force, int model1)
 	{
 		if (!this.male)
@@ -185,7 +185,7 @@ public class characterGFXScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F3 RID: 243 RVA: 0x00022F10 File Offset: 0x00021110
+	// Token: 0x060000F3 RID: 243 RVA: 0x0000CB04 File Offset: 0x0000AD04
 	private void SetSkinColor(bool force, int color1)
 	{
 		this.indexSkinColor = 0;
@@ -204,7 +204,7 @@ public class characterGFXScript : MonoBehaviour
 		this.cS_.model_skinColor = 0;
 	}
 
-	// Token: 0x060000F4 RID: 244 RVA: 0x00022F9C File Offset: 0x0002119C
+	// Token: 0x060000F4 RID: 244 RVA: 0x0000CB90 File Offset: 0x0000AD90
 	private void SetHairColor(bool force, int colorHair, int colorBeard)
 	{
 		if (!force)
@@ -265,7 +265,7 @@ public class characterGFXScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F5 RID: 245 RVA: 0x000231A8 File Offset: 0x000213A8
+	// Token: 0x060000F5 RID: 245 RVA: 0x0000CD9C File Offset: 0x0000AF9C
 	private void SetClothColors(bool force, int colorHose, int colorShirt, int colorAdd1)
 	{
 		if (!force)

@@ -5,12 +5,12 @@ using UnityEngine.UI;
 // Token: 0x020000FA RID: 250
 public class Item_Stats_Platform : MonoBehaviour
 {
-	// Token: 0x0600081D RID: 2077 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06000826 RID: 2086 RVA: 0x00002715 File Offset: 0x00000915
 	private void Start()
 	{
 	}
 
-	// Token: 0x0600081E RID: 2078 RVA: 0x0006AD88 File Offset: 0x00068F88
+	// Token: 0x06000827 RID: 2087 RVA: 0x00058DF8 File Offset: 0x00056FF8
 	private void Update()
 	{
 		this.frames++;
@@ -29,7 +29,7 @@ public class Item_Stats_Platform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600081F RID: 2079 RVA: 0x0006AE04 File Offset: 0x00069004
+	// Token: 0x06000828 RID: 2088 RVA: 0x00058E74 File Offset: 0x00057074
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -45,7 +45,7 @@ public class Item_Stats_Platform : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000820 RID: 2080 RVA: 0x0006AE50 File Offset: 0x00069050
+	// Token: 0x06000829 RID: 2089 RVA: 0x00058EC0 File Offset: 0x000570C0
 	public void EnableObjects()
 	{
 		if (this.hasEnabled)
@@ -63,7 +63,7 @@ public class Item_Stats_Platform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000821 RID: 2081 RVA: 0x0006AEB4 File Offset: 0x000690B4
+	// Token: 0x0600082A RID: 2090 RVA: 0x00058F24 File Offset: 0x00057124
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.pS_.GetName();
@@ -99,7 +99,7 @@ public class Item_Stats_Platform : MonoBehaviour
 		this.uiObjects[8].SetActive(false);
 	}
 
-	// Token: 0x06000822 RID: 2082 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x0600082B RID: 2091 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);

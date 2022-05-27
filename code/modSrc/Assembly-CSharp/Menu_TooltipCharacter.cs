@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001B8 RID: 440
+// Token: 0x020001B9 RID: 441
 public class Menu_TooltipCharacter : MonoBehaviour
 {
-	// Token: 0x0600108F RID: 4239 RVA: 0x0000BBA4 File Offset: 0x00009DA4
+	// Token: 0x060010A9 RID: 4265 RVA: 0x000B04D4 File Offset: 0x000AE6D4
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001090 RID: 4240 RVA: 0x000BC274 File Offset: 0x000BA474
+	// Token: 0x060010AA RID: 4266 RVA: 0x000B04DC File Offset: 0x000AE6DC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001091 RID: 4241 RVA: 0x0000BBAC File Offset: 0x00009DAC
+	// Token: 0x060010AB RID: 4267 RVA: 0x000B05C6 File Offset: 0x000AE7C6
 	private void Update()
 	{
 		if (!this.charS_)
@@ -53,7 +53,7 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001092 RID: 4242 RVA: 0x0000BBC7 File Offset: 0x00009DC7
+	// Token: 0x060010AC RID: 4268 RVA: 0x000B05E1 File Offset: 0x000AE7E1
 	public void Init(characterScript script_)
 	{
 		this.charS_ = script_;
@@ -64,7 +64,7 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001093 RID: 4243 RVA: 0x000BC360 File Offset: 0x000BA560
+	// Token: 0x060010AD RID: 4269 RVA: 0x000B0604 File Offset: 0x000AE804
 	public void UpdateData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.charS_.myName;
@@ -143,7 +143,7 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001094 RID: 4244 RVA: 0x000BC72C File Offset: 0x000BA92C
+	// Token: 0x060010AE RID: 4270 RVA: 0x000B09D0 File Offset: 0x000AEBD0
 	public void SetBalken(GameObject go, float val, int beruf_)
 	{
 		go.transform.Find("Value").GetComponent<Text>().text = this.mS_.Round(val, 1).ToString();
@@ -162,7 +162,7 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.5f;
 	}
 
-	// Token: 0x06001095 RID: 4245 RVA: 0x000BC828 File Offset: 0x000BAA28
+	// Token: 0x060010AF RID: 4271 RVA: 0x000B0ACC File Offset: 0x000AECCC
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -180,33 +180,33 @@ public class Menu_TooltipCharacter : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x0400150B RID: 5387
+	// Token: 0x04001516 RID: 5398
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x0400150C RID: 5388
+	// Token: 0x04001517 RID: 5399
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400150D RID: 5389
+	// Token: 0x04001518 RID: 5400
 	private GameObject main_;
 
-	// Token: 0x0400150E RID: 5390
+	// Token: 0x04001519 RID: 5401
 	private mainScript mS_;
 
-	// Token: 0x0400150F RID: 5391
+	// Token: 0x0400151A RID: 5402
 	private textScript tS_;
 
-	// Token: 0x04001510 RID: 5392
+	// Token: 0x0400151B RID: 5403
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001511 RID: 5393
+	// Token: 0x0400151C RID: 5404
 	private sfxScript sfx_;
 
-	// Token: 0x04001512 RID: 5394
+	// Token: 0x0400151D RID: 5405
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04001513 RID: 5395
+	// Token: 0x0400151E RID: 5406
 	private characterScript charS_;
 
-	// Token: 0x04001514 RID: 5396
+	// Token: 0x0400151F RID: 5407
 	private mapScript mapS_;
 }

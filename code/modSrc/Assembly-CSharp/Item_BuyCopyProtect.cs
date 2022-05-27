@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x020000B5 RID: 181
 public class Item_BuyCopyProtect : MonoBehaviour
 {
-	// Token: 0x0600067C RID: 1660 RVA: 0x00005B53 File Offset: 0x00003D53
+	// Token: 0x06000685 RID: 1669 RVA: 0x0005096B File Offset: 0x0004EB6B
 	private void Start()
 	{
 		if (this.cpS_.inBesitz)
@@ -15,7 +15,7 @@ public class Item_BuyCopyProtect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600067D RID: 1661 RVA: 0x0006324C File Offset: 0x0006144C
+	// Token: 0x06000686 RID: 1670 RVA: 0x0005098C File Offset: 0x0004EB8C
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.cpS_.GetName();
@@ -26,7 +26,7 @@ public class Item_BuyCopyProtect : MonoBehaviour
 		this.tooltip_.c = this.cpS_.GetTooltip();
 	}
 
-	// Token: 0x0600067E RID: 1662 RVA: 0x00063334 File Offset: 0x00061534
+	// Token: 0x06000687 RID: 1671 RVA: 0x00050A74 File Offset: 0x0004EC74
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -44,13 +44,13 @@ public class Item_BuyCopyProtect : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x0600067F RID: 1663 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x06000688 RID: 1672 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000680 RID: 1664 RVA: 0x000633A8 File Offset: 0x000615A8
+	// Token: 0x06000689 RID: 1673 RVA: 0x00050AE8 File Offset: 0x0004ECE8
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

@@ -5,19 +5,19 @@ using UnityEngine.UI;
 // Token: 0x020000F5 RID: 245
 public class Item_MyKonsolen_Umsatz : MonoBehaviour
 {
-	// Token: 0x06000804 RID: 2052 RVA: 0x00006306 File Offset: 0x00004506
+	// Token: 0x0600080D RID: 2061 RVA: 0x000583F7 File Offset: 0x000565F7
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000805 RID: 2053 RVA: 0x00006306 File Offset: 0x00004506
+	// Token: 0x0600080E RID: 2062 RVA: 0x000583F7 File Offset: 0x000565F7
 	private void Update()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000806 RID: 2054 RVA: 0x0006A480 File Offset: 0x00068680
+	// Token: 0x0600080F RID: 2063 RVA: 0x00058400 File Offset: 0x00056600
 	public void SetData()
 	{
 		if (!this.pS_)
@@ -51,13 +51,13 @@ public class Item_MyKonsolen_Umsatz : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000807 RID: 2055 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x06000810 RID: 2064 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000808 RID: 2056 RVA: 0x0006A5C8 File Offset: 0x000687C8
+	// Token: 0x06000811 RID: 2065 RVA: 0x00058548 File Offset: 0x00056748
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

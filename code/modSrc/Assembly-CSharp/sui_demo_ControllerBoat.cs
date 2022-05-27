@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x02000033 RID: 51
 public class sui_demo_ControllerBoat : MonoBehaviour
 {
-	// Token: 0x060000BF RID: 191 RVA: 0x0001C340 File Offset: 0x0001A540
+	// Token: 0x060000BF RID: 191 RVA: 0x00005DE4 File Offset: 0x00003FE4
 	private void Awake()
 	{
 		this.suimonoGameObject = GameObject.Find("SUIMONO_Module");
@@ -23,7 +23,7 @@ public class sui_demo_ControllerBoat : MonoBehaviour
 		this.IC = base.gameObject.GetComponent<sui_demo_InputController>();
 	}
 
-	// Token: 0x060000C0 RID: 192 RVA: 0x0001C3E4 File Offset: 0x0001A5E4
+	// Token: 0x060000C0 RID: 192 RVA: 0x00005E88 File Offset: 0x00004088
 	private void LateUpdate()
 	{
 		if (this.rotationLimits.x != 0f)
@@ -62,7 +62,7 @@ public class sui_demo_ControllerBoat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000C1 RID: 193 RVA: 0x0001C7D8 File Offset: 0x0001A9D8
+	// Token: 0x060000C1 RID: 193 RVA: 0x0000627C File Offset: 0x0000447C
 	private void FixedUpdate()
 	{
 		if (this.isActive)

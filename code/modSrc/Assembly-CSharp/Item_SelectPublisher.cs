@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000099 RID: 153
 public class Item_SelectPublisher : MonoBehaviour
 {
-	// Token: 0x060005DC RID: 1500 RVA: 0x00005672 File Offset: 0x00003872
+	// Token: 0x060005E5 RID: 1509 RVA: 0x0004C456 File Offset: 0x0004A656
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060005DD RID: 1501 RVA: 0x0005F348 File Offset: 0x0005D548
+	// Token: 0x060005E6 RID: 1510 RVA: 0x0004C460 File Offset: 0x0004A660
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.pS_.GetName();
@@ -23,17 +23,47 @@ public class Item_SelectPublisher : MonoBehaviour
 		this.tooltip_.c = this.pS_.GetTooltip();
 		if (this.pS_.IsMyTochterfirma())
 		{
-			base.GetComponent<Image>().color = this.guiMain_.colors[4];
+			if (!this.uiObjects[8].activeSelf)
+			{
+				this.uiObjects[8].SetActive(true);
+			}
+		}
+		else if (this.uiObjects[8].activeSelf)
+		{
+			this.uiObjects[8].SetActive(false);
+		}
+		if (this.pS_.isPlayer)
+		{
+			if (!this.uiObjects[7].activeSelf)
+			{
+				this.uiObjects[7].SetActive(true);
+			}
+		}
+		else if (this.uiObjects[7].activeSelf)
+		{
+			this.uiObjects[7].SetActive(false);
+		}
+		if (!this.pS_.isPlayer && !this.pS_.IsMyTochterfirma())
+		{
+			if (!this.uiObjects[6].activeSelf)
+			{
+				this.uiObjects[6].SetActive(true);
+				return;
+			}
+		}
+		else if (this.uiObjects[6].activeSelf)
+		{
+			this.uiObjects[6].SetActive(false);
 		}
 	}
 
-	// Token: 0x060005DE RID: 1502 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060005E7 RID: 1511 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060005DF RID: 1503 RVA: 0x0000567A File Offset: 0x0000387A
+	// Token: 0x060005E8 RID: 1512 RVA: 0x0004C65E File Offset: 0x0004A85E
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

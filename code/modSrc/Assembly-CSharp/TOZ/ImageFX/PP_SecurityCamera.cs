@@ -3,24 +3,24 @@ using UnityEngine;
 
 namespace TOZ.ImageFX
 {
-	// Token: 0x020003D1 RID: 977
+	// Token: 0x020003D4 RID: 980
 	[ExecuteInEditMode]
 	public sealed class PP_SecurityCamera : PostProcessBase
 	{
-		// Token: 0x0600232B RID: 9003 RVA: 0x00017CED File Offset: 0x00015EED
+		// Token: 0x0600237E RID: 9086 RVA: 0x001709B6 File Offset: 0x0016EBB6
 		private void Awake()
 		{
 			this.shd = Shader.Find("Hidden/TOZ/ImageFX/SecurityCamera");
 		}
 
-		// Token: 0x0600232C RID: 9004 RVA: 0x00017CFF File Offset: 0x00015EFF
+		// Token: 0x0600237F RID: 9087 RVA: 0x001709C8 File Offset: 0x0016EBC8
 		private void OnRenderImage(RenderTexture src, RenderTexture dest)
 		{
 			this.ApplyVariables();
 			Graphics.Blit(src, dest, this.mat);
 		}
 
-		// Token: 0x0600232D RID: 9005 RVA: 0x0016E4B0 File Offset: 0x0016C6B0
+		// Token: 0x06002380 RID: 9088 RVA: 0x001709E0 File Offset: 0x0016EBE0
 		private void ApplyVariables()
 		{
 			this.mat.SetFloat("_Speed", this.Speed);
@@ -29,18 +29,18 @@ namespace TOZ.ImageFX
 			this.mat.SetFloat("_Darkness", this.Darkness);
 		}
 
-		// Token: 0x04002D52 RID: 11602
+		// Token: 0x04002D68 RID: 11624
 		public float Speed = 2f;
 
-		// Token: 0x04002D53 RID: 11603
+		// Token: 0x04002D69 RID: 11625
 		[Range(0f, 1f)]
 		public float Thickness = 0.25f;
 
-		// Token: 0x04002D54 RID: 11604
+		// Token: 0x04002D6A RID: 11626
 		[Range(0f, 1f)]
 		public float Luminance = 0.25f;
 
-		// Token: 0x04002D55 RID: 11605
+		// Token: 0x04002D6B RID: 11627
 		[Range(0f, 1f)]
 		public float Darkness = 0.75f;
 	}

@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020002F4 RID: 756
+// Token: 0x020002F7 RID: 759
 public class moCapChar : MonoBehaviour
 {
-	// Token: 0x06001A61 RID: 6753 RVA: 0x00110870 File Offset: 0x0010EA70
+	// Token: 0x06001AAB RID: 6827 RVA: 0x0010CA54 File Offset: 0x0010AC54
 	private void Start()
 	{
 		this.localPos = base.transform.localPosition;
@@ -38,7 +38,7 @@ public class moCapChar : MonoBehaviour
 		this.skin.material = this.clothScript_.matColor_Skin[UnityEngine.Random.Range(0, this.clothScript_.matColor_Skin.Length)];
 	}
 
-	// Token: 0x06001A62 RID: 6754 RVA: 0x00110990 File Offset: 0x0010EB90
+	// Token: 0x06001AAC RID: 6828 RVA: 0x0010CB74 File Offset: 0x0010AD74
 	private void Update()
 	{
 		if (!this.mS_)
@@ -127,7 +127,7 @@ public class moCapChar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A63 RID: 6755 RVA: 0x00011BBD File Offset: 0x0000FDBD
+	// Token: 0x06001AAD RID: 6829 RVA: 0x0010CF08 File Offset: 0x0010B108
 	private IEnumerator RemoveChar()
 	{
 		yield return new WaitForSeconds(1f);
@@ -136,36 +136,36 @@ public class moCapChar : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x040021AF RID: 8623
+	// Token: 0x040021C9 RID: 8649
 	private Animator charAnimation;
 
-	// Token: 0x040021B0 RID: 8624
+	// Token: 0x040021CA RID: 8650
 	private float timer;
 
-	// Token: 0x040021B1 RID: 8625
+	// Token: 0x040021CB RID: 8651
 	private GameObject main_;
 
-	// Token: 0x040021B2 RID: 8626
+	// Token: 0x040021CC RID: 8652
 	private mainScript mS_;
 
-	// Token: 0x040021B3 RID: 8627
+	// Token: 0x040021CD RID: 8653
 	private clothScript clothScript_;
 
-	// Token: 0x040021B4 RID: 8628
+	// Token: 0x040021CE RID: 8654
 	public SkinnedMeshRenderer skin;
 
-	// Token: 0x040021B5 RID: 8629
+	// Token: 0x040021CF RID: 8655
 	public objectScript oS_;
 
-	// Token: 0x040021B6 RID: 8630
+	// Token: 0x040021D0 RID: 8656
 	private roomScript roomS_;
 
-	// Token: 0x040021B7 RID: 8631
+	// Token: 0x040021D1 RID: 8657
 	private mapScript mapS_;
 
-	// Token: 0x040021B8 RID: 8632
+	// Token: 0x040021D2 RID: 8658
 	private Vector3 localPos;
 
-	// Token: 0x040021B9 RID: 8633
+	// Token: 0x040021D3 RID: 8659
 	private bool hided = true;
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x02000010 RID: 16
 public class CFX_AutoRotate : MonoBehaviour
 {
-	// Token: 0x06000054 RID: 84 RVA: 0x00002359 File Offset: 0x00000559
+	// Token: 0x06000054 RID: 84 RVA: 0x000039F5 File Offset: 0x00001BF5
 	private void Update()
 	{
 		base.transform.Rotate(this.rotation * Time.deltaTime, this.space);

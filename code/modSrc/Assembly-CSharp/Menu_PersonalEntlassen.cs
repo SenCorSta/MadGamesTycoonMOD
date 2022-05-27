@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001E2 RID: 482
+// Token: 0x020001E3 RID: 483
 public class Menu_PersonalEntlassen : MonoBehaviour
 {
-	// Token: 0x0600122B RID: 4651 RVA: 0x0000C9E0 File Offset: 0x0000ABE0
+	// Token: 0x06001246 RID: 4678 RVA: 0x000C18D1 File Offset: 0x000BFAD1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600122C RID: 4652 RVA: 0x000CC684 File Offset: 0x000CA884
+	// Token: 0x06001247 RID: 4679 RVA: 0x000C18DC File Offset: 0x000BFADC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -37,7 +37,7 @@ public class Menu_PersonalEntlassen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600122D RID: 4653 RVA: 0x0000C9E8 File Offset: 0x0000ABE8
+	// Token: 0x06001248 RID: 4680 RVA: 0x000C1986 File Offset: 0x000BFB86
 	public void BUTTON_Abbrechen()
 	{
 		this.listPersonal.Clear();
@@ -45,7 +45,7 @@ public class Menu_PersonalEntlassen : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600122E RID: 4654 RVA: 0x000CC730 File Offset: 0x000CA930
+	// Token: 0x06001249 RID: 4681 RVA: 0x000C19AC File Offset: 0x000BFBAC
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -59,7 +59,7 @@ public class Menu_PersonalEntlassen : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x0600122F RID: 4655 RVA: 0x000CC78C File Offset: 0x000CA98C
+	// Token: 0x0600124A RID: 4682 RVA: 0x000C1A08 File Offset: 0x000BFC08
 	public void AddCharacter(characterScript cS_)
 	{
 		this.FindScripts();
@@ -81,24 +81,24 @@ public class Menu_PersonalEntlassen : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = text2;
 	}
 
-	// Token: 0x040016AD RID: 5805
+	// Token: 0x040016B6 RID: 5814
 	public GameObject[] uiObjects;
 
-	// Token: 0x040016AE RID: 5806
+	// Token: 0x040016B7 RID: 5815
 	private GameObject main_;
 
-	// Token: 0x040016AF RID: 5807
+	// Token: 0x040016B8 RID: 5816
 	private mainScript mS_;
 
-	// Token: 0x040016B0 RID: 5808
+	// Token: 0x040016B9 RID: 5817
 	private textScript tS_;
 
-	// Token: 0x040016B1 RID: 5809
+	// Token: 0x040016BA RID: 5818
 	private GUI_Main guiMain_;
 
-	// Token: 0x040016B2 RID: 5810
+	// Token: 0x040016BB RID: 5819
 	private sfxScript sfx_;
 
-	// Token: 0x040016B3 RID: 5811
+	// Token: 0x040016BC RID: 5820
 	private List<characterScript> listPersonal = new List<characterScript>();
 }

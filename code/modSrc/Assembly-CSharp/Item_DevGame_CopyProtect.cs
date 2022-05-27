@@ -5,19 +5,19 @@ using UnityEngine.UI;
 // Token: 0x02000081 RID: 129
 public class Item_DevGame_CopyProtect : MonoBehaviour
 {
-	// Token: 0x06000543 RID: 1347 RVA: 0x000053FC File Offset: 0x000035FC
+	// Token: 0x0600054C RID: 1356 RVA: 0x000487BE File Offset: 0x000469BE
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000544 RID: 1348 RVA: 0x00005404 File Offset: 0x00003604
+	// Token: 0x0600054D RID: 1357 RVA: 0x000487C6 File Offset: 0x000469C6
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000545 RID: 1349 RVA: 0x0005B93C File Offset: 0x00059B3C
+	// Token: 0x0600054E RID: 1358 RVA: 0x000487D0 File Offset: 0x000469D0
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_DevGame_CopyProtect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000546 RID: 1350 RVA: 0x0005B988 File Offset: 0x00059B88
+	// Token: 0x0600054F RID: 1359 RVA: 0x0004881C File Offset: 0x00046A1C
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.cpS_.GetName();
@@ -49,7 +49,7 @@ public class Item_DevGame_CopyProtect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000547 RID: 1351 RVA: 0x0005BAE8 File Offset: 0x00059CE8
+	// Token: 0x06000550 RID: 1360 RVA: 0x0004897C File Offset: 0x00046B7C
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -67,13 +67,13 @@ public class Item_DevGame_CopyProtect : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x06000548 RID: 1352 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x06000551 RID: 1361 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000549 RID: 1353 RVA: 0x0005BB5C File Offset: 0x00059D5C
+	// Token: 0x06000552 RID: 1362 RVA: 0x000489F0 File Offset: 0x00046BF0
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

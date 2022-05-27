@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200020D RID: 525
+// Token: 0x0200020E RID: 526
 public class Menu_QA_SpielberichtMain : MonoBehaviour
 {
-	// Token: 0x0600141B RID: 5147 RVA: 0x0000DB2B File Offset: 0x0000BD2B
+	// Token: 0x06001438 RID: 5176 RVA: 0x000D2C4C File Offset: 0x000D0E4C
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600141C RID: 5148 RVA: 0x000DC784 File Offset: 0x000DA984
+	// Token: 0x06001439 RID: 5177 RVA: 0x000D2C54 File Offset: 0x000D0E54
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -35,7 +35,7 @@ public class Menu_QA_SpielberichtMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600141D RID: 5149 RVA: 0x0000DB33 File Offset: 0x0000BD33
+	// Token: 0x0600143A RID: 5178 RVA: 0x000D2CFE File Offset: 0x000D0EFE
 	public void Init(roomScript script_)
 	{
 		if (!script_)
@@ -45,7 +45,7 @@ public class Menu_QA_SpielberichtMain : MonoBehaviour
 		this.rS_ = script_;
 	}
 
-	// Token: 0x0600141E RID: 5150 RVA: 0x0000DB45 File Offset: 0x0000BD45
+	// Token: 0x0600143B RID: 5179 RVA: 0x000D2D10 File Offset: 0x000D0F10
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -53,7 +53,7 @@ public class Menu_QA_SpielberichtMain : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600141F RID: 5151 RVA: 0x000DC830 File Offset: 0x000DAA30
+	// Token: 0x0600143C RID: 5180 RVA: 0x000D2D38 File Offset: 0x000D0F38
 	public void BUTTON_NewSpielbericht()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -61,7 +61,7 @@ public class Menu_QA_SpielberichtMain : MonoBehaviour
 		this.guiMain_.uiObjects[181].GetComponent<Menu_QA_NewSpielberichtSelectGame>().Init(this.rS_);
 	}
 
-	// Token: 0x06001420 RID: 5152 RVA: 0x000DC888 File Offset: 0x000DAA88
+	// Token: 0x0600143D RID: 5181 RVA: 0x000D2D90 File Offset: 0x000D0F90
 	public void BUTTON_ShowSpielbericht()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -69,24 +69,24 @@ public class Menu_QA_SpielberichtMain : MonoBehaviour
 		this.guiMain_.uiObjects[182].GetComponent<Menu_QA_ShowSpielberichtSelectGame>().Init();
 	}
 
-	// Token: 0x04001842 RID: 6210
+	// Token: 0x0400184B RID: 6219
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001843 RID: 6211
+	// Token: 0x0400184C RID: 6220
 	private roomScript rS_;
 
-	// Token: 0x04001844 RID: 6212
+	// Token: 0x0400184D RID: 6221
 	private GameObject main_;
 
-	// Token: 0x04001845 RID: 6213
+	// Token: 0x0400184E RID: 6222
 	private mainScript mS_;
 
-	// Token: 0x04001846 RID: 6214
+	// Token: 0x0400184F RID: 6223
 	private textScript tS_;
 
-	// Token: 0x04001847 RID: 6215
+	// Token: 0x04001850 RID: 6224
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001848 RID: 6216
+	// Token: 0x04001851 RID: 6225
 	private sfxScript sfx_;
 }

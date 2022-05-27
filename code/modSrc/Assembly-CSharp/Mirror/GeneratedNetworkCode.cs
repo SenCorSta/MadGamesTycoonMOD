@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Mirror
 {
-	// Token: 0x02000405 RID: 1029
+	// Token: 0x02000408 RID: 1032
 	[StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 	public static class GeneratedNetworkCode
 	{
-		// Token: 0x0600240C RID: 9228 RVA: 0x00172468 File Offset: 0x00170668
+		// Token: 0x0600245F RID: 9311 RVA: 0x001755BC File Offset: 0x001737BC
 		public static ErrorMessage ErrorMessage(NetworkReader reader)
 		{
 			return new ErrorMessage
@@ -17,68 +17,68 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600240D RID: 9229 RVA: 0x00018877 File Offset: 0x00016A77
+		// Token: 0x06002460 RID: 9312 RVA: 0x001755E4 File Offset: 0x001737E4
 		public static void ErrorMessage(NetworkWriter writer, ErrorMessage value)
 		{
 			writer.WriteByte(value.value);
 		}
 
-		// Token: 0x0600240E RID: 9230 RVA: 0x00172490 File Offset: 0x00170690
+		// Token: 0x06002461 RID: 9313 RVA: 0x00175600 File Offset: 0x00173800
 		public static ReadyMessage ReadyMessage(NetworkReader reader)
 		{
 			return default(ReadyMessage);
 		}
 
-		// Token: 0x0600240F RID: 9231 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x06002462 RID: 9314 RVA: 0x00175618 File Offset: 0x00173818
 		public static void ReadyMessage(NetworkWriter writer, ReadyMessage value)
 		{
 		}
 
-		// Token: 0x06002410 RID: 9232 RVA: 0x001724A8 File Offset: 0x001706A8
+		// Token: 0x06002463 RID: 9315 RVA: 0x00175628 File Offset: 0x00173828
 		public static NotReadyMessage NotReadyMessage(NetworkReader reader)
 		{
 			return default(NotReadyMessage);
 		}
 
-		// Token: 0x06002411 RID: 9233 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x06002464 RID: 9316 RVA: 0x00175640 File Offset: 0x00173840
 		public static void NotReadyMessage(NetworkWriter writer, NotReadyMessage value)
 		{
 		}
 
-		// Token: 0x06002412 RID: 9234 RVA: 0x001724C0 File Offset: 0x001706C0
+		// Token: 0x06002465 RID: 9317 RVA: 0x00175650 File Offset: 0x00173850
 		public static AddPlayerMessage AddPlayerMessage(NetworkReader reader)
 		{
 			return default(AddPlayerMessage);
 		}
 
-		// Token: 0x06002413 RID: 9235 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x06002466 RID: 9318 RVA: 0x00175668 File Offset: 0x00173868
 		public static void AddPlayerMessage(NetworkWriter writer, AddPlayerMessage value)
 		{
 		}
 
-		// Token: 0x06002414 RID: 9236 RVA: 0x001724D8 File Offset: 0x001706D8
+		// Token: 0x06002467 RID: 9319 RVA: 0x00175678 File Offset: 0x00173878
 		public static DisconnectMessage DisconnectMessage(NetworkReader reader)
 		{
 			return default(DisconnectMessage);
 		}
 
-		// Token: 0x06002415 RID: 9237 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x06002468 RID: 9320 RVA: 0x00175690 File Offset: 0x00173890
 		public static void DisconnectMessage(NetworkWriter writer, DisconnectMessage value)
 		{
 		}
 
-		// Token: 0x06002416 RID: 9238 RVA: 0x001724F0 File Offset: 0x001706F0
+		// Token: 0x06002469 RID: 9321 RVA: 0x001756A0 File Offset: 0x001738A0
 		public static ConnectMessage ConnectMessage(NetworkReader reader)
 		{
 			return default(ConnectMessage);
 		}
 
-		// Token: 0x06002417 RID: 9239 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x0600246A RID: 9322 RVA: 0x001756B8 File Offset: 0x001738B8
 		public static void ConnectMessage(NetworkWriter writer, ConnectMessage value)
 		{
 		}
 
-		// Token: 0x06002418 RID: 9240 RVA: 0x00172508 File Offset: 0x00170708
+		// Token: 0x0600246B RID: 9323 RVA: 0x001756C8 File Offset: 0x001738C8
 		public static SceneMessage SceneMessage(NetworkReader reader)
 		{
 			return new SceneMessage
@@ -89,13 +89,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002419 RID: 9241 RVA: 0x00018885 File Offset: 0x00016A85
+		// Token: 0x0600246C RID: 9324 RVA: 0x00175710 File Offset: 0x00173910
 		public static SceneOperation SceneOperation(NetworkReader reader)
 		{
 			return (SceneOperation)reader.ReadByte();
 		}
 
-		// Token: 0x0600241A RID: 9242 RVA: 0x0001888D File Offset: 0x00016A8D
+		// Token: 0x0600246D RID: 9325 RVA: 0x00175724 File Offset: 0x00173924
 		public static void SceneMessage(NetworkWriter writer, SceneMessage value)
 		{
 			writer.WriteString(value.sceneName);
@@ -103,13 +103,13 @@ namespace Mirror
 			writer.WriteBoolean(value.customHandling);
 		}
 
-		// Token: 0x0600241B RID: 9243 RVA: 0x000188B3 File Offset: 0x00016AB3
+		// Token: 0x0600246E RID: 9326 RVA: 0x00175758 File Offset: 0x00173958
 		public static void SceneOperation(NetworkWriter writer, SceneOperation value)
 		{
 			writer.WriteByte((byte)value);
 		}
 
-		// Token: 0x0600241C RID: 9244 RVA: 0x00172550 File Offset: 0x00170750
+		// Token: 0x0600246F RID: 9327 RVA: 0x0017576C File Offset: 0x0017396C
 		public static CommandMessage CommandMessage(NetworkReader reader)
 		{
 			return new CommandMessage
@@ -121,7 +121,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600241D RID: 9245 RVA: 0x000188BC File Offset: 0x00016ABC
+		// Token: 0x06002470 RID: 9328 RVA: 0x001757C0 File Offset: 0x001739C0
 		public static void CommandMessage(NetworkWriter writer, CommandMessage value)
 		{
 			writer.WriteUInt32(value.netId);
@@ -130,7 +130,7 @@ namespace Mirror
 			writer.WriteBytesAndSizeSegment(value.payload);
 		}
 
-		// Token: 0x0600241E RID: 9246 RVA: 0x001725A4 File Offset: 0x001707A4
+		// Token: 0x06002471 RID: 9329 RVA: 0x00175800 File Offset: 0x00173A00
 		public static RpcMessage RpcMessage(NetworkReader reader)
 		{
 			return new RpcMessage
@@ -142,7 +142,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600241F RID: 9247 RVA: 0x000188EE File Offset: 0x00016AEE
+		// Token: 0x06002472 RID: 9330 RVA: 0x00175854 File Offset: 0x00173A54
 		public static void RpcMessage(NetworkWriter writer, RpcMessage value)
 		{
 			writer.WriteUInt32(value.netId);
@@ -151,7 +151,7 @@ namespace Mirror
 			writer.WriteBytesAndSizeSegment(value.payload);
 		}
 
-		// Token: 0x06002420 RID: 9248 RVA: 0x001725F8 File Offset: 0x001707F8
+		// Token: 0x06002473 RID: 9331 RVA: 0x00175894 File Offset: 0x00173A94
 		public static SpawnMessage SpawnMessage(NetworkReader reader)
 		{
 			return new SpawnMessage
@@ -168,7 +168,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002421 RID: 9249 RVA: 0x00172698 File Offset: 0x00170898
+		// Token: 0x06002474 RID: 9332 RVA: 0x00175934 File Offset: 0x00173B34
 		public static void SpawnMessage(NetworkWriter writer, SpawnMessage value)
 		{
 			writer.WriteUInt32(value.netId);
@@ -182,29 +182,29 @@ namespace Mirror
 			writer.WriteBytesAndSizeSegment(value.payload);
 		}
 
-		// Token: 0x06002422 RID: 9250 RVA: 0x00172714 File Offset: 0x00170914
+		// Token: 0x06002475 RID: 9333 RVA: 0x001759B0 File Offset: 0x00173BB0
 		public static ObjectSpawnStartedMessage ObjectSpawnStartedMessage(NetworkReader reader)
 		{
 			return default(ObjectSpawnStartedMessage);
 		}
 
-		// Token: 0x06002423 RID: 9251 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x06002476 RID: 9334 RVA: 0x001759C8 File Offset: 0x00173BC8
 		public static void ObjectSpawnStartedMessage(NetworkWriter writer, ObjectSpawnStartedMessage value)
 		{
 		}
 
-		// Token: 0x06002424 RID: 9252 RVA: 0x0017272C File Offset: 0x0017092C
+		// Token: 0x06002477 RID: 9335 RVA: 0x001759D8 File Offset: 0x00173BD8
 		public static ObjectSpawnFinishedMessage ObjectSpawnFinishedMessage(NetworkReader reader)
 		{
 			return default(ObjectSpawnFinishedMessage);
 		}
 
-		// Token: 0x06002425 RID: 9253 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x06002478 RID: 9336 RVA: 0x001759F0 File Offset: 0x00173BF0
 		public static void ObjectSpawnFinishedMessage(NetworkWriter writer, ObjectSpawnFinishedMessage value)
 		{
 		}
 
-		// Token: 0x06002426 RID: 9254 RVA: 0x00172744 File Offset: 0x00170944
+		// Token: 0x06002479 RID: 9337 RVA: 0x00175A00 File Offset: 0x00173C00
 		public static ObjectDestroyMessage ObjectDestroyMessage(NetworkReader reader)
 		{
 			return new ObjectDestroyMessage
@@ -213,13 +213,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002427 RID: 9255 RVA: 0x00018920 File Offset: 0x00016B20
+		// Token: 0x0600247A RID: 9338 RVA: 0x00175A28 File Offset: 0x00173C28
 		public static void ObjectDestroyMessage(NetworkWriter writer, ObjectDestroyMessage value)
 		{
 			writer.WriteUInt32(value.netId);
 		}
 
-		// Token: 0x06002428 RID: 9256 RVA: 0x0017276C File Offset: 0x0017096C
+		// Token: 0x0600247B RID: 9339 RVA: 0x00175A44 File Offset: 0x00173C44
 		public static ObjectHideMessage ObjectHideMessage(NetworkReader reader)
 		{
 			return new ObjectHideMessage
@@ -228,13 +228,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002429 RID: 9257 RVA: 0x0001892E File Offset: 0x00016B2E
+		// Token: 0x0600247C RID: 9340 RVA: 0x00175A6C File Offset: 0x00173C6C
 		public static void ObjectHideMessage(NetworkWriter writer, ObjectHideMessage value)
 		{
 			writer.WriteUInt32(value.netId);
 		}
 
-		// Token: 0x0600242A RID: 9258 RVA: 0x00172794 File Offset: 0x00170994
+		// Token: 0x0600247D RID: 9341 RVA: 0x00175A88 File Offset: 0x00173C88
 		public static UpdateVarsMessage UpdateVarsMessage(NetworkReader reader)
 		{
 			return new UpdateVarsMessage
@@ -244,14 +244,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600242B RID: 9259 RVA: 0x0001893C File Offset: 0x00016B3C
+		// Token: 0x0600247E RID: 9342 RVA: 0x00175AC0 File Offset: 0x00173CC0
 		public static void UpdateVarsMessage(NetworkWriter writer, UpdateVarsMessage value)
 		{
 			writer.WriteUInt32(value.netId);
 			writer.WriteBytesAndSizeSegment(value.payload);
 		}
 
-		// Token: 0x0600242C RID: 9260 RVA: 0x001727CC File Offset: 0x001709CC
+		// Token: 0x0600247F RID: 9343 RVA: 0x00175AE8 File Offset: 0x00173CE8
 		public static NetworkPingMessage NetworkPingMessage(NetworkReader reader)
 		{
 			return new NetworkPingMessage
@@ -260,13 +260,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600242D RID: 9261 RVA: 0x00018956 File Offset: 0x00016B56
+		// Token: 0x06002480 RID: 9344 RVA: 0x00175B10 File Offset: 0x00173D10
 		public static void NetworkPingMessage(NetworkWriter writer, NetworkPingMessage value)
 		{
 			writer.WriteDouble(value.clientTime);
 		}
 
-		// Token: 0x0600242E RID: 9262 RVA: 0x001727F4 File Offset: 0x001709F4
+		// Token: 0x06002481 RID: 9345 RVA: 0x00175B2C File Offset: 0x00173D2C
 		public static NetworkPongMessage NetworkPongMessage(NetworkReader reader)
 		{
 			return new NetworkPongMessage
@@ -276,14 +276,87 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600242F RID: 9263 RVA: 0x00018964 File Offset: 0x00016B64
+		// Token: 0x06002482 RID: 9346 RVA: 0x00175B64 File Offset: 0x00173D64
 		public static void NetworkPongMessage(NetworkWriter writer, NetworkPongMessage value)
 		{
 			writer.WriteDouble(value.clientTime);
 			writer.WriteDouble(value.serverTime);
 		}
 
-		// Token: 0x06002430 RID: 9264 RVA: 0x0017282C File Offset: 0x00170A2C
+		// Token: 0x06002483 RID: 9347 RVA: 0x00175B8C File Offset: 0x00173D8C
+		public static mpCalls.c_Publisher _Read_mpCalls/c_Publisher(NetworkReader reader)
+		{
+			return new mpCalls.c_Publisher
+			{
+				myID = reader.ReadInt32(),
+				isUnlocked = reader.ReadBoolean(),
+				name_EN = reader.ReadString(),
+				name_GE = reader.ReadString(),
+				name_TU = reader.ReadString(),
+				name_CH = reader.ReadString(),
+				name_FR = reader.ReadString(),
+				name_JA = reader.ReadString(),
+				date_year = reader.ReadInt32(),
+				date_month = reader.ReadInt32(),
+				stars = reader.ReadSingle(),
+				logoID = reader.ReadInt32(),
+				developer = reader.ReadBoolean(),
+				publisher = reader.ReadBoolean(),
+				onlyMobile = reader.ReadBoolean(),
+				share = reader.ReadSingle(),
+				fanGenre = reader.ReadInt32(),
+				firmenwert = reader.ReadInt64(),
+				notForSale = reader.ReadBoolean(),
+				lockToBuy = reader.ReadInt32(),
+				isPlayer = reader.ReadBoolean(),
+				ownerID = reader.ReadInt32(),
+				country = reader.ReadInt32(),
+				awards = GeneratedNetworkCode._Read_System.Int32[](reader)
+			};
+		}
+
+		// Token: 0x06002484 RID: 9348 RVA: 0x00175D0C File Offset: 0x00173F0C
+		public static int[] Int32[](NetworkReader reader)
+		{
+			return reader.ReadArray<int>();
+		}
+
+		// Token: 0x06002485 RID: 9349 RVA: 0x00175D20 File Offset: 0x00173F20
+		public static void _Write_mpCalls/c_Publisher(NetworkWriter writer, mpCalls.c_Publisher value)
+		{
+			writer.WriteInt32(value.myID);
+			writer.WriteBoolean(value.isUnlocked);
+			writer.WriteString(value.name_EN);
+			writer.WriteString(value.name_GE);
+			writer.WriteString(value.name_TU);
+			writer.WriteString(value.name_CH);
+			writer.WriteString(value.name_FR);
+			writer.WriteString(value.name_JA);
+			writer.WriteInt32(value.date_year);
+			writer.WriteInt32(value.date_month);
+			writer.WriteSingle(value.stars);
+			writer.WriteInt32(value.logoID);
+			writer.WriteBoolean(value.developer);
+			writer.WriteBoolean(value.publisher);
+			writer.WriteBoolean(value.onlyMobile);
+			writer.WriteSingle(value.share);
+			writer.WriteInt32(value.fanGenre);
+			writer.WriteInt64(value.firmenwert);
+			writer.WriteBoolean(value.notForSale);
+			writer.WriteInt32(value.lockToBuy);
+			writer.WriteBoolean(value.isPlayer);
+			writer.WriteInt32(value.ownerID);
+			writer.WriteInt32(value.country);
+			GeneratedNetworkCode._Write_System.Int32[](writer, value.awards);
+		}
+
+		// Token: 0x06002486 RID: 9350 RVA: 0x00175E50 File Offset: 0x00174050
+		public static void Int32[](NetworkWriter writer, int[] value)
+		{
+			writer.WriteArray(value);
+		}
+
+		// Token: 0x06002487 RID: 9351 RVA: 0x00175E64 File Offset: 0x00174064
 		public static mpCalls.c_Forschung _Read_mpCalls/c_Forschung(NetworkReader reader)
 		{
 			return new mpCalls.c_Forschung
@@ -299,13 +372,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002431 RID: 9265 RVA: 0x0001897E File Offset: 0x00016B7E
+		// Token: 0x06002488 RID: 9352 RVA: 0x00175EF4 File Offset: 0x001740F4
 		public static bool[] Boolean[](NetworkReader reader)
 		{
 			return reader.ReadArray<bool>();
 		}
 
-		// Token: 0x06002432 RID: 9266 RVA: 0x001728BC File Offset: 0x00170ABC
+		// Token: 0x06002489 RID: 9353 RVA: 0x00175F08 File Offset: 0x00174108
 		public static void _Write_mpCalls/c_Forschung(NetworkWriter writer, mpCalls.c_Forschung value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -318,59 +391,13 @@ namespace Mirror
 			GeneratedNetworkCode._Write_System.Boolean[](writer, value.hardwareFeatures);
 		}
 
-		// Token: 0x06002433 RID: 9267 RVA: 0x00018986 File Offset: 0x00016B86
+		// Token: 0x0600248A RID: 9354 RVA: 0x00175F78 File Offset: 0x00174178
 		public static void Boolean[](NetworkWriter writer, bool[] value)
 		{
 			writer.WriteArray(value);
 		}
 
-		// Token: 0x06002434 RID: 9268 RVA: 0x0017292C File Offset: 0x00170B2C
-		public static mpCalls.c_ChangeID _Read_mpCalls/c_ChangeID(NetworkReader reader)
-		{
-			return new mpCalls.c_ChangeID
-			{
-				playerID = reader.ReadInt32(),
-				newID = reader.ReadInt32()
-			};
-		}
-
-		// Token: 0x06002435 RID: 9269 RVA: 0x0001898F File Offset: 0x00016B8F
-		public static void _Write_mpCalls/c_ChangeID(NetworkWriter writer, mpCalls.c_ChangeID value)
-		{
-			writer.WriteInt32(value.playerID);
-			writer.WriteInt32(value.newID);
-		}
-
-		// Token: 0x06002436 RID: 9270 RVA: 0x00172964 File Offset: 0x00170B64
-		public static mpCalls.c_AllAwards _Read_mpCalls/c_AllAwards(NetworkReader reader)
-		{
-			return new mpCalls.c_AllAwards
-			{
-				playerID = reader.ReadInt32(),
-				awards = GeneratedNetworkCode._Read_System.Int32[](reader)
-			};
-		}
-
-		// Token: 0x06002437 RID: 9271 RVA: 0x000189A9 File Offset: 0x00016BA9
-		public static int[] Int32[](NetworkReader reader)
-		{
-			return reader.ReadArray<int>();
-		}
-
-		// Token: 0x06002438 RID: 9272 RVA: 0x000189B1 File Offset: 0x00016BB1
-		public static void _Write_mpCalls/c_AllAwards(NetworkWriter writer, mpCalls.c_AllAwards value)
-		{
-			writer.WriteInt32(value.playerID);
-			GeneratedNetworkCode._Write_System.Int32[](writer, value.awards);
-		}
-
-		// Token: 0x06002439 RID: 9273 RVA: 0x000189CB File Offset: 0x00016BCB
-		public static void Int32[](NetworkWriter writer, int[] value)
-		{
-			writer.WriteArray(value);
-		}
-
-		// Token: 0x0600243A RID: 9274 RVA: 0x0017299C File Offset: 0x00170B9C
+		// Token: 0x0600248B RID: 9355 RVA: 0x00175F8C File Offset: 0x0017418C
 		public static mpCalls.c_Help _Read_mpCalls/c_Help(NetworkReader reader)
 		{
 			return new mpCalls.c_Help
@@ -384,7 +411,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600243B RID: 9275 RVA: 0x00172A10 File Offset: 0x00170C10
+		// Token: 0x0600248C RID: 9356 RVA: 0x00176000 File Offset: 0x00174200
 		public static void _Write_mpCalls/c_Help(NetworkWriter writer, mpCalls.c_Help value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -395,7 +422,7 @@ namespace Mirror
 			writer.WriteInt32(value.valueC);
 		}
 
-		// Token: 0x0600243C RID: 9276 RVA: 0x00172A68 File Offset: 0x00170C68
+		// Token: 0x0600248D RID: 9357 RVA: 0x00176058 File Offset: 0x00174258
 		public static mpCalls.c_ObjectDelete _Read_mpCalls/c_ObjectDelete(NetworkReader reader)
 		{
 			return new mpCalls.c_ObjectDelete
@@ -405,14 +432,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600243D RID: 9277 RVA: 0x000189D4 File Offset: 0x00016BD4
+		// Token: 0x0600248E RID: 9358 RVA: 0x00176090 File Offset: 0x00174290
 		public static void _Write_mpCalls/c_ObjectDelete(NetworkWriter writer, mpCalls.c_ObjectDelete value)
 		{
 			writer.WriteInt32(value.playerID);
 			writer.WriteInt32(value.objectID);
 		}
 
-		// Token: 0x0600243E RID: 9278 RVA: 0x00172AA0 File Offset: 0x00170CA0
+		// Token: 0x0600248F RID: 9359 RVA: 0x001760B8 File Offset: 0x001742B8
 		public static mpCalls.c_Object _Read_mpCalls/c_Object(NetworkReader reader)
 		{
 			return new mpCalls.c_Object
@@ -426,7 +453,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600243F RID: 9279 RVA: 0x00172B14 File Offset: 0x00170D14
+		// Token: 0x06002490 RID: 9360 RVA: 0x0017612C File Offset: 0x0017432C
 		public static void _Write_mpCalls/c_Object(NetworkWriter writer, mpCalls.c_Object value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -437,7 +464,7 @@ namespace Mirror
 			writer.WriteSingle(value.rot);
 		}
 
-		// Token: 0x06002440 RID: 9280 RVA: 0x00172B6C File Offset: 0x00170D6C
+		// Token: 0x06002491 RID: 9361 RVA: 0x00176184 File Offset: 0x00174384
 		public static mpCalls.c_Map _Read_mpCalls/c_Map(NetworkReader reader)
 		{
 			return new mpCalls.c_Map
@@ -452,7 +479,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002441 RID: 9281 RVA: 0x00172BF0 File Offset: 0x00170DF0
+		// Token: 0x06002492 RID: 9362 RVA: 0x00176208 File Offset: 0x00174408
 		public static void _Write_mpCalls/c_Map(NetworkWriter writer, mpCalls.c_Map value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -464,7 +491,7 @@ namespace Mirror
 			writer.WriteByte(value.window);
 		}
 
-		// Token: 0x06002442 RID: 9282 RVA: 0x00172C54 File Offset: 0x00170E54
+		// Token: 0x06002493 RID: 9363 RVA: 0x0017626C File Offset: 0x0017446C
 		public static mpCalls.c_Trend _Read_mpCalls/c_Trend(NetworkReader reader)
 		{
 			return new mpCalls.c_Trend
@@ -477,7 +504,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002443 RID: 9283 RVA: 0x000189EE File Offset: 0x00016BEE
+		// Token: 0x06002494 RID: 9364 RVA: 0x001762D0 File Offset: 0x001744D0
 		public static void _Write_mpCalls/c_Trend(NetworkWriter writer, mpCalls.c_Trend value)
 		{
 			writer.WriteInt32(value.trendWeeks);
@@ -487,7 +514,7 @@ namespace Mirror
 			writer.WriteInt32(value.trendAntiGenre);
 		}
 
-		// Token: 0x06002444 RID: 9284 RVA: 0x00172CB8 File Offset: 0x00170EB8
+		// Token: 0x06002495 RID: 9365 RVA: 0x0017631C File Offset: 0x0017451C
 		public static mpCalls.c_Payment _Read_mpCalls/c_Payment(NetworkReader reader)
 		{
 			return new mpCalls.c_Payment
@@ -499,7 +526,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002445 RID: 9285 RVA: 0x00018A2C File Offset: 0x00016C2C
+		// Token: 0x06002496 RID: 9366 RVA: 0x00176370 File Offset: 0x00174570
 		public static void _Write_mpCalls/c_Payment(NetworkWriter writer, mpCalls.c_Payment value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -508,14 +535,13 @@ namespace Mirror
 			writer.WriteInt32(value.money);
 		}
 
-		// Token: 0x06002446 RID: 9286 RVA: 0x00172D0C File Offset: 0x00170F0C
+		// Token: 0x06002497 RID: 9367 RVA: 0x001763B0 File Offset: 0x001745B0
 		public static mpCalls.c_Engine _Read_mpCalls/c_Engine(NetworkReader reader)
 		{
 			return new mpCalls.c_Engine
 			{
 				myID = reader.ReadInt32(),
-				playerEngine = reader.ReadBoolean(),
-				multiplayerSlot = reader.ReadInt32(),
+				ownerID = reader.ReadInt32(),
 				isUnlocked = reader.ReadBoolean(),
 				gekauft = reader.ReadBoolean(),
 				myName = reader.ReadString(),
@@ -528,12 +554,11 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002447 RID: 9287 RVA: 0x00172DD8 File Offset: 0x00170FD8
+		// Token: 0x06002498 RID: 9368 RVA: 0x00176470 File Offset: 0x00174670
 		public static void _Write_mpCalls/c_Engine(NetworkWriter writer, mpCalls.c_Engine value)
 		{
 			writer.WriteInt32(value.myID);
-			writer.WriteBoolean(value.playerEngine);
-			writer.WriteInt32(value.multiplayerSlot);
+			writer.WriteInt32(value.ownerID);
 			writer.WriteBoolean(value.isUnlocked);
 			writer.WriteBoolean(value.gekauft);
 			writer.WriteString(value.myName);
@@ -545,7 +570,7 @@ namespace Mirror
 			writer.WriteInt32(value.gewinnbeteiligung);
 		}
 
-		// Token: 0x06002448 RID: 9288 RVA: 0x00172E78 File Offset: 0x00171078
+		// Token: 0x06002499 RID: 9369 RVA: 0x00176504 File Offset: 0x00174704
 		public static mpCalls.c_Platform _Read_mpCalls/c_Platform(NetworkReader reader)
 		{
 			return new mpCalls.c_Platform
@@ -555,7 +580,6 @@ namespace Mirror
 				date_month = reader.ReadInt32(),
 				date_year_end = reader.ReadInt32(),
 				date_month_end = reader.ReadInt32(),
-				npc = reader.ReadBoolean(),
 				price = reader.ReadInt32(),
 				dev_costs = reader.ReadInt32(),
 				tech = reader.ReadInt32(),
@@ -591,8 +615,7 @@ namespace Mirror
 				internet = reader.ReadBoolean(),
 				powerFromMarket = reader.ReadSingle(),
 				myName = reader.ReadString(),
-				playerConsole = reader.ReadBoolean(),
-				multiplaySlot = reader.ReadInt32(),
+				ownerID = reader.ReadInt32(),
 				gameID = reader.ReadInt32(),
 				anzController = reader.ReadInt32(),
 				conHueShift = reader.ReadSingle(),
@@ -629,7 +652,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002449 RID: 9289 RVA: 0x00173304 File Offset: 0x00171504
+		// Token: 0x0600249A RID: 9370 RVA: 0x00176974 File Offset: 0x00174B74
 		public static void _Write_mpCalls/c_Platform(NetworkWriter writer, mpCalls.c_Platform value)
 		{
 			writer.WriteInt32(value.myID);
@@ -637,7 +660,6 @@ namespace Mirror
 			writer.WriteInt32(value.date_month);
 			writer.WriteInt32(value.date_year_end);
 			writer.WriteInt32(value.date_month_end);
-			writer.WriteBoolean(value.npc);
 			writer.WriteInt32(value.price);
 			writer.WriteInt32(value.dev_costs);
 			writer.WriteInt32(value.tech);
@@ -673,8 +695,7 @@ namespace Mirror
 			writer.WriteBoolean(value.internet);
 			writer.WriteSingle(value.powerFromMarket);
 			writer.WriteString(value.myName);
-			writer.WriteBoolean(value.playerConsole);
-			writer.WriteInt32(value.multiplaySlot);
+			writer.WriteInt32(value.ownerID);
 			writer.WriteInt32(value.gameID);
 			writer.WriteInt32(value.anzController);
 			writer.WriteSingle(value.conHueShift);
@@ -710,7 +731,7 @@ namespace Mirror
 			writer.WriteInt32(value.performancePoints);
 		}
 
-		// Token: 0x0600244A RID: 9290 RVA: 0x001736A4 File Offset: 0x001718A4
+		// Token: 0x0600249B RID: 9371 RVA: 0x00176CFC File Offset: 0x00174EFC
 		public static mpCalls.c_Chat _Read_mpCalls/c_Chat(NetworkReader reader)
 		{
 			return new mpCalls.c_Chat
@@ -720,14 +741,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600244B RID: 9291 RVA: 0x00018A5E File Offset: 0x00016C5E
+		// Token: 0x0600249C RID: 9372 RVA: 0x00176D34 File Offset: 0x00174F34
 		public static void _Write_mpCalls/c_Chat(NetworkWriter writer, mpCalls.c_Chat value)
 		{
 			writer.WriteInt32(value.playerID);
 			writer.WriteString(value.text);
 		}
 
-		// Token: 0x0600244C RID: 9292 RVA: 0x001736DC File Offset: 0x001718DC
+		// Token: 0x0600249D RID: 9373 RVA: 0x00176D5C File Offset: 0x00174F5C
 		public static mpCalls.c_Command _Read_mpCalls/c_Command(NetworkReader reader)
 		{
 			return new mpCalls.c_Command
@@ -737,14 +758,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600244D RID: 9293 RVA: 0x00018A78 File Offset: 0x00016C78
+		// Token: 0x0600249E RID: 9374 RVA: 0x00176D94 File Offset: 0x00174F94
 		public static void _Write_mpCalls/c_Command(NetworkWriter writer, mpCalls.c_Command value)
 		{
 			writer.WriteInt32(value.playerID);
 			writer.WriteInt32(value.command);
 		}
 
-		// Token: 0x0600244E RID: 9294 RVA: 0x00173714 File Offset: 0x00171914
+		// Token: 0x0600249F RID: 9375 RVA: 0x00176DBC File Offset: 0x00174FBC
 		public static mpCalls.c_Money _Read_mpCalls/c_Money(NetworkReader reader)
 		{
 			return new mpCalls.c_Money
@@ -755,7 +776,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600244F RID: 9295 RVA: 0x00018A92 File Offset: 0x00016C92
+		// Token: 0x060024A0 RID: 9376 RVA: 0x00176E04 File Offset: 0x00175004
 		public static void _Write_mpCalls/c_Money(NetworkWriter writer, mpCalls.c_Money value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -763,32 +784,26 @@ namespace Mirror
 			writer.WriteInt32(value.fans);
 		}
 
-		// Token: 0x06002450 RID: 9296 RVA: 0x0017375C File Offset: 0x0017195C
+		// Token: 0x060024A1 RID: 9377 RVA: 0x00176E38 File Offset: 0x00175038
 		public static mpCalls.c_PlayerInfos _Read_mpCalls/c_PlayerInfos(NetworkReader reader)
 		{
 			return new mpCalls.c_PlayerInfos
 			{
 				playerID = reader.ReadInt32(),
 				playerName = reader.ReadString(),
-				companyName = reader.ReadString(),
-				logo = reader.ReadInt32(),
-				country = reader.ReadInt32(),
 				ready = reader.ReadBoolean()
 			};
 		}
 
-		// Token: 0x06002451 RID: 9297 RVA: 0x001737D0 File Offset: 0x001719D0
+		// Token: 0x060024A2 RID: 9378 RVA: 0x00176E80 File Offset: 0x00175080
 		public static void _Write_mpCalls/c_PlayerInfos(NetworkWriter writer, mpCalls.c_PlayerInfos value)
 		{
 			writer.WriteInt32(value.playerID);
 			writer.WriteString(value.playerName);
-			writer.WriteString(value.companyName);
-			writer.WriteInt32(value.logo);
-			writer.WriteInt32(value.country);
 			writer.WriteBoolean(value.ready);
 		}
 
-		// Token: 0x06002452 RID: 9298 RVA: 0x00173828 File Offset: 0x00171A28
+		// Token: 0x060024A3 RID: 9379 RVA: 0x00176EB4 File Offset: 0x001750B4
 		public static mpCalls.c_DeleteArbeitsmarkt _Read_mpCalls/c_DeleteArbeitsmarkt(NetworkReader reader)
 		{
 			return new mpCalls.c_DeleteArbeitsmarkt
@@ -799,7 +814,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002453 RID: 9299 RVA: 0x00018AB8 File Offset: 0x00016CB8
+		// Token: 0x060024A4 RID: 9380 RVA: 0x00176EFC File Offset: 0x001750FC
 		public static void _Write_mpCalls/c_DeleteArbeitsmarkt(NetworkWriter writer, mpCalls.c_DeleteArbeitsmarkt value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -807,7 +822,7 @@ namespace Mirror
 			writer.WriteBoolean(value.eingestellt);
 		}
 
-		// Token: 0x06002454 RID: 9300 RVA: 0x00173870 File Offset: 0x00171A70
+		// Token: 0x060024A5 RID: 9381 RVA: 0x00176F30 File Offset: 0x00175130
 		public static mpCalls.c_BuyLizenz _Read_mpCalls/c_BuyLizenz(NetworkReader reader)
 		{
 			return new mpCalls.c_BuyLizenz
@@ -817,14 +832,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002455 RID: 9301 RVA: 0x00018ADE File Offset: 0x00016CDE
+		// Token: 0x060024A6 RID: 9382 RVA: 0x00176F68 File Offset: 0x00175168
 		public static void _Write_mpCalls/c_BuyLizenz(NetworkWriter writer, mpCalls.c_BuyLizenz value)
 		{
 			writer.WriteInt32(value.playerID);
 			writer.WriteInt32(value.objectID);
 		}
 
-		// Token: 0x06002456 RID: 9302 RVA: 0x001738A8 File Offset: 0x00171AA8
+		// Token: 0x060024A7 RID: 9383 RVA: 0x00176F90 File Offset: 0x00175190
 		public static mpCalls.c_exklusivKonsolenSells _Read_mpCalls/c_exklusivKonsolenSells(NetworkReader reader)
 		{
 			return new mpCalls.c_exklusivKonsolenSells
@@ -834,14 +849,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002457 RID: 9303 RVA: 0x00018AF8 File Offset: 0x00016CF8
+		// Token: 0x060024A8 RID: 9384 RVA: 0x00176FC8 File Offset: 0x001751C8
 		public static void _Write_mpCalls/c_exklusivKonsolenSells(NetworkWriter writer, mpCalls.c_exklusivKonsolenSells value)
 		{
 			writer.WriteInt32(value.gameID);
 			writer.WriteInt64(value.exklusivKonsolenSells);
 		}
 
-		// Token: 0x06002458 RID: 9304 RVA: 0x001738E0 File Offset: 0x00171AE0
+		// Token: 0x060024A9 RID: 9385 RVA: 0x00176FF0 File Offset: 0x001751F0
 		public static mpCalls.c_GameData _Read_mpCalls/c_GameData(NetworkReader reader)
 		{
 			return new mpCalls.c_GameData
@@ -866,7 +881,6 @@ namespace Mirror
 				bestAbonnements = reader.ReadInt32(),
 				bestChartPosition = reader.ReadInt32(),
 				exklusivKonsolenSells = reader.ReadInt64(),
-				multiplayerSlot = reader.ReadInt32(),
 				ipPunkte = reader.ReadSingle(),
 				pubAngebot = reader.ReadBoolean(),
 				pubAngebot_Weeks = reader.ReadInt32(),
@@ -886,7 +900,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002459 RID: 9305 RVA: 0x00173B24 File Offset: 0x00171D24
+		// Token: 0x060024AA RID: 9386 RVA: 0x00177224 File Offset: 0x00175424
 		public static void _Write_mpCalls/c_GameData(NetworkWriter writer, mpCalls.c_GameData value)
 		{
 			writer.WriteInt32(value.gameID);
@@ -909,7 +923,6 @@ namespace Mirror
 			writer.WriteInt32(value.bestAbonnements);
 			writer.WriteInt32(value.bestChartPosition);
 			writer.WriteInt64(value.exklusivKonsolenSells);
-			writer.WriteInt32(value.multiplayerSlot);
 			writer.WriteSingle(value.ipPunkte);
 			writer.WriteBoolean(value.pubAngebot);
 			writer.WriteInt32(value.pubAngebot_Weeks);
@@ -928,7 +941,7 @@ namespace Mirror
 			writer.WriteString(value.ipName);
 		}
 
-		// Token: 0x0600245A RID: 9306 RVA: 0x00173CF0 File Offset: 0x00171EF0
+		// Token: 0x060024AB RID: 9387 RVA: 0x001773E4 File Offset: 0x001755E4
 		public static mpCalls.c_Game _Read_mpCalls/c_Game(NetworkReader reader)
 		{
 			return new mpCalls.c_Game
@@ -937,7 +950,6 @@ namespace Mirror
 				myName = reader.ReadString(),
 				ipName = reader.ReadString(),
 				playerGame = reader.ReadBoolean(),
-				multiplayerSlot = reader.ReadInt32(),
 				inDevelopment = reader.ReadBoolean(),
 				developerID = reader.ReadInt32(),
 				publisherID = reader.ReadInt32(),
@@ -1071,14 +1083,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600245B RID: 9307 RVA: 0x001744F4 File Offset: 0x001726F4
+		// Token: 0x060024AC RID: 9388 RVA: 0x00177BD8 File Offset: 0x00175DD8
 		public static void _Write_mpCalls/c_Game(NetworkWriter writer, mpCalls.c_Game value)
 		{
 			writer.WriteInt32(value.gameID);
 			writer.WriteString(value.myName);
 			writer.WriteString(value.ipName);
 			writer.WriteBoolean(value.playerGame);
-			writer.WriteInt32(value.multiplayerSlot);
 			writer.WriteBoolean(value.inDevelopment);
 			writer.WriteInt32(value.developerID);
 			writer.WriteInt32(value.publisherID);
@@ -1211,7 +1222,7 @@ namespace Mirror
 			writer.WriteBoolean(value.f2pConverted);
 		}
 
-		// Token: 0x0600245C RID: 9308 RVA: 0x00174B58 File Offset: 0x00172D58
+		// Token: 0x060024AD RID: 9389 RVA: 0x00178230 File Offset: 0x00176430
 		public static mpCalls.s_AddPlayer _Read_mpCalls/s_AddPlayer(NetworkReader reader)
 		{
 			return new mpCalls.s_AddPlayer
@@ -1220,30 +1231,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600245D RID: 9309 RVA: 0x00018B12 File Offset: 0x00016D12
+		// Token: 0x060024AE RID: 9390 RVA: 0x00178258 File Offset: 0x00176458
 		public static void _Write_mpCalls/s_AddPlayer(NetworkWriter writer, mpCalls.s_AddPlayer value)
 		{
 			writer.WriteInt32(value.playerID);
 		}
 
-		// Token: 0x0600245E RID: 9310 RVA: 0x00174B80 File Offset: 0x00172D80
-		public static mpCalls.s_ChangeID _Read_mpCalls/s_ChangeID(NetworkReader reader)
-		{
-			return new mpCalls.s_ChangeID
-			{
-				playerID = reader.ReadInt32(),
-				newID = reader.ReadInt32()
-			};
-		}
-
-		// Token: 0x0600245F RID: 9311 RVA: 0x00018B20 File Offset: 0x00016D20
-		public static void _Write_mpCalls/s_ChangeID(NetworkWriter writer, mpCalls.s_ChangeID value)
-		{
-			writer.WriteInt32(value.playerID);
-			writer.WriteInt32(value.newID);
-		}
-
-		// Token: 0x06002460 RID: 9312 RVA: 0x00174BB8 File Offset: 0x00172DB8
+		// Token: 0x060024AF RID: 9391 RVA: 0x00178274 File Offset: 0x00176474
 		public static mpCalls.s_Forschung _Read_mpCalls/s_Forschung(NetworkReader reader)
 		{
 			return new mpCalls.s_Forschung
@@ -1259,7 +1253,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002461 RID: 9313 RVA: 0x00174C48 File Offset: 0x00172E48
+		// Token: 0x060024B0 RID: 9392 RVA: 0x00178304 File Offset: 0x00176504
 		public static void _Write_mpCalls/s_Forschung(NetworkWriter writer, mpCalls.s_Forschung value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -1272,7 +1266,7 @@ namespace Mirror
 			GeneratedNetworkCode._Write_System.Boolean[](writer, value.hardwareFeatures);
 		}
 
-		// Token: 0x06002462 RID: 9314 RVA: 0x00174CB8 File Offset: 0x00172EB8
+		// Token: 0x060024B1 RID: 9393 RVA: 0x00178374 File Offset: 0x00176574
 		public static mpCalls.s_PlayerLeave _Read_mpCalls/s_PlayerLeave(NetworkReader reader)
 		{
 			return new mpCalls.s_PlayerLeave
@@ -1281,13 +1275,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002463 RID: 9315 RVA: 0x00018B3A File Offset: 0x00016D3A
+		// Token: 0x060024B2 RID: 9394 RVA: 0x0017839C File Offset: 0x0017659C
 		public static void _Write_mpCalls/s_PlayerLeave(NetworkWriter writer, mpCalls.s_PlayerLeave value)
 		{
 			writer.WriteInt32(value.playerID);
 		}
 
-		// Token: 0x06002464 RID: 9316 RVA: 0x00174CE0 File Offset: 0x00172EE0
+		// Token: 0x060024B3 RID: 9395 RVA: 0x001783B8 File Offset: 0x001765B8
 		public static mpCalls.s_GenreBeliebtheit _Read_mpCalls/s_GenreBeliebtheit(NetworkReader reader)
 		{
 			return new mpCalls.s_GenreBeliebtheit
@@ -1296,42 +1290,25 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002465 RID: 9317 RVA: 0x00018B48 File Offset: 0x00016D48
+		// Token: 0x060024B4 RID: 9396 RVA: 0x001783E0 File Offset: 0x001765E0
 		public static float[] Single[](NetworkReader reader)
 		{
 			return reader.ReadArray<float>();
 		}
 
-		// Token: 0x06002466 RID: 9318 RVA: 0x00018B50 File Offset: 0x00016D50
+		// Token: 0x060024B5 RID: 9397 RVA: 0x001783F4 File Offset: 0x001765F4
 		public static void _Write_mpCalls/s_GenreBeliebtheit(NetworkWriter writer, mpCalls.s_GenreBeliebtheit value)
 		{
 			GeneratedNetworkCode._Write_System.Single[](writer, value.genreBeliebtheit);
 		}
 
-		// Token: 0x06002467 RID: 9319 RVA: 0x00018B5E File Offset: 0x00016D5E
+		// Token: 0x060024B6 RID: 9398 RVA: 0x00178410 File Offset: 0x00176610
 		public static void Single[](NetworkWriter writer, float[] value)
 		{
 			writer.WriteArray(value);
 		}
 
-		// Token: 0x06002468 RID: 9320 RVA: 0x00174D08 File Offset: 0x00172F08
-		public static mpCalls.s_AllAwards _Read_mpCalls/s_AllAwards(NetworkReader reader)
-		{
-			return new mpCalls.s_AllAwards
-			{
-				playerID = reader.ReadInt32(),
-				awards = GeneratedNetworkCode._Read_System.Int32[](reader)
-			};
-		}
-
-		// Token: 0x06002469 RID: 9321 RVA: 0x00018B67 File Offset: 0x00016D67
-		public static void _Write_mpCalls/s_AllAwards(NetworkWriter writer, mpCalls.s_AllAwards value)
-		{
-			writer.WriteInt32(value.playerID);
-			GeneratedNetworkCode._Write_System.Int32[](writer, value.awards);
-		}
-
-		// Token: 0x0600246A RID: 9322 RVA: 0x00174D40 File Offset: 0x00172F40
+		// Token: 0x060024B7 RID: 9399 RVA: 0x00178424 File Offset: 0x00176624
 		public static mpCalls.s_GenreCombination _Read_mpCalls/s_GenreCombination(NetworkReader reader)
 		{
 			return new mpCalls.s_GenreCombination
@@ -1341,14 +1318,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600246B RID: 9323 RVA: 0x00018B81 File Offset: 0x00016D81
+		// Token: 0x060024B8 RID: 9400 RVA: 0x0017845C File Offset: 0x0017665C
 		public static void _Write_mpCalls/s_GenreCombination(NetworkWriter writer, mpCalls.s_GenreCombination value)
 		{
 			writer.WriteInt32(value.genreSlot);
 			GeneratedNetworkCode._Write_System.Boolean[](writer, value.genres_COMBINATION);
 		}
 
-		// Token: 0x0600246C RID: 9324 RVA: 0x00174D78 File Offset: 0x00172F78
+		// Token: 0x060024B9 RID: 9401 RVA: 0x00178484 File Offset: 0x00176684
 		public static mpCalls.s_GenreDesign _Read_mpCalls/s_GenreDesign(NetworkReader reader)
 		{
 			return new mpCalls.s_GenreDesign
@@ -1368,7 +1345,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600246D RID: 9325 RVA: 0x00174E44 File Offset: 0x00173044
+		// Token: 0x060024BA RID: 9402 RVA: 0x00178550 File Offset: 0x00176750
 		public static void _Write_mpCalls/s_GenreDesign(NetworkWriter writer, mpCalls.s_GenreDesign value)
 		{
 			writer.WriteInt32(value.genreSlot);
@@ -1385,7 +1362,7 @@ namespace Mirror
 			writer.WriteInt32(value.genres_align2);
 		}
 
-		// Token: 0x0600246E RID: 9326 RVA: 0x00174EE4 File Offset: 0x001730E4
+		// Token: 0x060024BB RID: 9403 RVA: 0x001785F0 File Offset: 0x001767F0
 		public static mpCalls.s_Help _Read_mpCalls/s_Help(NetworkReader reader)
 		{
 			return new mpCalls.s_Help
@@ -1399,7 +1376,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600246F RID: 9327 RVA: 0x00174F58 File Offset: 0x00173158
+		// Token: 0x060024BC RID: 9404 RVA: 0x00178664 File Offset: 0x00176864
 		public static void _Write_mpCalls/s_Help(NetworkWriter writer, mpCalls.s_Help value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -1410,7 +1387,7 @@ namespace Mirror
 			writer.WriteInt32(value.valueC);
 		}
 
-		// Token: 0x06002470 RID: 9328 RVA: 0x00174FB0 File Offset: 0x001731B0
+		// Token: 0x060024BD RID: 9405 RVA: 0x001786BC File Offset: 0x001768BC
 		public static mpCalls.s_ObjectDelete _Read_mpCalls/s_ObjectDelete(NetworkReader reader)
 		{
 			return new mpCalls.s_ObjectDelete
@@ -1420,14 +1397,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002471 RID: 9329 RVA: 0x00018B9B File Offset: 0x00016D9B
+		// Token: 0x060024BE RID: 9406 RVA: 0x001786F4 File Offset: 0x001768F4
 		public static void _Write_mpCalls/s_ObjectDelete(NetworkWriter writer, mpCalls.s_ObjectDelete value)
 		{
 			writer.WriteInt32(value.playerID);
 			writer.WriteInt32(value.objectID);
 		}
 
-		// Token: 0x06002472 RID: 9330 RVA: 0x00174FE8 File Offset: 0x001731E8
+		// Token: 0x060024BF RID: 9407 RVA: 0x0017871C File Offset: 0x0017691C
 		public static mpCalls.s_Object _Read_mpCalls/s_Object(NetworkReader reader)
 		{
 			return new mpCalls.s_Object
@@ -1441,7 +1418,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002473 RID: 9331 RVA: 0x0017505C File Offset: 0x0017325C
+		// Token: 0x060024C0 RID: 9408 RVA: 0x00178790 File Offset: 0x00176990
 		public static void _Write_mpCalls/s_Object(NetworkWriter writer, mpCalls.s_Object value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -1452,7 +1429,7 @@ namespace Mirror
 			writer.WriteSingle(value.rot);
 		}
 
-		// Token: 0x06002474 RID: 9332 RVA: 0x001750B4 File Offset: 0x001732B4
+		// Token: 0x060024C1 RID: 9409 RVA: 0x001787E8 File Offset: 0x001769E8
 		public static mpCalls.s_Map _Read_mpCalls/s_Map(NetworkReader reader)
 		{
 			return new mpCalls.s_Map
@@ -1467,7 +1444,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002475 RID: 9333 RVA: 0x00175138 File Offset: 0x00173338
+		// Token: 0x060024C2 RID: 9410 RVA: 0x0017886C File Offset: 0x00176A6C
 		public static void _Write_mpCalls/s_Map(NetworkWriter writer, mpCalls.s_Map value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -1479,7 +1456,7 @@ namespace Mirror
 			writer.WriteByte(value.window);
 		}
 
-		// Token: 0x06002476 RID: 9334 RVA: 0x0017519C File Offset: 0x0017339C
+		// Token: 0x060024C3 RID: 9411 RVA: 0x001788D0 File Offset: 0x00176AD0
 		public static mpCalls.s_Office _Read_mpCalls/s_Office(NetworkReader reader)
 		{
 			return new mpCalls.s_Office
@@ -1488,13 +1465,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002477 RID: 9335 RVA: 0x00018BB5 File Offset: 0x00016DB5
+		// Token: 0x060024C4 RID: 9412 RVA: 0x001788F8 File Offset: 0x00176AF8
 		public static void _Write_mpCalls/s_Office(NetworkWriter writer, mpCalls.s_Office value)
 		{
 			writer.WriteInt32(value.office);
 		}
 
-		// Token: 0x06002478 RID: 9336 RVA: 0x001751C4 File Offset: 0x001733C4
+		// Token: 0x060024C5 RID: 9413 RVA: 0x00178914 File Offset: 0x00176B14
 		public static mpCalls.s_Difficulty _Read_mpCalls/s_Difficulty(NetworkReader reader)
 		{
 			return new mpCalls.s_Difficulty
@@ -1503,13 +1480,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002479 RID: 9337 RVA: 0x00018BC3 File Offset: 0x00016DC3
+		// Token: 0x060024C6 RID: 9414 RVA: 0x0017893C File Offset: 0x00176B3C
 		public static void _Write_mpCalls/s_Difficulty(NetworkWriter writer, mpCalls.s_Difficulty value)
 		{
 			writer.WriteInt32(value.difficulty);
 		}
 
-		// Token: 0x0600247A RID: 9338 RVA: 0x001751EC File Offset: 0x001733EC
+		// Token: 0x060024C7 RID: 9415 RVA: 0x00178958 File Offset: 0x00176B58
 		public static mpCalls.s_Startjahr _Read_mpCalls/s_Startjahr(NetworkReader reader)
 		{
 			return new mpCalls.s_Startjahr
@@ -1518,13 +1495,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600247B RID: 9339 RVA: 0x00018BD1 File Offset: 0x00016DD1
+		// Token: 0x060024C8 RID: 9416 RVA: 0x00178980 File Offset: 0x00176B80
 		public static void _Write_mpCalls/s_Startjahr(NetworkWriter writer, mpCalls.s_Startjahr value)
 		{
 			writer.WriteInt32(value.startjahr);
 		}
 
-		// Token: 0x0600247C RID: 9340 RVA: 0x00175214 File Offset: 0x00173414
+		// Token: 0x060024C9 RID: 9417 RVA: 0x0017899C File Offset: 0x00176B9C
 		public static mpCalls.s_Spielgeschwindigkeit _Read_mpCalls/s_Spielgeschwindigkeit(NetworkReader reader)
 		{
 			return new mpCalls.s_Spielgeschwindigkeit
@@ -1533,13 +1510,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600247D RID: 9341 RVA: 0x00018BDF File Offset: 0x00016DDF
+		// Token: 0x060024CA RID: 9418 RVA: 0x001789C4 File Offset: 0x00176BC4
 		public static void _Write_mpCalls/s_Spielgeschwindigkeit(NetworkWriter writer, mpCalls.s_Spielgeschwindigkeit value)
 		{
 			writer.WriteInt32(value.gamespeed);
 		}
 
-		// Token: 0x0600247E RID: 9342 RVA: 0x0017523C File Offset: 0x0017343C
+		// Token: 0x060024CB RID: 9419 RVA: 0x001789E0 File Offset: 0x00176BE0
 		public static mpCalls.s_GlobalEvent _Read_mpCalls/s_GlobalEvent(NetworkReader reader)
 		{
 			return new mpCalls.s_GlobalEvent
@@ -1549,14 +1526,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600247F RID: 9343 RVA: 0x00018BED File Offset: 0x00016DED
+		// Token: 0x060024CC RID: 9420 RVA: 0x00178A18 File Offset: 0x00176C18
 		public static void _Write_mpCalls/s_GlobalEvent(NetworkWriter writer, mpCalls.s_GlobalEvent value)
 		{
 			writer.WriteInt32(value.eventID);
 			writer.WriteInt32(value.wochen);
 		}
 
-		// Token: 0x06002480 RID: 9344 RVA: 0x00175274 File Offset: 0x00173474
+		// Token: 0x060024CD RID: 9421 RVA: 0x00178A40 File Offset: 0x00176C40
 		public static mpCalls.s_EngineAbrechnung _Read_mpCalls/s_EngineAbrechnung(NetworkReader reader)
 		{
 			return new mpCalls.s_EngineAbrechnung
@@ -1566,14 +1543,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002481 RID: 9345 RVA: 0x00018C07 File Offset: 0x00016E07
+		// Token: 0x060024CE RID: 9422 RVA: 0x00178A78 File Offset: 0x00176C78
 		public static void _Write_mpCalls/s_EngineAbrechnung(NetworkWriter writer, mpCalls.s_EngineAbrechnung value)
 		{
 			writer.WriteInt32(value.toPlayerID);
 			writer.WriteInt32(value.gameID);
 		}
 
-		// Token: 0x06002482 RID: 9346 RVA: 0x001752AC File Offset: 0x001734AC
+		// Token: 0x060024CF RID: 9423 RVA: 0x00178AA0 File Offset: 0x00176CA0
 		public static mpCalls.s_Awards _Read_mpCalls/s_Awards(NetworkReader reader)
 		{
 			return new mpCalls.s_Awards
@@ -1581,28 +1558,24 @@ namespace Mirror
 				bestGrafik = reader.ReadInt32(),
 				bestSound = reader.ReadInt32(),
 				bestStudio = reader.ReadInt32(),
-				bestStudioPlayer = reader.ReadInt32(),
 				bestPublisher = reader.ReadInt32(),
-				bestPublisherPlayer = reader.ReadInt32(),
 				bestGame = reader.ReadInt32(),
 				badGame = reader.ReadInt32()
 			};
 		}
 
-		// Token: 0x06002483 RID: 9347 RVA: 0x0017533C File Offset: 0x0017353C
+		// Token: 0x060024D0 RID: 9424 RVA: 0x00178B14 File Offset: 0x00176D14
 		public static void _Write_mpCalls/s_Awards(NetworkWriter writer, mpCalls.s_Awards value)
 		{
 			writer.WriteInt32(value.bestGrafik);
 			writer.WriteInt32(value.bestSound);
 			writer.WriteInt32(value.bestStudio);
-			writer.WriteInt32(value.bestStudioPlayer);
 			writer.WriteInt32(value.bestPublisher);
-			writer.WriteInt32(value.bestPublisherPlayer);
 			writer.WriteInt32(value.bestGame);
 			writer.WriteInt32(value.badGame);
 		}
 
-		// Token: 0x06002484 RID: 9348 RVA: 0x001753AC File Offset: 0x001735AC
+		// Token: 0x060024D1 RID: 9425 RVA: 0x00178B6C File Offset: 0x00176D6C
 		public static mpCalls.s_Payment _Read_mpCalls/s_Payment(NetworkReader reader)
 		{
 			return new mpCalls.s_Payment
@@ -1614,7 +1587,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002485 RID: 9349 RVA: 0x00018C21 File Offset: 0x00016E21
+		// Token: 0x060024D2 RID: 9426 RVA: 0x00178BC0 File Offset: 0x00176DC0
 		public static void _Write_mpCalls/s_Payment(NetworkWriter writer, mpCalls.s_Payment value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -1623,14 +1596,13 @@ namespace Mirror
 			writer.WriteInt32(value.money);
 		}
 
-		// Token: 0x06002486 RID: 9350 RVA: 0x00175400 File Offset: 0x00173600
+		// Token: 0x060024D3 RID: 9427 RVA: 0x00178C00 File Offset: 0x00176E00
 		public static mpCalls.s_Engine _Read_mpCalls/s_Engine(NetworkReader reader)
 		{
 			return new mpCalls.s_Engine
 			{
 				engineID = reader.ReadInt32(),
-				playerEngine = reader.ReadBoolean(),
-				multiplayerSlot = reader.ReadInt32(),
+				ownerID = reader.ReadInt32(),
 				isUnlocked = reader.ReadBoolean(),
 				gekauft = reader.ReadBoolean(),
 				myName = reader.ReadString(),
@@ -1643,12 +1615,11 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002487 RID: 9351 RVA: 0x001754CC File Offset: 0x001736CC
+		// Token: 0x060024D4 RID: 9428 RVA: 0x00178CC0 File Offset: 0x00176EC0
 		public static void _Write_mpCalls/s_Engine(NetworkWriter writer, mpCalls.s_Engine value)
 		{
 			writer.WriteInt32(value.engineID);
-			writer.WriteBoolean(value.playerEngine);
-			writer.WriteInt32(value.multiplayerSlot);
+			writer.WriteInt32(value.ownerID);
 			writer.WriteBoolean(value.isUnlocked);
 			writer.WriteBoolean(value.gekauft);
 			writer.WriteString(value.myName);
@@ -1660,7 +1631,7 @@ namespace Mirror
 			writer.WriteInt32(value.gewinnbeteiligung);
 		}
 
-		// Token: 0x06002488 RID: 9352 RVA: 0x0017556C File Offset: 0x0017376C
+		// Token: 0x060024D5 RID: 9429 RVA: 0x00178D54 File Offset: 0x00176F54
 		public static mpCalls.s_Platform _Read_mpCalls/s_Platform(NetworkReader reader)
 		{
 			return new mpCalls.s_Platform
@@ -1670,7 +1641,6 @@ namespace Mirror
 				date_month = reader.ReadInt32(),
 				date_year_end = reader.ReadInt32(),
 				date_month_end = reader.ReadInt32(),
-				npc = reader.ReadBoolean(),
 				price = reader.ReadInt32(),
 				dev_costs = reader.ReadInt32(),
 				tech = reader.ReadInt32(),
@@ -1706,8 +1676,7 @@ namespace Mirror
 				internet = reader.ReadBoolean(),
 				powerFromMarket = reader.ReadSingle(),
 				myName = reader.ReadString(),
-				playerConsole = reader.ReadBoolean(),
-				multiplaySlot = reader.ReadInt32(),
+				ownerID = reader.ReadInt32(),
 				gameID = reader.ReadInt32(),
 				anzController = reader.ReadInt32(),
 				conHueShift = reader.ReadSingle(),
@@ -1744,7 +1713,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002489 RID: 9353 RVA: 0x001759F8 File Offset: 0x00173BF8
+		// Token: 0x060024D6 RID: 9430 RVA: 0x001791C4 File Offset: 0x001773C4
 		public static void _Write_mpCalls/s_Platform(NetworkWriter writer, mpCalls.s_Platform value)
 		{
 			writer.WriteInt32(value.myID);
@@ -1752,7 +1721,6 @@ namespace Mirror
 			writer.WriteInt32(value.date_month);
 			writer.WriteInt32(value.date_year_end);
 			writer.WriteInt32(value.date_month_end);
-			writer.WriteBoolean(value.npc);
 			writer.WriteInt32(value.price);
 			writer.WriteInt32(value.dev_costs);
 			writer.WriteInt32(value.tech);
@@ -1788,8 +1756,7 @@ namespace Mirror
 			writer.WriteBoolean(value.internet);
 			writer.WriteSingle(value.powerFromMarket);
 			writer.WriteString(value.myName);
-			writer.WriteBoolean(value.playerConsole);
-			writer.WriteInt32(value.multiplaySlot);
+			writer.WriteInt32(value.ownerID);
 			writer.WriteInt32(value.gameID);
 			writer.WriteInt32(value.anzController);
 			writer.WriteSingle(value.conHueShift);
@@ -1825,7 +1792,7 @@ namespace Mirror
 			writer.WriteInt32(value.performancePoints);
 		}
 
-		// Token: 0x0600248A RID: 9354 RVA: 0x00175D98 File Offset: 0x00173F98
+		// Token: 0x060024D7 RID: 9431 RVA: 0x0017954C File Offset: 0x0017774C
 		public static mpCalls.s_PlatformData _Read_mpCalls/s_PlatformData(NetworkReader reader)
 		{
 			return new mpCalls.s_PlatformData
@@ -1838,7 +1805,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600248B RID: 9355 RVA: 0x00018C53 File Offset: 0x00016E53
+		// Token: 0x060024D8 RID: 9432 RVA: 0x001795B0 File Offset: 0x001777B0
 		public static void _Write_mpCalls/s_PlatformData(NetworkWriter writer, mpCalls.s_PlatformData value)
 		{
 			writer.WriteInt32(value.platformID);
@@ -1848,7 +1815,7 @@ namespace Mirror
 			writer.WriteInt32(value.date_year_end);
 		}
 
-		// Token: 0x0600248C RID: 9356 RVA: 0x00175DFC File Offset: 0x00173FFC
+		// Token: 0x060024D9 RID: 9433 RVA: 0x001795FC File Offset: 0x001777FC
 		public static mpCalls.s_Chat _Read_mpCalls/s_Chat(NetworkReader reader)
 		{
 			return new mpCalls.s_Chat
@@ -1858,14 +1825,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600248D RID: 9357 RVA: 0x00018C91 File Offset: 0x00016E91
+		// Token: 0x060024DA RID: 9434 RVA: 0x00179634 File Offset: 0x00177834
 		public static void _Write_mpCalls/s_Chat(NetworkWriter writer, mpCalls.s_Chat value)
 		{
 			writer.WriteInt32(value.playerID);
 			writer.WriteString(value.text);
 		}
 
-		// Token: 0x0600248E RID: 9358 RVA: 0x00175E34 File Offset: 0x00174034
+		// Token: 0x060024DB RID: 9435 RVA: 0x0017965C File Offset: 0x0017785C
 		public static mpCalls.s_Money _Read_mpCalls/s_Money(NetworkReader reader)
 		{
 			return new mpCalls.s_Money
@@ -1876,7 +1843,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600248F RID: 9359 RVA: 0x00018CAB File Offset: 0x00016EAB
+		// Token: 0x060024DC RID: 9436 RVA: 0x001796A4 File Offset: 0x001778A4
 		public static void _Write_mpCalls/s_Money(NetworkWriter writer, mpCalls.s_Money value)
 		{
 			writer.WriteInt32(value.playerID);
@@ -1884,7 +1851,7 @@ namespace Mirror
 			writer.WriteInt32(value.fans);
 		}
 
-		// Token: 0x06002490 RID: 9360 RVA: 0x00175E7C File Offset: 0x0017407C
+		// Token: 0x060024DD RID: 9437 RVA: 0x001796D8 File Offset: 0x001778D8
 		public static mpCalls.s_AutoPause _Read_mpCalls/s_AutoPause(NetworkReader reader)
 		{
 			return new mpCalls.s_AutoPause
@@ -1894,14 +1861,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002491 RID: 9361 RVA: 0x00018CD1 File Offset: 0x00016ED1
+		// Token: 0x060024DE RID: 9438 RVA: 0x00179710 File Offset: 0x00177910
 		public static void _Write_mpCalls/s_AutoPause(NetworkWriter writer, mpCalls.s_AutoPause value)
 		{
 			writer.WriteInt32(value.playerID);
 			writer.WriteBoolean(value.pause);
 		}
 
-		// Token: 0x06002492 RID: 9362 RVA: 0x00175EB4 File Offset: 0x001740B4
+		// Token: 0x060024DF RID: 9439 RVA: 0x00179738 File Offset: 0x00177938
 		public static mpCalls.s_Genres _Read_mpCalls/s_Genres(NetworkReader reader)
 		{
 			return new mpCalls.s_Genres
@@ -1962,13 +1929,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002493 RID: 9363 RVA: 0x00018CEB File Offset: 0x00016EEB
+		// Token: 0x060024E0 RID: 9440 RVA: 0x00179A6C File Offset: 0x00177C6C
 		public static string[] String[](NetworkReader reader)
 		{
 			return reader.ReadArray<string>();
 		}
 
-		// Token: 0x06002494 RID: 9364 RVA: 0x001761E8 File Offset: 0x001743E8
+		// Token: 0x060024E1 RID: 9441 RVA: 0x00179A80 File Offset: 0x00177C80
 		public static void _Write_mpCalls/s_Genres(NetworkWriter writer, mpCalls.s_Genres value)
 		{
 			GeneratedNetworkCode._Write_System.Single[](writer, value.genres_BELIEBTHEIT);
@@ -2026,13 +1993,13 @@ namespace Mirror
 			GeneratedNetworkCode._Write_System.Int32[](writer, value.genres_MARKT);
 		}
 
-		// Token: 0x06002495 RID: 9365 RVA: 0x00018CF3 File Offset: 0x00016EF3
+		// Token: 0x060024E2 RID: 9442 RVA: 0x00179D0C File Offset: 0x00177F0C
 		public static void String[](NetworkWriter writer, string[] value)
 		{
 			writer.WriteArray(value);
 		}
 
-		// Token: 0x06002496 RID: 9366 RVA: 0x00176474 File Offset: 0x00174674
+		// Token: 0x060024E3 RID: 9443 RVA: 0x00179D20 File Offset: 0x00177F20
 		public static mpCalls.s_GameplayFeatures _Read_mpCalls/s_GameplayFeatures(NetworkReader reader)
 		{
 			return new mpCalls.s_GameplayFeatures
@@ -2089,7 +2056,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002497 RID: 9367 RVA: 0x0017676C File Offset: 0x0017496C
+		// Token: 0x060024E4 RID: 9444 RVA: 0x0017A018 File Offset: 0x00178218
 		public static void _Write_mpCalls/s_GameplayFeatures(NetworkWriter writer, mpCalls.s_GameplayFeatures value)
 		{
 			GeneratedNetworkCode._Write_System.Int32[](writer, value.gameplayFeatures_TYP);
@@ -2143,7 +2110,7 @@ namespace Mirror
 			GeneratedNetworkCode._Write_System.String[](writer, value.gameplayFeatures_DESC_PL);
 		}
 
-		// Token: 0x06002498 RID: 9368 RVA: 0x001769C8 File Offset: 0x00174BC8
+		// Token: 0x060024E5 RID: 9445 RVA: 0x0017A274 File Offset: 0x00178474
 		public static mpCalls.s_EngineFeatures _Read_mpCalls/s_EngineFeatures(NetworkReader reader)
 		{
 			return new mpCalls.s_EngineFeatures
@@ -2198,7 +2165,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x06002499 RID: 9369 RVA: 0x00176CA4 File Offset: 0x00174EA4
+		// Token: 0x060024E6 RID: 9446 RVA: 0x0017A550 File Offset: 0x00178750
 		public static void _Write_mpCalls/s_EngineFeatures(NetworkWriter writer, mpCalls.s_EngineFeatures value)
 		{
 			GeneratedNetworkCode._Write_System.Int32[](writer, value.engineFeatures_TYP);
@@ -2250,7 +2217,7 @@ namespace Mirror
 			GeneratedNetworkCode._Write_System.String[](writer, value.engineFeatures_DESC_PL);
 		}
 
-		// Token: 0x0600249A RID: 9370 RVA: 0x00176EE8 File Offset: 0x001750E8
+		// Token: 0x060024E7 RID: 9447 RVA: 0x0017A794 File Offset: 0x00178994
 		public static mpCalls.s_HardwareFeatures _Read_mpCalls/s_HardwareFeatures(NetworkReader reader)
 		{
 			return new mpCalls.s_HardwareFeatures
@@ -2302,7 +2269,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600249B RID: 9371 RVA: 0x00177194 File Offset: 0x00175394
+		// Token: 0x060024E8 RID: 9448 RVA: 0x0017AA40 File Offset: 0x00178C40
 		public static void _Write_mpCalls/s_HardwareFeatures(NetworkWriter writer, mpCalls.s_HardwareFeatures value)
 		{
 			GeneratedNetworkCode._Write_System.String[](writer, value.hardFeat_ICONFILE);
@@ -2351,7 +2318,7 @@ namespace Mirror
 			GeneratedNetworkCode._Write_System.String[](writer, value.hardFeat_DESC_PL);
 		}
 
-		// Token: 0x0600249C RID: 9372 RVA: 0x001773B4 File Offset: 0x001755B4
+		// Token: 0x060024E9 RID: 9449 RVA: 0x0017AC60 File Offset: 0x00178E60
 		public static mpCalls.s_Hardware _Read_mpCalls/s_Hardware(NetworkReader reader)
 		{
 			return new mpCalls.s_Hardware
@@ -2405,7 +2372,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600249D RID: 9373 RVA: 0x00177680 File Offset: 0x00175880
+		// Token: 0x060024EA RID: 9450 RVA: 0x0017AF2C File Offset: 0x0017912C
 		public static void _Write_mpCalls/s_Hardware(NetworkWriter writer, mpCalls.s_Hardware value)
 		{
 			GeneratedNetworkCode._Write_System.String[](writer, value.hardware_ICONFILE);
@@ -2456,7 +2423,7 @@ namespace Mirror
 			GeneratedNetworkCode._Write_System.String[](writer, value.hardware_DESC_PL);
 		}
 
-		// Token: 0x0600249E RID: 9374 RVA: 0x001778B8 File Offset: 0x00175AB8
+		// Token: 0x060024EB RID: 9451 RVA: 0x0017B164 File Offset: 0x00179364
 		public static mpCalls.s_AntiCheat _Read_mpCalls/s_AntiCheat(NetworkReader reader)
 		{
 			return new mpCalls.s_AntiCheat
@@ -2481,7 +2448,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x0600249F RID: 9375 RVA: 0x001779D0 File Offset: 0x00175BD0
+		// Token: 0x060024EC RID: 9452 RVA: 0x0017B27C File Offset: 0x0017947C
 		public static void _Write_mpCalls/s_AntiCheat(NetworkWriter writer, mpCalls.s_AntiCheat value)
 		{
 			writer.WriteInt32(value.myID);
@@ -2503,7 +2470,7 @@ namespace Mirror
 			writer.WriteBoolean(value.neverLooseEffect);
 		}
 
-		// Token: 0x060024A0 RID: 9376 RVA: 0x00177AAC File Offset: 0x00175CAC
+		// Token: 0x060024ED RID: 9453 RVA: 0x0017B358 File Offset: 0x00179558
 		public static mpCalls.s_CopyProtect _Read_mpCalls/s_CopyProtect(NetworkReader reader)
 		{
 			return new mpCalls.s_CopyProtect
@@ -2528,7 +2495,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024A1 RID: 9377 RVA: 0x00177BC4 File Offset: 0x00175DC4
+		// Token: 0x060024EE RID: 9454 RVA: 0x0017B470 File Offset: 0x00179670
 		public static void _Write_mpCalls/s_CopyProtect(NetworkWriter writer, mpCalls.s_CopyProtect value)
 		{
 			writer.WriteInt32(value.myID);
@@ -2550,14 +2517,13 @@ namespace Mirror
 			writer.WriteBoolean(value.neverLooseEffect);
 		}
 
-		// Token: 0x060024A2 RID: 9378 RVA: 0x00177CA0 File Offset: 0x00175EA0
+		// Token: 0x060024EF RID: 9455 RVA: 0x0017B54C File Offset: 0x0017974C
 		public static mpCalls.s_NpcEngine _Read_mpCalls/s_NpcEngine(NetworkReader reader)
 		{
 			return new mpCalls.s_NpcEngine
 			{
 				myID = reader.ReadInt32(),
-				playerEngine = reader.ReadBoolean(),
-				multiplayerSlot = reader.ReadInt32(),
+				ownerID = reader.ReadInt32(),
 				isUnlocked = reader.ReadBoolean(),
 				gekauft = reader.ReadBoolean(),
 				myName = reader.ReadString(),
@@ -2590,12 +2556,11 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024A3 RID: 9379 RVA: 0x00177E98 File Offset: 0x00176098
+		// Token: 0x060024F0 RID: 9456 RVA: 0x0017B738 File Offset: 0x00179938
 		public static void _Write_mpCalls/s_NpcEngine(NetworkWriter writer, mpCalls.s_NpcEngine value)
 		{
 			writer.WriteInt32(value.myID);
-			writer.WriteBoolean(value.playerEngine);
-			writer.WriteInt32(value.multiplayerSlot);
+			writer.WriteInt32(value.ownerID);
 			writer.WriteBoolean(value.isUnlocked);
 			writer.WriteBoolean(value.gekauft);
 			writer.WriteString(value.myName);
@@ -2627,34 +2592,36 @@ namespace Mirror
 			writer.WriteBoolean(value.archiv_engine);
 		}
 
-		// Token: 0x060024A4 RID: 9380 RVA: 0x00178028 File Offset: 0x00176228
+		// Token: 0x060024F1 RID: 9457 RVA: 0x0017B8BC File Offset: 0x00179ABC
 		public static mpCalls.s_Firmenwert _Read_mpCalls/s_Firmenwert(NetworkReader reader)
 		{
 			return new mpCalls.s_Firmenwert
 			{
+				publisherID = GeneratedNetworkCode._Read_System.Int32[](reader),
 				firmenwert = GeneratedNetworkCode._Read_System.Int64[](reader)
 			};
 		}
 
-		// Token: 0x060024A5 RID: 9381 RVA: 0x00018CFC File Offset: 0x00016EFC
+		// Token: 0x060024F2 RID: 9458 RVA: 0x0017B8F4 File Offset: 0x00179AF4
 		public static long[] Int64[](NetworkReader reader)
 		{
 			return reader.ReadArray<long>();
 		}
 
-		// Token: 0x060024A6 RID: 9382 RVA: 0x00018D04 File Offset: 0x00016F04
+		// Token: 0x060024F3 RID: 9459 RVA: 0x0017B908 File Offset: 0x00179B08
 		public static void _Write_mpCalls/s_Firmenwert(NetworkWriter writer, mpCalls.s_Firmenwert value)
 		{
+			GeneratedNetworkCode._Write_System.Int32[](writer, value.publisherID);
 			GeneratedNetworkCode._Write_System.Int64[](writer, value.firmenwert);
 		}
 
-		// Token: 0x060024A7 RID: 9383 RVA: 0x00018D12 File Offset: 0x00016F12
+		// Token: 0x060024F4 RID: 9460 RVA: 0x0017B930 File Offset: 0x00179B30
 		public static void Int64[](NetworkWriter writer, long[] value)
 		{
 			writer.WriteArray(value);
 		}
 
-		// Token: 0x060024A8 RID: 9384 RVA: 0x00178050 File Offset: 0x00176250
+		// Token: 0x060024F5 RID: 9461 RVA: 0x0017B944 File Offset: 0x00179B44
 		public static mpCalls.s_Publisher _Read_mpCalls/s_Publisher(NetworkReader reader)
 		{
 			return new mpCalls.s_Publisher
@@ -2678,11 +2645,15 @@ namespace Mirror
 				fanGenre = reader.ReadInt32(),
 				firmenwert = reader.ReadInt64(),
 				notForSale = reader.ReadBoolean(),
-				lockToBuy = reader.ReadInt32()
+				lockToBuy = reader.ReadInt32(),
+				isPlayer = reader.ReadBoolean(),
+				ownerID = reader.ReadInt32(),
+				country = reader.ReadInt32(),
+				awards = GeneratedNetworkCode._Read_System.Int32[](reader)
 			};
 		}
 
-		// Token: 0x060024A9 RID: 9385 RVA: 0x00178194 File Offset: 0x00176394
+		// Token: 0x060024F6 RID: 9462 RVA: 0x0017BAC4 File Offset: 0x00179CC4
 		public static void _Write_mpCalls/s_Publisher(NetworkWriter writer, mpCalls.s_Publisher value)
 		{
 			writer.WriteInt32(value.myID);
@@ -2705,9 +2676,13 @@ namespace Mirror
 			writer.WriteInt64(value.firmenwert);
 			writer.WriteBoolean(value.notForSale);
 			writer.WriteInt32(value.lockToBuy);
+			writer.WriteBoolean(value.isPlayer);
+			writer.WriteInt32(value.ownerID);
+			writer.WriteInt32(value.country);
+			GeneratedNetworkCode._Write_System.Int32[](writer, value.awards);
 		}
 
-		// Token: 0x060024AA RID: 9386 RVA: 0x00178294 File Offset: 0x00176494
+		// Token: 0x060024F7 RID: 9463 RVA: 0x0017BBF4 File Offset: 0x00179DF4
 		public static mpCalls.s_exklusivKonsolenSells _Read_mpCalls/s_exklusivKonsolenSells(NetworkReader reader)
 		{
 			return new mpCalls.s_exklusivKonsolenSells
@@ -2717,14 +2692,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024AB RID: 9387 RVA: 0x00018D1B File Offset: 0x00016F1B
+		// Token: 0x060024F8 RID: 9464 RVA: 0x0017BC2C File Offset: 0x00179E2C
 		public static void _Write_mpCalls/s_exklusivKonsolenSells(NetworkWriter writer, mpCalls.s_exklusivKonsolenSells value)
 		{
 			writer.WriteInt32(value.gameID);
 			writer.WriteInt64(value.exklusivKonsolenSells);
 		}
 
-		// Token: 0x060024AC RID: 9388 RVA: 0x001782CC File Offset: 0x001764CC
+		// Token: 0x060024F9 RID: 9465 RVA: 0x0017BC54 File Offset: 0x00179E54
 		public static mpCalls.s_GameData _Read_mpCalls/s_GameData(NetworkReader reader)
 		{
 			return new mpCalls.s_GameData
@@ -2749,7 +2724,6 @@ namespace Mirror
 				bestAbonnements = reader.ReadInt32(),
 				bestChartPosition = reader.ReadInt32(),
 				exklusivKonsolenSells = reader.ReadInt64(),
-				multiplayerSlot = reader.ReadInt32(),
 				ipPunkte = reader.ReadSingle(),
 				pubAngebot = reader.ReadBoolean(),
 				pubAngebot_Weeks = reader.ReadInt32(),
@@ -2770,7 +2744,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024AD RID: 9389 RVA: 0x00178520 File Offset: 0x00176720
+		// Token: 0x060024FA RID: 9466 RVA: 0x0017BE98 File Offset: 0x0017A098
 		public static void _Write_mpCalls/s_GameData(NetworkWriter writer, mpCalls.s_GameData value)
 		{
 			writer.WriteInt32(value.gameID);
@@ -2793,7 +2767,6 @@ namespace Mirror
 			writer.WriteInt32(value.bestAbonnements);
 			writer.WriteInt32(value.bestChartPosition);
 			writer.WriteInt64(value.exklusivKonsolenSells);
-			writer.WriteInt32(value.multiplayerSlot);
 			writer.WriteSingle(value.ipPunkte);
 			writer.WriteBoolean(value.pubAngebot);
 			writer.WriteInt32(value.pubAngebot_Weeks);
@@ -2813,7 +2786,7 @@ namespace Mirror
 			writer.WriteInt32(value.lastChartPosition);
 		}
 
-		// Token: 0x060024AE RID: 9390 RVA: 0x001786F8 File Offset: 0x001768F8
+		// Token: 0x060024FB RID: 9467 RVA: 0x0017C064 File Offset: 0x0017A264
 		public static mpCalls.s_Game _Read_mpCalls/s_Game(NetworkReader reader)
 		{
 			return new mpCalls.s_Game
@@ -2822,7 +2795,6 @@ namespace Mirror
 				myName = reader.ReadString(),
 				ipName = reader.ReadString(),
 				playerGame = reader.ReadBoolean(),
-				multiplayerSlot = reader.ReadInt32(),
 				inDevelopment = reader.ReadBoolean(),
 				developerID = reader.ReadInt32(),
 				publisherID = reader.ReadInt32(),
@@ -2956,14 +2928,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024AF RID: 9391 RVA: 0x00178EFC File Offset: 0x001770FC
+		// Token: 0x060024FC RID: 9468 RVA: 0x0017C858 File Offset: 0x0017AA58
 		public static void _Write_mpCalls/s_Game(NetworkWriter writer, mpCalls.s_Game value)
 		{
 			writer.WriteInt32(value.gameID);
 			writer.WriteString(value.myName);
 			writer.WriteString(value.ipName);
 			writer.WriteBoolean(value.playerGame);
-			writer.WriteInt32(value.multiplayerSlot);
 			writer.WriteBoolean(value.inDevelopment);
 			writer.WriteInt32(value.developerID);
 			writer.WriteInt32(value.publisherID);
@@ -3096,7 +3067,7 @@ namespace Mirror
 			writer.WriteBoolean(value.f2pConverted);
 		}
 
-		// Token: 0x060024B0 RID: 9392 RVA: 0x00179560 File Offset: 0x00177760
+		// Token: 0x060024FD RID: 9469 RVA: 0x0017CEB0 File Offset: 0x0017B0B0
 		public static mpCalls.s_Lizenz _Read_mpCalls/s_Lizenz(NetworkReader reader)
 		{
 			return new mpCalls.s_Lizenz
@@ -3107,7 +3078,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024B1 RID: 9393 RVA: 0x00018D35 File Offset: 0x00016F35
+		// Token: 0x060024FE RID: 9470 RVA: 0x0017CEF8 File Offset: 0x0017B0F8
 		public static void _Write_mpCalls/s_Lizenz(NetworkWriter writer, mpCalls.s_Lizenz value)
 		{
 			writer.WriteInt32(value.lizenzID);
@@ -3115,7 +3086,7 @@ namespace Mirror
 			writer.WriteSingle(value.quality);
 		}
 
-		// Token: 0x060024B2 RID: 9394 RVA: 0x001795A8 File Offset: 0x001777A8
+		// Token: 0x060024FF RID: 9471 RVA: 0x0017CF2C File Offset: 0x0017B12C
 		public static mpCalls.s_Trend _Read_mpCalls/s_Trend(NetworkReader reader)
 		{
 			return new mpCalls.s_Trend
@@ -3132,7 +3103,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024B3 RID: 9395 RVA: 0x00179648 File Offset: 0x00177848
+		// Token: 0x06002500 RID: 9472 RVA: 0x0017CFCC File Offset: 0x0017B1CC
 		public static void _Write_mpCalls/s_Trend(NetworkWriter writer, mpCalls.s_Trend value)
 		{
 			writer.WriteInt32(value.trendWeeks);
@@ -3146,7 +3117,7 @@ namespace Mirror
 			writer.WriteInt32(value.trendNextAntiTheme);
 		}
 
-		// Token: 0x060024B4 RID: 9396 RVA: 0x001796C4 File Offset: 0x001778C4
+		// Token: 0x06002501 RID: 9473 RVA: 0x0017D048 File Offset: 0x0017B248
 		public static mpCalls.s_GameSpeed _Read_mpCalls/s_GameSpeed(NetworkReader reader)
 		{
 			return new mpCalls.s_GameSpeed
@@ -3155,13 +3126,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024B5 RID: 9397 RVA: 0x00018D5B File Offset: 0x00016F5B
+		// Token: 0x06002502 RID: 9474 RVA: 0x0017D070 File Offset: 0x0017B270
 		public static void _Write_mpCalls/s_GameSpeed(NetworkWriter writer, mpCalls.s_GameSpeed value)
 		{
 			writer.WriteInt32(value.speed);
 		}
 
-		// Token: 0x060024B6 RID: 9398 RVA: 0x001796EC File Offset: 0x001778EC
+		// Token: 0x06002503 RID: 9475 RVA: 0x0017D08C File Offset: 0x0017B28C
 		public static mpCalls.s_Command _Read_mpCalls/s_Command(NetworkReader reader)
 		{
 			return new mpCalls.s_Command
@@ -3170,13 +3141,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024B7 RID: 9399 RVA: 0x00018D69 File Offset: 0x00016F69
+		// Token: 0x06002504 RID: 9476 RVA: 0x0017D0B4 File Offset: 0x0017B2B4
 		public static void _Write_mpCalls/s_Command(NetworkWriter writer, mpCalls.s_Command value)
 		{
 			writer.WriteInt32(value.command);
 		}
 
-		// Token: 0x060024B8 RID: 9400 RVA: 0x00179714 File Offset: 0x00177914
+		// Token: 0x06002505 RID: 9477 RVA: 0x0017D0D0 File Offset: 0x0017B2D0
 		public static mpCalls.s_Save _Read_mpCalls/s_Save(NetworkReader reader)
 		{
 			return new mpCalls.s_Save
@@ -3185,13 +3156,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024B9 RID: 9401 RVA: 0x00018D77 File Offset: 0x00016F77
+		// Token: 0x06002506 RID: 9478 RVA: 0x0017D0F8 File Offset: 0x0017B2F8
 		public static void _Write_mpCalls/s_Save(NetworkWriter writer, mpCalls.s_Save value)
 		{
 			writer.WriteInt32(value.saveID);
 		}
 
-		// Token: 0x060024BA RID: 9402 RVA: 0x0017973C File Offset: 0x0017793C
+		// Token: 0x06002507 RID: 9479 RVA: 0x0017D114 File Offset: 0x0017B314
 		public static mpCalls.s_Load _Read_mpCalls/s_Load(NetworkReader reader)
 		{
 			return new mpCalls.s_Load
@@ -3200,13 +3171,13 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024BB RID: 9403 RVA: 0x00018D85 File Offset: 0x00016F85
+		// Token: 0x06002508 RID: 9480 RVA: 0x0017D13C File Offset: 0x0017B33C
 		public static void _Write_mpCalls/s_Load(NetworkWriter writer, mpCalls.s_Load value)
 		{
 			writer.WriteInt32(value.saveID);
 		}
 
-		// Token: 0x060024BC RID: 9404 RVA: 0x00179764 File Offset: 0x00177964
+		// Token: 0x06002509 RID: 9481 RVA: 0x0017D158 File Offset: 0x0017B358
 		public static mpCalls.s_PlayerID _Read_mpCalls/s_PlayerID(NetworkReader reader)
 		{
 			return new mpCalls.s_PlayerID
@@ -3216,39 +3187,33 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024BD RID: 9405 RVA: 0x00018D93 File Offset: 0x00016F93
+		// Token: 0x0600250A RID: 9482 RVA: 0x0017D190 File Offset: 0x0017B390
 		public static void _Write_mpCalls/s_PlayerID(NetworkWriter writer, mpCalls.s_PlayerID value)
 		{
 			writer.WriteInt32(value.id);
 			writer.WriteString(value.version);
 		}
 
-		// Token: 0x060024BE RID: 9406 RVA: 0x0017979C File Offset: 0x0017799C
+		// Token: 0x0600250B RID: 9483 RVA: 0x0017D1B8 File Offset: 0x0017B3B8
 		public static mpCalls.s_PlayerInfos _Read_mpCalls/s_PlayerInfos(NetworkReader reader)
 		{
 			return new mpCalls.s_PlayerInfos
 			{
 				id = reader.ReadInt32(),
 				playerName = reader.ReadString(),
-				companyName = reader.ReadString(),
-				logo = reader.ReadInt32(),
-				country = reader.ReadInt32(),
 				ready = reader.ReadBoolean()
 			};
 		}
 
-		// Token: 0x060024BF RID: 9407 RVA: 0x00179810 File Offset: 0x00177A10
+		// Token: 0x0600250C RID: 9484 RVA: 0x0017D200 File Offset: 0x0017B400
 		public static void _Write_mpCalls/s_PlayerInfos(NetworkWriter writer, mpCalls.s_PlayerInfos value)
 		{
 			writer.WriteInt32(value.id);
 			writer.WriteString(value.playerName);
-			writer.WriteString(value.companyName);
-			writer.WriteInt32(value.logo);
-			writer.WriteInt32(value.country);
 			writer.WriteBoolean(value.ready);
 		}
 
-		// Token: 0x060024C0 RID: 9408 RVA: 0x00179868 File Offset: 0x00177A68
+		// Token: 0x0600250D RID: 9485 RVA: 0x0017D234 File Offset: 0x0017B434
 		public static mpCalls.s_DeleteArbeitsmarkt _Read_mpCalls/s_DeleteArbeitsmarkt(NetworkReader reader)
 		{
 			return new mpCalls.s_DeleteArbeitsmarkt
@@ -3258,14 +3223,14 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024C1 RID: 9409 RVA: 0x00018DAD File Offset: 0x00016FAD
+		// Token: 0x0600250E RID: 9486 RVA: 0x0017D26C File Offset: 0x0017B46C
 		public static void _Write_mpCalls/s_DeleteArbeitsmarkt(NetworkWriter writer, mpCalls.s_DeleteArbeitsmarkt value)
 		{
 			writer.WriteInt32(value.objectID);
 			writer.WriteBoolean(value.eingestellt);
 		}
 
-		// Token: 0x060024C2 RID: 9410 RVA: 0x001798A0 File Offset: 0x00177AA0
+		// Token: 0x0600250F RID: 9487 RVA: 0x0017D294 File Offset: 0x0017B494
 		public static mpCalls.s_CreateArbeitsmarkt _Read_mpCalls/s_CreateArbeitsmarkt(NetworkReader reader)
 		{
 			return new mpCalls.s_CreateArbeitsmarkt
@@ -3298,7 +3263,7 @@ namespace Mirror
 			};
 		}
 
-		// Token: 0x060024C3 RID: 9411 RVA: 0x00179A30 File Offset: 0x00177C30
+		// Token: 0x06002510 RID: 9488 RVA: 0x0017D424 File Offset: 0x0017B624
 		public static void _Write_mpCalls/s_CreateArbeitsmarkt(NetworkWriter writer, mpCalls.s_CreateArbeitsmarkt value)
 		{
 			writer.WriteInt32(value.objectID);
@@ -3328,7 +3293,7 @@ namespace Mirror
 			writer.WriteInt32(value.model_Add1Color);
 		}
 
-		// Token: 0x060024C4 RID: 9412 RVA: 0x00179B6C File Offset: 0x00177D6C
+		// Token: 0x06002511 RID: 9489 RVA: 0x0017D560 File Offset: 0x0017B760
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		public static void InitReadWriters()
 		{
@@ -3384,11 +3349,10 @@ namespace Mirror
 			Writer<UpdateVarsMessage>.write = new Action<NetworkWriter, UpdateVarsMessage>(GeneratedNetworkCode._Write_Mirror.UpdateVarsMessage);
 			Writer<NetworkPingMessage>.write = new Action<NetworkWriter, NetworkPingMessage>(GeneratedNetworkCode._Write_Mirror.NetworkPingMessage);
 			Writer<NetworkPongMessage>.write = new Action<NetworkWriter, NetworkPongMessage>(GeneratedNetworkCode._Write_Mirror.NetworkPongMessage);
+			Writer<mpCalls.c_Publisher>.write = new Action<NetworkWriter, mpCalls.c_Publisher>(GeneratedNetworkCode._Write_mpCalls/c_Publisher);
+			Writer<int[]>.write = new Action<NetworkWriter, int[]>(GeneratedNetworkCode._Write_System.Int32[]);
 			Writer<mpCalls.c_Forschung>.write = new Action<NetworkWriter, mpCalls.c_Forschung>(GeneratedNetworkCode._Write_mpCalls/c_Forschung);
 			Writer<bool[]>.write = new Action<NetworkWriter, bool[]>(GeneratedNetworkCode._Write_System.Boolean[]);
-			Writer<mpCalls.c_ChangeID>.write = new Action<NetworkWriter, mpCalls.c_ChangeID>(GeneratedNetworkCode._Write_mpCalls/c_ChangeID);
-			Writer<mpCalls.c_AllAwards>.write = new Action<NetworkWriter, mpCalls.c_AllAwards>(GeneratedNetworkCode._Write_mpCalls/c_AllAwards);
-			Writer<int[]>.write = new Action<NetworkWriter, int[]>(GeneratedNetworkCode._Write_System.Int32[]);
 			Writer<mpCalls.c_Help>.write = new Action<NetworkWriter, mpCalls.c_Help>(GeneratedNetworkCode._Write_mpCalls/c_Help);
 			Writer<mpCalls.c_ObjectDelete>.write = new Action<NetworkWriter, mpCalls.c_ObjectDelete>(GeneratedNetworkCode._Write_mpCalls/c_ObjectDelete);
 			Writer<mpCalls.c_Object>.write = new Action<NetworkWriter, mpCalls.c_Object>(GeneratedNetworkCode._Write_mpCalls/c_Object);
@@ -3407,12 +3371,10 @@ namespace Mirror
 			Writer<mpCalls.c_GameData>.write = new Action<NetworkWriter, mpCalls.c_GameData>(GeneratedNetworkCode._Write_mpCalls/c_GameData);
 			Writer<mpCalls.c_Game>.write = new Action<NetworkWriter, mpCalls.c_Game>(GeneratedNetworkCode._Write_mpCalls/c_Game);
 			Writer<mpCalls.s_AddPlayer>.write = new Action<NetworkWriter, mpCalls.s_AddPlayer>(GeneratedNetworkCode._Write_mpCalls/s_AddPlayer);
-			Writer<mpCalls.s_ChangeID>.write = new Action<NetworkWriter, mpCalls.s_ChangeID>(GeneratedNetworkCode._Write_mpCalls/s_ChangeID);
 			Writer<mpCalls.s_Forschung>.write = new Action<NetworkWriter, mpCalls.s_Forschung>(GeneratedNetworkCode._Write_mpCalls/s_Forschung);
 			Writer<mpCalls.s_PlayerLeave>.write = new Action<NetworkWriter, mpCalls.s_PlayerLeave>(GeneratedNetworkCode._Write_mpCalls/s_PlayerLeave);
 			Writer<mpCalls.s_GenreBeliebtheit>.write = new Action<NetworkWriter, mpCalls.s_GenreBeliebtheit>(GeneratedNetworkCode._Write_mpCalls/s_GenreBeliebtheit);
 			Writer<float[]>.write = new Action<NetworkWriter, float[]>(GeneratedNetworkCode._Write_System.Single[]);
-			Writer<mpCalls.s_AllAwards>.write = new Action<NetworkWriter, mpCalls.s_AllAwards>(GeneratedNetworkCode._Write_mpCalls/s_AllAwards);
 			Writer<mpCalls.s_GenreCombination>.write = new Action<NetworkWriter, mpCalls.s_GenreCombination>(GeneratedNetworkCode._Write_mpCalls/s_GenreCombination);
 			Writer<mpCalls.s_GenreDesign>.write = new Action<NetworkWriter, mpCalls.s_GenreDesign>(GeneratedNetworkCode._Write_mpCalls/s_GenreDesign);
 			Writer<mpCalls.s_Help>.write = new Action<NetworkWriter, mpCalls.s_Help>(GeneratedNetworkCode._Write_mpCalls/s_Help);
@@ -3511,11 +3473,10 @@ namespace Mirror
 			Reader<UpdateVarsMessage>.read = new Func<NetworkReader, UpdateVarsMessage>(GeneratedNetworkCode._Read_Mirror.UpdateVarsMessage);
 			Reader<NetworkPingMessage>.read = new Func<NetworkReader, NetworkPingMessage>(GeneratedNetworkCode._Read_Mirror.NetworkPingMessage);
 			Reader<NetworkPongMessage>.read = new Func<NetworkReader, NetworkPongMessage>(GeneratedNetworkCode._Read_Mirror.NetworkPongMessage);
+			Reader<mpCalls.c_Publisher>.read = new Func<NetworkReader, mpCalls.c_Publisher>(GeneratedNetworkCode._Read_mpCalls/c_Publisher);
+			Reader<int[]>.read = new Func<NetworkReader, int[]>(GeneratedNetworkCode._Read_System.Int32[]);
 			Reader<mpCalls.c_Forschung>.read = new Func<NetworkReader, mpCalls.c_Forschung>(GeneratedNetworkCode._Read_mpCalls/c_Forschung);
 			Reader<bool[]>.read = new Func<NetworkReader, bool[]>(GeneratedNetworkCode._Read_System.Boolean[]);
-			Reader<mpCalls.c_ChangeID>.read = new Func<NetworkReader, mpCalls.c_ChangeID>(GeneratedNetworkCode._Read_mpCalls/c_ChangeID);
-			Reader<mpCalls.c_AllAwards>.read = new Func<NetworkReader, mpCalls.c_AllAwards>(GeneratedNetworkCode._Read_mpCalls/c_AllAwards);
-			Reader<int[]>.read = new Func<NetworkReader, int[]>(GeneratedNetworkCode._Read_System.Int32[]);
 			Reader<mpCalls.c_Help>.read = new Func<NetworkReader, mpCalls.c_Help>(GeneratedNetworkCode._Read_mpCalls/c_Help);
 			Reader<mpCalls.c_ObjectDelete>.read = new Func<NetworkReader, mpCalls.c_ObjectDelete>(GeneratedNetworkCode._Read_mpCalls/c_ObjectDelete);
 			Reader<mpCalls.c_Object>.read = new Func<NetworkReader, mpCalls.c_Object>(GeneratedNetworkCode._Read_mpCalls/c_Object);
@@ -3534,12 +3495,10 @@ namespace Mirror
 			Reader<mpCalls.c_GameData>.read = new Func<NetworkReader, mpCalls.c_GameData>(GeneratedNetworkCode._Read_mpCalls/c_GameData);
 			Reader<mpCalls.c_Game>.read = new Func<NetworkReader, mpCalls.c_Game>(GeneratedNetworkCode._Read_mpCalls/c_Game);
 			Reader<mpCalls.s_AddPlayer>.read = new Func<NetworkReader, mpCalls.s_AddPlayer>(GeneratedNetworkCode._Read_mpCalls/s_AddPlayer);
-			Reader<mpCalls.s_ChangeID>.read = new Func<NetworkReader, mpCalls.s_ChangeID>(GeneratedNetworkCode._Read_mpCalls/s_ChangeID);
 			Reader<mpCalls.s_Forschung>.read = new Func<NetworkReader, mpCalls.s_Forschung>(GeneratedNetworkCode._Read_mpCalls/s_Forschung);
 			Reader<mpCalls.s_PlayerLeave>.read = new Func<NetworkReader, mpCalls.s_PlayerLeave>(GeneratedNetworkCode._Read_mpCalls/s_PlayerLeave);
 			Reader<mpCalls.s_GenreBeliebtheit>.read = new Func<NetworkReader, mpCalls.s_GenreBeliebtheit>(GeneratedNetworkCode._Read_mpCalls/s_GenreBeliebtheit);
 			Reader<float[]>.read = new Func<NetworkReader, float[]>(GeneratedNetworkCode._Read_System.Single[]);
-			Reader<mpCalls.s_AllAwards>.read = new Func<NetworkReader, mpCalls.s_AllAwards>(GeneratedNetworkCode._Read_mpCalls/s_AllAwards);
 			Reader<mpCalls.s_GenreCombination>.read = new Func<NetworkReader, mpCalls.s_GenreCombination>(GeneratedNetworkCode._Read_mpCalls/s_GenreCombination);
 			Reader<mpCalls.s_GenreDesign>.read = new Func<NetworkReader, mpCalls.s_GenreDesign>(GeneratedNetworkCode._Read_mpCalls/s_GenreDesign);
 			Reader<mpCalls.s_Help>.read = new Func<NetworkReader, mpCalls.s_Help>(GeneratedNetworkCode._Read_mpCalls/s_Help);

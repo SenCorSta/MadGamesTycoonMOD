@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200020E RID: 526
+// Token: 0x0200020F RID: 527
 public class Menu_AboPreis_Select : MonoBehaviour
 {
-	// Token: 0x06001422 RID: 5154 RVA: 0x0000DB6B File Offset: 0x0000BD6B
+	// Token: 0x0600143F RID: 5183 RVA: 0x000D2DE1 File Offset: 0x000D0FE1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001423 RID: 5155 RVA: 0x000DC8DC File Offset: 0x000DAADC
+	// Token: 0x06001440 RID: 5184 RVA: 0x000D2DEC File Offset: 0x000D0FEC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_AboPreis_Select : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001424 RID: 5156 RVA: 0x0000DB73 File Offset: 0x0000BD73
+	// Token: 0x06001441 RID: 5185 RVA: 0x000D2EB4 File Offset: 0x000D10B4
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -51,7 +51,7 @@ public class Menu_AboPreis_Select : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001425 RID: 5157 RVA: 0x000DC9A4 File Offset: 0x000DABA4
+	// Token: 0x06001442 RID: 5186 RVA: 0x000D2EEC File Offset: 0x000D10EC
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -67,7 +67,7 @@ public class Menu_AboPreis_Select : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001426 RID: 5158 RVA: 0x000DC9F0 File Offset: 0x000DABF0
+	// Token: 0x06001443 RID: 5187 RVA: 0x000D2F38 File Offset: 0x000D1138
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -80,7 +80,7 @@ public class Menu_AboPreis_Select : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001427 RID: 5159 RVA: 0x0000DBAB File Offset: 0x0000BDAB
+	// Token: 0x06001444 RID: 5188 RVA: 0x000D2F94 File Offset: 0x000D1194
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -88,7 +88,7 @@ public class Menu_AboPreis_Select : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x06001428 RID: 5160 RVA: 0x000DCA4C File Offset: 0x000DAC4C
+	// Token: 0x06001445 RID: 5189 RVA: 0x000D2FA8 File Offset: 0x000D11A8
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -101,7 +101,7 @@ public class Menu_AboPreis_Select : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001429 RID: 5161 RVA: 0x000DCAEC File Offset: 0x000DACEC
+	// Token: 0x06001446 RID: 5190 RVA: 0x000D3048 File Offset: 0x000D1248
 	public void Init()
 	{
 		this.FindScripts();
@@ -112,7 +112,7 @@ public class Menu_AboPreis_Select : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600142A RID: 5162 RVA: 0x000DCB40 File Offset: 0x000DAD40
+	// Token: 0x06001447 RID: 5191 RVA: 0x000D309C File Offset: 0x000D129C
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -137,13 +137,13 @@ public class Menu_AboPreis_Select : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x0600142B RID: 5163 RVA: 0x0000DBBF File Offset: 0x0000BDBF
+	// Token: 0x06001448 RID: 5192 RVA: 0x000D31A8 File Offset: 0x000D13A8
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.playerGame && !script_.inDevelopment && script_.isOnMarket && script_.gameTyp == 1;
+		return script_ && (script_.ownerID == this.mS_.myID || script_.publisherID == this.mS_.myID) && !script_.inDevelopment && script_.isOnMarket && script_.gameTyp == 1;
 	}
 
-	// Token: 0x0600142C RID: 5164 RVA: 0x000DCC4C File Offset: 0x000DAE4C
+	// Token: 0x06001449 RID: 5193 RVA: 0x000D3200 File Offset: 0x000D1400
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -177,7 +177,7 @@ public class Menu_AboPreis_Select : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x0600142D RID: 5165 RVA: 0x0000DBED File Offset: 0x0000BDED
+	// Token: 0x0600144A RID: 5194 RVA: 0x000D3303 File Offset: 0x000D1503
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -185,30 +185,30 @@ public class Menu_AboPreis_Select : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001849 RID: 6217
+	// Token: 0x04001852 RID: 6226
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x0400184A RID: 6218
+	// Token: 0x04001853 RID: 6227
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400184B RID: 6219
+	// Token: 0x04001854 RID: 6228
 	private mainScript mS_;
 
-	// Token: 0x0400184C RID: 6220
+	// Token: 0x04001855 RID: 6229
 	private GameObject main_;
 
-	// Token: 0x0400184D RID: 6221
+	// Token: 0x04001856 RID: 6230
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400184E RID: 6222
+	// Token: 0x04001857 RID: 6231
 	private sfxScript sfx_;
 
-	// Token: 0x0400184F RID: 6223
+	// Token: 0x04001858 RID: 6232
 	private textScript tS_;
 
-	// Token: 0x04001850 RID: 6224
+	// Token: 0x04001859 RID: 6233
 	private genres genres_;
 
-	// Token: 0x04001851 RID: 6225
+	// Token: 0x0400185A RID: 6234
 	private float updateTimer;
 }

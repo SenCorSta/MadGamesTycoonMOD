@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x02000022 RID: 34
 public class GrassController : MonoBehaviour
 {
-	// Token: 0x06000096 RID: 150 RVA: 0x0001B830 File Offset: 0x00019A30
+	// Token: 0x06000096 RID: 150 RVA: 0x0000510C File Offset: 0x0000330C
 	private void Awake()
 	{
 		this.ground = base.transform;
@@ -19,7 +19,7 @@ public class GrassController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000097 RID: 151 RVA: 0x0001B8FC File Offset: 0x00019AFC
+	// Token: 0x06000097 RID: 151 RVA: 0x000051D8 File Offset: 0x000033D8
 	private void Update()
 	{
 		int num = 0;

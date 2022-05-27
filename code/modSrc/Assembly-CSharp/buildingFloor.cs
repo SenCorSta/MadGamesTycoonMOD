@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002D5 RID: 725
+// Token: 0x020002D8 RID: 728
 public class buildingFloor : MonoBehaviour
 {
-	// Token: 0x0400211E RID: 8478
+	// Token: 0x04002138 RID: 8504
 	public int buildingID = -1;
 }

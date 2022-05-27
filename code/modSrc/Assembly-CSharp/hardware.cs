@@ -6,13 +6,13 @@ using UnityEngine;
 // Token: 0x0200005C RID: 92
 public class hardware : MonoBehaviour
 {
-	// Token: 0x06000303 RID: 771 RVA: 0x000039BE File Offset: 0x00001BBE
+	// Token: 0x06000308 RID: 776 RVA: 0x0002E94F File Offset: 0x0002CB4F
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000304 RID: 772 RVA: 0x0004381C File Offset: 0x00041A1C
+	// Token: 0x06000309 RID: 777 RVA: 0x0002E958 File Offset: 0x0002CB58
 	private void FindScripts()
 	{
 		GameObject gameObject = GameObject.Find("Main");
@@ -21,13 +21,13 @@ public class hardware : MonoBehaviour
 		this.settings_ = gameObject.GetComponent<settingsScript>();
 	}
 
-	// Token: 0x06000305 RID: 773 RVA: 0x000039C6 File Offset: 0x00001BC6
+	// Token: 0x0600030A RID: 778 RVA: 0x0002E994 File Offset: 0x0002CB94
 	public void Init()
 	{
 		this.hardware_PIC = new Sprite[this.hardware_UNLOCK.Length];
 	}
 
-	// Token: 0x06000306 RID: 774 RVA: 0x00043858 File Offset: 0x00041A58
+	// Token: 0x0600030B RID: 779 RVA: 0x0002E9AC File Offset: 0x0002CBAC
 	public void LoadHardwareKomponenten(string filename)
 	{
 		int num = 0;
@@ -46,7 +46,6 @@ public class hardware : MonoBehaviour
 				num2++;
 			}
 		}
-		Debug.Log("Hardware Features Amount: " + num2.ToString());
 		this.hardware_ICONFILE = new string[num2];
 		this.hardware_PIC = new Sprite[num2];
 		this.hardware_TYP = new int[num2];
@@ -333,14 +332,13 @@ public class hardware : MonoBehaviour
 			this.ParseData("//", j);
 			if (this.ParseData("[EOF]", j))
 			{
-				Debug.Log("Hardware.txt -> EOF");
-				return;
+				break;
 			}
 			num++;
 		}
 	}
 
-	// Token: 0x06000307 RID: 775 RVA: 0x00044288 File Offset: 0x00042488
+	// Token: 0x0600030C RID: 780 RVA: 0x0002F3BC File Offset: 0x0002D5BC
 	private bool ParseData(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -352,7 +350,7 @@ public class hardware : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000308 RID: 776 RVA: 0x000039DB File Offset: 0x00001BDB
+	// Token: 0x0600030D RID: 781 RVA: 0x0002F41C File Offset: 0x0002D61C
 	private bool ParseDataDontCutLastChar(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -363,7 +361,7 @@ public class hardware : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000309 RID: 777 RVA: 0x000442E8 File Offset: 0x000424E8
+	// Token: 0x0600030E RID: 782 RVA: 0x0002F44C File Offset: 0x0002D64C
 	public string GetName(int i)
 	{
 		string text = "";
@@ -487,7 +485,7 @@ public class hardware : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x0600030A RID: 778 RVA: 0x000444E4 File Offset: 0x000426E4
+	// Token: 0x0600030F RID: 783 RVA: 0x0002F648 File Offset: 0x0002D848
 	public string GetDesc(int i)
 	{
 		string text = "";
@@ -611,43 +609,43 @@ public class hardware : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x0600030B RID: 779 RVA: 0x00003A0B File Offset: 0x00001C0B
+	// Token: 0x06000310 RID: 784 RVA: 0x0002F83F File Offset: 0x0002DA3F
 	public int GetDevCosts(int i)
 	{
 		return this.hardware_DEV_COSTS[i];
 	}
 
-	// Token: 0x0600030C RID: 780 RVA: 0x00003A15 File Offset: 0x00001C15
+	// Token: 0x06000311 RID: 785 RVA: 0x0002F849 File Offset: 0x0002DA49
 	public int GetWorkPoints(int i)
 	{
 		return 100 + this.hardware_RES_POINTS[i];
 	}
 
-	// Token: 0x0600030D RID: 781 RVA: 0x00003A22 File Offset: 0x00001C22
+	// Token: 0x06000312 RID: 786 RVA: 0x0002F856 File Offset: 0x0002DA56
 	public int GetPrice(int i)
 	{
 		return this.hardware_PRICE[i];
 	}
 
-	// Token: 0x0600030E RID: 782 RVA: 0x00003A2C File Offset: 0x00001C2C
+	// Token: 0x06000313 RID: 787 RVA: 0x0002F860 File Offset: 0x0002DA60
 	public int GetPerformance(int i)
 	{
 		return Mathf.RoundToInt((float)(this.hardware_TECH[i] * (this.hardware_RES_POINTS[i] + 500) / 100));
 	}
 
-	// Token: 0x0600030F RID: 783 RVA: 0x00003A4E File Offset: 0x00001C4E
+	// Token: 0x06000314 RID: 788 RVA: 0x0002F882 File Offset: 0x0002DA82
 	public bool IsErforscht(int i)
 	{
 		return this.hardware_RES_POINTS_LEFT[i] <= 0f;
 	}
 
-	// Token: 0x06000310 RID: 784 RVA: 0x00003A62 File Offset: 0x00001C62
+	// Token: 0x06000315 RID: 789 RVA: 0x0002F896 File Offset: 0x0002DA96
 	public float GetProzent(int i)
 	{
 		return 100f / (float)this.hardware_RES_POINTS[i] * ((float)this.hardware_RES_POINTS[i] - this.hardware_RES_POINTS_LEFT[i]);
 	}
 
-	// Token: 0x06000311 RID: 785 RVA: 0x000446DC File Offset: 0x000428DC
+	// Token: 0x06000316 RID: 790 RVA: 0x0002F8BC File Offset: 0x0002DABC
 	public void UnlockAll()
 	{
 		for (int i = 0; i < this.hardware_UNLOCK.Length; i++)
@@ -656,13 +654,13 @@ public class hardware : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000312 RID: 786 RVA: 0x00003A86 File Offset: 0x00001C86
+	// Token: 0x06000317 RID: 791 RVA: 0x0002F8E5 File Offset: 0x0002DAE5
 	public bool ForschungGestartet(int i)
 	{
 		return this.hardware_RES_POINTS_LEFT[i] != (float)this.hardware_RES_POINTS[i];
 	}
 
-	// Token: 0x06000313 RID: 787 RVA: 0x00003A9E File Offset: 0x00001C9E
+	// Token: 0x06000318 RID: 792 RVA: 0x0002F8FD File Offset: 0x0002DAFD
 	public bool Pay(int i)
 	{
 		if (!this.ForschungGestartet(i))
@@ -676,7 +674,7 @@ public class hardware : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000314 RID: 788 RVA: 0x00044708 File Offset: 0x00042908
+	// Token: 0x06000319 RID: 793 RVA: 0x0002F934 File Offset: 0x0002DB34
 	public bool BereitsInAnderenRaumAktiv(int s)
 	{
 		for (int i = 0; i < this.mS_.arrayRooms.Length; i++)
@@ -697,13 +695,13 @@ public class hardware : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000315 RID: 789 RVA: 0x00003AD5 File Offset: 0x00001CD5
+	// Token: 0x0600031A RID: 794 RVA: 0x0002F9BF File Offset: 0x0002DBBF
 	public string GetDateString(int i)
 	{
 		return this.hardware_DATE_YEAR[i].ToString() + " " + this.tS_.GetText(this.hardware_DATE_MONTH[i] + 220);
 	}
 
-	// Token: 0x06000316 RID: 790 RVA: 0x00044794 File Offset: 0x00042994
+	// Token: 0x0600031B RID: 795 RVA: 0x0002F9F8 File Offset: 0x0002DBF8
 	public string GetTooltip(int i)
 	{
 		string text = "<b>" + this.GetName(i) + "</b>\n";
@@ -757,7 +755,7 @@ public class hardware : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06000317 RID: 791 RVA: 0x0004497C File Offset: 0x00042B7C
+	// Token: 0x0600031C RID: 796 RVA: 0x0002FBE0 File Offset: 0x0002DDE0
 	public Sprite GetTypPic(int i)
 	{
 		if (this.hardware_ICONFILE[i] == null)
@@ -779,7 +777,7 @@ public class hardware : MonoBehaviour
 		return this.hardware_PICTYP[this.hardware_TYP[i]];
 	}
 
-	// Token: 0x06000318 RID: 792 RVA: 0x00044A24 File Offset: 0x00042C24
+	// Token: 0x0600031D RID: 797 RVA: 0x0002FC88 File Offset: 0x0002DE88
 	public string GetTypString(int i)
 	{
 		string result = "";
@@ -822,195 +820,195 @@ public class hardware : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06000319 RID: 793 RVA: 0x00044B4C File Offset: 0x00042D4C
+	// Token: 0x0600031E RID: 798 RVA: 0x0002FDB0 File Offset: 0x0002DFB0
 	public bool IsTechComponent(int i)
 	{
 		return this.hardware_TYP[i] == 0 || this.hardware_TYP[i] == 1 || this.hardware_TYP[i] == 2 || this.hardware_TYP[i] == 3 || this.hardware_TYP[i] == 4 || this.hardware_TYP[i] == 5 || this.hardware_TYP[i] == 6 || this.hardware_TYP[i] == 9;
 	}
 
-	// Token: 0x040005F1 RID: 1521
+	// Token: 0x040005EE RID: 1518
 	private mainScript mS_;
 
-	// Token: 0x040005F2 RID: 1522
+	// Token: 0x040005EF RID: 1519
 	private textScript tS_;
 
-	// Token: 0x040005F3 RID: 1523
+	// Token: 0x040005F0 RID: 1520
 	private settingsScript settings_;
 
-	// Token: 0x040005F4 RID: 1524
+	// Token: 0x040005F1 RID: 1521
 	public const int component_cpu = 0;
 
-	// Token: 0x040005F5 RID: 1525
+	// Token: 0x040005F2 RID: 1522
 	public const int component_gfx = 1;
 
-	// Token: 0x040005F6 RID: 1526
+	// Token: 0x040005F3 RID: 1523
 	public const int component_ram = 2;
 
-	// Token: 0x040005F7 RID: 1527
+	// Token: 0x040005F4 RID: 1524
 	public const int component_hdd = 3;
 
-	// Token: 0x040005F8 RID: 1528
+	// Token: 0x040005F5 RID: 1525
 	public const int component_sfx = 4;
 
-	// Token: 0x040005F9 RID: 1529
+	// Token: 0x040005F6 RID: 1526
 	public const int component_cooling = 5;
 
-	// Token: 0x040005FA RID: 1530
+	// Token: 0x040005F7 RID: 1527
 	public const int component_disc = 6;
 
-	// Token: 0x040005FB RID: 1531
+	// Token: 0x040005F8 RID: 1528
 	public const int component_controller = 7;
 
-	// Token: 0x040005FC RID: 1532
+	// Token: 0x040005F9 RID: 1529
 	public const int component_case = 8;
 
-	// Token: 0x040005FD RID: 1533
+	// Token: 0x040005FA RID: 1530
 	public const int component_monitor = 9;
 
-	// Token: 0x040005FE RID: 1534
+	// Token: 0x040005FB RID: 1531
 	private Sprite[] hardware_PIC;
 
-	// Token: 0x040005FF RID: 1535
+	// Token: 0x040005FC RID: 1532
 	public Sprite[] hardware_PICTYP;
 
-	// Token: 0x04000600 RID: 1536
+	// Token: 0x040005FD RID: 1533
 	public string[] hardware_ICONFILE;
 
-	// Token: 0x04000601 RID: 1537
+	// Token: 0x040005FE RID: 1534
 	public int[] hardware_TYP;
 
-	// Token: 0x04000602 RID: 1538
+	// Token: 0x040005FF RID: 1535
 	public int[] hardware_RES_POINTS;
 
-	// Token: 0x04000603 RID: 1539
+	// Token: 0x04000600 RID: 1536
 	public float[] hardware_RES_POINTS_LEFT;
 
-	// Token: 0x04000604 RID: 1540
+	// Token: 0x04000601 RID: 1537
 	public int[] hardware_PRICE;
 
-	// Token: 0x04000605 RID: 1541
+	// Token: 0x04000602 RID: 1538
 	public int[] hardware_DEV_COSTS;
 
-	// Token: 0x04000606 RID: 1542
+	// Token: 0x04000603 RID: 1539
 	public int[] hardware_TECH;
 
-	// Token: 0x04000607 RID: 1543
+	// Token: 0x04000604 RID: 1540
 	public int[] hardware_DATE_YEAR;
 
-	// Token: 0x04000608 RID: 1544
+	// Token: 0x04000605 RID: 1541
 	public int[] hardware_DATE_MONTH;
 
-	// Token: 0x04000609 RID: 1545
+	// Token: 0x04000606 RID: 1542
 	public bool[] hardware_UNLOCK;
 
-	// Token: 0x0400060A RID: 1546
+	// Token: 0x04000607 RID: 1543
 	public bool[] hardware_ONLYSTATIONARY;
 
-	// Token: 0x0400060B RID: 1547
+	// Token: 0x04000608 RID: 1544
 	public bool[] hardware_ONLYHANDHELD;
 
-	// Token: 0x0400060C RID: 1548
+	// Token: 0x04000609 RID: 1545
 	public int[] hardware_NEED1;
 
-	// Token: 0x0400060D RID: 1549
+	// Token: 0x0400060A RID: 1546
 	public int[] hardware_NEED2;
 
-	// Token: 0x0400060E RID: 1550
+	// Token: 0x0400060B RID: 1547
 	public string[] hardware_NAME_EN;
 
-	// Token: 0x0400060F RID: 1551
+	// Token: 0x0400060C RID: 1548
 	public string[] hardware_NAME_GE;
 
-	// Token: 0x04000610 RID: 1552
+	// Token: 0x0400060D RID: 1549
 	public string[] hardware_NAME_TU;
 
-	// Token: 0x04000611 RID: 1553
+	// Token: 0x0400060E RID: 1550
 	public string[] hardware_NAME_CH;
 
-	// Token: 0x04000612 RID: 1554
+	// Token: 0x0400060F RID: 1551
 	public string[] hardware_NAME_FR;
 
-	// Token: 0x04000613 RID: 1555
+	// Token: 0x04000610 RID: 1552
 	public string[] hardware_NAME_PB;
 
-	// Token: 0x04000614 RID: 1556
+	// Token: 0x04000611 RID: 1553
 	public string[] hardware_NAME_CT;
 
-	// Token: 0x04000615 RID: 1557
+	// Token: 0x04000612 RID: 1554
 	public string[] hardware_NAME_HU;
 
-	// Token: 0x04000616 RID: 1558
+	// Token: 0x04000613 RID: 1555
 	public string[] hardware_NAME_ES;
 
-	// Token: 0x04000617 RID: 1559
+	// Token: 0x04000614 RID: 1556
 	public string[] hardware_NAME_CZ;
 
-	// Token: 0x04000618 RID: 1560
+	// Token: 0x04000615 RID: 1557
 	public string[] hardware_NAME_KO;
 
-	// Token: 0x04000619 RID: 1561
+	// Token: 0x04000616 RID: 1558
 	public string[] hardware_NAME_AR;
 
-	// Token: 0x0400061A RID: 1562
+	// Token: 0x04000617 RID: 1559
 	public string[] hardware_NAME_RU;
 
-	// Token: 0x0400061B RID: 1563
+	// Token: 0x04000618 RID: 1560
 	public string[] hardware_NAME_IT;
 
-	// Token: 0x0400061C RID: 1564
+	// Token: 0x04000619 RID: 1561
 	public string[] hardware_NAME_JA;
 
-	// Token: 0x0400061D RID: 1565
+	// Token: 0x0400061A RID: 1562
 	public string[] hardware_NAME_PL;
 
-	// Token: 0x0400061E RID: 1566
+	// Token: 0x0400061B RID: 1563
 	public string[] hardware_DESC_EN;
 
-	// Token: 0x0400061F RID: 1567
+	// Token: 0x0400061C RID: 1564
 	public string[] hardware_DESC_GE;
 
-	// Token: 0x04000620 RID: 1568
+	// Token: 0x0400061D RID: 1565
 	public string[] hardware_DESC_TU;
 
-	// Token: 0x04000621 RID: 1569
+	// Token: 0x0400061E RID: 1566
 	public string[] hardware_DESC_CH;
 
-	// Token: 0x04000622 RID: 1570
+	// Token: 0x0400061F RID: 1567
 	public string[] hardware_DESC_FR;
 
-	// Token: 0x04000623 RID: 1571
+	// Token: 0x04000620 RID: 1568
 	public string[] hardware_DESC_PB;
 
-	// Token: 0x04000624 RID: 1572
+	// Token: 0x04000621 RID: 1569
 	public string[] hardware_DESC_CT;
 
-	// Token: 0x04000625 RID: 1573
+	// Token: 0x04000622 RID: 1570
 	public string[] hardware_DESC_HU;
 
-	// Token: 0x04000626 RID: 1574
+	// Token: 0x04000623 RID: 1571
 	public string[] hardware_DESC_ES;
 
-	// Token: 0x04000627 RID: 1575
+	// Token: 0x04000624 RID: 1572
 	public string[] hardware_DESC_CZ;
 
-	// Token: 0x04000628 RID: 1576
+	// Token: 0x04000625 RID: 1573
 	public string[] hardware_DESC_KO;
 
-	// Token: 0x04000629 RID: 1577
+	// Token: 0x04000626 RID: 1574
 	public string[] hardware_DESC_AR;
 
-	// Token: 0x0400062A RID: 1578
+	// Token: 0x04000627 RID: 1575
 	public string[] hardware_DESC_RU;
 
-	// Token: 0x0400062B RID: 1579
+	// Token: 0x04000628 RID: 1576
 	public string[] hardware_DESC_IT;
 
-	// Token: 0x0400062C RID: 1580
+	// Token: 0x04000629 RID: 1577
 	public string[] hardware_DESC_JA;
 
-	// Token: 0x0400062D RID: 1581
+	// Token: 0x0400062A RID: 1578
 	public string[] hardware_DESC_PL;
 
-	// Token: 0x0400062E RID: 1582
+	// Token: 0x0400062B RID: 1579
 	private string[] data;
 }

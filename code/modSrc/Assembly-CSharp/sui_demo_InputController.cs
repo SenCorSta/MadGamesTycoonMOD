@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x02000038 RID: 56
 public class sui_demo_InputController : MonoBehaviour
 {
-	// Token: 0x060000CD RID: 205 RVA: 0x0001FBD0 File Offset: 0x0001DDD0
+	// Token: 0x060000CD RID: 205 RVA: 0x000096C0 File Offset: 0x000078C0
 	private void Update()
 	{
 		this.inputKeyW = Input.GetKey("w");

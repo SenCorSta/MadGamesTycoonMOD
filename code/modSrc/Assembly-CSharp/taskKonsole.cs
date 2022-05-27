@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000310 RID: 784
+// Token: 0x02000313 RID: 787
 public class taskKonsole : MonoBehaviour
 {
-	// Token: 0x06001B62 RID: 7010 RVA: 0x0001295E File Offset: 0x00010B5E
+	// Token: 0x06001BAC RID: 7084 RVA: 0x00113D10 File Offset: 0x00111F10
 	private void Awake()
 	{
 		base.transform.position = new Vector3(180f, 0f, 0f);
 	}
 
-	// Token: 0x06001B63 RID: 7011 RVA: 0x0001297F File Offset: 0x00010B7F
+	// Token: 0x06001BAD RID: 7085 RVA: 0x00113D31 File Offset: 0x00111F31
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001B64 RID: 7012 RVA: 0x00116D88 File Offset: 0x00114F88
+	// Token: 0x06001BAE RID: 7086 RVA: 0x00113D3C File Offset: 0x00111F3C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class taskKonsole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B65 RID: 7013 RVA: 0x00012987 File Offset: 0x00010B87
+	// Token: 0x06001BAF RID: 7087 RVA: 0x00113E3C File Offset: 0x0011203C
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -63,14 +63,14 @@ public class taskKonsole : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001B66 RID: 7014 RVA: 0x000129B8 File Offset: 0x00010BB8
+	// Token: 0x06001BB0 RID: 7088 RVA: 0x00113E6D File Offset: 0x0011206D
 	private void Update()
 	{
 		this.FindMyKonsole();
 		this.FindMyLeitenderTechniker();
 	}
 
-	// Token: 0x06001B67 RID: 7015 RVA: 0x00116E88 File Offset: 0x00115088
+	// Token: 0x06001BB1 RID: 7089 RVA: 0x00113E7C File Offset: 0x0011207C
 	private void FindMyKonsole()
 	{
 		if (!this.pS_)
@@ -85,7 +85,7 @@ public class taskKonsole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B68 RID: 7016 RVA: 0x00116EE0 File Offset: 0x001150E0
+	// Token: 0x06001BB2 RID: 7090 RVA: 0x00113ED4 File Offset: 0x001120D4
 	private void FindMyLeitenderTechniker()
 	{
 		if (this.leitenderTechnikerID == -1)
@@ -120,7 +120,7 @@ public class taskKonsole : MonoBehaviour
 		this.techniker_ = null;
 	}
 
-	// Token: 0x06001B69 RID: 7017 RVA: 0x000129C6 File Offset: 0x00010BC6
+	// Token: 0x06001BB3 RID: 7091 RVA: 0x00113F7E File Offset: 0x0011217E
 	public float GetProzent()
 	{
 		this.FindScripts();
@@ -131,7 +131,7 @@ public class taskKonsole : MonoBehaviour
 		return this.pS_.GetProzent();
 	}
 
-	// Token: 0x06001B6A RID: 7018 RVA: 0x00116F8C File Offset: 0x0011518C
+	// Token: 0x06001BB4 RID: 7092 RVA: 0x00113FA4 File Offset: 0x001121A4
 	public void Work(float f)
 	{
 		this.FindScripts();
@@ -154,7 +154,7 @@ public class taskKonsole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B6B RID: 7019 RVA: 0x00117010 File Offset: 0x00115210
+	// Token: 0x06001BB5 RID: 7093 RVA: 0x00114028 File Offset: 0x00112228
 	private void Complete()
 	{
 		this.FindScripts();
@@ -185,7 +185,7 @@ public class taskKonsole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B6C RID: 7020 RVA: 0x001170F0 File Offset: 0x001152F0
+	// Token: 0x06001BB6 RID: 7094 RVA: 0x00114108 File Offset: 0x00112308
 	public void CompleteOpenMenue()
 	{
 		this.FindScripts();
@@ -206,7 +206,7 @@ public class taskKonsole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B6D RID: 7021 RVA: 0x00117194 File Offset: 0x00115394
+	// Token: 0x06001BB7 RID: 7095 RVA: 0x001141AC File Offset: 0x001123AC
 	public int GetRueckgeld()
 	{
 		if (this.pS_)
@@ -221,7 +221,7 @@ public class taskKonsole : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001B6E RID: 7022 RVA: 0x001171E8 File Offset: 0x001153E8
+	// Token: 0x06001BB8 RID: 7096 RVA: 0x00114200 File Offset: 0x00112400
 	public void Abbrechen()
 	{
 		this.FindScripts();
@@ -252,42 +252,42 @@ public class taskKonsole : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x040022A7 RID: 8871
+	// Token: 0x040022C1 RID: 8897
 	public int myID = -1;
 
-	// Token: 0x040022A8 RID: 8872
+	// Token: 0x040022C2 RID: 8898
 	public int konsoleID = -1;
 
-	// Token: 0x040022A9 RID: 8873
+	// Token: 0x040022C3 RID: 8899
 	public int leitenderTechnikerID = -1;
 
-	// Token: 0x040022AA RID: 8874
+	// Token: 0x040022C4 RID: 8900
 	public characterScript techniker_;
 
-	// Token: 0x040022AB RID: 8875
+	// Token: 0x040022C5 RID: 8901
 	public platformScript pS_;
 
-	// Token: 0x040022AC RID: 8876
+	// Token: 0x040022C6 RID: 8902
 	private GameObject main_;
 
-	// Token: 0x040022AD RID: 8877
+	// Token: 0x040022C7 RID: 8903
 	public mainScript mS_;
 
-	// Token: 0x040022AE RID: 8878
+	// Token: 0x040022C8 RID: 8904
 	private engineFeatures eF_;
 
-	// Token: 0x040022AF RID: 8879
+	// Token: 0x040022C9 RID: 8905
 	private GUI_Main guiMain_;
 
-	// Token: 0x040022B0 RID: 8880
+	// Token: 0x040022CA RID: 8906
 	private textScript tS_;
 
-	// Token: 0x040022B1 RID: 8881
+	// Token: 0x040022CB RID: 8907
 	private roomDataScript rdS_;
 
-	// Token: 0x040022B2 RID: 8882
+	// Token: 0x040022CC RID: 8908
 	private hardware hardware_;
 
-	// Token: 0x040022B3 RID: 8883
+	// Token: 0x040022CD RID: 8909
 	private hardwareFeatures hardwareFeatures_;
 }

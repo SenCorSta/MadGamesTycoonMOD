@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x0200000D RID: 13
 public class CFX_Demo_Translate : MonoBehaviour
 {
-	// Token: 0x06000048 RID: 72 RVA: 0x0001A364 File Offset: 0x00018564
+	// Token: 0x06000048 RID: 72 RVA: 0x0000386C File Offset: 0x00001A6C
 	private void Start()
 	{
 		this.dir = new Vector3(UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f));
@@ -12,7 +12,7 @@ public class CFX_Demo_Translate : MonoBehaviour
 		base.transform.localEulerAngles = this.dir;
 	}
 
-	// Token: 0x06000049 RID: 73 RVA: 0x000022D3 File Offset: 0x000004D3
+	// Token: 0x06000049 RID: 73 RVA: 0x000038D3 File Offset: 0x00001AD3
 	private void Update()
 	{
 		base.transform.Translate(this.axis * this.speed * Time.deltaTime, Space.Self);

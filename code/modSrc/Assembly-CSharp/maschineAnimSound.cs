@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002F2 RID: 754
+// Token: 0x020002F5 RID: 757
 public class maschineAnimSound : MonoBehaviour
 {
-	// Token: 0x06001A5B RID: 6747 RVA: 0x00011B69 File Offset: 0x0000FD69
+	// Token: 0x06001AA5 RID: 6821 RVA: 0x0010C91F File Offset: 0x0010AB1F
 	private void Start()
 	{
 		if (!this.main_)
@@ -17,7 +17,7 @@ public class maschineAnimSound : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A5C RID: 6748 RVA: 0x00110790 File Offset: 0x0010E990
+	// Token: 0x06001AA6 RID: 6822 RVA: 0x0010C95C File Offset: 0x0010AB5C
 	private void Update()
 	{
 		if (!this.myAnimation.isPlaying)
@@ -33,18 +33,18 @@ public class maschineAnimSound : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040021A2 RID: 8610
+	// Token: 0x040021BC RID: 8636
 	public AudioSource mySound;
 
-	// Token: 0x040021A3 RID: 8611
+	// Token: 0x040021BD RID: 8637
 	public Animation myAnimation;
 
-	// Token: 0x040021A4 RID: 8612
+	// Token: 0x040021BE RID: 8638
 	private mainScript mS_;
 
-	// Token: 0x040021A5 RID: 8613
+	// Token: 0x040021BF RID: 8639
 	private GameObject main_;
 
-	// Token: 0x040021A6 RID: 8614
+	// Token: 0x040021C0 RID: 8640
 	private float oldGamespeed;
 }

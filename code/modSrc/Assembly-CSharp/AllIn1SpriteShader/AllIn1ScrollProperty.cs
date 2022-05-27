@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x020003F8 RID: 1016
+	// Token: 0x020003FB RID: 1019
 	public class AllIn1ScrollProperty : MonoBehaviour
 	{
-		// Token: 0x060023D5 RID: 9173 RVA: 0x00171664 File Offset: 0x0016F864
+		// Token: 0x06002428 RID: 9256 RVA: 0x001745B8 File Offset: 0x001727B8
 		private void Start()
 		{
 			if (this.mat == null)
@@ -42,7 +42,7 @@ namespace AllIn1SpriteShader
 			this.currValue = this.mat.GetFloat(this.propertyShaderID);
 		}
 
-		// Token: 0x060023D6 RID: 9174 RVA: 0x00171748 File Offset: 0x0016F948
+		// Token: 0x06002429 RID: 9257 RVA: 0x0017469C File Offset: 0x0017289C
 		private void Update()
 		{
 			this.currValue += this.scrollSpeed * Time.deltaTime;
@@ -53,40 +53,40 @@ namespace AllIn1SpriteShader
 			this.mat.SetFloat(this.propertyShaderID, this.currValue);
 		}
 
-		// Token: 0x060023D7 RID: 9175 RVA: 0x00018646 File Offset: 0x00016846
+		// Token: 0x0600242A RID: 9258 RVA: 0x0017458C File Offset: 0x0017278C
 		private void DestroyComponentAndLogError(string logError)
 		{
 			Debug.LogError(logError);
 			UnityEngine.Object.Destroy(this);
 		}
 
-		// Token: 0x04002E2D RID: 11821
+		// Token: 0x04002E43 RID: 11843
 		[SerializeField]
 		private string numericPropertyName = "_RotateUvAmount";
 
-		// Token: 0x04002E2E RID: 11822
+		// Token: 0x04002E44 RID: 11844
 		[SerializeField]
 		private float scrollSpeed;
 
-		// Token: 0x04002E2F RID: 11823
+		// Token: 0x04002E45 RID: 11845
 		[Space]
 		[SerializeField]
 		private bool applyModulo;
 
-		// Token: 0x04002E30 RID: 11824
+		// Token: 0x04002E46 RID: 11846
 		[SerializeField]
 		private float modulo = 1f;
 
-		// Token: 0x04002E31 RID: 11825
+		// Token: 0x04002E47 RID: 11847
 		[Space]
 		[SerializeField]
 		[Header("If missing will search object Sprite Renderer or UI Image")]
 		private Material mat;
 
-		// Token: 0x04002E32 RID: 11826
+		// Token: 0x04002E48 RID: 11848
 		private int propertyShaderID;
 
-		// Token: 0x04002E33 RID: 11827
+		// Token: 0x04002E49 RID: 11849
 		private float currValue;
 	}
 }

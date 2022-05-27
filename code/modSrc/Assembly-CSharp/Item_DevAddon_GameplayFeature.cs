@@ -5,14 +5,14 @@ using UnityEngine.UI;
 // Token: 0x02000077 RID: 119
 public class Item_DevAddon_GameplayFeature : MonoBehaviour
 {
-	// Token: 0x060004FD RID: 1277 RVA: 0x00005261 File Offset: 0x00003461
+	// Token: 0x06000506 RID: 1286 RVA: 0x00046463 File Offset: 0x00044663
 	private void Start()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x060004FE RID: 1278 RVA: 0x00059760 File Offset: 0x00057960
+	// Token: 0x06000507 RID: 1287 RVA: 0x00046474 File Offset: 0x00044674
 	private void FindScripts()
 	{
 		if (!this.menuDevAddon_)
@@ -25,7 +25,7 @@ public class Item_DevAddon_GameplayFeature : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004FF RID: 1279 RVA: 0x000597C0 File Offset: 0x000579C0
+	// Token: 0x06000508 RID: 1288 RVA: 0x000464D4 File Offset: 0x000446D4
 	private void Update()
 	{
 		if (this.guiMain_.uiObjects[193].activeSelf)
@@ -69,7 +69,7 @@ public class Item_DevAddon_GameplayFeature : MonoBehaviour
 		this.SetGoodBadIcon();
 	}
 
-	// Token: 0x06000500 RID: 1280 RVA: 0x00059964 File Offset: 0x00057B64
+	// Token: 0x06000509 RID: 1289 RVA: 0x00046678 File Offset: 0x00044878
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.gF_.GetName(this.myID);
@@ -87,7 +87,7 @@ public class Item_DevAddon_GameplayFeature : MonoBehaviour
 		this.SetGoodBadIcon();
 	}
 
-	// Token: 0x06000501 RID: 1281 RVA: 0x00059A9C File Offset: 0x00057C9C
+	// Token: 0x0600050A RID: 1290 RVA: 0x000467B0 File Offset: 0x000449B0
 	public void BUTTON_Click()
 	{
 		if (!base.GetComponent<Button>().interactable)
@@ -112,7 +112,7 @@ public class Item_DevAddon_GameplayFeature : MonoBehaviour
 		base.GetComponent<Image>().color = Color.white;
 	}
 
-	// Token: 0x06000502 RID: 1282 RVA: 0x00059B6C File Offset: 0x00057D6C
+	// Token: 0x0600050B RID: 1291 RVA: 0x00046880 File Offset: 0x00044A80
 	private void SetGoodBadIcon()
 	{
 		this.FindScripts();

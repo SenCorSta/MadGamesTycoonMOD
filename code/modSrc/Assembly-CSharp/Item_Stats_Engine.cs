@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000F7 RID: 247
 public class Item_Stats_Engine : MonoBehaviour
 {
-	// Token: 0x06000811 RID: 2065 RVA: 0x0000632D File Offset: 0x0000452D
+	// Token: 0x0600081A RID: 2074 RVA: 0x000589DE File Offset: 0x00056BDE
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000812 RID: 2066 RVA: 0x0006A9C0 File Offset: 0x00068BC0
+	// Token: 0x0600081B RID: 2075 RVA: 0x000589E8 File Offset: 0x00056BE8
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.eS_.GetName();
@@ -30,21 +30,21 @@ public class Item_Stats_Engine : MonoBehaviour
 		});
 		this.uiObjects[2].GetComponent<Text>().text = text;
 		this.uiObjects[4].GetComponent<Text>().text = "";
-		if (!this.eS_.sellEngine || !this.eS_.playerEngine)
+		if (!this.eS_.sellEngine || !this.eS_.OwnerIsNPC())
 		{
 			this.uiObjects[5].SetActive(false);
 		}
-		if (this.eS_.sellEngine && this.eS_.playerEngine)
+		if (this.eS_.sellEngine && this.eS_.ownerID == this.mS_.myID)
 		{
 			this.uiObjects[5].SetActive(true);
 		}
-		if (this.eS_.playerEngine)
+		if (this.eS_.ownerID == this.mS_.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
 	}
 
-	// Token: 0x06000813 RID: 2067 RVA: 0x00006335 File Offset: 0x00004535
+	// Token: 0x0600081C RID: 2076 RVA: 0x00058BB8 File Offset: 0x00056DB8
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -56,13 +56,13 @@ public class Item_Stats_Engine : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000814 RID: 2068 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x0600081D RID: 2077 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000815 RID: 2069 RVA: 0x0006AB7C File Offset: 0x00068D7C
+	// Token: 0x0600081E RID: 2078 RVA: 0x00058BEC File Offset: 0x00056DEC
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

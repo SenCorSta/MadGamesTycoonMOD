@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000188 RID: 392
+// Token: 0x02000189 RID: 393
 public class Menu_BuyAntiCheat : MonoBehaviour
 {
-	// Token: 0x06000EC6 RID: 3782 RVA: 0x0000A708 File Offset: 0x00008908
+	// Token: 0x06000EDE RID: 3806 RVA: 0x0009E8E1 File Offset: 0x0009CAE1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000EC7 RID: 3783 RVA: 0x000ABCF4 File Offset: 0x000A9EF4
+	// Token: 0x06000EDF RID: 3807 RVA: 0x0009E8EC File Offset: 0x0009CAEC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -37,7 +37,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EC8 RID: 3784 RVA: 0x0000A710 File Offset: 0x00008910
+	// Token: 0x06000EE0 RID: 3808 RVA: 0x0009E996 File Offset: 0x0009CB96
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -47,7 +47,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000EC9 RID: 3785 RVA: 0x000ABDA0 File Offset: 0x000A9FA0
+	// Token: 0x06000EE1 RID: 3809 RVA: 0x0009E9D0 File Offset: 0x0009CBD0
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -73,7 +73,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		this.SetData(true);
 	}
 
-	// Token: 0x06000ECA RID: 3786 RVA: 0x000ABE04 File Offset: 0x000AA004
+	// Token: 0x06000EE2 RID: 3810 RVA: 0x0009EA34 File Offset: 0x0009CC34
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -86,7 +86,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000ECB RID: 3787 RVA: 0x0000A748 File Offset: 0x00008948
+	// Token: 0x06000EE3 RID: 3811 RVA: 0x0009EA90 File Offset: 0x0009CC90
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -94,7 +94,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		this.TAB_AntiCheatBuy(0);
 	}
 
-	// Token: 0x06000ECC RID: 3788 RVA: 0x000ABE60 File Offset: 0x000AA060
+	// Token: 0x06000EE4 RID: 3812 RVA: 0x0009EAA8 File Offset: 0x0009CCA8
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -107,7 +107,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06000ECD RID: 3789 RVA: 0x000ABF00 File Offset: 0x000AA100
+	// Token: 0x06000EE5 RID: 3813 RVA: 0x0009EB48 File Offset: 0x0009CD48
 	private void Init(bool inBesitz)
 	{
 		this.FindScripts();
@@ -118,7 +118,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		this.SetData(inBesitz);
 	}
 
-	// Token: 0x06000ECE RID: 3790 RVA: 0x000ABF58 File Offset: 0x000AA158
+	// Token: 0x06000EE6 RID: 3814 RVA: 0x0009EBA0 File Offset: 0x0009CDA0
 	private void SetData(bool inBesitz)
 	{
 		bool isOn = this.uiObjects[5].GetComponent<Toggle>().isOn;
@@ -143,7 +143,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[6]);
 	}
 
-	// Token: 0x06000ECF RID: 3791 RVA: 0x000AC088 File Offset: 0x000AA288
+	// Token: 0x06000EE7 RID: 3815 RVA: 0x0009ECD0 File Offset: 0x0009CED0
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -177,7 +177,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06000ED0 RID: 3792 RVA: 0x000AC190 File Offset: 0x000AA390
+	// Token: 0x06000EE8 RID: 3816 RVA: 0x0009EDD8 File Offset: 0x0009CFD8
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -188,7 +188,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000ED1 RID: 3793 RVA: 0x0000A75D File Offset: 0x0000895D
+	// Token: 0x06000EE9 RID: 3817 RVA: 0x0009EE66 File Offset: 0x0009D066
 	public void TAB_AntiCheatBuy(int t)
 	{
 		this.TAB = t;
@@ -197,7 +197,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		this.Init(false);
 	}
 
-	// Token: 0x06000ED2 RID: 3794 RVA: 0x0000A78E File Offset: 0x0000898E
+	// Token: 0x06000EEA RID: 3818 RVA: 0x0009EE97 File Offset: 0x0009D097
 	public void TAB_MyAntiCheat(int t)
 	{
 		this.TAB = t;
@@ -206,7 +206,7 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		this.Init(true);
 	}
 
-	// Token: 0x06000ED3 RID: 3795 RVA: 0x000AC220 File Offset: 0x000AA420
+	// Token: 0x06000EEB RID: 3819 RVA: 0x0009EEC8 File Offset: 0x0009D0C8
 	public void TOGGLE_Veraltet()
 	{
 		int tab = this.TAB;
@@ -222,30 +222,30 @@ public class Menu_BuyAntiCheat : MonoBehaviour
 		this.TAB_MyAntiCheat(1);
 	}
 
-	// Token: 0x0400132D RID: 4909
+	// Token: 0x04001336 RID: 4918
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x0400132E RID: 4910
+	// Token: 0x04001337 RID: 4919
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400132F RID: 4911
+	// Token: 0x04001338 RID: 4920
 	private mainScript mS_;
 
-	// Token: 0x04001330 RID: 4912
+	// Token: 0x04001339 RID: 4921
 	private GameObject main_;
 
-	// Token: 0x04001331 RID: 4913
+	// Token: 0x0400133A RID: 4922
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001332 RID: 4914
+	// Token: 0x0400133B RID: 4923
 	private sfxScript sfx_;
 
-	// Token: 0x04001333 RID: 4915
+	// Token: 0x0400133C RID: 4924
 	private textScript tS_;
 
-	// Token: 0x04001334 RID: 4916
+	// Token: 0x0400133D RID: 4925
 	private int TAB;
 
-	// Token: 0x04001335 RID: 4917
+	// Token: 0x0400133E RID: 4926
 	private float updateTimer;
 }

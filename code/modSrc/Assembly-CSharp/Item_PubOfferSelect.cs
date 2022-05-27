@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000098 RID: 152
 public class Item_PubOfferSelect : MonoBehaviour
 {
-	// Token: 0x060005D5 RID: 1493 RVA: 0x0000562C File Offset: 0x0000382C
+	// Token: 0x060005DE RID: 1502 RVA: 0x0004BFF0 File Offset: 0x0004A1F0
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060005D6 RID: 1494 RVA: 0x0005EF28 File Offset: 0x0005D128
+	// Token: 0x060005DF RID: 1503 RVA: 0x0004BFF8 File Offset: 0x0004A1F8
 	private void Update()
 	{
 		if (!this.game_)
@@ -50,7 +50,7 @@ public class Item_PubOfferSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005D7 RID: 1495 RVA: 0x0005F108 File Offset: 0x0005D308
+	// Token: 0x060005E0 RID: 1504 RVA: 0x0004C1D8 File Offset: 0x0004A3D8
 	private void SetData()
 	{
 		if (!this.game_)
@@ -81,13 +81,13 @@ public class Item_PubOfferSelect : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060005D8 RID: 1496 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060005E1 RID: 1505 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060005D9 RID: 1497 RVA: 0x0005F2C8 File Offset: 0x0005D4C8
+	// Token: 0x060005E2 RID: 1506 RVA: 0x0004C398 File Offset: 0x0004A598
 	public void BUTTON_Click()
 	{
 		if (!this.game_)
@@ -103,7 +103,7 @@ public class Item_PubOfferSelect : MonoBehaviour
 		this.guiMain_.uiObjects[350].GetComponent<MenuPublishingOfferVerhandlung>().Init(this.game_);
 	}
 
-	// Token: 0x060005DA RID: 1498 RVA: 0x00005634 File Offset: 0x00003834
+	// Token: 0x060005E3 RID: 1507 RVA: 0x0004C418 File Offset: 0x0004A618
 	public void BUTTON_Delete()
 	{
 		this.sfx_.PlaySound(3, true);

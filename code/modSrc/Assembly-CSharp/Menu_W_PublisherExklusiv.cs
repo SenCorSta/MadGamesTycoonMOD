@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001A1 RID: 417
+// Token: 0x020001A2 RID: 418
 public class Menu_W_PublisherExklusiv : MonoBehaviour
 {
-	// Token: 0x06000FAC RID: 4012 RVA: 0x0000B238 File Offset: 0x00009438
+	// Token: 0x06000FC4 RID: 4036 RVA: 0x000A76D1 File Offset: 0x000A58D1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FAD RID: 4013 RVA: 0x000B4014 File Offset: 0x000B2214
+	// Token: 0x06000FC5 RID: 4037 RVA: 0x000A76DC File Offset: 0x000A58DC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_W_PublisherExklusiv : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FAE RID: 4014 RVA: 0x000B40C0 File Offset: 0x000B22C0
+	// Token: 0x06000FC6 RID: 4038 RVA: 0x000A7788 File Offset: 0x000A5988
 	public void Init(publisherScript pS_)
 	{
 		this.FindScripts();
@@ -58,14 +58,14 @@ public class Menu_W_PublisherExklusiv : MonoBehaviour
 		this.uiObjects[3].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06000FAF RID: 4015 RVA: 0x0000B240 File Offset: 0x00009440
+	// Token: 0x06000FC7 RID: 4039 RVA: 0x000A7886 File Offset: 0x000A5A86
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FB0 RID: 4016 RVA: 0x000B41C0 File Offset: 0x000B23C0
+	// Token: 0x06000FC8 RID: 4040 RVA: 0x000A78A4 File Offset: 0x000A5AA4
 	public void BUTTON_Yes()
 	{
 		if (this.publisherS_)
@@ -82,30 +82,30 @@ public class Menu_W_PublisherExklusiv : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x0400142F RID: 5167
+	// Token: 0x04001438 RID: 5176
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001430 RID: 5168
+	// Token: 0x04001439 RID: 5177
 	private GameObject main_;
 
-	// Token: 0x04001431 RID: 5169
+	// Token: 0x0400143A RID: 5178
 	private mainScript mS_;
 
-	// Token: 0x04001432 RID: 5170
+	// Token: 0x0400143B RID: 5179
 	private textScript tS_;
 
-	// Token: 0x04001433 RID: 5171
+	// Token: 0x0400143C RID: 5180
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001434 RID: 5172
+	// Token: 0x0400143D RID: 5181
 	private sfxScript sfx_;
 
-	// Token: 0x04001435 RID: 5173
+	// Token: 0x0400143E RID: 5182
 	private publisherScript publisherS_;
 
-	// Token: 0x04001436 RID: 5174
+	// Token: 0x0400143F RID: 5183
 	public int laufzeit;
 
-	// Token: 0x04001437 RID: 5175
+	// Token: 0x04001440 RID: 5184
 	public int sofortzahlung;
 }

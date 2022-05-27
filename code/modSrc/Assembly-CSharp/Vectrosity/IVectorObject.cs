@@ -3,52 +3,52 @@ using UnityEngine;
 
 namespace Vectrosity
 {
-	// Token: 0x0200037D RID: 893
+	// Token: 0x02000380 RID: 896
 	internal interface IVectorObject
 	{
-		// Token: 0x0600201A RID: 8218
+		// Token: 0x0600206D RID: 8301
 		void SetName(string name);
 
-		// Token: 0x0600201B RID: 8219
+		// Token: 0x0600206E RID: 8302
 		void UpdateVerts();
 
-		// Token: 0x0600201C RID: 8220
+		// Token: 0x0600206F RID: 8303
 		void UpdateUVs();
 
-		// Token: 0x0600201D RID: 8221
+		// Token: 0x06002070 RID: 8304
 		void UpdateColors();
 
-		// Token: 0x0600201E RID: 8222
+		// Token: 0x06002071 RID: 8305
 		void UpdateTris();
 
-		// Token: 0x0600201F RID: 8223
+		// Token: 0x06002072 RID: 8306
 		void UpdateNormals();
 
-		// Token: 0x06002020 RID: 8224
+		// Token: 0x06002073 RID: 8307
 		void UpdateTangents();
 
-		// Token: 0x06002021 RID: 8225
+		// Token: 0x06002074 RID: 8308
 		void UpdateMeshAttributes();
 
-		// Token: 0x06002022 RID: 8226
+		// Token: 0x06002075 RID: 8309
 		void ClearMesh();
 
-		// Token: 0x06002023 RID: 8227
+		// Token: 0x06002076 RID: 8310
 		void SetMaterial(Material material);
 
-		// Token: 0x06002024 RID: 8228
+		// Token: 0x06002077 RID: 8311
 		void SetTexture(Texture texture);
 
-		// Token: 0x06002025 RID: 8229
+		// Token: 0x06002078 RID: 8312
 		void Enable(bool enable);
 
-		// Token: 0x06002026 RID: 8230
+		// Token: 0x06002079 RID: 8313
 		void SetVectorLine(VectorLine vectorLine, Texture texture, Material material, bool useCustomMaterial);
 
-		// Token: 0x06002027 RID: 8231
+		// Token: 0x0600207A RID: 8314
 		void Destroy();
 
-		// Token: 0x06002028 RID: 8232
+		// Token: 0x0600207B RID: 8315
 		int VertexCount();
 	}
 }

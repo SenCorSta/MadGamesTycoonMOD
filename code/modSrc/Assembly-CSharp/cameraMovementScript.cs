@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000325 RID: 805
+// Token: 0x02000328 RID: 808
 public class cameraMovementScript : MonoBehaviour
 {
-	// Token: 0x06001C70 RID: 7280 RVA: 0x000137DE File Offset: 0x000119DE
+	// Token: 0x06001CBA RID: 7354 RVA: 0x0011CE04 File Offset: 0x0011B004
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001C71 RID: 7281 RVA: 0x0011EFEC File Offset: 0x0011D1EC
+	// Token: 0x06001CBB RID: 7355 RVA: 0x0011CE0C File Offset: 0x0011B00C
 	private void FindScripts()
 	{
 		if (!this.guiMain_)
@@ -23,7 +23,7 @@ public class cameraMovementScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C72 RID: 7282 RVA: 0x000137E6 File Offset: 0x000119E6
+	// Token: 0x06001CBC RID: 7356 RVA: 0x0011CE5D File Offset: 0x0011B05D
 	public void FindCameraLimits()
 	{
 		this.cameraLimitA = GameObject.Find("CameraLimitA");
@@ -35,13 +35,13 @@ public class cameraMovementScript : MonoBehaviour
 		this.cameraLimitB;
 	}
 
-	// Token: 0x06001C73 RID: 7283 RVA: 0x00013822 File Offset: 0x00011A22
+	// Token: 0x06001CBD RID: 7357 RVA: 0x0011CE99 File Offset: 0x0011B099
 	private void Update()
 	{
 		this.CameraInput();
 	}
 
-	// Token: 0x06001C74 RID: 7284 RVA: 0x0011F040 File Offset: 0x0011D240
+	// Token: 0x06001CBE RID: 7358 RVA: 0x0011CEA4 File Offset: 0x0011B0A4
 	private void CameraInput()
 	{
 		if (this.disableMovement || this.guiMain_.selectInputField)
@@ -126,36 +126,36 @@ public class cameraMovementScript : MonoBehaviour
 		this.lastMousePosition = Input.mousePosition;
 	}
 
-	// Token: 0x040023B8 RID: 9144
+	// Token: 0x040023D2 RID: 9170
 	private GameObject cameraLimitA;
 
-	// Token: 0x040023B9 RID: 9145
+	// Token: 0x040023D3 RID: 9171
 	private GameObject cameraLimitB;
 
-	// Token: 0x040023BA RID: 9146
+	// Token: 0x040023D4 RID: 9172
 	public bool disableMovement;
 
-	// Token: 0x040023BB RID: 9147
+	// Token: 0x040023D5 RID: 9173
 	public float movementSpeed = 1f;
 
-	// Token: 0x040023BC RID: 9148
+	// Token: 0x040023D6 RID: 9174
 	public float movementSpeedWithMouse = 0.01f;
 
-	// Token: 0x040023BD RID: 9149
+	// Token: 0x040023D7 RID: 9175
 	public float rotationSpeed = 1f;
 
-	// Token: 0x040023BE RID: 9150
+	// Token: 0x040023D8 RID: 9176
 	public float rotationSpeedWithMouse = 0.3f;
 
-	// Token: 0x040023BF RID: 9151
+	// Token: 0x040023D9 RID: 9177
 	private Vector3 lastMousePosition;
 
-	// Token: 0x040023C0 RID: 9152
+	// Token: 0x040023DA RID: 9178
 	public float rotation90Grad;
 
-	// Token: 0x040023C1 RID: 9153
+	// Token: 0x040023DB RID: 9179
 	public GUI_Main guiMain_;
 
-	// Token: 0x040023C2 RID: 9154
+	// Token: 0x040023DC RID: 9180
 	public settingsScript settings_;
 }

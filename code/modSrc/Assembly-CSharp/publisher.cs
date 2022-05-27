@@ -6,13 +6,13 @@ using UnityEngine;
 // Token: 0x02000062 RID: 98
 public class publisher : MonoBehaviour
 {
-	// Token: 0x06000385 RID: 901 RVA: 0x00003E74 File Offset: 0x00002074
+	// Token: 0x0600038C RID: 908 RVA: 0x000360E4 File Offset: 0x000342E4
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000386 RID: 902 RVA: 0x0004AB04 File Offset: 0x00048D04
+	// Token: 0x0600038D RID: 909 RVA: 0x000360EC File Offset: 0x000342EC
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -61,7 +61,7 @@ public class publisher : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000387 RID: 903 RVA: 0x0004AC30 File Offset: 0x00048E30
+	// Token: 0x0600038E RID: 910 RVA: 0x00036218 File Offset: 0x00034418
 	public publisherScript CreatePublisher()
 	{
 		this.FindScripts();
@@ -81,7 +81,7 @@ public class publisher : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x06000388 RID: 904 RVA: 0x0004ACE4 File Offset: 0x00048EE4
+	// Token: 0x0600038F RID: 911 RVA: 0x000362CC File Offset: 0x000344CC
 	public void LoadPublisher(string filename)
 	{
 		StreamReader streamReader = new StreamReader(Application.dataPath + "/Extern/Text/" + filename, Encoding.Unicode);
@@ -99,7 +99,6 @@ public class publisher : MonoBehaviour
 				num++;
 			}
 		}
-		Debug.Log("Publisher Amount: " + num.ToString());
 		publisherScript publisherScript = null;
 		for (int j = 0; j < this.data.Length; j++)
 		{
@@ -135,6 +134,10 @@ public class publisher : MonoBehaviour
 				if (this.ParseData("[COMVAL]", j))
 				{
 					publisherScript.firmenwert = (long)int.Parse(this.data[j]);
+				}
+				if (this.ParseData("[COUNTRY]", j))
+				{
+					publisherScript.country = int.Parse(this.data[j]);
 				}
 				if (this.ParseData("[DEVELOPER]", j))
 				{
@@ -289,14 +292,13 @@ public class publisher : MonoBehaviour
 				}
 				if (this.ParseData("[EOF]", j))
 				{
-					Debug.Log("Publisher.txt -> EOF");
-					return;
+					break;
 				}
 			}
 		}
 	}
 
-	// Token: 0x06000389 RID: 905 RVA: 0x0004B20C File Offset: 0x0004940C
+	// Token: 0x06000390 RID: 912 RVA: 0x000367F8 File Offset: 0x000349F8
 	private bool ParseData(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -308,7 +310,7 @@ public class publisher : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600038A RID: 906 RVA: 0x00003E7C File Offset: 0x0000207C
+	// Token: 0x06000391 RID: 913 RVA: 0x00036858 File Offset: 0x00034A58
 	private bool ParseDataDontCutLastChar(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -319,42 +321,42 @@ public class publisher : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x040006E0 RID: 1760
+	// Token: 0x040006DB RID: 1755
 	public GameObject prefabPublisher;
 
-	// Token: 0x040006E1 RID: 1761
+	// Token: 0x040006DC RID: 1756
 	private mainScript mS_;
 
-	// Token: 0x040006E2 RID: 1762
+	// Token: 0x040006DD RID: 1757
 	private textScript tS_;
 
-	// Token: 0x040006E3 RID: 1763
+	// Token: 0x040006DE RID: 1758
 	private settingsScript settings_;
 
-	// Token: 0x040006E4 RID: 1764
+	// Token: 0x040006DF RID: 1759
 	private gameplayFeatures gF_;
 
-	// Token: 0x040006E5 RID: 1765
+	// Token: 0x040006E0 RID: 1760
 	private engineFeatures eF_;
 
-	// Token: 0x040006E6 RID: 1766
+	// Token: 0x040006E1 RID: 1761
 	private games games_;
 
-	// Token: 0x040006E7 RID: 1767
+	// Token: 0x040006E2 RID: 1762
 	private unlockScript unlock_;
 
-	// Token: 0x040006E8 RID: 1768
+	// Token: 0x040006E3 RID: 1763
 	private genres genres_;
 
-	// Token: 0x040006E9 RID: 1769
+	// Token: 0x040006E4 RID: 1764
 	public GUI_Main guiMain_;
 
-	// Token: 0x040006EA RID: 1770
+	// Token: 0x040006E5 RID: 1765
 	public platforms platforms_;
 
-	// Token: 0x040006EB RID: 1771
+	// Token: 0x040006E6 RID: 1766
 	public reviewText reviewText_;
 
-	// Token: 0x040006EC RID: 1772
+	// Token: 0x040006E7 RID: 1767
 	private string[] data;
 }

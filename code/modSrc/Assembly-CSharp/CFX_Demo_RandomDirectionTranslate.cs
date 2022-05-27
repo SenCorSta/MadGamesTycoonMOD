@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x0200000B RID: 11
 public class CFX_Demo_RandomDirectionTranslate : MonoBehaviour
 {
-	// Token: 0x06000042 RID: 66 RVA: 0x0001A294 File Offset: 0x00018494
+	// Token: 0x06000042 RID: 66 RVA: 0x00003728 File Offset: 0x00001928
 	private void Start()
 	{
 		this.dir = new Vector3(UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f)).normalized;
@@ -12,7 +12,7 @@ public class CFX_Demo_RandomDirectionTranslate : MonoBehaviour
 		this.dir += this.baseDir;
 	}
 
-	// Token: 0x06000043 RID: 67 RVA: 0x0001A30C File Offset: 0x0001850C
+	// Token: 0x06000043 RID: 67 RVA: 0x000037A0 File Offset: 0x000019A0
 	private void Update()
 	{
 		base.transform.Translate(this.dir * this.speed * Time.deltaTime);

@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x0200004C RID: 76
 public class contractWork : MonoBehaviour
 {
-	// Token: 0x0600019A RID: 410 RVA: 0x00002EF4 File Offset: 0x000010F4
+	// Token: 0x0600019A RID: 410 RVA: 0x00018BF3 File Offset: 0x00016DF3
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600019B RID: 411 RVA: 0x0002EAA0 File Offset: 0x0002CCA0
+	// Token: 0x0600019B RID: 411 RVA: 0x00018BFC File Offset: 0x00016DFC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -27,13 +27,13 @@ public class contractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600019C RID: 412 RVA: 0x00002EFC File Offset: 0x000010FC
+	// Token: 0x0600019C RID: 412 RVA: 0x00018C62 File Offset: 0x00016E62
 	public void Init()
 	{
 		base.name = "CONTRACTWORK_" + this.myID.ToString();
 	}
 
-	// Token: 0x0600019D RID: 413 RVA: 0x0002EB08 File Offset: 0x0002CD08
+	// Token: 0x0600019D RID: 413 RVA: 0x00018C80 File Offset: 0x00016E80
 	public string GetName()
 	{
 		if (this.art == 6)
@@ -47,31 +47,31 @@ public class contractWork : MonoBehaviour
 		return this.tS_.GetContractWork(this.typ);
 	}
 
-	// Token: 0x0600019E RID: 414 RVA: 0x00002F19 File Offset: 0x00001119
+	// Token: 0x0600019E RID: 414 RVA: 0x00018CD2 File Offset: 0x00016ED2
 	public int GetGehalt()
 	{
 		return this.gehalt;
 	}
 
-	// Token: 0x0600019F RID: 415 RVA: 0x00002F21 File Offset: 0x00001121
+	// Token: 0x0600019F RID: 415 RVA: 0x00018CDA File Offset: 0x00016EDA
 	public int GetStrafe()
 	{
 		return this.strafe;
 	}
 
-	// Token: 0x060001A0 RID: 416 RVA: 0x00002F29 File Offset: 0x00001129
+	// Token: 0x060001A0 RID: 416 RVA: 0x00018CE2 File Offset: 0x00016EE2
 	public int GetWochen()
 	{
 		return this.zeitInWochen;
 	}
 
-	// Token: 0x060001A1 RID: 417 RVA: 0x00002F31 File Offset: 0x00001131
+	// Token: 0x060001A1 RID: 417 RVA: 0x00018CEA File Offset: 0x00016EEA
 	public float GetArbeitsaufwand()
 	{
 		return this.points;
 	}
 
-	// Token: 0x060001A2 RID: 418 RVA: 0x00002F39 File Offset: 0x00001139
+	// Token: 0x060001A2 RID: 418 RVA: 0x00018CF2 File Offset: 0x00016EF2
 	public float GetAuftragsansehen()
 	{
 		if (this.art == 5)
@@ -81,13 +81,13 @@ public class contractWork : MonoBehaviour
 		return this.points * 0.001f;
 	}
 
-	// Token: 0x060001A3 RID: 419 RVA: 0x00002F56 File Offset: 0x00001156
+	// Token: 0x060001A3 RID: 419 RVA: 0x00018D0F File Offset: 0x00016F0F
 	public string GetTooltip()
 	{
 		return "<b>" + this.GetName() + "</b>";
 	}
 
-	// Token: 0x060001A4 RID: 420 RVA: 0x00002F6D File Offset: 0x0000116D
+	// Token: 0x060001A4 RID: 420 RVA: 0x00018D26 File Offset: 0x00016F26
 	public bool IsAngenommen()
 	{
 		return this.angenommen;

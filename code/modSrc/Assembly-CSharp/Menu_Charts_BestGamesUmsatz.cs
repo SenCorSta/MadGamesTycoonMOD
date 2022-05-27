@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000216 RID: 534
+// Token: 0x02000217 RID: 535
 public class Menu_Charts_BestGamesUmsatz : MonoBehaviour
 {
-	// Token: 0x0600147E RID: 5246 RVA: 0x0000DEC0 File Offset: 0x0000C0C0
+	// Token: 0x0600149C RID: 5276 RVA: 0x000D5D91 File Offset: 0x000D3F91
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600147F RID: 5247 RVA: 0x000DF4C4 File Offset: 0x000DD6C4
+	// Token: 0x0600149D RID: 5277 RVA: 0x000D5D9C File Offset: 0x000D3F9C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_Charts_BestGamesUmsatz : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001480 RID: 5248 RVA: 0x0000DEC8 File Offset: 0x0000C0C8
+	// Token: 0x0600149E RID: 5278 RVA: 0x000D5E82 File Offset: 0x000D4082
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -54,7 +54,7 @@ public class Menu_Charts_BestGamesUmsatz : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001481 RID: 5249 RVA: 0x000DF5AC File Offset: 0x000DD7AC
+	// Token: 0x0600149F RID: 5279 RVA: 0x000D5EBC File Offset: 0x000D40BC
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -70,7 +70,7 @@ public class Menu_Charts_BestGamesUmsatz : MonoBehaviour
 		this.SetData(true);
 	}
 
-	// Token: 0x06001482 RID: 5250 RVA: 0x000DF5FC File Offset: 0x000DD7FC
+	// Token: 0x060014A0 RID: 5280 RVA: 0x000D5F0C File Offset: 0x000D410C
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -89,21 +89,21 @@ public class Menu_Charts_BestGamesUmsatz : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001483 RID: 5251 RVA: 0x0000DF00 File Offset: 0x0000C100
+	// Token: 0x060014A1 RID: 5281 RVA: 0x000D5F77 File Offset: 0x000D4177
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x06001484 RID: 5252 RVA: 0x0000DF0E File Offset: 0x0000C10E
+	// Token: 0x060014A2 RID: 5282 RVA: 0x000D5F85 File Offset: 0x000D4185
 	public void Init()
 	{
 		this.FindScripts();
 		this.SetData(false);
 	}
 
-	// Token: 0x06001485 RID: 5253 RVA: 0x000DF668 File Offset: 0x000DD868
+	// Token: 0x060014A3 RID: 5283 RVA: 0x000D5F94 File Offset: 0x000D4194
 	private void SetData(bool check)
 	{
 		this.games_.CreateAllTimeChartsUmsatz(500);
@@ -127,40 +127,40 @@ public class Menu_Charts_BestGamesUmsatz : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06001486 RID: 5254 RVA: 0x0000DF1D File Offset: 0x0000C11D
+	// Token: 0x060014A4 RID: 5284 RVA: 0x000D60C6 File Offset: 0x000D42C6
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040018A3 RID: 6307
+	// Token: 0x040018AA RID: 6314
 	private mainScript mS_;
 
-	// Token: 0x040018A4 RID: 6308
+	// Token: 0x040018AB RID: 6315
 	private GameObject main_;
 
-	// Token: 0x040018A5 RID: 6309
+	// Token: 0x040018AC RID: 6316
 	private GUI_Main guiMain_;
 
-	// Token: 0x040018A6 RID: 6310
+	// Token: 0x040018AD RID: 6317
 	private sfxScript sfx_;
 
-	// Token: 0x040018A7 RID: 6311
+	// Token: 0x040018AE RID: 6318
 	private textScript tS_;
 
-	// Token: 0x040018A8 RID: 6312
+	// Token: 0x040018AF RID: 6319
 	private genres genres_;
 
-	// Token: 0x040018A9 RID: 6313
+	// Token: 0x040018B0 RID: 6320
 	private games games_;
 
-	// Token: 0x040018AA RID: 6314
+	// Token: 0x040018B1 RID: 6321
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040018AB RID: 6315
+	// Token: 0x040018B2 RID: 6322
 	public GameObject[] uiObjects;
 
-	// Token: 0x040018AC RID: 6316
+	// Token: 0x040018B3 RID: 6323
 	private float updateTimer;
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x02000075 RID: 117
 public class GUI_Tabs : MonoBehaviour
 {
-	// Token: 0x060004F5 RID: 1269 RVA: 0x0005934C File Offset: 0x0005754C
+	// Token: 0x060004FE RID: 1278 RVA: 0x00045FF4 File Offset: 0x000441F4
 	private void Start()
 	{
 		this.tabInactivHeight = this.tabs[0].GetComponent<RectTransform>().sizeDelta.y;
@@ -17,7 +17,7 @@ public class GUI_Tabs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004F6 RID: 1270 RVA: 0x000593CC File Offset: 0x000575CC
+	// Token: 0x060004FF RID: 1279 RVA: 0x00046074 File Offset: 0x00044274
 	public void Click_Tab(int t)
 	{
 		this.activTab = t;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x02000091 RID: 145
 public class Item_DevGame_XP : MonoBehaviour
 {
-	// Token: 0x060005A9 RID: 1449 RVA: 0x00005599 File Offset: 0x00003799
+	// Token: 0x060005B2 RID: 1458 RVA: 0x0004B22A File Offset: 0x0004942A
 	public void SetData(string text_, Sprite sprite_, int stars_)
 	{
 		this.uiObjects[0].GetComponent<Text>().text = text_;
@@ -13,7 +13,7 @@ public class Item_DevGame_XP : MonoBehaviour
 		this.guiMain_.DrawStars(this.uiObjects[2], stars_);
 	}
 
-	// Token: 0x060005AA RID: 1450 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060005B3 RID: 1459 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);

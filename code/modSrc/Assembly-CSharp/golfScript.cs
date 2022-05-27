@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002E8 RID: 744
+// Token: 0x020002EB RID: 747
 public class golfScript : MonoBehaviour
 {
-	// Token: 0x06001A28 RID: 6696 RVA: 0x00011A2B File Offset: 0x0000FC2B
+	// Token: 0x06001A72 RID: 6770 RVA: 0x0010AF8B File Offset: 0x0010918B
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001A29 RID: 6697 RVA: 0x0010EED8 File Offset: 0x0010D0D8
+	// Token: 0x06001A73 RID: 6771 RVA: 0x0010AF94 File Offset: 0x00109194
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -27,13 +27,13 @@ public class golfScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A2A RID: 6698 RVA: 0x00011A33 File Offset: 0x0000FC33
+	// Token: 0x06001A74 RID: 6772 RVA: 0x0010AFFE File Offset: 0x001091FE
 	private void OnEnable()
 	{
 		this.timer = 0.72700006f;
 	}
 
-	// Token: 0x06001A2B RID: 6699 RVA: 0x0010EF44 File Offset: 0x0010D144
+	// Token: 0x06001A75 RID: 6773 RVA: 0x0010B00C File Offset: 0x0010920C
 	private void Update()
 	{
 		this.timer += this.mS_.GetDeltaTime();
@@ -51,21 +51,21 @@ public class golfScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400215B RID: 8539
+	// Token: 0x04002175 RID: 8565
 	private GameObject main_;
 
-	// Token: 0x0400215C RID: 8540
+	// Token: 0x04002176 RID: 8566
 	private mainScript mS_;
 
-	// Token: 0x0400215D RID: 8541
+	// Token: 0x04002177 RID: 8567
 	private sfxScript sfx_;
 
-	// Token: 0x0400215E RID: 8542
+	// Token: 0x04002178 RID: 8568
 	public GameObject prefabFlyingBall;
 
-	// Token: 0x0400215F RID: 8543
+	// Token: 0x04002179 RID: 8569
 	private GameObject myBall;
 
-	// Token: 0x04002160 RID: 8544
+	// Token: 0x0400217A RID: 8570
 	public float timer;
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200033A RID: 826
+// Token: 0x0200033D RID: 829
 public class roomDataScript : MonoBehaviour
 {
-	// Token: 0x06001DA6 RID: 7590 RVA: 0x000141F9 File Offset: 0x000123F9
+	// Token: 0x06001DFD RID: 7677 RVA: 0x0012B0FE File Offset: 0x001292FE
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001DA7 RID: 7591 RVA: 0x0012C394 File Offset: 0x0012A594
+	// Token: 0x06001DFE RID: 7678 RVA: 0x0012B108 File Offset: 0x00129308
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -22,13 +22,13 @@ public class roomDataScript : MonoBehaviour
 		this.tS_ = this.main_.GetComponent<textScript>();
 	}
 
-	// Token: 0x06001DA8 RID: 7592 RVA: 0x00014201 File Offset: 0x00012401
+	// Token: 0x06001DFF RID: 7679 RVA: 0x0012B155 File Offset: 0x00129355
 	public int GetPrice(int i)
 	{
 		return this.roomData_PRICE[i];
 	}
 
-	// Token: 0x06001DA9 RID: 7593 RVA: 0x0012C3E4 File Offset: 0x0012A5E4
+	// Token: 0x06001E00 RID: 7680 RVA: 0x0012B160 File Offset: 0x00129360
 	public string GetName(int i)
 	{
 		switch (i)
@@ -69,7 +69,7 @@ public class roomDataScript : MonoBehaviour
 		return "<Missing>";
 	}
 
-	// Token: 0x06001DAA RID: 7594 RVA: 0x0012C52C File Offset: 0x0012A72C
+	// Token: 0x06001E01 RID: 7681 RVA: 0x0012B2A8 File Offset: 0x001294A8
 	public bool KeineMitarbeiter(int roomTyp)
 	{
 		bool result = false;
@@ -104,72 +104,72 @@ public class roomDataScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x040025AB RID: 9643
+	// Token: 0x040025C2 RID: 9666
 	private GameObject main_;
 
-	// Token: 0x040025AC RID: 9644
+	// Token: 0x040025C3 RID: 9667
 	private mainScript mS_;
 
-	// Token: 0x040025AD RID: 9645
+	// Token: 0x040025C4 RID: 9668
 	private textScript tS_;
 
-	// Token: 0x040025AE RID: 9646
+	// Token: 0x040025C5 RID: 9669
 	public int[] roomData_PRICE;
 
-	// Token: 0x040025AF RID: 9647
+	// Token: 0x040025C6 RID: 9670
 	public Sprite[] roomData_SPRITE;
 
-	// Token: 0x040025B0 RID: 9648
+	// Token: 0x040025C7 RID: 9671
 	public const int floor = 0;
 
-	// Token: 0x040025B1 RID: 9649
+	// Token: 0x040025C8 RID: 9672
 	public const int entwicklung = 1;
 
-	// Token: 0x040025B2 RID: 9650
+	// Token: 0x040025C9 RID: 9673
 	public const int forschung = 2;
 
-	// Token: 0x040025B3 RID: 9651
+	// Token: 0x040025CA RID: 9674
 	public const int qa = 3;
 
-	// Token: 0x040025B4 RID: 9652
+	// Token: 0x040025CB RID: 9675
 	public const int grafikstudio = 4;
 
-	// Token: 0x040025B5 RID: 9653
+	// Token: 0x040025CC RID: 9676
 	public const int soundstudio = 5;
 
-	// Token: 0x040025B6 RID: 9654
+	// Token: 0x040025CD RID: 9677
 	public const int marketing = 6;
 
-	// Token: 0x040025B7 RID: 9655
+	// Token: 0x040025CE RID: 9678
 	public const int support = 7;
 
-	// Token: 0x040025B8 RID: 9656
+	// Token: 0x040025CF RID: 9679
 	public const int hardware = 8;
 
-	// Token: 0x040025B9 RID: 9657
+	// Token: 0x040025D0 RID: 9680
 	public const int lager = 9;
 
-	// Token: 0x040025BA RID: 9658
+	// Token: 0x040025D1 RID: 9681
 	public const int motion = 10;
 
-	// Token: 0x040025BB RID: 9659
+	// Token: 0x040025D2 RID: 9682
 	public const int wc = 11;
 
-	// Token: 0x040025BC RID: 9660
+	// Token: 0x040025D3 RID: 9683
 	public const int aufenthalt = 12;
 
-	// Token: 0x040025BD RID: 9661
+	// Token: 0x040025D4 RID: 9684
 	public const int training = 13;
 
-	// Token: 0x040025BE RID: 9662
+	// Token: 0x040025D5 RID: 9685
 	public const int produktion = 14;
 
-	// Token: 0x040025BF RID: 9663
+	// Token: 0x040025D6 RID: 9686
 	public const int server = 15;
 
-	// Token: 0x040025C0 RID: 9664
+	// Token: 0x040025D7 RID: 9687
 	public const int free = 16;
 
-	// Token: 0x040025C1 RID: 9665
+	// Token: 0x040025D8 RID: 9688
 	public const int werkstatt = 17;
 }

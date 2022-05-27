@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002E9 RID: 745
+// Token: 0x020002EC RID: 748
 public class gummibandScript : MonoBehaviour
 {
-	// Token: 0x06001A2D RID: 6701 RVA: 0x0010F068 File Offset: 0x0010D268
+	// Token: 0x06001A77 RID: 6775 RVA: 0x0010B130 File Offset: 0x00109330
 	private void Start()
 	{
 		if (!this.mS_)
@@ -31,14 +31,14 @@ public class gummibandScript : MonoBehaviour
 		this.myImage.enabled = false;
 	}
 
-	// Token: 0x06001A2E RID: 6702 RVA: 0x00011A40 File Offset: 0x0000FC40
+	// Token: 0x06001A78 RID: 6776 RVA: 0x0010B1FF File Offset: 0x001093FF
 	private void Update()
 	{
 		this.UpdateInput();
 		this.UpdateGFX();
 	}
 
-	// Token: 0x06001A2F RID: 6703 RVA: 0x0010F138 File Offset: 0x0010D338
+	// Token: 0x06001A79 RID: 6777 RVA: 0x0010B210 File Offset: 0x00109410
 	private void UpdateGFX()
 	{
 		if (!this.myImage.enabled)
@@ -67,7 +67,7 @@ public class gummibandScript : MonoBehaviour
 		this.rT.sizeDelta = this.vSize / this.settings_.uiScale;
 	}
 
-	// Token: 0x06001A30 RID: 6704 RVA: 0x0010F2FC File Offset: 0x0010D4FC
+	// Token: 0x06001A7A RID: 6778 RVA: 0x0010B3D4 File Offset: 0x001095D4
 	private void UpdateInput()
 	{
 		if (this.isActive && this.guiMain_.menuOpen)
@@ -112,7 +112,7 @@ public class gummibandScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A31 RID: 6705 RVA: 0x0010F45C File Offset: 0x0010D65C
+	// Token: 0x06001A7B RID: 6779 RVA: 0x0010B534 File Offset: 0x00109734
 	private void SelectCharacters()
 	{
 		for (int i = 0; i < this.mS_.arrayCharacters.Length; i++)
@@ -130,7 +130,7 @@ public class gummibandScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A32 RID: 6706 RVA: 0x00011A4E File Offset: 0x0000FC4E
+	// Token: 0x06001A7C RID: 6780 RVA: 0x0010B633 File Offset: 0x00109833
 	private IEnumerator DisableEndOfFrame()
 	{
 		yield return new WaitForEndOfFrame();
@@ -138,42 +138,42 @@ public class gummibandScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04002161 RID: 8545
+	// Token: 0x0400217B RID: 8571
 	private RectTransform rT;
 
-	// Token: 0x04002162 RID: 8546
+	// Token: 0x0400217C RID: 8572
 	public GameObject myObject;
 
-	// Token: 0x04002163 RID: 8547
+	// Token: 0x0400217D RID: 8573
 	private Vector2 start;
 
-	// Token: 0x04002164 RID: 8548
+	// Token: 0x0400217E RID: 8574
 	public bool isActive;
 
-	// Token: 0x04002165 RID: 8549
+	// Token: 0x0400217F RID: 8575
 	private Image myImage;
 
-	// Token: 0x04002166 RID: 8550
+	// Token: 0x04002180 RID: 8576
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002167 RID: 8551
+	// Token: 0x04002181 RID: 8577
 	private mainScript mS_;
 
-	// Token: 0x04002168 RID: 8552
+	// Token: 0x04002182 RID: 8578
 	private Camera camera_;
 
-	// Token: 0x04002169 RID: 8553
+	// Token: 0x04002183 RID: 8579
 	private settingsScript settings_;
 
-	// Token: 0x0400216A RID: 8554
+	// Token: 0x04002184 RID: 8580
 	private pickCharacterScript pcS_;
 
-	// Token: 0x0400216B RID: 8555
+	// Token: 0x04002185 RID: 8581
 	private float timer;
 
-	// Token: 0x0400216C RID: 8556
+	// Token: 0x04002186 RID: 8582
 	private Vector2 vPos;
 
-	// Token: 0x0400216D RID: 8557
+	// Token: 0x04002187 RID: 8583
 	private Vector2 vSize;
 }

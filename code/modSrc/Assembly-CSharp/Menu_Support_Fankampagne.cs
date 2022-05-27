@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200026C RID: 620
+// Token: 0x02000270 RID: 624
 public class Menu_Support_Fankampagne : MonoBehaviour
 {
-	// Token: 0x06001806 RID: 6150 RVA: 0x00010A65 File Offset: 0x0000EC65
+	// Token: 0x06001849 RID: 6217 RVA: 0x000F142D File Offset: 0x000EF62D
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001807 RID: 6151 RVA: 0x000F6860 File Offset: 0x000F4A60
+	// Token: 0x0600184A RID: 6218 RVA: 0x000F1438 File Offset: 0x000EF638
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001808 RID: 6152 RVA: 0x00010A6D File Offset: 0x0000EC6D
+	// Token: 0x0600184B RID: 6219 RVA: 0x000F1522 File Offset: 0x000EF722
 	private void Update()
 	{
 		if (this.selectedKampagne == -1)
@@ -55,7 +55,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		this.uiObjects[25].GetComponent<Button>().interactable = true;
 	}
 
-	// Token: 0x06001809 RID: 6153 RVA: 0x000F694C File Offset: 0x000F4B4C
+	// Token: 0x0600184C RID: 6220 RVA: 0x000F1558 File Offset: 0x000EF758
 	public void Init(roomScript roomS_)
 	{
 		this.FindScripts();
@@ -76,7 +76,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		this.uiObjects[21].GetComponent<Text>().text = "+" + this.fans[5].ToString();
 	}
 
-	// Token: 0x0600180A RID: 6154 RVA: 0x000F6B78 File Offset: 0x000F4D78
+	// Token: 0x0600184D RID: 6221 RVA: 0x000F1784 File Offset: 0x000EF984
 	private void SetButtonColor(int i)
 	{
 		this.uiObjects[2].GetComponent<Image>().color = Color.white;
@@ -113,7 +113,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600180B RID: 6155 RVA: 0x00010AA1 File Offset: 0x0000ECA1
+	// Token: 0x0600184E RID: 6222 RVA: 0x000F1918 File Offset: 0x000EFB18
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -121,7 +121,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600180C RID: 6156 RVA: 0x00010AC7 File Offset: 0x0000ECC7
+	// Token: 0x0600184F RID: 6223 RVA: 0x000F193E File Offset: 0x000EFB3E
 	public void BUTTON_Select(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -129,7 +129,7 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		this.SetButtonColor(i);
 	}
 
-	// Token: 0x0600180D RID: 6157 RVA: 0x000F6D0C File Offset: 0x000F4F0C
+	// Token: 0x06001850 RID: 6224 RVA: 0x000F195C File Offset: 0x000EFB5C
 	public void BUTTON_OK()
 	{
 		if (this.selectedKampagne == -1)
@@ -162,50 +162,50 @@ public class Menu_Support_Fankampagne : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600180E RID: 6158 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06001851 RID: 6225 RVA: 0x00002715 File Offset: 0x00000915
 	public void TOGGLE_Auto()
 	{
 	}
 
-	// Token: 0x04001BD6 RID: 7126
+	// Token: 0x04001BF0 RID: 7152
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001BD7 RID: 7127
+	// Token: 0x04001BF1 RID: 7153
 	public int[] preise;
 
-	// Token: 0x04001BD8 RID: 7128
+	// Token: 0x04001BF2 RID: 7154
 	public int[] fans;
 
-	// Token: 0x04001BD9 RID: 7129
+	// Token: 0x04001BF3 RID: 7155
 	public int[] workPoints;
 
-	// Token: 0x04001BDA RID: 7130
+	// Token: 0x04001BF4 RID: 7156
 	public Sprite[] sprites;
 
-	// Token: 0x04001BDB RID: 7131
+	// Token: 0x04001BF5 RID: 7157
 	private GameObject main_;
 
-	// Token: 0x04001BDC RID: 7132
+	// Token: 0x04001BF6 RID: 7158
 	private mainScript mS_;
 
-	// Token: 0x04001BDD RID: 7133
+	// Token: 0x04001BF7 RID: 7159
 	private textScript tS_;
 
-	// Token: 0x04001BDE RID: 7134
+	// Token: 0x04001BF8 RID: 7160
 	private unlockScript unlock_;
 
-	// Token: 0x04001BDF RID: 7135
+	// Token: 0x04001BF9 RID: 7161
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001BE0 RID: 7136
+	// Token: 0x04001BFA RID: 7162
 	private sfxScript sfx_;
 
-	// Token: 0x04001BE1 RID: 7137
+	// Token: 0x04001BFB RID: 7163
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04001BE2 RID: 7138
+	// Token: 0x04001BFC RID: 7164
 	private roomScript rS_;
 
-	// Token: 0x04001BE3 RID: 7139
+	// Token: 0x04001BFD RID: 7165
 	private int selectedKampagne = -1;
 }

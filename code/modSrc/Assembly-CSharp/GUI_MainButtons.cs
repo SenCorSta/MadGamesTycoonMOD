@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x02000074 RID: 116
 public class GUI_MainButtons : MonoBehaviour
 {
-	// Token: 0x060004E6 RID: 1254 RVA: 0x000051C0 File Offset: 0x000033C0
+	// Token: 0x060004EF RID: 1263 RVA: 0x000458EB File Offset: 0x00043AEB
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060004E7 RID: 1255 RVA: 0x00058C88 File Offset: 0x00056E88
+	// Token: 0x060004F0 RID: 1264 RVA: 0x000458F4 File Offset: 0x00043AF4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -43,7 +43,7 @@ public class GUI_MainButtons : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004E8 RID: 1256 RVA: 0x000051C8 File Offset: 0x000033C8
+	// Token: 0x060004F1 RID: 1265 RVA: 0x000459DA File Offset: 0x00043BDA
 	private void Update()
 	{
 		this.CloseDropdownsWithClick();
@@ -51,7 +51,7 @@ public class GUI_MainButtons : MonoBehaviour
 		this.UpdatePressedButtons();
 	}
 
-	// Token: 0x060004E9 RID: 1257 RVA: 0x00058D70 File Offset: 0x00056F70
+	// Token: 0x060004F2 RID: 1266 RVA: 0x000459F0 File Offset: 0x00043BF0
 	private void CloseDropdownsWithClick()
 	{
 		if (Input.GetMouseButtonDown(0) && !this.guiMain_.IsMouseOverGUI() && !this.guiMain_.uiObjects[19].activeSelf && !this.guiMain_.uiObjects[20].activeSelf && !this.guiMain_.uiObjects[0].activeSelf && !this.guiMain_.uiObjects[15].activeSelf)
@@ -61,7 +61,7 @@ public class GUI_MainButtons : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004EA RID: 1258 RVA: 0x00058DF8 File Offset: 0x00056FF8
+	// Token: 0x060004F3 RID: 1267 RVA: 0x00045A78 File Offset: 0x00043C78
 	private void CloseRoomMenuWithClick()
 	{
 		if (Input.GetMouseButtonDown(0) && !this.guiMain_.IsMouseOverGUI() && this.guiMain_.IsRoomMenuOpen())
@@ -73,7 +73,7 @@ public class GUI_MainButtons : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004EB RID: 1259 RVA: 0x00058E48 File Offset: 0x00057048
+	// Token: 0x060004F4 RID: 1268 RVA: 0x00045AC8 File Offset: 0x00043CC8
 	public void CloseAllDropdowns()
 	{
 		this.FindScripts();
@@ -103,7 +103,7 @@ public class GUI_MainButtons : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004EC RID: 1260 RVA: 0x00058F10 File Offset: 0x00057110
+	// Token: 0x060004F5 RID: 1269 RVA: 0x00045B90 File Offset: 0x00043D90
 	private void UpdatePressedButtons()
 	{
 		if (this.uiObjects[4].activeSelf)
@@ -175,7 +175,7 @@ public class GUI_MainButtons : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004ED RID: 1261 RVA: 0x000051DC File Offset: 0x000033DC
+	// Token: 0x060004F6 RID: 1270 RVA: 0x00045D69 File Offset: 0x00043F69
 	private void CheckPause(bool b)
 	{
 		if (!b)
@@ -186,7 +186,7 @@ public class GUI_MainButtons : MonoBehaviour
 		this.mS_.PauseGame(false);
 	}
 
-	// Token: 0x060004EE RID: 1262 RVA: 0x000590EC File Offset: 0x000572EC
+	// Token: 0x060004F7 RID: 1271 RVA: 0x00045D94 File Offset: 0x00043F94
 	public void BUTTON_BuildRoom()
 	{
 		if (!this.mS_.settings_TutorialOff && this.guiMain_.GetTutorialStep() < 4)
@@ -201,7 +201,7 @@ public class GUI_MainButtons : MonoBehaviour
 		this.CheckPause(activeSelf);
 	}
 
-	// Token: 0x060004EF RID: 1263 RVA: 0x0005915C File Offset: 0x0005735C
+	// Token: 0x060004F8 RID: 1272 RVA: 0x00045E04 File Offset: 0x00044004
 	public void BUTTON_BuyInventar()
 	{
 		this.sfx_.PlaySound(5, true);
@@ -212,7 +212,7 @@ public class GUI_MainButtons : MonoBehaviour
 		this.CheckPause(activeSelf);
 	}
 
-	// Token: 0x060004F0 RID: 1264 RVA: 0x000591B0 File Offset: 0x000573B0
+	// Token: 0x060004F9 RID: 1273 RVA: 0x00045E58 File Offset: 0x00044058
 	public void BUTTON_Personal()
 	{
 		this.sfx_.PlaySound(5, true);
@@ -223,7 +223,7 @@ public class GUI_MainButtons : MonoBehaviour
 		this.CheckPause(activeSelf);
 	}
 
-	// Token: 0x060004F1 RID: 1265 RVA: 0x00059204 File Offset: 0x00057404
+	// Token: 0x060004FA RID: 1274 RVA: 0x00045EAC File Offset: 0x000440AC
 	public void BUTTON_Management()
 	{
 		if (!this.mS_.multiplayer)
@@ -245,7 +245,7 @@ public class GUI_MainButtons : MonoBehaviour
 		this.CheckPause(activeSelf);
 	}
 
-	// Token: 0x060004F2 RID: 1266 RVA: 0x000592A4 File Offset: 0x000574A4
+	// Token: 0x060004FB RID: 1275 RVA: 0x00045F4C File Offset: 0x0004414C
 	public void BUTTON_Publishing()
 	{
 		this.sfx_.PlaySound(5, true);
@@ -256,7 +256,7 @@ public class GUI_MainButtons : MonoBehaviour
 		this.CheckPause(activeSelf);
 	}
 
-	// Token: 0x060004F3 RID: 1267 RVA: 0x000592F8 File Offset: 0x000574F8
+	// Token: 0x060004FC RID: 1276 RVA: 0x00045FA0 File Offset: 0x000441A0
 	public void BUTTON_Statistics()
 	{
 		this.sfx_.PlaySound(5, true);

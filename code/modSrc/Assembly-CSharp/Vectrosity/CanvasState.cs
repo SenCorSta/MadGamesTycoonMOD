@@ -2,14 +2,14 @@
 
 namespace Vectrosity
 {
-	// Token: 0x02000387 RID: 903
+	// Token: 0x0200038A RID: 906
 	internal enum CanvasState
 	{
-		// Token: 0x040028D2 RID: 10450
+		// Token: 0x040028E8 RID: 10472
 		None,
-		// Token: 0x040028D3 RID: 10451
+		// Token: 0x040028E9 RID: 10473
 		OnCanvas,
-		// Token: 0x040028D4 RID: 10452
+		// Token: 0x040028EA RID: 10474
 		OffCanvas
 	}
 }

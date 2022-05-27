@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002D1 RID: 721
+// Token: 0x020002D4 RID: 724
 public class arcadeProduktionScript : MonoBehaviour
 {
-	// Token: 0x060019D1 RID: 6609 RVA: 0x000116C2 File Offset: 0x0000F8C2
+	// Token: 0x06001A1B RID: 6683 RVA: 0x001097C9 File Offset: 0x001079C9
 	private void Start()
 	{
 		this.FindScripts();
 		this.DisableAllChilds();
 	}
 
-	// Token: 0x060019D2 RID: 6610 RVA: 0x0010DA78 File Offset: 0x0010BC78
+	// Token: 0x06001A1C RID: 6684 RVA: 0x001097D8 File Offset: 0x001079D8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -37,7 +37,7 @@ public class arcadeProduktionScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019D3 RID: 6611 RVA: 0x0010DB28 File Offset: 0x0010BD28
+	// Token: 0x06001A1D RID: 6685 RVA: 0x00109888 File Offset: 0x00107A88
 	private void Update()
 	{
 		if (!this.force)
@@ -118,7 +118,7 @@ public class arcadeProduktionScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019D4 RID: 6612 RVA: 0x0010DDCC File Offset: 0x0010BFCC
+	// Token: 0x06001A1E RID: 6686 RVA: 0x00109B2C File Offset: 0x00107D2C
 	private void DisableAllChilds()
 	{
 		for (int i = 0; i < base.transform.childCount; i++)
@@ -130,33 +130,33 @@ public class arcadeProduktionScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002105 RID: 8453
+	// Token: 0x0400211F RID: 8479
 	public Animation myAnimation;
 
-	// Token: 0x04002106 RID: 8454
+	// Token: 0x04002120 RID: 8480
 	public bool force;
 
-	// Token: 0x04002107 RID: 8455
+	// Token: 0x04002121 RID: 8481
 	public GameObject saegeblatt;
 
-	// Token: 0x04002108 RID: 8456
+	// Token: 0x04002122 RID: 8482
 	public GameObject saegeplattPartikel;
 
-	// Token: 0x04002109 RID: 8457
+	// Token: 0x04002123 RID: 8483
 	private GameObject main_;
 
-	// Token: 0x0400210A RID: 8458
+	// Token: 0x04002124 RID: 8484
 	private roomScript roomS_;
 
-	// Token: 0x0400210B RID: 8459
+	// Token: 0x04002125 RID: 8485
 	private mapScript mapS_;
 
-	// Token: 0x0400210C RID: 8460
+	// Token: 0x04002126 RID: 8486
 	private mainScript mS_;
 
-	// Token: 0x0400210D RID: 8461
+	// Token: 0x04002127 RID: 8487
 	private objectScript oS_;
 
-	// Token: 0x0400210E RID: 8462
+	// Token: 0x04002128 RID: 8488
 	private characterScript charS_;
 }

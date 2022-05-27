@@ -2,24 +2,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002CC RID: 716
+// Token: 0x020002CF RID: 719
 public class OptionenForschung : MonoBehaviour
 {
-	// Token: 0x060019BD RID: 6589 RVA: 0x000115F9 File Offset: 0x0000F7F9
+	// Token: 0x06001A07 RID: 6663 RVA: 0x00109190 File Offset: 0x00107390
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x060019BE RID: 6590 RVA: 0x000115F9 File Offset: 0x0000F7F9
+	// Token: 0x06001A08 RID: 6664 RVA: 0x00109190 File Offset: 0x00107390
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x060019BF RID: 6591 RVA: 0x0010D50C File Offset: 0x0010B70C
+	// Token: 0x06001A09 RID: 6665 RVA: 0x001091A0 File Offset: 0x001073A0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,27 +44,27 @@ public class OptionenForschung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019C0 RID: 6592 RVA: 0x0010D5B8 File Offset: 0x0010B7B8
+	// Token: 0x06001A0A RID: 6666 RVA: 0x0010924C File Offset: 0x0010744C
 	private void Init()
 	{
 		base.gameObject.GetComponent<Text>().text = "[" + this.guiMain_.uiObjects[21].GetComponent<Menu_Forschung>().GetAmountForschung(this.forschungTyp, false).ToString() + "] ";
 	}
 
-	// Token: 0x040020E9 RID: 8425
+	// Token: 0x04002103 RID: 8451
 	public int forschungTyp;
 
-	// Token: 0x040020EA RID: 8426
+	// Token: 0x04002104 RID: 8452
 	private mainScript mS_;
 
-	// Token: 0x040020EB RID: 8427
+	// Token: 0x04002105 RID: 8453
 	private GameObject main_;
 
-	// Token: 0x040020EC RID: 8428
+	// Token: 0x04002106 RID: 8454
 	private GUI_Main guiMain_;
 
-	// Token: 0x040020ED RID: 8429
+	// Token: 0x04002107 RID: 8455
 	private sfxScript sfx_;
 
-	// Token: 0x040020EE RID: 8430
+	// Token: 0x04002108 RID: 8456
 	private textScript tS_;
 }

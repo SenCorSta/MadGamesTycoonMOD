@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001CF RID: 463
+// Token: 0x020001D0 RID: 464
 public class Menu_MesseSelectKonsole : MonoBehaviour
 {
-	// Token: 0x06001173 RID: 4467 RVA: 0x0000C346 File Offset: 0x0000A546
+	// Token: 0x0600118D RID: 4493 RVA: 0x000B97E2 File Offset: 0x000B79E2
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001174 RID: 4468 RVA: 0x000C4CFC File Offset: 0x000C2EFC
+	// Token: 0x0600118E RID: 4494 RVA: 0x000B97EC File Offset: 0x000B79EC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_MesseSelectKonsole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001175 RID: 4469 RVA: 0x0000C34E File Offset: 0x0000A54E
+	// Token: 0x0600118F RID: 4495 RVA: 0x000B98DD File Offset: 0x000B7ADD
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -54,14 +54,14 @@ public class Menu_MesseSelectKonsole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001176 RID: 4470 RVA: 0x0000C380 File Offset: 0x0000A580
+	// Token: 0x06001190 RID: 4496 RVA: 0x000B990F File Offset: 0x000B7B0F
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.InitDropdowns();
 	}
 
-	// Token: 0x06001177 RID: 4471 RVA: 0x000C4DF0 File Offset: 0x000C2FF0
+	// Token: 0x06001191 RID: 4497 RVA: 0x000B9920 File Offset: 0x000B7B20
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -74,7 +74,7 @@ public class Menu_MesseSelectKonsole : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001178 RID: 4472 RVA: 0x000C4E90 File Offset: 0x000C3090
+	// Token: 0x06001192 RID: 4498 RVA: 0x000B99C0 File Offset: 0x000B7BC0
 	public void Init(int slot_)
 	{
 		this.FindScripts();
@@ -113,13 +113,13 @@ public class Menu_MesseSelectKonsole : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06001179 RID: 4473 RVA: 0x0000C38E File Offset: 0x0000A58E
+	// Token: 0x06001193 RID: 4499 RVA: 0x000B9B3B File Offset: 0x000B7D3B
 	public bool CheckGameData(platformScript script_)
 	{
-		return script_ && script_.playerConsole && !script_.vomMarktGenommen;
+		return script_ && script_.ownerID == this.mS_.myID && !script_.vomMarktGenommen;
 	}
 
-	// Token: 0x0600117A RID: 4474 RVA: 0x000C500C File Offset: 0x000C320C
+	// Token: 0x06001194 RID: 4500 RVA: 0x000B9B64 File Offset: 0x000B7D64
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -161,7 +161,7 @@ public class Menu_MesseSelectKonsole : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x0600117B RID: 4475 RVA: 0x0000C3AB File Offset: 0x0000A5AB
+	// Token: 0x06001195 RID: 4501 RVA: 0x000B9CAF File Offset: 0x000B7EAF
 	public void BUTTON_Entfernen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -169,40 +169,40 @@ public class Menu_MesseSelectKonsole : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600117C RID: 4476 RVA: 0x0000C3E8 File Offset: 0x0000A5E8
+	// Token: 0x06001196 RID: 4502 RVA: 0x000B9CEC File Offset: 0x000B7EEC
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001601 RID: 5633
+	// Token: 0x0400160A RID: 5642
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001602 RID: 5634
+	// Token: 0x0400160B RID: 5643
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001603 RID: 5635
+	// Token: 0x0400160C RID: 5644
 	private mainScript mS_;
 
-	// Token: 0x04001604 RID: 5636
+	// Token: 0x0400160D RID: 5645
 	private GameObject main_;
 
-	// Token: 0x04001605 RID: 5637
+	// Token: 0x0400160E RID: 5646
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001606 RID: 5638
+	// Token: 0x0400160F RID: 5647
 	private sfxScript sfx_;
 
-	// Token: 0x04001607 RID: 5639
+	// Token: 0x04001610 RID: 5648
 	private textScript tS_;
 
-	// Token: 0x04001608 RID: 5640
+	// Token: 0x04001611 RID: 5649
 	private genres genres_;
 
-	// Token: 0x04001609 RID: 5641
+	// Token: 0x04001612 RID: 5650
 	private Menu_MesseSelect menu_MesseSelect_;
 
-	// Token: 0x0400160A RID: 5642
+	// Token: 0x04001613 RID: 5651
 	private int slot;
 }

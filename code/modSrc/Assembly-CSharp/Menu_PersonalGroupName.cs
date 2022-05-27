@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001E3 RID: 483
+// Token: 0x020001E4 RID: 484
 public class Menu_PersonalGroupName : MonoBehaviour
 {
-	// Token: 0x06001231 RID: 4657 RVA: 0x0000CA21 File Offset: 0x0000AC21
+	// Token: 0x0600124C RID: 4684 RVA: 0x000C1ADD File Offset: 0x000BFCDD
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001232 RID: 4658 RVA: 0x000CC850 File Offset: 0x000CAA50
+	// Token: 0x0600124D RID: 4685 RVA: 0x000C1AE8 File Offset: 0x000BFCE8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,14 +44,14 @@ public class Menu_PersonalGroupName : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001233 RID: 4659 RVA: 0x0000CA29 File Offset: 0x0000AC29
+	// Token: 0x0600124E RID: 4686 RVA: 0x000C1BC2 File Offset: 0x000BFDC2
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.cmS_.disableMovement = true;
 	}
 
-	// Token: 0x06001234 RID: 4660 RVA: 0x0000CA3D File Offset: 0x0000AC3D
+	// Token: 0x0600124F RID: 4687 RVA: 0x000C1BD6 File Offset: 0x000BFDD6
 	private void OnDisable()
 	{
 		this.FindScripts();
@@ -62,7 +62,7 @@ public class Menu_PersonalGroupName : MonoBehaviour
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x06001235 RID: 4661 RVA: 0x000CC92C File Offset: 0x000CAB2C
+	// Token: 0x06001250 RID: 4688 RVA: 0x000C1BF8 File Offset: 0x000BFDF8
 	public void Init(int group_)
 	{
 		this.FindScripts();
@@ -75,14 +75,14 @@ public class Menu_PersonalGroupName : MonoBehaviour
 		this.uiObjects[0].GetComponent<InputField>().text = "";
 	}
 
-	// Token: 0x06001236 RID: 4662 RVA: 0x0000CA5F File Offset: 0x0000AC5F
+	// Token: 0x06001251 RID: 4689 RVA: 0x000C1C68 File Offset: 0x000BFE68
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001237 RID: 4663 RVA: 0x000CC99C File Offset: 0x000CAB9C
+	// Token: 0x06001252 RID: 4690 RVA: 0x000C1C84 File Offset: 0x000BFE84
 	public void BUTTON_Yes()
 	{
 		this.mS_.personal_group_names[this.group] = this.uiObjects[0].GetComponent<InputField>().text;
@@ -91,27 +91,27 @@ public class Menu_PersonalGroupName : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x040016B4 RID: 5812
+	// Token: 0x040016BD RID: 5821
 	public GameObject[] uiObjects;
 
-	// Token: 0x040016B5 RID: 5813
+	// Token: 0x040016BE RID: 5822
 	private GameObject main_;
 
-	// Token: 0x040016B6 RID: 5814
+	// Token: 0x040016BF RID: 5823
 	private mainScript mS_;
 
-	// Token: 0x040016B7 RID: 5815
+	// Token: 0x040016C0 RID: 5824
 	private textScript tS_;
 
-	// Token: 0x040016B8 RID: 5816
+	// Token: 0x040016C1 RID: 5825
 	private GUI_Main guiMain_;
 
-	// Token: 0x040016B9 RID: 5817
+	// Token: 0x040016C2 RID: 5826
 	private sfxScript sfx_;
 
-	// Token: 0x040016BA RID: 5818
+	// Token: 0x040016C3 RID: 5827
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040016BB RID: 5819
+	// Token: 0x040016C4 RID: 5828
 	private int group = -1;
 }

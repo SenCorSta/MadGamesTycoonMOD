@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000E6 RID: 230
 public class Item_FinanzVerlauf : MonoBehaviour
 {
-	// Token: 0x060007AD RID: 1965 RVA: 0x000061F4 File Offset: 0x000043F4
+	// Token: 0x060007B6 RID: 1974 RVA: 0x0005674A File Offset: 0x0005494A
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007AE RID: 1966 RVA: 0x000688EC File Offset: 0x00066AEC
+	// Token: 0x060007B7 RID: 1975 RVA: 0x00056754 File Offset: 0x00054954
 	public void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = (1976 + this.index).ToString();
@@ -25,7 +25,7 @@ public class Item_FinanzVerlauf : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007AF RID: 1967 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060007B8 RID: 1976 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);

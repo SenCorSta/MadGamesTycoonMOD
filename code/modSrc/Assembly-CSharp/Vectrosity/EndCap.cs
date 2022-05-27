@@ -2,18 +2,18 @@
 
 namespace Vectrosity
 {
-	// Token: 0x02000384 RID: 900
+	// Token: 0x02000387 RID: 903
 	public enum EndCap
 	{
-		// Token: 0x040028C4 RID: 10436
+		// Token: 0x040028DA RID: 10458
 		Front,
-		// Token: 0x040028C5 RID: 10437
+		// Token: 0x040028DB RID: 10459
 		Both,
-		// Token: 0x040028C6 RID: 10438
+		// Token: 0x040028DC RID: 10460
 		Mirror,
-		// Token: 0x040028C7 RID: 10439
+		// Token: 0x040028DD RID: 10461
 		Back,
-		// Token: 0x040028C8 RID: 10440
+		// Token: 0x040028DE RID: 10462
 		None
 	}
 }

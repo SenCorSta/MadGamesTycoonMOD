@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000317 RID: 791
+// Token: 0x0200031A RID: 794
 public class taskSoundVerbessern : MonoBehaviour
 {
-	// Token: 0x06001BC7 RID: 7111 RVA: 0x00013030 File Offset: 0x00011230
+	// Token: 0x06001C11 RID: 7185 RVA: 0x0011672C File Offset: 0x0011492C
 	private void Awake()
 	{
 		base.transform.position = new Vector3(140f, 0f, 0f);
 	}
 
-	// Token: 0x06001BC8 RID: 7112 RVA: 0x00013051 File Offset: 0x00011251
+	// Token: 0x06001C12 RID: 7186 RVA: 0x0011674D File Offset: 0x0011494D
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001BC9 RID: 7113 RVA: 0x001190D4 File Offset: 0x001172D4
+	// Token: 0x06001C13 RID: 7187 RVA: 0x00116758 File Offset: 0x00114958
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -49,7 +49,7 @@ public class taskSoundVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BCA RID: 7114 RVA: 0x00013059 File Offset: 0x00011259
+	// Token: 0x06001C14 RID: 7188 RVA: 0x00116845 File Offset: 0x00114A45
 	private void Update()
 	{
 		this.FindMyObject();
@@ -57,7 +57,7 @@ public class taskSoundVerbessern : MonoBehaviour
 		this.GamePublished();
 	}
 
-	// Token: 0x06001BCB RID: 7115 RVA: 0x0001306D File Offset: 0x0001126D
+	// Token: 0x06001C15 RID: 7189 RVA: 0x00116859 File Offset: 0x00114A59
 	private void GamePublished()
 	{
 		if (this.gS_ && !this.gS_.inDevelopment)
@@ -66,7 +66,7 @@ public class taskSoundVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BCC RID: 7116 RVA: 0x0001308F File Offset: 0x0001128F
+	// Token: 0x06001C16 RID: 7190 RVA: 0x0011687B File Offset: 0x00114A7B
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -76,7 +76,7 @@ public class taskSoundVerbessern : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001BCD RID: 7117 RVA: 0x001191C4 File Offset: 0x001173C4
+	// Token: 0x06001C17 RID: 7191 RVA: 0x001168AC File Offset: 0x00114AAC
 	private void FindMyObject()
 	{
 		if (this.gS_)
@@ -94,7 +94,7 @@ public class taskSoundVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BCE RID: 7118 RVA: 0x00119224 File Offset: 0x00117424
+	// Token: 0x06001C18 RID: 7192 RVA: 0x0011690C File Offset: 0x00114B0C
 	private void FindMyRoom()
 	{
 		if (!this.gS_)
@@ -139,19 +139,19 @@ public class taskSoundVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BCF RID: 7119 RVA: 0x000130C0 File Offset: 0x000112C0
+	// Token: 0x06001C19 RID: 7193 RVA: 0x00116A11 File Offset: 0x00114C11
 	public float GetProzent()
 	{
 		return 100f / this.points * (this.points - this.pointsLeft);
 	}
 
-	// Token: 0x06001BD0 RID: 7120 RVA: 0x000130DC File Offset: 0x000112DC
+	// Token: 0x06001C1A RID: 7194 RVA: 0x00116A2D File Offset: 0x00114C2D
 	public Sprite GetPic()
 	{
 		return this.games_.gameAdds[this.aktuellerAdd + 12];
 	}
 
-	// Token: 0x06001BD1 RID: 7121 RVA: 0x0011932C File Offset: 0x0011752C
+	// Token: 0x06001C1B RID: 7195 RVA: 0x00116A44 File Offset: 0x00114C44
 	public void Work(float f)
 	{
 		if (this.pointsLeft > 0f)
@@ -169,7 +169,7 @@ public class taskSoundVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BD2 RID: 7122 RVA: 0x00119398 File Offset: 0x00117598
+	// Token: 0x06001C1C RID: 7196 RVA: 0x00116AB0 File Offset: 0x00114CB0
 	public void FindNewAdd()
 	{
 		this.FindScripts();
@@ -194,7 +194,7 @@ public class taskSoundVerbessern : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06001BD3 RID: 7123 RVA: 0x00119450 File Offset: 0x00117650
+	// Token: 0x06001C1D RID: 7197 RVA: 0x00116B68 File Offset: 0x00114D68
 	private void Complete()
 	{
 		this.FindMyObject();
@@ -218,7 +218,7 @@ public class taskSoundVerbessern : MonoBehaviour
 		this.FindNewAdd();
 	}
 
-	// Token: 0x06001BD4 RID: 7124 RVA: 0x0011954C File Offset: 0x0011774C
+	// Token: 0x06001C1E RID: 7198 RVA: 0x00116C64 File Offset: 0x00114E64
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -235,7 +235,7 @@ public class taskSoundVerbessern : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001BD5 RID: 7125 RVA: 0x001195AC File Offset: 0x001177AC
+	// Token: 0x06001C1F RID: 7199 RVA: 0x00116CC4 File Offset: 0x00114EC4
 	public int GetRueckgeld()
 	{
 		float num = 0f;
@@ -249,7 +249,7 @@ public class taskSoundVerbessern : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x06001BD6 RID: 7126 RVA: 0x001195F4 File Offset: 0x001177F4
+	// Token: 0x06001C20 RID: 7200 RVA: 0x00116D0C File Offset: 0x00114F0C
 	public void Abbrechen()
 	{
 		int rueckgeld = this.GetRueckgeld();
@@ -270,51 +270,51 @@ public class taskSoundVerbessern : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04002302 RID: 8962
+	// Token: 0x0400231C RID: 8988
 	public int myID = -1;
 
-	// Token: 0x04002303 RID: 8963
+	// Token: 0x0400231D RID: 8989
 	public int targetID = -1;
 
-	// Token: 0x04002304 RID: 8964
+	// Token: 0x0400231E RID: 8990
 	public float points;
 
-	// Token: 0x04002305 RID: 8965
+	// Token: 0x0400231F RID: 8991
 	public float pointsLeft;
 
-	// Token: 0x04002306 RID: 8966
+	// Token: 0x04002320 RID: 8992
 	public bool[] adds = new bool[6];
 
-	// Token: 0x04002307 RID: 8967
+	// Token: 0x04002321 RID: 8993
 	public int aktuellerAdd = -1;
 
-	// Token: 0x04002308 RID: 8968
+	// Token: 0x04002322 RID: 8994
 	private GameObject main_;
 
-	// Token: 0x04002309 RID: 8969
+	// Token: 0x04002323 RID: 8995
 	public mainScript mS_;
 
-	// Token: 0x0400230A RID: 8970
+	// Token: 0x04002324 RID: 8996
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400230B RID: 8971
+	// Token: 0x04002325 RID: 8997
 	private textScript tS_;
 
-	// Token: 0x0400230C RID: 8972
+	// Token: 0x04002326 RID: 8998
 	private roomDataScript rdS_;
 
-	// Token: 0x0400230D RID: 8973
+	// Token: 0x04002327 RID: 8999
 	public gameScript gS_;
 
-	// Token: 0x0400230E RID: 8974
+	// Token: 0x04002328 RID: 9000
 	private Menu_SFX_SoundVerbessern menuSFX_;
 
-	// Token: 0x0400230F RID: 8975
+	// Token: 0x04002329 RID: 9001
 	private games games_;
 
-	// Token: 0x04002310 RID: 8976
+	// Token: 0x0400232A RID: 9002
 	public roomScript rS_;
 
-	// Token: 0x04002311 RID: 8977
+	// Token: 0x0400232B RID: 9003
 	private float findMyRoomTimer;
 }

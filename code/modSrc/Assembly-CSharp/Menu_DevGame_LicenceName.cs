@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200011F RID: 287
+// Token: 0x02000120 RID: 288
 public class Menu_DevGame_LicenceName : MonoBehaviour
 {
-	// Token: 0x060009E9 RID: 2537 RVA: 0x000072A4 File Offset: 0x000054A4
+	// Token: 0x060009F8 RID: 2552 RVA: 0x0006D0DD File Offset: 0x0006B2DD
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060009EA RID: 2538 RVA: 0x0007DDC0 File Offset: 0x0007BFC0
+	// Token: 0x060009F9 RID: 2553 RVA: 0x0006D0E8 File Offset: 0x0006B2E8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -35,14 +35,14 @@ public class Menu_DevGame_LicenceName : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009EB RID: 2539 RVA: 0x000072AC File Offset: 0x000054AC
+	// Token: 0x060009FA RID: 2554 RVA: 0x0006D192 File Offset: 0x0006B392
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060009EC RID: 2540 RVA: 0x000072C7 File Offset: 0x000054C7
+	// Token: 0x060009FB RID: 2555 RVA: 0x0006D1AD File Offset: 0x0006B3AD
 	public void BUTTON_Yes()
 	{
 		this.guiMain_.uiObjects[56].GetComponent<Menu_DevGame>().SetLicenceName();
@@ -50,21 +50,21 @@ public class Menu_DevGame_LicenceName : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x04000E3D RID: 3645
+	// Token: 0x04000E45 RID: 3653
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000E3E RID: 3646
+	// Token: 0x04000E46 RID: 3654
 	private GameObject main_;
 
-	// Token: 0x04000E3F RID: 3647
+	// Token: 0x04000E47 RID: 3655
 	private mainScript mS_;
 
-	// Token: 0x04000E40 RID: 3648
+	// Token: 0x04000E48 RID: 3656
 	private textScript tS_;
 
-	// Token: 0x04000E41 RID: 3649
+	// Token: 0x04000E49 RID: 3657
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000E42 RID: 3650
+	// Token: 0x04000E4A RID: 3658
 	private sfxScript sfx_;
 }

@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000189 RID: 393
+// Token: 0x0200018A RID: 394
 public class Menu_BuyCopyProtect : MonoBehaviour
 {
-	// Token: 0x06000ED5 RID: 3797 RVA: 0x0000A7BF File Offset: 0x000089BF
+	// Token: 0x06000EED RID: 3821 RVA: 0x0009EEF3 File Offset: 0x0009D0F3
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000ED6 RID: 3798 RVA: 0x000AC24C File Offset: 0x000AA44C
+	// Token: 0x06000EEE RID: 3822 RVA: 0x0009EEFC File Offset: 0x0009D0FC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -37,7 +37,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000ED7 RID: 3799 RVA: 0x0000A7C7 File Offset: 0x000089C7
+	// Token: 0x06000EEF RID: 3823 RVA: 0x0009EFA6 File Offset: 0x0009D1A6
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -47,7 +47,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000ED8 RID: 3800 RVA: 0x000AC2F8 File Offset: 0x000AA4F8
+	// Token: 0x06000EF0 RID: 3824 RVA: 0x0009EFE0 File Offset: 0x0009D1E0
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -73,7 +73,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		this.SetData(true);
 	}
 
-	// Token: 0x06000ED9 RID: 3801 RVA: 0x000AC35C File Offset: 0x000AA55C
+	// Token: 0x06000EF1 RID: 3825 RVA: 0x0009F044 File Offset: 0x0009D244
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -86,7 +86,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000EDA RID: 3802 RVA: 0x0000A7FF File Offset: 0x000089FF
+	// Token: 0x06000EF2 RID: 3826 RVA: 0x0009F0A0 File Offset: 0x0009D2A0
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -94,7 +94,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		this.TAB_CopyProtectBuy(0);
 	}
 
-	// Token: 0x06000EDB RID: 3803 RVA: 0x000AC3B8 File Offset: 0x000AA5B8
+	// Token: 0x06000EF3 RID: 3827 RVA: 0x0009F0B8 File Offset: 0x0009D2B8
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -107,7 +107,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06000EDC RID: 3804 RVA: 0x000AC458 File Offset: 0x000AA658
+	// Token: 0x06000EF4 RID: 3828 RVA: 0x0009F158 File Offset: 0x0009D358
 	private void Init(bool inBesitz)
 	{
 		this.FindScripts();
@@ -118,7 +118,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		this.SetData(inBesitz);
 	}
 
-	// Token: 0x06000EDD RID: 3805 RVA: 0x000AC4B0 File Offset: 0x000AA6B0
+	// Token: 0x06000EF5 RID: 3829 RVA: 0x0009F1B0 File Offset: 0x0009D3B0
 	private void SetData(bool inBesitz)
 	{
 		bool isOn = this.uiObjects[5].GetComponent<Toggle>().isOn;
@@ -143,7 +143,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[6]);
 	}
 
-	// Token: 0x06000EDE RID: 3806 RVA: 0x000AC5E0 File Offset: 0x000AA7E0
+	// Token: 0x06000EF6 RID: 3830 RVA: 0x0009F2E0 File Offset: 0x0009D4E0
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -177,7 +177,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06000EDF RID: 3807 RVA: 0x000AC6E8 File Offset: 0x000AA8E8
+	// Token: 0x06000EF7 RID: 3831 RVA: 0x0009F3E8 File Offset: 0x0009D5E8
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -188,7 +188,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000EE0 RID: 3808 RVA: 0x0000A814 File Offset: 0x00008A14
+	// Token: 0x06000EF8 RID: 3832 RVA: 0x0009F476 File Offset: 0x0009D676
 	public void TAB_CopyProtectBuy(int t)
 	{
 		this.TAB = t;
@@ -197,7 +197,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		this.Init(false);
 	}
 
-	// Token: 0x06000EE1 RID: 3809 RVA: 0x0000A845 File Offset: 0x00008A45
+	// Token: 0x06000EF9 RID: 3833 RVA: 0x0009F4A7 File Offset: 0x0009D6A7
 	public void TAB_MyCopyProtect(int t)
 	{
 		this.TAB = t;
@@ -206,7 +206,7 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		this.Init(true);
 	}
 
-	// Token: 0x06000EE2 RID: 3810 RVA: 0x000AC778 File Offset: 0x000AA978
+	// Token: 0x06000EFA RID: 3834 RVA: 0x0009F4D8 File Offset: 0x0009D6D8
 	public void TOGGLE_Veraltet()
 	{
 		int tab = this.TAB;
@@ -222,30 +222,30 @@ public class Menu_BuyCopyProtect : MonoBehaviour
 		this.TAB_MyCopyProtect(1);
 	}
 
-	// Token: 0x04001336 RID: 4918
+	// Token: 0x0400133F RID: 4927
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001337 RID: 4919
+	// Token: 0x04001340 RID: 4928
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001338 RID: 4920
+	// Token: 0x04001341 RID: 4929
 	private mainScript mS_;
 
-	// Token: 0x04001339 RID: 4921
+	// Token: 0x04001342 RID: 4930
 	private GameObject main_;
 
-	// Token: 0x0400133A RID: 4922
+	// Token: 0x04001343 RID: 4931
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400133B RID: 4923
+	// Token: 0x04001344 RID: 4932
 	private sfxScript sfx_;
 
-	// Token: 0x0400133C RID: 4924
+	// Token: 0x04001345 RID: 4933
 	private textScript tS_;
 
-	// Token: 0x0400133D RID: 4925
+	// Token: 0x04001346 RID: 4934
 	private int TAB;
 
-	// Token: 0x0400133E RID: 4926
+	// Token: 0x04001347 RID: 4935
 	private float updateTimer;
 }

@@ -2,12 +2,12 @@
 
 namespace Vectrosity
 {
-	// Token: 0x02000386 RID: 902
+	// Token: 0x02000389 RID: 905
 	public enum Brightness
 	{
-		// Token: 0x040028CF RID: 10447
+		// Token: 0x040028E5 RID: 10469
 		Fog,
-		// Token: 0x040028D0 RID: 10448
+		// Token: 0x040028E6 RID: 10470
 		None
 	}
 }

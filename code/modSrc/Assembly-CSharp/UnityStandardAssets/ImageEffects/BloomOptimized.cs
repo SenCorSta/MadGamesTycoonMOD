@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace UnityStandardAssets.ImageEffects
 {
-	// Token: 0x02000377 RID: 887
+	// Token: 0x0200037A RID: 890
 	[ExecuteInEditMode]
 	[RequireComponent(typeof(Camera))]
 	[AddComponentMenu("Image Effects/Bloom and Glow/Bloom (Optimized)")]
 	public class BloomOptimized : PostEffectsBase
 	{
-		// Token: 0x06002000 RID: 8192 RVA: 0x000152D9 File Offset: 0x000134D9
+		// Token: 0x06002053 RID: 8275 RVA: 0x0014FAEB File Offset: 0x0014DCEB
 		public override bool CheckResources()
 		{
 			base.CheckSupport(false);
@@ -21,7 +21,7 @@ namespace UnityStandardAssets.ImageEffects
 			return this.isSupported;
 		}
 
-		// Token: 0x06002001 RID: 8193 RVA: 0x0001530F File Offset: 0x0001350F
+		// Token: 0x06002054 RID: 8276 RVA: 0x0014FB21 File Offset: 0x0014DD21
 		private void OnDisable()
 		{
 			if (this.fastBloomMaterial)
@@ -30,7 +30,7 @@ namespace UnityStandardAssets.ImageEffects
 			}
 		}
 
-		// Token: 0x06002002 RID: 8194 RVA: 0x001500E0 File Offset: 0x0014E2E0
+		// Token: 0x06002055 RID: 8277 RVA: 0x0014FB3C File Offset: 0x0014DD3C
 		private void OnRenderImage(RenderTexture source, RenderTexture destination)
 		{
 			if (!this.CheckResources())
@@ -67,49 +67,49 @@ namespace UnityStandardAssets.ImageEffects
 			RenderTexture.ReleaseTemporary(renderTexture);
 		}
 
-		// Token: 0x04002890 RID: 10384
+		// Token: 0x040028A6 RID: 10406
 		[Range(0f, 1.5f)]
 		public float threshold = 0.25f;
 
-		// Token: 0x04002891 RID: 10385
+		// Token: 0x040028A7 RID: 10407
 		[Range(0f, 2.5f)]
 		public float intensity = 0.75f;
 
-		// Token: 0x04002892 RID: 10386
+		// Token: 0x040028A8 RID: 10408
 		[Range(0.25f, 5.5f)]
 		public float blurSize = 1f;
 
-		// Token: 0x04002893 RID: 10387
+		// Token: 0x040028A9 RID: 10409
 		private BloomOptimized.Resolution resolution;
 
-		// Token: 0x04002894 RID: 10388
+		// Token: 0x040028AA RID: 10410
 		[Range(1f, 4f)]
 		public int blurIterations = 1;
 
-		// Token: 0x04002895 RID: 10389
+		// Token: 0x040028AB RID: 10411
 		public BloomOptimized.BlurType blurType;
 
-		// Token: 0x04002896 RID: 10390
+		// Token: 0x040028AC RID: 10412
 		public Shader fastBloomShader;
 
-		// Token: 0x04002897 RID: 10391
+		// Token: 0x040028AD RID: 10413
 		private Material fastBloomMaterial;
 
-		// Token: 0x02000378 RID: 888
+		// Token: 0x0200037B RID: 891
 		public enum Resolution
 		{
-			// Token: 0x04002899 RID: 10393
+			// Token: 0x040028AF RID: 10415
 			Low,
-			// Token: 0x0400289A RID: 10394
+			// Token: 0x040028B0 RID: 10416
 			High
 		}
 
-		// Token: 0x02000379 RID: 889
+		// Token: 0x0200037C RID: 892
 		public enum BlurType
 		{
-			// Token: 0x0400289C RID: 10396
+			// Token: 0x040028B2 RID: 10418
 			Standard,
-			// Token: 0x0400289D RID: 10397
+			// Token: 0x040028B3 RID: 10419
 			Sgx
 		}
 	}

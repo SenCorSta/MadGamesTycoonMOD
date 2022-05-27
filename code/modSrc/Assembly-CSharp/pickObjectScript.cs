@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000338 RID: 824
+// Token: 0x0200033B RID: 827
 public class pickObjectScript : MonoBehaviour
 {
-	// Token: 0x06001D97 RID: 7575 RVA: 0x00014191 File Offset: 0x00012391
+	// Token: 0x06001DEE RID: 7662 RVA: 0x0012A7EE File Offset: 0x001289EE
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001D98 RID: 7576 RVA: 0x0012BB70 File Offset: 0x00129D70
+	// Token: 0x06001DEF RID: 7663 RVA: 0x0012A7F8 File Offset: 0x001289F8
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -44,14 +44,14 @@ public class pickObjectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D99 RID: 7577 RVA: 0x00014199 File Offset: 0x00012399
+	// Token: 0x06001DF0 RID: 7664 RVA: 0x0012A8D8 File Offset: 0x00128AD8
 	private void Update()
 	{
 		this.Pick();
 		this.disableMouseButton = false;
 	}
 
-	// Token: 0x06001D9A RID: 7578 RVA: 0x0012BC50 File Offset: 0x00129E50
+	// Token: 0x06001DF1 RID: 7665 RVA: 0x0012A8E8 File Offset: 0x00128AE8
 	private void Pick()
 	{
 		if (this.gummiS_.isActive)
@@ -156,7 +156,7 @@ public class pickObjectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D9B RID: 7579 RVA: 0x000141A8 File Offset: 0x000123A8
+	// Token: 0x06001DF2 RID: 7666 RVA: 0x0012ACA3 File Offset: 0x00128EA3
 	private void Unpick()
 	{
 		if (this.hitOld.transform)
@@ -166,7 +166,7 @@ public class pickObjectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D9C RID: 7580 RVA: 0x0012C00C File Offset: 0x0012A20C
+	// Token: 0x06001DF3 RID: 7667 RVA: 0x0012ACE0 File Offset: 0x00128EE0
 	public void Click(GameObject go)
 	{
 		this.guiMain.OpenMenu(false);
@@ -186,51 +186,51 @@ public class pickObjectScript : MonoBehaviour
 		this.guiMain.ActivateMenu(this.guiMain.uiObjects[0]);
 	}
 
-	// Token: 0x0400258D RID: 9613
+	// Token: 0x040025A4 RID: 9636
 	private mainScript mS_;
 
-	// Token: 0x0400258E RID: 9614
+	// Token: 0x040025A5 RID: 9637
 	private GUI_Main guiMain;
 
-	// Token: 0x0400258F RID: 9615
+	// Token: 0x040025A6 RID: 9638
 	private mapScript mapS_;
 
-	// Token: 0x04002590 RID: 9616
+	// Token: 0x040025A7 RID: 9639
 	private Camera myCamera;
 
-	// Token: 0x04002591 RID: 9617
+	// Token: 0x040025A8 RID: 9640
 	private sfxScript sfx_;
 
-	// Token: 0x04002592 RID: 9618
+	// Token: 0x040025A9 RID: 9641
 	private pickCharacterScript pcS_;
 
-	// Token: 0x04002593 RID: 9619
+	// Token: 0x040025AA RID: 9642
 	private RaycastHit hit;
 
-	// Token: 0x04002594 RID: 9620
+	// Token: 0x040025AB RID: 9643
 	private RaycastHit hitOld;
 
-	// Token: 0x04002595 RID: 9621
+	// Token: 0x040025AC RID: 9644
 	private RaycastHit hitEmpty;
 
-	// Token: 0x04002596 RID: 9622
+	// Token: 0x040025AD RID: 9645
 	public LayerMask layerMask;
 
-	// Token: 0x04002597 RID: 9623
+	// Token: 0x040025AE RID: 9646
 	private gummibandScript gummiS_;
 
-	// Token: 0x04002598 RID: 9624
+	// Token: 0x040025AF RID: 9647
 	public bool disableMouseButton;
 
-	// Token: 0x04002599 RID: 9625
+	// Token: 0x040025B0 RID: 9648
 	public Vector3 oldPosition;
 
-	// Token: 0x0400259A RID: 9626
+	// Token: 0x040025B1 RID: 9649
 	public Vector3 oldRotation;
 
-	// Token: 0x0400259B RID: 9627
+	// Token: 0x040025B2 RID: 9650
 	public bool reopenBuyInventarMenu;
 
-	// Token: 0x0400259C RID: 9628
+	// Token: 0x040025B3 RID: 9651
 	public int buyInventar = -1;
 }

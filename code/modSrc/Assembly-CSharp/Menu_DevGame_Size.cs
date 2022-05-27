@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000121 RID: 289
+// Token: 0x02000122 RID: 290
 public class Menu_DevGame_Size : MonoBehaviour
 {
-	// Token: 0x060009FD RID: 2557 RVA: 0x00007378 File Offset: 0x00005578
+	// Token: 0x06000A0C RID: 2572 RVA: 0x0006DE28 File Offset: 0x0006C028
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x060009FE RID: 2558 RVA: 0x0007EA24 File Offset: 0x0007CC24
+	// Token: 0x06000A0D RID: 2573 RVA: 0x0006DE38 File Offset: 0x0006C038
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -49,19 +49,19 @@ public class Menu_DevGame_Size : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009FF RID: 2559 RVA: 0x00007386 File Offset: 0x00005586
+	// Token: 0x06000A0E RID: 2574 RVA: 0x0006DF44 File Offset: 0x0006C144
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06000A00 RID: 2560 RVA: 0x0000738E File Offset: 0x0000558E
+	// Token: 0x06000A0F RID: 2575 RVA: 0x0006DF4C File Offset: 0x0006C14C
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000A01 RID: 2561 RVA: 0x0007EB30 File Offset: 0x0007CD30
+	// Token: 0x06000A10 RID: 2576 RVA: 0x0006DF54 File Offset: 0x0006C154
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -77,7 +77,7 @@ public class Menu_DevGame_Size : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x06000A02 RID: 2562 RVA: 0x0007EB7C File Offset: 0x0007CD7C
+	// Token: 0x06000A11 RID: 2577 RVA: 0x0006DFA0 File Offset: 0x0006C1A0
 	private void Init()
 	{
 		this.FindScripts();
@@ -97,7 +97,7 @@ public class Menu_DevGame_Size : MonoBehaviour
 		this.uiObjects[9].GetComponent<Text>().text = this.tS_.GetText(335);
 	}
 
-	// Token: 0x06000A03 RID: 2563 RVA: 0x00007396 File Offset: 0x00005596
+	// Token: 0x06000A12 RID: 2578 RVA: 0x0006E25A File Offset: 0x0006C45A
 	public void BUTTON_GameSize(int i)
 	{
 		this.mDevGame_.SetGameSize(i);
@@ -105,40 +105,40 @@ public class Menu_DevGame_Size : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000A04 RID: 2564 RVA: 0x000073BD File Offset: 0x000055BD
+	// Token: 0x06000A13 RID: 2579 RVA: 0x0006E281 File Offset: 0x0006C481
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04000E4E RID: 3662
+	// Token: 0x04000E56 RID: 3670
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000E4F RID: 3663
+	// Token: 0x04000E57 RID: 3671
 	private GameObject main_;
 
-	// Token: 0x04000E50 RID: 3664
+	// Token: 0x04000E58 RID: 3672
 	private mainScript mS_;
 
-	// Token: 0x04000E51 RID: 3665
+	// Token: 0x04000E59 RID: 3673
 	private textScript tS_;
 
-	// Token: 0x04000E52 RID: 3666
+	// Token: 0x04000E5A RID: 3674
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000E53 RID: 3667
+	// Token: 0x04000E5B RID: 3675
 	private sfxScript sfx_;
 
-	// Token: 0x04000E54 RID: 3668
+	// Token: 0x04000E5C RID: 3676
 	private Menu_DevGame mDevGame_;
 
-	// Token: 0x04000E55 RID: 3669
+	// Token: 0x04000E5D RID: 3677
 	private unlockScript unlock_;
 
-	// Token: 0x04000E56 RID: 3670
+	// Token: 0x04000E5E RID: 3678
 	private forschungSonstiges fS_;
 
-	// Token: 0x04000E57 RID: 3671
+	// Token: 0x04000E5F RID: 3679
 	private float updateTimer;
 }

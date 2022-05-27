@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x020003F6 RID: 1014
+	// Token: 0x020003F9 RID: 1017
 	public class All1ShaderDemoController : MonoBehaviour
 	{
-		// Token: 0x060023CA RID: 9162 RVA: 0x001711AC File Offset: 0x0016F3AC
+		// Token: 0x0600241D RID: 9245 RVA: 0x00174090 File Offset: 0x00172290
 		private void Start()
 		{
 			this.currExpositor = 0;
@@ -25,7 +25,7 @@ namespace AllIn1SpriteShader
 			this.currentColors = (this.targetColors.Clone() as Color[]);
 		}
 
-		// Token: 0x060023CB RID: 9163 RVA: 0x001712AC File Offset: 0x0016F4AC
+		// Token: 0x0600241E RID: 9246 RVA: 0x00174190 File Offset: 0x00172390
 		private void Update()
 		{
 			this.GetInput();
@@ -39,7 +39,7 @@ namespace AllIn1SpriteShader
 			this.backgroundMat.SetColor("_GradBotRightCol", this.currentColors[3]);
 		}
 
-		// Token: 0x060023CC RID: 9164 RVA: 0x00171444 File Offset: 0x0016F644
+		// Token: 0x0600241F RID: 9247 RVA: 0x00174328 File Offset: 0x00172528
 		private void GetInput()
 		{
 			if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
@@ -63,7 +63,7 @@ namespace AllIn1SpriteShader
 			}
 		}
 
-		// Token: 0x060023CD RID: 9165 RVA: 0x001714DC File Offset: 0x0016F6DC
+		// Token: 0x06002420 RID: 9248 RVA: 0x001743C0 File Offset: 0x001725C0
 		private void ChangeExpositor(int offset)
 		{
 			this.currExpositor += offset;
@@ -78,52 +78,52 @@ namespace AllIn1SpriteShader
 			this.SetExpositorText();
 		}
 
-		// Token: 0x060023CE RID: 9166 RVA: 0x00018602 File Offset: 0x00016802
+		// Token: 0x06002421 RID: 9249 RVA: 0x00174415 File Offset: 0x00172615
 		private void SetExpositorText()
 		{
 			this.expositorsTitle.text = this.expositors[this.currExpositor].name;
 			this.expositorsTitleOutline.text = this.expositors[this.currExpositor].name;
 		}
 
-		// Token: 0x060023CF RID: 9167 RVA: 0x0001863E File Offset: 0x0001683E
+		// Token: 0x06002422 RID: 9250 RVA: 0x00174451 File Offset: 0x00172651
 		public int GetCurrExpositor()
 		{
 			return this.currExpositor;
 		}
 
-		// Token: 0x04002E1E RID: 11806
+		// Token: 0x04002E34 RID: 11828
 		[SerializeField]
 		private DemoCircleExpositor[] expositors;
 
-		// Token: 0x04002E1F RID: 11807
+		// Token: 0x04002E35 RID: 11829
 		[SerializeField]
 		private Text expositorsTitle;
 
-		// Token: 0x04002E20 RID: 11808
+		// Token: 0x04002E36 RID: 11830
 		[SerializeField]
 		private Text expositorsTitleOutline;
 
-		// Token: 0x04002E21 RID: 11809
+		// Token: 0x04002E37 RID: 11831
 		public float expositorDistance;
 
-		// Token: 0x04002E22 RID: 11810
+		// Token: 0x04002E38 RID: 11832
 		private int currExpositor;
 
-		// Token: 0x04002E23 RID: 11811
+		// Token: 0x04002E39 RID: 11833
 		[SerializeField]
 		private GameObject background;
 
-		// Token: 0x04002E24 RID: 11812
+		// Token: 0x04002E3A RID: 11834
 		private Material backgroundMat;
 
-		// Token: 0x04002E25 RID: 11813
+		// Token: 0x04002E3B RID: 11835
 		[SerializeField]
 		private float colorLerpSpeed;
 
-		// Token: 0x04002E26 RID: 11814
+		// Token: 0x04002E3C RID: 11836
 		private Color[] targetColors;
 
-		// Token: 0x04002E27 RID: 11815
+		// Token: 0x04002E3D RID: 11837
 		private Color[] currentColors;
 	}
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001A0 RID: 416
+// Token: 0x020001A1 RID: 417
 public class Menu_W_BuyLicence : MonoBehaviour
 {
-	// Token: 0x06000FA5 RID: 4005 RVA: 0x0000B193 File Offset: 0x00009393
+	// Token: 0x06000FBD RID: 4029 RVA: 0x000A7563 File Offset: 0x000A5763
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FA6 RID: 4006 RVA: 0x000B3F4C File Offset: 0x000B214C
+	// Token: 0x06000FBE RID: 4030 RVA: 0x000A756C File Offset: 0x000A576C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_W_BuyLicence : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FA7 RID: 4007 RVA: 0x0000B19B File Offset: 0x0000939B
+	// Token: 0x06000FBF RID: 4031 RVA: 0x000A7634 File Offset: 0x000A5834
 	public void Init(int id)
 	{
 		this.FindScripts();
@@ -48,7 +48,7 @@ public class Menu_W_BuyLicence : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.licences_.GetTooltip(this.myID);
 	}
 
-	// Token: 0x06000FA8 RID: 4008 RVA: 0x0000B1CD File Offset: 0x000093CD
+	// Token: 0x06000FC0 RID: 4032 RVA: 0x000A7666 File Offset: 0x000A5866
 	private void Update()
 	{
 		if (this.licences_.licence_ANGEBOT[this.myID] <= 0)
@@ -58,14 +58,14 @@ public class Menu_W_BuyLicence : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FA9 RID: 4009 RVA: 0x0000B1EB File Offset: 0x000093EB
+	// Token: 0x06000FC1 RID: 4033 RVA: 0x000A7684 File Offset: 0x000A5884
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FAA RID: 4010 RVA: 0x0000B206 File Offset: 0x00009406
+	// Token: 0x06000FC2 RID: 4034 RVA: 0x000A769F File Offset: 0x000A589F
 	public void BUTTON_Yes()
 	{
 		this.licences_.Buy(this.myID);
@@ -73,30 +73,30 @@ public class Menu_W_BuyLicence : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x04001426 RID: 5158
+	// Token: 0x0400142F RID: 5167
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001427 RID: 5159
+	// Token: 0x04001430 RID: 5168
 	private platformScript pS_;
 
-	// Token: 0x04001428 RID: 5160
+	// Token: 0x04001431 RID: 5169
 	private GameObject main_;
 
-	// Token: 0x04001429 RID: 5161
+	// Token: 0x04001432 RID: 5170
 	private mainScript mS_;
 
-	// Token: 0x0400142A RID: 5162
+	// Token: 0x04001433 RID: 5171
 	private textScript tS_;
 
-	// Token: 0x0400142B RID: 5163
+	// Token: 0x04001434 RID: 5172
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400142C RID: 5164
+	// Token: 0x04001435 RID: 5173
 	private sfxScript sfx_;
 
-	// Token: 0x0400142D RID: 5165
+	// Token: 0x04001436 RID: 5174
 	private licences licences_;
 
-	// Token: 0x0400142E RID: 5166
+	// Token: 0x04001437 RID: 5175
 	public int myID;
 }

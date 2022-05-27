@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200021B RID: 539
+// Token: 0x0200021C RID: 540
 public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 {
-	// Token: 0x060014A4 RID: 5284 RVA: 0x0000E0B4 File Offset: 0x0000C2B4
+	// Token: 0x060014C2 RID: 5314 RVA: 0x000D6B15 File Offset: 0x000D4D15
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060014A5 RID: 5285 RVA: 0x000E0050 File Offset: 0x000DE250
+	// Token: 0x060014C3 RID: 5315 RVA: 0x000D6B20 File Offset: 0x000D4D20
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060014A6 RID: 5286 RVA: 0x0000E0BC File Offset: 0x0000C2BC
+	// Token: 0x060014C4 RID: 5316 RVA: 0x000D6C06 File Offset: 0x000D4E06
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -55,7 +55,7 @@ public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060014A7 RID: 5287 RVA: 0x000E0138 File Offset: 0x000DE338
+	// Token: 0x060014C5 RID: 5317 RVA: 0x000D6C40 File Offset: 0x000D4E40
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -71,7 +71,7 @@ public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060014A8 RID: 5288 RVA: 0x000E0184 File Offset: 0x000DE384
+	// Token: 0x060014C6 RID: 5318 RVA: 0x000D6C8C File Offset: 0x000D4E8C
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -84,7 +84,7 @@ public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060014A9 RID: 5289 RVA: 0x0000E0F4 File Offset: 0x0000C2F4
+	// Token: 0x060014C7 RID: 5319 RVA: 0x000D6CE8 File Offset: 0x000D4EE8
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -92,7 +92,7 @@ public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x060014AA RID: 5290 RVA: 0x000E01E0 File Offset: 0x000DE3E0
+	// Token: 0x060014C8 RID: 5320 RVA: 0x000D6CFC File Offset: 0x000D4EFC
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[1].name);
@@ -106,7 +106,7 @@ public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x060014AB RID: 5291 RVA: 0x000E0294 File Offset: 0x000DE494
+	// Token: 0x060014C9 RID: 5321 RVA: 0x000D6DB0 File Offset: 0x000D4FB0
 	public void Init()
 	{
 		this.FindScripts();
@@ -117,7 +117,7 @@ public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060014AC RID: 5292 RVA: 0x000E02E8 File Offset: 0x000DE4E8
+	// Token: 0x060014CA RID: 5322 RVA: 0x000D6E04 File Offset: 0x000D5004
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -142,13 +142,13 @@ public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x060014AD RID: 5293 RVA: 0x0000E108 File Offset: 0x0000C308
+	// Token: 0x060014CB RID: 5323 RVA: 0x000D6F0E File Offset: 0x000D510E
 	public bool CheckPlatformData(platformScript script_)
 	{
-		return script_ && script_.playerConsole;
+		return script_ && script_.ownerID == this.mS_.myID;
 	}
 
-	// Token: 0x060014AE RID: 5294 RVA: 0x000E03F4 File Offset: 0x000DE5F4
+	// Token: 0x060014CC RID: 5324 RVA: 0x000D6F30 File Offset: 0x000D5130
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -193,40 +193,40 @@ public class Menu_ShowKonsoleDetailsSelect : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x060014AF RID: 5295 RVA: 0x0000E11D File Offset: 0x0000C31D
+	// Token: 0x060014CD RID: 5325 RVA: 0x000D7097 File Offset: 0x000D5297
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040018C5 RID: 6341
+	// Token: 0x040018CC RID: 6348
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040018C6 RID: 6342
+	// Token: 0x040018CD RID: 6349
 	public GameObject[] uiObjects;
 
-	// Token: 0x040018C7 RID: 6343
+	// Token: 0x040018CE RID: 6350
 	private mainScript mS_;
 
-	// Token: 0x040018C8 RID: 6344
+	// Token: 0x040018CF RID: 6351
 	private GameObject main_;
 
-	// Token: 0x040018C9 RID: 6345
+	// Token: 0x040018D0 RID: 6352
 	private GUI_Main guiMain_;
 
-	// Token: 0x040018CA RID: 6346
+	// Token: 0x040018D1 RID: 6353
 	private sfxScript sfx_;
 
-	// Token: 0x040018CB RID: 6347
+	// Token: 0x040018D2 RID: 6354
 	private textScript tS_;
 
-	// Token: 0x040018CC RID: 6348
+	// Token: 0x040018D3 RID: 6355
 	private genres genres_;
 
-	// Token: 0x040018CD RID: 6349
+	// Token: 0x040018D4 RID: 6356
 	private platforms platforms_;
 
-	// Token: 0x040018CE RID: 6350
+	// Token: 0x040018D5 RID: 6357
 	private float updateTimer;
 }

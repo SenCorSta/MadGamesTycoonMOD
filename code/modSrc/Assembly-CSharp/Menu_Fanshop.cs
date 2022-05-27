@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000267 RID: 615
+// Token: 0x0200026B RID: 619
 public class Menu_Fanshop : MonoBehaviour
 {
-	// Token: 0x060017C6 RID: 6086 RVA: 0x00010893 File Offset: 0x0000EA93
+	// Token: 0x06001809 RID: 6153 RVA: 0x000F00BA File Offset: 0x000EE2BA
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060017C7 RID: 6087 RVA: 0x000F5728 File Offset: 0x000F3928
+	// Token: 0x0600180A RID: 6154 RVA: 0x000F00C4 File Offset: 0x000EE2C4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,13 +45,13 @@ public class Menu_Fanshop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017C8 RID: 6088 RVA: 0x0001089B File Offset: 0x0000EA9B
+	// Token: 0x0600180B RID: 6155 RVA: 0x000F01AE File Offset: 0x000EE3AE
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060017C9 RID: 6089 RVA: 0x000F5814 File Offset: 0x000F3A14
+	// Token: 0x0600180C RID: 6156 RVA: 0x000F01B8 File Offset: 0x000EE3B8
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -67,7 +67,7 @@ public class Menu_Fanshop : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060017CA RID: 6090 RVA: 0x000F5860 File Offset: 0x000F3A60
+	// Token: 0x0600180D RID: 6157 RVA: 0x000F0204 File Offset: 0x000EE404
 	public void Init(gameScript gS_)
 	{
 		this.FindScripts();
@@ -89,7 +89,7 @@ public class Menu_Fanshop : MonoBehaviour
 		this.SetUnlocks();
 	}
 
-	// Token: 0x060017CB RID: 6091 RVA: 0x000F58F0 File Offset: 0x000F3AF0
+	// Token: 0x0600180E RID: 6158 RVA: 0x000F0294 File Offset: 0x000EE494
 	private void SetUnlocks()
 	{
 		for (int i = 0; i < this.needStars.Length; i++)
@@ -134,7 +134,7 @@ public class Menu_Fanshop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017CC RID: 6092 RVA: 0x000F5A20 File Offset: 0x000F3C20
+	// Token: 0x0600180F RID: 6159 RVA: 0x000F03C4 File Offset: 0x000EE5C4
 	private int UpdateBestellpreis()
 	{
 		int num = 0;
@@ -155,13 +155,13 @@ public class Menu_Fanshop : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060017CD RID: 6093 RVA: 0x000108A3 File Offset: 0x0000EAA3
+	// Token: 0x06001810 RID: 6160 RVA: 0x000F0457 File Offset: 0x000EE657
 	private int GetBestellpreis(int i)
 	{
 		return Mathf.RoundToInt((float)this.bestellmenge[i] * this.einkaufspreis[i]);
 	}
 
-	// Token: 0x060017CE RID: 6094 RVA: 0x000F5AB4 File Offset: 0x000F3CB4
+	// Token: 0x06001811 RID: 6161 RVA: 0x000F0470 File Offset: 0x000EE670
 	private void SetData()
 	{
 		if (this.selectedGame)
@@ -198,19 +198,19 @@ public class Menu_Fanshop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017CF RID: 6095 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06001812 RID: 6162 RVA: 0x00002715 File Offset: 0x00000915
 	public void INPUTFIELD_Bestellmenge(int i)
 	{
 	}
 
-	// Token: 0x060017D0 RID: 6096 RVA: 0x000108BC File Offset: 0x0000EABC
+	// Token: 0x06001813 RID: 6163 RVA: 0x000F06A0 File Offset: 0x000EE8A0
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060017D1 RID: 6097 RVA: 0x000108D7 File Offset: 0x0000EAD7
+	// Token: 0x06001814 RID: 6164 RVA: 0x000F06BB File Offset: 0x000EE8BB
 	public void BUTTON_Ok()
 	{
 		if (this.selectedGame)
@@ -220,12 +220,12 @@ public class Menu_Fanshop : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x060017D2 RID: 6098 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06001815 RID: 6165 RVA: 0x00002715 File Offset: 0x00000915
 	public void BUTTON_Bestellen()
 	{
 	}
 
-	// Token: 0x060017D3 RID: 6099 RVA: 0x000F5CE4 File Offset: 0x000F3EE4
+	// Token: 0x06001816 RID: 6166 RVA: 0x000F06F0 File Offset: 0x000EE8F0
 	private string GetMoneyString(float f)
 	{
 		string text = "$" + this.mS_.Round(f, 2);
@@ -248,22 +248,22 @@ public class Menu_Fanshop : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x060017D4 RID: 6100 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06001817 RID: 6167 RVA: 0x00002715 File Offset: 0x00000915
 	public void BUTTON_MinusBestellmenge(int i)
 	{
 	}
 
-	// Token: 0x060017D5 RID: 6101 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06001818 RID: 6168 RVA: 0x00002715 File Offset: 0x00000915
 	public void BUTTON_PlusBestellmenge(int i)
 	{
 	}
 
-	// Token: 0x060017D6 RID: 6102 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06001819 RID: 6169 RVA: 0x00002715 File Offset: 0x00000915
 	private void SetInputFieldData()
 	{
 	}
 
-	// Token: 0x060017D7 RID: 6103 RVA: 0x0001090A File Offset: 0x0000EB0A
+	// Token: 0x0600181A RID: 6170 RVA: 0x000F0764 File Offset: 0x000EE964
 	private IEnumerator iMinusVerkaufspreis(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -274,7 +274,7 @@ public class Menu_Fanshop : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060017D8 RID: 6104 RVA: 0x000F5D58 File Offset: 0x000F3F58
+	// Token: 0x0600181B RID: 6171 RVA: 0x000F077C File Offset: 0x000EE97C
 	public void BUTTON_MinusVerkaufspreis(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -291,7 +291,7 @@ public class Menu_Fanshop : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060017D9 RID: 6105 RVA: 0x00010920 File Offset: 0x0000EB20
+	// Token: 0x0600181C RID: 6172 RVA: 0x000F0814 File Offset: 0x000EEA14
 	private IEnumerator iPlusVerkaufspreis(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -302,7 +302,7 @@ public class Menu_Fanshop : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060017DA RID: 6106 RVA: 0x000F5DF0 File Offset: 0x000F3FF0
+	// Token: 0x0600181D RID: 6173 RVA: 0x000F082C File Offset: 0x000EEA2C
 	public void BUTTON_PlusVerkaufspreis(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -319,20 +319,20 @@ public class Menu_Fanshop : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060017DB RID: 6107 RVA: 0x00010936 File Offset: 0x0000EB36
+	// Token: 0x0600181E RID: 6174 RVA: 0x000F08C4 File Offset: 0x000EEAC4
 	public float GetMindestVerkaufspreis(int i)
 	{
 		return (float)Mathf.RoundToInt(this.einkaufspreis[i]) + 0.99f;
 	}
 
-	// Token: 0x060017DC RID: 6108 RVA: 0x000F5E88 File Offset: 0x000F4088
+	// Token: 0x0600181F RID: 6175 RVA: 0x000F08DC File Offset: 0x000EEADC
 	public void BUTTON_GlobalVerkaufspreis()
 	{
 		this.sfx_.PlaySound(3, true);
 		int num = 1;
 		for (int i = 0; i < this.mS_.games_.arrayGamesScripts.Length; i++)
 		{
-			if (this.mS_.games_.arrayGamesScripts[i] && this.selectedGame.myID != this.mS_.games_.arrayGamesScripts[i].myID && this.mS_.games_.arrayGamesScripts[i].playerGame && this.mS_.games_.arrayGamesScripts[i].mainIP == this.mS_.games_.arrayGamesScripts[i].myID)
+			if (this.mS_.games_.arrayGamesScripts[i] && this.selectedGame.myID != this.mS_.games_.arrayGamesScripts[i].myID && this.mS_.games_.arrayGamesScripts[i].ownerID == this.mS_.myID && this.mS_.games_.arrayGamesScripts[i].mainIP == this.mS_.games_.arrayGamesScripts[i].myID)
 			{
 				num++;
 				for (int j = 0; j < this.mS_.games_.arrayGamesScripts[i].merchVerkaufspreis.Length; j++)
@@ -346,58 +346,58 @@ public class Menu_Fanshop : MonoBehaviour
 		this.guiMain_.MessageBox(text, false);
 	}
 
-	// Token: 0x060017DD RID: 6109 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06001820 RID: 6176 RVA: 0x00002715 File Offset: 0x00000915
 	public void TOGGLE_Automatic()
 	{
 	}
 
-	// Token: 0x060017DE RID: 6110 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06001821 RID: 6177 RVA: 0x00002715 File Offset: 0x00000915
 	public void TOGGLE_VerkaufEinstellen()
 	{
 	}
 
-	// Token: 0x04001BAC RID: 7084
+	// Token: 0x04001BC6 RID: 7110
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001BAD RID: 7085
+	// Token: 0x04001BC7 RID: 7111
 	private GameObject main_;
 
-	// Token: 0x04001BAE RID: 7086
+	// Token: 0x04001BC8 RID: 7112
 	private mainScript mS_;
 
-	// Token: 0x04001BAF RID: 7087
+	// Token: 0x04001BC9 RID: 7113
 	private textScript tS_;
 
-	// Token: 0x04001BB0 RID: 7088
+	// Token: 0x04001BCA RID: 7114
 	private unlockScript unlock_;
 
-	// Token: 0x04001BB1 RID: 7089
+	// Token: 0x04001BCB RID: 7115
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001BB2 RID: 7090
+	// Token: 0x04001BCC RID: 7116
 	private sfxScript sfx_;
 
-	// Token: 0x04001BB3 RID: 7091
+	// Token: 0x04001BCD RID: 7117
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04001BB4 RID: 7092
+	// Token: 0x04001BCE RID: 7118
 	private gameScript selectedGame;
 
-	// Token: 0x04001BB5 RID: 7093
+	// Token: 0x04001BCF RID: 7119
 	public int[] bestellmenge;
 
-	// Token: 0x04001BB6 RID: 7094
+	// Token: 0x04001BD0 RID: 7120
 	public float[] einkaufspreis;
 
-	// Token: 0x04001BB7 RID: 7095
+	// Token: 0x04001BD1 RID: 7121
 	public float[] beliebtheit;
 
-	// Token: 0x04001BB8 RID: 7096
+	// Token: 0x04001BD2 RID: 7122
 	public float[] optimalerPreis;
 
-	// Token: 0x04001BB9 RID: 7097
+	// Token: 0x04001BD3 RID: 7123
 	public int[] needStars;
 
-	// Token: 0x04001BBA RID: 7098
+	// Token: 0x04001BD4 RID: 7124
 	private float updateTimer;
 }

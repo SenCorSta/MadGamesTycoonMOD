@@ -4,12 +4,12 @@ using UnityEngine;
 // Token: 0x02000046 RID: 70
 public class clothScript : MonoBehaviour
 {
-	// Token: 0x06000161 RID: 353 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06000161 RID: 353 RVA: 0x00002715 File Offset: 0x00000915
 	private void Start()
 	{
 	}
 
-	// Token: 0x06000162 RID: 354 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06000162 RID: 354 RVA: 0x00002715 File Offset: 0x00000915
 	private void Update()
 	{
 	}

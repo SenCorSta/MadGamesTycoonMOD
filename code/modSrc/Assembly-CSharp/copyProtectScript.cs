@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x0200004E RID: 78
 public class copyProtectScript : MonoBehaviour
 {
-	// Token: 0x060001AE RID: 430 RVA: 0x00002FBC File Offset: 0x000011BC
+	// Token: 0x060001AE RID: 430 RVA: 0x00019265 File Offset: 0x00017465
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060001AF RID: 431 RVA: 0x0002F070 File Offset: 0x0002D270
+	// Token: 0x060001AF RID: 431 RVA: 0x00019270 File Offset: 0x00017470
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -31,13 +31,13 @@ public class copyProtectScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001B0 RID: 432 RVA: 0x00002FC4 File Offset: 0x000011C4
+	// Token: 0x060001B0 RID: 432 RVA: 0x000192F4 File Offset: 0x000174F4
 	public void Init()
 	{
 		base.name = "COPYPROTECT_" + this.myID.ToString();
 	}
 
-	// Token: 0x060001B1 RID: 433 RVA: 0x0002F0F4 File Offset: 0x0002D2F4
+	// Token: 0x060001B1 RID: 433 RVA: 0x00019314 File Offset: 0x00017514
 	public string GetName()
 	{
 		string text;
@@ -84,25 +84,25 @@ public class copyProtectScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x060001B2 RID: 434 RVA: 0x00002FE1 File Offset: 0x000011E1
+	// Token: 0x060001B2 RID: 434 RVA: 0x000193F2 File Offset: 0x000175F2
 	public int GetPrice()
 	{
 		return this.price;
 	}
 
-	// Token: 0x060001B3 RID: 435 RVA: 0x00002FE9 File Offset: 0x000011E9
+	// Token: 0x060001B3 RID: 435 RVA: 0x000193FA File Offset: 0x000175FA
 	public int GetDevCosts()
 	{
 		return this.dev_costs;
 	}
 
-	// Token: 0x060001B4 RID: 436 RVA: 0x00002FF1 File Offset: 0x000011F1
+	// Token: 0x060001B4 RID: 436 RVA: 0x00019402 File Offset: 0x00017602
 	public string GetDateString()
 	{
 		return this.date_year.ToString() + " " + this.tS_.GetText(this.date_month + 220);
 	}
 
-	// Token: 0x060001B5 RID: 437 RVA: 0x0002F1D4 File Offset: 0x0002D3D4
+	// Token: 0x060001B5 RID: 437 RVA: 0x00019430 File Offset: 0x00017630
 	public string GetTooltip()
 	{
 		string text = "<b>" + this.GetName() + "</b>";
@@ -134,13 +134,13 @@ public class copyProtectScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x060001B6 RID: 438 RVA: 0x0000301F File Offset: 0x0000121F
+	// Token: 0x060001B6 RID: 438 RVA: 0x00019543 File Offset: 0x00017743
 	public bool IsVerfuegbar()
 	{
 		return this.isUnlocked;
 	}
 
-	// Token: 0x060001B7 RID: 439 RVA: 0x0000302C File Offset: 0x0000122C
+	// Token: 0x060001B7 RID: 439 RVA: 0x00019550 File Offset: 0x00017750
 	public void EffektVerschlechtern()
 	{
 		if (this.IsVerfuegbar() && !this.neverLooseEffect)

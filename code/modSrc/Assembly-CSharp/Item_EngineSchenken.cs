@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000E5 RID: 229
 public class Item_EngineSchenken : MonoBehaviour
 {
-	// Token: 0x060007A7 RID: 1959 RVA: 0x00006193 File Offset: 0x00004393
+	// Token: 0x060007B0 RID: 1968 RVA: 0x000564E0 File Offset: 0x000546E0
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007A8 RID: 1960 RVA: 0x000686EC File Offset: 0x000668EC
+	// Token: 0x060007B1 RID: 1969 RVA: 0x000564E8 File Offset: 0x000546E8
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.eS_.GetName();
@@ -30,11 +30,11 @@ public class Item_EngineSchenken : MonoBehaviour
 		});
 		this.uiObjects[2].GetComponent<Text>().text = text;
 		this.uiObjects[4].GetComponent<Text>().text = "";
-		if (!this.eS_.sellEngine || !this.eS_.playerEngine)
+		if (!this.eS_.sellEngine || this.eS_.OwnerIsNPC())
 		{
 			this.uiObjects[5].SetActive(false);
 		}
-		if (this.eS_.sellEngine && this.eS_.playerEngine)
+		if (this.eS_.sellEngine && this.eS_.myID == this.mS_.myID)
 		{
 			this.uiObjects[5].SetActive(true);
 		}
@@ -51,7 +51,7 @@ public class Item_EngineSchenken : MonoBehaviour
 		base.GetComponent<Image>().color = Color.white;
 	}
 
-	// Token: 0x060007A9 RID: 1961 RVA: 0x0000619B File Offset: 0x0000439B
+	// Token: 0x060007B2 RID: 1970 RVA: 0x000566F1 File Offset: 0x000548F1
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -63,13 +63,13 @@ public class Item_EngineSchenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060007AA RID: 1962 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060007B3 RID: 1971 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007AB RID: 1963 RVA: 0x000061CE File Offset: 0x000043CE
+	// Token: 0x060007B4 RID: 1972 RVA: 0x00056724 File Offset: 0x00054924
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

@@ -29,7 +29,7 @@ public class AllIn1Shader : MonoBehaviour
 		this.SetMaterial(AllIn1Shader.AfterSetAction.Reset, getShaderTypeFromPrefs, shaderName);
 	}
 
-	// Token: 0x06000004 RID: 4 RVA: 0x00018DC8 File Offset: 0x00016FC8
+	// Token: 0x06000004 RID: 4 RVA: 0x00002078 File Offset: 0x00000278
 	private string GetStringFromShaderType()
 	{
 		if (this.shaderTypes == AllIn1Shader.ShaderTypes.Default)
@@ -51,7 +51,7 @@ public class AllIn1Shader : MonoBehaviour
 		return "AllIn1SpriteShader";
 	}
 
-	// Token: 0x06000005 RID: 5 RVA: 0x00018E18 File Offset: 0x00017018
+	// Token: 0x06000005 RID: 5 RVA: 0x000020C8 File Offset: 0x000002C8
 	private void SetMaterial(AllIn1Shader.AfterSetAction action, bool getShaderTypeFromPrefs, string shaderName)
 	{
 		Shader shader = Resources.Load(shaderName, typeof(Shader)) as Shader;
@@ -112,7 +112,7 @@ public class AllIn1Shader : MonoBehaviour
 		this.SetSceneDirty();
 	}
 
-	// Token: 0x06000006 RID: 6 RVA: 0x00002076 File Offset: 0x00000276
+	// Token: 0x06000006 RID: 6 RVA: 0x00002256 File Offset: 0x00000456
 	private void DoAfterSetAction(AllIn1Shader.AfterSetAction action)
 	{
 		if (action == AllIn1Shader.AfterSetAction.Clear)
@@ -127,7 +127,7 @@ public class AllIn1Shader : MonoBehaviour
 		this.currMaterial.CopyPropertiesFromMaterial(this.prevMaterial);
 	}
 
-	// Token: 0x06000007 RID: 7 RVA: 0x00018FA8 File Offset: 0x000171A8
+	// Token: 0x06000007 RID: 7 RVA: 0x00002278 File Offset: 0x00000478
 	public void TryCreateNew()
 	{
 		bool flag = false;
@@ -170,7 +170,7 @@ public class AllIn1Shader : MonoBehaviour
 		this.SetSceneDirty();
 	}
 
-	// Token: 0x06000008 RID: 8 RVA: 0x0001907C File Offset: 0x0001727C
+	// Token: 0x06000008 RID: 8 RVA: 0x0000234C File Offset: 0x0000054C
 	public void ClearAllKeywords()
 	{
 		this.SetKeyword("RECTSIZE_ON", false);
@@ -231,7 +231,7 @@ public class AllIn1Shader : MonoBehaviour
 		this.SetSceneDirty();
 	}
 
-	// Token: 0x06000009 RID: 9 RVA: 0x00019324 File Offset: 0x00017524
+	// Token: 0x06000009 RID: 9 RVA: 0x000025F4 File Offset: 0x000007F4
 	private void SetKeyword(string keyword, bool state = false)
 	{
 		if (this.destroyed)
@@ -255,7 +255,7 @@ public class AllIn1Shader : MonoBehaviour
 		this.currMaterial.EnableKeyword(keyword);
 	}
 
-	// Token: 0x0600000A RID: 10 RVA: 0x00019380 File Offset: 0x00017580
+	// Token: 0x0600000A RID: 10 RVA: 0x00002650 File Offset: 0x00000850
 	private void FindCurrMaterial()
 	{
 		if (base.GetComponent<Renderer>() != null)
@@ -272,7 +272,7 @@ public class AllIn1Shader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600000B RID: 11 RVA: 0x000193D8 File Offset: 0x000175D8
+	// Token: 0x0600000B RID: 11 RVA: 0x000026A8 File Offset: 0x000008A8
 	public void CleanMaterial()
 	{
 		Renderer component = base.GetComponent<Renderer>();
@@ -293,12 +293,12 @@ public class AllIn1Shader : MonoBehaviour
 		this.SetSceneDirty();
 	}
 
-	// Token: 0x0600000C RID: 12 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x0600000C RID: 12 RVA: 0x00002715 File Offset: 0x00000915
 	public void SaveMaterial()
 	{
 	}
 
-	// Token: 0x0600000D RID: 13 RVA: 0x00019448 File Offset: 0x00017648
+	// Token: 0x0600000D RID: 13 RVA: 0x00002718 File Offset: 0x00000918
 	private void SaveMaterialWithOtherName(string path, int i = 1)
 	{
 		int num = i;
@@ -312,22 +312,22 @@ public class AllIn1Shader : MonoBehaviour
 		this.DoSaving(fileName);
 	}
 
-	// Token: 0x0600000E RID: 14 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x0600000E RID: 14 RVA: 0x00002715 File Offset: 0x00000915
 	private void DoSaving(string fileName)
 	{
 	}
 
-	// Token: 0x0600000F RID: 15 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x0600000F RID: 15 RVA: 0x00002715 File Offset: 0x00000915
 	public void SetSceneDirty()
 	{
 	}
 
-	// Token: 0x06000010 RID: 16 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06000010 RID: 16 RVA: 0x00002715 File Offset: 0x00000915
 	private void MissingRenderer()
 	{
 	}
 
-	// Token: 0x06000011 RID: 17 RVA: 0x00019490 File Offset: 0x00017690
+	// Token: 0x06000011 RID: 17 RVA: 0x00002760 File Offset: 0x00000960
 	public void ToggleSetAtlasUvs(bool activate)
 	{
 		SetAtlasUvs setAtlasUvs = base.GetComponent<SetAtlasUvs>();
@@ -352,7 +352,7 @@ public class AllIn1Shader : MonoBehaviour
 		this.SetSceneDirty();
 	}
 
-	// Token: 0x06000012 RID: 18 RVA: 0x000194F8 File Offset: 0x000176F8
+	// Token: 0x06000012 RID: 18 RVA: 0x000027C8 File Offset: 0x000009C8
 	public void ApplyMaterialToHierarchy()
 	{
 		Renderer component = base.GetComponent<Renderer>();
@@ -391,7 +391,7 @@ public class AllIn1Shader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000013 RID: 19 RVA: 0x000195CC File Offset: 0x000177CC
+	// Token: 0x06000013 RID: 19 RVA: 0x0000289C File Offset: 0x00000A9C
 	public void CheckIfValidTarget()
 	{
 		UnityEngine.Object component = base.GetComponent<Renderer>();
@@ -402,7 +402,7 @@ public class AllIn1Shader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000014 RID: 20 RVA: 0x00019600 File Offset: 0x00017800
+	// Token: 0x06000014 RID: 20 RVA: 0x000028D0 File Offset: 0x00000AD0
 	private void GetAllChildren(Transform parent, ref List<Transform> transforms)
 	{
 		foreach (object obj in parent)
@@ -413,17 +413,17 @@ public class AllIn1Shader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000015 RID: 21 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06000015 RID: 21 RVA: 0x00002715 File Offset: 0x00000915
 	public void RenderToImage()
 	{
 	}
 
-	// Token: 0x06000016 RID: 22 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06000016 RID: 22 RVA: 0x00002715 File Offset: 0x00000915
 	public void RenderAndSaveTexture(Material targetMaterial, Texture targetTexture)
 	{
 	}
 
-	// Token: 0x06000017 RID: 23 RVA: 0x00019660 File Offset: 0x00017860
+	// Token: 0x06000017 RID: 23 RVA: 0x00002930 File Offset: 0x00000B30
 	private string GetNewValidPath(string path, int i = 1)
 	{
 		int num = i;
@@ -436,17 +436,17 @@ public class AllIn1Shader : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06000018 RID: 24 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06000018 RID: 24 RVA: 0x00002715 File Offset: 0x00000915
 	protected virtual void OnEnable()
 	{
 	}
 
-	// Token: 0x06000019 RID: 25 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06000019 RID: 25 RVA: 0x00002715 File Offset: 0x00000915
 	protected virtual void OnDisable()
 	{
 	}
 
-	// Token: 0x0600001A RID: 26 RVA: 0x000196A4 File Offset: 0x000178A4
+	// Token: 0x0600001A RID: 26 RVA: 0x00002974 File Offset: 0x00000B74
 	protected virtual void OnEditorUpdate()
 	{
 		if (this.computingNormal)
@@ -480,33 +480,33 @@ public class AllIn1Shader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600001B RID: 27 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x0600001B RID: 27 RVA: 0x00002715 File Offset: 0x00000915
 	public void CreateAndAssignNormalMap()
 	{
 	}
 
-	// Token: 0x0600001C RID: 28 RVA: 0x0000209A File Offset: 0x0000029A
+	// Token: 0x0600001C RID: 28 RVA: 0x000029F2 File Offset: 0x00000BF2
 	private void SetNewNormalTexture()
 	{
 		this.computingNormal = false;
 	}
 
-	// Token: 0x0600001D RID: 29 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x0600001D RID: 29 RVA: 0x00002715 File Offset: 0x00000915
 	private void SetNewNormalTexture2()
 	{
 	}
 
-	// Token: 0x0600001E RID: 30 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x0600001E RID: 30 RVA: 0x00002715 File Offset: 0x00000915
 	private void SetNewNormalTexture3()
 	{
 	}
 
-	// Token: 0x0600001F RID: 31 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x0600001F RID: 31 RVA: 0x00002715 File Offset: 0x00000915
 	private void SetNewNormalTexture4()
 	{
 	}
 
-	// Token: 0x06000020 RID: 32 RVA: 0x00019724 File Offset: 0x00017924
+	// Token: 0x06000020 RID: 32 RVA: 0x000029FC File Offset: 0x00000BFC
 	private Texture2D CreateNormalMap(Texture2D t, float normalMult = 5f, int normalSmooth = 0)
 	{
 		Color[] array = new Color[t.width * t.height];

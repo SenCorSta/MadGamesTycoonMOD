@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000171 RID: 369
+// Token: 0x02000172 RID: 370
 public class Menu_DeleteSaveGame : MonoBehaviour
 {
-	// Token: 0x06000DA6 RID: 3494 RVA: 0x00009793 File Offset: 0x00007993
+	// Token: 0x06000DBE RID: 3518 RVA: 0x00094C00 File Offset: 0x00092E00
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000DA7 RID: 3495 RVA: 0x000A30D0 File Offset: 0x000A12D0
+	// Token: 0x06000DBF RID: 3519 RVA: 0x00094C08 File Offset: 0x00092E08
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,21 +36,21 @@ public class Menu_DeleteSaveGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DA8 RID: 3496 RVA: 0x0000979B File Offset: 0x0000799B
+	// Token: 0x06000DC0 RID: 3520 RVA: 0x00094CB2 File Offset: 0x00092EB2
 	public void Init(int slot_, string saveGameName)
 	{
 		this.slot = slot_;
 		this.uiObjects[0].GetComponent<Text>().text = saveGameName;
 	}
 
-	// Token: 0x06000DA9 RID: 3497 RVA: 0x000097B7 File Offset: 0x000079B7
+	// Token: 0x06000DC1 RID: 3521 RVA: 0x00094CCE File Offset: 0x00092ECE
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000DAA RID: 3498 RVA: 0x000A317C File Offset: 0x000A137C
+	// Token: 0x06000DC2 RID: 3522 RVA: 0x00094CEC File Offset: 0x00092EEC
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -66,30 +66,30 @@ public class Menu_DeleteSaveGame : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x04001253 RID: 4691
+	// Token: 0x0400125B RID: 4699
 	private ES3Writer writer;
 
-	// Token: 0x04001254 RID: 4692
+	// Token: 0x0400125C RID: 4700
 	private ES3Reader reader;
 
-	// Token: 0x04001255 RID: 4693
+	// Token: 0x0400125D RID: 4701
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001256 RID: 4694
+	// Token: 0x0400125E RID: 4702
 	private GameObject main_;
 
-	// Token: 0x04001257 RID: 4695
+	// Token: 0x0400125F RID: 4703
 	private mainScript mS_;
 
-	// Token: 0x04001258 RID: 4696
+	// Token: 0x04001260 RID: 4704
 	private textScript tS_;
 
-	// Token: 0x04001259 RID: 4697
+	// Token: 0x04001261 RID: 4705
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400125A RID: 4698
+	// Token: 0x04001262 RID: 4706
 	private sfxScript sfx_;
 
-	// Token: 0x0400125B RID: 4699
+	// Token: 0x04001263 RID: 4707
 	private int slot;
 }

@@ -5,12 +5,12 @@ using UnityEngine.UI;
 // Token: 0x02000097 RID: 151
 public class Item_LeitenderDesigner : MonoBehaviour
 {
-	// Token: 0x060005CE RID: 1486 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x060005D7 RID: 1495 RVA: 0x00002715 File Offset: 0x00000915
 	private void Start()
 	{
 	}
 
-	// Token: 0x060005CF RID: 1487 RVA: 0x0005EC08 File Offset: 0x0005CE08
+	// Token: 0x060005D8 RID: 1496 RVA: 0x0004BCC4 File Offset: 0x00049EC4
 	private void Update()
 	{
 		if (!this.cS_)
@@ -30,7 +30,7 @@ public class Item_LeitenderDesigner : MonoBehaviour
 		this.uiObjects[5].GetComponent<Text>().text = Mathf.RoundToInt(this.cS_.s_motivation).ToString();
 	}
 
-	// Token: 0x060005D0 RID: 1488 RVA: 0x0005ED04 File Offset: 0x0005CF04
+	// Token: 0x060005D9 RID: 1497 RVA: 0x0004BDC0 File Offset: 0x00049FC0
 	public void SetData(string s, float val)
 	{
 		if (!this.cS_)
@@ -54,13 +54,13 @@ public class Item_LeitenderDesigner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005D1 RID: 1489 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060005DA RID: 1498 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060005D2 RID: 1490 RVA: 0x0005EE60 File Offset: 0x0005D060
+	// Token: 0x060005DB RID: 1499 RVA: 0x0004BF1C File Offset: 0x0004A11C
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -78,7 +78,7 @@ public class Item_LeitenderDesigner : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x060005D3 RID: 1491 RVA: 0x0005EED4 File Offset: 0x0005D0D4
+	// Token: 0x060005DC RID: 1500 RVA: 0x0004BF90 File Offset: 0x0004A190
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

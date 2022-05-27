@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000104 RID: 260
+// Token: 0x02000105 RID: 261
 public class Item_WerkstattSelect : MonoBehaviour
 {
-	// Token: 0x06000859 RID: 2137 RVA: 0x00006402 File Offset: 0x00004602
+	// Token: 0x06000868 RID: 2152 RVA: 0x0005A9D2 File Offset: 0x00058BD2
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600085A RID: 2138 RVA: 0x0000640A File Offset: 0x0000460A
+	// Token: 0x06000869 RID: 2153 RVA: 0x0005A9DA File Offset: 0x00058BDA
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x0600085B RID: 2139 RVA: 0x0006C534 File Offset: 0x0006A734
+	// Token: 0x0600086A RID: 2154 RVA: 0x0005A9E4 File Offset: 0x00058BE4
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_WerkstattSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600085C RID: 2140 RVA: 0x0006C580 File Offset: 0x0006A780
+	// Token: 0x0600086B RID: 2155 RVA: 0x0005AA30 File Offset: 0x00058C30
 	private void SetData()
 	{
 		if (!this.game_)
@@ -51,13 +51,13 @@ public class Item_WerkstattSelect : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x0600085D RID: 2141 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x0600086C RID: 2156 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600085E RID: 2142 RVA: 0x0006C70C File Offset: 0x0006A90C
+	// Token: 0x0600086D RID: 2157 RVA: 0x0005ABBC File Offset: 0x00058DBC
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -80,36 +80,36 @@ public class Item_WerkstattSelect : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04000CB8 RID: 3256
+	// Token: 0x04000CC0 RID: 3264
 	public gameScript game_;
 
-	// Token: 0x04000CB9 RID: 3257
+	// Token: 0x04000CC1 RID: 3265
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000CBA RID: 3258
+	// Token: 0x04000CC2 RID: 3266
 	public mainScript mS_;
 
-	// Token: 0x04000CBB RID: 3259
+	// Token: 0x04000CC3 RID: 3267
 	public textScript tS_;
 
-	// Token: 0x04000CBC RID: 3260
+	// Token: 0x04000CC4 RID: 3268
 	public sfxScript sfx_;
 
-	// Token: 0x04000CBD RID: 3261
+	// Token: 0x04000CC5 RID: 3269
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000CBE RID: 3262
+	// Token: 0x04000CC6 RID: 3270
 	public tooltip tooltip_;
 
-	// Token: 0x04000CBF RID: 3263
+	// Token: 0x04000CC7 RID: 3271
 	public genres genres_;
 
-	// Token: 0x04000CC0 RID: 3264
+	// Token: 0x04000CC8 RID: 3272
 	public Menu_ProductionArcadeSelect menu_;
 
-	// Token: 0x04000CC1 RID: 3265
+	// Token: 0x04000CC9 RID: 3273
 	public roomScript rS_;
 
-	// Token: 0x04000CC2 RID: 3266
+	// Token: 0x04000CCA RID: 3274
 	private float updateTimer;
 }

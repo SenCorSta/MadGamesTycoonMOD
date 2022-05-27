@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002E2 RID: 738
+// Token: 0x020002E5 RID: 741
 public class disableInTime : MonoBehaviour
 {
-	// Token: 0x06001A13 RID: 6675 RVA: 0x00011940 File Offset: 0x0000FB40
+	// Token: 0x06001A5D RID: 6749 RVA: 0x0010A948 File Offset: 0x00108B48
 	private void Update()
 	{
 		this.timer += Time.deltaTime;
@@ -14,15 +14,15 @@ public class disableInTime : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A14 RID: 6676 RVA: 0x0001196E File Offset: 0x0000FB6E
+	// Token: 0x06001A5E RID: 6750 RVA: 0x0010A976 File Offset: 0x00108B76
 	private void OnEnable()
 	{
 		this.timer = 0f;
 	}
 
-	// Token: 0x04002145 RID: 8517
+	// Token: 0x0400215F RID: 8543
 	public float timeToLife = 3f;
 
-	// Token: 0x04002146 RID: 8518
+	// Token: 0x04002160 RID: 8544
 	private float timer;
 }

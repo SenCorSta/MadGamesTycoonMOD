@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000096 RID: 150
 public class Item_GameConcept_GameplayFeature : MonoBehaviour
 {
-	// Token: 0x060005CA RID: 1482 RVA: 0x00005615 File Offset: 0x00003815
+	// Token: 0x060005D3 RID: 1491 RVA: 0x0004BB1C File Offset: 0x00049D1C
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060005CB RID: 1483 RVA: 0x0005EA68 File Offset: 0x0005CC68
+	// Token: 0x060005D4 RID: 1492 RVA: 0x0004BB24 File Offset: 0x00049D24
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.gF_.GetName(this.myID);
@@ -22,7 +22,7 @@ public class Item_GameConcept_GameplayFeature : MonoBehaviour
 		this.SetGoodBadIcon();
 	}
 
-	// Token: 0x060005CC RID: 1484 RVA: 0x0005EB40 File Offset: 0x0005CD40
+	// Token: 0x060005D5 RID: 1493 RVA: 0x0004BBFC File Offset: 0x00049DFC
 	private void SetGoodBadIcon()
 	{
 		if (this.gS_.maingenre != -1)

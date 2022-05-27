@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000264 RID: 612
+// Token: 0x02000268 RID: 616
 public class Menu_W_FirmaAufwertenPublisher : MonoBehaviour
 {
-	// Token: 0x060017B4 RID: 6068 RVA: 0x0001082A File Offset: 0x0000EA2A
+	// Token: 0x060017F7 RID: 6135 RVA: 0x000EF490 File Offset: 0x000ED690
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060017B5 RID: 6069 RVA: 0x000F4B88 File Offset: 0x000F2D88
+	// Token: 0x060017F8 RID: 6136 RVA: 0x000EF498 File Offset: 0x000ED698
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_W_FirmaAufwertenPublisher : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017B6 RID: 6070 RVA: 0x000F4C34 File Offset: 0x000F2E34
+	// Token: 0x060017F9 RID: 6137 RVA: 0x000EF544 File Offset: 0x000ED744
 	public void Init(publisherScript script_)
 	{
 		this.FindScripts();
@@ -54,14 +54,14 @@ public class Menu_W_FirmaAufwertenPublisher : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x060017B7 RID: 6071 RVA: 0x00010832 File Offset: 0x0000EA32
+	// Token: 0x060017FA RID: 6138 RVA: 0x000EF615 File Offset: 0x000ED815
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060017B8 RID: 6072 RVA: 0x000F4D08 File Offset: 0x000F2F08
+	// Token: 0x060017FB RID: 6139 RVA: 0x000EF630 File Offset: 0x000ED830
 	public void BUTTON_Yes()
 	{
 		if (this.pS_)
@@ -83,27 +83,27 @@ public class Menu_W_FirmaAufwertenPublisher : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x04001B92 RID: 7058
+	// Token: 0x04001BAC RID: 7084
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001B93 RID: 7059
+	// Token: 0x04001BAD RID: 7085
 	private publisherScript pS_;
 
-	// Token: 0x04001B94 RID: 7060
+	// Token: 0x04001BAE RID: 7086
 	private GameObject main_;
 
-	// Token: 0x04001B95 RID: 7061
+	// Token: 0x04001BAF RID: 7087
 	private mainScript mS_;
 
-	// Token: 0x04001B96 RID: 7062
+	// Token: 0x04001BB0 RID: 7088
 	private textScript tS_;
 
-	// Token: 0x04001B97 RID: 7063
+	// Token: 0x04001BB1 RID: 7089
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001B98 RID: 7064
+	// Token: 0x04001BB2 RID: 7090
 	private sfxScript sfx_;
 
-	// Token: 0x04001B99 RID: 7065
+	// Token: 0x04001BB3 RID: 7091
 	public long costs;
 }

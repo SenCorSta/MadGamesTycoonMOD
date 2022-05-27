@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200012C RID: 300
+// Token: 0x0200012D RID: 301
 public class Menu_Dev_Beschreibung : MonoBehaviour
 {
-	// Token: 0x06000A99 RID: 2713 RVA: 0x0000795F File Offset: 0x00005B5F
+	// Token: 0x06000AAA RID: 2730 RVA: 0x00073AD7 File Offset: 0x00071CD7
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x06000A9A RID: 2714 RVA: 0x000840AC File Offset: 0x000822AC
+	// Token: 0x06000AAB RID: 2731 RVA: 0x00073AE8 File Offset: 0x00071CE8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,13 +53,13 @@ public class Menu_Dev_Beschreibung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A9B RID: 2715 RVA: 0x0000796D File Offset: 0x00005B6D
+	// Token: 0x06000AAC RID: 2732 RVA: 0x00073C30 File Offset: 0x00071E30
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06000A9C RID: 2716 RVA: 0x000841F4 File Offset: 0x000823F4
+	// Token: 0x06000AAD RID: 2733 RVA: 0x00073C38 File Offset: 0x00071E38
 	private void Init()
 	{
 		this.FindScripts();
@@ -81,14 +81,14 @@ public class Menu_Dev_Beschreibung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A9D RID: 2717 RVA: 0x00007975 File Offset: 0x00005B75
+	// Token: 0x06000AAE RID: 2734 RVA: 0x00073D07 File Offset: 0x00071F07
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000A9E RID: 2718 RVA: 0x000842C4 File Offset: 0x000824C4
+	// Token: 0x06000AAF RID: 2735 RVA: 0x00073D24 File Offset: 0x00071F24
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -111,33 +111,33 @@ public class Menu_Dev_Beschreibung : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04000EDA RID: 3802
+	// Token: 0x04000EE2 RID: 3810
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000EDB RID: 3803
+	// Token: 0x04000EE3 RID: 3811
 	private GameObject main_;
 
-	// Token: 0x04000EDC RID: 3804
+	// Token: 0x04000EE4 RID: 3812
 	private mainScript mS_;
 
-	// Token: 0x04000EDD RID: 3805
+	// Token: 0x04000EE5 RID: 3813
 	private textScript tS_;
 
-	// Token: 0x04000EDE RID: 3806
+	// Token: 0x04000EE6 RID: 3814
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000EDF RID: 3807
+	// Token: 0x04000EE7 RID: 3815
 	private sfxScript sfx_;
 
-	// Token: 0x04000EE0 RID: 3808
+	// Token: 0x04000EE8 RID: 3816
 	private Menu_DevGame mDevGame_;
 
-	// Token: 0x04000EE1 RID: 3809
+	// Token: 0x04000EE9 RID: 3817
 	private Menu_Dev_AddonDo mDevAddon_;
 
-	// Token: 0x04000EE2 RID: 3810
+	// Token: 0x04000EEA RID: 3818
 	private Menu_Dev_MMOAddon mDevMMOAddon_;
 
-	// Token: 0x04000EE3 RID: 3811
+	// Token: 0x04000EEB RID: 3819
 	private Menu_Dev_GameEntwicklungsbericht mDevEntwicklungsbericht_;
 }

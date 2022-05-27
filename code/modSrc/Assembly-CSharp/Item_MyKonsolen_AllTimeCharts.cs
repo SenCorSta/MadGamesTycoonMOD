@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000F2 RID: 242
 public class Item_MyKonsolen_AllTimeCharts : MonoBehaviour
 {
-	// Token: 0x060007F2 RID: 2034 RVA: 0x000062EE File Offset: 0x000044EE
+	// Token: 0x060007FB RID: 2043 RVA: 0x00057E41 File Offset: 0x00056041
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007F3 RID: 2035 RVA: 0x00069EE4 File Offset: 0x000680E4
+	// Token: 0x060007FC RID: 2044 RVA: 0x00057E4C File Offset: 0x0005604C
 	private void Update()
 	{
 		this.uiObjects[1].GetComponent<Text>().text = (base.gameObject.transform.GetSiblingIndex() + 1).ToString();
@@ -19,14 +19,14 @@ public class Item_MyKonsolen_AllTimeCharts : MonoBehaviour
 		base.gameObject.name = this.pS_.units.ToString();
 	}
 
-	// Token: 0x060007F4 RID: 2036 RVA: 0x00069F64 File Offset: 0x00068164
+	// Token: 0x060007FD RID: 2045 RVA: 0x00057ECC File Offset: 0x000560CC
 	public void SetData()
 	{
 		if (!this.pS_)
 		{
 			return;
 		}
-		if (this.pS_.playerConsole)
+		if (this.pS_.ownerID == this.mS_.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
@@ -34,7 +34,7 @@ public class Item_MyKonsolen_AllTimeCharts : MonoBehaviour
 		{
 			base.GetComponent<Button>().interactable = false;
 		}
-		if (this.mS_.multiplayer && !this.pS_.playerConsole && this.pS_.multiplaySlot != -1)
+		if (this.mS_.multiplayer && this.pS_.PlatformFromMitspieler())
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[8];
 		}
@@ -45,13 +45,13 @@ public class Item_MyKonsolen_AllTimeCharts : MonoBehaviour
 		this.tooltip_.c = this.pS_.GetTooltip();
 	}
 
-	// Token: 0x060007F5 RID: 2037 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060007FE RID: 2046 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007F6 RID: 2038 RVA: 0x0006A0A0 File Offset: 0x000682A0
+	// Token: 0x060007FF RID: 2047 RVA: 0x00058008 File Offset: 0x00056208
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

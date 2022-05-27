@@ -2,24 +2,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002CA RID: 714
+// Token: 0x020002CD RID: 717
 public class AmountContracts : MonoBehaviour
 {
-	// Token: 0x060019B4 RID: 6580 RVA: 0x000115BF File Offset: 0x0000F7BF
+	// Token: 0x060019FE RID: 6654 RVA: 0x00108FF8 File Offset: 0x001071F8
 	private void Start()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x060019B5 RID: 6581 RVA: 0x000115BF File Offset: 0x0000F7BF
+	// Token: 0x060019FF RID: 6655 RVA: 0x00108FF8 File Offset: 0x001071F8
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x060019B6 RID: 6582 RVA: 0x0010D3AC File Offset: 0x0010B5AC
+	// Token: 0x06001A00 RID: 6656 RVA: 0x00109008 File Offset: 0x00107208
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,27 +44,27 @@ public class AmountContracts : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019B7 RID: 6583 RVA: 0x0010D458 File Offset: 0x0010B658
+	// Token: 0x06001A01 RID: 6657 RVA: 0x001090B4 File Offset: 0x001072B4
 	private void Init()
 	{
 		base.gameObject.GetComponent<Text>().text = "[" + this.mS_.GetAmountContracts(this.contractTyp).ToString() + "] ";
 	}
 
-	// Token: 0x040020E0 RID: 8416
+	// Token: 0x040020FA RID: 8442
 	public int contractTyp;
 
-	// Token: 0x040020E1 RID: 8417
+	// Token: 0x040020FB RID: 8443
 	private mainScript mS_;
 
-	// Token: 0x040020E2 RID: 8418
+	// Token: 0x040020FC RID: 8444
 	private GameObject main_;
 
-	// Token: 0x040020E3 RID: 8419
+	// Token: 0x040020FD RID: 8445
 	private GUI_Main guiMain_;
 
-	// Token: 0x040020E4 RID: 8420
+	// Token: 0x040020FE RID: 8446
 	private sfxScript sfx_;
 
-	// Token: 0x040020E5 RID: 8421
+	// Token: 0x040020FF RID: 8447
 	private textScript tS_;
 }

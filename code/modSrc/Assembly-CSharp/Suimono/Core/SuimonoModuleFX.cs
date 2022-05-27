@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Suimono.Core
 {
-	// Token: 0x02000399 RID: 921
+	// Token: 0x0200039C RID: 924
 	[ExecuteInEditMode]
 	public class SuimonoModuleFX : MonoBehaviour
 	{
-		// Token: 0x06002213 RID: 8723 RVA: 0x0016258C File Offset: 0x0016078C
+		// Token: 0x06002266 RID: 8806 RVA: 0x00163AC4 File Offset: 0x00161CC4
 		private void Start()
 		{
 			this.fxParentObject = base.transform.Find("_particle_effects");
@@ -35,7 +35,7 @@ namespace Suimono.Core
 			base.InvokeRepeating("UpdateSystems", 0.2f + this.stagger, 1f);
 		}
 
-		// Token: 0x06002214 RID: 8724 RVA: 0x00162710 File Offset: 0x00160910
+		// Token: 0x06002267 RID: 8807 RVA: 0x00163C48 File Offset: 0x00161E48
 		private void LateUpdate()
 		{
 			if (!Application.isPlaying)
@@ -62,7 +62,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002215 RID: 8725 RVA: 0x001627F8 File Offset: 0x001609F8
+		// Token: 0x06002268 RID: 8808 RVA: 0x00163D30 File Offset: 0x00161F30
 		private void UpdateSystems()
 		{
 			if (Application.isPlaying)
@@ -89,7 +89,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002216 RID: 8726 RVA: 0x001628E0 File Offset: 0x00160AE0
+		// Token: 0x06002269 RID: 8809 RVA: 0x00163E18 File Offset: 0x00162018
 		private void ClampSystems()
 		{
 			this.fx = 0;
@@ -132,7 +132,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002217 RID: 8727 RVA: 0x00162BC8 File Offset: 0x00160DC8
+		// Token: 0x0600226A RID: 8810 RVA: 0x00164100 File Offset: 0x00162300
 		public void AddSystem()
 		{
 			this.tempSystems = this.effectsSystems;
@@ -150,13 +150,13 @@ namespace Suimono.Core
 			this.clampIndex[this.tempClamp.Length] = 0;
 		}
 
-		// Token: 0x06002218 RID: 8728 RVA: 0x00016D10 File Offset: 0x00014F10
+		// Token: 0x0600226B RID: 8811 RVA: 0x001641CA File Offset: 0x001623CA
 		public void AddParticle(ParticleSystem.Particle particleData)
 		{
 			this.particleReserve.Add(particleData);
 		}
 
-		// Token: 0x06002219 RID: 8729 RVA: 0x00016D1E File Offset: 0x00014F1E
+		// Token: 0x0600226C RID: 8812 RVA: 0x001641D8 File Offset: 0x001623D8
 		private IEnumerator updateFX()
 		{
 			this.efx = 0;
@@ -210,7 +210,7 @@ namespace Suimono.Core
 			yield break;
 		}
 
-		// Token: 0x0600221A RID: 8730 RVA: 0x00162C94 File Offset: 0x00160E94
+		// Token: 0x0600226D RID: 8813 RVA: 0x001641E8 File Offset: 0x001623E8
 		public void DeleteSystem(int sysNum)
 		{
 			this.tempSystems = this.effectsSystems;
@@ -247,7 +247,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x0600221B RID: 8731 RVA: 0x00016D2D File Offset: 0x00014F2D
+		// Token: 0x0600226E RID: 8814 RVA: 0x001642E7 File Offset: 0x001624E7
 		private void OnApplicationQuit()
 		{
 			this.fx = 0;
@@ -258,25 +258,25 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x04002A1E RID: 10782
+		// Token: 0x04002A34 RID: 10804
 		public string[] effectsLabels;
 
-		// Token: 0x04002A1F RID: 10783
+		// Token: 0x04002A35 RID: 10805
 		public Transform[] effectsSystems;
 
-		// Token: 0x04002A20 RID: 10784
+		// Token: 0x04002A36 RID: 10806
 		public Sui_FX_ClampType systemClampType;
 
-		// Token: 0x04002A21 RID: 10785
+		// Token: 0x04002A37 RID: 10807
 		public Transform[] fxObjects;
 
-		// Token: 0x04002A22 RID: 10786
+		// Token: 0x04002A38 RID: 10808
 		public ParticleSystem[] fxParticles;
 
-		// Token: 0x04002A23 RID: 10787
+		// Token: 0x04002A39 RID: 10809
 		public int[] clampIndex;
 
-		// Token: 0x04002A24 RID: 10788
+		// Token: 0x04002A3A RID: 10810
 		public List<string> clampOptions = new List<string>
 		{
 			"No Clamp",
@@ -285,73 +285,73 @@ namespace Suimono.Core
 			"Keep Above Surface"
 		};
 
-		// Token: 0x04002A25 RID: 10789
+		// Token: 0x04002A3B RID: 10811
 		public List<ParticleSystem.Particle> particleReserve = new List<ParticleSystem.Particle>();
 
-		// Token: 0x04002A26 RID: 10790
+		// Token: 0x04002A3C RID: 10812
 		private Transform fxParentObject;
 
-		// Token: 0x04002A27 RID: 10791
+		// Token: 0x04002A3D RID: 10813
 		private SuimonoModule moduleObject;
 
-		// Token: 0x04002A28 RID: 10792
+		// Token: 0x04002A3E RID: 10814
 		private int fx;
 
-		// Token: 0x04002A29 RID: 10793
+		// Token: 0x04002A3F RID: 10815
 		private int px;
 
-		// Token: 0x04002A2A RID: 10794
+		// Token: 0x04002A40 RID: 10816
 		private float currPXWaterPos;
 
-		// Token: 0x04002A2B RID: 10795
+		// Token: 0x04002A41 RID: 10817
 		private ParticleSystem useParticleComponent;
 
-		// Token: 0x04002A2C RID: 10796
+		// Token: 0x04002A42 RID: 10818
 		private ParticleSystem.Particle[] setParticles;
 
-		// Token: 0x04002A2D RID: 10797
+		// Token: 0x04002A43 RID: 10819
 		private Transform[] tempSystems;
 
-		// Token: 0x04002A2E RID: 10798
+		// Token: 0x04002A44 RID: 10820
 		private int[] tempClamp;
 
-		// Token: 0x04002A2F RID: 10799
+		// Token: 0x04002A45 RID: 10821
 		private int aR;
 
-		// Token: 0x04002A30 RID: 10800
+		// Token: 0x04002A46 RID: 10822
 		private int efx;
 
-		// Token: 0x04002A31 RID: 10801
+		// Token: 0x04002A47 RID: 10823
 		private int epx;
 
-		// Token: 0x04002A32 RID: 10802
+		// Token: 0x04002A48 RID: 10824
 		private int sx;
 
-		// Token: 0x04002A33 RID: 10803
+		// Token: 0x04002A49 RID: 10825
 		private int endLP;
 
-		// Token: 0x04002A34 RID: 10804
+		// Token: 0x04002A4A RID: 10826
 		private int setInt;
 
-		// Token: 0x04002A35 RID: 10805
+		// Token: 0x04002A4B RID: 10827
 		public List<string> sysNames = new List<string>();
 
-		// Token: 0x04002A36 RID: 10806
+		// Token: 0x04002A4C RID: 10828
 		public int sN;
 
-		// Token: 0x04002A37 RID: 10807
+		// Token: 0x04002A4D RID: 10829
 		public int s;
 
-		// Token: 0x04002A38 RID: 10808
+		// Token: 0x04002A4E RID: 10830
 		public string setName;
 
-		// Token: 0x04002A39 RID: 10809
+		// Token: 0x04002A4F RID: 10831
 		private static int staggerOffset = 0;
 
-		// Token: 0x04002A3A RID: 10810
+		// Token: 0x04002A50 RID: 10832
 		private static int staggerModulus = 20;
 
-		// Token: 0x04002A3B RID: 10811
+		// Token: 0x04002A51 RID: 10833
 		private float stagger;
 	}
 }

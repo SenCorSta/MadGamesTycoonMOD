@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200020C RID: 524
+// Token: 0x0200020D RID: 525
 public class Menu_QA_Spielbericht : MonoBehaviour
 {
-	// Token: 0x06001411 RID: 5137 RVA: 0x0000DAD4 File Offset: 0x0000BCD4
+	// Token: 0x0600142E RID: 5166 RVA: 0x000D2237 File Offset: 0x000D0437
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001412 RID: 5138 RVA: 0x000DBDC4 File Offset: 0x000D9FC4
+	// Token: 0x0600142F RID: 5167 RVA: 0x000D2240 File Offset: 0x000D0440
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -48,7 +48,7 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001413 RID: 5139 RVA: 0x0000DADC File Offset: 0x0000BCDC
+	// Token: 0x06001430 RID: 5168 RVA: 0x000D2344 File Offset: 0x000D0544
 	private void Update()
 	{
 		if (this.uiObjects[32].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -57,7 +57,7 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001414 RID: 5140 RVA: 0x000DBEC8 File Offset: 0x000DA0C8
+	// Token: 0x06001431 RID: 5169 RVA: 0x000D2378 File Offset: 0x000D0578
 	public void Init(gameScript game_)
 	{
 		this.FindScripts();
@@ -146,7 +146,7 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001415 RID: 5141 RVA: 0x000DC454 File Offset: 0x000DA654
+	// Token: 0x06001432 RID: 5170 RVA: 0x000D2904 File Offset: 0x000D0B04
 	public void UpdateDesignSettings()
 	{
 		for (int i = 0; i < this.uiDesignschwerpunkte.Length; i++)
@@ -183,14 +183,14 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001416 RID: 5142 RVA: 0x0000DB10 File Offset: 0x0000BD10
+	// Token: 0x06001433 RID: 5171 RVA: 0x000D2B41 File Offset: 0x000D0D41
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001417 RID: 5143 RVA: 0x000DC694 File Offset: 0x000DA894
+	// Token: 0x06001434 RID: 5172 RVA: 0x000D2B5C File Offset: 0x000D0D5C
 	public void BUTTON_Spielbeschreibung()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -198,7 +198,7 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		this.guiMain_.uiObjects[199].GetComponent<Menu_Dev_ShowBeschreibung>().Init(this.gS_);
 	}
 
-	// Token: 0x06001418 RID: 5144 RVA: 0x000DC6EC File Offset: 0x000DA8EC
+	// Token: 0x06001435 RID: 5173 RVA: 0x000D2BB4 File Offset: 0x000D0DB4
 	public void BUTTON_Review()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -206,7 +206,7 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		this.guiMain_.uiObjects[46].GetComponent<Menu_Review>().Init(this.gS_);
 	}
 
-	// Token: 0x06001419 RID: 5145 RVA: 0x000DC738 File Offset: 0x000DA938
+	// Token: 0x06001436 RID: 5174 RVA: 0x000D2C00 File Offset: 0x000D0E00
 	public void BUTTON_Fanbriefe()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -214,42 +214,42 @@ public class Menu_QA_Spielbericht : MonoBehaviour
 		this.guiMain_.uiObjects[112].GetComponent<Menu_Dev_Fanbriefe>().Init(this.gS_);
 	}
 
-	// Token: 0x04001835 RID: 6197
+	// Token: 0x0400183E RID: 6206
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001836 RID: 6198
+	// Token: 0x0400183F RID: 6207
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001837 RID: 6199
+	// Token: 0x04001840 RID: 6208
 	public GameObject[] uiDesignschwerpunkte;
 
-	// Token: 0x04001838 RID: 6200
+	// Token: 0x04001841 RID: 6209
 	public GameObject[] uiDesignausrichtung;
 
-	// Token: 0x04001839 RID: 6201
+	// Token: 0x04001842 RID: 6210
 	private GameObject main_;
 
-	// Token: 0x0400183A RID: 6202
+	// Token: 0x04001843 RID: 6211
 	private mainScript mS_;
 
-	// Token: 0x0400183B RID: 6203
+	// Token: 0x04001844 RID: 6212
 	private textScript tS_;
 
-	// Token: 0x0400183C RID: 6204
+	// Token: 0x04001845 RID: 6213
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400183D RID: 6205
+	// Token: 0x04001846 RID: 6214
 	private sfxScript sfx_;
 
-	// Token: 0x0400183E RID: 6206
+	// Token: 0x04001847 RID: 6215
 	private genres genres_;
 
-	// Token: 0x0400183F RID: 6207
+	// Token: 0x04001848 RID: 6216
 	private engineFeatures eF_;
 
-	// Token: 0x04001840 RID: 6208
+	// Token: 0x04001849 RID: 6217
 	private gameScript gS_;
 
-	// Token: 0x04001841 RID: 6209
+	// Token: 0x0400184A RID: 6218
 	private themes themes_;
 }

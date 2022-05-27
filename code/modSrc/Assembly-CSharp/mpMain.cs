@@ -5,32 +5,29 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002C7 RID: 711
+// Token: 0x020002CA RID: 714
 public class mpMain : MonoBehaviour
 {
-	// Token: 0x06001986 RID: 6534 RVA: 0x000111E5 File Offset: 0x0000F3E5
+	// Token: 0x060019CF RID: 6607 RVA: 0x001074E2 File Offset: 0x001056E2
 	private void Awake()
 	{
 		this.manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
 		this.mpCalls_ = GameObject.Find("NetworkManager").GetComponent<mpCalls>();
 	}
 
-	// Token: 0x06001987 RID: 6535 RVA: 0x0010BD94 File Offset: 0x00109F94
+	// Token: 0x060019D0 RID: 6608 RVA: 0x00107510 File Offset: 0x00105710
 	private void Start()
 	{
 		this.FindScripts();
 		if (PlayerPrefs.HasKey("MP_IP"))
 		{
 			this.uiObjects[0].GetComponent<InputField>().text = PlayerPrefs.GetString("MP_IP");
+			return;
 		}
-		else
-		{
-			this.uiObjects[0].GetComponent<InputField>().text = "127.0.0.1";
-		}
-		this.SetLogo(UnityEngine.Random.Range(0, 10));
+		this.uiObjects[0].GetComponent<InputField>().text = "127.0.0.1";
 	}
 
-	// Token: 0x06001988 RID: 6536 RVA: 0x0010BDF8 File Offset: 0x00109FF8
+	// Token: 0x060019D1 RID: 6609 RVA: 0x00107564 File Offset: 0x00105764
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -67,12 +64,13 @@ public class mpMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001989 RID: 6537 RVA: 0x0010BF04 File Offset: 0x0010A104
+	// Token: 0x060019D2 RID: 6610 RVA: 0x00107670 File Offset: 0x00105870
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.InitDropdowns();
-		this.SetLogo(this.mS_.logo);
+		this.SetLogo(0);
+		this.uiObjects[12].GetComponent<InputField>().text = "";
 		this.INPUT_PlayerName();
 		this.INPUT_CompanyName();
 		this.mpCalls_.isServer = false;
@@ -89,7 +87,7 @@ public class mpMain : MonoBehaviour
 		this.uiObjects[35].GetComponent<Text>().text = this.tS_.GetText(1228);
 	}
 
-	// Token: 0x0600198A RID: 6538 RVA: 0x0010C018 File Offset: 0x0010A218
+	// Token: 0x060019D3 RID: 6611 RVA: 0x00107790 File Offset: 0x00105990
 	public void InitDropdowns()
 	{
 		List<string> list = new List<string>();
@@ -99,7 +97,7 @@ public class mpMain : MonoBehaviour
 		}
 		this.uiObjects[28].GetComponent<Dropdown>().ClearOptions();
 		this.uiObjects[28].GetComponent<Dropdown>().AddOptions(list);
-		this.uiObjects[28].GetComponent<Dropdown>().value = this.mS_.country;
+		this.uiObjects[28].GetComponent<Dropdown>().value = 0;
 		list = new List<string>();
 		list.Add(this.tS_.GetText(802));
 		list.Add(this.tS_.GetText(803));
@@ -123,6 +121,7 @@ public class mpMain : MonoBehaviour
 		list = new List<string>();
 		list.Add(this.tS_.GetText(1770));
 		list.Add(this.tS_.GetText(1771));
+		list.Add(this.tS_.GetText(2012));
 		list.Add(this.tS_.GetText(1773));
 		this.uiObjects[33].GetComponent<Dropdown>().ClearOptions();
 		this.uiObjects[33].GetComponent<Dropdown>().AddOptions(list);
@@ -147,7 +146,7 @@ public class mpMain : MonoBehaviour
 		this.uiObjects[46].GetComponent<Dropdown>().value = 0;
 	}
 
-	// Token: 0x0600198B RID: 6539 RVA: 0x0010C38C File Offset: 0x0010A58C
+	// Token: 0x060019D4 RID: 6612 RVA: 0x00107B10 File Offset: 0x00105D10
 	private void UpdatePlayerInfos()
 	{
 		this.timerPlayerInfos += Time.deltaTime;
@@ -160,12 +159,9 @@ public class mpMain : MonoBehaviour
 			}
 			if (this.mpCalls_.isServer)
 			{
-				player_mp player_mp = this.mS_.mpCalls_.FindPlayer(this.mS_.mpCalls_.myID);
+				player_mp player_mp = this.mS_.mpCalls_.FindPlayer(this.mS_.myID);
 				if (player_mp != null)
 				{
-					player_mp.companyName = this.mS_.companyName;
-					player_mp.companyLogo = this.mS_.logo;
-					player_mp.companyCountry = this.mS_.country;
 					player_mp.playerName = this.mS_.playerName;
 					player_mp.ready = true;
 				}
@@ -174,10 +170,21 @@ public class mpMain : MonoBehaviour
 				this.mpCalls_.SERVER_Send_Office();
 				this.mpCalls_.SERVER_Send_Spielgeschwindigkeit();
 			}
+			if (this.mS_.myPubS_)
+			{
+				if (this.mpCalls_.isClient)
+				{
+					this.mpCalls_.CLIENT_Send_Publisher(this.mS_.myPubS_);
+				}
+				if (this.mpCalls_.isServer)
+				{
+					this.mpCalls_.SERVER_Send_Publisher(this.mS_.myPubS_);
+				}
+			}
 		}
 	}
 
-	// Token: 0x0600198C RID: 6540 RVA: 0x0010C490 File Offset: 0x0010A690
+	// Token: 0x060019D5 RID: 6613 RVA: 0x00107C34 File Offset: 0x00105E34
 	private void Update()
 	{
 		if (NetworkServer.active)
@@ -214,6 +221,18 @@ public class mpMain : MonoBehaviour
 			this.uiObjects[18 + i].GetComponent<Image>().sprite = this.guiMain_.uiSprites[19];
 			this.uiObjects[22 + i].GetComponent<Image>().sprite = this.guiMain_.uiSprites[19];
 			this.uiObjects[47 + i].GetComponent<Image>().sprite = this.guiMain_.uiSprites[19];
+		}
+		if (this.mpCalls_.isClient)
+		{
+			if (this.mS_.GetCompanyName().Length <= 0 || this.mS_.playerName.Length <= 0)
+			{
+				this.uiObjects[51].GetComponent<Toggle>().interactable = false;
+				this.uiObjects[51].GetComponent<Toggle>().isOn = false;
+			}
+			else
+			{
+				this.uiObjects[51].GetComponent<Toggle>().interactable = true;
+			}
 		}
 		this.UpdatePlayerInfos();
 		bool flag = false;
@@ -306,6 +325,11 @@ public class mpMain : MonoBehaviour
 		{
 			this.uiObjects[27].GetComponent<Text>().text = this.tS_.GetText(1031);
 		}
+		if (this.mpCalls_.isServer && (this.mS_.GetCompanyName().Length <= 0 || this.mS_.playerName.Length <= 0))
+		{
+			this.uiObjects[17].GetComponent<Button>().interactable = false;
+			this.uiObjects[34].GetComponent<Button>().interactable = false;
+		}
 		if (this.mS_.achScript_)
 		{
 			if (this.mpCalls_.playersMP.Count >= 2)
@@ -319,9 +343,10 @@ public class mpMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600198D RID: 6541 RVA: 0x0010CB64 File Offset: 0x0010AD64
+	// Token: 0x060019D6 RID: 6614 RVA: 0x001083D4 File Offset: 0x001065D4
 	public void StartHost()
 	{
+		Debug.Log("5. StartHost()");
 		this.FindScripts();
 		this.mS_.mpLobbyOpen = true;
 		this.mpCalls_.SetupServer();
@@ -335,26 +360,27 @@ public class mpMain : MonoBehaviour
 		this.uiObjects[51].GetComponent<Toggle>().isOn = true;
 	}
 
-	// Token: 0x0600198E RID: 6542 RVA: 0x00011211 File Offset: 0x0000F411
+	// Token: 0x060019D7 RID: 6615 RVA: 0x0010847D File Offset: 0x0010667D
 	public void BUTTON_StartHost()
 	{
+		Debug.Log("2. BUTTON_StartHost()");
 		this.FindScripts();
 		this.sfx_.PlaySound(3, true);
 		this.manager.GetComponent<SteamLobby>().HostLobby();
 	}
 
-	// Token: 0x0600198F RID: 6543 RVA: 0x00011236 File Offset: 0x0000F436
+	// Token: 0x060019D8 RID: 6616 RVA: 0x001084AC File Offset: 0x001066AC
 	public void BUTTON_LoadMultiplayerSavegame()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[150]);
 	}
 
-	// Token: 0x06001990 RID: 6544 RVA: 0x0010CC04 File Offset: 0x0010AE04
+	// Token: 0x060019D9 RID: 6617 RVA: 0x001084D8 File Offset: 0x001066D8
 	public void BUTTON_StartClient()
 	{
 		this.sfx_.PlaySound(3, true);
-		if (this.mS_.playerName.Length <= 0 || this.mS_.companyName.Length <= 0)
+		if (this.mS_.playerName.Length <= 0 || this.mS_.GetCompanyName().Length <= 0)
 		{
 			this.guiMain_.MessageBox(this.tS_.GetText(1033), false);
 			return;
@@ -363,15 +389,15 @@ public class mpMain : MonoBehaviour
 		{
 			this.mS_.playerName = "<Missing Player Name>";
 		}
-		if (this.mS_.companyName.Length <= 0)
+		if (this.mS_.GetCompanyName().Length <= 0)
 		{
-			this.mS_.companyName = "<Missing Company Name>";
+			this.mS_.SetCompanyName("<Missing Company Name>");
 		}
 		PlayerPrefs.SetString("PlayerName", this.uiObjects[11].GetComponent<InputField>().text);
 		PlayerPrefs.SetString("CompanyName", this.uiObjects[12].GetComponent<InputField>().text);
 		PlayerPrefs.SetString("MP_IP", this.uiObjects[0].GetComponent<InputField>().text);
 		this.mpCalls_.SetupClient();
-		this.mpCalls_.myID = -1;
+		this.mS_.myID = -1;
 		this.mpCalls_.isClient = true;
 		this.manager.networkAddress = this.uiObjects[0].GetComponent<InputField>().text;
 		this.manager.StartClient();
@@ -384,14 +410,14 @@ public class mpMain : MonoBehaviour
 		this.uiObjects[6].GetComponent<Text>().text = "Connecting:\n" + this.manager.networkAddress;
 	}
 
-	// Token: 0x06001991 RID: 6545 RVA: 0x0010CDC8 File Offset: 0x0010AFC8
+	// Token: 0x060019DA RID: 6618 RVA: 0x0010869C File Offset: 0x0010689C
 	public void StartClient_Steam()
 	{
 		PlayerPrefs.SetString("PlayerName", this.uiObjects[11].GetComponent<InputField>().text);
 		PlayerPrefs.SetString("CompanyName", this.uiObjects[12].GetComponent<InputField>().text);
 		PlayerPrefs.SetString("MP_IP", this.uiObjects[0].GetComponent<InputField>().text);
 		this.mpCalls_.SetupClient();
-		this.mpCalls_.myID = -1;
+		this.mS_.myID = -1;
 		this.mpCalls_.isClient = true;
 		this.uiObjects[3].SetActive(false);
 		this.uiObjects[5].SetActive(true);
@@ -402,12 +428,12 @@ public class mpMain : MonoBehaviour
 		this.uiObjects[6].GetComponent<Text>().text = "Connecting...";
 	}
 
-	// Token: 0x06001992 RID: 6546 RVA: 0x0010CEC0 File Offset: 0x0010B0C0
+	// Token: 0x060019DB RID: 6619 RVA: 0x00108794 File Offset: 0x00106994
 	public void StopNetwork()
 	{
 		this.FindScripts();
 		this.manager.GetComponent<SteamLobby>().LeaveLobby();
-		this.mpCalls_.myID = -1;
+		this.mS_.myID = -1;
 		this.mpCalls_.isServer = false;
 		this.mpCalls_.isClient = false;
 		if (NetworkServer.active && NetworkClient.isConnected)
@@ -432,7 +458,7 @@ public class mpMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001993 RID: 6547 RVA: 0x00011261 File Offset: 0x0000F461
+	// Token: 0x060019DC RID: 6620 RVA: 0x00108856 File Offset: 0x00106A56
 	public void BUTTON_Close()
 	{
 		this.StopNetwork();
@@ -440,32 +466,38 @@ public class mpMain : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001994 RID: 6548 RVA: 0x00011282 File Offset: 0x0000F482
+	// Token: 0x060019DD RID: 6621 RVA: 0x00108877 File Offset: 0x00106A77
 	public void INPUT_PlayerName()
 	{
 		this.mS_.playerName = this.uiObjects[11].GetComponent<InputField>().text;
 	}
 
-	// Token: 0x06001995 RID: 6549 RVA: 0x000112A2 File Offset: 0x0000F4A2
+	// Token: 0x060019DE RID: 6622 RVA: 0x00108897 File Offset: 0x00106A97
 	public void INPUT_CompanyName()
 	{
-		this.mS_.companyName = this.uiObjects[12].GetComponent<InputField>().text;
+		this.mS_.SetCompanyName(this.uiObjects[12].GetComponent<InputField>().text);
 	}
 
-	// Token: 0x06001996 RID: 6550 RVA: 0x000112C2 File Offset: 0x0000F4C2
+	// Token: 0x060019DF RID: 6623 RVA: 0x001088B7 File Offset: 0x00106AB7
 	public void DROPDOWN_Country()
 	{
-		this.mS_.country = this.uiObjects[28].GetComponent<Dropdown>().value;
+		this.mS_.SetCountryID(this.uiObjects[28].GetComponent<Dropdown>().value);
 	}
 
-	// Token: 0x06001997 RID: 6551 RVA: 0x000112E2 File Offset: 0x0000F4E2
+	// Token: 0x060019E0 RID: 6624 RVA: 0x001088D7 File Offset: 0x00106AD7
+	public void DROPDOWN_Genre()
+	{
+		this.mS_.SetFanGenreID(this.uiObjects[46].GetComponent<Dropdown>().value);
+	}
+
+	// Token: 0x060019E1 RID: 6625 RVA: 0x001088F7 File Offset: 0x00106AF7
 	public void BUTTON_Firmenlogo()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[48]);
 	}
 
-	// Token: 0x06001998 RID: 6552 RVA: 0x0010CF84 File Offset: 0x0010B184
+	// Token: 0x060019E2 RID: 6626 RVA: 0x00108920 File Offset: 0x00106B20
 	public void TOGGLE_AutoPause()
 	{
 		if (!this.mpCalls_.isServer)
@@ -481,7 +513,7 @@ public class mpMain : MonoBehaviour
 		this.mpCalls_.SERVER_Send_Command(6);
 	}
 
-	// Token: 0x06001999 RID: 6553 RVA: 0x0010CFEC File Offset: 0x0010B1EC
+	// Token: 0x060019E3 RID: 6627 RVA: 0x00108988 File Offset: 0x00106B88
 	public void TOGGLE_RandomEventsOff()
 	{
 		if (!this.mpCalls_.isServer)
@@ -501,7 +533,7 @@ public class mpMain : MonoBehaviour
 		this.uiObjects[53].GetComponent<Toggle>().interactable = true;
 	}
 
-	// Token: 0x0600199A RID: 6554 RVA: 0x0010D0B0 File Offset: 0x0010B2B0
+	// Token: 0x060019E4 RID: 6628 RVA: 0x00108A4C File Offset: 0x00106C4C
 	public void TOGGLE_RandomReviews()
 	{
 		if (!this.mpCalls_.isServer)
@@ -517,7 +549,7 @@ public class mpMain : MonoBehaviour
 		this.mpCalls_.SERVER_Send_Command(10);
 	}
 
-	// Token: 0x0600199B RID: 6555 RVA: 0x0010D11C File Offset: 0x0010B31C
+	// Token: 0x060019E5 RID: 6629 RVA: 0x00108AB8 File Offset: 0x00106CB8
 	public void TOGGLE_History()
 	{
 		if (!this.mpCalls_.isServer)
@@ -533,7 +565,7 @@ public class mpMain : MonoBehaviour
 		this.mpCalls_.SERVER_Send_Command(20);
 	}
 
-	// Token: 0x0600199C RID: 6556 RVA: 0x0001130A File Offset: 0x0000F50A
+	// Token: 0x060019E6 RID: 6630 RVA: 0x00108B21 File Offset: 0x00106D21
 	public void TOGGLE_RandomPlatformPop()
 	{
 		if (!this.mpCalls_.isServer)
@@ -548,7 +580,7 @@ public class mpMain : MonoBehaviour
 		this.mpCalls_.SERVER_Send_Command(12);
 	}
 
-	// Token: 0x0600199D RID: 6557 RVA: 0x0001134A File Offset: 0x0000F54A
+	// Token: 0x060019E7 RID: 6631 RVA: 0x00108B61 File Offset: 0x00106D61
 	public void TOGGLE_RandomGenreCombination()
 	{
 		if (!this.mpCalls_.isServer)
@@ -563,7 +595,7 @@ public class mpMain : MonoBehaviour
 		this.mpCalls_.SERVER_Send_Command(18);
 	}
 
-	// Token: 0x0600199E RID: 6558 RVA: 0x0001138A File Offset: 0x0000F58A
+	// Token: 0x060019E8 RID: 6632 RVA: 0x00108BA1 File Offset: 0x00106DA1
 	public void TOGGLE_RandomGameConcept()
 	{
 		if (!this.mpCalls_.isServer)
@@ -578,7 +610,7 @@ public class mpMain : MonoBehaviour
 		this.mpCalls_.SERVER_Send_Command(14);
 	}
 
-	// Token: 0x0600199F RID: 6559 RVA: 0x000113CA File Offset: 0x0000F5CA
+	// Token: 0x060019E9 RID: 6633 RVA: 0x00108BE1 File Offset: 0x00106DE1
 	public void TOGGLE_SpeedAnpassen()
 	{
 		if (!this.mpCalls_.isServer)
@@ -593,14 +625,14 @@ public class mpMain : MonoBehaviour
 		this.mpCalls_.SERVER_Send_Command(16);
 	}
 
-	// Token: 0x060019A0 RID: 6560 RVA: 0x0001140A File Offset: 0x0000F60A
+	// Token: 0x060019EA RID: 6634 RVA: 0x00108C21 File Offset: 0x00106E21
 	public void SetLogo(int i)
 	{
 		this.uiObjects[29].GetComponent<Image>().sprite = this.guiMain_.GetCompanyLogo(i);
-		this.mS_.logo = i;
+		this.mS_.SetCompanyLogoID(i);
 	}
 
-	// Token: 0x060019A1 RID: 6561 RVA: 0x0010D188 File Offset: 0x0010B388
+	// Token: 0x060019EB RID: 6635 RVA: 0x00108C50 File Offset: 0x00106E50
 	public void BUTTON_StartGame()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -610,7 +642,7 @@ public class mpMain : MonoBehaviour
 		this.manager.GetComponent<SteamLobby>().LockLobby(false);
 	}
 
-	// Token: 0x060019A2 RID: 6562 RVA: 0x00011437 File Offset: 0x0000F637
+	// Token: 0x060019EC RID: 6636 RVA: 0x00108CAA File Offset: 0x00106EAA
 	public void DROPDOWN_Difficulty()
 	{
 		this.mS_.difficulty = this.uiObjects[31].GetComponent<Dropdown>().value;
@@ -620,17 +652,17 @@ public class mpMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019A3 RID: 6563 RVA: 0x0001146F File Offset: 0x0000F66F
+	// Token: 0x060019ED RID: 6637 RVA: 0x00108CE2 File Offset: 0x00106EE2
 	public void DROPDOWN_Office()
 	{
-		this.mS_.office = this.uiObjects[33].GetComponent<Dropdown>().value + 3;
+		this.mS_.office = this.mS_.GetMapIDfromDropdown(this.uiObjects[33]);
 		if (this.mpCalls_.isServer)
 		{
 			this.mpCalls_.SERVER_Send_Office();
 		}
 	}
 
-	// Token: 0x060019A4 RID: 6564 RVA: 0x000114A9 File Offset: 0x0000F6A9
+	// Token: 0x060019EE RID: 6638 RVA: 0x00108D1B File Offset: 0x00106F1B
 	public void DROPDOWN_Startjahr()
 	{
 		if (this.mpCalls_.isServer)
@@ -639,7 +671,7 @@ public class mpMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019A5 RID: 6565 RVA: 0x000114C3 File Offset: 0x0000F6C3
+	// Token: 0x060019EF RID: 6639 RVA: 0x00108D35 File Offset: 0x00106F35
 	public void DROPDOWN_Speed()
 	{
 		if (this.mpCalls_.isServer)
@@ -648,33 +680,33 @@ public class mpMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040020C5 RID: 8389
+	// Token: 0x040020DF RID: 8415
 	private NetworkManager manager;
 
-	// Token: 0x040020C6 RID: 8390
+	// Token: 0x040020E0 RID: 8416
 	private mpCalls mpCalls_;
 
-	// Token: 0x040020C7 RID: 8391
+	// Token: 0x040020E1 RID: 8417
 	public GameObject[] uiObjects;
 
-	// Token: 0x040020C8 RID: 8392
+	// Token: 0x040020E2 RID: 8418
 	private mainScript mS_;
 
-	// Token: 0x040020C9 RID: 8393
+	// Token: 0x040020E3 RID: 8419
 	private GameObject main_;
 
-	// Token: 0x040020CA RID: 8394
+	// Token: 0x040020E4 RID: 8420
 	private GUI_Main guiMain_;
 
-	// Token: 0x040020CB RID: 8395
+	// Token: 0x040020E5 RID: 8421
 	private sfxScript sfx_;
 
-	// Token: 0x040020CC RID: 8396
+	// Token: 0x040020E6 RID: 8422
 	private textScript tS_;
 
-	// Token: 0x040020CD RID: 8397
+	// Token: 0x040020E7 RID: 8423
 	private genres genres_;
 
-	// Token: 0x040020CE RID: 8398
+	// Token: 0x040020E8 RID: 8424
 	private float timerPlayerInfos;
 }

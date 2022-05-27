@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000078 RID: 120
 public class Item_ContractAuftragsspiel : MonoBehaviour
 {
-	// Token: 0x06000504 RID: 1284 RVA: 0x0000527E File Offset: 0x0000347E
+	// Token: 0x0600050D RID: 1293 RVA: 0x00046A94 File Offset: 0x00044C94
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000505 RID: 1285 RVA: 0x00059D74 File Offset: 0x00057F74
+	// Token: 0x0600050E RID: 1294 RVA: 0x00046A9C File Offset: 0x00044C9C
 	private void Update()
 	{
 		if (!this.game_)
@@ -27,10 +27,10 @@ public class Item_ContractAuftragsspiel : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000506 RID: 1286 RVA: 0x00059DC8 File Offset: 0x00057FC8
+	// Token: 0x0600050F RID: 1295 RVA: 0x00046AF0 File Offset: 0x00044CF0
 	private void MultiplayerUpdate()
 	{
-		if (this.platformScript_ && this.platformScript_.inBesitz && !this.platformScript_.playerConsole && this.platformScript_.multiplaySlot == -1)
+		if (this.platformScript_ && this.platformScript_.inBesitz && this.platformScript_.OwnerIsNPC())
 		{
 			this.uiObjects[8].GetComponent<Image>().color = Color.white;
 		}
@@ -47,7 +47,7 @@ public class Item_ContractAuftragsspiel : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000507 RID: 1287 RVA: 0x00059E60 File Offset: 0x00058060
+	// Token: 0x06000510 RID: 1296 RVA: 0x00046B7C File Offset: 0x00044D7C
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag();
@@ -95,7 +95,7 @@ public class Item_ContractAuftragsspiel : MonoBehaviour
 				this.platformScript_ = gameObject.GetComponent<platformScript>();
 				this.platformScript_.SetPic(this.uiObjects[8]);
 				this.uiObjects[8].GetComponent<tooltip>().c = this.platformScript_.GetTooltip();
-				if (!this.platformScript_.inBesitz && !this.platformScript_.playerConsole && this.platformScript_.multiplaySlot == -1)
+				if (!this.platformScript_.inBesitz && this.platformScript_.OwnerIsNPC())
 				{
 					this.uiObjects[8].GetComponent<Image>().color = Color.red;
 				}
@@ -103,13 +103,13 @@ public class Item_ContractAuftragsspiel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000508 RID: 1288 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x06000511 RID: 1297 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000509 RID: 1289 RVA: 0x0005A220 File Offset: 0x00058420
+	// Token: 0x06000512 RID: 1298 RVA: 0x00046F2C File Offset: 0x0004512C
 	public void BUTTON_Click()
 	{
 		if (!this.mS_.genres_.IsErforscht(this.game_.maingenre))
@@ -154,7 +154,7 @@ public class Item_ContractAuftragsspiel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600050A RID: 1290 RVA: 0x00005286 File Offset: 0x00003486
+	// Token: 0x06000513 RID: 1299 RVA: 0x000470FF File Offset: 0x000452FF
 	public void BUTTON_Remove()
 	{
 		this.sfx_.PlaySound(3, true);

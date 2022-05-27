@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x0200035E RID: 862
+// Token: 0x02000361 RID: 865
 public class PowerBar : MonoBehaviour
 {
-	// Token: 0x06001FAB RID: 8107 RVA: 0x0014D294 File Offset: 0x0014B494
+	// Token: 0x06001FFE RID: 8190 RVA: 0x0014C9BC File Offset: 0x0014ABBC
 	private void Start()
 	{
 		this.position = new Vector2(this.radius + 20f, (float)Screen.height - (this.radius + 20f));
@@ -22,13 +22,13 @@ public class PowerBar : MonoBehaviour
 		this.bar.SetColor(Color.red, 0, (int)Mathf.Lerp(0f, (float)this.segmentCount, this.currentPower));
 	}
 
-	// Token: 0x06001FAC RID: 8108 RVA: 0x00014FFE File Offset: 0x000131FE
+	// Token: 0x06001FFF RID: 8191 RVA: 0x0014CADE File Offset: 0x0014ACDE
 	private void SetTargetPower()
 	{
 		this.targetPower = UnityEngine.Random.value;
 	}
 
-	// Token: 0x06001FAD RID: 8109 RVA: 0x0014D3B8 File Offset: 0x0014B5B8
+	// Token: 0x06002000 RID: 8192 RVA: 0x0014CAEC File Offset: 0x0014ACEC
 	private void Update()
 	{
 		float t = this.currentPower;
@@ -50,33 +50,33 @@ public class PowerBar : MonoBehaviour
 		this.bar.SetColor(Color.red, (int)Mathf.Lerp(0f, (float)this.segmentCount, t), (int)Mathf.Lerp(0f, (float)this.segmentCount, this.currentPower));
 	}
 
-	// Token: 0x06001FAE RID: 8110 RVA: 0x0014D4B8 File Offset: 0x0014B6B8
+	// Token: 0x06002001 RID: 8193 RVA: 0x0014CBEC File Offset: 0x0014ADEC
 	private void OnGUI()
 	{
 		GUI.Label(new Rect((float)(Screen.width / 2 - 40), (float)(Screen.height / 2 - 15), 80f, 30f), "Power: " + (this.currentPower * 100f).ToString("f0") + "%");
 	}
 
-	// Token: 0x04002839 RID: 10297
+	// Token: 0x0400284F RID: 10319
 	public float speed = 0.25f;
 
-	// Token: 0x0400283A RID: 10298
+	// Token: 0x04002850 RID: 10320
 	public int lineWidth = 25;
 
-	// Token: 0x0400283B RID: 10299
+	// Token: 0x04002851 RID: 10321
 	public float radius = 60f;
 
-	// Token: 0x0400283C RID: 10300
+	// Token: 0x04002852 RID: 10322
 	public int segmentCount = 200;
 
-	// Token: 0x0400283D RID: 10301
+	// Token: 0x04002853 RID: 10323
 	private VectorLine bar;
 
-	// Token: 0x0400283E RID: 10302
+	// Token: 0x04002854 RID: 10324
 	private Vector2 position;
 
-	// Token: 0x0400283F RID: 10303
+	// Token: 0x04002855 RID: 10325
 	private float currentPower;
 
-	// Token: 0x04002840 RID: 10304
+	// Token: 0x04002856 RID: 10326
 	private float targetPower;
 }

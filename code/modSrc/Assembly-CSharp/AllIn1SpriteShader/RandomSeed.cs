@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x02000402 RID: 1026
+	// Token: 0x02000405 RID: 1029
 	public class RandomSeed : MonoBehaviour
 	{
-		// Token: 0x060023FE RID: 9214 RVA: 0x00171F6C File Offset: 0x0017016C
+		// Token: 0x06002451 RID: 9297 RVA: 0x0017504C File Offset: 0x0017324C
 		private void Start()
 		{
 			Renderer component = base.GetComponent<Renderer>();

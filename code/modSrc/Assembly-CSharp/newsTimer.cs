@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002F7 RID: 759
+// Token: 0x020002FA RID: 762
 public class newsTimer : MonoBehaviour
 {
-	// Token: 0x06001A6F RID: 6767 RVA: 0x00011C6D File Offset: 0x0000FE6D
+	// Token: 0x06001AB9 RID: 6841 RVA: 0x0010D050 File Offset: 0x0010B250
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001A70 RID: 6768 RVA: 0x00110DBC File Offset: 0x0010EFBC
+	// Token: 0x06001ABA RID: 6842 RVA: 0x0010D058 File Offset: 0x0010B258
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -27,7 +27,7 @@ public class newsTimer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A71 RID: 6769 RVA: 0x00110E24 File Offset: 0x0010F024
+	// Token: 0x06001ABB RID: 6843 RVA: 0x0010D0C0 File Offset: 0x0010B2C0
 	private void Update()
 	{
 		if (this.mS_.gameSpeed <= 0f)
@@ -41,15 +41,15 @@ public class newsTimer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040021C0 RID: 8640
+	// Token: 0x040021DA RID: 8666
 	public GameObject main_;
 
-	// Token: 0x040021C1 RID: 8641
+	// Token: 0x040021DB RID: 8667
 	public mainScript mS_;
 
-	// Token: 0x040021C2 RID: 8642
+	// Token: 0x040021DC RID: 8668
 	public settingsScript settings_;
 
-	// Token: 0x040021C3 RID: 8643
+	// Token: 0x040021DD RID: 8669
 	public float aliveTimer;
 }

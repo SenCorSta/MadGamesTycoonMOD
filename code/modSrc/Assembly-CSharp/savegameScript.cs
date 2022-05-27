@@ -2,16 +2,16 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x0200033D RID: 829
+// Token: 0x02000340 RID: 832
 public class savegameScript : MonoBehaviour
 {
-	// Token: 0x06001E1B RID: 7707 RVA: 0x000143BE File Offset: 0x000125BE
+	// Token: 0x06001E72 RID: 7794 RVA: 0x00130F83 File Offset: 0x0012F183
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001E1C RID: 7708 RVA: 0x00131C5C File Offset: 0x0012FE5C
+	// Token: 0x06001E73 RID: 7795 RVA: 0x00130F8C File Offset: 0x0012F18C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -144,13 +144,13 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E1D RID: 7709 RVA: 0x000143C6 File Offset: 0x000125C6
+	// Token: 0x06001E74 RID: 7796 RVA: 0x0013130A File Offset: 0x0012F50A
 	public void SaveMultiplayer(int i)
 	{
 		base.StartCoroutine(this.SaveMultiplayerDelay(i));
 	}
 
-	// Token: 0x06001E1E RID: 7710 RVA: 0x000143D6 File Offset: 0x000125D6
+	// Token: 0x06001E75 RID: 7797 RVA: 0x0013131A File Offset: 0x0012F51A
 	public IEnumerator SaveMultiplayerDelay(int i)
 	{
 		if (this.mS_.mpCalls_.isServer)
@@ -172,7 +172,7 @@ public class savegameScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001E1F RID: 7711 RVA: 0x00131FDC File Offset: 0x001301DC
+	// Token: 0x06001E76 RID: 7798 RVA: 0x00131330 File Offset: 0x0012F530
 	public void Save(int i)
 	{
 		if (this.mS_.multiplayer)
@@ -222,7 +222,7 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E20 RID: 7712 RVA: 0x001321D8 File Offset: 0x001303D8
+	// Token: 0x06001E77 RID: 7799 RVA: 0x0013152C File Offset: 0x0012F72C
 	public int GetOfficeFromSavegame(int i)
 	{
 		string filePath = this.mS_.GetSavegameTitle() + i.ToString() + ".txt";
@@ -239,7 +239,7 @@ public class savegameScript : MonoBehaviour
 		return array[21];
 	}
 
-	// Token: 0x06001E21 RID: 7713 RVA: 0x00132264 File Offset: 0x00130464
+	// Token: 0x06001E78 RID: 7800 RVA: 0x001315B8 File Offset: 0x0012F7B8
 	public void Load(int i)
 	{
 		this.loadingSavegame = true;
@@ -323,7 +323,7 @@ public class savegameScript : MonoBehaviour
 		this.loadingSavegame = false;
 	}
 
-	// Token: 0x06001E22 RID: 7714 RVA: 0x000143EC File Offset: 0x000125EC
+	// Token: 0x06001E79 RID: 7801 RVA: 0x00131A72 File Offset: 0x0012FC72
 	private IEnumerator IENUM_UpdateCharacters()
 	{
 		yield return new WaitForEndOfFrame();
@@ -345,7 +345,7 @@ public class savegameScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001E23 RID: 7715 RVA: 0x00132720 File Offset: 0x00130920
+	// Token: 0x06001E7A RID: 7802 RVA: 0x00131A84 File Offset: 0x0012FC84
 	public string LoadSaveGameName(int i)
 	{
 		this.FindScripts();
@@ -378,7 +378,7 @@ public class savegameScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001E24 RID: 7716 RVA: 0x00132878 File Offset: 0x00130A78
+	// Token: 0x06001E7B RID: 7803 RVA: 0x00131BDC File Offset: 0x0012FDDC
 	public bool IsSaveGameOutdatet(int i)
 	{
 		this.FindScripts();
@@ -394,7 +394,7 @@ public class savegameScript : MonoBehaviour
 		return array[45] != this.saveGameVersion;
 	}
 
-	// Token: 0x06001E25 RID: 7717 RVA: 0x001328F0 File Offset: 0x00130AF0
+	// Token: 0x06001E7C RID: 7804 RVA: 0x00131C54 File Offset: 0x0012FE54
 	private void SaveGlobals(ES3Writer writer)
 	{
 		long[] array = new long[100];
@@ -402,8 +402,6 @@ public class savegameScript : MonoBehaviour
 		float[] array3 = new float[100];
 		string[] array4 = new string[100];
 		bool[] array5 = new bool[100];
-		array2[0] = this.mS_.logo;
-		array2[1] = this.mS_.country;
 		array2[2] = 0;
 		array2[3] = this.mS_.year;
 		array2[4] = this.mS_.month;
@@ -457,8 +455,7 @@ public class savegameScript : MonoBehaviour
 		}
 		array2[46] = this.mS_.award_GOTY;
 		array2[47] = this.mS_.award_Studio;
-		array2[48] = this.mS_.companySpecialGenre;
-		array2[49] = this.mS_.mpCalls_.myID;
+		array2[49] = this.mS_.myID;
 		array2[50] = this.mS_.award_Grafik;
 		array2[51] = this.mS_.award_Sound;
 		array2[52] = this.mS_.award_Trendsetter;
@@ -476,6 +473,8 @@ public class savegameScript : MonoBehaviour
 		array2[64] = this.menuArcadePreis_.setMonitor;
 		array2[65] = this.menuArcadePreis_.setJoystick;
 		array2[66] = this.menuArcadePreis_.setSound;
+		array2[67] = this.mS_.awardBonus;
+		array2[68] = this.mS_.lastUsedEngine;
 		array3[0] = this.mS_.auftragsAnsehen;
 		if (!this.mS_.multiplayer)
 		{
@@ -491,9 +490,10 @@ public class savegameScript : MonoBehaviour
 		array3[9] = this.mS_.marktforschung_deluxe;
 		array3[10] = this.mS_.marktforschung_collectors;
 		array3[11] = this.mS_.marktforschung_arcade;
+		array3[12] = this.mS_.awardBonusAmount;
 		array[0] = this.mS_.money;
 		array[1] = this.mS_.kredit;
-		array4[0] = this.mS_.companyName;
+		array4[0] = this.mS_.GetCompanyName();
 		array4[1] = this.mS_.playerName;
 		array4[2] = DateTime.Now.ToShortDateString() + " ▪ " + DateTime.Now.ToShortTimeString();
 		array4[3] = this.mS_.marktforschung_datum;
@@ -539,7 +539,6 @@ public class savegameScript : MonoBehaviour
 		writer.Write<long[]>("finanzenMonatLast", this.mS_.finanzenMonatLast);
 		writer.Write<long[]>("finanzenJahr", this.mS_.finanzenJahr);
 		writer.Write<long[]>("finanzenJahrLast", this.mS_.finanzenJahrLast);
-		writer.Write<int[]>("awards", this.mS_.awards);
 		writer.Write<bool[]>("newsSetting", this.mS_.newsSetting);
 		writer.Write<bool[]>("gameTabFilter", this.mS_.gameTabFilter);
 		writer.Write<bool[]>("buildings", this.mS_.buildings);
@@ -586,16 +585,12 @@ public class savegameScript : MonoBehaviour
 		writer.Write<int[]>("madGamesCon_BestSound", value6);
 		int[] value7 = this.mS_.madGamesCon_BestStudio.ToArray();
 		writer.Write<int[]>("madGamesCon_BestStudio", value7);
-		int[] value8 = this.mS_.madGamesCon_BestStudioPlayer.ToArray();
-		writer.Write<int[]>("madGamesCon_BestStudioPlayer", value8);
-		int[] value9 = this.mS_.madGamesCon_BestPublisher.ToArray();
-		writer.Write<int[]>("madGamesCon_BestPublisher", value9);
-		int[] value10 = this.mS_.madGamesCon_BestPublisherPlayer.ToArray();
-		writer.Write<int[]>("madGamesCon_BestPublisherPlayer", value10);
-		int[] value11 = this.mS_.madGamesCon_BestGame.ToArray();
-		writer.Write<int[]>("madGamesCon_BestGame", value11);
-		int[] value12 = this.mS_.madGamesCon_BadGame.ToArray();
-		writer.Write<int[]>("madGamesCon_BadGame", value12);
+		int[] value8 = this.mS_.madGamesCon_BestPublisher.ToArray();
+		writer.Write<int[]>("madGamesCon_BestPublisher", value8);
+		int[] value9 = this.mS_.madGamesCon_BestGame.ToArray();
+		writer.Write<int[]>("madGamesCon_BestGame", value9);
+		int[] value10 = this.mS_.madGamesCon_BadGame.ToArray();
+		writer.Write<int[]>("madGamesCon_BadGame", value10);
 		if (this.mS_.multiplayer)
 		{
 			for (int i = 0; i < 4; i++)
@@ -605,9 +600,6 @@ public class savegameScript : MonoBehaviour
 					player_mp player_mp = this.mpCalls_.playersMP[i];
 					writer.Write<int>("MP_playerID" + i.ToString(), player_mp.playerID);
 					writer.Write<string>("MP_playerName" + i.ToString(), player_mp.playerName);
-					writer.Write<string>("MP_companyName" + i.ToString(), player_mp.companyName);
-					writer.Write<int>("MP_companyLogo" + i.ToString(), player_mp.companyLogo);
-					writer.Write<int>("MP_companyCountry" + i.ToString(), player_mp.companyCountry);
 					writer.Write<int[,]>("MP_mapRoomID" + i.ToString(), player_mp.mapRoomID);
 					writer.Write<int[,]>("MP_mapRoomTyp" + i.ToString(), player_mp.mapRoomTyp);
 					writer.Write<int[,]>("MP_mapDoors" + i.ToString(), player_mp.mapDoors);
@@ -634,7 +626,7 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E26 RID: 7718 RVA: 0x00133830 File Offset: 0x00131A30
+	// Token: 0x06001E7D RID: 7805 RVA: 0x00132AD8 File Offset: 0x00130CD8
 	private void LoadGlobals(ES3Reader reader, string filename)
 	{
 		long[] array = new long[100];
@@ -647,8 +639,6 @@ public class savegameScript : MonoBehaviour
 		array = reader.Read<long[]>("globals_long");
 		array4 = reader.Read<string[]>("globals_string");
 		array5 = reader.Read<bool[]>("globals_bool");
-		this.mS_.logo = array2[0];
-		this.mS_.country = array2[1];
 		this.mS_.year = array2[3];
 		this.mS_.month = array2[4];
 		this.mS_.week = array2[5];
@@ -694,8 +684,7 @@ public class savegameScript : MonoBehaviour
 		this.mS_.savegameVersion = array2[45];
 		this.mS_.award_GOTY = array2[46];
 		this.mS_.award_Studio = array2[47];
-		this.mS_.companySpecialGenre = array2[48];
-		this.savegamePlayerID = array2[49];
+		this.mS_.myID = array2[49];
 		this.mS_.award_Grafik = array2[50];
 		this.mS_.award_Sound = array2[51];
 		this.mS_.award_Trendsetter = array2[52];
@@ -713,6 +702,8 @@ public class savegameScript : MonoBehaviour
 		this.menuArcadePreis_.setMonitor = array2[64];
 		this.menuArcadePreis_.setJoystick = array2[65];
 		this.menuArcadePreis_.setSound = array2[66];
+		this.mS_.awardBonus = array2[67];
+		this.mS_.lastUsedEngine = array2[68];
 		this.mS_.auftragsAnsehen = array3[0];
 		if (!this.mS_.multiplayer)
 		{
@@ -728,9 +719,9 @@ public class savegameScript : MonoBehaviour
 		this.mS_.marktforschung_deluxe = array3[9];
 		this.mS_.marktforschung_collectors = array3[10];
 		this.mS_.marktforschung_arcade = array3[11];
+		this.mS_.awardBonusAmount = array3[12];
 		this.mS_.money = array[0];
 		this.mS_.kredit = array[1];
-		this.mS_.companyName = array4[0];
 		this.mS_.playerName = array4[1];
 		this.mS_.marktforschung_datum = array4[3];
 		this.mS_.settings_TutorialOff = array5[0];
@@ -758,10 +749,7 @@ public class savegameScript : MonoBehaviour
 			this.mS_.devLegendsGrafiker = reader.Read<bool[]>("devLegendsGrafiker");
 			this.mS_.devLegendsMusiker = reader.Read<bool[]>("devLegendsMusiker");
 			this.mS_.devLegendsForscher = reader.Read<bool[]>("devLegendsForscher");
-			if (this.mS_.savegameVersion >= 15)
-			{
-				this.mS_.devLegendsHardware = reader.Read<bool[]>("devLegendsHardware");
-			}
+			this.mS_.devLegendsHardware = reader.Read<bool[]>("devLegendsHardware");
 		}
 		this.tS_.devLegends = reader.Read<string[]>("tS->devLegends");
 		this.fS_.RES_POINTS_LEFT = reader.Read<float[]>("fS->RES_POINTS_LEFT");
@@ -780,10 +768,7 @@ public class savegameScript : MonoBehaviour
 		}
 		this.mS_.finanzVerlauf = reader.Read<long[]>("finanzVerlauf");
 		this.mS_.verkaufsverlauf = reader.Read<long[]>("verkaufsverlauf");
-		if (this.mS_.savegameVersion >= 14)
-		{
-			this.mS_.verkaufsverlaufKonsolen = reader.Read<long[]>("verkaufsverlaufKonsolen");
-		}
+		this.mS_.verkaufsverlaufKonsolen = reader.Read<long[]>("verkaufsverlaufKonsolen");
 		this.mS_.aboverlauf = reader.Read<long[]>("aboverlauf");
 		this.mS_.downloadverlauf = reader.Read<long[]>("downloadverlauf");
 		this.mS_.fansverlauf = reader.Read<long[]>("fansverlauf");
@@ -791,17 +776,13 @@ public class savegameScript : MonoBehaviour
 		this.mS_.finanzenMonatLast = reader.Read<long[]>("finanzenMonatLast");
 		this.mS_.finanzenJahr = reader.Read<long[]>("finanzenJahr");
 		this.mS_.finanzenJahrLast = reader.Read<long[]>("finanzenJahrLast");
-		this.mS_.awards = reader.Read<int[]>("awards");
 		this.mS_.newsSetting = reader.Read<bool[]>("newsSetting");
 		if (this.key_gameTabFilter)
 		{
 			this.mS_.gameTabFilter = reader.Read<bool[]>("gameTabFilter");
 		}
 		this.mS_.buildings = reader.Read<bool[]>("buildings");
-		if (this.mS_.savegameVersion >= 3)
-		{
-			this.mS_.personal_group_names = reader.Read<string[]>("personal_group_names");
-		}
+		this.mS_.personal_group_names = reader.Read<string[]>("personal_group_names");
 		if (this.key_default_verkaufpreis)
 		{
 			this.menuPackung_.verkaufspreis_default_addon = reader.Read<int[]>("verkaufspreis_default_addon");
@@ -860,95 +841,78 @@ public class savegameScript : MonoBehaviour
 		{
 			this.mS_.history.Add(array9[l]);
 		}
-		if (this.mS_.savegameVersion >= 4)
+		int[] array10 = reader.Read<int[]>("madGamesCon_Jahr");
+		for (int m = 0; m < array10.Length; m++)
 		{
-			int[] array10 = reader.Read<int[]>("madGamesCon_Jahr");
-			for (int m = 0; m < array10.Length; m++)
-			{
-				this.mS_.madGamesCon_Jahr.Add(array10[m]);
-			}
-			int[] array11 = reader.Read<int[]>("madGamesCon_BestGrafik");
-			for (int n = 0; n < array11.Length; n++)
-			{
-				this.mS_.madGamesCon_BestGrafik.Add(array11[n]);
-			}
-			int[] array12 = reader.Read<int[]>("madGamesCon_BestSound");
-			for (int num = 0; num < array12.Length; num++)
-			{
-				this.mS_.madGamesCon_BestSound.Add(array12[num]);
-			}
-			int[] array13 = reader.Read<int[]>("madGamesCon_BestStudio");
-			for (int num2 = 0; num2 < array13.Length; num2++)
-			{
-				this.mS_.madGamesCon_BestStudio.Add(array13[num2]);
-			}
-			int[] array14 = reader.Read<int[]>("madGamesCon_BestStudioPlayer");
-			for (int num3 = 0; num3 < array14.Length; num3++)
-			{
-				this.mS_.madGamesCon_BestStudioPlayer.Add(array14[num3]);
-			}
-			int[] array15 = reader.Read<int[]>("madGamesCon_BestPublisher");
-			for (int num4 = 0; num4 < array15.Length; num4++)
-			{
-				this.mS_.madGamesCon_BestPublisher.Add(array15[num4]);
-			}
-			int[] array16 = reader.Read<int[]>("madGamesCon_BestPublisherPlayer");
-			for (int num5 = 0; num5 < array16.Length; num5++)
-			{
-				this.mS_.madGamesCon_BestPublisherPlayer.Add(array16[num5]);
-			}
-			int[] array17 = reader.Read<int[]>("madGamesCon_BestGame");
-			for (int num6 = 0; num6 < array17.Length; num6++)
-			{
-				this.mS_.madGamesCon_BestGame.Add(array17[num6]);
-			}
-			int[] array18 = reader.Read<int[]>("madGamesCon_BadGame");
-			for (int num7 = 0; num7 < array18.Length; num7++)
-			{
-				this.mS_.madGamesCon_BadGame.Add(array18[num7]);
-			}
+			this.mS_.madGamesCon_Jahr.Add(array10[m]);
+		}
+		int[] array11 = reader.Read<int[]>("madGamesCon_BestGrafik");
+		for (int n = 0; n < array11.Length; n++)
+		{
+			this.mS_.madGamesCon_BestGrafik.Add(array11[n]);
+		}
+		int[] array12 = reader.Read<int[]>("madGamesCon_BestSound");
+		for (int num = 0; num < array12.Length; num++)
+		{
+			this.mS_.madGamesCon_BestSound.Add(array12[num]);
+		}
+		int[] array13 = reader.Read<int[]>("madGamesCon_BestStudio");
+		for (int num2 = 0; num2 < array13.Length; num2++)
+		{
+			this.mS_.madGamesCon_BestStudio.Add(array13[num2]);
+		}
+		int[] array14 = reader.Read<int[]>("madGamesCon_BestPublisher");
+		for (int num3 = 0; num3 < array14.Length; num3++)
+		{
+			this.mS_.madGamesCon_BestPublisher.Add(array14[num3]);
+		}
+		int[] array15 = reader.Read<int[]>("madGamesCon_BestGame");
+		for (int num4 = 0; num4 < array15.Length; num4++)
+		{
+			this.mS_.madGamesCon_BestGame.Add(array15[num4]);
+		}
+		int[] array16 = reader.Read<int[]>("madGamesCon_BadGame");
+		for (int num5 = 0; num5 < array16.Length; num5++)
+		{
+			this.mS_.madGamesCon_BadGame.Add(array16[num5]);
 		}
 		if (this.mS_.multiplayer)
 		{
 			this.mpCalls_.playersMP.Clear();
-			for (int num8 = 0; num8 < 4; num8++)
+			for (int num6 = 0; num6 < 4; num6++)
 			{
-				int num9 = reader.Read<int>("MP_playerID" + num8.ToString());
-				if (num9 != -1)
+				int num7 = reader.Read<int>("MP_playerID" + num6.ToString());
+				if (num7 != -1)
 				{
-					this.mpCalls_.playersMP.Add(new player_mp(num9));
-					player_mp player_mp = this.mpCalls_.FindPlayer(num9);
-					player_mp.playerName = reader.Read<string>("MP_playerName" + num8.ToString());
-					player_mp.companyName = reader.Read<string>("MP_companyName" + num8.ToString());
-					player_mp.companyLogo = reader.Read<int>("MP_companyLogo" + num8.ToString());
-					player_mp.companyCountry = reader.Read<int>("MP_companyCountry" + num8.ToString());
-					player_mp.mapRoomID = reader.Read<int[,]>("MP_mapRoomID" + num8.ToString());
-					player_mp.mapRoomTyp = reader.Read<int[,]>("MP_mapRoomTyp" + num8.ToString());
-					player_mp.mapDoors = reader.Read<int[,]>("MP_mapDoors" + num8.ToString());
-					player_mp.mapWindows = reader.Read<int[,]>("MP_mapWindows" + num8.ToString());
-					int[] array19 = reader.Read<int[]>("MP_object_id" + num8.ToString());
-					int[] array20 = reader.Read<int[]>("MP_object_typ" + num8.ToString());
-					Vector3[] array21 = reader.Read<Vector3[]>("MP_object_pos" + num8.ToString());
-					Debug.Log("Amount of MP Objects: " + array19.Length.ToString());
-					for (int num10 = 0; num10 < array19.Length; num10++)
+					this.mpCalls_.playersMP.Add(new player_mp(num7));
+					player_mp player_mp = this.mpCalls_.FindPlayer(num7);
+					player_mp.playerName = reader.Read<string>("MP_playerName" + num6.ToString());
+					player_mp.mapRoomID = reader.Read<int[,]>("MP_mapRoomID" + num6.ToString());
+					player_mp.mapRoomTyp = reader.Read<int[,]>("MP_mapRoomTyp" + num6.ToString());
+					player_mp.mapDoors = reader.Read<int[,]>("MP_mapDoors" + num6.ToString());
+					player_mp.mapWindows = reader.Read<int[,]>("MP_mapWindows" + num6.ToString());
+					int[] array17 = reader.Read<int[]>("MP_object_id" + num6.ToString());
+					int[] array18 = reader.Read<int[]>("MP_object_typ" + num6.ToString());
+					Vector3[] array19 = reader.Read<Vector3[]>("MP_object_pos" + num6.ToString());
+					for (int num8 = 0; num8 < array17.Length; num8++)
 					{
-						player_mp.objects.Add(new object_mp(array19[num10], array20[num10], array21[num10].x, array21[num10].y, array21[num10].z));
+						player_mp.objects.Add(new object_mp(array17[num8], array18[num8], array19[num8].x, array19[num8].y, array19[num8].z));
 					}
 				}
 			}
 		}
 	}
 
-	// Token: 0x06001E27 RID: 7719 RVA: 0x001348B8 File Offset: 0x00132AB8
+	// Token: 0x06001E7E RID: 7806 RVA: 0x00133A28 File Offset: 0x00131C28
 	private void SaveMitarbeiter(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Character");
 		int num = array.Length;
 		writer.Write<int>("anzCharacter", num);
-		int[] array2 = new int[30 * num];
-		float[] array3 = new float[30 * num];
-		string[] array4 = new string[5 * num];
-		bool[] array5 = new bool[30 * num];
+		int[] array2 = new int[18 * num];
+		float[] array3 = new float[24 * num];
+		string[] array4 = new string[num];
+		bool[] array5 = new bool[num];
 		int num2 = 0;
 		if (array.Length != 0 && array[0])
 		{
@@ -962,53 +926,53 @@ public class savegameScript : MonoBehaviour
 		for (int i = 0; i < array.Length; i++)
 		{
 			characterScript component2 = array[i].GetComponent<characterScript>();
-			int num3 = i * 30;
-			array2[num3] = component2.myID;
-			array2[1 + num3] = component2.group;
-			array2[2 + num3] = component2.roomID;
-			array2[3 + num3] = component2.objectUsingID;
-			array2[4 + num3] = component2.objectBelegtID;
-			array2[5 + num3] = component2.legend;
-			array2[6 + num3] = component2.model_body;
-			array2[7 + num3] = component2.model_eyes;
-			array2[8 + num3] = component2.model_hair;
-			array2[9 + num3] = component2.model_beard;
-			array2[10 + num3] = component2.model_skinColor;
-			array2[11 + num3] = component2.model_hairColor;
-			array2[12 + num3] = component2.model_beardColor;
-			array2[13 + num3] = component2.model_HoseColor;
-			array2[14 + num3] = component2.model_ShirtColor;
-			array2[15 + num3] = component2.model_Add1Color;
-			array2[16 + num3] = component2.krank;
-			array2[17 + num3] = component2.beruf;
-			int num4 = i * 30;
-			array3[num4] = array[i].transform.position.x;
-			array3[1 + num4] = array[i].transform.position.y;
-			array3[2 + num4] = array[i].transform.position.z;
-			array3[3 + num4] = component2.s_motivation;
-			array3[4 + num4] = component2.s_gamedesign;
-			array3[5 + num4] = component2.s_programmieren;
-			array3[6 + num4] = component2.s_grafik;
-			array3[7 + num4] = component2.s_sound;
-			array3[8 + num4] = component2.s_pr;
-			array3[9 + num4] = component2.s_gametests;
-			array3[10 + num4] = component2.s_technik;
-			array3[11 + num4] = component2.s_forschen;
-			array3[12 + num4] = component2.workProgress;
-			array3[13 + num4] = component2.durst;
-			array3[14 + num4] = component2.hunger;
-			array3[15 + num4] = component2.klo;
-			array3[16 + num4] = component2.waschbecken;
-			array3[17 + num4] = component2.muell;
-			array3[18 + num4] = component2.giessen;
-			array3[19 + num4] = component2.pause;
-			array3[20 + num4] = array[i].transform.eulerAngles.x;
-			array3[21 + num4] = array[i].transform.eulerAngles.y;
-			array3[22 + num4] = array[i].transform.eulerAngles.z;
-			array3[23 + num4] = component2.freezer;
-			int num5 = i * 5;
-			array4[num5] = component2.myName;
-			int num6 = i * 30;
+			int num3 = i * (array4.Length / num);
+			int num4 = i * (array2.Length / num);
+			int num5 = i * (array3.Length / num);
+			int num6 = i * (array5.Length / num);
+			array2[num4] = component2.myID;
+			array2[1 + num4] = component2.group;
+			array2[2 + num4] = component2.roomID;
+			array2[3 + num4] = component2.objectUsingID;
+			array2[4 + num4] = component2.objectBelegtID;
+			array2[5 + num4] = component2.legend;
+			array2[6 + num4] = component2.model_body;
+			array2[7 + num4] = component2.model_eyes;
+			array2[8 + num4] = component2.model_hair;
+			array2[9 + num4] = component2.model_beard;
+			array2[10 + num4] = component2.model_skinColor;
+			array2[11 + num4] = component2.model_hairColor;
+			array2[12 + num4] = component2.model_beardColor;
+			array2[13 + num4] = component2.model_HoseColor;
+			array2[14 + num4] = component2.model_ShirtColor;
+			array2[15 + num4] = component2.model_Add1Color;
+			array2[16 + num4] = component2.krank;
+			array2[17 + num4] = component2.beruf;
+			array3[num5] = array[i].transform.position.x;
+			array3[1 + num5] = array[i].transform.position.y;
+			array3[2 + num5] = array[i].transform.position.z;
+			array3[3 + num5] = component2.s_motivation;
+			array3[4 + num5] = component2.s_gamedesign;
+			array3[5 + num5] = component2.s_programmieren;
+			array3[6 + num5] = component2.s_grafik;
+			array3[7 + num5] = component2.s_sound;
+			array3[8 + num5] = component2.s_pr;
+			array3[9 + num5] = component2.s_gametests;
+			array3[10 + num5] = component2.s_technik;
+			array3[11 + num5] = component2.s_forschen;
+			array3[12 + num5] = component2.workProgress;
+			array3[13 + num5] = component2.durst;
+			array3[14 + num5] = component2.hunger;
+			array3[15 + num5] = component2.klo;
+			array3[16 + num5] = component2.waschbecken;
+			array3[17 + num5] = component2.muell;
+			array3[18 + num5] = component2.giessen;
+			array3[19 + num5] = component2.pause;
+			array3[20 + num5] = array[i].transform.eulerAngles.x;
+			array3[21 + num5] = array[i].transform.eulerAngles.y;
+			array3[22 + num5] = array[i].transform.eulerAngles.z;
+			array3[23 + num5] = component2.freezer;
+			array4[num3] = component2.myName;
 			array5[num6] = component2.male;
 			int num7 = i * num2;
 			for (int j = 0; j < component2.perks.Length; j++)
@@ -1023,7 +987,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<bool[]>("characters_perks", array6);
 	}
 
-	// Token: 0x06001E28 RID: 7720 RVA: 0x00134C8C File Offset: 0x00132E8C
+	// Token: 0x06001E7F RID: 7807 RVA: 0x00133E08 File Offset: 0x00132008
 	private void LoadMitarbeiter(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzCharacter", -1);
@@ -1031,88 +995,79 @@ public class savegameScript : MonoBehaviour
 		{
 			return;
 		}
-		bool[] array = new bool[0];
-		int[] array2 = reader.Read<int[]>("characters_I");
-		float[] array3 = reader.Read<float[]>("characters_F");
-		string[] array4 = reader.Read<string[]>("characters_S");
-		bool[] array5 = reader.Read<bool[]>("characters_B");
+		long[] array = new long[0];
+		int[] array2 = new int[0];
+		float[] array3 = new float[0];
+		string[] array4 = new string[0];
+		bool[] array5 = new bool[0];
+		bool[] array6 = new bool[0];
+		array2 = reader.Read<int[]>("characters_I");
+		array3 = reader.Read<float[]>("characters_F");
+		array4 = reader.Read<string[]>("characters_S");
+		array5 = reader.Read<bool[]>("characters_B");
+		int num2 = array2.Length / num;
+		int num3 = array3.Length / num;
+		int num4 = array5.Length / num;
+		int num5 = array4.Length / num;
+		int num6 = array.Length / num;
 		if (this.mS_.savegameVersion >= 16)
 		{
-			array = reader.Read<bool[]>("characters_perks");
+			array6 = reader.Read<bool[]>("characters_perks");
 		}
 		for (int i = 0; i < num; i++)
 		{
-			int num2 = i * 30;
-			int num3 = i * 30;
-			int num4 = i * 30;
-			int num5 = i * 5;
-			characterScript characterScript = this.cCS_.CreateCharacter(array2[num2], array5[num4], array2[6 + num2]);
-			characterScript.myID = array2[num2];
-			characterScript.group = array2[1 + num2];
-			characterScript.roomID = array2[2 + num2];
-			characterScript.objectUsingID = array2[3 + num2];
-			characterScript.objectBelegtID = array2[4 + num2];
-			characterScript.legend = array2[5 + num2];
-			characterScript.model_body = array2[6 + num2];
-			characterScript.model_eyes = array2[7 + num2];
-			characterScript.model_hair = array2[8 + num2];
-			characterScript.model_beard = array2[9 + num2];
-			characterScript.model_skinColor = array2[10 + num2];
-			characterScript.model_hairColor = array2[11 + num2];
-			characterScript.model_beardColor = array2[12 + num2];
-			characterScript.model_HoseColor = array2[13 + num2];
-			characterScript.model_ShirtColor = array2[14 + num2];
-			characterScript.model_Add1Color = array2[15 + num2];
-			characterScript.krank = array2[16 + num2];
-			characterScript.beruf = array2[17 + num2];
-			characterScript.s_motivation = array3[3 + num3];
-			characterScript.s_gamedesign = array3[4 + num3];
-			characterScript.s_programmieren = array3[5 + num3];
-			characterScript.s_grafik = array3[6 + num3];
-			characterScript.s_sound = array3[7 + num3];
-			characterScript.s_pr = array3[8 + num3];
-			characterScript.s_gametests = array3[9 + num3];
-			characterScript.s_technik = array3[10 + num3];
-			characterScript.s_forschen = array3[11 + num3];
-			characterScript.workProgress = array3[12 + num3];
-			characterScript.durst = array3[13 + num3];
-			characterScript.hunger = array3[14 + num3];
-			characterScript.klo = array3[15 + num3];
-			characterScript.waschbecken = array3[16 + num3];
-			characterScript.muell = array3[17 + num3];
-			characterScript.giessen = array3[18 + num3];
-			characterScript.pause = array3[19 + num3];
-			characterScript.freezer = array3[23 + num3];
-			characterScript.myName = array4[num5];
-			characterScript.male = array5[num4];
-			if (this.mS_.savegameVersion < 16)
+			int num7 = i * num2;
+			int num8 = i * num3;
+			int num9 = i * num4;
+			int num10 = i * num5;
+			characterScript characterScript = this.cCS_.CreateCharacter(array2[num7], array5[num9], array2[6 + num7]);
+			characterScript.myID = array2[num7];
+			characterScript.group = array2[1 + num7];
+			characterScript.roomID = array2[2 + num7];
+			characterScript.objectUsingID = array2[3 + num7];
+			characterScript.objectBelegtID = array2[4 + num7];
+			characterScript.legend = array2[5 + num7];
+			characterScript.model_body = array2[6 + num7];
+			characterScript.model_eyes = array2[7 + num7];
+			characterScript.model_hair = array2[8 + num7];
+			characterScript.model_beard = array2[9 + num7];
+			characterScript.model_skinColor = array2[10 + num7];
+			characterScript.model_hairColor = array2[11 + num7];
+			characterScript.model_beardColor = array2[12 + num7];
+			characterScript.model_HoseColor = array2[13 + num7];
+			characterScript.model_ShirtColor = array2[14 + num7];
+			characterScript.model_Add1Color = array2[15 + num7];
+			characterScript.krank = array2[16 + num7];
+			characterScript.beruf = array2[17 + num7];
+			characterScript.s_motivation = array3[3 + num8];
+			characterScript.s_gamedesign = array3[4 + num8];
+			characterScript.s_programmieren = array3[5 + num8];
+			characterScript.s_grafik = array3[6 + num8];
+			characterScript.s_sound = array3[7 + num8];
+			characterScript.s_pr = array3[8 + num8];
+			characterScript.s_gametests = array3[9 + num8];
+			characterScript.s_technik = array3[10 + num8];
+			characterScript.s_forschen = array3[11 + num8];
+			characterScript.workProgress = array3[12 + num8];
+			characterScript.durst = array3[13 + num8];
+			characterScript.hunger = array3[14 + num8];
+			characterScript.klo = array3[15 + num8];
+			characterScript.waschbecken = array3[16 + num8];
+			characterScript.muell = array3[17 + num8];
+			characterScript.giessen = array3[18 + num8];
+			characterScript.pause = array3[19 + num8];
+			characterScript.freezer = array3[23 + num8];
+			characterScript.myName = array4[num10];
+			characterScript.male = array5[num9];
+			characterScript.perks = new bool[array6.Length / num];
+			int num11 = i * (array6.Length / num);
+			for (int j = 0; j < characterScript.perks.Length; j++)
 			{
-				if (this.es3file.KeyExists("charactersA1_"))
-				{
-					characterScript.perks = reader.Read<bool[]>("charactersA1_" + characterScript.myID.ToString());
-				}
-				if (characterScript.perks.Length < 40)
-				{
-					bool[] array6 = (bool[])characterScript.perks.Clone();
-					characterScript.perks = new bool[40];
-					for (int j = 0; j < array6.Length; j++)
-					{
-						characterScript.perks[j] = array6[j];
-					}
-				}
-			}
-			else
-			{
-				characterScript.perks = new bool[array.Length / num];
-				int num6 = i * (array.Length / num);
-				for (int k = 0; k < characterScript.perks.Length; k++)
-				{
-					characterScript.perks[k] = array[k + num6];
-				}
+				characterScript.perks[j] = array6[j + num11];
 			}
 			characterScript.gameObject.transform.GetChild(0).GetComponent<characterGFXScript>().Init(true);
-			characterScript.gameObject.transform.position = new Vector3(array3[num3], array3[1 + num3], array3[2 + num3]);
-			characterScript.gameObject.transform.eulerAngles = new Vector3(array3[20 + num3], array3[21 + num3], array3[22 + num3]);
+			characterScript.gameObject.transform.position = new Vector3(array3[num8], array3[1 + num8], array3[2 + num8]);
+			characterScript.gameObject.transform.eulerAngles = new Vector3(array3[20 + num8], array3[21 + num8], array3[22 + num8]);
 			if (characterScript.objectBelegtID != -1)
 			{
 				characterScript.gameObject.GetComponent<movementScript>().FindObjectInRoom(-1, GameObject.Find("O_" + characterScript.objectBelegtID.ToString()), false);
@@ -1120,33 +1075,33 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E29 RID: 7721 RVA: 0x001350D8 File Offset: 0x001332D8
+	// Token: 0x06001E80 RID: 7808 RVA: 0x001341FC File Offset: 0x001323FC
 	private void SaveObjects(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Object");
 		int num = array.Length;
 		writer.Write<int>("anzObjects", num);
-		int[] array2 = new int[10 * num];
-		float[] array3 = new float[10 * num];
-		bool[] array4 = new bool[10 * num];
+		int[] array2 = new int[5 * num];
+		float[] array3 = new float[5 * num];
+		bool[] array4 = new bool[num];
 		for (int i = 0; i < array.Length; i++)
 		{
 			objectScript component = array[i].GetComponent<objectScript>();
 			if (component.gekauft)
 			{
-				int num2 = i * 10;
+				int num2 = i * (array2.Length / num);
+				int num3 = i * (array3.Length / num);
+				int num4 = i * (array4.Length / num);
 				array2[num2] = component.myID;
 				array2[1 + num2] = component.typ;
 				array2[2 + num2] = component.typGhost;
 				array2[3 + num2] = component.besetztCharID;
 				array2[4 + num2] = component.aufladungenAkt;
-				int num3 = i * 10;
 				array3[num3] = array[i].transform.position.x;
 				array3[1 + num3] = 0f;
 				array3[2 + num3] = array[i].transform.position.z;
 				array3[3 + num3] = array[i].transform.eulerAngles.y;
 				array3[4 + num3] = component.maschieneTimer;
-				int num4 = i * 10;
 				array4[num4] = component.inUse;
 			}
 		}
@@ -1155,7 +1110,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<bool[]>("objects_B", array4);
 	}
 
-	// Token: 0x06001E2A RID: 7722 RVA: 0x0013523C File Offset: 0x0013343C
+	// Token: 0x06001E81 RID: 7809 RVA: 0x00134364 File Offset: 0x00132564
 	private void LoadObjects(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzObjects", -1);
@@ -1164,76 +1119,83 @@ public class savegameScript : MonoBehaviour
 		{
 			return;
 		}
-		int[] array = new int[10 * num];
-		float[] array2 = new float[10 * num];
-		bool[] array3 = new bool[10 * num];
-		array = reader.Read<int[]>("objects_I");
-		array2 = reader.Read<float[]>("objects_F");
+		long[] array = new long[0];
+		int[] array2 = new int[0];
+		float[] array3 = new float[0];
+		string[] array4 = new string[0];
+		bool[] array5 = new bool[0];
+		array2 = reader.Read<int[]>("objects_I");
+		array3 = reader.Read<float[]>("objects_F");
+		array5 = reader.Read<bool[]>("objects_B");
+		int num2 = array2.Length / num;
+		int num3 = array3.Length / num;
+		int num4 = array5.Length / num;
+		int num5 = array4.Length / num;
+		int num6 = array.Length / num;
 		for (int i = 0; i < num; i++)
 		{
-			int num2 = i * 10;
-			int num3 = i * 10;
-			int num4 = i * 10;
-			if (array[num2] != 0 && !float.IsNaN(array2[num3]))
+			int num7 = i * num2;
+			int num8 = i * num3;
+			int num9 = i * num4;
+			if (array2[num7] != 0 && !float.IsNaN(array3[num8]))
 			{
 				GameObject gameObject = null;
-				if (array[1 + num2] != -1)
+				if (array2[1 + num7] != -1)
 				{
-					gameObject = UnityEngine.Object.Instantiate<GameObject>(this.mapS_.prefabsInventar[array[1 + num2]]);
+					gameObject = UnityEngine.Object.Instantiate<GameObject>(this.mapS_.prefabsInventar[array2[1 + num7]]);
 				}
-				if (array[2 + num2] != -1)
+				if (array2[2 + num7] != -1)
 				{
-					gameObject = UnityEngine.Object.Instantiate<GameObject>(this.mS_.miscGamePrefabs[array[2 + num2]]);
+					gameObject = UnityEngine.Object.Instantiate<GameObject>(this.mS_.miscGamePrefabs[array2[2 + num7]]);
 				}
-				gameObject.transform.position = new Vector3(array2[num3], 0f, array2[2 + num3]);
+				gameObject.transform.position = new Vector3(array3[num8], 0f, array3[2 + num8]);
 				objectScript component = gameObject.GetComponent<objectScript>();
 				component.mS_ = this.mS_;
 				component.sfx_ = this.sfx_;
 				component.tS_ = this.tS_;
 				component.mapS_ = this.mapS_;
-				component.myID = array[num2];
-				component.typ = array[1 + num2];
-				component.typGhost = array[2 + num2];
-				component.besetztCharID = array[3 + num2];
-				component.aufladungenAkt = array[4 + num2];
-				component.maschieneTimer = array2[4 + num3];
-				component.inUse = array3[num4];
+				component.myID = array2[num7];
+				component.typ = array2[1 + num7];
+				component.typGhost = array2[2 + num7];
+				component.besetztCharID = array2[3 + num7];
+				component.aufladungenAkt = array2[4 + num7];
+				component.maschieneTimer = array3[4 + num8];
+				component.inUse = array5[num9];
 				component.InitObjectFromSavegame();
-				this.mS_.objectRotation = array2[3 + num3];
-				component.PlatziereObject(new Vector3(array2[num3], 0f, array2[2 + num3]), true, false);
+				this.mS_.objectRotation = array3[3 + num8];
+				component.PlatziereObject(new Vector3(array3[num8], 0f, array3[2 + num8]), true, false);
 			}
 		}
 	}
 
-	// Token: 0x06001E2B RID: 7723 RVA: 0x0013540C File Offset: 0x0013360C
+	// Token: 0x06001E82 RID: 7810 RVA: 0x00134564 File Offset: 0x00132764
 	private void SaveRooms(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Room");
 		int num = array.Length;
 		writer.Write<int>("anzRooms", num);
-		new long[20 * num];
-		int[] array2 = new int[20 * num];
-		float[] array3 = new float[20 * num];
-		string[] array4 = new string[10 * num];
-		bool[] array5 = new bool[20 * num];
+		int[] array2 = new int[6 * num];
+		float[] array3 = new float[4 * num];
+		string[] array4 = new string[num];
+		bool[] array5 = new bool[3 * num];
 		for (int i = 0; i < array.Length; i++)
 		{
 			roomScript component = array[i].GetComponent<roomScript>();
-			int num2 = i * 20;
-			array2[num2] = component.myID;
-			array2[1 + num2] = component.typ;
-			array2[2 + num2] = component.taskID;
-			array2[3 + num2] = component.serverplatzUsed;
-			array2[4 + num2] = component.leitenderGamedesigner;
-			array2[5 + num2] = component.leitenderTechniker;
-			int num3 = i * 20;
-			array3[num3] = array[i].transform.position.x;
-			array3[1 + num3] = array[i].transform.position.y;
-			array3[2 + num3] = array[i].transform.position.z;
-			array3[3 + num3] = array[i].transform.eulerAngles.y;
-			int num4 = i * 10;
-			array4[num4] = component.myName;
-			int num5 = i * 20;
+			int num2 = i * (array4.Length / num);
+			int num3 = i * (array2.Length / num);
+			int num4 = i * (array3.Length / num);
+			int num5 = i * (array5.Length / num);
+			array2[num3] = component.myID;
+			array2[1 + num3] = component.typ;
+			array2[2 + num3] = component.taskID;
+			array2[3 + num3] = component.serverplatzUsed;
+			array2[4 + num3] = component.leitenderGamedesigner;
+			array2[5 + num3] = component.leitenderTechniker;
+			array3[num4] = array[i].transform.position.x;
+			array3[1 + num4] = array[i].transform.position.y;
+			array3[2 + num4] = array[i].transform.position.z;
+			array3[3 + num4] = array[i].transform.eulerAngles.y;
+			array4[num2] = component.myName;
 			array5[num5] = component.pause;
 			array5[1 + num5] = component.lockKI;
 			array5[2 + num5] = component.serverDown;
@@ -1245,10 +1207,9 @@ public class savegameScript : MonoBehaviour
 		writer.Write<int[,]>("mapRoomID", this.mapS_.mapRoomID);
 		writer.Write<int[,]>("mapDoors", this.mapS_.mapDoors);
 		writer.Write<int[,]>("mapWindows", this.mapS_.mapWindows);
-		bool multiplayer = this.mS_.multiplayer;
 	}
 
-	// Token: 0x06001E2C RID: 7724 RVA: 0x00135610 File Offset: 0x00133810
+	// Token: 0x06001E83 RID: 7811 RVA: 0x00134758 File Offset: 0x00132958
 	private void LoadRooms(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzRooms", -1);
@@ -1256,58 +1217,62 @@ public class savegameScript : MonoBehaviour
 		{
 			return;
 		}
-		new long[20 * num];
-		int[] array = new int[20 * num];
-		new float[20 * num];
-		string[] array2 = new string[10 * num];
-		bool[] array3 = new bool[20 * num];
-		array = reader.Read<int[]>("rooms_I");
-		reader.Read<float[]>("rooms_F");
-		array2 = reader.Read<string[]>("rooms_S");
-		array3 = reader.Read<bool[]>("rooms_B");
+		long[] array = new long[0];
+		int[] array2 = new int[0];
+		new float[0];
+		string[] array3 = new string[0];
+		bool[] array4 = new bool[0];
+		array2 = reader.Read<int[]>("rooms_I");
+		float[] array5 = reader.Read<float[]>("rooms_F");
+		array3 = reader.Read<string[]>("rooms_S");
+		array4 = reader.Read<bool[]>("rooms_B");
+		int num2 = array2.Length / num;
+		int num3 = array5.Length / num;
+		int num4 = array4.Length / num;
+		int num5 = array3.Length / num;
+		int num6 = array.Length / num;
 		this.mapS_.mapRoomID = reader.Read<int[,]>("mapRoomID");
 		this.mapS_.mapDoors = reader.Read<int[,]>("mapDoors");
 		this.mapS_.mapWindows = reader.Read<int[,]>("mapWindows");
-		bool multiplayer = this.mS_.multiplayer;
 		for (int i = 0; i < num; i++)
 		{
-			int num2 = i * 20;
-			int num3 = i * 20;
-			int num4 = i * 10;
+			int num7 = i * num2;
+			int num8 = i * num4;
+			int num9 = i * num5;
 			GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.brS_.roomMainObject, new Vector3(0f, 0f, 0f), Quaternion.identity);
 			roomScript component = gameObject.GetComponent<roomScript>();
-			gameObject.name = "Room_" + array[num2];
-			component.myID = array[num2];
-			component.typ = array[1 + num2];
-			component.taskID = array[2 + num2];
-			component.serverplatzUsed = array[3 + num2];
-			component.leitenderGamedesigner = array[4 + num2];
-			component.leitenderTechniker = array[5 + num2];
-			component.myName = array2[num4];
-			component.pause = array3[num3];
-			component.lockKI = array3[1 + num3];
-			component.serverDown = array3[2 + num3];
+			gameObject.name = "Room_" + array2[num7];
+			component.myID = array2[num7];
+			component.typ = array2[1 + num7];
+			component.taskID = array2[2 + num7];
+			component.serverplatzUsed = array2[3 + num7];
+			component.leitenderGamedesigner = array2[4 + num7];
+			component.leitenderTechniker = array2[5 + num7];
+			component.myName = array3[num9];
+			component.pause = array4[num8];
+			component.lockKI = array4[1 + num8];
+			component.serverDown = array4[2 + num8];
 			component.uiPos = this.brS_.FindUiPositionExtern(component.myID);
 			gameObject.transform.position = new Vector3(component.uiPos.x, 0f, component.uiPos.z);
-			this.SetRoomScripts(array[num2]);
+			this.SetRoomScripts(array2[num7]);
 		}
 		this.mapS_.CreateWalls(-1);
 	}
 
-	// Token: 0x06001E2D RID: 7725 RVA: 0x0013582C File Offset: 0x00133A2C
+	// Token: 0x06001E84 RID: 7812 RVA: 0x00134978 File Offset: 0x00132B78
 	private void SaveMuell(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Muell");
 		int num = array.Length;
 		writer.Write<int>("anzMuell", num);
-		int[] array2 = new int[5 * num];
-		float[] array3 = new float[5 * num];
+		int[] array2 = new int[num];
+		float[] array3 = new float[4 * num];
 		for (int i = 0; i < array.Length; i++)
 		{
 			muellScript component = array[i].GetComponent<muellScript>();
-			int num2 = i * 5;
+			int num2 = i * (array2.Length / num);
+			int num3 = i * (array3.Length / num);
 			array2[num2] = component.myGFXSlot;
-			int num3 = i * 5;
 			array3[num3] = array[i].transform.position.x;
 			array3[1 + num3] = array[i].transform.position.y;
 			array3[2 + num3] = array[i].transform.position.z;
@@ -1317,7 +1282,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<float[]>("muell_F", array3);
 	}
 
-	// Token: 0x06001E2E RID: 7726 RVA: 0x00135920 File Offset: 0x00133B20
+	// Token: 0x06001E85 RID: 7813 RVA: 0x00134A74 File Offset: 0x00132C74
 	private void LoadMuell(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzMuell", -1);
@@ -1326,21 +1291,29 @@ public class savegameScript : MonoBehaviour
 		{
 			return;
 		}
-		int[] array = new int[5 * num];
-		float[] array2 = new float[5 * num];
-		array = reader.Read<int[]>("muell_I");
-		array2 = reader.Read<float[]>("muell_F");
+		long[] array = new long[0];
+		int[] array2 = new int[0];
+		float[] array3 = new float[0];
+		string[] array4 = new string[0];
+		bool[] array5 = new bool[0];
+		array2 = reader.Read<int[]>("muell_I");
+		array3 = reader.Read<float[]>("muell_F");
+		int num2 = array2.Length / num;
+		int num3 = array3.Length / num;
+		int num4 = array5.Length / num;
+		int num5 = array4.Length / num;
+		int num6 = array.Length / num;
 		for (int i = 0; i < num; i++)
 		{
-			int num2 = i * 5;
-			int num3 = i * 5;
-			GameObject gameObject = this.mS_.CreateMuell(array[num2], array[num2]);
-			gameObject.transform.position = new Vector3(array2[num3], array2[1 + num3], array2[2 + num3]);
-			gameObject.transform.eulerAngles = new Vector3(0f, array2[3 + num3], 0f);
+			int num7 = i * num2;
+			int num8 = i * num3;
+			GameObject gameObject = this.mS_.CreateMuell(array2[num7], array2[num7]);
+			gameObject.transform.position = new Vector3(array3[num8], array3[1 + num8], array3[2 + num8]);
+			gameObject.transform.eulerAngles = new Vector3(0f, array3[3 + num8], 0f);
 		}
 	}
 
-	// Token: 0x06001E2F RID: 7727 RVA: 0x001359E8 File Offset: 0x00133BE8
+	// Token: 0x06001E86 RID: 7814 RVA: 0x00134B70 File Offset: 0x00132D70
 	private void SaveTasks(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Task");
@@ -1664,7 +1637,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<float[]>("task_F", array4);
 	}
 
-	// Token: 0x06001E30 RID: 7728 RVA: 0x00136624 File Offset: 0x00134824
+	// Token: 0x06001E87 RID: 7815 RVA: 0x001357AC File Offset: 0x001339AC
 	private void LoadTasks(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzTasks", -1);
@@ -2129,7 +2102,7 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E31 RID: 7729 RVA: 0x001376A8 File Offset: 0x001358A8
+	// Token: 0x06001E88 RID: 7816 RVA: 0x00136830 File Offset: 0x00134A30
 	private void SaveHardware(ES3Writer writer)
 	{
 		writer.Write<int[]>("hardware_TYP", this.hardware_.hardware_TYP);
@@ -2180,158 +2153,155 @@ public class savegameScript : MonoBehaviour
 		writer.Write<string[]>("hardware_DESC_PL", this.hardware_.hardware_DESC_PL);
 	}
 
-	// Token: 0x06001E32 RID: 7730 RVA: 0x00137AAC File Offset: 0x00135CAC
+	// Token: 0x06001E89 RID: 7817 RVA: 0x00136C34 File Offset: 0x00134E34
 	private void LoadHardware(ES3Reader reader, string filename)
 	{
-		if (this.mS_.savegameVersion >= 10)
+		this.hardware_.hardware_TYP = reader.Read<int[]>("hardware_TYP");
+		this.hardware_.hardware_RES_POINTS = reader.Read<int[]>("hardware_RES_POINTS");
+		this.hardware_.hardware_RES_POINTS_LEFT = reader.Read<float[]>("hardware_RES_POINTS_LEFT");
+		this.hardware_.hardware_PRICE = reader.Read<int[]>("hardware_PRICE");
+		this.hardware_.hardware_DEV_COSTS = reader.Read<int[]>("hardware_DEV_COSTS");
+		this.hardware_.hardware_TECH = reader.Read<int[]>("hardware_TECH");
+		this.hardware_.hardware_DATE_YEAR = reader.Read<int[]>("hardware_DATE_YEAR");
+		this.hardware_.hardware_DATE_MONTH = reader.Read<int[]>("hardware_DATE_MONTH");
+		this.hardware_.hardware_UNLOCK = reader.Read<bool[]>("hardware_UNLOCK");
+		this.hardware_.hardware_ICONFILE = reader.Read<string[]>("hardware_ICONFILE");
+		this.hardware_.hardware_NEED1 = reader.Read<int[]>("hardware_NEED1");
+		this.hardware_.hardware_NEED2 = reader.Read<int[]>("hardware_NEED2");
+		this.hardware_.hardware_ONLYSTATIONARY = reader.Read<bool[]>("hardware_ONLYSTATIONARY");
+		this.hardware_.hardware_ONLYHANDHELD = reader.Read<bool[]>("hardware_ONLYHANDHELD");
+		if (this.key_EN)
 		{
-			this.hardware_.hardware_TYP = reader.Read<int[]>("hardware_TYP");
-			this.hardware_.hardware_RES_POINTS = reader.Read<int[]>("hardware_RES_POINTS");
-			this.hardware_.hardware_RES_POINTS_LEFT = reader.Read<float[]>("hardware_RES_POINTS_LEFT");
-			this.hardware_.hardware_PRICE = reader.Read<int[]>("hardware_PRICE");
-			this.hardware_.hardware_DEV_COSTS = reader.Read<int[]>("hardware_DEV_COSTS");
-			this.hardware_.hardware_TECH = reader.Read<int[]>("hardware_TECH");
-			this.hardware_.hardware_DATE_YEAR = reader.Read<int[]>("hardware_DATE_YEAR");
-			this.hardware_.hardware_DATE_MONTH = reader.Read<int[]>("hardware_DATE_MONTH");
-			this.hardware_.hardware_UNLOCK = reader.Read<bool[]>("hardware_UNLOCK");
-			this.hardware_.hardware_ICONFILE = reader.Read<string[]>("hardware_ICONFILE");
-			this.hardware_.hardware_NEED1 = reader.Read<int[]>("hardware_NEED1");
-			this.hardware_.hardware_NEED2 = reader.Read<int[]>("hardware_NEED2");
-			this.hardware_.hardware_ONLYSTATIONARY = reader.Read<bool[]>("hardware_ONLYSTATIONARY");
-			this.hardware_.hardware_ONLYHANDHELD = reader.Read<bool[]>("hardware_ONLYHANDHELD");
-			if (this.key_EN)
-			{
-				this.hardware_.hardware_NAME_EN = reader.Read<string[]>("hardware_NAME_EN");
-			}
-			if (this.key_GE)
-			{
-				this.hardware_.hardware_NAME_GE = reader.Read<string[]>("hardware_NAME_GE");
-			}
-			if (this.key_TU)
-			{
-				this.hardware_.hardware_NAME_TU = reader.Read<string[]>("hardware_NAME_TU");
-			}
-			if (this.key_CH)
-			{
-				this.hardware_.hardware_NAME_CH = reader.Read<string[]>("hardware_NAME_CH");
-			}
-			if (this.key_FR)
-			{
-				this.hardware_.hardware_NAME_FR = reader.Read<string[]>("hardware_NAME_FR");
-			}
-			if (this.key_PB)
-			{
-				this.hardware_.hardware_NAME_PB = reader.Read<string[]>("hardware_NAME_PB");
-			}
-			if (this.key_CT)
-			{
-				this.hardware_.hardware_NAME_CT = reader.Read<string[]>("hardware_NAME_CT");
-			}
-			if (this.key_HU)
-			{
-				this.hardware_.hardware_NAME_HU = reader.Read<string[]>("hardware_NAME_HU");
-			}
-			if (this.key_ES)
-			{
-				this.hardware_.hardware_NAME_ES = reader.Read<string[]>("hardware_NAME_ES");
-			}
-			if (this.key_CZ)
-			{
-				this.hardware_.hardware_NAME_CZ = reader.Read<string[]>("hardware_NAME_CZ");
-			}
-			if (this.key_KO)
-			{
-				this.hardware_.hardware_NAME_KO = reader.Read<string[]>("hardware_NAME_KO");
-			}
-			if (this.key_AR)
-			{
-				this.hardware_.hardware_NAME_AR = reader.Read<string[]>("hardware_NAME_AR");
-			}
-			if (this.key_RU)
-			{
-				this.hardware_.hardware_NAME_RU = reader.Read<string[]>("hardware_NAME_RU");
-			}
-			if (this.key_IT)
-			{
-				this.hardware_.hardware_NAME_IT = reader.Read<string[]>("hardware_NAME_IT");
-			}
-			if (this.key_JA)
-			{
-				this.hardware_.hardware_NAME_JA = reader.Read<string[]>("hardware_NAME_JA");
-			}
-			if (this.key_PL)
-			{
-				this.hardware_.hardware_NAME_PL = reader.Read<string[]>("hardware_NAME_PL");
-			}
-			if (this.key_EN)
-			{
-				this.hardware_.hardware_DESC_EN = reader.Read<string[]>("hardware_DESC_EN");
-			}
-			if (this.key_GE)
-			{
-				this.hardware_.hardware_DESC_GE = reader.Read<string[]>("hardware_DESC_GE");
-			}
-			if (this.key_TU)
-			{
-				this.hardware_.hardware_DESC_TU = reader.Read<string[]>("hardware_DESC_TU");
-			}
-			if (this.key_CH)
-			{
-				this.hardware_.hardware_DESC_CH = reader.Read<string[]>("hardware_DESC_CH");
-			}
-			if (this.key_FR)
-			{
-				this.hardware_.hardware_DESC_FR = reader.Read<string[]>("hardware_DESC_FR");
-			}
-			if (this.key_PB)
-			{
-				this.hardware_.hardware_DESC_PB = reader.Read<string[]>("hardware_DESC_PB");
-			}
-			if (this.key_CT)
-			{
-				this.hardware_.hardware_DESC_CT = reader.Read<string[]>("hardware_DESC_CT");
-			}
-			if (this.key_HU)
-			{
-				this.hardware_.hardware_DESC_HU = reader.Read<string[]>("hardware_DESC_HU");
-			}
-			if (this.key_ES)
-			{
-				this.hardware_.hardware_DESC_ES = reader.Read<string[]>("hardware_DESC_ES");
-			}
-			if (this.key_CZ)
-			{
-				this.hardware_.hardware_DESC_CZ = reader.Read<string[]>("hardware_DESC_CZ");
-			}
-			if (this.key_KO)
-			{
-				this.hardware_.hardware_DESC_KO = reader.Read<string[]>("hardware_DESC_KO");
-			}
-			if (this.key_AR)
-			{
-				this.hardware_.hardware_DESC_AR = reader.Read<string[]>("hardware_DESC_AR");
-			}
-			if (this.key_RU)
-			{
-				this.hardware_.hardware_DESC_RU = reader.Read<string[]>("hardware_DESC_RU");
-			}
-			if (this.key_IT)
-			{
-				this.hardware_.hardware_DESC_IT = reader.Read<string[]>("hardware_DESC_IT");
-			}
-			if (this.key_JA)
-			{
-				this.hardware_.hardware_DESC_JA = reader.Read<string[]>("hardware_DESC_JA");
-			}
-			if (this.key_PL)
-			{
-				this.hardware_.hardware_DESC_PL = reader.Read<string[]>("hardware_DESC_PL");
-			}
-			this.hardware_.Init();
+			this.hardware_.hardware_NAME_EN = reader.Read<string[]>("hardware_NAME_EN");
 		}
+		if (this.key_GE)
+		{
+			this.hardware_.hardware_NAME_GE = reader.Read<string[]>("hardware_NAME_GE");
+		}
+		if (this.key_TU)
+		{
+			this.hardware_.hardware_NAME_TU = reader.Read<string[]>("hardware_NAME_TU");
+		}
+		if (this.key_CH)
+		{
+			this.hardware_.hardware_NAME_CH = reader.Read<string[]>("hardware_NAME_CH");
+		}
+		if (this.key_FR)
+		{
+			this.hardware_.hardware_NAME_FR = reader.Read<string[]>("hardware_NAME_FR");
+		}
+		if (this.key_PB)
+		{
+			this.hardware_.hardware_NAME_PB = reader.Read<string[]>("hardware_NAME_PB");
+		}
+		if (this.key_CT)
+		{
+			this.hardware_.hardware_NAME_CT = reader.Read<string[]>("hardware_NAME_CT");
+		}
+		if (this.key_HU)
+		{
+			this.hardware_.hardware_NAME_HU = reader.Read<string[]>("hardware_NAME_HU");
+		}
+		if (this.key_ES)
+		{
+			this.hardware_.hardware_NAME_ES = reader.Read<string[]>("hardware_NAME_ES");
+		}
+		if (this.key_CZ)
+		{
+			this.hardware_.hardware_NAME_CZ = reader.Read<string[]>("hardware_NAME_CZ");
+		}
+		if (this.key_KO)
+		{
+			this.hardware_.hardware_NAME_KO = reader.Read<string[]>("hardware_NAME_KO");
+		}
+		if (this.key_AR)
+		{
+			this.hardware_.hardware_NAME_AR = reader.Read<string[]>("hardware_NAME_AR");
+		}
+		if (this.key_RU)
+		{
+			this.hardware_.hardware_NAME_RU = reader.Read<string[]>("hardware_NAME_RU");
+		}
+		if (this.key_IT)
+		{
+			this.hardware_.hardware_NAME_IT = reader.Read<string[]>("hardware_NAME_IT");
+		}
+		if (this.key_JA)
+		{
+			this.hardware_.hardware_NAME_JA = reader.Read<string[]>("hardware_NAME_JA");
+		}
+		if (this.key_PL)
+		{
+			this.hardware_.hardware_NAME_PL = reader.Read<string[]>("hardware_NAME_PL");
+		}
+		if (this.key_EN)
+		{
+			this.hardware_.hardware_DESC_EN = reader.Read<string[]>("hardware_DESC_EN");
+		}
+		if (this.key_GE)
+		{
+			this.hardware_.hardware_DESC_GE = reader.Read<string[]>("hardware_DESC_GE");
+		}
+		if (this.key_TU)
+		{
+			this.hardware_.hardware_DESC_TU = reader.Read<string[]>("hardware_DESC_TU");
+		}
+		if (this.key_CH)
+		{
+			this.hardware_.hardware_DESC_CH = reader.Read<string[]>("hardware_DESC_CH");
+		}
+		if (this.key_FR)
+		{
+			this.hardware_.hardware_DESC_FR = reader.Read<string[]>("hardware_DESC_FR");
+		}
+		if (this.key_PB)
+		{
+			this.hardware_.hardware_DESC_PB = reader.Read<string[]>("hardware_DESC_PB");
+		}
+		if (this.key_CT)
+		{
+			this.hardware_.hardware_DESC_CT = reader.Read<string[]>("hardware_DESC_CT");
+		}
+		if (this.key_HU)
+		{
+			this.hardware_.hardware_DESC_HU = reader.Read<string[]>("hardware_DESC_HU");
+		}
+		if (this.key_ES)
+		{
+			this.hardware_.hardware_DESC_ES = reader.Read<string[]>("hardware_DESC_ES");
+		}
+		if (this.key_CZ)
+		{
+			this.hardware_.hardware_DESC_CZ = reader.Read<string[]>("hardware_DESC_CZ");
+		}
+		if (this.key_KO)
+		{
+			this.hardware_.hardware_DESC_KO = reader.Read<string[]>("hardware_DESC_KO");
+		}
+		if (this.key_AR)
+		{
+			this.hardware_.hardware_DESC_AR = reader.Read<string[]>("hardware_DESC_AR");
+		}
+		if (this.key_RU)
+		{
+			this.hardware_.hardware_DESC_RU = reader.Read<string[]>("hardware_DESC_RU");
+		}
+		if (this.key_IT)
+		{
+			this.hardware_.hardware_DESC_IT = reader.Read<string[]>("hardware_DESC_IT");
+		}
+		if (this.key_JA)
+		{
+			this.hardware_.hardware_DESC_JA = reader.Read<string[]>("hardware_DESC_JA");
+		}
+		if (this.key_PL)
+		{
+			this.hardware_.hardware_DESC_PL = reader.Read<string[]>("hardware_DESC_PL");
+		}
+		this.hardware_.Init();
 	}
 
-	// Token: 0x06001E33 RID: 7731 RVA: 0x00137FCC File Offset: 0x001361CC
+	// Token: 0x06001E8A RID: 7818 RVA: 0x00137140 File Offset: 0x00135340
 	private void SaveHardwareFeatures(ES3Writer writer)
 	{
 		writer.Write<int[]>("hardFeat_RES_POINTS", this.hardwareFeatures_.hardFeat_RES_POINTS);
@@ -2380,156 +2350,153 @@ public class savegameScript : MonoBehaviour
 		writer.Write<string[]>("hardFeat_DESC_PL", this.hardwareFeatures_.hardFeat_DESC_PL);
 	}
 
-	// Token: 0x06001E34 RID: 7732 RVA: 0x001383A4 File Offset: 0x001365A4
+	// Token: 0x06001E8B RID: 7819 RVA: 0x00137518 File Offset: 0x00135718
 	private void LoadHardwareFeatures(ES3Reader reader, string filename)
 	{
-		if (this.mS_.savegameVersion >= 11)
+		this.hardwareFeatures_.hardFeat_RES_POINTS = reader.Read<int[]>("hardFeat_RES_POINTS");
+		this.hardwareFeatures_.hardFeat_RES_POINTS_LEFT = reader.Read<float[]>("hardFeat_RES_POINTS_LEFT");
+		this.hardwareFeatures_.hardFeat_PRICE = reader.Read<int[]>("hardFeat_PRICE");
+		this.hardwareFeatures_.hardFeat_DEV_COSTS = reader.Read<int[]>("hardFeat_DEV_COSTS");
+		this.hardwareFeatures_.hardFeat_DATE_YEAR = reader.Read<int[]>("hardFeat_DATE_YEAR");
+		this.hardwareFeatures_.hardFeat_DATE_MONTH = reader.Read<int[]>("hardFeat_DATE_MONTH");
+		this.hardwareFeatures_.hardFeat_UNLOCK = reader.Read<bool[]>("hardFeat_UNLOCK");
+		this.hardwareFeatures_.hardFeat_ICONFILE = reader.Read<string[]>("hardFeat_ICONFILE");
+		this.hardwareFeatures_.hardFeat_ONLYSTATIONARY = reader.Read<bool[]>("hardFeat_ONLYSTATIONARY");
+		this.hardwareFeatures_.hardFeat_ONLYHANDHELD = reader.Read<bool[]>("hardFeat_ONLYHANDHELD");
+		this.hardwareFeatures_.hardFeat_NEEDINTERNET = reader.Read<bool[]>("hardFeat_NEEDINTERNET");
+		this.hardwareFeatures_.hardFeat_QUALITY = reader.Read<float[]>("hardFeat_QUALITY");
+		if (this.key_EN)
 		{
-			this.hardwareFeatures_.hardFeat_RES_POINTS = reader.Read<int[]>("hardFeat_RES_POINTS");
-			this.hardwareFeatures_.hardFeat_RES_POINTS_LEFT = reader.Read<float[]>("hardFeat_RES_POINTS_LEFT");
-			this.hardwareFeatures_.hardFeat_PRICE = reader.Read<int[]>("hardFeat_PRICE");
-			this.hardwareFeatures_.hardFeat_DEV_COSTS = reader.Read<int[]>("hardFeat_DEV_COSTS");
-			this.hardwareFeatures_.hardFeat_DATE_YEAR = reader.Read<int[]>("hardFeat_DATE_YEAR");
-			this.hardwareFeatures_.hardFeat_DATE_MONTH = reader.Read<int[]>("hardFeat_DATE_MONTH");
-			this.hardwareFeatures_.hardFeat_UNLOCK = reader.Read<bool[]>("hardFeat_UNLOCK");
-			this.hardwareFeatures_.hardFeat_ICONFILE = reader.Read<string[]>("hardFeat_ICONFILE");
-			this.hardwareFeatures_.hardFeat_ONLYSTATIONARY = reader.Read<bool[]>("hardFeat_ONLYSTATIONARY");
-			this.hardwareFeatures_.hardFeat_ONLYHANDHELD = reader.Read<bool[]>("hardFeat_ONLYHANDHELD");
-			this.hardwareFeatures_.hardFeat_NEEDINTERNET = reader.Read<bool[]>("hardFeat_NEEDINTERNET");
-			this.hardwareFeatures_.hardFeat_QUALITY = reader.Read<float[]>("hardFeat_QUALITY");
-			if (this.key_EN)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_EN = reader.Read<string[]>("hardFeat_NAME_EN");
-			}
-			if (this.key_GE)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_GE = reader.Read<string[]>("hardFeat_NAME_GE");
-			}
-			if (this.key_TU)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_TU = reader.Read<string[]>("hardFeat_NAME_TU");
-			}
-			if (this.key_CH)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_CH = reader.Read<string[]>("hardFeat_NAME_CH");
-			}
-			if (this.key_FR)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_FR = reader.Read<string[]>("hardFeat_NAME_FR");
-			}
-			if (this.key_PB)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_PB = reader.Read<string[]>("hardFeat_NAME_PB");
-			}
-			if (this.key_CT)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_CT = reader.Read<string[]>("hardFeat_NAME_CT");
-			}
-			if (this.key_HU)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_HU = reader.Read<string[]>("hardFeat_NAME_HU");
-			}
-			if (this.key_ES)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_ES = reader.Read<string[]>("hardFeat_NAME_ES");
-			}
-			if (this.key_CZ)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_CZ = reader.Read<string[]>("hardFeat_NAME_CZ");
-			}
-			if (this.key_KO)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_KO = reader.Read<string[]>("hardFeat_NAME_KO");
-			}
-			if (this.key_AR)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_AR = reader.Read<string[]>("hardFeat_NAME_AR");
-			}
-			if (this.key_RU)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_RU = reader.Read<string[]>("hardFeat_NAME_RU");
-			}
-			if (this.key_IT)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_IT = reader.Read<string[]>("hardFeat_NAME_IT");
-			}
-			if (this.key_JA)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_JA = reader.Read<string[]>("hardFeat_NAME_JA");
-			}
-			if (this.key_PL)
-			{
-				this.hardwareFeatures_.hardFeat_NAME_PL = reader.Read<string[]>("hardFeat_NAME_PL");
-			}
-			if (this.key_EN)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_EN = reader.Read<string[]>("hardFeat_DESC_EN");
-			}
-			if (this.key_GE)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_GE = reader.Read<string[]>("hardFeat_DESC_GE");
-			}
-			if (this.key_TU)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_TU = reader.Read<string[]>("hardFeat_DESC_TU");
-			}
-			if (this.key_CH)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_CH = reader.Read<string[]>("hardFeat_DESC_CH");
-			}
-			if (this.key_FR)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_FR = reader.Read<string[]>("hardFeat_DESC_FR");
-			}
-			if (this.key_PB)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_PB = reader.Read<string[]>("hardFeat_DESC_PB");
-			}
-			if (this.key_CT)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_CT = reader.Read<string[]>("hardFeat_DESC_CT");
-			}
-			if (this.key_HU)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_HU = reader.Read<string[]>("hardFeat_DESC_HU");
-			}
-			if (this.key_ES)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_ES = reader.Read<string[]>("hardFeat_DESC_ES");
-			}
-			if (this.key_CZ)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_CZ = reader.Read<string[]>("hardFeat_DESC_CZ");
-			}
-			if (this.key_KO)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_KO = reader.Read<string[]>("hardFeat_DESC_KO");
-			}
-			if (this.key_AR)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_AR = reader.Read<string[]>("hardFeat_DESC_AR");
-			}
-			if (this.key_RU)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_RU = reader.Read<string[]>("hardFeat_DESC_RU");
-			}
-			if (this.key_IT)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_IT = reader.Read<string[]>("hardFeat_DESC_IT");
-			}
-			if (this.key_JA)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_JA = reader.Read<string[]>("hardFeat_DESC_JA");
-			}
-			if (this.key_PL)
-			{
-				this.hardwareFeatures_.hardFeat_DESC_PL = reader.Read<string[]>("hardFeat_DESC_PL");
-			}
-			this.hardwareFeatures_.Init();
+			this.hardwareFeatures_.hardFeat_NAME_EN = reader.Read<string[]>("hardFeat_NAME_EN");
 		}
+		if (this.key_GE)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_GE = reader.Read<string[]>("hardFeat_NAME_GE");
+		}
+		if (this.key_TU)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_TU = reader.Read<string[]>("hardFeat_NAME_TU");
+		}
+		if (this.key_CH)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_CH = reader.Read<string[]>("hardFeat_NAME_CH");
+		}
+		if (this.key_FR)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_FR = reader.Read<string[]>("hardFeat_NAME_FR");
+		}
+		if (this.key_PB)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_PB = reader.Read<string[]>("hardFeat_NAME_PB");
+		}
+		if (this.key_CT)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_CT = reader.Read<string[]>("hardFeat_NAME_CT");
+		}
+		if (this.key_HU)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_HU = reader.Read<string[]>("hardFeat_NAME_HU");
+		}
+		if (this.key_ES)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_ES = reader.Read<string[]>("hardFeat_NAME_ES");
+		}
+		if (this.key_CZ)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_CZ = reader.Read<string[]>("hardFeat_NAME_CZ");
+		}
+		if (this.key_KO)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_KO = reader.Read<string[]>("hardFeat_NAME_KO");
+		}
+		if (this.key_AR)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_AR = reader.Read<string[]>("hardFeat_NAME_AR");
+		}
+		if (this.key_RU)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_RU = reader.Read<string[]>("hardFeat_NAME_RU");
+		}
+		if (this.key_IT)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_IT = reader.Read<string[]>("hardFeat_NAME_IT");
+		}
+		if (this.key_JA)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_JA = reader.Read<string[]>("hardFeat_NAME_JA");
+		}
+		if (this.key_PL)
+		{
+			this.hardwareFeatures_.hardFeat_NAME_PL = reader.Read<string[]>("hardFeat_NAME_PL");
+		}
+		if (this.key_EN)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_EN = reader.Read<string[]>("hardFeat_DESC_EN");
+		}
+		if (this.key_GE)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_GE = reader.Read<string[]>("hardFeat_DESC_GE");
+		}
+		if (this.key_TU)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_TU = reader.Read<string[]>("hardFeat_DESC_TU");
+		}
+		if (this.key_CH)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_CH = reader.Read<string[]>("hardFeat_DESC_CH");
+		}
+		if (this.key_FR)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_FR = reader.Read<string[]>("hardFeat_DESC_FR");
+		}
+		if (this.key_PB)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_PB = reader.Read<string[]>("hardFeat_DESC_PB");
+		}
+		if (this.key_CT)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_CT = reader.Read<string[]>("hardFeat_DESC_CT");
+		}
+		if (this.key_HU)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_HU = reader.Read<string[]>("hardFeat_DESC_HU");
+		}
+		if (this.key_ES)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_ES = reader.Read<string[]>("hardFeat_DESC_ES");
+		}
+		if (this.key_CZ)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_CZ = reader.Read<string[]>("hardFeat_DESC_CZ");
+		}
+		if (this.key_KO)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_KO = reader.Read<string[]>("hardFeat_DESC_KO");
+		}
+		if (this.key_AR)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_AR = reader.Read<string[]>("hardFeat_DESC_AR");
+		}
+		if (this.key_RU)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_RU = reader.Read<string[]>("hardFeat_DESC_RU");
+		}
+		if (this.key_IT)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_IT = reader.Read<string[]>("hardFeat_DESC_IT");
+		}
+		if (this.key_JA)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_JA = reader.Read<string[]>("hardFeat_DESC_JA");
+		}
+		if (this.key_PL)
+		{
+			this.hardwareFeatures_.hardFeat_DESC_PL = reader.Read<string[]>("hardFeat_DESC_PL");
+		}
+		this.hardwareFeatures_.Init();
 	}
 
-	// Token: 0x06001E35 RID: 7733 RVA: 0x00138898 File Offset: 0x00136A98
+	// Token: 0x06001E8C RID: 7820 RVA: 0x001379F8 File Offset: 0x00135BF8
 	private void SaveEngineFeatures(ES3Writer writer)
 	{
 		writer.Write<int[]>("engineFeatures_TYP", this.eF_.engineFeatures_TYP);
@@ -2581,7 +2548,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<string[]>("engineFeatures_DESC_PL", this.eF_.engineFeatures_DESC_PL);
 	}
 
-	// Token: 0x06001E36 RID: 7734 RVA: 0x00138CB0 File Offset: 0x00136EB0
+	// Token: 0x06001E8D RID: 7821 RVA: 0x00137E10 File Offset: 0x00136010
 	private void LoadEngineFeatures(ES3Reader reader, string filename)
 	{
 		this.eF_.engineFeatures_TYP = reader.Read<int[]>("engineFeatures_TYP");
@@ -2730,7 +2697,7 @@ public class savegameScript : MonoBehaviour
 		this.eF_.Init();
 	}
 
-	// Token: 0x06001E37 RID: 7735 RVA: 0x001391D4 File Offset: 0x001373D4
+	// Token: 0x06001E8E RID: 7822 RVA: 0x00138334 File Offset: 0x00136534
 	private void SaveGameplayFeatures(ES3Writer writer)
 	{
 		writer.Write<int[]>("gameplayFeatures_TYP", this.gF_.gameplayFeatures_TYP);
@@ -2784,7 +2751,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<string[]>("gameplayFeatures_ICONFILE", this.gF_.gameplayFeatures_ICONFILE);
 	}
 
-	// Token: 0x06001E38 RID: 7736 RVA: 0x00139618 File Offset: 0x00137818
+	// Token: 0x06001E8F RID: 7823 RVA: 0x00138778 File Offset: 0x00136978
 	private void LoadGameplayFeatures(ES3Reader reader, string filename)
 	{
 		this.gF_.gameplayFeatures_TYP = reader.Read<int[]>("gameplayFeatures_TYP");
@@ -2800,24 +2767,9 @@ public class savegameScript : MonoBehaviour
 		this.gF_.gameplayFeatures_TECHNIK = reader.Read<int[]>("gameplayFeatures_TECHNIK");
 		this.gF_.gameplayFeatures_LEVEL = reader.Read<int[]>("gameplayFeatures_LEVEL");
 		this.gF_.gameplayFeatures_UNLOCK = reader.Read<bool[]>("gameplayFeatures_UNLOCK");
-		if (this.mS_.savegameVersion >= 5)
-		{
-			this.gF_.gameplayFeatures_GOOD = reader.Read<bool[,]>("gameplayFeatures_GOOD");
-			this.gF_.gameplayFeatures_BAD = reader.Read<bool[,]>("gameplayFeatures_BAD");
-		}
-		else
-		{
-			this.gF_.gameplayFeatures_GOOD = new bool[this.gF_.gameplayFeatures_UNLOCK.Length, this.genres_.genres_UNLOCK.Length];
-			this.gF_.gameplayFeatures_BAD = new bool[this.gF_.gameplayFeatures_UNLOCK.Length, this.genres_.genres_UNLOCK.Length];
-		}
-		if (this.mS_.savegameVersion >= 8)
-		{
-			this.gF_.gameplayFeatures_LOCKPLATFORM = reader.Read<bool[,]>("gameplayFeatures_LOCKPLATFORM");
-		}
-		else
-		{
-			this.gF_.gameplayFeatures_LOCKPLATFORM = new bool[this.gF_.gameplayFeatures_UNLOCK.Length, 5];
-		}
+		this.gF_.gameplayFeatures_GOOD = reader.Read<bool[,]>("gameplayFeatures_GOOD");
+		this.gF_.gameplayFeatures_BAD = reader.Read<bool[,]>("gameplayFeatures_BAD");
+		this.gF_.gameplayFeatures_LOCKPLATFORM = reader.Read<bool[,]>("gameplayFeatures_LOCKPLATFORM");
 		if (this.key_EN)
 		{
 			this.gF_.gameplayFeatures_NAME_EN = reader.Read<string[]>("gameplayFeatures_NAME_EN");
@@ -2950,7 +2902,7 @@ public class savegameScript : MonoBehaviour
 		this.gF_.Init();
 	}
 
-	// Token: 0x06001E39 RID: 7737 RVA: 0x00139BF8 File Offset: 0x00137DF8
+	// Token: 0x06001E90 RID: 7824 RVA: 0x00138CC8 File Offset: 0x00136EC8
 	private void SaveThemes(ES3Writer writer)
 	{
 		writer.Write<float[]>("themes_RES_POINTS_LEFT", this.themes_.themes_RES_POINTS_LEFT);
@@ -2958,30 +2910,27 @@ public class savegameScript : MonoBehaviour
 		writer.Write<int[]>("themes_MARKT", this.themes_.themes_MARKT);
 	}
 
-	// Token: 0x06001E3A RID: 7738 RVA: 0x00139C48 File Offset: 0x00137E48
+	// Token: 0x06001E91 RID: 7825 RVA: 0x00138D18 File Offset: 0x00136F18
 	private void LoadThemes(ES3Reader reader, string filename)
 	{
 		this.tS_.LoadContent_Themes();
 		this.themes_.themes_RES_POINTS_LEFT = reader.Read<float[]>("themes_RES_POINTS_LEFT");
 		this.themes_.themes_LEVEL = reader.Read<int[]>("themes_LEVEL");
-		if (this.mS_.savegameVersion >= 9)
-		{
-			this.themes_.themes_MARKT = reader.Read<int[]>("themes_MARKT");
-		}
+		this.themes_.themes_MARKT = reader.Read<int[]>("themes_MARKT");
 		if (this.tS_.themes_GE.Length != this.themes_.themes_RES_POINTS_LEFT.Length)
 		{
 			this.themes_.themes_MGSR = new int[this.themes_.themes_LEVEL.Length];
 		}
 	}
 
-	// Token: 0x06001E3B RID: 7739 RVA: 0x000143FB File Offset: 0x000125FB
+	// Token: 0x06001E92 RID: 7826 RVA: 0x00138DAB File Offset: 0x00136FAB
 	private void SaveNPCGameNames(ES3Writer writer)
 	{
 		writer.Write<string[]>("npcGames", this.tS_.npcGames);
 		writer.Write<bool[]>("npcGameNameInUse", this.tS_.npcGameNameInUse);
 	}
 
-	// Token: 0x06001E3C RID: 7740 RVA: 0x00014429 File Offset: 0x00012629
+	// Token: 0x06001E93 RID: 7827 RVA: 0x00138DD9 File Offset: 0x00136FD9
 	private void LoadNPCGameNames(ES3Reader reader, string filename)
 	{
 		this.tS_.npcGames = reader.Read<string[]>("npcGames");
@@ -2991,7 +2940,7 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E3D RID: 7741 RVA: 0x00139CEC File Offset: 0x00137EEC
+	// Token: 0x06001E94 RID: 7828 RVA: 0x00138E10 File Offset: 0x00137010
 	private void SaveGenres(ES3Writer writer)
 	{
 		writer.Write<int[]>("genres_RES_POINTS", this.genres_.genres_RES_POINTS);
@@ -3047,7 +2996,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<int[]>("genres_MARKT", this.genres_.genres_MARKT);
 	}
 
-	// Token: 0x06001E3E RID: 7742 RVA: 0x0013A15C File Offset: 0x0013835C
+	// Token: 0x06001E95 RID: 7829 RVA: 0x00139280 File Offset: 0x00137480
 	private void LoadGenres(ES3Reader reader, string filename)
 	{
 		this.genres_.genres_RES_POINTS = reader.Read<int[]>("genres_RES_POINTS");
@@ -3064,37 +3013,10 @@ public class savegameScript : MonoBehaviour
 		this.genres_.genres_SOUND = reader.Read<float[]>("genres_SOUND");
 		this.genres_.genres_CONTROL = reader.Read<float[]>("genres_CONTROL");
 		this.genres_.genres_COMBINATION = reader.Read<bool[,]>("genres_COMBINATION");
-		if (this.mS_.savegameVersion >= 6)
-		{
-			this.genres_.genres_FOCUS = reader.Read<int[,]>("genres_FOCUS");
-			this.genres_.genres_ALIGN = reader.Read<int[,]>("genres_ALIGN");
-		}
-		else
-		{
-			this.genres_.LoadGenresettingsForOldSavegeames("DATA/Genres.txt");
-		}
-		if (this.mS_.savegameVersion >= 2)
-		{
-			this.genres_.genres_BELIEBTHEIT = reader.Read<float[]>("genres_BELIEBTHEIT");
-			this.genres_.genres_BELIEBTHEIT_SOLL = reader.Read<bool[]>("genres_BELIEBTHEIT_SOLL");
-		}
-		else
-		{
-			this.genres_.genres_BELIEBTHEIT = new float[this.genres_.genres_RES_POINTS.Length];
-			this.genres_.genres_BELIEBTHEIT_SOLL = new bool[this.genres_.genres_RES_POINTS.Length];
-			for (int i = 0; i < this.genres_.genres_BELIEBTHEIT.Length; i++)
-			{
-				this.genres_.genres_BELIEBTHEIT[i] = (float)UnityEngine.Random.Range(40, 80);
-				if (UnityEngine.Random.Range(0, 100) > 50)
-				{
-					this.genres_.genres_BELIEBTHEIT_SOLL[i] = true;
-				}
-				else
-				{
-					this.genres_.genres_BELIEBTHEIT_SOLL[i] = false;
-				}
-			}
-		}
+		this.genres_.genres_FOCUS = reader.Read<int[,]>("genres_FOCUS");
+		this.genres_.genres_ALIGN = reader.Read<int[,]>("genres_ALIGN");
+		this.genres_.genres_BELIEBTHEIT = reader.Read<float[]>("genres_BELIEBTHEIT");
+		this.genres_.genres_BELIEBTHEIT_SOLL = reader.Read<bool[]>("genres_BELIEBTHEIT_SOLL");
 		if (this.key_EN)
 		{
 			this.genres_.genres_NAME_EN = reader.Read<string[]>("genres_NAME_EN");
@@ -3228,7 +3150,7 @@ public class savegameScript : MonoBehaviour
 		this.genres_.Init();
 	}
 
-	// Token: 0x06001E3F RID: 7743 RVA: 0x0013A7C0 File Offset: 0x001389C0
+	// Token: 0x06001E96 RID: 7830 RVA: 0x0013981C File Offset: 0x00137A1C
 	private void SaveLicences(ES3Writer writer)
 	{
 		writer.Write<string[]>("licence_EN", this.licences_.licence_EN);
@@ -3238,7 +3160,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<int[]>("licence_GEKAUFT", this.licences_.licence_GEKAUFT);
 	}
 
-	// Token: 0x06001E40 RID: 7744 RVA: 0x0013A83C File Offset: 0x00138A3C
+	// Token: 0x06001E97 RID: 7831 RVA: 0x00139898 File Offset: 0x00137A98
 	private void LoadLicences(ES3Reader reader, string filename)
 	{
 		this.licences_.licence_EN = reader.Read<string[]>("licence_EN");
@@ -3248,20 +3170,23 @@ public class savegameScript : MonoBehaviour
 		this.licences_.licence_GEKAUFT = reader.Read<int[]>("licence_GEKAUFT");
 	}
 
-	// Token: 0x06001E41 RID: 7745 RVA: 0x0013A8B8 File Offset: 0x00138AB8
+	// Token: 0x06001E98 RID: 7832 RVA: 0x00139914 File Offset: 0x00137B14
 	private void SaveCopyProtect(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("CopyProtect");
 		int num = array.Length;
 		writer.Write<int>("anzCopyProtect", num);
-		int[] array2 = new int[10 * num];
-		float[] array3 = new float[10 * num];
-		string[] array4 = new string[20 * num];
-		bool[] array5 = new bool[10 * num];
+		int[] array2 = new int[5 * num];
+		float[] array3 = new float[num];
+		string[] array4 = new string[9 * num];
+		bool[] array5 = new bool[3 * num];
 		for (int i = 0; i < array.Length; i++)
 		{
 			copyProtectScript component = array[i].GetComponent<copyProtectScript>();
-			int num2 = i * 20;
+			int num2 = i * (array4.Length / num);
+			int num3 = i * (array2.Length / num);
+			int num4 = i * (array3.Length / num);
+			int num5 = i * (array5.Length / num);
 			array4[num2] = component.name_EN;
 			array4[1 + num2] = component.name_GE;
 			array4[2 + num2] = component.name_TU;
@@ -3271,15 +3196,12 @@ public class savegameScript : MonoBehaviour
 			array4[6 + num2] = component.name_RU;
 			array4[7 + num2] = component.name_IT;
 			array4[8 + num2] = component.name_JA;
-			int num3 = i * 10;
 			array2[num3] = component.myID;
 			array2[1 + num3] = component.date_year;
 			array2[2 + num3] = component.date_month;
 			array2[3 + num3] = component.price;
 			array2[4 + num3] = component.dev_costs;
-			int num4 = i * 10;
 			array3[num4] = component.effekt;
-			int num5 = i * 10;
 			array5[num5] = component.isUnlocked;
 			array5[1 + num5] = component.inBesitz;
 			array5[2 + num5] = component.neverLooseEffect;
@@ -3290,7 +3212,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<bool[]>("copyProtect_B", array5);
 	}
 
-	// Token: 0x06001E42 RID: 7746 RVA: 0x0013AA70 File Offset: 0x00138C70
+	// Token: 0x06001E99 RID: 7833 RVA: 0x00139AD4 File Offset: 0x00137CD4
 	private void LoadCopyProtect(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzCopyProtect", -1);
@@ -3299,57 +3221,66 @@ public class savegameScript : MonoBehaviour
 		{
 			return;
 		}
-		int[] array = new int[10 * num];
-		float[] array2 = new float[10 * num];
-		string[] array3 = new string[20 * num];
-		bool[] array4 = new bool[10 * num];
-		array = reader.Read<int[]>("copyProtect_I");
-		array2 = reader.Read<float[]>("copyProtect_F");
-		array3 = reader.Read<string[]>("copyProtect_S");
-		array4 = reader.Read<bool[]>("copyProtect_B");
+		long[] array = new long[0];
+		int[] array2 = new int[0];
+		float[] array3 = new float[0];
+		string[] array4 = new string[0];
+		bool[] array5 = new bool[0];
+		array2 = reader.Read<int[]>("copyProtect_I");
+		array3 = reader.Read<float[]>("copyProtect_F");
+		array4 = reader.Read<string[]>("copyProtect_S");
+		array5 = reader.Read<bool[]>("copyProtect_B");
+		int num2 = array2.Length / num;
+		int num3 = array3.Length / num;
+		int num4 = array5.Length / num;
+		int num5 = array4.Length / num;
+		int num6 = array.Length / num;
 		for (int i = 0; i < num; i++)
 		{
-			int num2 = i * 10;
-			int num3 = i * 10;
-			int num4 = i * 10;
-			int num5 = i * 20;
+			int num7 = i * num2;
+			int num8 = i * num3;
+			int num9 = i * num4;
+			int num10 = i * num5;
 			copyProtectScript copyProtectScript = this.copyProtect_.CreateCopyProtect();
-			copyProtectScript.name_EN = array3[num5];
-			copyProtectScript.name_GE = array3[1 + num5];
-			copyProtectScript.name_TU = array3[2 + num5];
-			copyProtectScript.name_CH = array3[3 + num5];
-			copyProtectScript.name_FR = array3[4 + num5];
-			copyProtectScript.name_CT = array3[5 + num5];
-			copyProtectScript.name_RU = array3[6 + num5];
-			copyProtectScript.name_IT = array3[7 + num5];
-			copyProtectScript.name_JA = array3[8 + num5];
-			copyProtectScript.myID = array[num2];
-			copyProtectScript.date_year = array[1 + num2];
-			copyProtectScript.date_month = array[2 + num2];
-			copyProtectScript.price = array[3 + num2];
-			copyProtectScript.dev_costs = array[4 + num2];
-			copyProtectScript.effekt = array2[num3];
-			copyProtectScript.isUnlocked = array4[num4];
-			copyProtectScript.inBesitz = array4[1 + num4];
-			copyProtectScript.neverLooseEffect = array4[2 + num4];
+			copyProtectScript.name_EN = array4[num10];
+			copyProtectScript.name_GE = array4[1 + num10];
+			copyProtectScript.name_TU = array4[2 + num10];
+			copyProtectScript.name_CH = array4[3 + num10];
+			copyProtectScript.name_FR = array4[4 + num10];
+			copyProtectScript.name_CT = array4[5 + num10];
+			copyProtectScript.name_RU = array4[6 + num10];
+			copyProtectScript.name_IT = array4[7 + num10];
+			copyProtectScript.name_JA = array4[8 + num10];
+			copyProtectScript.myID = array2[num7];
+			copyProtectScript.date_year = array2[1 + num7];
+			copyProtectScript.date_month = array2[2 + num7];
+			copyProtectScript.price = array2[3 + num7];
+			copyProtectScript.dev_costs = array2[4 + num7];
+			copyProtectScript.effekt = array3[num8];
+			copyProtectScript.isUnlocked = array5[num9];
+			copyProtectScript.inBesitz = array5[1 + num9];
+			copyProtectScript.neverLooseEffect = array5[2 + num9];
 			copyProtectScript.Init();
 		}
 	}
 
-	// Token: 0x06001E43 RID: 7747 RVA: 0x0013AC14 File Offset: 0x00138E14
+	// Token: 0x06001E9A RID: 7834 RVA: 0x00139C98 File Offset: 0x00137E98
 	private void SaveAntiCheat(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("AntiCheat");
 		int num = array.Length;
 		writer.Write<int>("anzAntiCheat", num);
-		int[] array2 = new int[10 * num];
-		float[] array3 = new float[10 * num];
-		string[] array4 = new string[20 * num];
-		bool[] array5 = new bool[10 * num];
+		int[] array2 = new int[5 * num];
+		float[] array3 = new float[num];
+		string[] array4 = new string[9 * num];
+		bool[] array5 = new bool[3 * num];
 		for (int i = 0; i < array.Length; i++)
 		{
 			antiCheatScript component = array[i].GetComponent<antiCheatScript>();
-			int num2 = i * 20;
+			int num2 = i * (array4.Length / num);
+			int num3 = i * (array2.Length / num);
+			int num4 = i * (array3.Length / num);
+			int num5 = i * (array5.Length / num);
 			array4[num2] = component.name_EN;
 			array4[1 + num2] = component.name_GE;
 			array4[2 + num2] = component.name_TU;
@@ -3359,15 +3290,12 @@ public class savegameScript : MonoBehaviour
 			array4[6 + num2] = component.name_RU;
 			array4[7 + num2] = component.name_IT;
 			array4[8 + num2] = component.name_JA;
-			int num3 = i * 10;
 			array2[num3] = component.myID;
 			array2[1 + num3] = component.date_year;
 			array2[2 + num3] = component.date_month;
 			array2[3 + num3] = component.price;
 			array2[4 + num3] = component.dev_costs;
-			int num4 = i * 10;
 			array3[num4] = component.effekt;
-			int num5 = i * 10;
 			array5[num5] = component.isUnlocked;
 			array5[1 + num5] = component.inBesitz;
 			array5[2 + num5] = component.neverLooseEffect;
@@ -3378,7 +3306,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<bool[]>("antiCheat_B", array5);
 	}
 
-	// Token: 0x06001E44 RID: 7748 RVA: 0x0013ADCC File Offset: 0x00138FCC
+	// Token: 0x06001E9B RID: 7835 RVA: 0x00139E58 File Offset: 0x00138058
 	private void LoadAntiCheat(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzAntiCheat", -1);
@@ -3387,56 +3315,64 @@ public class savegameScript : MonoBehaviour
 		{
 			return;
 		}
-		int[] array = new int[10 * num];
-		float[] array2 = new float[10 * num];
-		string[] array3 = new string[20 * num];
-		bool[] array4 = new bool[10 * num];
-		array = reader.Read<int[]>("antiCheat_I");
-		array2 = reader.Read<float[]>("antiCheat_F");
-		array3 = reader.Read<string[]>("antiCheat_S");
-		array4 = reader.Read<bool[]>("antiCheat_B");
+		long[] array = new long[0];
+		int[] array2 = new int[0];
+		float[] array3 = new float[0];
+		string[] array4 = new string[0];
+		bool[] array5 = new bool[0];
+		array2 = reader.Read<int[]>("antiCheat_I");
+		array3 = reader.Read<float[]>("antiCheat_F");
+		array4 = reader.Read<string[]>("antiCheat_S");
+		array5 = reader.Read<bool[]>("antiCheat_B");
+		int num2 = array2.Length / num;
+		int num3 = array3.Length / num;
+		int num4 = array5.Length / num;
+		int num5 = array4.Length / num;
+		int num6 = array.Length / num;
 		for (int i = 0; i < num; i++)
 		{
-			int num2 = i * 10;
-			int num3 = i * 10;
-			int num4 = i * 10;
-			int num5 = i * 20;
+			int num7 = i * num2;
+			int num8 = i * num3;
+			int num9 = i * num4;
+			int num10 = i * num5;
 			antiCheatScript antiCheatScript = this.antiCheat_.CreateAntiCheat();
-			antiCheatScript.name_EN = array3[num5];
-			antiCheatScript.name_GE = array3[1 + num5];
-			antiCheatScript.name_TU = array3[2 + num5];
-			antiCheatScript.name_CH = array3[3 + num5];
-			antiCheatScript.name_FR = array3[4 + num5];
-			antiCheatScript.name_CT = array3[5 + num5];
-			antiCheatScript.name_RU = array3[6 + num5];
-			antiCheatScript.name_IT = array3[7 + num5];
-			antiCheatScript.name_JA = array3[8 + num5];
-			antiCheatScript.myID = array[num2];
-			antiCheatScript.date_year = array[1 + num2];
-			antiCheatScript.date_month = array[2 + num2];
-			antiCheatScript.price = array[3 + num2];
-			antiCheatScript.dev_costs = array[4 + num2];
-			antiCheatScript.effekt = array2[num3];
-			antiCheatScript.isUnlocked = array4[num4];
-			antiCheatScript.inBesitz = array4[1 + num4];
-			antiCheatScript.neverLooseEffect = array4[2 + num4];
+			antiCheatScript.name_EN = array4[num10];
+			antiCheatScript.name_GE = array4[1 + num10];
+			antiCheatScript.name_TU = array4[2 + num10];
+			antiCheatScript.name_CH = array4[3 + num10];
+			antiCheatScript.name_FR = array4[4 + num10];
+			antiCheatScript.name_CT = array4[5 + num10];
+			antiCheatScript.name_RU = array4[6 + num10];
+			antiCheatScript.name_IT = array4[7 + num10];
+			antiCheatScript.name_JA = array4[8 + num10];
+			antiCheatScript.myID = array2[num7];
+			antiCheatScript.date_year = array2[1 + num7];
+			antiCheatScript.date_month = array2[2 + num7];
+			antiCheatScript.price = array2[3 + num7];
+			antiCheatScript.dev_costs = array2[4 + num7];
+			antiCheatScript.effekt = array3[num8];
+			antiCheatScript.isUnlocked = array5[num9];
+			antiCheatScript.inBesitz = array5[1 + num9];
+			antiCheatScript.neverLooseEffect = array5[2 + num9];
 			antiCheatScript.Init();
 		}
 	}
 
-	// Token: 0x06001E45 RID: 7749 RVA: 0x0013AF70 File Offset: 0x00139170
+	// Token: 0x06001E9C RID: 7836 RVA: 0x0013A01C File Offset: 0x0013821C
 	private void SaveContractWork(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("ContractWork");
 		int num = array.Length;
 		writer.Write<int>("anzContractWork", num);
-		int[] array2 = new int[10 * num];
-		float[] array3 = new float[5 * num];
-		bool[] array4 = new bool[5 * num];
+		int[] array2 = new int[8 * num];
+		float[] array3 = new float[num];
+		bool[] array4 = new bool[num];
 		for (int i = 0; i < array.Length; i++)
 		{
 			contractWork component = array[i].GetComponent<contractWork>();
-			int num2 = i * 10;
+			int num2 = i * (array2.Length / num);
+			int num3 = i * (array3.Length / num);
+			int num4 = i * (array4.Length / num);
 			array2[num2] = component.myID;
 			array2[1 + num2] = component.typ;
 			array2[2 + num2] = component.gehalt;
@@ -3445,9 +3381,7 @@ public class savegameScript : MonoBehaviour
 			array2[5 + num2] = component.zeitInWochen;
 			array2[6 + num2] = component.wochenAlsAngebot;
 			array2[7 + num2] = component.art;
-			int num3 = i * 5;
 			array3[num3] = component.points;
-			int num4 = i * 5;
 			array4[num4] = component.angenommen;
 		}
 		writer.Write<int[]>("contractWork_I", array2);
@@ -3455,7 +3389,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<bool[]>("contractWork_B", array4);
 	}
 
-	// Token: 0x06001E46 RID: 7750 RVA: 0x0013B094 File Offset: 0x00139294
+	// Token: 0x06001E9D RID: 7837 RVA: 0x0013A148 File Offset: 0x00138348
 	private void LoadContractWork(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzContractWork", -1);
@@ -3464,201 +3398,40 @@ public class savegameScript : MonoBehaviour
 		{
 			return;
 		}
-		int[] array = new int[10 * num];
-		float[] array2 = new float[5 * num];
-		bool[] array3 = new bool[5 * num];
-		array = reader.Read<int[]>("contractWork_I");
-		array2 = reader.Read<float[]>("contractWork_F");
-		array3 = reader.Read<bool[]>("contractWork_B");
+		long[] array = new long[0];
+		int[] array2 = new int[0];
+		float[] array3 = new float[0];
+		string[] array4 = new string[0];
+		bool[] array5 = new bool[0];
+		array2 = reader.Read<int[]>("contractWork_I");
+		array3 = reader.Read<float[]>("contractWork_F");
+		array5 = reader.Read<bool[]>("contractWork_B");
+		int num2 = array2.Length / num;
+		int num3 = array3.Length / num;
+		int num4 = array5.Length / num;
+		int num5 = array4.Length / num;
+		int num6 = array.Length / num;
 		for (int i = 0; i < num; i++)
 		{
-			int num2 = i * 10;
-			int num3 = i * 5;
-			int num4 = i * 5;
+			int num7 = i * num2;
+			int num8 = i * num3;
+			int num9 = i * num4;
 			contractWork contractWork = this.contractWorkMain_.CreateContractWork();
-			contractWork.myID = array[num2];
-			contractWork.typ = array[1 + num2];
-			contractWork.gehalt = array[2 + num2];
-			contractWork.strafe = array[3 + num2];
-			contractWork.auftraggeberID = array[4 + num2];
-			contractWork.zeitInWochen = array[5 + num2];
-			contractWork.wochenAlsAngebot = array[6 + num2];
-			contractWork.art = array[7 + num2];
-			contractWork.points = array2[num3];
-			contractWork.angenommen = array3[num4];
+			contractWork.myID = array2[num7];
+			contractWork.typ = array2[1 + num7];
+			contractWork.gehalt = array2[2 + num7];
+			contractWork.strafe = array2[3 + num7];
+			contractWork.auftraggeberID = array2[4 + num7];
+			contractWork.zeitInWochen = array2[5 + num7];
+			contractWork.wochenAlsAngebot = array2[6 + num7];
+			contractWork.art = array2[7 + num7];
+			contractWork.points = array3[num8];
+			contractWork.angenommen = array5[num9];
 			contractWork.Init();
 		}
 	}
 
-	// Token: 0x06001E47 RID: 7751 RVA: 0x0013B1B4 File Offset: 0x001393B4
-	private void SaveContractGame(ES3Writer writer)
-	{
-		GameObject[] array = GameObject.FindGameObjectsWithTag("ContractGame");
-		int num = array.Length;
-		writer.Write<int>("anzContractGame", num);
-		int[] array2 = new int[15 * num];
-		string[] array3 = new string[2 * num];
-		bool[] array4 = new bool[5 * num];
-		for (int i = 0; i < array.Length; i++)
-		{
-			contractAuftragsspiel component = array[i].GetComponent<contractAuftragsspiel>();
-			int num2 = i * 15;
-			array2[num2] = component.myID;
-			array2[1 + num2] = component.gehalt;
-			array2[2 + num2] = component.bonus;
-			array2[3 + num2] = component.auftraggeberID;
-			array2[4 + num2] = component.zeitInWochen;
-			array2[5 + num2] = component.wochenAlsAngebot;
-			array2[6 + num2] = component.mindestbewertung;
-			array2[7 + num2] = component.genre;
-			array2[8 + num2] = component.gameSize;
-			array2[9 + num2] = component.platform;
-			int num3 = i * 2;
-			array3[num3] = component.gameName;
-			int num4 = i * 5;
-			array4[num4] = component.angenommen;
-			array4[1 + num4] = component.zeitAbgelaufen;
-		}
-		writer.Write<int[]>("contractGame_I", array2);
-		writer.Write<string[]>("contractGame_S", array3);
-		writer.Write<bool[]>("contractGame_B", array4);
-	}
-
-	// Token: 0x06001E48 RID: 7752 RVA: 0x0013B300 File Offset: 0x00139500
-	private void LoadContractGame(ES3Reader reader, string filename)
-	{
-		int num = reader.Read<int>("anzContractGame", -1);
-		Debug.Log("Load: (anzContractGame) " + num.ToString());
-		if (num <= 0)
-		{
-			return;
-		}
-		int[] array = new int[15 * num];
-		string[] array2 = new string[2 * num];
-		bool[] array3 = new bool[5 * num];
-		array = reader.Read<int[]>("contractGame_I");
-		array2 = reader.Read<string[]>("contractGame_S");
-		array3 = reader.Read<bool[]>("contractGame_B");
-		for (int i = 0; i < num; i++)
-		{
-			int num2 = i * 15;
-			int num3 = i * 2;
-			int num4 = i * 5;
-			contractAuftragsspiel contractAuftragsspiel = this.contractWorkMain_.CreateContractGame();
-			contractAuftragsspiel.myID = array[num2];
-			contractAuftragsspiel.gehalt = array[1 + num2];
-			contractAuftragsspiel.bonus = array[2 + num2];
-			contractAuftragsspiel.auftraggeberID = array[3 + num2];
-			contractAuftragsspiel.zeitInWochen = array[4 + num2];
-			contractAuftragsspiel.wochenAlsAngebot = array[5 + num2];
-			contractAuftragsspiel.mindestbewertung = array[6 + num2];
-			contractAuftragsspiel.genre = array[7 + num2];
-			contractAuftragsspiel.gameSize = array[8 + num2];
-			contractAuftragsspiel.platform = array[9 + num2];
-			contractAuftragsspiel.gameName = array2[num3];
-			contractAuftragsspiel.angenommen = array3[num4];
-			contractAuftragsspiel.zeitAbgelaufen = array3[1 + num4];
-			contractAuftragsspiel.Init();
-		}
-	}
-
-	// Token: 0x06001E49 RID: 7753 RVA: 0x0013B448 File Offset: 0x00139648
-	private void SavePublishingOffer(ES3Writer writer)
-	{
-		GameObject[] array = GameObject.FindGameObjectsWithTag("PubOffer");
-		int num = array.Length;
-		writer.Write<int>("anzPubOffer", num);
-		int[] array2 = new int[15 * num];
-		string[] array3 = new string[2 * num];
-		float[] array4 = new float[5 * num];
-		bool[] array5 = new bool[5 * num];
-		for (int i = 0; i < array.Length; i++)
-		{
-			publishingOffer component = array[i].GetComponent<publishingOffer>();
-			int num2 = i * 15;
-			array2[num2] = component.myID;
-			array2[1 + num2] = component.garantiesumme;
-			array2[2 + num2] = component.developer;
-			array2[3 + num2] = component.wochenAlsAngebot;
-			array2[4 + num2] = component.genre;
-			array2[5 + num2] = component.gameSize;
-			array2[6 + num2] = component.gamePlatform[0];
-			array2[7 + num2] = Mathf.RoundToInt(component.points_grafik);
-			array2[8 + num2] = component.gameVorbild;
-			array2[9 + num2] = component.gamePlatform[1];
-			array2[10 + num2] = component.gamePlatform[2];
-			array2[11 + num2] = component.gamePlatform[3];
-			int num3 = i * 2;
-			array3[num3] = component.gameName;
-			int num4 = i * 5;
-			array4[num4] = component.gewinnbeteiligung;
-			array4[1 + num4] = component.stimmung;
-			array4[2 + num4] = component.review;
-			array4[3 + num4] = component.verhandlung;
-			array4[4 + num4] = component.verhandlungProzent;
-			int num5 = i * 5;
-			array5[num5] = component.retail;
-			array5[1 + num5] = component.digital;
-			array5[2 + num5] = component.angebotWoche;
-			array5[3 + num5] = component.nachfolger;
-		}
-		writer.Write<int[]>("pubOffer_I", array2);
-		writer.Write<string[]>("pubOffer_S", array3);
-		writer.Write<float[]>("pubOffer_F", array4);
-		writer.Write<bool[]>("pubOffer_B", array5);
-	}
-
-	// Token: 0x06001E4A RID: 7754 RVA: 0x0013B63C File Offset: 0x0013983C
-	private void LoadPublishingOffer(ES3Reader reader, string filename)
-	{
-		int num = reader.Read<int>("anzPubOffer", -1);
-		Debug.Log("Load: (anzPubOffer) " + num.ToString());
-		if (num <= 0)
-		{
-			return;
-		}
-		int[] array = new int[15 * num];
-		string[] array2 = new string[2 * num];
-		float[] array3 = new float[5 * num];
-		bool[] array4 = new bool[5 * num];
-		array = reader.Read<int[]>("pubOffer_I");
-		array2 = reader.Read<string[]>("pubOffer_S");
-		array3 = reader.Read<float[]>("pubOffer_F");
-		array4 = reader.Read<bool[]>("pubOffer_B");
-		for (int i = 0; i < num; i++)
-		{
-			int num2 = i * 15;
-			int num3 = i * 2;
-			int num4 = i * 5;
-			int num5 = i * 5;
-			publishingOffer publishingOffer = this.publishingOfferMain_.CreatePublishingOffer();
-			publishingOffer.myID = array[num2];
-			publishingOffer.garantiesumme = array[1 + num2];
-			publishingOffer.developer = array[2 + num2];
-			publishingOffer.wochenAlsAngebot = array[3 + num2];
-			publishingOffer.genre = array[4 + num2];
-			publishingOffer.gameSize = array[5 + num2];
-			publishingOffer.gamePlatform[0] = array[6 + num2];
-			publishingOffer.points_grafik = (float)array[7 + num2];
-			publishingOffer.gameVorbild = array[8 + num2];
-			publishingOffer.gamePlatform[1] = array[9 + num2];
-			publishingOffer.gamePlatform[2] = array[10 + num2];
-			publishingOffer.gamePlatform[3] = array[11 + num2];
-			publishingOffer.gameName = array2[num3];
-			publishingOffer.gewinnbeteiligung = array3[num4];
-			publishingOffer.stimmung = array3[1 + num4];
-			publishingOffer.review = array3[2 + num4];
-			publishingOffer.verhandlung = array3[3 + num4];
-			publishingOffer.verhandlungProzent = array3[4 + num4];
-			publishingOffer.retail = array4[num5];
-			publishingOffer.digital = array4[1 + num5];
-			publishingOffer.angebotWoche = array4[2 + num5];
-			publishingOffer.nachfolger = array4[3 + num5];
-			publishingOffer.Init();
-		}
-	}
-
-	// Token: 0x06001E4B RID: 7755 RVA: 0x0013B818 File Offset: 0x00139A18
+	// Token: 0x06001E9E RID: 7838 RVA: 0x0013A290 File Offset: 0x00138490
 	private void SavePlatforms(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -3710,7 +3483,7 @@ public class savegameScript : MonoBehaviour
 			array2[15 + num3] = component.needFeatures[2];
 			array2[16 + num3] = component.complex;
 			array2[17 + num3] = component.typ;
-			array2[18 + num3] = component.multiplaySlot;
+			array2[18 + num3] = component.ownerID;
 			array2[19 + num3] = component.anzController;
 			int num4 = i * 40;
 			array3[num4] = component.component_cpu;
@@ -3744,12 +3517,10 @@ public class savegameScript : MonoBehaviour
 			array4[7 + num5] = component.kostenreduktion;
 			array4[8 + num5] = component.review;
 			int num6 = i * 10;
-			array6[num6] = component.npc;
 			array6[1 + num6] = component.isUnlocked;
 			array6[2 + num6] = component.inBesitz;
 			array6[4 + num6] = component.vomMarktGenommen;
 			array6[5 + num6] = component.internet;
-			array6[6 + num6] = component.playerConsole;
 			array6[7 + num6] = component.autoPreis;
 			array6[8 + num6] = component.thridPartyGames;
 			int num7 = i * 20;
@@ -3757,7 +3528,7 @@ public class savegameScript : MonoBehaviour
 			array7[1 + num7] = component.entwicklungsKosten;
 			array7[2 + num7] = component.umsatzTotal;
 			array7[3 + num7] = component.costs_production;
-			if (component.playerConsole || component.multiplaySlot != -1)
+			if (!component.OwnerIsNPC())
 			{
 				writer.Write<bool[]>("platformA1_" + component.myID.ToString(), component.hwFeatures);
 				writer.Write<int[]>("platformA2_" + component.myID.ToString(), component.sellsPerWeek);
@@ -3772,7 +3543,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<long[]>("platform_L", array7);
 	}
 
-	// Token: 0x06001E4C RID: 7756 RVA: 0x0013BDD0 File Offset: 0x00139FD0
+	// Token: 0x06001E9F RID: 7839 RVA: 0x0013A824 File Offset: 0x00138A24
 	private void LoadPlatforms(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzPlatforms", -1);
@@ -3788,15 +3559,9 @@ public class savegameScript : MonoBehaviour
 		bool[] array5 = new bool[10 * num];
 		long[] array6 = new long[20 * num];
 		array = reader.Read<int[]>("platform_I");
-		if (this.mS_.savegameVersion >= 11)
-		{
-			array2 = reader.Read<int[]>("platform_I2");
-		}
+		array2 = reader.Read<int[]>("platform_I2");
 		array3 = reader.Read<float[]>("platform_F");
-		if (this.mS_.savegameVersion >= 11)
-		{
-			array6 = reader.Read<long[]>("platform_L");
-		}
+		array6 = reader.Read<long[]>("platform_L");
 		array4 = reader.Read<string[]>("platform_S");
 		array5 = reader.Read<bool[]>("platform_B");
 		for (int i = 0; i < num; i++)
@@ -3843,7 +3608,7 @@ public class savegameScript : MonoBehaviour
 			platformScript.needFeatures[2] = array[15 + num2];
 			platformScript.complex = array[16 + num2];
 			platformScript.typ = array[17 + num2];
-			platformScript.multiplaySlot = array[18 + num2];
+			platformScript.ownerID = array[18 + num2];
 			platformScript.anzController = array[19 + num2];
 			platformScript.component_cpu = array2[num3];
 			platformScript.component_gfx = array2[1 + num3];
@@ -3874,22 +3639,17 @@ public class savegameScript : MonoBehaviour
 			platformScript.hype = array3[6 + num4];
 			platformScript.kostenreduktion = array3[7 + num4];
 			platformScript.review = array3[8 + num4];
-			platformScript.npc = array5[num5];
 			platformScript.isUnlocked = array5[1 + num5];
 			platformScript.inBesitz = array5[2 + num5];
 			platformScript.vomMarktGenommen = array5[4 + num5];
 			platformScript.internet = array5[5 + num5];
-			platformScript.playerConsole = array5[6 + num5];
 			platformScript.autoPreis = array5[7 + num5];
 			platformScript.thridPartyGames = array5[8 + num5];
-			if (this.mS_.savegameVersion >= 11)
-			{
-				platformScript.einnahmen = array6[num7];
-				platformScript.entwicklungsKosten = array6[1 + num7];
-				platformScript.umsatzTotal = array6[2 + num7];
-				platformScript.costs_production = array6[3 + num7];
-			}
-			if (this.mS_.savegameVersion >= 13 && (platformScript.playerConsole || platformScript.multiplaySlot != -1))
+			platformScript.einnahmen = array6[num7];
+			platformScript.entwicklungsKosten = array6[1 + num7];
+			platformScript.umsatzTotal = array6[2 + num7];
+			platformScript.costs_production = array6[3 + num7];
+			if (!platformScript.OwnerIsNPC())
 			{
 				platformScript.hwFeatures = reader.Read<bool[]>("platformA1_" + platformScript.myID.ToString());
 				platformScript.sellsPerWeek = reader.Read<int[]>("platformA2_" + platformScript.myID.ToString());
@@ -3898,22 +3658,18 @@ public class savegameScript : MonoBehaviour
 			platformScript.Init();
 			platformScript.InitUI();
 		}
-		if (this.mS_.savegameVersion < 7)
-		{
-			this.platforms_.LoadPlatformDataForOldSavegames("DATA/Platforms.txt");
-		}
 	}
 
-	// Token: 0x06001E4D RID: 7757 RVA: 0x0013C3EC File Offset: 0x0013A5EC
+	// Token: 0x06001EA0 RID: 7840 RVA: 0x0013ADC4 File Offset: 0x00138FC4
 	private void SaveArbeitsmarkt(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Arbeitsmarkt");
 		int num = array.Length;
 		writer.Write<int>("anzArbeitsmarkt", num);
-		int[] array2 = new int[20 * num];
-		float[] array3 = new float[10 * num];
-		string[] array4 = new string[5 * num];
-		bool[] array5 = new bool[20 * num];
+		int[] array2 = new int[14 * num];
+		float[] array3 = new float[8 * num];
+		string[] array4 = new string[num];
+		bool[] array5 = new bool[num];
 		int num2 = 0;
 		if (array.Length != 0 && array[0])
 		{
@@ -3927,9 +3683,11 @@ public class savegameScript : MonoBehaviour
 		for (int i = 0; i < array.Length; i++)
 		{
 			charArbeitsmarkt component2 = array[i].GetComponent<charArbeitsmarkt>();
-			int num3 = i * 5;
+			int num3 = i * (array4.Length / num);
+			int num4 = i * (array2.Length / num);
+			int num5 = i * (array3.Length / num);
+			int num6 = i * (array5.Length / num);
 			array4[num3] = component2.myName;
-			int num4 = i * 20;
 			array2[num4] = component2.myID;
 			array2[1 + num4] = component2.wochenAmArbeitsmarkt;
 			array2[2 + num4] = component2.legend;
@@ -3944,7 +3702,6 @@ public class savegameScript : MonoBehaviour
 			array2[11 + num4] = component2.model_ShirtColor;
 			array2[12 + num4] = component2.model_Add1Color;
 			array2[13 + num4] = component2.beruf;
-			int num5 = i * 10;
 			array3[num5] = component2.s_gamedesign;
 			array3[1 + num5] = component2.s_programmieren;
 			array3[2 + num5] = component2.s_grafik;
@@ -3953,7 +3710,6 @@ public class savegameScript : MonoBehaviour
 			array3[5 + num5] = component2.s_gametests;
 			array3[6 + num5] = component2.s_technik;
 			array3[7 + num5] = component2.s_forschen;
-			int num6 = i * 20;
 			array5[num6] = component2.male;
 			int num7 = i * num2;
 			for (int j = 0; j < component2.perks.Length; j++)
@@ -3968,7 +3724,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<bool[]>("arbeitsmarkt_perks", array6);
 	}
 
-	// Token: 0x06001E4E RID: 7758 RVA: 0x0013C664 File Offset: 0x0013A864
+	// Token: 0x06001EA1 RID: 7841 RVA: 0x0013B044 File Offset: 0x00139244
 	private void LoadArbeitsmarkt(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzArbeitsmarkt", -1);
@@ -3977,90 +3733,74 @@ public class savegameScript : MonoBehaviour
 		{
 			return;
 		}
-		int[] array = new int[20 * num];
-		float[] array2 = new float[10 * num];
-		string[] array3 = new string[5 * num];
-		bool[] array4 = new bool[20 * num];
+		long[] array = new long[0];
+		int[] array2 = new int[0];
+		float[] array3 = new float[0];
+		string[] array4 = new string[0];
 		bool[] array5 = new bool[0];
-		array = reader.Read<int[]>("arbeitsmarkt_I");
-		array2 = reader.Read<float[]>("arbeitsmarkt_F");
-		array3 = reader.Read<string[]>("arbeitsmarkt_S");
-		array4 = reader.Read<bool[]>("arbeitsmarkt_B");
-		if (this.mS_.savegameVersion >= 16)
-		{
-			array5 = reader.Read<bool[]>("arbeitsmarkt_perks");
-		}
+		bool[] array6 = new bool[0];
+		array2 = reader.Read<int[]>("arbeitsmarkt_I");
+		array3 = reader.Read<float[]>("arbeitsmarkt_F");
+		array4 = reader.Read<string[]>("arbeitsmarkt_S");
+		array5 = reader.Read<bool[]>("arbeitsmarkt_B");
+		array6 = reader.Read<bool[]>("arbeitsmarkt_perks");
+		int num2 = array2.Length / num;
+		int num3 = array3.Length / num;
+		int num4 = array5.Length / num;
+		int num5 = array4.Length / num;
+		int num6 = array.Length / num;
 		for (int i = 0; i < num; i++)
 		{
-			int num2 = i * 20;
-			int num3 = i * 10;
-			int num4 = i * 20;
-			int num5 = i * 5;
+			int num7 = i * num2;
+			int num8 = i * num3;
+			int num9 = i * num4;
+			int num10 = i * num5;
 			charArbeitsmarkt charArbeitsmarkt = this.arbeitsmarkt_.CreateArbeitsmarktItem();
-			charArbeitsmarkt.myName = array3[num5];
-			charArbeitsmarkt.myID = array[num2];
-			charArbeitsmarkt.wochenAmArbeitsmarkt = array[1 + num2];
-			charArbeitsmarkt.legend = array[2 + num2];
-			charArbeitsmarkt.model_body = array[3 + num2];
-			charArbeitsmarkt.model_eyes = array[4 + num2];
-			charArbeitsmarkt.model_hair = array[5 + num2];
-			charArbeitsmarkt.model_beard = array[6 + num2];
-			charArbeitsmarkt.model_skinColor = array[7 + num2];
-			charArbeitsmarkt.model_hairColor = array[8 + num2];
-			charArbeitsmarkt.model_beardColor = array[9 + num2];
-			charArbeitsmarkt.model_HoseColor = array[10 + num2];
-			charArbeitsmarkt.model_ShirtColor = array[11 + num2];
-			charArbeitsmarkt.model_Add1Color = array[12 + num2];
-			charArbeitsmarkt.beruf = array[13 + num2];
-			charArbeitsmarkt.s_gamedesign = array2[num3];
-			charArbeitsmarkt.s_programmieren = array2[1 + num3];
-			charArbeitsmarkt.s_grafik = array2[2 + num3];
-			charArbeitsmarkt.s_sound = array2[3 + num3];
-			charArbeitsmarkt.s_pr = array2[4 + num3];
-			charArbeitsmarkt.s_gametests = array2[5 + num3];
-			charArbeitsmarkt.s_technik = array2[6 + num3];
-			charArbeitsmarkt.s_forschen = array2[7 + num3];
-			charArbeitsmarkt.male = array4[num4];
-			if (this.mS_.savegameVersion < 16)
+			charArbeitsmarkt.myName = array4[num10];
+			charArbeitsmarkt.myID = array2[num7];
+			charArbeitsmarkt.wochenAmArbeitsmarkt = array2[1 + num7];
+			charArbeitsmarkt.legend = array2[2 + num7];
+			charArbeitsmarkt.model_body = array2[3 + num7];
+			charArbeitsmarkt.model_eyes = array2[4 + num7];
+			charArbeitsmarkt.model_hair = array2[5 + num7];
+			charArbeitsmarkt.model_beard = array2[6 + num7];
+			charArbeitsmarkt.model_skinColor = array2[7 + num7];
+			charArbeitsmarkt.model_hairColor = array2[8 + num7];
+			charArbeitsmarkt.model_beardColor = array2[9 + num7];
+			charArbeitsmarkt.model_HoseColor = array2[10 + num7];
+			charArbeitsmarkt.model_ShirtColor = array2[11 + num7];
+			charArbeitsmarkt.model_Add1Color = array2[12 + num7];
+			charArbeitsmarkt.beruf = array2[13 + num7];
+			charArbeitsmarkt.s_gamedesign = array3[num8];
+			charArbeitsmarkt.s_programmieren = array3[1 + num8];
+			charArbeitsmarkt.s_grafik = array3[2 + num8];
+			charArbeitsmarkt.s_sound = array3[3 + num8];
+			charArbeitsmarkt.s_pr = array3[4 + num8];
+			charArbeitsmarkt.s_gametests = array3[5 + num8];
+			charArbeitsmarkt.s_technik = array3[6 + num8];
+			charArbeitsmarkt.s_forschen = array3[7 + num8];
+			charArbeitsmarkt.male = array5[num9];
+			charArbeitsmarkt.perks = new bool[array6.Length / num];
+			int num11 = i * (array6.Length / num);
+			for (int j = 0; j < charArbeitsmarkt.perks.Length; j++)
 			{
-				if (this.es3file.KeyExists("arbeitsmarktA1_"))
-				{
-					charArbeitsmarkt.perks = reader.Read<bool[]>("arbeitsmarktA1_" + charArbeitsmarkt.myID.ToString());
-				}
-				if (charArbeitsmarkt.perks.Length < 40)
-				{
-					bool[] array6 = (bool[])charArbeitsmarkt.perks.Clone();
-					charArbeitsmarkt.perks = new bool[40];
-					for (int j = 0; j < array6.Length; j++)
-					{
-						charArbeitsmarkt.perks[j] = array6[j];
-					}
-				}
-			}
-			else
-			{
-				charArbeitsmarkt.perks = new bool[array5.Length / num];
-				int num6 = i * (array5.Length / num);
-				for (int k = 0; k < charArbeitsmarkt.perks.Length; k++)
-				{
-					charArbeitsmarkt.perks[k] = array5[k + num6];
-				}
+				charArbeitsmarkt.perks[j] = array6[j + num11];
 			}
 			charArbeitsmarkt.gameObject.name = "AA_" + charArbeitsmarkt.myID.ToString();
 		}
 	}
 
-	// Token: 0x06001E4F RID: 7759 RVA: 0x0013C990 File Offset: 0x0013AB90
+	// Token: 0x06001EA2 RID: 7842 RVA: 0x0013B2E4 File Offset: 0x001394E4
 	private void SavePublisher(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
 		int num = array.Length;
 		writer.Write<int>("anzPublisher", num);
 		long[] array2 = new long[25 * num];
-		int[] array3 = new int[24 * num];
+		int[] array3 = new int[55 * num];
 		float[] array4 = new float[3 * num];
 		string[] array5 = new string[6 * num];
-		bool[] array6 = new bool[24 * num];
+		bool[] array6 = new bool[25 * num];
 		for (int i = 0; i < array.Length; i++)
 		{
 			publisherScript component = array[i].GetComponent<publisherScript>();
@@ -4083,7 +3823,7 @@ public class savegameScript : MonoBehaviour
 			array3[5 + num3] = component.newGameInWeeks;
 			array3[6 + num3] = component.exklusivLaufzeit;
 			array3[7 + num3] = component.developmentSpeed;
-			array3[8 + num3] = component.multiplayerID;
+			array3[8 + num3] = component.ownerID;
 			array3[9 + num3] = component.newGameInWeeksORG;
 			array3[10 + num3] = component.tf_entwicklungsdauer;
 			array3[11 + num3] = component.tf_gameSize;
@@ -4099,6 +3839,37 @@ public class savegameScript : MonoBehaviour
 			array3[21 + num3] = component.tf_platformFocus[1];
 			array3[22 + num3] = component.tf_platformFocus[2];
 			array3[23 + num3] = component.tf_platformFocus[3];
+			array3[24 + num3] = component.country;
+			array3[25 + num3] = component.awards[0];
+			array3[26 + num3] = component.awards[1];
+			array3[27 + num3] = component.awards[2];
+			array3[28 + num3] = component.awards[3];
+			array3[29 + num3] = component.awards[4];
+			array3[30 + num3] = component.awards[5];
+			array3[31 + num3] = component.awards[6];
+			array3[32 + num3] = component.awards[7];
+			array3[33 + num3] = component.awards[8];
+			array3[34 + num3] = component.awards[9];
+			array3[35 + num3] = component.awards[10];
+			array3[36 + num3] = component.awards[11];
+			array3[37 + num3] = component.awards[12];
+			array3[38 + num3] = component.awards[13];
+			array3[39 + num3] = component.awards[14];
+			array3[40 + num3] = component.awards[15];
+			array3[41 + num3] = component.awards[16];
+			array3[42 + num3] = component.awards[17];
+			array3[43 + num3] = component.awards[18];
+			array3[44 + num3] = component.awards[19];
+			array3[45 + num3] = component.awards[20];
+			array3[46 + num3] = component.awards[21];
+			array3[47 + num3] = component.awards[22];
+			array3[48 + num3] = component.awards[23];
+			array3[49 + num3] = component.awards[24];
+			array3[50 + num3] = component.awards[25];
+			array3[51 + num3] = component.awards[26];
+			array3[52 + num3] = component.awards[27];
+			array3[53 + num3] = component.awards[28];
+			array3[54 + num3] = component.awards[29];
 			array4[num4] = component.stars;
 			array4[1 + num4] = component.relation;
 			array4[2 + num4] = component.share;
@@ -4108,7 +3879,6 @@ public class savegameScript : MonoBehaviour
 			array6[3 + num5] = component.ownPlatform;
 			array6[4 + num5] = component.exklusive;
 			array6[5 + num5] = component.notForSale;
-			array6[6 + num5] = component.tochterfirma;
 			array6[7 + num5] = component.tf_geschlossen;
 			array6[8 + num5] = component.tf_autoRelease;
 			array6[9 + num5] = component.tf_onlyPlayerConsole;
@@ -4126,6 +3896,7 @@ public class savegameScript : MonoBehaviour
 			array6[21 + num5] = component.tf_noRemaster;
 			array6[22 + num5] = component.tf_noSpinoffs;
 			array6[23 + num5] = component.tf_ownPublisher;
+			array6[24 + num5] = component.isPlayer;
 			array2[num6] = component.firmenwert;
 			array2[1 + num6] = component.tf_umsatz[0];
 			array2[2 + num6] = component.tf_umsatz[1];
@@ -4159,7 +3930,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<long[]>("publisher_L", array2);
 	}
 
-	// Token: 0x06001E50 RID: 7760 RVA: 0x0013CF44 File Offset: 0x0013B144
+	// Token: 0x06001EA3 RID: 7843 RVA: 0x0013BA9C File Offset: 0x00139C9C
 	private void LoadPublisher(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzPublisher", -1);
@@ -4208,7 +3979,7 @@ public class savegameScript : MonoBehaviour
 			publisherScript.newGameInWeeks = array2[5 + num7];
 			publisherScript.exklusivLaufzeit = array2[6 + num7];
 			publisherScript.developmentSpeed = array2[7 + num7];
-			publisherScript.multiplayerID = array2[8 + num7];
+			publisherScript.ownerID = array2[8 + num7];
 			publisherScript.newGameInWeeksORG = array2[9 + num7];
 			if (num2 > 10)
 			{
@@ -4302,6 +4073,130 @@ public class savegameScript : MonoBehaviour
 			{
 				publisherScript.tf_platformFocus[3] = -1;
 			}
+			if (num2 > 24)
+			{
+				publisherScript.country = array2[24 + num7];
+			}
+			if (num2 > 25)
+			{
+				publisherScript.awards[0] = array2[25 + num7];
+			}
+			if (num2 > 26)
+			{
+				publisherScript.awards[1] = array2[26 + num7];
+			}
+			if (num2 > 27)
+			{
+				publisherScript.awards[2] = array2[27 + num7];
+			}
+			if (num2 > 28)
+			{
+				publisherScript.awards[3] = array2[28 + num7];
+			}
+			if (num2 > 29)
+			{
+				publisherScript.awards[4] = array2[29 + num7];
+			}
+			if (num2 > 30)
+			{
+				publisherScript.awards[5] = array2[30 + num7];
+			}
+			if (num2 > 31)
+			{
+				publisherScript.awards[6] = array2[31 + num7];
+			}
+			if (num2 > 32)
+			{
+				publisherScript.awards[7] = array2[32 + num7];
+			}
+			if (num2 > 33)
+			{
+				publisherScript.awards[8] = array2[33 + num7];
+			}
+			if (num2 > 34)
+			{
+				publisherScript.awards[9] = array2[34 + num7];
+			}
+			if (num2 > 35)
+			{
+				publisherScript.awards[10] = array2[35 + num7];
+			}
+			if (num2 > 36)
+			{
+				publisherScript.awards[11] = array2[36 + num7];
+			}
+			if (num2 > 37)
+			{
+				publisherScript.awards[12] = array2[37 + num7];
+			}
+			if (num2 > 38)
+			{
+				publisherScript.awards[13] = array2[38 + num7];
+			}
+			if (num2 > 39)
+			{
+				publisherScript.awards[14] = array2[39 + num7];
+			}
+			if (num2 > 40)
+			{
+				publisherScript.awards[15] = array2[40 + num7];
+			}
+			if (num2 > 41)
+			{
+				publisherScript.awards[16] = array2[41 + num7];
+			}
+			if (num2 > 42)
+			{
+				publisherScript.awards[17] = array2[42 + num7];
+			}
+			if (num2 > 43)
+			{
+				publisherScript.awards[18] = array2[43 + num7];
+			}
+			if (num2 > 44)
+			{
+				publisherScript.awards[19] = array2[44 + num7];
+			}
+			if (num2 > 45)
+			{
+				publisherScript.awards[20] = array2[45 + num7];
+			}
+			if (num2 > 46)
+			{
+				publisherScript.awards[21] = array2[46 + num7];
+			}
+			if (num2 > 47)
+			{
+				publisherScript.awards[22] = array2[47 + num7];
+			}
+			if (num2 > 48)
+			{
+				publisherScript.awards[23] = array2[48 + num7];
+			}
+			if (num2 > 49)
+			{
+				publisherScript.awards[24] = array2[49 + num7];
+			}
+			if (num2 > 50)
+			{
+				publisherScript.awards[25] = array2[50 + num7];
+			}
+			if (num2 > 51)
+			{
+				publisherScript.awards[26] = array2[51 + num7];
+			}
+			if (num2 > 52)
+			{
+				publisherScript.awards[27] = array2[52 + num7];
+			}
+			if (num2 > 53)
+			{
+				publisherScript.awards[28] = array2[53 + num7];
+			}
+			if (num2 > 54)
+			{
+				publisherScript.awards[29] = array2[54 + num7];
+			}
 			publisherScript.stars = array3[num8];
 			publisherScript.relation = array3[1 + num8];
 			publisherScript.share = array3[2 + num8];
@@ -4311,7 +4206,6 @@ public class savegameScript : MonoBehaviour
 			publisherScript.ownPlatform = array5[3 + num9];
 			publisherScript.exklusive = array5[4 + num9];
 			publisherScript.notForSale = array5[5 + num9];
-			publisherScript.tochterfirma = array5[6 + num9];
 			publisherScript.tf_geschlossen = array5[7 + num9];
 			publisherScript.tf_autoRelease = array5[8 + num9];
 			publisherScript.tf_onlyPlayerConsole = array5[9 + num9];
@@ -4370,6 +4264,10 @@ public class savegameScript : MonoBehaviour
 			if (num4 > 23)
 			{
 				publisherScript.tf_ownPublisher = array5[23 + num9];
+			}
+			if (num4 > 24)
+			{
+				publisherScript.isPlayer = array5[24 + num9];
 			}
 			if (num6 > 0)
 			{
@@ -4475,16 +4373,16 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E51 RID: 7761 RVA: 0x0013D6B8 File Offset: 0x0013B8B8
+	// Token: 0x06001EA4 RID: 7844 RVA: 0x0013C4D4 File Offset: 0x0013A6D4
 	private void SaveEngines(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Engine");
 		int num = array.Length;
 		writer.Write<int>("anzEngines", num);
 		int[] array2 = new int[10 * num];
-		float[] array3 = new float[10 * num];
-		string[] array4 = new string[20 * num];
-		bool[] array5 = new bool[10 * num];
+		float[] array3 = new float[2 * num];
+		string[] array4 = new string[13 * num];
+		bool[] array5 = new bool[6 * num];
 		int num2 = this.eF_.engineFeatures_UNLOCK.Length;
 		int num3 = this.eF_.engineFeatures_UNLOCK.Length;
 		int num4 = GameObject.FindGameObjectsWithTag("Publisher").Length;
@@ -4494,7 +4392,10 @@ public class savegameScript : MonoBehaviour
 		for (int i = 0; i < array.Length; i++)
 		{
 			engineScript component = array[i].GetComponent<engineScript>();
-			int num5 = i * 20;
+			int num5 = i * (array4.Length / num);
+			int num6 = i * (array2.Length / num);
+			int num7 = i * (array3.Length / num);
+			int num8 = i * (array5.Length / num);
 			array4[num5] = component.myName;
 			array4[1 + num5] = component.name_EN;
 			array4[2 + num5] = component.name_GE;
@@ -4508,62 +4409,49 @@ public class savegameScript : MonoBehaviour
 			array4[10 + num5] = component.name_IT;
 			array4[11 + num5] = component.name_JA;
 			array4[12 + num5] = component.name_PL;
-			int num6 = i * 10;
 			array2[num6] = component.myID;
 			array2[1 + num6] = component.spezialgenre;
 			array2[2 + num6] = component.preis;
 			array2[3 + num6] = component.gewinnbeteiligung;
 			array2[4 + num6] = component.date_year;
 			array2[5 + num6] = component.date_month;
-			array2[6 + num6] = component.multiplayerSlot;
+			array2[6 + num6] = component.ownerID;
 			array2[7 + num6] = component.spezialplatform;
 			array2[8 + num6] = component.umsatz;
 			array2[9 + num6] = component.spezialplatformUpdate;
-			int num7 = i * 10;
 			array3[num7] = component.devPoints;
 			array3[1 + num7] = component.devPointsStart;
-			int num8 = i * 10;
-			array5[num8] = component.playerEngine;
 			array5[1 + num8] = component.isUnlocked;
 			array5[2 + num8] = component.gekauft;
 			array5[3 + num8] = component.sellEngine;
 			array5[4 + num8] = component.updating;
 			array5[5 + num8] = component.archiv_engine;
-			if (this.mS_.savegameVersion != 0 && this.mS_.savegameVersion < 16)
+			if (component.features == null || component.features.Length == 0)
 			{
-				writer.Write<bool[]>("EngineA1_" + component.myID.ToString(), component.features);
-				writer.Write<bool[]>("EngineA2_" + component.myID.ToString(), component.featuresInDev);
-				writer.Write<bool[]>("EngineA3_" + component.myID.ToString(), component.publisherBuyed);
+				component.features = new bool[num2];
 			}
-			else
+			int num9 = i * num2;
+			for (int j = 0; j < num2; j++)
 			{
-				if (component.features == null || component.features.Length == 0)
-				{
-					component.features = new bool[num2];
-				}
-				int num9 = i * num2;
-				for (int j = 0; j < num2; j++)
-				{
-					array6[j + num9] = component.features[j];
-				}
-				if (component.featuresInDev == null || component.featuresInDev.Length == 0)
-				{
-					component.featuresInDev = new bool[num3];
-				}
-				num9 = i * num3;
-				for (int k = 0; k < num3; k++)
-				{
-					array7[k + num9] = component.featuresInDev[k];
-				}
-				if (component.publisherBuyed == null || component.publisherBuyed.Length == 0)
-				{
-					component.publisherBuyed = new bool[num4];
-				}
-				num9 = i * num4;
-				for (int l = 0; l < num4; l++)
-				{
-					array8[l + num9] = component.publisherBuyed[l];
-				}
+				array6[j + num9] = component.features[j];
+			}
+			if (component.featuresInDev == null || component.featuresInDev.Length == 0)
+			{
+				component.featuresInDev = new bool[num3];
+			}
+			num9 = i * num3;
+			for (int k = 0; k < num3; k++)
+			{
+				array7[k + num9] = component.featuresInDev[k];
+			}
+			if (component.publisherBuyed == null || component.publisherBuyed.Length == 0)
+			{
+				component.publisherBuyed = new bool[num4];
+			}
+			num9 = i * num4;
+			for (int l = 0; l < num4; l++)
+			{
+				array8[l + num9] = component.publisherBuyed[l];
 			}
 		}
 		writer.Write<int[]>("engines_I", array2);
@@ -4575,7 +4463,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<bool[]>("engines_publisherBuyed", array8);
 	}
 
-	// Token: 0x06001E52 RID: 7762 RVA: 0x0013DB04 File Offset: 0x0013BD04
+	// Token: 0x06001EA5 RID: 7845 RVA: 0x0013C894 File Offset: 0x0013AA94
 	private void LoadEngines(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzEngines", -1);
@@ -4584,89 +4472,86 @@ public class savegameScript : MonoBehaviour
 		{
 			return;
 		}
-		bool[] array = new bool[0];
-		bool[] array2 = new bool[0];
-		bool[] array3 = new bool[0];
-		int[] array4 = reader.Read<int[]>("engines_I");
-		float[] array5 = reader.Read<float[]>("engines_F");
-		string[] array6 = reader.Read<string[]>("engines_S");
-		bool[] array7 = reader.Read<bool[]>("engines_B");
-		if (this.mS_.savegameVersion >= 16)
-		{
-			array = reader.Read<bool[]>("engines_features");
-			array2 = reader.Read<bool[]>("engines_featuresInDev");
-			array3 = reader.Read<bool[]>("engines_publisherBuyed");
-		}
+		long[] array = new long[0];
+		int[] array2 = new int[0];
+		float[] array3 = new float[0];
+		string[] array4 = new string[0];
+		bool[] array5 = new bool[0];
+		bool[] array6 = new bool[0];
+		bool[] array7 = new bool[0];
+		bool[] array8 = new bool[0];
+		array2 = reader.Read<int[]>("engines_I");
+		array3 = reader.Read<float[]>("engines_F");
+		array4 = reader.Read<string[]>("engines_S");
+		array5 = reader.Read<bool[]>("engines_B");
+		int num2 = array2.Length / num;
+		int num3 = array3.Length / num;
+		int num4 = array5.Length / num;
+		int num5 = array4.Length / num;
+		int num6 = array.Length / num;
+		array6 = reader.Read<bool[]>("engines_features");
+		array7 = reader.Read<bool[]>("engines_featuresInDev");
+		array8 = reader.Read<bool[]>("engines_publisherBuyed");
 		for (int i = 0; i < num; i++)
 		{
-			int num2 = i * 10;
-			int num3 = i * 10;
-			int num4 = i * 10;
-			int num5 = i * 20;
+			int num7 = i * num2;
+			int num8 = i * num3;
+			int num9 = i * num4;
+			int num10 = i * num5;
 			engineScript engineScript = this.eF_.CreateEngine();
-			engineScript.myName = array6[num5];
-			engineScript.name_EN = array6[1 + num5];
-			engineScript.name_GE = array6[2 + num5];
-			engineScript.name_TU = array6[3 + num5];
-			engineScript.name_CH = array6[4 + num5];
-			engineScript.name_FR = array6[5 + num5];
-			engineScript.name_HU = array6[6 + num5];
-			engineScript.name_CT = array6[7 + num5];
-			engineScript.name_CZ = array6[8 + num5];
-			engineScript.name_PB = array6[9 + num5];
-			engineScript.name_IT = array6[10 + num5];
-			engineScript.name_JA = array6[11 + num5];
-			engineScript.name_PL = array6[12 + num5];
-			engineScript.myID = array4[num2];
-			engineScript.spezialgenre = array4[1 + num2];
-			engineScript.preis = array4[2 + num2];
-			engineScript.gewinnbeteiligung = array4[3 + num2];
-			engineScript.date_year = array4[4 + num2];
-			engineScript.date_month = array4[5 + num2];
-			engineScript.multiplayerSlot = array4[6 + num2];
-			engineScript.spezialplatform = array4[7 + num2];
-			engineScript.umsatz = array4[8 + num2];
-			engineScript.spezialplatformUpdate = array4[9 + num2];
-			engineScript.devPoints = array5[num3];
-			engineScript.devPointsStart = array5[1 + num3];
-			engineScript.playerEngine = array7[num4];
-			engineScript.isUnlocked = array7[1 + num4];
-			engineScript.gekauft = array7[2 + num4];
-			engineScript.sellEngine = array7[3 + num4];
-			engineScript.updating = array7[4 + num4];
-			engineScript.archiv_engine = array7[5 + num4];
-			if (this.mS_.savegameVersion < 16)
+			engineScript.myName = array4[num10];
+			engineScript.name_EN = array4[1 + num10];
+			engineScript.name_GE = array4[2 + num10];
+			engineScript.name_TU = array4[3 + num10];
+			engineScript.name_CH = array4[4 + num10];
+			engineScript.name_FR = array4[5 + num10];
+			engineScript.name_HU = array4[6 + num10];
+			engineScript.name_CT = array4[7 + num10];
+			engineScript.name_CZ = array4[8 + num10];
+			engineScript.name_PB = array4[9 + num10];
+			engineScript.name_IT = array4[10 + num10];
+			engineScript.name_JA = array4[11 + num10];
+			engineScript.name_PL = array4[12 + num10];
+			engineScript.myID = array2[num7];
+			engineScript.spezialgenre = array2[1 + num7];
+			engineScript.preis = array2[2 + num7];
+			engineScript.gewinnbeteiligung = array2[3 + num7];
+			engineScript.date_year = array2[4 + num7];
+			engineScript.date_month = array2[5 + num7];
+			engineScript.ownerID = array2[6 + num7];
+			engineScript.spezialplatform = array2[7 + num7];
+			engineScript.umsatz = array2[8 + num7];
+			engineScript.spezialplatformUpdate = array2[9 + num7];
+			engineScript.devPoints = array3[num8];
+			engineScript.devPointsStart = array3[1 + num8];
+			engineScript.isUnlocked = array5[1 + num9];
+			engineScript.gekauft = array5[2 + num9];
+			engineScript.sellEngine = array5[3 + num9];
+			engineScript.updating = array5[4 + num9];
+			engineScript.archiv_engine = array5[5 + num9];
+			engineScript.features = new bool[array6.Length / num];
+			engineScript.featuresInDev = new bool[array7.Length / num];
+			engineScript.publisherBuyed = new bool[array8.Length / num];
+			int num11 = i * (array6.Length / num);
+			for (int j = 0; j < engineScript.features.Length; j++)
 			{
-				engineScript.features = reader.Read<bool[]>("EngineA1_" + engineScript.myID.ToString());
-				engineScript.featuresInDev = reader.Read<bool[]>("EngineA2_" + engineScript.myID.ToString());
-				engineScript.publisherBuyed = reader.Read<bool[]>("EngineA3_" + engineScript.myID.ToString());
+				engineScript.features[j] = array6[j + num11];
 			}
-			else
+			num11 = i * (array7.Length / num);
+			for (int k = 0; k < engineScript.featuresInDev.Length; k++)
 			{
-				engineScript.features = new bool[array.Length / num];
-				engineScript.featuresInDev = new bool[array2.Length / num];
-				engineScript.publisherBuyed = new bool[array3.Length / num];
-				int num6 = i * (array.Length / num);
-				for (int j = 0; j < engineScript.features.Length; j++)
-				{
-					engineScript.features[j] = array[j + num6];
-				}
-				num6 = i * (array2.Length / num);
-				for (int k = 0; k < engineScript.featuresInDev.Length; k++)
-				{
-					engineScript.featuresInDev[k] = array2[k + num6];
-				}
-				num6 = i * (array3.Length / num);
-				for (int l = 0; l < engineScript.publisherBuyed.Length; l++)
-				{
-					engineScript.publisherBuyed[l] = array3[l + num6];
-				}
+				engineScript.featuresInDev[k] = array7[k + num11];
+			}
+			num11 = i * (array8.Length / num);
+			for (int l = 0; l < engineScript.publisherBuyed.Length; l++)
+			{
+				engineScript.publisherBuyed[l] = array8[l + num11];
 			}
 			engineScript.Init();
 		}
 	}
 
-	// Token: 0x06001E53 RID: 7763 RVA: 0x0013DEE8 File Offset: 0x0013C0E8
+	// Token: 0x06001EA6 RID: 7846 RVA: 0x0013CC24 File Offset: 0x0013AE24
 	private void SaveGames(ES3Writer writer)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -4751,7 +4636,6 @@ public class savegameScript : MonoBehaviour
 			array3[49 + num6] = component2.amountAddons;
 			array3[50 + num6] = component2.amountMMOAddons;
 			array3[51 + num6] = component2.usk;
-			array3[52 + num6] = component2.multiplayerSlot;
 			array3[53 + num6] = component2.verkaufspreis[0];
 			array3[54 + num6] = component2.verkaufspreis[1];
 			array3[55 + num6] = component2.verkaufspreis[2];
@@ -4863,7 +4747,6 @@ public class savegameScript : MonoBehaviour
 			array4[29 + num7] = component2.merchVerkaufspreis[6];
 			array4[30 + num7] = component2.merchVerkaufspreis[7];
 			int num8 = i * (array6.Length / num);
-			array6[num8] = component2.playerGame;
 			array6[1 + num8] = component2.inDevelopment;
 			array6[2 + num8] = component2.typ_standard;
 			array6[3 + num8] = component2.typ_nachfolger;
@@ -5078,7 +4961,7 @@ public class savegameScript : MonoBehaviour
 		writer.Write<bool[]>("games_fanbrief", array9);
 	}
 
-	// Token: 0x06001E54 RID: 7764 RVA: 0x0013F670 File Offset: 0x0013D870
+	// Token: 0x06001EA7 RID: 7847 RVA: 0x0013E394 File Offset: 0x0013C594
 	private void LoadGames(ES3Reader reader, string filename)
 	{
 		int num = reader.Read<int>("anzGames", -1);
@@ -5166,7 +5049,6 @@ public class savegameScript : MonoBehaviour
 				gameScript.amountAddons = array[49 + num7];
 				gameScript.amountMMOAddons = array[50 + num7];
 				gameScript.usk = array[51 + num7];
-				gameScript.multiplayerSlot = array[52 + num7];
 				gameScript.verkaufspreis[0] = array[53 + num7];
 				gameScript.verkaufspreis[1] = array[54 + num7];
 				gameScript.verkaufspreis[2] = array[55 + num7];
@@ -5409,7 +5291,6 @@ public class savegameScript : MonoBehaviour
 				{
 					gameScript.merchVerkaufspreis[7] = array2[30 + num8];
 				}
-				gameScript.playerGame = array5[num9];
 				gameScript.inDevelopment = array5[1 + num9];
 				gameScript.typ_standard = array5[2 + num9];
 				gameScript.typ_nachfolger = array5[3 + num9];
@@ -5625,65 +5506,20 @@ public class savegameScript : MonoBehaviour
 				{
 					gameScript.tw_gewinnanteil = array3[54 + num11];
 				}
-				if (gameScript.mainIP == 0)
+				int num12 = i * (array6.Length / num);
+				for (int j = 0; j < gameScript.gameGameplayFeatures.Length; j++)
 				{
-					if (gameScript.typ_bundle || gameScript.typ_budget || gameScript.typ_bundleAddon || gameScript.typ_goty || gameScript.typ_contractGame || gameScript.typ_addon || gameScript.typ_addonStandalone || gameScript.typ_mmoaddon || gameScript.typ_remaster || gameScript.typ_spinoff || gameScript.typ_nachfolger)
-					{
-						gameScript.mainIP = -1;
-					}
-					else
-					{
-						gameScript.mainIP = gameScript.myID;
-					}
+					gameScript.gameGameplayFeatures[j] = array6[j + num12];
 				}
-				if (!gameScript.playerGame && gameScript.ownerID == -1)
+				num12 = i * (array7.Length / num);
+				for (int k = 0; k < gameScript.gameplayFeatures_DevDone.Length; k++)
 				{
-					gameScript.ownerID = gameScript.developerID;
+					gameScript.gameplayFeatures_DevDone[k] = array7[k + num12];
 				}
-				if (gameScript.Designausrichtung[0] == 0 && gameScript.Designausrichtung[1] == 0 && gameScript.Designausrichtung[2] == 0)
+				num12 = i * (array8.Length / num);
+				for (int l = 0; l < gameScript.fanbrief.Length; l++)
 				{
-					for (int j = 0; j < gameScript.Designschwerpunkt.Length; j++)
-					{
-						gameScript.Designschwerpunkt[j] = 5;
-					}
-					for (int k = 0; k < gameScript.Designausrichtung.Length; k++)
-					{
-						gameScript.Designausrichtung[k] = 5;
-					}
-				}
-				if (this.mS_.savegameVersion == 0)
-				{
-					gameScript.gameGameplayFeatures = reader.Read<bool[]>("GameA2_" + gameScript.myID.ToString());
-					if (gameScript.playerGame)
-					{
-						gameScript.gameplayFeatures_DevDone = reader.Read<bool[]>("GameA3_" + gameScript.myID.ToString());
-					}
-					else
-					{
-						gameScript.gameplayFeatures_DevDone = (bool[])gameScript.gameGameplayFeatures.Clone();
-					}
-					if (gameScript.playerGame)
-					{
-						gameScript.fanbrief = reader.Read<bool[]>("GameA9_" + gameScript.myID.ToString());
-					}
-				}
-				else
-				{
-					int num12 = i * (array6.Length / num);
-					for (int l = 0; l < gameScript.gameGameplayFeatures.Length; l++)
-					{
-						gameScript.gameGameplayFeatures[l] = array6[l + num12];
-					}
-					num12 = i * (array7.Length / num);
-					for (int m = 0; m < gameScript.gameplayFeatures_DevDone.Length; m++)
-					{
-						gameScript.gameplayFeatures_DevDone[m] = array7[m + num12];
-					}
-					num12 = i * (array8.Length / num);
-					for (int n = 0; n < gameScript.fanbrief.Length; n++)
-					{
-						gameScript.fanbrief[n] = array8[n + num12];
-					}
+					gameScript.fanbrief[l] = array8[l + num12];
 				}
 				gameScript.SetGameObjectName();
 				gameScript.InitUI();
@@ -5692,7 +5528,7 @@ public class savegameScript : MonoBehaviour
 		this.games_.FindGames();
 	}
 
-	// Token: 0x06001E55 RID: 7765 RVA: 0x00141160 File Offset: 0x0013F360
+	// Token: 0x06001EA8 RID: 7848 RVA: 0x0013FCB0 File Offset: 0x0013DEB0
 	private void SetRoomScripts(int id)
 	{
 		GameObject gameObject = GameObject.Find("Room_" + id.ToString());
@@ -5715,7 +5551,7 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E56 RID: 7766 RVA: 0x001411E8 File Offset: 0x0013F3E8
+	// Token: 0x06001EA9 RID: 7849 RVA: 0x0013FD38 File Offset: 0x0013DF38
 	private void KeysAbfragen(string filename)
 	{
 		this.key_NpcIPs = false;
@@ -5843,192 +5679,189 @@ public class savegameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002619 RID: 9753
+	// Token: 0x04002630 RID: 9776
 	public bool loadingSavegame;
 
-	// Token: 0x0400261A RID: 9754
+	// Token: 0x04002631 RID: 9777
 	private ES3Writer writer;
 
-	// Token: 0x0400261B RID: 9755
+	// Token: 0x04002632 RID: 9778
 	private ES3Reader reader;
 
-	// Token: 0x0400261C RID: 9756
+	// Token: 0x04002633 RID: 9779
 	private GameObject main_;
 
-	// Token: 0x0400261D RID: 9757
+	// Token: 0x04002634 RID: 9780
 	private settingsScript settings_;
 
-	// Token: 0x0400261E RID: 9758
+	// Token: 0x04002635 RID: 9781
 	private mainScript mS_;
 
-	// Token: 0x0400261F RID: 9759
+	// Token: 0x04002636 RID: 9782
 	private textScript tS_;
 
-	// Token: 0x04002620 RID: 9760
+	// Token: 0x04002637 RID: 9783
 	private sfxScript sfx_;
 
-	// Token: 0x04002621 RID: 9761
+	// Token: 0x04002638 RID: 9784
 	private mapScript mapS_;
 
-	// Token: 0x04002622 RID: 9762
+	// Token: 0x04002639 RID: 9785
 	private buildRoomScript brS_;
 
-	// Token: 0x04002623 RID: 9763
+	// Token: 0x0400263A RID: 9786
 	private games games_;
 
-	// Token: 0x04002624 RID: 9764
+	// Token: 0x0400263B RID: 9787
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002625 RID: 9765
+	// Token: 0x0400263C RID: 9788
 	private genres genres_;
 
-	// Token: 0x04002626 RID: 9766
+	// Token: 0x0400263D RID: 9789
 	private themes themes_;
 
-	// Token: 0x04002627 RID: 9767
+	// Token: 0x0400263E RID: 9790
 	private licences licences_;
 
-	// Token: 0x04002628 RID: 9768
+	// Token: 0x0400263F RID: 9791
 	private engineFeatures eF_;
 
-	// Token: 0x04002629 RID: 9769
+	// Token: 0x04002640 RID: 9792
 	private cameraMovementScript cmS_;
 
-	// Token: 0x0400262A RID: 9770
+	// Token: 0x04002641 RID: 9793
 	private unlockScript unlock_;
 
-	// Token: 0x0400262B RID: 9771
+	// Token: 0x04002642 RID: 9794
 	private gameplayFeatures gF_;
 
-	// Token: 0x0400262C RID: 9772
+	// Token: 0x04002643 RID: 9795
 	private publisher publisher_;
 
-	// Token: 0x0400262D RID: 9773
+	// Token: 0x04002644 RID: 9796
 	private platforms platforms_;
 
-	// Token: 0x0400262E RID: 9774
+	// Token: 0x04002645 RID: 9797
 	private hardware hardware_;
 
-	// Token: 0x0400262F RID: 9775
+	// Token: 0x04002646 RID: 9798
 	private hardwareFeatures hardwareFeatures_;
 
-	// Token: 0x04002630 RID: 9776
+	// Token: 0x04002647 RID: 9799
 	private copyProtect copyProtect_;
 
-	// Token: 0x04002631 RID: 9777
+	// Token: 0x04002648 RID: 9800
 	private anitCheat antiCheat_;
 
-	// Token: 0x04002632 RID: 9778
+	// Token: 0x04002649 RID: 9801
 	private arbeitsmarkt arbeitsmarkt_;
 
-	// Token: 0x04002633 RID: 9779
+	// Token: 0x0400264A RID: 9802
 	private createCharScript cCS_;
 
-	// Token: 0x04002634 RID: 9780
+	// Token: 0x0400264B RID: 9803
 	private forschungSonstiges fS_;
 
-	// Token: 0x04002635 RID: 9781
+	// Token: 0x0400264C RID: 9804
 	private contractWorkMain contractWorkMain_;
 
-	// Token: 0x04002636 RID: 9782
+	// Token: 0x0400264D RID: 9805
 	private publishingOfferMain publishingOfferMain_;
 
-	// Token: 0x04002637 RID: 9783
+	// Token: 0x0400264E RID: 9806
 	private Menu_Packung menuPackung_;
 
-	// Token: 0x04002638 RID: 9784
+	// Token: 0x0400264F RID: 9807
 	private Menu_ArcadePreis menuArcadePreis_;
 
-	// Token: 0x04002639 RID: 9785
+	// Token: 0x04002650 RID: 9808
 	private Menu_BuyInventar menu_BuyInventar_;
 
-	// Token: 0x0400263A RID: 9786
+	// Token: 0x04002651 RID: 9809
 	private mpMain mpMain_;
 
-	// Token: 0x0400263B RID: 9787
+	// Token: 0x04002652 RID: 9810
 	private mpCalls mpCalls_;
 
-	// Token: 0x0400263C RID: 9788
-	public int savegamePlayerID;
-
-	// Token: 0x0400263D RID: 9789
+	// Token: 0x04002653 RID: 9811
 	public int saveGameVersion = 17;
 
-	// Token: 0x0400263E RID: 9790
+	// Token: 0x04002654 RID: 9812
 	private ES3File es3file;
 
-	// Token: 0x0400263F RID: 9791
+	// Token: 0x04002655 RID: 9813
 	private bool key_NpcIPs;
 
-	// Token: 0x04002640 RID: 9792
+	// Token: 0x04002656 RID: 9814
 	private bool key_inventarFilter;
 
-	// Token: 0x04002641 RID: 9793
+	// Token: 0x04002657 RID: 9815
 	private bool key_fanshopverlauf;
 
-	// Token: 0x04002642 RID: 9794
+	// Token: 0x04002658 RID: 9816
 	private bool key_achivements;
 
-	// Token: 0x04002643 RID: 9795
+	// Token: 0x04002659 RID: 9817
 	private bool key_gameTabFilter;
 
-	// Token: 0x04002644 RID: 9796
+	// Token: 0x0400265A RID: 9818
 	private bool key_npcGameNameInUse;
 
-	// Token: 0x04002645 RID: 9797
+	// Token: 0x0400265B RID: 9819
 	private bool key_default_verkaufpreis;
 
-	// Token: 0x04002646 RID: 9798
+	// Token: 0x0400265C RID: 9820
 	private bool key_default_verkaufpreisBundle;
 
-	// Token: 0x04002647 RID: 9799
+	// Token: 0x0400265D RID: 9821
 	private bool key_legends;
 
-	// Token: 0x04002648 RID: 9800
+	// Token: 0x0400265E RID: 9822
 	private bool key_EN;
 
-	// Token: 0x04002649 RID: 9801
+	// Token: 0x0400265F RID: 9823
 	private bool key_GE;
 
-	// Token: 0x0400264A RID: 9802
+	// Token: 0x04002660 RID: 9824
 	private bool key_TU;
 
-	// Token: 0x0400264B RID: 9803
+	// Token: 0x04002661 RID: 9825
 	private bool key_CH;
 
-	// Token: 0x0400264C RID: 9804
+	// Token: 0x04002662 RID: 9826
 	private bool key_FR;
 
-	// Token: 0x0400264D RID: 9805
+	// Token: 0x04002663 RID: 9827
 	private bool key_PB;
 
-	// Token: 0x0400264E RID: 9806
+	// Token: 0x04002664 RID: 9828
 	private bool key_HU;
 
-	// Token: 0x0400264F RID: 9807
+	// Token: 0x04002665 RID: 9829
 	private bool key_CT;
 
-	// Token: 0x04002650 RID: 9808
+	// Token: 0x04002666 RID: 9830
 	private bool key_ES;
 
-	// Token: 0x04002651 RID: 9809
+	// Token: 0x04002667 RID: 9831
 	private bool key_PL;
 
-	// Token: 0x04002652 RID: 9810
+	// Token: 0x04002668 RID: 9832
 	private bool key_CZ;
 
-	// Token: 0x04002653 RID: 9811
+	// Token: 0x04002669 RID: 9833
 	private bool key_KO;
 
-	// Token: 0x04002654 RID: 9812
+	// Token: 0x0400266A RID: 9834
 	private bool key_AR;
 
-	// Token: 0x04002655 RID: 9813
+	// Token: 0x0400266B RID: 9835
 	private bool key_RU;
 
-	// Token: 0x04002656 RID: 9814
+	// Token: 0x0400266C RID: 9836
 	private bool key_IT;
 
-	// Token: 0x04002657 RID: 9815
+	// Token: 0x0400266D RID: 9837
 	private bool key_JA;
 }

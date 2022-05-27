@@ -4,14 +4,14 @@ using UnityEngine;
 // Token: 0x02000005 RID: 5
 public class BlurControl : MonoBehaviour
 {
-	// Token: 0x06000022 RID: 34 RVA: 0x000020C4 File Offset: 0x000002C4
+	// Token: 0x06000022 RID: 34 RVA: 0x00002F29 File Offset: 0x00001129
 	private void Start()
 	{
 		this.value = 0f;
 		base.transform.GetComponent<Renderer>().material.SetFloat("_blurSizeXY", this.value);
 	}
 
-	// Token: 0x06000023 RID: 35 RVA: 0x00019C30 File Offset: 0x00017E30
+	// Token: 0x06000023 RID: 35 RVA: 0x00002F58 File Offset: 0x00001158
 	private void Update()
 	{
 		if (Input.GetButton("Up"))
@@ -35,7 +35,7 @@ public class BlurControl : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000024 RID: 36 RVA: 0x000020F1 File Offset: 0x000002F1
+	// Token: 0x06000024 RID: 36 RVA: 0x00003018 File Offset: 0x00001218
 	private void OnGUI()
 	{
 		GUI.TextArea(new Rect(10f, 10f, 200f, 50f), "Press the 'Up' and 'Down' arrows \nto interact with the blur plane\nCurrent value: " + this.value);

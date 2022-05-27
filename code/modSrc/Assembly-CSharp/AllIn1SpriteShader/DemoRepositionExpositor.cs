@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x02000400 RID: 1024
+	// Token: 0x02000403 RID: 1027
 	public class DemoRepositionExpositor : MonoBehaviour
 	{
-		// Token: 0x060023F7 RID: 9207 RVA: 0x00171C9C File Offset: 0x0016FE9C
+		// Token: 0x0600244A RID: 9290 RVA: 0x00174D4C File Offset: 0x00172F4C
 		[ContextMenu("RepositionExpositor")]
 		private void RepositionExpositor()
 		{
@@ -21,7 +21,7 @@ namespace AllIn1SpriteShader
 			}
 		}
 
-		// Token: 0x04002E4F RID: 11855
+		// Token: 0x04002E65 RID: 11877
 		[SerializeField]
 		private float paddingX = 10f;
 	}

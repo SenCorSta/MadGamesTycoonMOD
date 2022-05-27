@@ -6,13 +6,13 @@ using UnityEngine;
 // Token: 0x0200005E RID: 94
 public class licences : MonoBehaviour
 {
-	// Token: 0x06000330 RID: 816 RVA: 0x00003C29 File Offset: 0x00001E29
+	// Token: 0x06000335 RID: 821 RVA: 0x0003100D File Offset: 0x0002F20D
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000331 RID: 817 RVA: 0x00045CAC File Offset: 0x00043EAC
+	// Token: 0x06000336 RID: 822 RVA: 0x00031018 File Offset: 0x0002F218
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -29,7 +29,7 @@ public class licences : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000332 RID: 818 RVA: 0x00045D04 File Offset: 0x00043F04
+	// Token: 0x06000337 RID: 823 RVA: 0x00031070 File Offset: 0x0002F270
 	public void LoadLicences(string filename)
 	{
 		StreamReader streamReader = new StreamReader(Application.dataPath + "/Extern/Text/" + filename, Encoding.Unicode);
@@ -39,7 +39,6 @@ public class licences : MonoBehaviour
 		{
 			"\n"[0]
 		});
-		Debug.Log("Licence Amount: " + this.data.Length.ToString());
 		int num = this.data.Length;
 		this.licence_EN = new string[num];
 		this.licence_TYP = new int[num];
@@ -105,7 +104,7 @@ public class licences : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000333 RID: 819 RVA: 0x00045F50 File Offset: 0x00044150
+	// Token: 0x06000338 RID: 824 RVA: 0x0003129C File Offset: 0x0002F49C
 	private bool ParseData(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -125,7 +124,7 @@ public class licences : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000334 RID: 820 RVA: 0x00046020 File Offset: 0x00044220
+	// Token: 0x06000339 RID: 825 RVA: 0x0003136C File Offset: 0x0002F56C
 	public void Buy(int i)
 	{
 		this.mS_.Pay((long)this.GetPrice(i), 7);
@@ -142,20 +141,20 @@ public class licences : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000335 RID: 821 RVA: 0x00003C31 File Offset: 0x00001E31
+	// Token: 0x0600033A RID: 826 RVA: 0x000313E8 File Offset: 0x0002F5E8
 	public void Sell(int i)
 	{
 		this.mS_.Earn((long)this.GetSellPrice(i), 2);
 		this.licence_GEKAUFT[i] = 0;
 	}
 
-	// Token: 0x06000336 RID: 822 RVA: 0x00003C50 File Offset: 0x00001E50
+	// Token: 0x0600033B RID: 827 RVA: 0x00031407 File Offset: 0x0002F607
 	public string GetName(int i)
 	{
 		return this.licence_EN[i];
 	}
 
-	// Token: 0x06000337 RID: 823 RVA: 0x0004609C File Offset: 0x0004429C
+	// Token: 0x0600033C RID: 828 RVA: 0x00031414 File Offset: 0x0002F614
 	public int GetPrice(int i)
 	{
 		int num = 0;
@@ -178,7 +177,7 @@ public class licences : MonoBehaviour
 		return num / 500 * 500;
 	}
 
-	// Token: 0x06000338 RID: 824 RVA: 0x0004619C File Offset: 0x0004439C
+	// Token: 0x0600033D RID: 829 RVA: 0x00031514 File Offset: 0x0002F714
 	public int GetSellPrice(int i)
 	{
 		int num = 0;
@@ -201,7 +200,7 @@ public class licences : MonoBehaviour
 		return num / 500 * 500;
 	}
 
-	// Token: 0x06000339 RID: 825 RVA: 0x0004629C File Offset: 0x0004449C
+	// Token: 0x0600033E RID: 830 RVA: 0x00031614 File Offset: 0x0002F814
 	public string GetTypString(int i)
 	{
 		string result = "";
@@ -220,7 +219,7 @@ public class licences : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x0600033A RID: 826 RVA: 0x00046304 File Offset: 0x00044504
+	// Token: 0x0600033F RID: 831 RVA: 0x0003167C File Offset: 0x0002F87C
 	public string GetTooltip(int i)
 	{
 		string text = "<b>" + this.GetName(i) + "</b>";
@@ -268,7 +267,7 @@ public class licences : MonoBehaviour
 		return text + "\n\n<b>" + text2 + "</b>";
 	}
 
-	// Token: 0x0600033B RID: 827 RVA: 0x0004649C File Offset: 0x0004469C
+	// Token: 0x06000340 RID: 832 RVA: 0x00031814 File Offset: 0x0002FA14
 	public void LizenzenUpdaten()
 	{
 		if (this.mS_.multiplayer && this.mS_.mpCalls_.isClient)
@@ -379,33 +378,33 @@ public class licences : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000661 RID: 1633
+	// Token: 0x0400065E RID: 1630
 	private mainScript mS_;
 
-	// Token: 0x04000662 RID: 1634
+	// Token: 0x0400065F RID: 1631
 	private textScript tS_;
 
-	// Token: 0x04000663 RID: 1635
+	// Token: 0x04000660 RID: 1632
 	private settingsScript settings_;
 
-	// Token: 0x04000664 RID: 1636
+	// Token: 0x04000661 RID: 1633
 	public string[] licence_EN;
 
-	// Token: 0x04000665 RID: 1637
+	// Token: 0x04000662 RID: 1634
 	public int[] licence_TYP;
 
-	// Token: 0x04000666 RID: 1638
+	// Token: 0x04000663 RID: 1635
 	public float[] licence_QUALITY;
 
-	// Token: 0x04000667 RID: 1639
+	// Token: 0x04000664 RID: 1636
 	public int[] licence_ANGEBOT;
 
-	// Token: 0x04000668 RID: 1640
+	// Token: 0x04000665 RID: 1637
 	public int[] licence_GEKAUFT;
 
-	// Token: 0x04000669 RID: 1641
+	// Token: 0x04000666 RID: 1638
 	public Sprite[] licenceSprites;
 
-	// Token: 0x0400066A RID: 1642
+	// Token: 0x04000667 RID: 1639
 	private string[] data;
 }

@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x020003FD RID: 1021
+	// Token: 0x02000400 RID: 1024
 	public class DemoCircleExpositor : MonoBehaviour
 	{
-		// Token: 0x060023EC RID: 9196 RVA: 0x00171A08 File Offset: 0x0016FC08
+		// Token: 0x0600243F RID: 9279 RVA: 0x001749F4 File Offset: 0x00172BF4
 		private void Start()
 		{
 			this.dummyRotation = base.transform.rotation;
@@ -29,13 +29,13 @@ namespace AllIn1SpriteShader
 			base.transform.position = new Vector3(base.transform.position.x, base.transform.position.y, this.zOffset);
 		}
 
-		// Token: 0x060023ED RID: 9197 RVA: 0x0001870C File Offset: 0x0001690C
+		// Token: 0x06002440 RID: 9280 RVA: 0x00174B5C File Offset: 0x00172D5C
 		private void Update()
 		{
 			base.transform.rotation = Quaternion.Slerp(base.transform.rotation, this.dummyRotation, this.rotateSpeed * Time.deltaTime);
 		}
 
-		// Token: 0x060023EE RID: 9198 RVA: 0x00171B70 File Offset: 0x0016FD70
+		// Token: 0x06002441 RID: 9281 RVA: 0x00174B8C File Offset: 0x00172D8C
 		public void ChangeTarget(int offset)
 		{
 			this.currentTarget += offset;
@@ -50,33 +50,33 @@ namespace AllIn1SpriteShader
 			this.dummyRotation *= Quaternion.Euler(Vector3.up * (float)offset * this.offsetRotation);
 		}
 
-		// Token: 0x04002E44 RID: 11844
+		// Token: 0x04002E5A RID: 11866
 		[SerializeField]
 		private float radius = 40f;
 
-		// Token: 0x04002E45 RID: 11845
+		// Token: 0x04002E5B RID: 11867
 		[SerializeField]
 		private float rotateSpeed = 10f;
 
-		// Token: 0x04002E46 RID: 11846
+		// Token: 0x04002E5C RID: 11868
 		private float zOffset;
 
-		// Token: 0x04002E47 RID: 11847
+		// Token: 0x04002E5D RID: 11869
 		private Transform[] items;
 
-		// Token: 0x04002E48 RID: 11848
+		// Token: 0x04002E5E RID: 11870
 		private int count;
 
-		// Token: 0x04002E49 RID: 11849
+		// Token: 0x04002E5F RID: 11871
 		private int currentTarget;
 
-		// Token: 0x04002E4A RID: 11850
+		// Token: 0x04002E60 RID: 11872
 		private float offsetRotation;
 
-		// Token: 0x04002E4B RID: 11851
+		// Token: 0x04002E61 RID: 11873
 		private float iniY;
 
-		// Token: 0x04002E4C RID: 11852
+		// Token: 0x04002E62 RID: 11874
 		private Quaternion dummyRotation;
 	}
 }

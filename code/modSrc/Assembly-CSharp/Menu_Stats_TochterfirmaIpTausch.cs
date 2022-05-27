@@ -7,13 +7,13 @@ using UnityEngine.UI;
 // Token: 0x02000258 RID: 600
 public class Menu_Stats_TochterfirmaIpTausch : MonoBehaviour
 {
-	// Token: 0x0600175F RID: 5983 RVA: 0x000EAB1F File Offset: 0x000E8D1F
+	// Token: 0x0600175F RID: 5983 RVA: 0x000EAAF3 File Offset: 0x000E8CF3
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001760 RID: 5984 RVA: 0x000EAB28 File Offset: 0x000E8D28
+	// Token: 0x06001760 RID: 5984 RVA: 0x000EAAFC File Offset: 0x000E8CFC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -50,7 +50,7 @@ public class Menu_Stats_TochterfirmaIpTausch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001761 RID: 5985 RVA: 0x000EAC2C File Offset: 0x000E8E2C
+	// Token: 0x06001761 RID: 5985 RVA: 0x000EAC00 File Offset: 0x000E8E00
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -60,7 +60,7 @@ public class Menu_Stats_TochterfirmaIpTausch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001762 RID: 5986 RVA: 0x000EAC80 File Offset: 0x000E8E80
+	// Token: 0x06001762 RID: 5986 RVA: 0x000EAC54 File Offset: 0x000E8E54
 	public void InitDropdowns(publisherScript selected_)
 	{
 		this.FindScripts();
@@ -109,7 +109,7 @@ public class Menu_Stats_TochterfirmaIpTausch : MonoBehaviour
 		this.uiObjects[6].GetComponent<Dropdown>().value = 0;
 	}
 
-	// Token: 0x06001763 RID: 5987 RVA: 0x000EAE6E File Offset: 0x000E906E
+	// Token: 0x06001763 RID: 5987 RVA: 0x000EAE42 File Offset: 0x000E9042
 	public void Init(publisherScript script_)
 	{
 		this.init = false;
@@ -121,7 +121,7 @@ public class Menu_Stats_TochterfirmaIpTausch : MonoBehaviour
 		base.StartCoroutine(this.iInit());
 	}
 
-	// Token: 0x06001764 RID: 5988 RVA: 0x000EAEA4 File Offset: 0x000E90A4
+	// Token: 0x06001764 RID: 5988 RVA: 0x000EAE78 File Offset: 0x000E9078
 	public void SetDataLeft()
 	{
 		Debug.Log("KJLKJLIKHJLIK" + UnityEngine.Random.Range(0, 100000));
@@ -152,7 +152,7 @@ public class Menu_Stats_TochterfirmaIpTausch : MonoBehaviour
 		this.IsSamePublisher();
 	}
 
-	// Token: 0x06001765 RID: 5989 RVA: 0x000EB004 File Offset: 0x000E9204
+	// Token: 0x06001765 RID: 5989 RVA: 0x000EAFD8 File Offset: 0x000E91D8
 	public void SetDataRight()
 	{
 		for (int i = 0; i < this.uiObjects[4].transform.childCount; i++)
@@ -182,19 +182,19 @@ public class Menu_Stats_TochterfirmaIpTausch : MonoBehaviour
 		this.IsSamePublisher();
 	}
 
-	// Token: 0x06001766 RID: 5990 RVA: 0x000EB143 File Offset: 0x000E9343
+	// Token: 0x06001766 RID: 5990 RVA: 0x000EB117 File Offset: 0x000E9317
 	public bool CheckGameDataLeft(gameScript script_)
 	{
 		return script_ && !script_.pubAngebot && !script_.auftragsspiel && script_.IsMyIP(this.GetLeftPublisher()) && script_.mainIP == script_.myID;
 	}
 
-	// Token: 0x06001767 RID: 5991 RVA: 0x000EB17C File Offset: 0x000E937C
+	// Token: 0x06001767 RID: 5991 RVA: 0x000EB150 File Offset: 0x000E9350
 	public bool CheckGameDataRight(gameScript script_)
 	{
 		return script_ && !script_.pubAngebot && !script_.auftragsspiel && script_.IsMyIP(this.GetRightPublisher()) && script_.mainIP == script_.myID;
 	}
 
-	// Token: 0x06001768 RID: 5992 RVA: 0x000EB1B8 File Offset: 0x000E93B8
+	// Token: 0x06001768 RID: 5992 RVA: 0x000EB18C File Offset: 0x000E938C
 	private void IsSamePublisher()
 	{
 		if (this.GetLeftPublisher() == this.GetRightPublisher())
@@ -219,26 +219,26 @@ public class Menu_Stats_TochterfirmaIpTausch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001769 RID: 5993 RVA: 0x000EB2DC File Offset: 0x000E94DC
+	// Token: 0x06001769 RID: 5993 RVA: 0x000EB2B0 File Offset: 0x000E94B0
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600176A RID: 5994 RVA: 0x000EB2F7 File Offset: 0x000E94F7
+	// Token: 0x0600176A RID: 5994 RVA: 0x000EB2CB File Offset: 0x000E94CB
 	public publisherScript GetLeftPublisher()
 	{
 		return this.publisherList[this.uiObjects[1].GetComponent<Dropdown>().value];
 	}
 
-	// Token: 0x0600176B RID: 5995 RVA: 0x000EB316 File Offset: 0x000E9516
+	// Token: 0x0600176B RID: 5995 RVA: 0x000EB2EA File Offset: 0x000E94EA
 	public publisherScript GetRightPublisher()
 	{
 		return this.publisherList[this.uiObjects[6].GetComponent<Dropdown>().value];
 	}
 
-	// Token: 0x0600176C RID: 5996 RVA: 0x000EB335 File Offset: 0x000E9535
+	// Token: 0x0600176C RID: 5996 RVA: 0x000EB309 File Offset: 0x000E9509
 	public void DROPDOWN_LeftPublisher()
 	{
 		if (this.init)
@@ -247,7 +247,7 @@ public class Menu_Stats_TochterfirmaIpTausch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600176D RID: 5997 RVA: 0x000EB345 File Offset: 0x000E9545
+	// Token: 0x0600176D RID: 5997 RVA: 0x000EB319 File Offset: 0x000E9519
 	public void DROPDOWN_RightPublisher()
 	{
 		if (this.init)
@@ -256,7 +256,7 @@ public class Menu_Stats_TochterfirmaIpTausch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600176E RID: 5998 RVA: 0x000EB355 File Offset: 0x000E9555
+	// Token: 0x0600176E RID: 5998 RVA: 0x000EB329 File Offset: 0x000E9529
 	private IEnumerator iInit()
 	{
 		yield return new WaitForEndOfFrame();

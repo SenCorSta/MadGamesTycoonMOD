@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000266 RID: 614
+// Token: 0x0200026A RID: 618
 public class Menu_W_FirmaVerkaufen : MonoBehaviour
 {
-	// Token: 0x060017C0 RID: 6080 RVA: 0x00010870 File Offset: 0x0000EA70
+	// Token: 0x06001803 RID: 6147 RVA: 0x000EFC8B File Offset: 0x000EDE8B
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060017C1 RID: 6081 RVA: 0x000F531C File Offset: 0x000F351C
+	// Token: 0x06001804 RID: 6148 RVA: 0x000EFC94 File Offset: 0x000EDE94
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_W_FirmaVerkaufen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017C2 RID: 6082 RVA: 0x000F5404 File Offset: 0x000F3604
+	// Token: 0x06001805 RID: 6149 RVA: 0x000EFD7C File Offset: 0x000EDF7C
 	public void Init(publisherScript script_)
 	{
 		this.FindScripts();
@@ -61,14 +61,14 @@ public class Menu_W_FirmaVerkaufen : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x060017C3 RID: 6083 RVA: 0x00010878 File Offset: 0x0000EA78
+	// Token: 0x06001806 RID: 6150 RVA: 0x000EFE3A File Offset: 0x000EE03A
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060017C4 RID: 6084 RVA: 0x000F54C4 File Offset: 0x000F36C4
+	// Token: 0x06001807 RID: 6151 RVA: 0x000EFE58 File Offset: 0x000EE058
 	public void BUTTON_Yes()
 	{
 		if (this.pS_)
@@ -122,30 +122,30 @@ public class Menu_W_FirmaVerkaufen : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x04001BA3 RID: 7075
+	// Token: 0x04001BBD RID: 7101
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001BA4 RID: 7076
+	// Token: 0x04001BBE RID: 7102
 	private publisherScript pS_;
 
-	// Token: 0x04001BA5 RID: 7077
+	// Token: 0x04001BBF RID: 7103
 	private GameObject main_;
 
-	// Token: 0x04001BA6 RID: 7078
+	// Token: 0x04001BC0 RID: 7104
 	private mainScript mS_;
 
-	// Token: 0x04001BA7 RID: 7079
+	// Token: 0x04001BC1 RID: 7105
 	private textScript tS_;
 
-	// Token: 0x04001BA8 RID: 7080
+	// Token: 0x04001BC2 RID: 7106
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001BA9 RID: 7081
+	// Token: 0x04001BC3 RID: 7107
 	private sfxScript sfx_;
 
-	// Token: 0x04001BAA RID: 7082
+	// Token: 0x04001BC4 RID: 7108
 	private genres genres_;
 
-	// Token: 0x04001BAB RID: 7083
+	// Token: 0x04001BC5 RID: 7109
 	private games games_;
 }

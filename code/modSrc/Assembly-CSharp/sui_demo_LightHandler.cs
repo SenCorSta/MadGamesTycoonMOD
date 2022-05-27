@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x02000039 RID: 57
 public class sui_demo_LightHandler : MonoBehaviour
 {
-	// Token: 0x060000CF RID: 207 RVA: 0x000028C5 File Offset: 0x00000AC5
+	// Token: 0x060000CF RID: 207 RVA: 0x000097BD File Offset: 0x000079BD
 	private void Start()
 	{
 		this.lightObject = base.gameObject.GetComponent<Light>();
 	}
 
-	// Token: 0x060000D0 RID: 208 RVA: 0x0001FCD0 File Offset: 0x0001DED0
+	// Token: 0x060000D0 RID: 208 RVA: 0x000097D0 File Offset: 0x000079D0
 	private void LateUpdate()
 	{
 		if (this.lightObject != null)

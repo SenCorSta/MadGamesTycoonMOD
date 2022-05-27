@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001B4 RID: 436
+// Token: 0x020001B5 RID: 437
 public class Menu_Messagebox : MonoBehaviour
 {
-	// Token: 0x0600106B RID: 4203 RVA: 0x0000B9C8 File Offset: 0x00009BC8
+	// Token: 0x06001085 RID: 4229 RVA: 0x000AF2D3 File Offset: 0x000AD4D3
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600106C RID: 4204 RVA: 0x000BB2C0 File Offset: 0x000B94C0
+	// Token: 0x06001086 RID: 4230 RVA: 0x000AF2DC File Offset: 0x000AD4DC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_Messagebox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600106D RID: 4205 RVA: 0x0000B9D0 File Offset: 0x00009BD0
+	// Token: 0x06001087 RID: 4231 RVA: 0x000AF386 File Offset: 0x000AD586
 	public void Init(string c, bool close)
 	{
 		this.FindScripts();
@@ -44,14 +44,14 @@ public class Menu_Messagebox : MonoBehaviour
 		this.closeMenu = close;
 	}
 
-	// Token: 0x0600106E RID: 4206 RVA: 0x0000B9F2 File Offset: 0x00009BF2
+	// Token: 0x06001088 RID: 4232 RVA: 0x000AF3A8 File Offset: 0x000AD5A8
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600106F RID: 4207 RVA: 0x0000BA0D File Offset: 0x00009C0D
+	// Token: 0x06001089 RID: 4233 RVA: 0x000AF3C3 File Offset: 0x000AD5C3
 	public void BUTTON_Yes()
 	{
 		if (this.closeMenu)
@@ -61,24 +61,24 @@ public class Menu_Messagebox : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x040014EA RID: 5354
+	// Token: 0x040014F5 RID: 5365
 	public GameObject[] uiObjects;
 
-	// Token: 0x040014EB RID: 5355
+	// Token: 0x040014F6 RID: 5366
 	private GameObject main_;
 
-	// Token: 0x040014EC RID: 5356
+	// Token: 0x040014F7 RID: 5367
 	private mainScript mS_;
 
-	// Token: 0x040014ED RID: 5357
+	// Token: 0x040014F8 RID: 5368
 	private textScript tS_;
 
-	// Token: 0x040014EE RID: 5358
+	// Token: 0x040014F9 RID: 5369
 	private GUI_Main guiMain_;
 
-	// Token: 0x040014EF RID: 5359
+	// Token: 0x040014FA RID: 5370
 	private sfxScript sfx_;
 
-	// Token: 0x040014F0 RID: 5360
+	// Token: 0x040014FB RID: 5371
 	private bool closeMenu;
 }

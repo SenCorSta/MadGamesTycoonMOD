@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000E4 RID: 228
 public class Item_BestMMO : MonoBehaviour
 {
-	// Token: 0x060007A2 RID: 1954 RVA: 0x0000618B File Offset: 0x0000438B
+	// Token: 0x060007AB RID: 1963 RVA: 0x00056300 File Offset: 0x00054500
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007A3 RID: 1955 RVA: 0x0006852C File Offset: 0x0006672C
+	// Token: 0x060007AC RID: 1964 RVA: 0x00056308 File Offset: 0x00054508
 	public void SetData()
 	{
 		if (!this.game_)
@@ -19,11 +19,11 @@ public class Item_BestMMO : MonoBehaviour
 			return;
 		}
 		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag();
-		if (this.game_.playerGame)
+		if (this.game_.ownerID == this.mS_.myID || this.game_.publisherID == this.mS_.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
-		if (this.mS_.multiplayer && !this.game_.playerGame && this.game_.multiplayerSlot != -1)
+		if (this.mS_.multiplayer && this.game_.GameFromMitspieler())
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[8];
 		}
@@ -40,13 +40,13 @@ public class Item_BestMMO : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060007A4 RID: 1956 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060007AD RID: 1965 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007A5 RID: 1957 RVA: 0x000686A0 File Offset: 0x000668A0
+	// Token: 0x060007AE RID: 1966 RVA: 0x00056494 File Offset: 0x00054694
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

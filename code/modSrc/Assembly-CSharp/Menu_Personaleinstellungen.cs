@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001E9 RID: 489
+// Token: 0x020001EA RID: 490
 public class Menu_Personaleinstellungen : MonoBehaviour
 {
-	// Token: 0x06001278 RID: 4728 RVA: 0x0000CC4C File Offset: 0x0000AE4C
+	// Token: 0x06001293 RID: 4755 RVA: 0x000C5C87 File Offset: 0x000C3E87
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001279 RID: 4729 RVA: 0x000D07D0 File Offset: 0x000CE9D0
+	// Token: 0x06001294 RID: 4756 RVA: 0x000C5C90 File Offset: 0x000C3E90
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -37,14 +37,14 @@ public class Menu_Personaleinstellungen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600127A RID: 4730 RVA: 0x0000CC54 File Offset: 0x0000AE54
+	// Token: 0x06001295 RID: 4757 RVA: 0x000C5D3A File Offset: 0x000C3F3A
 	private void OnEnable()
 	{
 		this.InitDropdowns();
 		this.Init();
 	}
 
-	// Token: 0x0600127B RID: 4731 RVA: 0x000D087C File Offset: 0x000CEA7C
+	// Token: 0x06001296 RID: 4758 RVA: 0x000C5D48 File Offset: 0x000C3F48
 	public void Init()
 	{
 		this.FindScripts();
@@ -59,7 +59,7 @@ public class Menu_Personaleinstellungen : MonoBehaviour
 		this.SLIDER_Crunch();
 	}
 
-	// Token: 0x0600127C RID: 4732 RVA: 0x000D0968 File Offset: 0x000CEB68
+	// Token: 0x06001297 RID: 4759 RVA: 0x000C5E34 File Offset: 0x000C4034
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -77,7 +77,7 @@ public class Menu_Personaleinstellungen : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().AddOptions(list2);
 	}
 
-	// Token: 0x0600127D RID: 4733 RVA: 0x0000CC62 File Offset: 0x0000AE62
+	// Token: 0x06001298 RID: 4760 RVA: 0x000C5F21 File Offset: 0x000C4121
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -85,7 +85,7 @@ public class Menu_Personaleinstellungen : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600127E RID: 4734 RVA: 0x000D0A58 File Offset: 0x000CEC58
+	// Token: 0x06001299 RID: 4761 RVA: 0x000C5F48 File Offset: 0x000C4148
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -100,13 +100,13 @@ public class Menu_Personaleinstellungen : MonoBehaviour
 		this.mS_.personal_ki = this.uiObjects[8].GetComponent<Toggle>().isOn;
 	}
 
-	// Token: 0x0600127F RID: 4735 RVA: 0x000D0B60 File Offset: 0x000CED60
+	// Token: 0x0600129A RID: 4762 RVA: 0x000C6050 File Offset: 0x000C4250
 	public void SLIDER_Motivation()
 	{
 		this.uiObjects[2].GetComponent<Text>().text = this.uiObjects[4].GetComponent<Slider>().value.ToString() + "%";
 	}
 
-	// Token: 0x06001280 RID: 4736 RVA: 0x000D0BA4 File Offset: 0x000CEDA4
+	// Token: 0x0600129B RID: 4763 RVA: 0x000C6094 File Offset: 0x000C4294
 	public void SLIDER_Crunch()
 	{
 		this.uiObjects[3].GetComponent<Text>().text = this.uiObjects[5].GetComponent<Slider>().value.ToString() + "%";
@@ -116,24 +116,24 @@ public class Menu_Personaleinstellungen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040016EB RID: 5867
+	// Token: 0x040016F4 RID: 5876
 	public GameObject[] uiObjects;
 
-	// Token: 0x040016EC RID: 5868
+	// Token: 0x040016F5 RID: 5877
 	private roomScript rS_;
 
-	// Token: 0x040016ED RID: 5869
+	// Token: 0x040016F6 RID: 5878
 	private GameObject main_;
 
-	// Token: 0x040016EE RID: 5870
+	// Token: 0x040016F7 RID: 5879
 	private mainScript mS_;
 
-	// Token: 0x040016EF RID: 5871
+	// Token: 0x040016F8 RID: 5880
 	private textScript tS_;
 
-	// Token: 0x040016F0 RID: 5872
+	// Token: 0x040016F9 RID: 5881
 	private GUI_Main guiMain_;
 
-	// Token: 0x040016F1 RID: 5873
+	// Token: 0x040016FA RID: 5882
 	private sfxScript sfx_;
 }

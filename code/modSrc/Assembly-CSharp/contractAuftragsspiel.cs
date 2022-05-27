@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x0200004B RID: 75
 public class contractAuftragsspiel : MonoBehaviour
 {
-	// Token: 0x0600018F RID: 399 RVA: 0x00002E67 File Offset: 0x00001067
+	// Token: 0x0600018F RID: 399 RVA: 0x00018AFD File Offset: 0x00016CFD
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000190 RID: 400 RVA: 0x0002EA38 File Offset: 0x0002CC38
+	// Token: 0x06000190 RID: 400 RVA: 0x00018B08 File Offset: 0x00016D08
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -27,49 +27,49 @@ public class contractAuftragsspiel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000191 RID: 401 RVA: 0x00002E6F File Offset: 0x0000106F
+	// Token: 0x06000191 RID: 401 RVA: 0x00018B6E File Offset: 0x00016D6E
 	public void Init()
 	{
 		base.name = "CONTRACTGAME_" + this.myID.ToString();
 	}
 
-	// Token: 0x06000192 RID: 402 RVA: 0x00002E8C File Offset: 0x0000108C
+	// Token: 0x06000192 RID: 402 RVA: 0x00018B8B File Offset: 0x00016D8B
 	public string GetName()
 	{
 		return this.gameName;
 	}
 
-	// Token: 0x06000193 RID: 403 RVA: 0x00002E94 File Offset: 0x00001094
+	// Token: 0x06000193 RID: 403 RVA: 0x00018B93 File Offset: 0x00016D93
 	public int GetGehalt()
 	{
 		return this.gehalt;
 	}
 
-	// Token: 0x06000194 RID: 404 RVA: 0x00002E9C File Offset: 0x0000109C
+	// Token: 0x06000194 RID: 404 RVA: 0x00018B9B File Offset: 0x00016D9B
 	public int GetBonus()
 	{
 		return this.bonus;
 	}
 
-	// Token: 0x06000195 RID: 405 RVA: 0x00002EA4 File Offset: 0x000010A4
+	// Token: 0x06000195 RID: 405 RVA: 0x00018BA3 File Offset: 0x00016DA3
 	public int GetWochen()
 	{
 		return this.zeitInWochen;
 	}
 
-	// Token: 0x06000196 RID: 406 RVA: 0x00002EAC File Offset: 0x000010AC
+	// Token: 0x06000196 RID: 406 RVA: 0x00018BAB File Offset: 0x00016DAB
 	public float GetAuftragsansehen()
 	{
 		return (float)this.mindestbewertung * 0.01f;
 	}
 
-	// Token: 0x06000197 RID: 407 RVA: 0x00002EBB File Offset: 0x000010BB
+	// Token: 0x06000197 RID: 407 RVA: 0x00018BBA File Offset: 0x00016DBA
 	public string GetTooltip()
 	{
 		return "<b>" + this.GetName() + "</b>";
 	}
 
-	// Token: 0x06000198 RID: 408 RVA: 0x00002ED2 File Offset: 0x000010D2
+	// Token: 0x06000198 RID: 408 RVA: 0x00018BD1 File Offset: 0x00016DD1
 	public bool IsAngenommen()
 	{
 		return this.angenommen;

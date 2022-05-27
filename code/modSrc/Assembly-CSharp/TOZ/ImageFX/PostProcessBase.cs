@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace TOZ.ImageFX
 {
-	// Token: 0x020003DF RID: 991
+	// Token: 0x020003E2 RID: 994
 	[RequireComponent(typeof(Camera))]
 	public abstract class PostProcessBase : MonoBehaviour
 	{
-		// Token: 0x06002362 RID: 9058 RVA: 0x0016E868 File Offset: 0x0016CA68
+		// Token: 0x060023B5 RID: 9141 RVA: 0x001712CC File Offset: 0x0016F4CC
 		private void OnEnable()
 		{
 			if (!SystemInfo.supportsImageEffects || this.shd == null || !this.shd.isSupported)
@@ -22,7 +22,7 @@ namespace TOZ.ImageFX
 			}
 		}
 
-		// Token: 0x06002363 RID: 9059 RVA: 0x0001817A File Offset: 0x0001637A
+		// Token: 0x060023B6 RID: 9142 RVA: 0x0017132F File Offset: 0x0016F52F
 		private void OnDisable()
 		{
 			if (this.mat != null)
@@ -31,10 +31,10 @@ namespace TOZ.ImageFX
 			}
 		}
 
-		// Token: 0x04002D6E RID: 11630
+		// Token: 0x04002D84 RID: 11652
 		protected Shader shd;
 
-		// Token: 0x04002D6F RID: 11631
+		// Token: 0x04002D85 RID: 11653
 		protected Material mat;
 	}
 }

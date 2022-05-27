@@ -2,10 +2,10 @@
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x02000372 RID: 882
+// Token: 0x02000375 RID: 885
 public class ReallyBasicLine : MonoBehaviour
 {
-	// Token: 0x06001FF6 RID: 8182 RVA: 0x0014FA7C File Offset: 0x0014DC7C
+	// Token: 0x06002049 RID: 8265 RVA: 0x0014F468 File Offset: 0x0014D668
 	private void Start()
 	{
 		VectorLine.SetLine(Color.white, new Vector2[]

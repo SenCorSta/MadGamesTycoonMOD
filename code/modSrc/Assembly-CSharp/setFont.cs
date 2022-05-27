@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000277 RID: 631
+// Token: 0x0200027B RID: 635
 public class setFont : MonoBehaviour
 {
-	// Token: 0x060018B3 RID: 6323 RVA: 0x00010ED7 File Offset: 0x0000F0D7
+	// Token: 0x060018F8 RID: 6392 RVA: 0x000F8B83 File Offset: 0x000F6D83
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -18,7 +18,7 @@ public class setFont : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018B4 RID: 6324 RVA: 0x00010F14 File Offset: 0x0000F114
+	// Token: 0x060018F9 RID: 6393 RVA: 0x000F8BC0 File Offset: 0x000F6DC0
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -28,9 +28,9 @@ public class setFont : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001C3C RID: 7228
+	// Token: 0x04001C57 RID: 7255
 	private GameObject main_;
 
-	// Token: 0x04001C3D RID: 7229
+	// Token: 0x04001C58 RID: 7256
 	private settingsScript settings_;
 }

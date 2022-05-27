@@ -5,13 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class U10PS_DissolveOverTime : MonoBehaviour
 {
-	// Token: 0x0600007D RID: 125 RVA: 0x000025E2 File Offset: 0x000007E2
+	// Token: 0x0600007D RID: 125 RVA: 0x0000470A File Offset: 0x0000290A
 	private void Start()
 	{
 		this.meshRenderer = base.GetComponent<MeshRenderer>();
 	}
 
-	// Token: 0x0600007E RID: 126 RVA: 0x0001AEF8 File Offset: 0x000190F8
+	// Token: 0x0600007E RID: 126 RVA: 0x00004718 File Offset: 0x00002918
 	private void Update()
 	{
 		Material[] materials = this.meshRenderer.materials;

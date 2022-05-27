@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using Vectrosity;
 
-// Token: 0x0200033B RID: 827
+// Token: 0x0200033E RID: 830
 public class roomScript : MonoBehaviour
 {
-	// Token: 0x06001DAC RID: 7596 RVA: 0x0001420B File Offset: 0x0001240B
+	// Token: 0x06001E03 RID: 7683 RVA: 0x0012B300 File Offset: 0x00129500
 	private void Start()
 	{
 		this.FindScripts();
@@ -16,7 +16,7 @@ public class roomScript : MonoBehaviour
 		this.mS_.findRooms = true;
 	}
 
-	// Token: 0x06001DAD RID: 7597 RVA: 0x00014225 File Offset: 0x00012425
+	// Token: 0x06001E04 RID: 7684 RVA: 0x0012B31A File Offset: 0x0012951A
 	private void OnDestroy()
 	{
 		if (this.mS_)
@@ -25,7 +25,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DAE RID: 7598 RVA: 0x0012C584 File Offset: 0x0012A784
+	// Token: 0x06001E05 RID: 7685 RVA: 0x0012B338 File Offset: 0x00129538
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -98,7 +98,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DAF RID: 7599 RVA: 0x00014240 File Offset: 0x00012440
+	// Token: 0x06001E06 RID: 7686 RVA: 0x0012B54A File Offset: 0x0012974A
 	private void Update()
 	{
 		this.FindTasks();
@@ -108,7 +108,7 @@ public class roomScript : MonoBehaviour
 		this.UpdateUI();
 	}
 
-	// Token: 0x06001DB0 RID: 7600 RVA: 0x0012C798 File Offset: 0x0012A998
+	// Token: 0x06001E07 RID: 7687 RVA: 0x0012B570 File Offset: 0x00129770
 	private void InitUI()
 	{
 		if (!this.myUI)
@@ -121,7 +121,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB1 RID: 7601 RVA: 0x0012C82C File Offset: 0x0012AA2C
+	// Token: 0x06001E08 RID: 7688 RVA: 0x0012B604 File Offset: 0x00129804
 	private void FindTasks()
 	{
 		if (this.taskID == -1)
@@ -145,7 +145,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB2 RID: 7602 RVA: 0x0012C89C File Offset: 0x0012AA9C
+	// Token: 0x06001E09 RID: 7689 RVA: 0x0012B674 File Offset: 0x00129874
 	private void UpdateUI()
 	{
 		if (this.myUI)
@@ -527,7 +527,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB3 RID: 7603 RVA: 0x0012CFF8 File Offset: 0x0012B1F8
+	// Token: 0x06001E0A RID: 7690 RVA: 0x0012BDD0 File Offset: 0x00129FD0
 	private void DrawRoomLine(Vector3 pStart, Vector3 pEnd)
 	{
 		if (!this.guiMain_.initVectrocity)
@@ -557,19 +557,163 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB4 RID: 7604 RVA: 0x00014266 File Offset: 0x00012466
+	// Token: 0x06001E0B RID: 7691 RVA: 0x0012BF65 File Offset: 0x0012A165
 	public bool IsCrunchtimeRead()
 	{
 		return this.isCrunchTime;
 	}
 
-	// Token: 0x06001DB5 RID: 7605 RVA: 0x0012D190 File Offset: 0x0012B390
+	// Token: 0x06001E0C RID: 7692 RVA: 0x0012BF70 File Offset: 0x0012A170
 	private bool IsCrunchtime()
 	{
-		return false;
+		if (!this.taskGameObject)
+		{
+			return false;
+		}
+		if (this.typ == 11)
+		{
+			return false;
+		}
+		if (this.typ == 9)
+		{
+			return false;
+		}
+		if (this.typ == 0)
+		{
+			return false;
+		}
+		if (this.typ == 15)
+		{
+			return false;
+		}
+		if (this.typ == 12)
+		{
+			return false;
+		}
+		if (this.typ == 14)
+		{
+			return false;
+		}
+		float num = 0f;
+		if (this.typ == 2 && num == 0f && this.GetTaskForschung())
+		{
+			num = this.GetTaskForschung().GetProzent();
+		}
+		if (this.typ == 1)
+		{
+			if (num == 0f && this.GetTaskEngine())
+			{
+				num = this.GetTaskEngine().GetProzent();
+			}
+			if (num == 0f && this.GetTaskUpdate())
+			{
+				num = this.GetTaskUpdate().GetProzent();
+			}
+			if (num == 0f && this.GetTaskGame())
+			{
+				num = this.GetTaskGame().GetProzent();
+			}
+			if (num == 0f && this.GetTaskF2PUpdate())
+			{
+				num = this.GetTaskF2PUpdate().GetProzent();
+			}
+		}
+		if (this.typ == 6)
+		{
+			if (num == 0f && this.GetTaskMarketing())
+			{
+				num = this.GetTaskMarketing().GetProzent();
+			}
+			if (num == 0f && this.GetTaskMarketingSpezial())
+			{
+				num = this.GetTaskMarketingSpezial().GetProzent();
+			}
+			if (num == 0f && this.GetTaskMitarbeitersuche())
+			{
+				num = this.GetTaskMitarbeitersuche().GetProzent();
+			}
+		}
+		if (this.typ == 13 && num == 0f && this.GetTaskTraining())
+		{
+			num = this.GetTaskTraining().GetProzent();
+		}
+		if (num == 0f && this.GetTaskContractWork())
+		{
+			num = this.GetTaskContractWork().GetProzent();
+		}
+		if (num == 0f)
+		{
+			if (this.GetTaskContractWait())
+			{
+				return false;
+			}
+			if (this.GetTaskWait())
+			{
+				return false;
+			}
+		}
+		if (this.typ == 7)
+		{
+			if (num == 0f && this.GetTaskFankampagne())
+			{
+				num = this.GetTaskFankampagne().GetProzent();
+			}
+			if (num == 0f && this.GetTaskSupport())
+			{
+				num = this.GetTaskSupport().GetProzent();
+				if (num > 99.9f)
+				{
+				}
+				return false;
+			}
+			if (num == 0f && this.GetTaskFanshop())
+			{
+				return false;
+			}
+		}
+		if (this.typ == 3)
+		{
+			if (num == 0f && this.GetTaskBugfixing())
+			{
+				num = this.GetTaskBugfixing().GetProzent();
+			}
+			if (num == 0f && this.GetTaskGameplayVerbessern())
+			{
+				num = this.GetTaskGameplayVerbessern().GetProzent();
+			}
+			if (num == 0f && this.GetTaskSpielbericht())
+			{
+				num = this.GetTaskSpielbericht().GetProzent();
+			}
+		}
+		if (this.typ == 4 && num == 0f && this.GetTaskGrafikVerbessern())
+		{
+			num = this.GetTaskGrafikVerbessern().GetProzent();
+		}
+		if (this.typ == 5 && num == 0f && this.GetTaskSoundVerbessern())
+		{
+			num = this.GetTaskSoundVerbessern().GetProzent();
+		}
+		if (this.typ == 10 && num == 0f && this.GetTaskAnimationVerbessern())
+		{
+			num = this.GetTaskAnimationVerbessern().GetProzent();
+		}
+		if (this.typ == 17 && num == 0f && this.GetTaskArcadeProduction())
+		{
+			num = this.GetTaskArcadeProduction().GetProzent();
+		}
+		if (this.typ == 8 && num == 0f && this.GetTaskKonsole())
+		{
+			num = this.GetTaskKonsole().GetProzent();
+		}
+		if (num <= 0f && this.GetTaskUnterstuetzen() && this.GetTaskUnterstuetzen().roomID != this.myID)
+		{
+			return this.GetTaskUnterstuetzen().IsCrunchtime();
+		}
+		return num < 100f && num > (float)this.mS_.personal_crunch;
 	}
 
-	// Token: 0x06001DB6 RID: 7606 RVA: 0x0012D1A0 File Offset: 0x0012B3A0
+	// Token: 0x06001E0D RID: 7693 RVA: 0x0012C374 File Offset: 0x0012A574
 	private void ShouldDrawLine()
 	{
 		if (this.taskID != -1 && this.settings_.roomConnections)
@@ -666,7 +810,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB7 RID: 7607 RVA: 0x0012D424 File Offset: 0x0012B624
+	// Token: 0x06001E0E RID: 7694 RVA: 0x0012C5F8 File Offset: 0x0012A7F8
 	private void DrawLine(Color color_, Vector3 uiPos_)
 	{
 		if (this.guiMain_.uiObjects[150].activeSelf || this.guiMain_.uiObjects[154].activeSelf)
@@ -724,7 +868,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB8 RID: 7608 RVA: 0x0001426E File Offset: 0x0001246E
+	// Token: 0x06001E0F RID: 7695 RVA: 0x0012CA0E File Offset: 0x0012AC0E
 	private IEnumerator SetLineShaders()
 	{
 		yield return new WaitForEndOfFrame();
@@ -748,14 +892,14 @@ public class roomScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001DB9 RID: 7609 RVA: 0x0012D83C File Offset: 0x0012BA3C
+	// Token: 0x06001E10 RID: 7696 RVA: 0x0012CA20 File Offset: 0x0012AC20
 	public Vector2 Get2DPos()
 	{
 		Vector3 position = this.uiPos;
 		return this.camera_.WorldToScreenPoint(position);
 	}
 
-	// Token: 0x06001DBA RID: 7610 RVA: 0x0012D864 File Offset: 0x0012BA64
+	// Token: 0x06001E11 RID: 7697 RVA: 0x0012CA48 File Offset: 0x0012AC48
 	private void UpdateWindowForschung(bool show)
 	{
 		if (!this.rbS_.uiWindows[0])
@@ -811,7 +955,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DBB RID: 7611 RVA: 0x0012DB40 File Offset: 0x0012BD40
+	// Token: 0x06001E12 RID: 7698 RVA: 0x0012CD24 File Offset: 0x0012AF24
 	private void UpdateWindowEngine(bool show)
 	{
 		if (!this.rbS_.uiWindows[1])
@@ -847,7 +991,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DBC RID: 7612 RVA: 0x0012DC74 File Offset: 0x0012BE74
+	// Token: 0x06001E13 RID: 7699 RVA: 0x0012CE58 File Offset: 0x0012B058
 	private void UpdateWindowGame(bool show)
 	{
 		if (!this.rbS_.uiWindows[2])
@@ -878,7 +1022,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DBD RID: 7613 RVA: 0x0012DD40 File Offset: 0x0012BF40
+	// Token: 0x06001E14 RID: 7700 RVA: 0x0012CF24 File Offset: 0x0012B124
 	private void UpdateWindowUnterstuetzen(bool show)
 	{
 		if (!this.rbS_.uiWindows[3])
@@ -1038,7 +1182,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DBE RID: 7614 RVA: 0x0012E220 File Offset: 0x0012C420
+	// Token: 0x06001E15 RID: 7701 RVA: 0x0012D404 File Offset: 0x0012B604
 	private void UpdateWindowContractWork(bool show)
 	{
 		if (!this.rbS_.uiWindows[6])
@@ -1069,7 +1213,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DBF RID: 7615 RVA: 0x0012E2E4 File Offset: 0x0012C4E4
+	// Token: 0x06001E16 RID: 7702 RVA: 0x0012D4C8 File Offset: 0x0012B6C8
 	private void UpdateWindowContractWorkWait(bool show)
 	{
 		if (!this.rbS_.uiWindows[25])
@@ -1100,7 +1244,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC0 RID: 7616 RVA: 0x0012E3A0 File Offset: 0x0012C5A0
+	// Token: 0x06001E17 RID: 7703 RVA: 0x0012D584 File Offset: 0x0012B784
 	private void UpdateWindowWait(bool show)
 	{
 		if (!this.rbS_.uiWindows[26])
@@ -1131,7 +1275,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC1 RID: 7617 RVA: 0x0012E45C File Offset: 0x0012C65C
+	// Token: 0x06001E18 RID: 7704 RVA: 0x0012D640 File Offset: 0x0012B840
 	private void UpdateWindowKonsole(bool show)
 	{
 		if (!this.rbS_.uiWindows[24])
@@ -1162,7 +1306,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC2 RID: 7618 RVA: 0x0012E528 File Offset: 0x0012C728
+	// Token: 0x06001E19 RID: 7705 RVA: 0x0012D70C File Offset: 0x0012B90C
 	private void UpdateWindowArcadeProduction(bool show)
 	{
 		if (!this.rbS_.uiWindows[23])
@@ -1193,7 +1337,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC3 RID: 7619 RVA: 0x0012E5F4 File Offset: 0x0012C7F4
+	// Token: 0x06001E1A RID: 7706 RVA: 0x0012D7D8 File Offset: 0x0012B9D8
 	private void UpdateWindowF2PUpdate(bool show)
 	{
 		if (!this.rbS_.uiWindows[22])
@@ -1224,7 +1368,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC4 RID: 7620 RVA: 0x0012E6C0 File Offset: 0x0012C8C0
+	// Token: 0x06001E1B RID: 7707 RVA: 0x0012D8A4 File Offset: 0x0012BAA4
 	private void UpdateWindowUpdate(bool show)
 	{
 		if (!this.rbS_.uiWindows[7])
@@ -1255,7 +1399,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC5 RID: 7621 RVA: 0x0012E79C File Offset: 0x0012C99C
+	// Token: 0x06001E1C RID: 7708 RVA: 0x0012D980 File Offset: 0x0012BB80
 	private void UpdateWindowTraining(bool show)
 	{
 		if (!this.rbS_.uiWindows[5])
@@ -1286,7 +1430,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC6 RID: 7622 RVA: 0x0012E87C File Offset: 0x0012CA7C
+	// Token: 0x06001E1D RID: 7709 RVA: 0x0012DA60 File Offset: 0x0012BC60
 	private void UpdateWindowFankampagne(bool show)
 	{
 		if (!this.rbS_.uiWindows[8])
@@ -1317,7 +1461,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC7 RID: 7623 RVA: 0x0012E934 File Offset: 0x0012CB34
+	// Token: 0x06001E1E RID: 7710 RVA: 0x0012DB18 File Offset: 0x0012BD18
 	private void UpdateWindowMitarbeitersuche(bool show)
 	{
 		if (!this.rbS_.uiWindows[27])
@@ -1348,7 +1492,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC8 RID: 7624 RVA: 0x0012E9F0 File Offset: 0x0012CBF0
+	// Token: 0x06001E1F RID: 7711 RVA: 0x0012DBD4 File Offset: 0x0012BDD4
 	private void UpdateWindowMarktforschung(bool show)
 	{
 		if (!this.rbS_.uiWindows[18])
@@ -1379,7 +1523,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC9 RID: 7625 RVA: 0x0012EAAC File Offset: 0x0012CCAC
+	// Token: 0x06001E20 RID: 7712 RVA: 0x0012DC90 File Offset: 0x0012BE90
 	private void UpdateWindowAnrufe(bool show)
 	{
 		if (!this.rbS_.uiWindows[9])
@@ -1410,7 +1554,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DCA RID: 7626 RVA: 0x0012EB68 File Offset: 0x0012CD68
+	// Token: 0x06001E21 RID: 7713 RVA: 0x0012DD4C File Offset: 0x0012BF4C
 	private void UpdateWindowFanshop(bool show)
 	{
 		if (!this.rbS_.uiWindows[28])
@@ -1441,7 +1585,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DCB RID: 7627 RVA: 0x0012EC24 File Offset: 0x0012CE24
+	// Token: 0x06001E22 RID: 7714 RVA: 0x0012DE08 File Offset: 0x0012C008
 	private void UpdateWindowBugfixing(bool show)
 	{
 		if (!this.rbS_.uiWindows[10])
@@ -1472,7 +1616,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DCC RID: 7628 RVA: 0x0012ECE0 File Offset: 0x0012CEE0
+	// Token: 0x06001E23 RID: 7715 RVA: 0x0012DEC4 File Offset: 0x0012C0C4
 	private void UpdateWindowPolishing(bool show)
 	{
 		if (!this.rbS_.uiWindows[20])
@@ -1503,7 +1647,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DCD RID: 7629 RVA: 0x0012ED9C File Offset: 0x0012CF9C
+	// Token: 0x06001E24 RID: 7716 RVA: 0x0012DF80 File Offset: 0x0012C180
 	private void UpdateWindowSpielbericht(bool show)
 	{
 		if (!this.rbS_.uiWindows[15])
@@ -1534,7 +1678,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DCE RID: 7630 RVA: 0x0012EE58 File Offset: 0x0012D058
+	// Token: 0x06001E25 RID: 7717 RVA: 0x0012E03C File Offset: 0x0012C23C
 	private void UpdateWindowProduction(bool show)
 	{
 		if (!this.rbS_.uiWindows[16])
@@ -1565,7 +1709,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DCF RID: 7631 RVA: 0x0012EF14 File Offset: 0x0012D114
+	// Token: 0x06001E26 RID: 7718 RVA: 0x0012E0F8 File Offset: 0x0012C2F8
 	private void UpdateWindowLagerhaus(bool show)
 	{
 		if (!this.rbS_.uiWindows[17])
@@ -1587,7 +1731,7 @@ public class roomScript : MonoBehaviour
 		this.rbS_.uiWindows[17].GetComponent<roomWindow>().Window_Lagerhaus(this);
 	}
 
-	// Token: 0x06001DD0 RID: 7632 RVA: 0x0012EFA8 File Offset: 0x0012D1A8
+	// Token: 0x06001E27 RID: 7719 RVA: 0x0012E18C File Offset: 0x0012C38C
 	private void UpdateWindowServerraum(bool show)
 	{
 		if (!this.rbS_.uiWindows[19])
@@ -1609,7 +1753,7 @@ public class roomScript : MonoBehaviour
 		this.rbS_.uiWindows[19].GetComponent<roomWindow>().Window_Serverraum(this);
 	}
 
-	// Token: 0x06001DD1 RID: 7633 RVA: 0x0012F03C File Offset: 0x0012D23C
+	// Token: 0x06001E28 RID: 7720 RVA: 0x0012E220 File Offset: 0x0012C420
 	private void UpdateWindowGameplayVerbessern(bool show)
 	{
 		if (!this.rbS_.uiWindows[11])
@@ -1640,7 +1784,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DD2 RID: 7634 RVA: 0x0012F0F8 File Offset: 0x0012D2F8
+	// Token: 0x06001E29 RID: 7721 RVA: 0x0012E2DC File Offset: 0x0012C4DC
 	private void UpdateWindowGrafikVerbessern(bool show)
 	{
 		if (!this.rbS_.uiWindows[12])
@@ -1671,7 +1815,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DD3 RID: 7635 RVA: 0x0012F1B4 File Offset: 0x0012D3B4
+	// Token: 0x06001E2A RID: 7722 RVA: 0x0012E398 File Offset: 0x0012C598
 	private void UpdateWindowSoundVerbessern(bool show)
 	{
 		if (!this.rbS_.uiWindows[13])
@@ -1702,7 +1846,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DD4 RID: 7636 RVA: 0x0012F270 File Offset: 0x0012D470
+	// Token: 0x06001E2B RID: 7723 RVA: 0x0012E454 File Offset: 0x0012C654
 	private void UpdateWindowAnimationVerbessern(bool show)
 	{
 		if (!this.rbS_.uiWindows[14])
@@ -1733,7 +1877,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DD5 RID: 7637 RVA: 0x0012F32C File Offset: 0x0012D52C
+	// Token: 0x06001E2C RID: 7724 RVA: 0x0012E510 File Offset: 0x0012C710
 	private void UpdateWindowMarketingSpezial(bool show)
 	{
 		if (!this.rbS_.uiWindows[21])
@@ -1764,7 +1908,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DD6 RID: 7638 RVA: 0x0012F3E8 File Offset: 0x0012D5E8
+	// Token: 0x06001E2D RID: 7725 RVA: 0x0012E5CC File Offset: 0x0012C7CC
 	private void UpdateWindowMarketing(bool show)
 	{
 		if (!this.rbS_.uiWindows[4])
@@ -1811,7 +1955,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DD7 RID: 7639 RVA: 0x0012F514 File Offset: 0x0012D714
+	// Token: 0x06001E2E RID: 7726 RVA: 0x0012E6F8 File Offset: 0x0012C8F8
 	public void SetOutlineLayer()
 	{
 		if (!this.outline)
@@ -1828,7 +1972,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DD8 RID: 7640 RVA: 0x0012F58C File Offset: 0x0012D78C
+	// Token: 0x06001E2F RID: 7727 RVA: 0x0012E770 File Offset: 0x0012C970
 	public void SetListGameObjectsLayer(int l)
 	{
 		for (int i = 0; i < this.listGameObjects.Count; i++)
@@ -1840,7 +1984,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DD9 RID: 7641 RVA: 0x0012F5E0 File Offset: 0x0012D7E0
+	// Token: 0x06001E30 RID: 7728 RVA: 0x0012E7C4 File Offset: 0x0012C9C4
 	public void DisableOutlineLayer()
 	{
 		if (this.outline)
@@ -1856,7 +2000,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DDA RID: 7642 RVA: 0x0012F644 File Offset: 0x0012D844
+	// Token: 0x06001E31 RID: 7729 RVA: 0x0012E828 File Offset: 0x0012CA28
 	private void SetLayer(int newLayer, Transform trans)
 	{
 		trans.gameObject.layer = newLayer;
@@ -1871,7 +2015,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DDB RID: 7643 RVA: 0x0012F6C0 File Offset: 0x0012D8C0
+	// Token: 0x06001E32 RID: 7730 RVA: 0x0012E8A4 File Offset: 0x0012CAA4
 	public void UpdateListInventar()
 	{
 		this.arbeitsplaetze = 0;
@@ -1905,13 +2049,13 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DDC RID: 7644 RVA: 0x0001427D File Offset: 0x0001247D
+	// Token: 0x06001E33 RID: 7731 RVA: 0x0012E9D7 File Offset: 0x0012CBD7
 	public bool IsUberberfuell()
 	{
 		return this.arbeitsplaetze > 0 && this.GetMitarbeiter() > this.AnzahlArbeitsplaetzeBisUberfuellt();
 	}
 
-	// Token: 0x06001DDD RID: 7645 RVA: 0x0012F7F4 File Offset: 0x0012D9F4
+	// Token: 0x06001E34 RID: 7732 RVA: 0x0012E9F8 File Offset: 0x0012CBF8
 	public int AnzahlArbeitsplaetzeBisUberfuellt()
 	{
 		float num = 3.3f;
@@ -1943,25 +2087,25 @@ public class roomScript : MonoBehaviour
 		return num3;
 	}
 
-	// Token: 0x06001DDE RID: 7646 RVA: 0x0001429B File Offset: 0x0001249B
+	// Token: 0x06001E35 RID: 7733 RVA: 0x0012EA57 File Offset: 0x0012CC57
 	public GameObject GetRandomFloor()
 	{
 		return this.listGameObjects[UnityEngine.Random.Range(0, this.listGameObjects.Count)];
 	}
 
-	// Token: 0x06001DDF RID: 7647 RVA: 0x000142B9 File Offset: 0x000124B9
+	// Token: 0x06001E36 RID: 7734 RVA: 0x0012EA75 File Offset: 0x0012CC75
 	public int GetArbeitsplaetze()
 	{
 		return this.arbeitsplaetze;
 	}
 
-	// Token: 0x06001DE0 RID: 7648 RVA: 0x000142C1 File Offset: 0x000124C1
+	// Token: 0x06001E37 RID: 7735 RVA: 0x0012EA7D File Offset: 0x0012CC7D
 	public int GetMitarbeiter()
 	{
 		return this.mitarbeiterZugeteilt;
 	}
 
-	// Token: 0x06001DE1 RID: 7649 RVA: 0x0012F854 File Offset: 0x0012DA54
+	// Token: 0x06001E38 RID: 7736 RVA: 0x0012EA88 File Offset: 0x0012CC88
 	public void Demolish()
 	{
 		if (this.myUI)
@@ -1989,13 +2133,13 @@ public class roomScript : MonoBehaviour
 		this.camera_.gameObject.GetComponent<Animation>().Play();
 	}
 
-	// Token: 0x06001DE2 RID: 7650 RVA: 0x0012F928 File Offset: 0x0012DB28
+	// Token: 0x06001E39 RID: 7737 RVA: 0x0012EB5C File Offset: 0x0012CD5C
 	public bool KeineAnrufe()
 	{
 		return this.mS_.anrufe <= 0 && this.typ == 7 && this.taskID != -1 && (this.taskGameObject && this.GetTaskSupport() && this.mS_.anrufe <= 0);
 	}
 
-	// Token: 0x06001DE3 RID: 7651 RVA: 0x0012F988 File Offset: 0x0012DB88
+	// Token: 0x06001E3A RID: 7738 RVA: 0x0012EBBC File Offset: 0x0012CDBC
 	public bool WERK_GameHasBestellungen()
 	{
 		if (this.typ != 17)
@@ -2017,7 +2161,7 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DE4 RID: 7652 RVA: 0x0012F9E8 File Offset: 0x0012DBE8
+	// Token: 0x06001E3B RID: 7739 RVA: 0x0012EC1C File Offset: 0x0012CE1C
 	public bool GameIsPort()
 	{
 		if (this.typ != 1 && this.typ != 3 && this.typ != 5 && this.typ != 4 && this.typ != 10)
@@ -2039,7 +2183,7 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DE5 RID: 7653 RVA: 0x0012FA6C File Offset: 0x0012DC6C
+	// Token: 0x06001E3C RID: 7740 RVA: 0x0012ECA0 File Offset: 0x0012CEA0
 	public bool GameIsMMO()
 	{
 		if (this.typ != 1 && this.typ != 3 && this.typ != 5 && this.typ != 4 && this.typ != 10)
@@ -2061,7 +2205,7 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DE6 RID: 7654 RVA: 0x0012FAF0 File Offset: 0x0012DCF0
+	// Token: 0x06001E3D RID: 7741 RVA: 0x0012ED24 File Offset: 0x0012CF24
 	public bool QA_GameHasNoBugs()
 	{
 		if (this.typ != 3)
@@ -2088,7 +2232,7 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DE7 RID: 7655 RVA: 0x0012FB98 File Offset: 0x0012DD98
+	// Token: 0x06001E3E RID: 7742 RVA: 0x0012EDCC File Offset: 0x0012CFCC
 	public bool WaitForMinimumHype()
 	{
 		if (this.typ != 6)
@@ -2110,7 +2254,7 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DE8 RID: 7656 RVA: 0x0012FBE0 File Offset: 0x0012DDE0
+	// Token: 0x06001E3F RID: 7743 RVA: 0x0012EE14 File Offset: 0x0012D014
 	public bool IsDevAddon()
 	{
 		if (this.typ != 1)
@@ -2132,7 +2276,7 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DE9 RID: 7657 RVA: 0x0012FC64 File Offset: 0x0012DE64
+	// Token: 0x06001E40 RID: 7744 RVA: 0x0012EE98 File Offset: 0x0012D098
 	public bool KeineAutomatenBestellungen()
 	{
 		if (this.typ != 17)
@@ -2154,7 +2298,7 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DEA RID: 7658 RVA: 0x000142C9 File Offset: 0x000124C9
+	// Token: 0x06001E41 RID: 7745 RVA: 0x0012EEF6 File Offset: 0x0012D0F6
 	public bool IsGameDevComplete()
 	{
 		if (this.typ != 1)
@@ -2165,7 +2309,7 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DEB RID: 7659 RVA: 0x0012FCC4 File Offset: 0x0012DEC4
+	// Token: 0x06001E42 RID: 7746 RVA: 0x0012EF10 File Offset: 0x0012D110
 	public bool IsGameDevCompleteOrg()
 	{
 		if (this.typ != 1)
@@ -2187,7 +2331,7 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DEC RID: 7660 RVA: 0x0012FD28 File Offset: 0x0012DF28
+	// Token: 0x06001E43 RID: 7747 RVA: 0x0012EF74 File Offset: 0x0012D174
 	public bool IsKonsoleDevCompleteOrg()
 	{
 		if (this.typ != 8)
@@ -2209,43 +2353,43 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DED RID: 7661 RVA: 0x000142E0 File Offset: 0x000124E0
+	// Token: 0x06001E44 RID: 7748 RVA: 0x0012EFD5 File Offset: 0x0012D1D5
 	public bool IstContractWorkWait()
 	{
 		return this.taskID != -1 && (this.taskGameObject && this.GetTaskContractWait());
 	}
 
-	// Token: 0x06001DEE RID: 7662 RVA: 0x0001430A File Offset: 0x0001250A
+	// Token: 0x06001E45 RID: 7749 RVA: 0x0012EFFF File Offset: 0x0012D1FF
 	public bool IstTaskWait()
 	{
 		return this.taskID != -1 && (this.taskGameObject && this.GetTaskWait());
 	}
 
-	// Token: 0x06001DEF RID: 7663 RVA: 0x00014334 File Offset: 0x00012534
+	// Token: 0x06001E46 RID: 7750 RVA: 0x0012F029 File Offset: 0x0012D229
 	public int GetLagerplatz()
 	{
 		return this.lagerplatz;
 	}
 
-	// Token: 0x06001DF0 RID: 7664 RVA: 0x0001433C File Offset: 0x0001253C
+	// Token: 0x06001E47 RID: 7751 RVA: 0x0012F031 File Offset: 0x0012D231
 	public int GetFreeLagerplatz()
 	{
 		return this.lagerplatz - this.lagerplatzUsed;
 	}
 
-	// Token: 0x06001DF1 RID: 7665 RVA: 0x0001434B File Offset: 0x0001254B
+	// Token: 0x06001E48 RID: 7752 RVA: 0x0012F040 File Offset: 0x0012D240
 	public int GetServerplatz()
 	{
 		return this.serverplatz;
 	}
 
-	// Token: 0x06001DF2 RID: 7666 RVA: 0x00014353 File Offset: 0x00012553
+	// Token: 0x06001E49 RID: 7753 RVA: 0x0012F048 File Offset: 0x0012D248
 	public int GetFreeServerplatz()
 	{
 		return this.serverplatz - this.serverplatzUsed;
 	}
 
-	// Token: 0x06001DF3 RID: 7667 RVA: 0x0012FD8C File Offset: 0x0012DF8C
+	// Token: 0x06001E4A RID: 7754 RVA: 0x0012F058 File Offset: 0x0012D258
 	public int SetAbos(int i)
 	{
 		if (this.serverDown)
@@ -2274,7 +2418,7 @@ public class roomScript : MonoBehaviour
 		return i - num;
 	}
 
-	// Token: 0x06001DF4 RID: 7668 RVA: 0x0012FDFC File Offset: 0x0012DFFC
+	// Token: 0x06001E4B RID: 7755 RVA: 0x0012F0C8 File Offset: 0x0012D2C8
 	private void UpdateLagerraumGFX()
 	{
 		if (this.typ != 9)
@@ -2332,13 +2476,13 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DF5 RID: 7669 RVA: 0x00014362 File Offset: 0x00012562
+	// Token: 0x06001E4C RID: 7756 RVA: 0x0012F273 File Offset: 0x0012D473
 	public void ServerAbschalten(bool shutdown)
 	{
 		this.serverDown = shutdown;
 	}
 
-	// Token: 0x06001DF6 RID: 7670 RVA: 0x0012FFA8 File Offset: 0x0012E1A8
+	// Token: 0x06001E4D RID: 7757 RVA: 0x0012F27C File Offset: 0x0012D47C
 	public bool UpdateInventar(bool buy)
 	{
 		bool result = false;
@@ -3201,7 +3345,7 @@ public class roomScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DF7 RID: 7671 RVA: 0x00130D68 File Offset: 0x0012EF68
+	// Token: 0x06001E4E RID: 7758 RVA: 0x0013003C File Offset: 0x0012E23C
 	private bool RemoveOldInventar(int oldTyp, int newTyp, bool buy)
 	{
 		for (int i = 0; i < this.listInventar.Count; i++)
@@ -3237,13 +3381,13 @@ public class roomScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001DF8 RID: 7672 RVA: 0x0001436B File Offset: 0x0001256B
+	// Token: 0x06001E4F RID: 7759 RVA: 0x001301F0 File Offset: 0x0012E3F0
 	private bool TaskCheckFailed(int taskID_)
 	{
 		return this.taskID == -1 || !this.taskGameObject || Mathf.RoundToInt(this.taskGameObject.transform.position.x) != taskID_;
 	}
 
-	// Token: 0x06001DF9 RID: 7673 RVA: 0x00130F1C File Offset: 0x0012F11C
+	// Token: 0x06001E50 RID: 7760 RVA: 0x0013022C File Offset: 0x0012E42C
 	public taskFanshop GetTaskFanshop()
 	{
 		if (this.TaskCheckFailed(270))
@@ -3263,7 +3407,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskFanshop;
 	}
 
-	// Token: 0x06001DFA RID: 7674 RVA: 0x00130F90 File Offset: 0x0012F190
+	// Token: 0x06001E51 RID: 7761 RVA: 0x001302A0 File Offset: 0x0012E4A0
 	public taskWait GetTaskWait()
 	{
 		if (this.TaskCheckFailed(260))
@@ -3283,7 +3427,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskWait;
 	}
 
-	// Token: 0x06001DFB RID: 7675 RVA: 0x00131004 File Offset: 0x0012F204
+	// Token: 0x06001E52 RID: 7762 RVA: 0x00130314 File Offset: 0x0012E514
 	public taskUnterstuetzen GetTaskUnterstuetzen()
 	{
 		if (this.TaskCheckFailed(250))
@@ -3303,7 +3447,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskUnterstuetzen;
 	}
 
-	// Token: 0x06001DFC RID: 7676 RVA: 0x00131078 File Offset: 0x0012F278
+	// Token: 0x06001E53 RID: 7763 RVA: 0x00130388 File Offset: 0x0012E588
 	public taskPolishing GetTaskPolishing()
 	{
 		if (this.TaskCheckFailed(240))
@@ -3323,7 +3467,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskPolishing;
 	}
 
-	// Token: 0x06001DFD RID: 7677 RVA: 0x001310EC File Offset: 0x0012F2EC
+	// Token: 0x06001E54 RID: 7764 RVA: 0x001303FC File Offset: 0x0012E5FC
 	public taskMarktforschung GetTaskMarktforschung()
 	{
 		if (this.TaskCheckFailed(230))
@@ -3343,7 +3487,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskMarktforschung;
 	}
 
-	// Token: 0x06001DFE RID: 7678 RVA: 0x00131160 File Offset: 0x0012F360
+	// Token: 0x06001E55 RID: 7765 RVA: 0x00130470 File Offset: 0x0012E670
 	public taskContractWait GetTaskContractWait()
 	{
 		if (this.TaskCheckFailed(220))
@@ -3363,7 +3507,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskContractWait;
 	}
 
-	// Token: 0x06001DFF RID: 7679 RVA: 0x001311D4 File Offset: 0x0012F3D4
+	// Token: 0x06001E56 RID: 7766 RVA: 0x001304E4 File Offset: 0x0012E6E4
 	public taskContractWork GetTaskContractWork()
 	{
 		if (this.TaskCheckFailed(210))
@@ -3383,7 +3527,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskContractWork;
 	}
 
-	// Token: 0x06001E00 RID: 7680 RVA: 0x00131248 File Offset: 0x0012F448
+	// Token: 0x06001E57 RID: 7767 RVA: 0x00130558 File Offset: 0x0012E758
 	public taskSupport GetTaskSupport()
 	{
 		if (this.TaskCheckFailed(200))
@@ -3403,7 +3547,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskSupport;
 	}
 
-	// Token: 0x06001E01 RID: 7681 RVA: 0x001312BC File Offset: 0x0012F4BC
+	// Token: 0x06001E58 RID: 7768 RVA: 0x001305CC File Offset: 0x0012E7CC
 	public taskFankampagne GetTaskFankampagne()
 	{
 		if (this.TaskCheckFailed(190))
@@ -3423,7 +3567,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskFankampagne;
 	}
 
-	// Token: 0x06001E02 RID: 7682 RVA: 0x00131330 File Offset: 0x0012F530
+	// Token: 0x06001E59 RID: 7769 RVA: 0x00130640 File Offset: 0x0012E840
 	public taskKonsole GetTaskKonsole()
 	{
 		if (this.TaskCheckFailed(180))
@@ -3443,7 +3587,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskKonsole;
 	}
 
-	// Token: 0x06001E03 RID: 7683 RVA: 0x001313A4 File Offset: 0x0012F5A4
+	// Token: 0x06001E5A RID: 7770 RVA: 0x001306B4 File Offset: 0x0012E8B4
 	public taskArcadeProduction GetTaskArcadeProduction()
 	{
 		if (this.TaskCheckFailed(170))
@@ -3463,7 +3607,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskArcadeProduction;
 	}
 
-	// Token: 0x06001E04 RID: 7684 RVA: 0x00131418 File Offset: 0x0012F618
+	// Token: 0x06001E5B RID: 7771 RVA: 0x00130728 File Offset: 0x0012E928
 	public taskProduction GetTaskProduction()
 	{
 		if (this.TaskCheckFailed(160))
@@ -3483,7 +3627,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskProduction;
 	}
 
-	// Token: 0x06001E05 RID: 7685 RVA: 0x0013148C File Offset: 0x0012F68C
+	// Token: 0x06001E5C RID: 7772 RVA: 0x0013079C File Offset: 0x0012E99C
 	public taskAnimationVerbessern GetTaskAnimationVerbessern()
 	{
 		if (this.TaskCheckFailed(150))
@@ -3503,7 +3647,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskAnimationVerbessern;
 	}
 
-	// Token: 0x06001E06 RID: 7686 RVA: 0x00131500 File Offset: 0x0012F700
+	// Token: 0x06001E5D RID: 7773 RVA: 0x00130810 File Offset: 0x0012EA10
 	public taskSoundVerbessern GetTaskSoundVerbessern()
 	{
 		if (this.TaskCheckFailed(140))
@@ -3523,7 +3667,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskSoundVerbessern;
 	}
 
-	// Token: 0x06001E07 RID: 7687 RVA: 0x00131574 File Offset: 0x0012F774
+	// Token: 0x06001E5E RID: 7774 RVA: 0x00130884 File Offset: 0x0012EA84
 	public taskGrafikVerbessern GetTaskGrafikVerbessern()
 	{
 		if (this.TaskCheckFailed(130))
@@ -3543,7 +3687,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskGrafikVerbessern;
 	}
 
-	// Token: 0x06001E08 RID: 7688 RVA: 0x001315E8 File Offset: 0x0012F7E8
+	// Token: 0x06001E5F RID: 7775 RVA: 0x001308F8 File Offset: 0x0012EAF8
 	public taskBugfixing GetTaskBugfixing()
 	{
 		if (this.TaskCheckFailed(120))
@@ -3563,7 +3707,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskBugfixing;
 	}
 
-	// Token: 0x06001E09 RID: 7689 RVA: 0x00131658 File Offset: 0x0012F858
+	// Token: 0x06001E60 RID: 7776 RVA: 0x00130968 File Offset: 0x0012EB68
 	public taskGameplayVerbessern GetTaskGameplayVerbessern()
 	{
 		if (this.TaskCheckFailed(110))
@@ -3583,7 +3727,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskGameplayVerbessern;
 	}
 
-	// Token: 0x06001E0A RID: 7690 RVA: 0x001316C8 File Offset: 0x0012F8C8
+	// Token: 0x06001E61 RID: 7777 RVA: 0x001309D8 File Offset: 0x0012EBD8
 	public taskSpielbericht GetTaskSpielbericht()
 	{
 		if (this.TaskCheckFailed(100))
@@ -3603,7 +3747,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskSpielbericht;
 	}
 
-	// Token: 0x06001E0B RID: 7691 RVA: 0x00131738 File Offset: 0x0012F938
+	// Token: 0x06001E62 RID: 7778 RVA: 0x00130A48 File Offset: 0x0012EC48
 	public taskTraining GetTaskTraining()
 	{
 		if (this.TaskCheckFailed(90))
@@ -3623,7 +3767,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskTraining;
 	}
 
-	// Token: 0x06001E0C RID: 7692 RVA: 0x001317A8 File Offset: 0x0012F9A8
+	// Token: 0x06001E63 RID: 7779 RVA: 0x00130AB8 File Offset: 0x0012ECB8
 	public taskMitarbeitersuche GetTaskMitarbeitersuche()
 	{
 		if (this.TaskCheckFailed(80))
@@ -3643,7 +3787,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskMitarbeitersuche;
 	}
 
-	// Token: 0x06001E0D RID: 7693 RVA: 0x00131818 File Offset: 0x0012FA18
+	// Token: 0x06001E64 RID: 7780 RVA: 0x00130B28 File Offset: 0x0012ED28
 	public taskMarketingSpezial GetTaskMarketingSpezial()
 	{
 		if (this.TaskCheckFailed(70))
@@ -3663,7 +3807,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskMarketingSpezial;
 	}
 
-	// Token: 0x06001E0E RID: 7694 RVA: 0x00131888 File Offset: 0x0012FA88
+	// Token: 0x06001E65 RID: 7781 RVA: 0x00130B98 File Offset: 0x0012ED98
 	public taskMarketing GetTaskMarketing()
 	{
 		if (this.TaskCheckFailed(60))
@@ -3683,7 +3827,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskMarketing;
 	}
 
-	// Token: 0x06001E0F RID: 7695 RVA: 0x001318F8 File Offset: 0x0012FAF8
+	// Token: 0x06001E66 RID: 7782 RVA: 0x00130C08 File Offset: 0x0012EE08
 	public taskF2PUpdate GetTaskF2PUpdate()
 	{
 		if (this.TaskCheckFailed(50))
@@ -3703,7 +3847,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskF2PUpdate;
 	}
 
-	// Token: 0x06001E10 RID: 7696 RVA: 0x00131968 File Offset: 0x0012FB68
+	// Token: 0x06001E67 RID: 7783 RVA: 0x00130C78 File Offset: 0x0012EE78
 	public taskGame GetTaskGame()
 	{
 		if (this.TaskCheckFailed(40))
@@ -3723,7 +3867,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskGame;
 	}
 
-	// Token: 0x06001E11 RID: 7697 RVA: 0x001319D8 File Offset: 0x0012FBD8
+	// Token: 0x06001E68 RID: 7784 RVA: 0x00130CE8 File Offset: 0x0012EEE8
 	public taskForschung GetTaskForschung()
 	{
 		if (this.TaskCheckFailed(10))
@@ -3743,7 +3887,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskForschung;
 	}
 
-	// Token: 0x06001E12 RID: 7698 RVA: 0x00131A48 File Offset: 0x0012FC48
+	// Token: 0x06001E69 RID: 7785 RVA: 0x00130D58 File Offset: 0x0012EF58
 	public taskEngine GetTaskEngine()
 	{
 		if (this.TaskCheckFailed(20))
@@ -3763,7 +3907,7 @@ public class roomScript : MonoBehaviour
 		return this.myTaskEngine;
 	}
 
-	// Token: 0x06001E13 RID: 7699 RVA: 0x00131AB8 File Offset: 0x0012FCB8
+	// Token: 0x06001E6A RID: 7786 RVA: 0x00130DC8 File Offset: 0x0012EFC8
 	public taskUpdate GetTaskUpdate()
 	{
 		if (this.TaskCheckFailed(30))
@@ -3783,255 +3927,255 @@ public class roomScript : MonoBehaviour
 		return this.myTaskUpdate;
 	}
 
-	// Token: 0x040025C2 RID: 9666
+	// Token: 0x040025D9 RID: 9689
 	private GameObject main_;
 
-	// Token: 0x040025C3 RID: 9667
+	// Token: 0x040025DA RID: 9690
 	public mainScript mS_;
 
-	// Token: 0x040025C4 RID: 9668
+	// Token: 0x040025DB RID: 9691
 	public Camera camera_;
 
-	// Token: 0x040025C5 RID: 9669
+	// Token: 0x040025DC RID: 9692
 	private settingsScript settings_;
 
-	// Token: 0x040025C6 RID: 9670
+	// Token: 0x040025DD RID: 9693
 	private mapScript mapS_;
 
-	// Token: 0x040025C7 RID: 9671
+	// Token: 0x040025DE RID: 9694
 	private GUI_Main guiMain_;
 
-	// Token: 0x040025C8 RID: 9672
+	// Token: 0x040025DF RID: 9695
 	private mainCameraScript mCamS_;
 
-	// Token: 0x040025C9 RID: 9673
+	// Token: 0x040025E0 RID: 9696
 	private genres genres_;
 
-	// Token: 0x040025CA RID: 9674
+	// Token: 0x040025E1 RID: 9697
 	private themes themes_;
 
-	// Token: 0x040025CB RID: 9675
+	// Token: 0x040025E2 RID: 9698
 	private engineFeatures eF_;
 
-	// Token: 0x040025CC RID: 9676
+	// Token: 0x040025E3 RID: 9699
 	private gameplayFeatures gF_;
 
-	// Token: 0x040025CD RID: 9677
+	// Token: 0x040025E4 RID: 9700
 	private hardware hardware_;
 
-	// Token: 0x040025CE RID: 9678
+	// Token: 0x040025E5 RID: 9701
 	private hardwareFeatures hardwareFeatures_;
 
-	// Token: 0x040025CF RID: 9679
+	// Token: 0x040025E6 RID: 9702
 	private textScript tS_;
 
-	// Token: 0x040025D0 RID: 9680
+	// Token: 0x040025E7 RID: 9703
 	private buildRoomScript brS_;
 
-	// Token: 0x040025D1 RID: 9681
+	// Token: 0x040025E8 RID: 9704
 	private roomDataScript rdS_;
 
-	// Token: 0x040025D2 RID: 9682
+	// Token: 0x040025E9 RID: 9705
 	private forschungSonstiges fS_;
 
-	// Token: 0x040025D3 RID: 9683
+	// Token: 0x040025EA RID: 9706
 	public int myID;
 
-	// Token: 0x040025D4 RID: 9684
+	// Token: 0x040025EB RID: 9707
 	public int typ;
 
-	// Token: 0x040025D5 RID: 9685
+	// Token: 0x040025EC RID: 9708
 	public string myName;
 
-	// Token: 0x040025D6 RID: 9686
+	// Token: 0x040025ED RID: 9709
 	public int taskID = -1;
 
-	// Token: 0x040025D7 RID: 9687
+	// Token: 0x040025EE RID: 9710
 	public GameObject taskGameObject;
 
-	// Token: 0x040025D8 RID: 9688
+	// Token: 0x040025EF RID: 9711
 	public bool pause;
 
-	// Token: 0x040025D9 RID: 9689
+	// Token: 0x040025F0 RID: 9712
 	public bool lockKI;
 
-	// Token: 0x040025DA RID: 9690
+	// Token: 0x040025F1 RID: 9713
 	private int arbeitsplaetze;
 
-	// Token: 0x040025DB RID: 9691
+	// Token: 0x040025F2 RID: 9714
 	private int lagerplatz;
 
-	// Token: 0x040025DC RID: 9692
+	// Token: 0x040025F3 RID: 9715
 	public int lagerplatzUsed;
 
-	// Token: 0x040025DD RID: 9693
+	// Token: 0x040025F4 RID: 9716
 	private int serverplatz;
 
-	// Token: 0x040025DE RID: 9694
+	// Token: 0x040025F5 RID: 9717
 	public int serverplatzUsed;
 
-	// Token: 0x040025DF RID: 9695
+	// Token: 0x040025F6 RID: 9718
 	public int mitarbeiterZugeteilt;
 
-	// Token: 0x040025E0 RID: 9696
+	// Token: 0x040025F7 RID: 9719
 	public bool serverDown;
 
-	// Token: 0x040025E1 RID: 9697
+	// Token: 0x040025F8 RID: 9720
 	public bool serverOverheat;
 
-	// Token: 0x040025E2 RID: 9698
+	// Token: 0x040025F9 RID: 9721
 	public int leitenderGamedesigner = -1;
 
-	// Token: 0x040025E3 RID: 9699
+	// Token: 0x040025FA RID: 9722
 	public int leitenderTechniker = -1;
 
-	// Token: 0x040025E4 RID: 9700
+	// Token: 0x040025FB RID: 9723
 	public Vector3 uiPos;
 
-	// Token: 0x040025E5 RID: 9701
+	// Token: 0x040025FC RID: 9724
 	public GameObject myDoor;
 
-	// Token: 0x040025E6 RID: 9702
+	// Token: 0x040025FD RID: 9725
 	public GameObject[] uiObjects;
 
-	// Token: 0x040025E7 RID: 9703
+	// Token: 0x040025FE RID: 9726
 	public GameObject myUI;
 
-	// Token: 0x040025E8 RID: 9704
+	// Token: 0x040025FF RID: 9727
 	private roomButtonScript rbS_;
 
-	// Token: 0x040025E9 RID: 9705
+	// Token: 0x04002600 RID: 9728
 	public GameObject myUI_Line;
 
-	// Token: 0x040025EA RID: 9706
+	// Token: 0x04002601 RID: 9729
 	public GameObject myUI_UnterstuetzenLine;
 
-	// Token: 0x040025EB RID: 9707
+	// Token: 0x04002602 RID: 9730
 	private bool outline;
 
-	// Token: 0x040025EC RID: 9708
+	// Token: 0x04002603 RID: 9731
 	public List<GameObject> listGameObjects = new List<GameObject>();
 
-	// Token: 0x040025ED RID: 9709
+	// Token: 0x04002604 RID: 9732
 	public List<objectScript> listInventar = new List<objectScript>();
 
-	// Token: 0x040025EE RID: 9710
+	// Token: 0x04002605 RID: 9733
 	private Vector2 invisibleGUI = new Vector2(-300f, 0f);
 
-	// Token: 0x040025EF RID: 9711
+	// Token: 0x04002606 RID: 9734
 	private RectTransform myGUIrectTransform;
 
-	// Token: 0x040025F0 RID: 9712
+	// Token: 0x04002607 RID: 9735
 	private Vector3 ROOMLINE_cameraPos;
 
-	// Token: 0x040025F1 RID: 9713
+	// Token: 0x04002608 RID: 9736
 	private Quaternion ROOMLINE_cameraRot;
 
-	// Token: 0x040025F2 RID: 9714
+	// Token: 0x04002609 RID: 9737
 	private VectorLine roomLine3D;
 
-	// Token: 0x040025F3 RID: 9715
+	// Token: 0x0400260A RID: 9738
 	private bool initRoomLine;
 
-	// Token: 0x040025F4 RID: 9716
+	// Token: 0x0400260B RID: 9739
 	private bool isCrunchTime;
 
-	// Token: 0x040025F5 RID: 9717
+	// Token: 0x0400260C RID: 9740
 	private float DrawLine_timer;
 
-	// Token: 0x040025F6 RID: 9718
+	// Token: 0x0400260D RID: 9741
 	private Vector3 cameraPos;
 
-	// Token: 0x040025F7 RID: 9719
+	// Token: 0x0400260E RID: 9742
 	private Quaternion cameraRot;
 
-	// Token: 0x040025F8 RID: 9720
+	// Token: 0x0400260F RID: 9743
 	private VectorLine drawLine3D;
 
-	// Token: 0x040025F9 RID: 9721
+	// Token: 0x04002610 RID: 9744
 	private bool initLine;
 
-	// Token: 0x040025FA RID: 9722
+	// Token: 0x04002611 RID: 9745
 	private float lagerraumTimer;
 
-	// Token: 0x040025FB RID: 9723
+	// Token: 0x04002612 RID: 9746
 	private taskFanshop myTaskFanshop;
 
-	// Token: 0x040025FC RID: 9724
+	// Token: 0x04002613 RID: 9747
 	private taskWait myTaskWait;
 
-	// Token: 0x040025FD RID: 9725
+	// Token: 0x04002614 RID: 9748
 	private taskUnterstuetzen myTaskUnterstuetzen;
 
-	// Token: 0x040025FE RID: 9726
+	// Token: 0x04002615 RID: 9749
 	private taskPolishing myTaskPolishing;
 
-	// Token: 0x040025FF RID: 9727
+	// Token: 0x04002616 RID: 9750
 	private taskMarktforschung myTaskMarktforschung;
 
-	// Token: 0x04002600 RID: 9728
+	// Token: 0x04002617 RID: 9751
 	private taskContractWait myTaskContractWait;
 
-	// Token: 0x04002601 RID: 9729
+	// Token: 0x04002618 RID: 9752
 	private taskContractWork myTaskContractWork;
 
-	// Token: 0x04002602 RID: 9730
+	// Token: 0x04002619 RID: 9753
 	private taskSupport myTaskSupport;
 
-	// Token: 0x04002603 RID: 9731
+	// Token: 0x0400261A RID: 9754
 	private taskFankampagne myTaskFankampagne;
 
-	// Token: 0x04002604 RID: 9732
+	// Token: 0x0400261B RID: 9755
 	private taskKonsole myTaskKonsole;
 
-	// Token: 0x04002605 RID: 9733
+	// Token: 0x0400261C RID: 9756
 	private taskArcadeProduction myTaskArcadeProduction;
 
-	// Token: 0x04002606 RID: 9734
+	// Token: 0x0400261D RID: 9757
 	private taskProduction myTaskProduction;
 
-	// Token: 0x04002607 RID: 9735
+	// Token: 0x0400261E RID: 9758
 	private taskAnimationVerbessern myTaskAnimationVerbessern;
 
-	// Token: 0x04002608 RID: 9736
+	// Token: 0x0400261F RID: 9759
 	private taskSoundVerbessern myTaskSoundVerbessern;
 
-	// Token: 0x04002609 RID: 9737
+	// Token: 0x04002620 RID: 9760
 	private taskGrafikVerbessern myTaskGrafikVerbessern;
 
-	// Token: 0x0400260A RID: 9738
+	// Token: 0x04002621 RID: 9761
 	private taskBugfixing myTaskBugfixing;
 
-	// Token: 0x0400260B RID: 9739
+	// Token: 0x04002622 RID: 9762
 	private taskGameplayVerbessern myTaskGameplayVerbessern;
 
-	// Token: 0x0400260C RID: 9740
+	// Token: 0x04002623 RID: 9763
 	private taskSpielbericht myTaskSpielbericht;
 
-	// Token: 0x0400260D RID: 9741
+	// Token: 0x04002624 RID: 9764
 	private taskTraining myTaskTraining;
 
-	// Token: 0x0400260E RID: 9742
+	// Token: 0x04002625 RID: 9765
 	private taskMitarbeitersuche myTaskMitarbeitersuche;
 
-	// Token: 0x0400260F RID: 9743
+	// Token: 0x04002626 RID: 9766
 	private taskMarketingSpezial myTaskMarketingSpezial;
 
-	// Token: 0x04002610 RID: 9744
+	// Token: 0x04002627 RID: 9767
 	private taskMarketing myTaskMarketing;
 
-	// Token: 0x04002611 RID: 9745
+	// Token: 0x04002628 RID: 9768
 	private taskF2PUpdate myTaskF2PUpdate;
 
-	// Token: 0x04002612 RID: 9746
+	// Token: 0x04002629 RID: 9769
 	private taskGame myTaskGame;
 
-	// Token: 0x04002613 RID: 9747
+	// Token: 0x0400262A RID: 9770
 	private taskForschung myTaskForschung;
 
-	// Token: 0x04002614 RID: 9748
+	// Token: 0x0400262B RID: 9771
 	private taskEngine myTaskEngine;
 
-	// Token: 0x04002615 RID: 9749
+	// Token: 0x0400262C RID: 9772
 	private taskUpdate myTaskUpdate;
 }

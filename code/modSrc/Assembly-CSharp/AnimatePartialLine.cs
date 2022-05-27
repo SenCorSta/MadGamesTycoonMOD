@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x0200035A RID: 858
+// Token: 0x0200035D RID: 861
 public class AnimatePartialLine : MonoBehaviour
 {
-	// Token: 0x06001F9A RID: 8090 RVA: 0x0014CD9C File Offset: 0x0014AF9C
+	// Token: 0x06001FED RID: 8173 RVA: 0x0014C410 File Offset: 0x0014A610
 	private void Start()
 	{
 		this.startIndex = (float)(-(float)this.visibleLineSegments);
@@ -24,7 +24,7 @@ public class AnimatePartialLine : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F9B RID: 8091 RVA: 0x0014CE5C File Offset: 0x0014B05C
+	// Token: 0x06001FEE RID: 8174 RVA: 0x0014C4D0 File Offset: 0x0014A6D0
 	private void Update()
 	{
 		this.startIndex += Time.deltaTime * this.speed;
@@ -44,24 +44,24 @@ public class AnimatePartialLine : MonoBehaviour
 		this.line.Draw();
 	}
 
-	// Token: 0x04002820 RID: 10272
+	// Token: 0x04002836 RID: 10294
 	public Texture lineTexture;
 
-	// Token: 0x04002821 RID: 10273
+	// Token: 0x04002837 RID: 10295
 	public int segments = 60;
 
-	// Token: 0x04002822 RID: 10274
+	// Token: 0x04002838 RID: 10296
 	public int visibleLineSegments = 20;
 
-	// Token: 0x04002823 RID: 10275
+	// Token: 0x04002839 RID: 10297
 	public float speed = 60f;
 
-	// Token: 0x04002824 RID: 10276
+	// Token: 0x0400283A RID: 10298
 	private float startIndex;
 
-	// Token: 0x04002825 RID: 10277
+	// Token: 0x0400283B RID: 10299
 	private float endIndex;
 
-	// Token: 0x04002826 RID: 10278
+	// Token: 0x0400283C RID: 10300
 	private VectorLine line;
 }

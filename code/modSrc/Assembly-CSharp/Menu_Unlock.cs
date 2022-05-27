@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001B9 RID: 441
+// Token: 0x020001BA RID: 442
 public class Menu_Unlock : MonoBehaviour
 {
-	// Token: 0x06001097 RID: 4247 RVA: 0x0000BBE9 File Offset: 0x00009DE9
+	// Token: 0x060010B1 RID: 4273 RVA: 0x000B0B40 File Offset: 0x000AED40
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001098 RID: 4248 RVA: 0x000BC89C File Offset: 0x000BAA9C
+	// Token: 0x060010B2 RID: 4274 RVA: 0x000B0B48 File Offset: 0x000AED48
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_Unlock : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001099 RID: 4249 RVA: 0x0000BBF1 File Offset: 0x00009DF1
+	// Token: 0x060010B3 RID: 4275 RVA: 0x000B0C10 File Offset: 0x000AEE10
 	public void Init(string c, bool close)
 	{
 		this.FindScripts();
@@ -48,7 +48,7 @@ public class Menu_Unlock : MonoBehaviour
 		this.closeMenu = close;
 	}
 
-	// Token: 0x0600109A RID: 4250 RVA: 0x0000BC13 File Offset: 0x00009E13
+	// Token: 0x060010B4 RID: 4276 RVA: 0x000B0C32 File Offset: 0x000AEE32
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -57,7 +57,7 @@ public class Menu_Unlock : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600109B RID: 4251 RVA: 0x0000BC2E File Offset: 0x00009E2E
+	// Token: 0x060010B5 RID: 4277 RVA: 0x000B0C4D File Offset: 0x000AEE4D
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -65,7 +65,7 @@ public class Menu_Unlock : MonoBehaviour
 		this.unlock_.CheckUnlock(true);
 	}
 
-	// Token: 0x0600109C RID: 4252 RVA: 0x0000BC55 File Offset: 0x00009E55
+	// Token: 0x060010B6 RID: 4278 RVA: 0x000B0C74 File Offset: 0x000AEE74
 	public void BUTTON_Yes()
 	{
 		if (this.closeMenu)
@@ -75,27 +75,27 @@ public class Menu_Unlock : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x04001515 RID: 5397
+	// Token: 0x04001520 RID: 5408
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001516 RID: 5398
+	// Token: 0x04001521 RID: 5409
 	private GameObject main_;
 
-	// Token: 0x04001517 RID: 5399
+	// Token: 0x04001522 RID: 5410
 	private mainScript mS_;
 
-	// Token: 0x04001518 RID: 5400
+	// Token: 0x04001523 RID: 5411
 	private textScript tS_;
 
-	// Token: 0x04001519 RID: 5401
+	// Token: 0x04001524 RID: 5412
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400151A RID: 5402
+	// Token: 0x04001525 RID: 5413
 	private sfxScript sfx_;
 
-	// Token: 0x0400151B RID: 5403
+	// Token: 0x04001526 RID: 5414
 	private unlockScript unlock_;
 
-	// Token: 0x0400151C RID: 5404
+	// Token: 0x04001527 RID: 5415
 	private bool closeMenu;
 }

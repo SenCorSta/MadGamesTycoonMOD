@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x02000363 RID: 867
+// Token: 0x02000366 RID: 870
 public class SelectionBox : MonoBehaviour
 {
-	// Token: 0x06001FC2 RID: 8130 RVA: 0x000150F5 File Offset: 0x000132F5
+	// Token: 0x06002015 RID: 8213 RVA: 0x0014D408 File Offset: 0x0014B608
 	private void Start()
 	{
 		this.lineColors = new List<Color32>(new Color32[4]);
@@ -15,13 +15,13 @@ public class SelectionBox : MonoBehaviour
 		this.selectionLine.capLength = 1.5f;
 	}
 
-	// Token: 0x06001FC3 RID: 8131 RVA: 0x00015134 File Offset: 0x00013334
+	// Token: 0x06002016 RID: 8214 RVA: 0x0014D447 File Offset: 0x0014B647
 	private void OnGUI()
 	{
 		GUI.Label(new Rect(10f, 10f, 300f, 25f), "Click & drag to make a selection box");
 	}
 
-	// Token: 0x06001FC4 RID: 8132 RVA: 0x0014DBE8 File Offset: 0x0014BDE8
+	// Token: 0x06002017 RID: 8215 RVA: 0x0014D46C File Offset: 0x0014B66C
 	private void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
@@ -41,7 +41,7 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001FC5 RID: 8133 RVA: 0x00015159 File Offset: 0x00013359
+	// Token: 0x06002018 RID: 8216 RVA: 0x0014D4F3 File Offset: 0x0014B6F3
 	private IEnumerator CycleColor()
 	{
 		for (;;)
@@ -56,12 +56,12 @@ public class SelectionBox : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04002858 RID: 10328
+	// Token: 0x0400286E RID: 10350
 	private VectorLine selectionLine;
 
-	// Token: 0x04002859 RID: 10329
+	// Token: 0x0400286F RID: 10351
 	private Vector2 originalPos;
 
-	// Token: 0x0400285A RID: 10330
+	// Token: 0x04002870 RID: 10352
 	private List<Color32> lineColors;
 }

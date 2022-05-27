@@ -2,15 +2,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000278 RID: 632
+// Token: 0x0200027C RID: 636
 public class setText : MonoBehaviour
 {
-	// Token: 0x060018B6 RID: 6326 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x060018FB RID: 6395 RVA: 0x00002715 File Offset: 0x00000915
 	private void Start()
 	{
 	}
 
-	// Token: 0x060018B7 RID: 6327 RVA: 0x000FD9E0 File Offset: 0x000FBBE0
+	// Token: 0x060018FC RID: 6396 RVA: 0x000F8BF4 File Offset: 0x000F6DF4
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -21,7 +21,7 @@ public class setText : MonoBehaviour
 		base.GetComponent<Text>().text = this.c;
 	}
 
-	// Token: 0x060018B8 RID: 6328 RVA: 0x000FDA34 File Offset: 0x000FBC34
+	// Token: 0x060018FD RID: 6397 RVA: 0x000F8C48 File Offset: 0x000F6E48
 	private void SetText()
 	{
 		if (this.textArray.Length > 0 && this.textID > -1)
@@ -31,7 +31,7 @@ public class setText : MonoBehaviour
 		base.GetComponent<Text>().text = this.c;
 	}
 
-	// Token: 0x060018B9 RID: 6329 RVA: 0x000FDA80 File Offset: 0x000FBC80
+	// Token: 0x060018FE RID: 6398 RVA: 0x000F8C94 File Offset: 0x000F6E94
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -48,21 +48,21 @@ public class setText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001C3E RID: 7230
+	// Token: 0x04001C59 RID: 7257
 	private GameObject main_;
 
-	// Token: 0x04001C3F RID: 7231
+	// Token: 0x04001C5A RID: 7258
 	private textScript tS_;
 
-	// Token: 0x04001C40 RID: 7232
+	// Token: 0x04001C5B RID: 7259
 	private settingsScript settings_;
 
-	// Token: 0x04001C41 RID: 7233
+	// Token: 0x04001C5C RID: 7260
 	public int textID = -1;
 
-	// Token: 0x04001C42 RID: 7234
+	// Token: 0x04001C5D RID: 7261
 	public string textArray = "";
 
-	// Token: 0x04001C43 RID: 7235
+	// Token: 0x04001C5E RID: 7262
 	public string c = "";
 }

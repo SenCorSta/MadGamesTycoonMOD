@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000261 RID: 609
+// Token: 0x02000265 RID: 613
 public class Menu_TochterfirmaRename : MonoBehaviour
 {
-	// Token: 0x0600179E RID: 6046 RVA: 0x00010718 File Offset: 0x0000E918
+	// Token: 0x060017E1 RID: 6113 RVA: 0x000EED2A File Offset: 0x000ECF2A
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600179F RID: 6047 RVA: 0x000F4538 File Offset: 0x000F2738
+	// Token: 0x060017E2 RID: 6114 RVA: 0x000EED34 File Offset: 0x000ECF34
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,14 +44,14 @@ public class Menu_TochterfirmaRename : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017A0 RID: 6048 RVA: 0x00010720 File Offset: 0x0000E920
+	// Token: 0x060017E3 RID: 6115 RVA: 0x000EEE0E File Offset: 0x000ED00E
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.cmS_.disableMovement = true;
 	}
 
-	// Token: 0x060017A1 RID: 6049 RVA: 0x00010734 File Offset: 0x0000E934
+	// Token: 0x060017E4 RID: 6116 RVA: 0x000EEE22 File Offset: 0x000ED022
 	private void OnDisable()
 	{
 		this.FindScripts();
@@ -62,7 +62,7 @@ public class Menu_TochterfirmaRename : MonoBehaviour
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x060017A2 RID: 6050 RVA: 0x00010756 File Offset: 0x0000E956
+	// Token: 0x060017E5 RID: 6117 RVA: 0x000EEE44 File Offset: 0x000ED044
 	public void Init(publisherScript script_)
 	{
 		this.FindScripts();
@@ -71,7 +71,7 @@ public class Menu_TochterfirmaRename : MonoBehaviour
 		this.SetLogo(this.pS_.logoID);
 	}
 
-	// Token: 0x060017A3 RID: 6051 RVA: 0x000F4614 File Offset: 0x000F2814
+	// Token: 0x060017E6 RID: 6118 RVA: 0x000EEE84 File Offset: 0x000ED084
 	public void BUTTON_Firmenlogo()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -79,14 +79,14 @@ public class Menu_TochterfirmaRename : MonoBehaviour
 		this.guiMain_.uiObjects[392].GetComponent<Menu_TochterfirmaLogo>().Init(this.pS_);
 	}
 
-	// Token: 0x060017A4 RID: 6052 RVA: 0x00010793 File Offset: 0x0000E993
+	// Token: 0x060017E7 RID: 6119 RVA: 0x000EEEDB File Offset: 0x000ED0DB
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060017A5 RID: 6053 RVA: 0x000F466C File Offset: 0x000F286C
+	// Token: 0x060017E8 RID: 6120 RVA: 0x000EEEF8 File Offset: 0x000ED0F8
 	public void BUTTON_Yes()
 	{
 		if (this.uiObjects[0].GetComponent<InputField>().text.Length <= 0)
@@ -103,37 +103,37 @@ public class Menu_TochterfirmaRename : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x060017A6 RID: 6054 RVA: 0x000107AE File Offset: 0x0000E9AE
+	// Token: 0x060017E9 RID: 6121 RVA: 0x000EEFA3 File Offset: 0x000ED1A3
 	public void SetLogo(int i)
 	{
 		this.uiObjects[1].GetComponent<Image>().sprite = this.guiMain_.GetCompanyLogo(i);
 		this.logo = i;
 	}
 
-	// Token: 0x04001B79 RID: 7033
+	// Token: 0x04001B93 RID: 7059
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001B7A RID: 7034
+	// Token: 0x04001B94 RID: 7060
 	private GameObject main_;
 
-	// Token: 0x04001B7B RID: 7035
+	// Token: 0x04001B95 RID: 7061
 	private mainScript mS_;
 
-	// Token: 0x04001B7C RID: 7036
+	// Token: 0x04001B96 RID: 7062
 	private textScript tS_;
 
-	// Token: 0x04001B7D RID: 7037
+	// Token: 0x04001B97 RID: 7063
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001B7E RID: 7038
+	// Token: 0x04001B98 RID: 7064
 	private sfxScript sfx_;
 
-	// Token: 0x04001B7F RID: 7039
+	// Token: 0x04001B99 RID: 7065
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04001B80 RID: 7040
+	// Token: 0x04001B9A RID: 7066
 	private int logo = -1;
 
-	// Token: 0x04001B81 RID: 7041
+	// Token: 0x04001B9B RID: 7067
 	public publisherScript pS_;
 }

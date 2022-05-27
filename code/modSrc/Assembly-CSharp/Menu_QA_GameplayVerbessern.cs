@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000208 RID: 520
+// Token: 0x02000209 RID: 521
 public class Menu_QA_GameplayVerbessern : MonoBehaviour
 {
-	// Token: 0x060013D3 RID: 5075 RVA: 0x0000D898 File Offset: 0x0000BA98
+	// Token: 0x060013EF RID: 5103 RVA: 0x000D04FC File Offset: 0x000CE6FC
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060013D4 RID: 5076 RVA: 0x000DA350 File Offset: 0x000D8550
+	// Token: 0x060013F0 RID: 5104 RVA: 0x000D0504 File Offset: 0x000CE704
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013D5 RID: 5077 RVA: 0x0000D8A0 File Offset: 0x0000BAA0
+	// Token: 0x060013F1 RID: 5105 RVA: 0x000D06A2 File Offset: 0x000CE8A2
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -78,7 +78,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060013D6 RID: 5078 RVA: 0x000DA4F0 File Offset: 0x000D86F0
+	// Token: 0x060013F2 RID: 5106 RVA: 0x000D06C4 File Offset: 0x000CE8C4
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -94,7 +94,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060013D7 RID: 5079 RVA: 0x0000D8C1 File Offset: 0x0000BAC1
+	// Token: 0x060013F3 RID: 5107 RVA: 0x000D0710 File Offset: 0x000CE910
 	public void Init(roomScript roomScript_)
 	{
 		this.FindScripts();
@@ -104,7 +104,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060013D8 RID: 5080 RVA: 0x000DA53C File Offset: 0x000D873C
+	// Token: 0x060013F4 RID: 5108 RVA: 0x000D0738 File Offset: 0x000CE938
 	private void DeselectAllButtons()
 	{
 		this.allAdds = false;
@@ -118,7 +118,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013D9 RID: 5081 RVA: 0x000DA5F8 File Offset: 0x000D87F8
+	// Token: 0x060013F5 RID: 5109 RVA: 0x000D07F4 File Offset: 0x000CE9F4
 	public int GetCosts(int i)
 	{
 		if (!this.selectedGame)
@@ -134,7 +134,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060013DA RID: 5082 RVA: 0x000DA648 File Offset: 0x000D8848
+	// Token: 0x060013F6 RID: 5110 RVA: 0x000D0844 File Offset: 0x000CEA44
 	private void UpdateGUI()
 	{
 		for (int i = 0; i < this.buttonAdds.Length; i++)
@@ -181,7 +181,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		this.uiObjects[10].GetComponent<Image>().sprite = this.games_.gamePlatformTypSprites[0];
 	}
 
-	// Token: 0x060013DB RID: 5083 RVA: 0x0000D8E8 File Offset: 0x0000BAE8
+	// Token: 0x060013F7 RID: 5111 RVA: 0x000D0A8E File Offset: 0x000CEC8E
 	public void SetGame(gameScript script_)
 	{
 		this.selectedGame = script_;
@@ -189,7 +189,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060013DC RID: 5084 RVA: 0x000DA894 File Offset: 0x000D8A94
+	// Token: 0x060013F8 RID: 5112 RVA: 0x000D0AA4 File Offset: 0x000CECA4
 	public void BUTTON_SelectGame()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -197,7 +197,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		this.guiMain_.uiObjects[173].GetComponent<Menu_QA_GameplayVerbessernSelectGame>().Init();
 	}
 
-	// Token: 0x060013DD RID: 5085 RVA: 0x0009B0D8 File Offset: 0x000992D8
+	// Token: 0x060013F9 RID: 5113 RVA: 0x000D0AF8 File Offset: 0x000CECF8
 	public gameScript FindGame()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -206,7 +206,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.playerGame && !component.isOnMarket && component.inDevelopment)
+				if (component && component.developerID == this.mS_.myID && !component.isOnMarket && component.inDevelopment)
 				{
 					return component;
 				}
@@ -215,7 +215,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060013DE RID: 5086 RVA: 0x000DA8E8 File Offset: 0x000D8AE8
+	// Token: 0x060013FA RID: 5114 RVA: 0x000D0B60 File Offset: 0x000CED60
 	private long GetDevCosts()
 	{
 		long num = 0L;
@@ -229,7 +229,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060013DF RID: 5087 RVA: 0x000DA924 File Offset: 0x000D8B24
+	// Token: 0x060013FB RID: 5115 RVA: 0x000D0B9C File Offset: 0x000CED9C
 	private bool WirdInAnderenRaumBearbeitet(int slot)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Task");
@@ -247,7 +247,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060013E0 RID: 5088 RVA: 0x0000D8FD File Offset: 0x0000BAFD
+	// Token: 0x060013FC RID: 5116 RVA: 0x000D0BFD File Offset: 0x000CEDFD
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -255,7 +255,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060013E1 RID: 5089 RVA: 0x0000D923 File Offset: 0x0000BB23
+	// Token: 0x060013FD RID: 5117 RVA: 0x000D0C23 File Offset: 0x000CEE23
 	public void BUTTON_Adds(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -263,7 +263,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060013E2 RID: 5090 RVA: 0x000DA988 File Offset: 0x000D8B88
+	// Token: 0x060013FE RID: 5118 RVA: 0x000D0C4C File Offset: 0x000CEE4C
 	public void BUTTON_AlleAdds()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -278,7 +278,7 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060013E3 RID: 5091 RVA: 0x000DA9EC File Offset: 0x000D8BEC
+	// Token: 0x060013FF RID: 5119 RVA: 0x000D0CB0 File Offset: 0x000CEEB0
 	public void BUTTON_Start()
 	{
 		int num = Mathf.RoundToInt((float)this.GetDevCosts());
@@ -330,69 +330,69 @@ public class Menu_QA_GameplayVerbessern : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001800 RID: 6144
+	// Token: 0x04001809 RID: 6153
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001801 RID: 6145
+	// Token: 0x0400180A RID: 6154
 	public int[] costs;
 
-	// Token: 0x04001802 RID: 6146
+	// Token: 0x0400180B RID: 6155
 	public float[] points;
 
-	// Token: 0x04001803 RID: 6147
+	// Token: 0x0400180C RID: 6156
 	public float[] pointsInPercent;
 
-	// Token: 0x04001804 RID: 6148
+	// Token: 0x0400180D RID: 6157
 	private bool[] buttonAdds = new bool[6];
 
-	// Token: 0x04001805 RID: 6149
+	// Token: 0x0400180E RID: 6158
 	private GameObject main_;
 
-	// Token: 0x04001806 RID: 6150
+	// Token: 0x0400180F RID: 6159
 	private mainScript mS_;
 
-	// Token: 0x04001807 RID: 6151
+	// Token: 0x04001810 RID: 6160
 	private textScript tS_;
 
-	// Token: 0x04001808 RID: 6152
+	// Token: 0x04001811 RID: 6161
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001809 RID: 6153
+	// Token: 0x04001812 RID: 6162
 	private sfxScript sfx_;
 
-	// Token: 0x0400180A RID: 6154
+	// Token: 0x04001813 RID: 6163
 	private genres genres_;
 
-	// Token: 0x0400180B RID: 6155
+	// Token: 0x04001814 RID: 6164
 	private themes themes_;
 
-	// Token: 0x0400180C RID: 6156
+	// Token: 0x04001815 RID: 6165
 	private licences licences_;
 
-	// Token: 0x0400180D RID: 6157
+	// Token: 0x04001816 RID: 6166
 	private engineFeatures eF_;
 
-	// Token: 0x0400180E RID: 6158
+	// Token: 0x04001817 RID: 6167
 	private cameraMovementScript cmS_;
 
-	// Token: 0x0400180F RID: 6159
+	// Token: 0x04001818 RID: 6168
 	private unlockScript unlock_;
 
-	// Token: 0x04001810 RID: 6160
+	// Token: 0x04001819 RID: 6169
 	private gameplayFeatures gF_;
 
-	// Token: 0x04001811 RID: 6161
+	// Token: 0x0400181A RID: 6170
 	private games games_;
 
-	// Token: 0x04001812 RID: 6162
+	// Token: 0x0400181B RID: 6171
 	private gameScript selectedGame;
 
-	// Token: 0x04001813 RID: 6163
+	// Token: 0x0400181C RID: 6172
 	private roomScript rS_;
 
-	// Token: 0x04001814 RID: 6164
+	// Token: 0x0400181D RID: 6173
 	private float updateTimer;
 
-	// Token: 0x04001815 RID: 6165
+	// Token: 0x0400181E RID: 6174
 	private bool allAdds;
 }

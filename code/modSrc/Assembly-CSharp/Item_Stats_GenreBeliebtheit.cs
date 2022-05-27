@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x020000F8 RID: 248
 public class Item_Stats_GenreBeliebtheit : MonoBehaviour
 {
-	// Token: 0x06000817 RID: 2071 RVA: 0x0006ABD0 File Offset: 0x00068DD0
+	// Token: 0x06000820 RID: 2080 RVA: 0x00058C40 File Offset: 0x00056E40
 	public void Init(string text_, float prozent, Sprite pic)
 	{
 		this.uiObjects[0].GetComponent<Text>().text = text_;
@@ -33,7 +33,7 @@ public class Item_Stats_GenreBeliebtheit : MonoBehaviour
 		this.uiObjects[3].GetComponent<Image>().color = this.guiMain_.colorsBalken[2];
 	}
 
-	// Token: 0x06000818 RID: 2072 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x06000821 RID: 2081 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);

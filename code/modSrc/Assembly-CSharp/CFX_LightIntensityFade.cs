@@ -5,13 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(Light))]
 public class CFX_LightIntensityFade : MonoBehaviour
 {
-	// Token: 0x0600005C RID: 92 RVA: 0x0000241A File Offset: 0x0000061A
+	// Token: 0x0600005C RID: 92 RVA: 0x00003AB6 File Offset: 0x00001CB6
 	private void Start()
 	{
 		this.baseIntensity = base.GetComponent<Light>().intensity;
 	}
 
-	// Token: 0x0600005D RID: 93 RVA: 0x0000242D File Offset: 0x0000062D
+	// Token: 0x0600005D RID: 93 RVA: 0x00003AC9 File Offset: 0x00001CC9
 	private void OnEnable()
 	{
 		this.p_lifetime = 0f;
@@ -22,7 +22,7 @@ public class CFX_LightIntensityFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600005E RID: 94 RVA: 0x0001A468 File Offset: 0x00018668
+	// Token: 0x0600005E RID: 94 RVA: 0x00003AFC File Offset: 0x00001CFC
 	private void Update()
 	{
 		if (this.p_delay > 0f)

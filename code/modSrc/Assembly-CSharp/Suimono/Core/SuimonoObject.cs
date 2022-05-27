@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace Suimono.Core
 {
-	// Token: 0x0200039C RID: 924
+	// Token: 0x0200039F RID: 927
 	[ExecuteInEditMode]
 	public class SuimonoObject : MonoBehaviour
 	{
-		// Token: 0x06002225 RID: 8741 RVA: 0x001630B8 File Offset: 0x001612B8
+		// Token: 0x06002278 RID: 8824 RVA: 0x00164670 File Offset: 0x00162870
 		private void Start()
 		{
 			if (GameObject.Find("SUIMONO_Module") != null)
@@ -50,7 +50,7 @@ namespace Suimono.Core
 			this.ReloadData();
 		}
 
-		// Token: 0x06002226 RID: 8742 RVA: 0x00163328 File Offset: 0x00161528
+		// Token: 0x06002279 RID: 8825 RVA: 0x001648E0 File Offset: 0x00162AE0
 		private void OnEnable()
 		{
 			if (Application.isPlaying)
@@ -66,7 +66,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002227 RID: 8743 RVA: 0x00163380 File Offset: 0x00161580
+		// Token: 0x0600227A RID: 8826 RVA: 0x00164938 File Offset: 0x00162B38
 		private void OnDisable()
 		{
 			if (Application.isPlaying)
@@ -82,13 +82,13 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002228 RID: 8744 RVA: 0x00016D8E File Offset: 0x00014F8E
+		// Token: 0x0600227B RID: 8827 RVA: 0x0016498E File Offset: 0x00162B8E
 		private void ReloadData()
 		{
 			SuimonoObject.reloadData = false;
 		}
 
-		// Token: 0x06002229 RID: 8745 RVA: 0x001633D8 File Offset: 0x001615D8
+		// Token: 0x0600227C RID: 8828 RVA: 0x00164998 File Offset: 0x00162B98
 		private void LateUpdate()
 		{
 			if (this.moduleObject != null)
@@ -593,7 +593,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x0600222A RID: 8746 RVA: 0x001652EC File Offset: 0x001634EC
+		// Token: 0x0600227D RID: 8829 RVA: 0x001668AC File Offset: 0x00164AAC
 		public Vector2 SuimonoConvertAngleToVector(float convertAngle)
 		{
 			this.flow_dir = new Vector2(0f, 0f);
@@ -611,7 +611,7 @@ namespace Suimono.Core
 			return this.flow_dir;
 		}
 
-		// Token: 0x0600222B RID: 8747 RVA: 0x00016D96 File Offset: 0x00014F96
+		// Token: 0x0600227E RID: 8830 RVA: 0x00166989 File Offset: 0x00164B89
 		public void SuimonoSetPreset(string fName, string pName)
 		{
 			this.presetTimer = 1f;
@@ -619,7 +619,7 @@ namespace Suimono.Core
 			this.PresetLoadBuild(fName, pName);
 		}
 
-		// Token: 0x0600222C RID: 8748 RVA: 0x001653CC File Offset: 0x001635CC
+		// Token: 0x0600227F RID: 8831 RVA: 0x001669A4 File Offset: 0x00164BA4
 		public void SuimonoSavePreset(string fName, string pName)
 		{
 			int num = this.PresetGetNum("folder", fName);
@@ -639,7 +639,7 @@ namespace Suimono.Core
 			}));
 		}
 
-		// Token: 0x0600222D RID: 8749 RVA: 0x00165438 File Offset: 0x00163638
+		// Token: 0x06002280 RID: 8832 RVA: 0x00166A10 File Offset: 0x00164C10
 		private void PresetInit()
 		{
 			this.presetTimer = 1f;
@@ -703,7 +703,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x0600222E RID: 8750 RVA: 0x001657FC File Offset: 0x001639FC
+		// Token: 0x06002281 RID: 8833 RVA: 0x00166DD4 File Offset: 0x00164FD4
 		public int PresetGetNum(string mode, string pName)
 		{
 			int result = -1;
@@ -786,27 +786,27 @@ namespace Suimono.Core
 			return result;
 		}
 
-		// Token: 0x0600222F RID: 8751 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x06002282 RID: 8834 RVA: 0x00002715 File Offset: 0x00000915
 		public void PresetRename(int ppos, string newName)
 		{
 		}
 
-		// Token: 0x06002230 RID: 8752 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x06002283 RID: 8835 RVA: 0x00002715 File Offset: 0x00000915
 		public void PresetAdd()
 		{
 		}
 
-		// Token: 0x06002231 RID: 8753 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x06002284 RID: 8836 RVA: 0x00002715 File Offset: 0x00000915
 		public void PresetDelete(int fpos, int ppos)
 		{
 		}
 
-		// Token: 0x06002232 RID: 8754 RVA: 0x00002098 File Offset: 0x00000298
+		// Token: 0x06002285 RID: 8837 RVA: 0x00002715 File Offset: 0x00000915
 		public void PresetSave(int fpos, int ppos)
 		{
 		}
 
-		// Token: 0x06002233 RID: 8755 RVA: 0x00165BF8 File Offset: 0x00163DF8
+		// Token: 0x06002286 RID: 8838 RVA: 0x001671D0 File Offset: 0x001653D0
 		public void PresetLoad(int ppos)
 		{
 			if (this.presetIndex >= 0)
@@ -838,7 +838,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002234 RID: 8756 RVA: 0x00165E00 File Offset: 0x00164000
+		// Token: 0x06002287 RID: 8839 RVA: 0x001673D8 File Offset: 0x001655D8
 		private void PresetLoadBuild(string fName, string pName)
 		{
 			this.datFile = (Resources.Load("SUIMONO_PRESETS_" + fName + "/SUIMONO_PRESET_" + pName) as TextAsset);
@@ -864,7 +864,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002235 RID: 8757 RVA: 0x00165FBC File Offset: 0x001641BC
+		// Token: 0x06002288 RID: 8840 RVA: 0x00167594 File Offset: 0x00165794
 		private void PresetDecode(string key, string dat)
 		{
 			this.dataS = dat.Split(new char[]
@@ -1101,25 +1101,25 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002236 RID: 8758 RVA: 0x00016DB1 File Offset: 0x00014FB1
+		// Token: 0x06002289 RID: 8841 RVA: 0x00168026 File Offset: 0x00166226
 		public Color DecodeColor(string[] data)
 		{
 			return new Color(this.DecodeSingleFloat(data[0]), this.DecodeSingleFloat(data[1]), this.DecodeSingleFloat(data[2]), this.DecodeSingleFloat(data[3]));
 		}
 
-		// Token: 0x06002237 RID: 8759 RVA: 0x00016DDC File Offset: 0x00014FDC
+		// Token: 0x0600228A RID: 8842 RVA: 0x00168051 File Offset: 0x00166251
 		public float DecodeFloat(string[] data)
 		{
 			return this.DecodeSingleFloat(data[0]);
 		}
 
-		// Token: 0x06002238 RID: 8760 RVA: 0x00016DE7 File Offset: 0x00014FE7
+		// Token: 0x0600228B RID: 8843 RVA: 0x0016805C File Offset: 0x0016625C
 		public int DecodeInt(string[] data)
 		{
 			return int.Parse(data[0]);
 		}
 
-		// Token: 0x06002239 RID: 8761 RVA: 0x00016DF1 File Offset: 0x00014FF1
+		// Token: 0x0600228C RID: 8844 RVA: 0x00168066 File Offset: 0x00166266
 		public bool DecodeBool(string[] data)
 		{
 			this.retVal = false;
@@ -1130,13 +1130,13 @@ namespace Suimono.Core
 			return this.retVal;
 		}
 
-		// Token: 0x0600223A RID: 8762 RVA: 0x00016E16 File Offset: 0x00015016
+		// Token: 0x0600228D RID: 8845 RVA: 0x0016808B File Offset: 0x0016628B
 		public float DecodeSingleFloat(string data)
 		{
 			return float.Parse(data, NumberStyles.Float, CultureInfo.InvariantCulture);
 		}
 
-		// Token: 0x0600223B RID: 8763 RVA: 0x00166A50 File Offset: 0x00164C50
+		// Token: 0x0600228E RID: 8846 RVA: 0x001680A0 File Offset: 0x001662A0
 		public string PresetEncode(string key)
 		{
 			this.retData = "";
@@ -1368,13 +1368,13 @@ namespace Suimono.Core
 			return this.retData;
 		}
 
-		// Token: 0x0600223C RID: 8764 RVA: 0x00016E28 File Offset: 0x00015028
+		// Token: 0x0600228F RID: 8847 RVA: 0x00168A7E File Offset: 0x00166C7E
 		public string EncodeSingleFloat(float data)
 		{
 			return data.ToString(CultureInfo.InvariantCulture);
 		}
 
-		// Token: 0x0600223D RID: 8765 RVA: 0x00167430 File Offset: 0x00165630
+		// Token: 0x06002290 RID: 8848 RVA: 0x00168A8C File Offset: 0x00166C8C
 		public string EncodeColor(Color data)
 		{
 			return string.Format("({0},{1},{2},{3})", new object[]
@@ -1386,7 +1386,7 @@ namespace Suimono.Core
 			});
 		}
 
-		// Token: 0x0600223E RID: 8766 RVA: 0x00016E36 File Offset: 0x00015036
+		// Token: 0x06002291 RID: 8849 RVA: 0x00168AE5 File Offset: 0x00166CE5
 		public void SuimonoTransitionPreset(string pName, float transitionTime)
 		{
 			this.presetTimer = 0f;
@@ -1397,7 +1397,7 @@ namespace Suimono.Core
 			this.SetTemporaryPresetData();
 		}
 
-		// Token: 0x0600223F RID: 8767 RVA: 0x00016E69 File Offset: 0x00015069
+		// Token: 0x06002292 RID: 8850 RVA: 0x00168B18 File Offset: 0x00166D18
 		public void SuimonoTransitionPreset(string fName, string pName, float transitionTime)
 		{
 			this.presetTimer = 0f;
@@ -1408,7 +1408,7 @@ namespace Suimono.Core
 			this.SetTemporaryPresetData();
 		}
 
-		// Token: 0x06002240 RID: 8768 RVA: 0x00016E98 File Offset: 0x00015098
+		// Token: 0x06002293 RID: 8851 RVA: 0x00168B47 File Offset: 0x00166D47
 		public void SuimonoTransitionPreset(string fName, string pName0, string pName1, float transitionTime)
 		{
 			this.SuimonoSetPreset(fName, pName0);
@@ -1420,7 +1420,7 @@ namespace Suimono.Core
 			this.SetTemporaryPresetData();
 		}
 
-		// Token: 0x06002241 RID: 8769 RVA: 0x00016ED0 File Offset: 0x000150D0
+		// Token: 0x06002294 RID: 8852 RVA: 0x00168B7F File Offset: 0x00166D7F
 		public void SuimonoTransitionPreset(string fName0, string pName0, string fName1, string pName1, float transitionTime)
 		{
 			this.SuimonoSetPreset(fName0, pName0);
@@ -1432,7 +1432,7 @@ namespace Suimono.Core
 			this.SetTemporaryPresetData();
 		}
 
-		// Token: 0x06002242 RID: 8770 RVA: 0x0016748C File Offset: 0x0016568C
+		// Token: 0x06002295 RID: 8853 RVA: 0x00168BB8 File Offset: 0x00166DB8
 		private void SetTemporaryPresetData()
 		{
 			this.temp_depthColor = this.depthColor;
@@ -1490,139 +1490,139 @@ namespace Suimono.Core
 			this.temp_underDarkRange = this.underDarkRange;
 		}
 
-		// Token: 0x04002A65 RID: 10853
+		// Token: 0x04002A7B RID: 10875
 		public float systemTime;
 
-		// Token: 0x04002A66 RID: 10854
+		// Token: 0x04002A7C RID: 10876
 		public float systemLocalTime;
 
-		// Token: 0x04002A67 RID: 10855
+		// Token: 0x04002A7D RID: 10877
 		public float flowSpeed = 0.1f;
 
-		// Token: 0x04002A68 RID: 10856
+		// Token: 0x04002A7E RID: 10878
 		public float flowDirection = 180f;
 
-		// Token: 0x04002A69 RID: 10857
+		// Token: 0x04002A7F RID: 10879
 		public bool useBeaufortScale;
 
-		// Token: 0x04002A6A RID: 10858
+		// Token: 0x04002A80 RID: 10880
 		public float beaufortScale = 1f;
 
-		// Token: 0x04002A6B RID: 10859
+		// Token: 0x04002A81 RID: 10881
 		public float turbulenceFactor = 1f;
 
-		// Token: 0x04002A6C RID: 10860
+		// Token: 0x04002A82 RID: 10882
 		public float waveScale = 0.5f;
 
-		// Token: 0x04002A6D RID: 10861
+		// Token: 0x04002A83 RID: 10883
 		public float lgWaveHeight;
 
-		// Token: 0x04002A6E RID: 10862
+		// Token: 0x04002A84 RID: 10884
 		public float lgWaveScale = 1f;
 
-		// Token: 0x04002A6F RID: 10863
+		// Token: 0x04002A85 RID: 10885
 		public float waveHeight = 1f;
 
-		// Token: 0x04002A70 RID: 10864
+		// Token: 0x04002A86 RID: 10886
 		public float heightProjection = 1f;
 
-		// Token: 0x04002A71 RID: 10865
+		// Token: 0x04002A87 RID: 10887
 		public float useHeightProjection = 1f;
 
-		// Token: 0x04002A72 RID: 10866
+		// Token: 0x04002A88 RID: 10888
 		public float refractStrength = 1f;
 
-		// Token: 0x04002A73 RID: 10867
+		// Token: 0x04002A89 RID: 10889
 		public float reflectProjection = 1f;
 
-		// Token: 0x04002A74 RID: 10868
+		// Token: 0x04002A8A RID: 10890
 		public float reflectBlur;
 
-		// Token: 0x04002A75 RID: 10869
+		// Token: 0x04002A8B RID: 10891
 		public float aberrationScale = 0.1f;
 
-		// Token: 0x04002A76 RID: 10870
+		// Token: 0x04002A8C RID: 10892
 		public float specularPower = 1f;
 
-		// Token: 0x04002A77 RID: 10871
+		// Token: 0x04002A8D RID: 10893
 		public float roughness = 0.1f;
 
-		// Token: 0x04002A78 RID: 10872
+		// Token: 0x04002A8E RID: 10894
 		public float roughness2 = 0.35f;
 
-		// Token: 0x04002A79 RID: 10873
+		// Token: 0x04002A8F RID: 10895
 		public float reflectTerm = 0.0255f;
 
-		// Token: 0x04002A7A RID: 10874
+		// Token: 0x04002A90 RID: 10896
 		public float reflectSharpen;
 
-		// Token: 0x04002A7B RID: 10875
+		// Token: 0x04002A91 RID: 10897
 		public bool showDepthMask;
 
-		// Token: 0x04002A7C RID: 10876
+		// Token: 0x04002A92 RID: 10898
 		public bool showWorldMask;
 
-		// Token: 0x04002A7D RID: 10877
+		// Token: 0x04002A93 RID: 10899
 		public float cameraDistance = 1000f;
 
-		// Token: 0x04002A7E RID: 10878
+		// Token: 0x04002A94 RID: 10900
 		public float underwaterDepth = 5f;
 
-		// Token: 0x04002A7F RID: 10879
+		// Token: 0x04002A95 RID: 10901
 		public bool useDX9Settings;
 
-		// Token: 0x04002A80 RID: 10880
+		// Token: 0x04002A96 RID: 10902
 		public SuimonoModule moduleObject;
 
-		// Token: 0x04002A81 RID: 10881
+		// Token: 0x04002A97 RID: 10903
 		private SuimonoModuleLib suimonoModuleLibrary;
 
-		// Token: 0x04002A82 RID: 10882
+		// Token: 0x04002A98 RID: 10904
 		private GameObject suimonoObject;
 
-		// Token: 0x04002A83 RID: 10883
+		// Token: 0x04002A99 RID: 10905
 		private Renderer surfaceRenderer;
 
-		// Token: 0x04002A84 RID: 10884
+		// Token: 0x04002A9A RID: 10906
 		private MeshFilter surfaceMesh;
 
-		// Token: 0x04002A85 RID: 10885
+		// Token: 0x04002A9B RID: 10907
 		private MeshCollider surfaceCollider;
 
-		// Token: 0x04002A86 RID: 10886
+		// Token: 0x04002A9C RID: 10908
 		private cameraTools surfaceReflections;
 
-		// Token: 0x04002A87 RID: 10887
+		// Token: 0x04002A9D RID: 10909
 		private Suimono_DistanceBlur surfaceReflBlur;
 
-		// Token: 0x04002A88 RID: 10888
+		// Token: 0x04002A9E RID: 10910
 		private GameObject scaleObject;
 
-		// Token: 0x04002A89 RID: 10889
+		// Token: 0x04002A9F RID: 10911
 		private Renderer scaleRenderer;
 
-		// Token: 0x04002A8A RID: 10890
+		// Token: 0x04002AA0 RID: 10912
 		private MeshCollider scaleCollider;
 
-		// Token: 0x04002A8B RID: 10891
+		// Token: 0x04002AA1 RID: 10913
 		private MeshFilter scaleMesh;
 
-		// Token: 0x04002A8C RID: 10892
+		// Token: 0x04002AA2 RID: 10914
 		private Renderer surfaceVolume;
 
-		// Token: 0x04002A8D RID: 10893
+		// Token: 0x04002AA3 RID: 10915
 		private Material tempMaterial;
 
-		// Token: 0x04002A8E RID: 10894
+		// Token: 0x04002AA4 RID: 10916
 		public string suimonoVersionNumber;
 
-		// Token: 0x04002A8F RID: 10895
+		// Token: 0x04002AA5 RID: 10917
 		public bool showGeneral;
 
-		// Token: 0x04002A90 RID: 10896
+		// Token: 0x04002AA6 RID: 10918
 		public int typeIndex = 1;
 
-		// Token: 0x04002A91 RID: 10897
+		// Token: 0x04002AA7 RID: 10919
 		[NonSerialized]
 		public List<string> typeOptions = new List<string>
 		{
@@ -1631,13 +1631,13 @@ namespace Suimono.Core
 			"Flat Plane"
 		};
 
-		// Token: 0x04002A92 RID: 10898
+		// Token: 0x04002AA8 RID: 10920
 		public int editorIndex = 1;
 
-		// Token: 0x04002A93 RID: 10899
+		// Token: 0x04002AA9 RID: 10921
 		public int editorUseIndex = 1;
 
-		// Token: 0x04002A94 RID: 10900
+		// Token: 0x04002AAA RID: 10922
 		[NonSerialized]
 		public List<string> editorOptions = new List<string>
 		{
@@ -1645,22 +1645,22 @@ namespace Suimono.Core
 			"Advanced"
 		};
 
-		// Token: 0x04002A95 RID: 10901
+		// Token: 0x04002AAB RID: 10923
 		public bool enableCustomMesh;
 
-		// Token: 0x04002A96 RID: 10902
+		// Token: 0x04002AAC RID: 10924
 		public float cmScaleX = 1f;
 
-		// Token: 0x04002A97 RID: 10903
+		// Token: 0x04002AAD RID: 10925
 		public float cmScaleY = 1f;
 
-		// Token: 0x04002A98 RID: 10904
+		// Token: 0x04002AAE RID: 10926
 		public int lodIndex;
 
-		// Token: 0x04002A99 RID: 10905
+		// Token: 0x04002AAF RID: 10927
 		public int useLodIndex;
 
-		// Token: 0x04002A9A RID: 10906
+		// Token: 0x04002AB0 RID: 10928
 		[NonSerialized]
 		public List<string> lodOptions = new List<string>
 		{
@@ -1670,80 +1670,80 @@ namespace Suimono.Core
 			"Single Quad"
 		};
 
-		// Token: 0x04002A9B RID: 10907
+		// Token: 0x04002AB1 RID: 10929
 		public Mesh customMesh;
 
-		// Token: 0x04002A9C RID: 10908
+		// Token: 0x04002AB2 RID: 10930
 		public float oceanScale = 2f;
 
-		// Token: 0x04002A9D RID: 10909
+		// Token: 0x04002AB3 RID: 10931
 		private bool meshWasSet;
 
-		// Token: 0x04002A9E RID: 10910
+		// Token: 0x04002AB4 RID: 10932
 		public bool enableCausticFX = true;
 
-		// Token: 0x04002A9F RID: 10911
+		// Token: 0x04002AB5 RID: 10933
 		public float causticsFade = 0.55f;
 
-		// Token: 0x04002AA0 RID: 10912
+		// Token: 0x04002AB6 RID: 10934
 		public Color causticsColor = new Color(1f, 1f, 1f, 1f);
 
-		// Token: 0x04002AA1 RID: 10913
+		// Token: 0x04002AB7 RID: 10935
 		public bool enableTess = true;
 
-		// Token: 0x04002AA2 RID: 10914
+		// Token: 0x04002AB8 RID: 10936
 		public bool useEnableTess = true;
 
-		// Token: 0x04002AA3 RID: 10915
+		// Token: 0x04002AB9 RID: 10937
 		public float waveTessAmt = 8f;
 
-		// Token: 0x04002AA4 RID: 10916
+		// Token: 0x04002ABA RID: 10938
 		public float waveTessMin;
 
-		// Token: 0x04002AA5 RID: 10917
+		// Token: 0x04002ABB RID: 10939
 		public float waveTessSpread = 0.08f;
 
-		// Token: 0x04002AA6 RID: 10918
+		// Token: 0x04002ABC RID: 10940
 		public bool enableInteraction = true;
 
-		// Token: 0x04002AA7 RID: 10919
+		// Token: 0x04002ABD RID: 10941
 		public float dynamicReflectFlag = 1f;
 
-		// Token: 0x04002AA8 RID: 10920
+		// Token: 0x04002ABE RID: 10942
 		public bool enableReflections = true;
 
-		// Token: 0x04002AA9 RID: 10921
+		// Token: 0x04002ABF RID: 10943
 		public bool enableDynamicReflections = true;
 
-		// Token: 0x04002AAA RID: 10922
+		// Token: 0x04002AC0 RID: 10944
 		public bool useEnableReflections = true;
 
-		// Token: 0x04002AAB RID: 10923
+		// Token: 0x04002AC1 RID: 10945
 		public bool useEnableDynamicReflections = true;
 
-		// Token: 0x04002AAC RID: 10924
+		// Token: 0x04002AC2 RID: 10946
 		public bool useReflections = true;
 
-		// Token: 0x04002AAD RID: 10925
+		// Token: 0x04002AC3 RID: 10947
 		public bool useDynReflections = true;
 
-		// Token: 0x04002AAE RID: 10926
+		// Token: 0x04002AC4 RID: 10948
 		public int reflectLayer;
 
-		// Token: 0x04002AAF RID: 10927
+		// Token: 0x04002AC5 RID: 10949
 		public int reflectResolution = 4;
 
-		// Token: 0x04002AB0 RID: 10928
+		// Token: 0x04002AC6 RID: 10950
 		public LayerMask reflectLayerMask;
 
-		// Token: 0x04002AB1 RID: 10929
+		// Token: 0x04002AC7 RID: 10951
 		public float reflectionDistance = 1000f;
 
-		// Token: 0x04002AB2 RID: 10930
+		// Token: 0x04002AC8 RID: 10952
 		[NonSerialized]
 		public List<string> suiLayerMasks = new List<string>();
 
-		// Token: 0x04002AB3 RID: 10931
+		// Token: 0x04002AC9 RID: 10953
 		[NonSerialized]
 		public List<string> resOptions = new List<string>
 		{
@@ -1759,7 +1759,7 @@ namespace Suimono.Core
 			"8"
 		};
 
-		// Token: 0x04002AB4 RID: 10932
+		// Token: 0x04002ACA RID: 10954
 		[NonSerialized]
 		public List<int> resolutions = new List<int>
 		{
@@ -1775,10 +1775,10 @@ namespace Suimono.Core
 			8
 		};
 
-		// Token: 0x04002AB5 RID: 10933
+		// Token: 0x04002ACB RID: 10955
 		public int reflectFallback = 1;
 
-		// Token: 0x04002AB6 RID: 10934
+		// Token: 0x04002ACC RID: 10956
 		[NonSerialized]
 		public List<string> resFallbackOptions = new List<string>
 		{
@@ -1788,594 +1788,594 @@ namespace Suimono.Core
 			"Color"
 		};
 
-		// Token: 0x04002AB7 RID: 10935
+		// Token: 0x04002ACD RID: 10957
 		public Texture customRefCubemap;
 
-		// Token: 0x04002AB8 RID: 10936
+		// Token: 0x04002ACE RID: 10958
 		public Color customRefColor = new Color(0.9f, 0.9f, 0.9f, 1f);
 
-		// Token: 0x04002AB9 RID: 10937
+		// Token: 0x04002ACF RID: 10959
 		public Color reflectionColor = new Color(1f, 1f, 1f, 1f);
 
-		// Token: 0x04002ABA RID: 10938
+		// Token: 0x04002AD0 RID: 10960
 		public bool enableCustomTextures;
 
-		// Token: 0x04002ABB RID: 10939
+		// Token: 0x04002AD1 RID: 10961
 		public Texture2D customTexNormal1;
 
-		// Token: 0x04002ABC RID: 10940
+		// Token: 0x04002AD2 RID: 10962
 		public Texture2D customTexNormal2;
 
-		// Token: 0x04002ABD RID: 10941
+		// Token: 0x04002AD3 RID: 10963
 		public Texture2D customTexNormal3;
 
-		// Token: 0x04002ABE RID: 10942
+		// Token: 0x04002AD4 RID: 10964
 		public Texture2D useTexNormal1;
 
-		// Token: 0x04002ABF RID: 10943
+		// Token: 0x04002AD5 RID: 10965
 		public Texture2D useTexNormal2;
 
-		// Token: 0x04002AC0 RID: 10944
+		// Token: 0x04002AD6 RID: 10966
 		public Texture2D useTexNormal3;
 
-		// Token: 0x04002AC1 RID: 10945
+		// Token: 0x04002AD7 RID: 10967
 		public bool showWaves;
 
-		// Token: 0x04002AC2 RID: 10946
+		// Token: 0x04002AD8 RID: 10968
 		public bool customWaves;
 
-		// Token: 0x04002AC3 RID: 10947
+		// Token: 0x04002AD9 RID: 10969
 		public float localTime;
 
-		// Token: 0x04002AC4 RID: 10948
+		// Token: 0x04002ADA RID: 10970
 		private Vector2 flow_dir = new Vector2(0f, 0f);
 
-		// Token: 0x04002AC5 RID: 10949
+		// Token: 0x04002ADB RID: 10971
 		private Vector3 tempAngle;
 
-		// Token: 0x04002AC6 RID: 10950
+		// Token: 0x04002ADC RID: 10972
 		public float beaufortVal = 1f;
 
-		// Token: 0x04002AC7 RID: 10951
+		// Token: 0x04002ADD RID: 10973
 		public bool showShore;
 
-		// Token: 0x04002AC8 RID: 10952
+		// Token: 0x04002ADE RID: 10974
 		public float shorelineHeight = 0.75f;
 
-		// Token: 0x04002AC9 RID: 10953
+		// Token: 0x04002ADF RID: 10975
 		public float shorelineFreq = 0.5f;
 
-		// Token: 0x04002ACA RID: 10954
+		// Token: 0x04002AE0 RID: 10976
 		public float shorelineScale = 0.15f;
 
-		// Token: 0x04002ACB RID: 10955
+		// Token: 0x04002AE1 RID: 10977
 		public float shorelineSpeed = 2.5f;
 
-		// Token: 0x04002ACC RID: 10956
+		// Token: 0x04002AE2 RID: 10978
 		public float shorelineNorm = 0.5f;
 
-		// Token: 0x04002ACD RID: 10957
+		// Token: 0x04002AE3 RID: 10979
 		public bool showSurface;
 
-		// Token: 0x04002ACE RID: 10958
+		// Token: 0x04002AE4 RID: 10980
 		public float overallBright = 1f;
 
-		// Token: 0x04002ACF RID: 10959
+		// Token: 0x04002AE5 RID: 10981
 		public float overallTransparency = 1f;
 
-		// Token: 0x04002AD0 RID: 10960
+		// Token: 0x04002AE6 RID: 10982
 		public float depthAmt = 0.1f;
 
-		// Token: 0x04002AD1 RID: 10961
+		// Token: 0x04002AE7 RID: 10983
 		public float shallowAmt = 0.1f;
 
-		// Token: 0x04002AD2 RID: 10962
+		// Token: 0x04002AE8 RID: 10984
 		public Color depthColor;
 
-		// Token: 0x04002AD3 RID: 10963
+		// Token: 0x04002AE9 RID: 10985
 		public Color shallowColor;
 
-		// Token: 0x04002AD4 RID: 10964
+		// Token: 0x04002AEA RID: 10986
 		public float edgeAmt = 0.1f;
 
-		// Token: 0x04002AD5 RID: 10965
+		// Token: 0x04002AEB RID: 10987
 		public Color specularColor;
 
-		// Token: 0x04002AD6 RID: 10966
+		// Token: 0x04002AEC RID: 10988
 		public Color sssColor;
 
-		// Token: 0x04002AD7 RID: 10967
+		// Token: 0x04002AED RID: 10989
 		public Color blendColor;
 
-		// Token: 0x04002AD8 RID: 10968
+		// Token: 0x04002AEE RID: 10990
 		public Color overlayColor;
 
-		// Token: 0x04002AD9 RID: 10969
+		// Token: 0x04002AEF RID: 10991
 		public bool showFoam;
 
-		// Token: 0x04002ADA RID: 10970
+		// Token: 0x04002AF0 RID: 10992
 		public bool enableFoam = true;
 
-		// Token: 0x04002ADB RID: 10971
+		// Token: 0x04002AF1 RID: 10993
 		public Color foamColor = new Color(0.9f, 0.9f, 0.9f, 1f);
 
-		// Token: 0x04002ADC RID: 10972
+		// Token: 0x04002AF2 RID: 10994
 		public float foamScale = 40f;
 
-		// Token: 0x04002ADD RID: 10973
+		// Token: 0x04002AF3 RID: 10995
 		public float foamSpeed = 0.1f;
 
-		// Token: 0x04002ADE RID: 10974
+		// Token: 0x04002AF4 RID: 10996
 		public float edgeFoamAmt = 0.5f;
 
-		// Token: 0x04002ADF RID: 10975
+		// Token: 0x04002AF5 RID: 10997
 		public float shallowFoamAmt = 1f;
 
-		// Token: 0x04002AE0 RID: 10976
+		// Token: 0x04002AF6 RID: 10998
 		public float hFoamHeight = 1f;
 
-		// Token: 0x04002AE1 RID: 10977
+		// Token: 0x04002AF7 RID: 10999
 		public float hFoamSpread = 1f;
 
-		// Token: 0x04002AE2 RID: 10978
+		// Token: 0x04002AF8 RID: 11000
 		public float heightFoamAmt = 0.5f;
 
-		// Token: 0x04002AE3 RID: 10979
+		// Token: 0x04002AF9 RID: 11001
 		public bool showUnderwater;
 
-		// Token: 0x04002AE4 RID: 10980
+		// Token: 0x04002AFA RID: 11002
 		public Color underwaterColor = new Color(1f, 0f, 0f, 1f);
 
-		// Token: 0x04002AE5 RID: 10981
+		// Token: 0x04002AFB RID: 11003
 		public float underLightFactor = 1f;
 
-		// Token: 0x04002AE6 RID: 10982
+		// Token: 0x04002AFC RID: 11004
 		public float underRefractionAmount = 0.005f;
 
-		// Token: 0x04002AE7 RID: 10983
+		// Token: 0x04002AFD RID: 11005
 		public float underRefractionScale = 1.5f;
 
-		// Token: 0x04002AE8 RID: 10984
+		// Token: 0x04002AFE RID: 11006
 		public float underRefractionSpeed = 0.5f;
 
-		// Token: 0x04002AE9 RID: 10985
+		// Token: 0x04002AFF RID: 11007
 		public float underwaterFogDist = 20f;
 
-		// Token: 0x04002AEA RID: 10986
+		// Token: 0x04002B00 RID: 11008
 		public float underwaterFogSpread;
 
-		// Token: 0x04002AEB RID: 10987
+		// Token: 0x04002B01 RID: 11009
 		public bool enableUnderwater = true;
 
-		// Token: 0x04002AEC RID: 10988
+		// Token: 0x04002B02 RID: 11010
 		public bool enableUnderDebris;
 
-		// Token: 0x04002AED RID: 10989
+		// Token: 0x04002B03 RID: 11011
 		public float underBlurAmount = 1f;
 
-		// Token: 0x04002AEE RID: 10990
+		// Token: 0x04002B04 RID: 11012
 		public float underDarkRange = 40f;
 
-		// Token: 0x04002AEF RID: 10991
+		// Token: 0x04002B05 RID: 11013
 		public float setScale = 1f;
 
-		// Token: 0x04002AF0 RID: 10992
+		// Token: 0x04002B06 RID: 11014
 		public Vector3 currentAngles = new Vector3(0f, 0f, 0f);
 
-		// Token: 0x04002AF1 RID: 10993
+		// Token: 0x04002B07 RID: 11015
 		public Vector3 currentPosition = new Vector3(0f, 0f, 0f);
 
-		// Token: 0x04002AF2 RID: 10994
+		// Token: 0x04002B08 RID: 11016
 		public Vector3 newPos = new Vector3(0f, 0f, 0f);
 
-		// Token: 0x04002AF3 RID: 10995
+		// Token: 0x04002B09 RID: 11017
 		public float spacer;
 
-		// Token: 0x04002AF4 RID: 10996
+		// Token: 0x04002B0A RID: 11018
 		public float setScaleX;
 
-		// Token: 0x04002AF5 RID: 10997
+		// Token: 0x04002B0B RID: 11019
 		public float setScaleZ;
 
-		// Token: 0x04002AF6 RID: 10998
+		// Token: 0x04002B0C RID: 11020
 		public float offamt;
 
-		// Token: 0x04002AF7 RID: 10999
+		// Token: 0x04002B0D RID: 11021
 		public Vector2 savePos = new Vector2(0f, 0f);
 
-		// Token: 0x04002AF8 RID: 11000
+		// Token: 0x04002B0E RID: 11022
 		public Vector2 recPos = new Vector2(0f, 0f);
 
-		// Token: 0x04002AF9 RID: 11001
+		// Token: 0x04002B0F RID: 11023
 		public Vector2 _suimono_uv = new Vector2(0f, 0f);
 
-		// Token: 0x04002AFA RID: 11002
+		// Token: 0x04002B10 RID: 11024
 		public bool showSimpleEditor;
 
-		// Token: 0x04002AFB RID: 11003
+		// Token: 0x04002B11 RID: 11025
 		public Shader useShader;
 
-		// Token: 0x04002AFC RID: 11004
+		// Token: 0x04002B12 RID: 11026
 		public Shader currUseShader;
 
-		// Token: 0x04002AFD RID: 11005
+		// Token: 0x04002B13 RID: 11027
 		public Shader shader_Surface;
 
-		// Token: 0x04002AFE RID: 11006
+		// Token: 0x04002B14 RID: 11028
 		public Shader shader_Scale;
 
-		// Token: 0x04002AFF RID: 11007
+		// Token: 0x04002B15 RID: 11029
 		public Shader shader_Under;
 
-		// Token: 0x04002B00 RID: 11008
+		// Token: 0x04002B16 RID: 11030
 		[NonSerialized]
 		public List<string> presetDirs;
 
-		// Token: 0x04002B01 RID: 11009
+		// Token: 0x04002B17 RID: 11031
 		public string[] presetFiles;
 
-		// Token: 0x04002B02 RID: 11010
+		// Token: 0x04002B18 RID: 11032
 		public int presetIndex = -1;
 
-		// Token: 0x04002B03 RID: 11011
+		// Token: 0x04002B19 RID: 11033
 		public int presetUseIndex = -1;
 
-		// Token: 0x04002B04 RID: 11012
+		// Token: 0x04002B1A RID: 11034
 		public int presetFileIndex;
 
-		// Token: 0x04002B05 RID: 11013
+		// Token: 0x04002B1B RID: 11035
 		public int presetFileUseIndex;
 
-		// Token: 0x04002B06 RID: 11014
+		// Token: 0x04002B1C RID: 11036
 		public string[] presetOptions;
 
-		// Token: 0x04002B07 RID: 11015
+		// Token: 0x04002B1D RID: 11037
 		public bool showPresets;
 
-		// Token: 0x04002B08 RID: 11016
+		// Token: 0x04002B1E RID: 11038
 		public bool presetStartTransition;
 
-		// Token: 0x04002B09 RID: 11017
+		// Token: 0x04002B1F RID: 11039
 		public float presetTimer = 1f;
 
-		// Token: 0x04002B0A RID: 11018
+		// Token: 0x04002B20 RID: 11040
 		public string currentPresetFolder = "Built-In Presets";
 
-		// Token: 0x04002B0B RID: 11019
+		// Token: 0x04002B21 RID: 11041
 		public string currentPresetName = "";
 
-		// Token: 0x04002B0C RID: 11020
+		// Token: 0x04002B22 RID: 11042
 		public int presetTransitionCurrent;
 
-		// Token: 0x04002B0D RID: 11021
+		// Token: 0x04002B23 RID: 11043
 		public float presetTransitionTime = 1f;
 
-		// Token: 0x04002B0E RID: 11022
+		// Token: 0x04002B24 RID: 11044
 		public int presetTransIndexFrm;
 
-		// Token: 0x04002B0F RID: 11023
+		// Token: 0x04002B25 RID: 11045
 		public int presetTransIndexTo;
 
-		// Token: 0x04002B10 RID: 11024
+		// Token: 0x04002B26 RID: 11046
 		public bool presetToggleSave;
 
-		// Token: 0x04002B11 RID: 11025
+		// Token: 0x04002B27 RID: 11047
 		public bool presetsLoaded;
 
-		// Token: 0x04002B12 RID: 11026
+		// Token: 0x04002B28 RID: 11048
 		public string[] presetDataArray;
 
-		// Token: 0x04002B13 RID: 11027
+		// Token: 0x04002B29 RID: 11049
 		public string presetDataString;
 
-		// Token: 0x04002B14 RID: 11028
+		// Token: 0x04002B2A RID: 11050
 		public string dir = "";
 
-		// Token: 0x04002B15 RID: 11029
+		// Token: 0x04002B2B RID: 11051
 		public string baseDir = "SUIMONO - WATER SYSTEM 2/RESOURCES/";
 
-		// Token: 0x04002B16 RID: 11030
+		// Token: 0x04002B2C RID: 11052
 		public string presetSaveName = "my custom preset";
 
-		// Token: 0x04002B17 RID: 11031
+		// Token: 0x04002B2D RID: 11053
 		public string presetFile = "";
 
-		// Token: 0x04002B18 RID: 11032
+		// Token: 0x04002B2E RID: 11054
 		public string workData;
 
-		// Token: 0x04002B19 RID: 11033
+		// Token: 0x04002B2F RID: 11055
 		public string workData2;
 
-		// Token: 0x04002B1A RID: 11034
+		// Token: 0x04002B30 RID: 11056
 		private Color temp_depthColor;
 
-		// Token: 0x04002B1B RID: 11035
+		// Token: 0x04002B31 RID: 11057
 		private Color temp_shallowColor;
 
-		// Token: 0x04002B1C RID: 11036
+		// Token: 0x04002B32 RID: 11058
 		private Color temp_blendColor;
 
-		// Token: 0x04002B1D RID: 11037
+		// Token: 0x04002B33 RID: 11059
 		private Color temp_overlayColor;
 
-		// Token: 0x04002B1E RID: 11038
+		// Token: 0x04002B34 RID: 11060
 		private Color temp_causticsColor;
 
-		// Token: 0x04002B1F RID: 11039
+		// Token: 0x04002B35 RID: 11061
 		private Color temp_reflectionColor;
 
-		// Token: 0x04002B20 RID: 11040
+		// Token: 0x04002B36 RID: 11062
 		private Color temp_specularColor;
 
-		// Token: 0x04002B21 RID: 11041
+		// Token: 0x04002B37 RID: 11063
 		private Color temp_sssColor;
 
-		// Token: 0x04002B22 RID: 11042
+		// Token: 0x04002B38 RID: 11064
 		private Color temp_foamColor;
 
-		// Token: 0x04002B23 RID: 11043
+		// Token: 0x04002B39 RID: 11065
 		private Color temp_underwaterColor;
 
-		// Token: 0x04002B24 RID: 11044
+		// Token: 0x04002B3A RID: 11066
 		private float temp_beaufortScale;
 
-		// Token: 0x04002B25 RID: 11045
+		// Token: 0x04002B3B RID: 11067
 		private float temp_flowDirection;
 
-		// Token: 0x04002B26 RID: 11046
+		// Token: 0x04002B3C RID: 11068
 		private float temp_flowSpeed;
 
-		// Token: 0x04002B27 RID: 11047
+		// Token: 0x04002B3D RID: 11069
 		private float temp_waveScale;
 
-		// Token: 0x04002B28 RID: 11048
+		// Token: 0x04002B3E RID: 11070
 		private float temp_waveHeight;
 
-		// Token: 0x04002B29 RID: 11049
+		// Token: 0x04002B3F RID: 11071
 		private float temp_heightProjection;
 
-		// Token: 0x04002B2A RID: 11050
+		// Token: 0x04002B40 RID: 11072
 		private float temp_turbulenceFactor;
 
-		// Token: 0x04002B2B RID: 11051
+		// Token: 0x04002B41 RID: 11073
 		private float temp_lgWaveHeight;
 
-		// Token: 0x04002B2C RID: 11052
+		// Token: 0x04002B42 RID: 11074
 		private float temp_lgWaveScale;
 
-		// Token: 0x04002B2D RID: 11053
+		// Token: 0x04002B43 RID: 11075
 		private float temp_shorelineHeight;
 
-		// Token: 0x04002B2E RID: 11054
+		// Token: 0x04002B44 RID: 11076
 		private float temp_shorelineFreq;
 
-		// Token: 0x04002B2F RID: 11055
+		// Token: 0x04002B45 RID: 11077
 		private float temp_shorelineScale;
 
-		// Token: 0x04002B30 RID: 11056
+		// Token: 0x04002B46 RID: 11078
 		private float temp_shorelineSpeed;
 
-		// Token: 0x04002B31 RID: 11057
+		// Token: 0x04002B47 RID: 11079
 		private float temp_shorelineNorm;
 
-		// Token: 0x04002B32 RID: 11058
+		// Token: 0x04002B48 RID: 11080
 		private float temp_overallBright;
 
-		// Token: 0x04002B33 RID: 11059
+		// Token: 0x04002B49 RID: 11081
 		private float temp_overallTransparency;
 
-		// Token: 0x04002B34 RID: 11060
+		// Token: 0x04002B4A RID: 11082
 		private float temp_edgeAmt;
 
-		// Token: 0x04002B35 RID: 11061
+		// Token: 0x04002B4B RID: 11083
 		private float temp_depthAmt;
 
-		// Token: 0x04002B36 RID: 11062
+		// Token: 0x04002B4C RID: 11084
 		private float temp_shallowAmt;
 
-		// Token: 0x04002B37 RID: 11063
+		// Token: 0x04002B4D RID: 11085
 		private float temp_refractStrength;
 
-		// Token: 0x04002B38 RID: 11064
+		// Token: 0x04002B4E RID: 11086
 		private float temp_aberrationScale;
 
-		// Token: 0x04002B39 RID: 11065
+		// Token: 0x04002B4F RID: 11087
 		private float temp_causticsFade;
 
-		// Token: 0x04002B3A RID: 11066
+		// Token: 0x04002B50 RID: 11088
 		private float temp_reflectProjection;
 
-		// Token: 0x04002B3B RID: 11067
+		// Token: 0x04002B51 RID: 11089
 		private float temp_reflectBlur;
 
-		// Token: 0x04002B3C RID: 11068
+		// Token: 0x04002B52 RID: 11090
 		private float temp_reflectTerm;
 
-		// Token: 0x04002B3D RID: 11069
+		// Token: 0x04002B53 RID: 11091
 		private float temp_reflectSharpen;
 
-		// Token: 0x04002B3E RID: 11070
+		// Token: 0x04002B54 RID: 11092
 		private float temp_roughness;
 
-		// Token: 0x04002B3F RID: 11071
+		// Token: 0x04002B55 RID: 11093
 		private float temp_roughness2;
 
-		// Token: 0x04002B40 RID: 11072
+		// Token: 0x04002B56 RID: 11094
 		private float temp_foamScale;
 
-		// Token: 0x04002B41 RID: 11073
+		// Token: 0x04002B57 RID: 11095
 		private float temp_foamSpeed;
 
-		// Token: 0x04002B42 RID: 11074
+		// Token: 0x04002B58 RID: 11096
 		private float temp_edgeFoamAmt;
 
-		// Token: 0x04002B43 RID: 11075
+		// Token: 0x04002B59 RID: 11097
 		private float temp_shallowFoamAmt;
 
-		// Token: 0x04002B44 RID: 11076
+		// Token: 0x04002B5A RID: 11098
 		private float temp_heightFoamAmt;
 
-		// Token: 0x04002B45 RID: 11077
+		// Token: 0x04002B5B RID: 11099
 		private float temp_hFoamHeight;
 
-		// Token: 0x04002B46 RID: 11078
+		// Token: 0x04002B5C RID: 11100
 		private float temp_hFoamSpread;
 
-		// Token: 0x04002B47 RID: 11079
+		// Token: 0x04002B5D RID: 11101
 		private float temp_underLightFactor;
 
-		// Token: 0x04002B48 RID: 11080
+		// Token: 0x04002B5E RID: 11102
 		private float temp_underRefractionAmount;
 
-		// Token: 0x04002B49 RID: 11081
+		// Token: 0x04002B5F RID: 11103
 		private float temp_underRefractionScale;
 
-		// Token: 0x04002B4A RID: 11082
+		// Token: 0x04002B60 RID: 11104
 		private float temp_underRefractionSpeed;
 
-		// Token: 0x04002B4B RID: 11083
+		// Token: 0x04002B61 RID: 11105
 		private float temp_underBlurAmount;
 
-		// Token: 0x04002B4C RID: 11084
+		// Token: 0x04002B62 RID: 11106
 		private float temp_underwaterFogDist;
 
-		// Token: 0x04002B4D RID: 11085
+		// Token: 0x04002B63 RID: 11107
 		private float temp_underwaterFogSpread;
 
-		// Token: 0x04002B4E RID: 11086
+		// Token: 0x04002B64 RID: 11108
 		private float temp_underDarkRange;
 
-		// Token: 0x04002B4F RID: 11087
+		// Token: 0x04002B65 RID: 11109
 		public string materialPath;
 
-		// Token: 0x04002B50 RID: 11088
+		// Token: 0x04002B66 RID: 11110
 		public float oceanUseScale;
 
-		// Token: 0x04002B51 RID: 11089
+		// Token: 0x04002B67 RID: 11111
 		public float useSc;
 
-		// Token: 0x04002B52 RID: 11090
+		// Token: 0x04002B68 RID: 11112
 		public Vector2 setSc;
 
-		// Token: 0x04002B53 RID: 11091
+		// Token: 0x04002B69 RID: 11113
 		public Vector2 scaleOff;
 
-		// Token: 0x04002B54 RID: 11092
+		// Token: 0x04002B6A RID: 11114
 		public int i;
 
-		// Token: 0x04002B55 RID: 11093
+		// Token: 0x04002B6B RID: 11115
 		public string layerName;
 
-		// Token: 0x04002B56 RID: 11094
+		// Token: 0x04002B6C RID: 11116
 		public Material skybox;
 
-		// Token: 0x04002B57 RID: 11095
+		// Token: 0x04002B6D RID: 11117
 		[NonSerialized]
 		public List<string> presetDirsArr = new List<string>();
 
-		// Token: 0x04002B58 RID: 11096
+		// Token: 0x04002B6E RID: 11118
 		public int d;
 
-		// Token: 0x04002B59 RID: 11097
+		// Token: 0x04002B6F RID: 11119
 		public int dn;
 
-		// Token: 0x04002B5A RID: 11098
+		// Token: 0x04002B70 RID: 11120
 		[NonSerialized]
 		public List<string> presetFilesArr = new List<string>();
 
-		// Token: 0x04002B5B RID: 11099
+		// Token: 0x04002B71 RID: 11121
 		public string pdir;
 
-		// Token: 0x04002B5C RID: 11100
+		// Token: 0x04002B72 RID: 11122
 		public FileInfo[] fileInfo;
 
-		// Token: 0x04002B5D RID: 11101
+		// Token: 0x04002B73 RID: 11123
 		public int f;
 
-		// Token: 0x04002B5E RID: 11102
+		// Token: 0x04002B74 RID: 11124
 		public int px;
 
-		// Token: 0x04002B5F RID: 11103
+		// Token: 0x04002B75 RID: 11125
 		public int nx;
 
-		// Token: 0x04002B60 RID: 11104
+		// Token: 0x04002B76 RID: 11126
 		public int ax;
 
-		// Token: 0x04002B61 RID: 11105
+		// Token: 0x04002B77 RID: 11127
 		public int n;
 
-		// Token: 0x04002B62 RID: 11106
+		// Token: 0x04002B78 RID: 11128
 		[NonSerialized]
 		public List<string> tempPresetDirsArr = new List<string>();
 
-		// Token: 0x04002B63 RID: 11107
+		// Token: 0x04002B79 RID: 11129
 		public FileInfo[] dirInfo;
 
-		// Token: 0x04002B64 RID: 11108
+		// Token: 0x04002B7A RID: 11130
 		public string[] tempPresetDirs;
 
-		// Token: 0x04002B65 RID: 11109
+		// Token: 0x04002B7B RID: 11131
 		[NonSerialized]
 		public List<string> tempPresetFilesArr = new List<string>();
 
-		// Token: 0x04002B66 RID: 11110
+		// Token: 0x04002B7C RID: 11132
 		public string[] tempPresetFiles;
 
-		// Token: 0x04002B67 RID: 11111
+		// Token: 0x04002B7D RID: 11133
 		public string oldName;
 
-		// Token: 0x04002B68 RID: 11112
+		// Token: 0x04002B7E RID: 11134
 		public string moveName;
 
-		// Token: 0x04002B69 RID: 11113
+		// Token: 0x04002B7F RID: 11135
 		public int setNum;
 
-		// Token: 0x04002B6A RID: 11114
+		// Token: 0x04002B80 RID: 11136
 		public StreamWriter sw;
 
-		// Token: 0x04002B6B RID: 11115
+		// Token: 0x04002B81 RID: 11137
 		public StreamReader sr;
 
-		// Token: 0x04002B6C RID: 11116
+		// Token: 0x04002B82 RID: 11138
 		public string key;
 
-		// Token: 0x04002B6D RID: 11117
+		// Token: 0x04002B83 RID: 11139
 		public string dat;
 
-		// Token: 0x04002B6E RID: 11118
+		// Token: 0x04002B84 RID: 11140
 		public int pFrom;
 
-		// Token: 0x04002B6F RID: 11119
+		// Token: 0x04002B85 RID: 11141
 		public int pTo;
 
-		// Token: 0x04002B70 RID: 11120
+		// Token: 0x04002B86 RID: 11142
 		public int dx;
 
-		// Token: 0x04002B71 RID: 11121
+		// Token: 0x04002B87 RID: 11143
 		public TextAsset datFile;
 
-		// Token: 0x04002B72 RID: 11122
+		// Token: 0x04002B88 RID: 11144
 		public string[] dataS;
 
-		// Token: 0x04002B73 RID: 11123
+		// Token: 0x04002B89 RID: 11145
 		public string retData;
 
-		// Token: 0x04002B74 RID: 11124
+		// Token: 0x04002B8A RID: 11146
 		public bool retVal;
 
-		// Token: 0x04002B75 RID: 11125
+		// Token: 0x04002B8B RID: 11147
 		private float suimono_refl_off;
 
-		// Token: 0x04002B76 RID: 11126
+		// Token: 0x04002B8C RID: 11148
 		private float suimono_refl_sky;
 
-		// Token: 0x04002B77 RID: 11127
+		// Token: 0x04002B8D RID: 11149
 		private float suimono_refl_cube;
 
-		// Token: 0x04002B78 RID: 11128
+		// Token: 0x04002B8E RID: 11150
 		private float suimono_refl_color;
 
-		// Token: 0x04002B79 RID: 11129
+		// Token: 0x04002B8F RID: 11151
 		private static bool reloadData;
 	}
 }

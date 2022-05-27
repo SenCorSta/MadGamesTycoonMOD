@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002FF RID: 767
+// Token: 0x02000302 RID: 770
 public class textChat : MonoBehaviour
 {
-	// Token: 0x06001A98 RID: 6808 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06001AE2 RID: 6882 RVA: 0x00002715 File Offset: 0x00000915
 	private void Start()
 	{
 	}
 
-	// Token: 0x06001A99 RID: 6809 RVA: 0x00011DEF File Offset: 0x0000FFEF
+	// Token: 0x06001AE3 RID: 6883 RVA: 0x0010E192 File Offset: 0x0010C392
 	private void Update()
 	{
 		this.timer += Time.deltaTime;
@@ -19,6 +19,6 @@ public class textChat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040021EF RID: 8687
+	// Token: 0x04002209 RID: 8713
 	private float timer;
 }

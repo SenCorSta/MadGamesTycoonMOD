@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x02000362 RID: 866
+// Token: 0x02000365 RID: 869
 public class SelectLine : MonoBehaviour
 {
-	// Token: 0x06001FBD RID: 8125 RVA: 0x0014DA68 File Offset: 0x0014BC68
+	// Token: 0x06002010 RID: 8208 RVA: 0x0014D244 File Offset: 0x0014B444
 	private void Start()
 	{
 		this.lines = new VectorLine[this.numberOfLines];
@@ -18,7 +18,7 @@ public class SelectLine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001FBE RID: 8126 RVA: 0x0014DAD0 File Offset: 0x0014BCD0
+	// Token: 0x06002011 RID: 8209 RVA: 0x0014D2AC File Offset: 0x0014B4AC
 	private void SetPoints(int i)
 	{
 		for (int j = 0; j < this.lines[i].points2.Count; j++)
@@ -28,7 +28,7 @@ public class SelectLine : MonoBehaviour
 		this.lines[i].Draw();
 	}
 
-	// Token: 0x06001FBF RID: 8127 RVA: 0x0014DB3C File Offset: 0x0014BD3C
+	// Token: 0x06002012 RID: 8210 RVA: 0x0014D318 File Offset: 0x0014B518
 	private void Update()
 	{
 		for (int i = 0; i < this.numberOfLines; i++)
@@ -54,24 +54,24 @@ public class SelectLine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001FC0 RID: 8128 RVA: 0x000150AF File Offset: 0x000132AF
+	// Token: 0x06002013 RID: 8211 RVA: 0x0014D3C2 File Offset: 0x0014B5C2
 	private void OnGUI()
 	{
 		GUI.Label(new Rect(10f, 10f, 800f, 30f), "Click a line to make a new line");
 	}
 
-	// Token: 0x04002853 RID: 10323
+	// Token: 0x04002869 RID: 10345
 	public float lineThickness = 10f;
 
-	// Token: 0x04002854 RID: 10324
+	// Token: 0x0400286A RID: 10346
 	public int extraThickness = 2;
 
-	// Token: 0x04002855 RID: 10325
+	// Token: 0x0400286B RID: 10347
 	public int numberOfLines = 2;
 
-	// Token: 0x04002856 RID: 10326
+	// Token: 0x0400286C RID: 10348
 	private VectorLine[] lines;
 
-	// Token: 0x04002857 RID: 10327
+	// Token: 0x0400286D RID: 10349
 	private bool[] wasSelected;
 }

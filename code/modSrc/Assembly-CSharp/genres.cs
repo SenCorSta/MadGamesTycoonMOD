@@ -6,13 +6,13 @@ using UnityEngine;
 // Token: 0x0200005B RID: 91
 public class genres : MonoBehaviour
 {
-	// Token: 0x060002D9 RID: 729 RVA: 0x00003829 File Offset: 0x00001A29
+	// Token: 0x060002DE RID: 734 RVA: 0x0002CADA File Offset: 0x0002ACDA
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060002DA RID: 730 RVA: 0x00041B48 File Offset: 0x0003FD48
+	// Token: 0x060002DF RID: 735 RVA: 0x0002CAE4 File Offset: 0x0002ACE4
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -41,7 +41,7 @@ public class genres : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002DB RID: 731 RVA: 0x00003831 File Offset: 0x00001A31
+	// Token: 0x060002E0 RID: 736 RVA: 0x0002CB90 File Offset: 0x0002AD90
 	public void Init()
 	{
 		this.genres_PIC = new Sprite[this.genres_LEVEL.Length];
@@ -49,7 +49,7 @@ public class genres : MonoBehaviour
 		this.genres_SCREENSHOTS_TEXTURE = new Texture2D[this.genres_LEVEL.Length, 99];
 	}
 
-	// Token: 0x060002DC RID: 732 RVA: 0x00041BF4 File Offset: 0x0003FDF4
+	// Token: 0x060002E1 RID: 737 RVA: 0x0002CBD0 File Offset: 0x0002ADD0
 	public bool[] Return1DimensionArray_TARGETGROUP()
 	{
 		int num = this.genres_UNLOCK.Length;
@@ -65,7 +65,7 @@ public class genres : MonoBehaviour
 		return array;
 	}
 
-	// Token: 0x060002DD RID: 733 RVA: 0x00041C48 File Offset: 0x0003FE48
+	// Token: 0x060002E2 RID: 738 RVA: 0x0002CC24 File Offset: 0x0002AE24
 	public void Copy2DimensionArray_TARGETGROUP(bool[] arr)
 	{
 		int num = this.genres_UNLOCK.Length;
@@ -80,7 +80,7 @@ public class genres : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002DE RID: 734 RVA: 0x00041CA0 File Offset: 0x0003FEA0
+	// Token: 0x060002E3 RID: 739 RVA: 0x0002CC7C File Offset: 0x0002AE7C
 	public bool[] Return1DimensionArray_COMBINATION()
 	{
 		int num = this.genres_UNLOCK.Length;
@@ -96,7 +96,7 @@ public class genres : MonoBehaviour
 		return array;
 	}
 
-	// Token: 0x060002DF RID: 735 RVA: 0x00041CFC File Offset: 0x0003FEFC
+	// Token: 0x060002E4 RID: 740 RVA: 0x0002CCD8 File Offset: 0x0002AED8
 	public void Copy2DimensionArray_COMBINATION(bool[] arr)
 	{
 		int num = this.genres_UNLOCK.Length;
@@ -111,7 +111,7 @@ public class genres : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002E0 RID: 736 RVA: 0x00041D54 File Offset: 0x0003FF54
+	// Token: 0x060002E5 RID: 741 RVA: 0x0002CD30 File Offset: 0x0002AF30
 	public int[] Return1DimensionArray_FOCUS()
 	{
 		int num = this.genres_UNLOCK.Length;
@@ -127,7 +127,7 @@ public class genres : MonoBehaviour
 		return array;
 	}
 
-	// Token: 0x060002E1 RID: 737 RVA: 0x00041DA8 File Offset: 0x0003FFA8
+	// Token: 0x060002E6 RID: 742 RVA: 0x0002CD84 File Offset: 0x0002AF84
 	public void Copy2DimensionArray_FOCUS(int[] arr)
 	{
 		int num = this.genres_UNLOCK.Length;
@@ -142,7 +142,7 @@ public class genres : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002E2 RID: 738 RVA: 0x00041E00 File Offset: 0x00040000
+	// Token: 0x060002E7 RID: 743 RVA: 0x0002CDDC File Offset: 0x0002AFDC
 	public int[] Return1DimensionArray_ALIGN()
 	{
 		int num = this.genres_UNLOCK.Length;
@@ -158,7 +158,7 @@ public class genres : MonoBehaviour
 		return array;
 	}
 
-	// Token: 0x060002E3 RID: 739 RVA: 0x00041E54 File Offset: 0x00040054
+	// Token: 0x060002E8 RID: 744 RVA: 0x0002CE30 File Offset: 0x0002B030
 	public void Copy2DimensionArray_ALIGN(int[] arr)
 	{
 		int num = this.genres_UNLOCK.Length;
@@ -173,7 +173,7 @@ public class genres : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002E4 RID: 740 RVA: 0x00041EAC File Offset: 0x000400AC
+	// Token: 0x060002E9 RID: 745 RVA: 0x0002CE88 File Offset: 0x0002B088
 	public int LoadAmountOfGenres(string filename)
 	{
 		if (this.genres_UNLOCK.Length != 0)
@@ -198,7 +198,7 @@ public class genres : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060002E5 RID: 741 RVA: 0x00041F40 File Offset: 0x00040140
+	// Token: 0x060002EA RID: 746 RVA: 0x0002CF1C File Offset: 0x0002B11C
 	public void LoadGenres(string filename)
 	{
 		int num = 0;
@@ -217,7 +217,6 @@ public class genres : MonoBehaviour
 				num2++;
 			}
 		}
-		Debug.Log("Genres Amount: " + num2.ToString());
 		this.genres_BELIEBTHEIT = new float[num2];
 		this.genres_BELIEBTHEIT_SOLL = new bool[num2];
 		this.genres_PIC = new Sprite[num2];
@@ -541,14 +540,13 @@ public class genres : MonoBehaviour
 			}
 			if (this.ParseData("[EOF]", j))
 			{
-				Debug.Log("Genres.txt -> EOF");
-				return;
+				break;
 			}
 			num++;
 		}
 	}
 
-	// Token: 0x060002E6 RID: 742 RVA: 0x00042AE4 File Offset: 0x00040CE4
+	// Token: 0x060002EB RID: 747 RVA: 0x0002DA9C File Offset: 0x0002BC9C
 	public void LoadGenresettingsForOldSavegeames(string filename)
 	{
 		int num = 0;
@@ -599,7 +597,7 @@ public class genres : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002E7 RID: 743 RVA: 0x00042C78 File Offset: 0x00040E78
+	// Token: 0x060002EC RID: 748 RVA: 0x0002DC30 File Offset: 0x0002BE30
 	private bool ParseData(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -611,7 +609,7 @@ public class genres : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060002E8 RID: 744 RVA: 0x00003870 File Offset: 0x00001A70
+	// Token: 0x060002ED RID: 749 RVA: 0x0002DC90 File Offset: 0x0002BE90
 	private bool ParseDataDontCutLastChar(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -622,7 +620,7 @@ public class genres : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060002E9 RID: 745 RVA: 0x00042CD8 File Offset: 0x00040ED8
+	// Token: 0x060002EE RID: 750 RVA: 0x0002DCC0 File Offset: 0x0002BEC0
 	public Sprite GetScreenshot(int genre_, int grafikPoints)
 	{
 		int num = 0;
@@ -666,7 +664,7 @@ public class genres : MonoBehaviour
 		return this.genres_SCREENSHOTS[genre_, num3];
 	}
 
-	// Token: 0x060002EA RID: 746 RVA: 0x00042DE0 File Offset: 0x00040FE0
+	// Token: 0x060002EF RID: 751 RVA: 0x0002DDC8 File Offset: 0x0002BFC8
 	public Texture2D GetScreenshotTexture2D(int genre_, int grafikPoints)
 	{
 		int num = 0;
@@ -710,7 +708,7 @@ public class genres : MonoBehaviour
 		return this.genres_SCREENSHOTS_TEXTURE[genre_, num3];
 	}
 
-	// Token: 0x060002EB RID: 747 RVA: 0x00042EE8 File Offset: 0x000410E8
+	// Token: 0x060002F0 RID: 752 RVA: 0x0002DED0 File Offset: 0x0002C0D0
 	public string GetName(int i)
 	{
 		if (this.genres_PIC == null)
@@ -839,7 +837,7 @@ public class genres : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x060002EC RID: 748 RVA: 0x000430FC File Offset: 0x000412FC
+	// Token: 0x060002F1 RID: 753 RVA: 0x0002E0E4 File Offset: 0x0002C2E4
 	public string GetDesc(int i)
 	{
 		if (this.genres_PIC == null)
@@ -964,7 +962,7 @@ public class genres : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x060002ED RID: 749 RVA: 0x000432F4 File Offset: 0x000414F4
+	// Token: 0x060002F2 RID: 754 RVA: 0x0002E2DC File Offset: 0x0002C4DC
 	public int GetDevCosts(int i)
 	{
 		float num = (float)this.genres_LEVEL[i] * 0.1f;
@@ -972,13 +970,13 @@ public class genres : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x060002EE RID: 750 RVA: 0x000038A0 File Offset: 0x00001AA0
+	// Token: 0x060002F3 RID: 755 RVA: 0x0002E311 File Offset: 0x0002C511
 	public int GetPrice(int i)
 	{
 		return this.genres_PRICE[i];
 	}
 
-	// Token: 0x060002EF RID: 751 RVA: 0x0004332C File Offset: 0x0004152C
+	// Token: 0x060002F4 RID: 756 RVA: 0x0002E31C File Offset: 0x0002C51C
 	public Sprite GetPic(int i)
 	{
 		if (this.genres_PIC == null)
@@ -996,19 +994,19 @@ public class genres : MonoBehaviour
 		return this.guiMain_.uiSprites[3];
 	}
 
-	// Token: 0x060002F0 RID: 752 RVA: 0x000038AA File Offset: 0x00001AAA
+	// Token: 0x060002F5 RID: 757 RVA: 0x0002E3A2 File Offset: 0x0002C5A2
 	public bool IsErforscht(int i)
 	{
 		return this.genres_RES_POINTS_LEFT[i] <= 0f;
 	}
 
-	// Token: 0x060002F1 RID: 753 RVA: 0x000038BE File Offset: 0x00001ABE
+	// Token: 0x060002F6 RID: 758 RVA: 0x0002E3B6 File Offset: 0x0002C5B6
 	public float GetProzent(int i)
 	{
 		return 100f / (float)this.genres_RES_POINTS[i] * ((float)this.genres_RES_POINTS[i] - this.genres_RES_POINTS_LEFT[i]);
 	}
 
-	// Token: 0x060002F2 RID: 754 RVA: 0x000433B4 File Offset: 0x000415B4
+	// Token: 0x060002F7 RID: 759 RVA: 0x0002E3DC File Offset: 0x0002C5DC
 	public void UnlockAll()
 	{
 		for (int i = 0; i < this.genres_UNLOCK.Length; i++)
@@ -1017,25 +1015,25 @@ public class genres : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002F3 RID: 755 RVA: 0x000038E2 File Offset: 0x00001AE2
+	// Token: 0x060002F8 RID: 760 RVA: 0x0002E405 File Offset: 0x0002C605
 	public bool ForschungGestartet(int i)
 	{
 		return this.genres_RES_POINTS_LEFT[i] != (float)this.genres_RES_POINTS[i];
 	}
 
-	// Token: 0x060002F4 RID: 756 RVA: 0x000038FA File Offset: 0x00001AFA
+	// Token: 0x060002F9 RID: 761 RVA: 0x0002E41D File Offset: 0x0002C61D
 	public bool IsTargetGroup(int genre_, int group_)
 	{
 		return genre_ >= 0 && group_ >= 0 && this.genres_TARGETGROUP[genre_, group_];
 	}
 
-	// Token: 0x060002F5 RID: 757 RVA: 0x00003913 File Offset: 0x00001B13
+	// Token: 0x060002FA RID: 762 RVA: 0x0002E436 File Offset: 0x0002C636
 	public bool IsGenreCombination(int genre_, int subgenre_)
 	{
 		return genre_ >= 0 && subgenre_ >= 0 && this.genres_COMBINATION[genre_, subgenre_];
 	}
 
-	// Token: 0x060002F6 RID: 758 RVA: 0x0000392C File Offset: 0x00001B2C
+	// Token: 0x060002FB RID: 763 RVA: 0x0002E44F File Offset: 0x0002C64F
 	public bool Pay(int i)
 	{
 		if (!this.ForschungGestartet(i))
@@ -1049,7 +1047,7 @@ public class genres : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060002F7 RID: 759 RVA: 0x000433E0 File Offset: 0x000415E0
+	// Token: 0x060002FC RID: 764 RVA: 0x0002E488 File Offset: 0x0002C688
 	public bool BereitsInAnderenRaumAktiv(int s)
 	{
 		for (int i = 0; i < this.mS_.arrayRooms.Length; i++)
@@ -1070,13 +1068,13 @@ public class genres : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060002F8 RID: 760 RVA: 0x00003963 File Offset: 0x00001B63
+	// Token: 0x060002FD RID: 765 RVA: 0x0002E512 File Offset: 0x0002C712
 	public string GetTooltip(int i)
 	{
 		return "<b>" + this.GetName(i) + "</b>" + "\n" + this.GetDesc(i);
 	}
 
-	// Token: 0x060002F9 RID: 761 RVA: 0x0004346C File Offset: 0x0004166C
+	// Token: 0x060002FE RID: 766 RVA: 0x0002E53C File Offset: 0x0002C73C
 	public int GetAmountFans()
 	{
 		int num = 0;
@@ -1087,7 +1085,7 @@ public class genres : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060002FA RID: 762 RVA: 0x0004349C File Offset: 0x0004169C
+	// Token: 0x060002FF RID: 767 RVA: 0x0002E56C File Offset: 0x0002C76C
 	public string GetStringBeliebtheit(int i, bool kurz)
 	{
 		if (i == this.mS_.trendGenre)
@@ -1112,7 +1110,7 @@ public class genres : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002FB RID: 763 RVA: 0x0000398C File Offset: 0x00001B8C
+	// Token: 0x06000300 RID: 768 RVA: 0x0002E5E8 File Offset: 0x0002C7E8
 	public float GetFloatBeliebtheit(int i)
 	{
 		if (i == this.mS_.trendGenre)
@@ -1126,13 +1124,13 @@ public class genres : MonoBehaviour
 		return this.genres_BELIEBTHEIT[i];
 	}
 
-	// Token: 0x060002FC RID: 764 RVA: 0x00043518 File Offset: 0x00041718
+	// Token: 0x06000301 RID: 769 RVA: 0x0002E61C File Offset: 0x0002C81C
 	public bool GetFocusKnown(int slot, int maingenre, int subgenre)
 	{
 		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
 		{
 			gameScript gameScript = this.games_.arrayGamesScripts[i];
-			if ((gameScript.playerGame || gameScript.IsMyAuftragsspiel()) && gameScript.spielbericht && gameScript.maingenre == maingenre && gameScript.subgenre == subgenre && gameScript.Designschwerpunkt[slot] == this.GetFocus(slot, maingenre, subgenre))
+			if ((gameScript.ownerID == this.mS_.myID || gameScript.developerID == this.mS_.myID) && gameScript.spielbericht && gameScript.maingenre == maingenre && gameScript.subgenre == subgenre && gameScript.Designschwerpunkt[slot] == this.GetFocus(slot, maingenre, subgenre))
 			{
 				return true;
 			}
@@ -1140,7 +1138,7 @@ public class genres : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060002FD RID: 765 RVA: 0x0004358C File Offset: 0x0004178C
+	// Token: 0x06000302 RID: 770 RVA: 0x0002E6A8 File Offset: 0x0002C8A8
 	public int GetFocus(int slot, int maingenre, int subgenre)
 	{
 		int[] array = new int[8];
@@ -1187,13 +1185,13 @@ public class genres : MonoBehaviour
 		return array[slot];
 	}
 
-	// Token: 0x060002FE RID: 766 RVA: 0x00043674 File Offset: 0x00041874
+	// Token: 0x06000303 RID: 771 RVA: 0x0002E790 File Offset: 0x0002C990
 	public bool GetAlignKnown(int slot, int maingenre, int subgenre)
 	{
 		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
 		{
 			gameScript gameScript = this.games_.arrayGamesScripts[i];
-			if ((gameScript.playerGame || gameScript.IsMyAuftragsspiel()) && gameScript.spielbericht && gameScript.maingenre == maingenre && gameScript.subgenre == subgenre && gameScript.Designausrichtung[slot] == this.GetAlign(slot, maingenre, subgenre))
+			if ((gameScript.ownerID == this.mS_.myID || gameScript.developerID == this.mS_.myID) && gameScript.spielbericht && gameScript.maingenre == maingenre && gameScript.subgenre == subgenre && gameScript.Designausrichtung[slot] == this.GetAlign(slot, maingenre, subgenre))
 			{
 				return true;
 			}
@@ -1201,7 +1199,7 @@ public class genres : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060002FF RID: 767 RVA: 0x000436E8 File Offset: 0x000418E8
+	// Token: 0x06000304 RID: 772 RVA: 0x0002E81C File Offset: 0x0002CA1C
 	public int GetAlign(int slot, int maingenre, int subgenre)
 	{
 		int[] array = new int[3];
@@ -1220,7 +1218,7 @@ public class genres : MonoBehaviour
 		return array[slot];
 	}
 
-	// Token: 0x06000300 RID: 768 RVA: 0x00043750 File Offset: 0x00041950
+	// Token: 0x06000305 RID: 773 RVA: 0x0002E884 File Offset: 0x0002CA84
 	public Sprite GetSpriteMarkt(int i)
 	{
 		int num = this.genres_MARKT[i];
@@ -1239,7 +1237,7 @@ public class genres : MonoBehaviour
 		return this.themes_.spriteMarkt[0];
 	}
 
-	// Token: 0x06000301 RID: 769 RVA: 0x000437B0 File Offset: 0x000419B0
+	// Token: 0x06000306 RID: 774 RVA: 0x0002E8E4 File Offset: 0x0002CAE4
 	public string GetStringMarktsaettigung(int i)
 	{
 		int num = this.genres_MARKT[i];
@@ -1258,186 +1256,186 @@ public class genres : MonoBehaviour
 		return this.tS_.GetText(1908);
 	}
 
-	// Token: 0x040005B4 RID: 1460
+	// Token: 0x040005B1 RID: 1457
 	private mainScript mS_;
 
-	// Token: 0x040005B5 RID: 1461
+	// Token: 0x040005B2 RID: 1458
 	private textScript tS_;
 
-	// Token: 0x040005B6 RID: 1462
+	// Token: 0x040005B3 RID: 1459
 	private settingsScript settings_;
 
-	// Token: 0x040005B7 RID: 1463
+	// Token: 0x040005B4 RID: 1460
 	private GUI_Main guiMain_;
 
-	// Token: 0x040005B8 RID: 1464
+	// Token: 0x040005B5 RID: 1461
 	private games games_;
 
-	// Token: 0x040005B9 RID: 1465
+	// Token: 0x040005B6 RID: 1462
 	private themes themes_;
 
-	// Token: 0x040005BA RID: 1466
+	// Token: 0x040005B7 RID: 1463
 	private Sprite[] genres_PIC;
 
-	// Token: 0x040005BB RID: 1467
+	// Token: 0x040005B8 RID: 1464
 	public float[] genres_BELIEBTHEIT;
 
-	// Token: 0x040005BC RID: 1468
+	// Token: 0x040005B9 RID: 1465
 	public bool[] genres_BELIEBTHEIT_SOLL;
 
-	// Token: 0x040005BD RID: 1469
+	// Token: 0x040005BA RID: 1466
 	public int[] genres_RES_POINTS;
 
-	// Token: 0x040005BE RID: 1470
+	// Token: 0x040005BB RID: 1467
 	public float[] genres_RES_POINTS_LEFT;
 
-	// Token: 0x040005BF RID: 1471
+	// Token: 0x040005BC RID: 1468
 	public int[] genres_PRICE;
 
-	// Token: 0x040005C0 RID: 1472
+	// Token: 0x040005BD RID: 1469
 	public int[] genres_DEV_COSTS;
 
-	// Token: 0x040005C1 RID: 1473
+	// Token: 0x040005BE RID: 1470
 	public int[] genres_DATE_YEAR;
 
-	// Token: 0x040005C2 RID: 1474
+	// Token: 0x040005BF RID: 1471
 	public int[] genres_DATE_MONTH;
 
-	// Token: 0x040005C3 RID: 1475
+	// Token: 0x040005C0 RID: 1472
 	public int[] genres_LEVEL;
 
-	// Token: 0x040005C4 RID: 1476
+	// Token: 0x040005C1 RID: 1473
 	public bool[] genres_UNLOCK;
 
-	// Token: 0x040005C5 RID: 1477
+	// Token: 0x040005C2 RID: 1474
 	private Sprite[,] genres_SCREENSHOTS;
 
-	// Token: 0x040005C6 RID: 1478
+	// Token: 0x040005C3 RID: 1475
 	private Texture2D[,] genres_SCREENSHOTS_TEXTURE;
 
-	// Token: 0x040005C7 RID: 1479
+	// Token: 0x040005C4 RID: 1476
 	public bool[,] genres_TARGETGROUP;
 
-	// Token: 0x040005C8 RID: 1480
+	// Token: 0x040005C5 RID: 1477
 	public float[] genres_GAMEPLAY;
 
-	// Token: 0x040005C9 RID: 1481
+	// Token: 0x040005C6 RID: 1478
 	public float[] genres_GRAPHIC;
 
-	// Token: 0x040005CA RID: 1482
+	// Token: 0x040005C7 RID: 1479
 	public float[] genres_SOUND;
 
-	// Token: 0x040005CB RID: 1483
+	// Token: 0x040005C8 RID: 1480
 	public float[] genres_CONTROL;
 
-	// Token: 0x040005CC RID: 1484
+	// Token: 0x040005C9 RID: 1481
 	public bool[,] genres_COMBINATION;
 
-	// Token: 0x040005CD RID: 1485
+	// Token: 0x040005CA RID: 1482
 	public int[,] genres_FOCUS;
 
-	// Token: 0x040005CE RID: 1486
+	// Token: 0x040005CB RID: 1483
 	public int[,] genres_ALIGN;
 
-	// Token: 0x040005CF RID: 1487
+	// Token: 0x040005CC RID: 1484
 	public string[] genres_ICONFILE;
 
-	// Token: 0x040005D0 RID: 1488
+	// Token: 0x040005CD RID: 1485
 	public string[] genres_NAME_EN;
 
-	// Token: 0x040005D1 RID: 1489
+	// Token: 0x040005CE RID: 1486
 	public string[] genres_NAME_GE;
 
-	// Token: 0x040005D2 RID: 1490
+	// Token: 0x040005CF RID: 1487
 	public string[] genres_NAME_TU;
 
-	// Token: 0x040005D3 RID: 1491
+	// Token: 0x040005D0 RID: 1488
 	public string[] genres_NAME_CH;
 
-	// Token: 0x040005D4 RID: 1492
+	// Token: 0x040005D1 RID: 1489
 	public string[] genres_NAME_FR;
 
-	// Token: 0x040005D5 RID: 1493
+	// Token: 0x040005D2 RID: 1490
 	public string[] genres_NAME_PB;
 
-	// Token: 0x040005D6 RID: 1494
+	// Token: 0x040005D3 RID: 1491
 	public string[] genres_NAME_HU;
 
-	// Token: 0x040005D7 RID: 1495
+	// Token: 0x040005D4 RID: 1492
 	public string[] genres_NAME_CT;
 
-	// Token: 0x040005D8 RID: 1496
+	// Token: 0x040005D5 RID: 1493
 	public string[] genres_NAME_ES;
 
-	// Token: 0x040005D9 RID: 1497
+	// Token: 0x040005D6 RID: 1494
 	public string[] genres_NAME_PL;
 
-	// Token: 0x040005DA RID: 1498
+	// Token: 0x040005D7 RID: 1495
 	public string[] genres_NAME_CZ;
 
-	// Token: 0x040005DB RID: 1499
+	// Token: 0x040005D8 RID: 1496
 	public string[] genres_NAME_KO;
 
-	// Token: 0x040005DC RID: 1500
+	// Token: 0x040005D9 RID: 1497
 	public string[] genres_NAME_IT;
 
-	// Token: 0x040005DD RID: 1501
+	// Token: 0x040005DA RID: 1498
 	public string[] genres_NAME_AR;
 
-	// Token: 0x040005DE RID: 1502
+	// Token: 0x040005DB RID: 1499
 	public string[] genres_NAME_JA;
 
-	// Token: 0x040005DF RID: 1503
+	// Token: 0x040005DC RID: 1500
 	public string[] genres_DESC_EN;
 
-	// Token: 0x040005E0 RID: 1504
+	// Token: 0x040005DD RID: 1501
 	public string[] genres_DESC_GE;
 
-	// Token: 0x040005E1 RID: 1505
+	// Token: 0x040005DE RID: 1502
 	public string[] genres_DESC_TU;
 
-	// Token: 0x040005E2 RID: 1506
+	// Token: 0x040005DF RID: 1503
 	public string[] genres_DESC_CH;
 
-	// Token: 0x040005E3 RID: 1507
+	// Token: 0x040005E0 RID: 1504
 	public string[] genres_DESC_FR;
 
-	// Token: 0x040005E4 RID: 1508
+	// Token: 0x040005E1 RID: 1505
 	public string[] genres_DESC_PB;
 
-	// Token: 0x040005E5 RID: 1509
+	// Token: 0x040005E2 RID: 1506
 	public string[] genres_DESC_HU;
 
-	// Token: 0x040005E6 RID: 1510
+	// Token: 0x040005E3 RID: 1507
 	public string[] genres_DESC_CT;
 
-	// Token: 0x040005E7 RID: 1511
+	// Token: 0x040005E4 RID: 1508
 	public string[] genres_DESC_ES;
 
-	// Token: 0x040005E8 RID: 1512
+	// Token: 0x040005E5 RID: 1509
 	public string[] genres_DESC_PL;
 
-	// Token: 0x040005E9 RID: 1513
+	// Token: 0x040005E6 RID: 1510
 	public string[] genres_DESC_CZ;
 
-	// Token: 0x040005EA RID: 1514
+	// Token: 0x040005E7 RID: 1511
 	public string[] genres_DESC_KO;
 
-	// Token: 0x040005EB RID: 1515
+	// Token: 0x040005E8 RID: 1512
 	public string[] genres_DESC_IT;
 
-	// Token: 0x040005EC RID: 1516
+	// Token: 0x040005E9 RID: 1513
 	public string[] genres_DESC_AR;
 
-	// Token: 0x040005ED RID: 1517
+	// Token: 0x040005EA RID: 1514
 	public string[] genres_DESC_JA;
 
-	// Token: 0x040005EE RID: 1518
+	// Token: 0x040005EB RID: 1515
 	public int[] genres_FANS;
 
-	// Token: 0x040005EF RID: 1519
+	// Token: 0x040005EC RID: 1516
 	public int[] genres_MARKT;
 
-	// Token: 0x040005F0 RID: 1520
+	// Token: 0x040005ED RID: 1517
 	private string[] data;
 }

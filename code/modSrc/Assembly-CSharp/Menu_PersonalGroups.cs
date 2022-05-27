@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001E4 RID: 484
+// Token: 0x020001E5 RID: 485
 public class Menu_PersonalGroups : MonoBehaviour
 {
-	// Token: 0x06001239 RID: 4665 RVA: 0x0000CA89 File Offset: 0x0000AC89
+	// Token: 0x06001254 RID: 4692 RVA: 0x000C1CFA File Offset: 0x000BFEFA
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600123A RID: 4666 RVA: 0x000CCA04 File Offset: 0x000CAC04
+	// Token: 0x06001255 RID: 4693 RVA: 0x000C1D04 File Offset: 0x000BFF04
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_PersonalGroups : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600123B RID: 4667 RVA: 0x000CCAEC File Offset: 0x000CACEC
+	// Token: 0x06001256 RID: 4694 RVA: 0x000C1DEC File Offset: 0x000BFFEC
 	private void Update()
 	{
 		this.uiObjects[9].GetComponent<Text>().text = this.GetAmountInGroup().ToString();
@@ -56,14 +56,14 @@ public class Menu_PersonalGroups : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600123C RID: 4668 RVA: 0x0000CA91 File Offset: 0x0000AC91
+	// Token: 0x06001257 RID: 4695 RVA: 0x000C1E61 File Offset: 0x000C0061
 	private void OnEnable()
 	{
 		this.Init(false);
 		this.Init(true);
 	}
 
-	// Token: 0x0600123D RID: 4669 RVA: 0x000CCB64 File Offset: 0x000CAD64
+	// Token: 0x06001258 RID: 4696 RVA: 0x000C1E74 File Offset: 0x000C0074
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -101,7 +101,7 @@ public class Menu_PersonalGroups : MonoBehaviour
 		this.uiObjects[6].GetComponent<Dropdown>().AddOptions(list2);
 	}
 
-	// Token: 0x0600123E RID: 4670 RVA: 0x0000CAA1 File Offset: 0x0000ACA1
+	// Token: 0x06001259 RID: 4697 RVA: 0x000C2089 File Offset: 0x000C0289
 	public void Init(bool updateGroup)
 	{
 		this.FindScripts();
@@ -112,7 +112,7 @@ public class Menu_PersonalGroups : MonoBehaviour
 		this.SetData(updateGroup);
 	}
 
-	// Token: 0x0600123F RID: 4671 RVA: 0x000CCD7C File Offset: 0x000CAF7C
+	// Token: 0x0600125A RID: 4698 RVA: 0x000C20A4 File Offset: 0x000C02A4
 	private void SetData(bool updateGroup)
 	{
 		for (int i = 0; i < this.mS_.arrayCharactersScripts.Length; i++)
@@ -155,7 +155,7 @@ public class Menu_PersonalGroups : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[4], this.uiObjects[8]);
 	}
 
-	// Token: 0x06001240 RID: 4672 RVA: 0x0000CAB9 File Offset: 0x0000ACB9
+	// Token: 0x0600125B RID: 4699 RVA: 0x000C227D File Offset: 0x000C047D
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -163,7 +163,7 @@ public class Menu_PersonalGroups : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001241 RID: 4673 RVA: 0x000CCF58 File Offset: 0x000CB158
+	// Token: 0x0600125C RID: 4700 RVA: 0x000C22A4 File Offset: 0x000C04A4
 	public void DROPDOWN_Group()
 	{
 		int childCount = this.uiObjects[4].transform.childCount;
@@ -178,7 +178,7 @@ public class Menu_PersonalGroups : MonoBehaviour
 		this.Init(true);
 	}
 
-	// Token: 0x06001242 RID: 4674 RVA: 0x000CCFB4 File Offset: 0x000CB1B4
+	// Token: 0x0600125D RID: 4701 RVA: 0x000C2300 File Offset: 0x000C0500
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -189,7 +189,7 @@ public class Menu_PersonalGroups : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[4], this.uiObjects[8]);
 	}
 
-	// Token: 0x06001243 RID: 4675 RVA: 0x000CD02C File Offset: 0x000CB22C
+	// Token: 0x0600125E RID: 4702 RVA: 0x000C2378 File Offset: 0x000C0578
 	private void Sort(int element)
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -395,7 +395,7 @@ public class Menu_PersonalGroups : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[element]);
 	}
 
-	// Token: 0x06001244 RID: 4676 RVA: 0x000CDA38 File Offset: 0x000CBC38
+	// Token: 0x0600125F RID: 4703 RVA: 0x000C2D84 File Offset: 0x000C0F84
 	public void BUTTON_Select()
 	{
 		if (this.uiObjects[4].transform.childCount <= 0)
@@ -419,7 +419,7 @@ public class Menu_PersonalGroups : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001245 RID: 4677 RVA: 0x000CDAE4 File Offset: 0x000CBCE4
+	// Token: 0x06001260 RID: 4704 RVA: 0x000C2E30 File Offset: 0x000C1030
 	public void BUTTON_Rename()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -427,36 +427,36 @@ public class Menu_PersonalGroups : MonoBehaviour
 		this.guiMain_.uiObjects[282].GetComponent<Menu_PersonalGroupName>().Init(this.uiObjects[6].GetComponent<Dropdown>().value);
 	}
 
-	// Token: 0x06001246 RID: 4678 RVA: 0x0000CADF File Offset: 0x0000ACDF
+	// Token: 0x06001261 RID: 4705 RVA: 0x000C2E8E File Offset: 0x000C108E
 	public int GetAmountInGroup()
 	{
 		return this.uiObjects[4].transform.childCount;
 	}
 
-	// Token: 0x040016BC RID: 5820
+	// Token: 0x040016C5 RID: 5829
 	private mainScript mS_;
 
-	// Token: 0x040016BD RID: 5821
+	// Token: 0x040016C6 RID: 5830
 	private GameObject main_;
 
-	// Token: 0x040016BE RID: 5822
+	// Token: 0x040016C7 RID: 5831
 	private GUI_Main guiMain_;
 
-	// Token: 0x040016BF RID: 5823
+	// Token: 0x040016C8 RID: 5832
 	private sfxScript sfx_;
 
-	// Token: 0x040016C0 RID: 5824
+	// Token: 0x040016C9 RID: 5833
 	private textScript tS_;
 
-	// Token: 0x040016C1 RID: 5825
+	// Token: 0x040016CA RID: 5834
 	private pickCharacterScript pcS_;
 
-	// Token: 0x040016C2 RID: 5826
+	// Token: 0x040016CB RID: 5835
 	private roomDataScript rdS_;
 
-	// Token: 0x040016C3 RID: 5827
+	// Token: 0x040016CC RID: 5836
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040016C4 RID: 5828
+	// Token: 0x040016CD RID: 5837
 	public GameObject[] uiObjects;
 }

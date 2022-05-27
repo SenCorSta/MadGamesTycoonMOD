@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200008A RID: 138
 public class Item_DevGame_Platform : MonoBehaviour
 {
-	// Token: 0x0600057D RID: 1405 RVA: 0x00005488 File Offset: 0x00003688
+	// Token: 0x06000586 RID: 1414 RVA: 0x00049F10 File Offset: 0x00048110
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600057E RID: 1406 RVA: 0x0005CFF8 File Offset: 0x0005B1F8
+	// Token: 0x06000587 RID: 1415 RVA: 0x00049F18 File Offset: 0x00048118
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.pS_.GetName();
@@ -82,7 +82,7 @@ public class Item_DevGame_Platform : MonoBehaviour
 			base.gameObject.GetComponent<Button>().interactable = false;
 			return;
 		}
-		if (this.pS_.playerConsole && !this.pS_.isUnlocked)
+		if (this.pS_.ownerID == this.mS_.myID && !this.pS_.isUnlocked)
 		{
 			this.uiObjects[3].SetActive(true);
 			tooltip tooltip3 = this.tooltip_;
@@ -98,7 +98,7 @@ public class Item_DevGame_Platform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600057F RID: 1407 RVA: 0x00005490 File Offset: 0x00003690
+	// Token: 0x06000588 RID: 1416 RVA: 0x0004A3D6 File Offset: 0x000485D6
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -110,13 +110,13 @@ public class Item_DevGame_Platform : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000580 RID: 1408 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x06000589 RID: 1417 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000581 RID: 1409 RVA: 0x0005D4AC File Offset: 0x0005B6AC
+	// Token: 0x0600058A RID: 1418 RVA: 0x0004A40C File Offset: 0x0004860C
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, false);
@@ -131,7 +131,7 @@ public class Item_DevGame_Platform : MonoBehaviour
 		this.guiMain_.uiObjects[66].GetComponent<Menu_DevGame_Platform>().BUTTON_Close();
 	}
 
-	// Token: 0x06000582 RID: 1410 RVA: 0x000054C3 File Offset: 0x000036C3
+	// Token: 0x0600058B RID: 1419 RVA: 0x0004A4C5 File Offset: 0x000486C5
 	private bool IsExclusivGame()
 	{
 		return this.guiMain_.uiObjects[56].activeSelf && this.devGame_.uiObjects[146].GetComponent<Dropdown>().value == 1;

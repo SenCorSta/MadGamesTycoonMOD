@@ -5,19 +5,19 @@ using UnityEngine.UI;
 // Token: 0x020000CC RID: 204
 public class Item_Arcadepreis : MonoBehaviour
 {
-	// Token: 0x06000701 RID: 1793 RVA: 0x00005DF7 File Offset: 0x00003FF7
+	// Token: 0x0600070A RID: 1802 RVA: 0x0005345E File Offset: 0x0005165E
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000702 RID: 1794 RVA: 0x00005DFF File Offset: 0x00003FFF
+	// Token: 0x0600070B RID: 1803 RVA: 0x00053466 File Offset: 0x00051666
 	private void Update()
 	{
 		this.DataUpdate();
 	}
 
-	// Token: 0x06000703 RID: 1795 RVA: 0x00005E07 File Offset: 0x00004007
+	// Token: 0x0600070C RID: 1804 RVA: 0x0005346E File Offset: 0x0005166E
 	private void DataUpdate()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -29,7 +29,7 @@ public class Item_Arcadepreis : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000704 RID: 1796 RVA: 0x00065A3C File Offset: 0x00063C3C
+	// Token: 0x0600070D RID: 1805 RVA: 0x000534A4 File Offset: 0x000516A4
 	private void SetData()
 	{
 		if (!this.game_)
@@ -49,13 +49,13 @@ public class Item_Arcadepreis : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000705 RID: 1797 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x0600070E RID: 1806 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000706 RID: 1798 RVA: 0x00065B80 File Offset: 0x00063D80
+	// Token: 0x0600070F RID: 1807 RVA: 0x000535E8 File Offset: 0x000517E8
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000C3 RID: 195
 public class Item_MesseGame : MonoBehaviour
 {
-	// Token: 0x060006CA RID: 1738 RVA: 0x00005D0E File Offset: 0x00003F0E
+	// Token: 0x060006D3 RID: 1747 RVA: 0x0005201A File Offset: 0x0005021A
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060006CB RID: 1739 RVA: 0x000646D4 File Offset: 0x000628D4
+	// Token: 0x060006D4 RID: 1748 RVA: 0x00052024 File Offset: 0x00050224
 	public void SetData()
 	{
 		if (!this.game_)
@@ -38,13 +38,13 @@ public class Item_MesseGame : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060006CC RID: 1740 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060006D5 RID: 1749 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060006CD RID: 1741 RVA: 0x00064844 File Offset: 0x00062A44
+	// Token: 0x060006D6 RID: 1750 RVA: 0x00052194 File Offset: 0x00050394
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

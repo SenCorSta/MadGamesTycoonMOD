@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020001C0 RID: 448
+// Token: 0x020001C1 RID: 449
 public class Menu_GameOver : MonoBehaviour
 {
-	// Token: 0x060010D3 RID: 4307 RVA: 0x0000BDB0 File Offset: 0x00009FB0
+	// Token: 0x060010ED RID: 4333 RVA: 0x000B4217 File Offset: 0x000B2417
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010D4 RID: 4308 RVA: 0x000BFD4C File Offset: 0x000BDF4C
+	// Token: 0x060010EE RID: 4334 RVA: 0x000B4220 File Offset: 0x000B2420
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_GameOver : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D5 RID: 4309 RVA: 0x0000BDB8 File Offset: 0x00009FB8
+	// Token: 0x060010EF RID: 4335 RVA: 0x000B42CA File Offset: 0x000B24CA
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -45,7 +45,7 @@ public class Menu_GameOver : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D6 RID: 4310 RVA: 0x0000BDD3 File Offset: 0x00009FD3
+	// Token: 0x060010F0 RID: 4336 RVA: 0x000B42E5 File Offset: 0x000B24E5
 	public void BUTTON_Yes()
 	{
 		if (this.mS_.multiplayer)
@@ -56,21 +56,21 @@ public class Menu_GameOver : MonoBehaviour
 		SceneManager.LoadScene("scene01");
 	}
 
-	// Token: 0x0400156C RID: 5484
+	// Token: 0x04001575 RID: 5493
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400156D RID: 5485
+	// Token: 0x04001576 RID: 5494
 	private GameObject main_;
 
-	// Token: 0x0400156E RID: 5486
+	// Token: 0x04001577 RID: 5495
 	private mainScript mS_;
 
-	// Token: 0x0400156F RID: 5487
+	// Token: 0x04001578 RID: 5496
 	private textScript tS_;
 
-	// Token: 0x04001570 RID: 5488
+	// Token: 0x04001579 RID: 5497
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001571 RID: 5489
+	// Token: 0x0400157A RID: 5498
 	private sfxScript sfx_;
 }

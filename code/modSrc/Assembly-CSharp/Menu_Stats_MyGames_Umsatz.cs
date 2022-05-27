@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200024A RID: 586
+// Token: 0x0200024B RID: 587
 public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 {
-	// Token: 0x0600169F RID: 5791 RVA: 0x0000FD02 File Offset: 0x0000DF02
+	// Token: 0x060016C2 RID: 5826 RVA: 0x000E52BA File Offset: 0x000E34BA
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060016A0 RID: 5792 RVA: 0x000EC288 File Offset: 0x000EA488
+	// Token: 0x060016C3 RID: 5827 RVA: 0x000E52C4 File Offset: 0x000E34C4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060016A1 RID: 5793 RVA: 0x0000FD0A File Offset: 0x0000DF0A
+	// Token: 0x060016C4 RID: 5828 RVA: 0x000E538C File Offset: 0x000E358C
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -51,7 +51,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060016A2 RID: 5794 RVA: 0x000EC350 File Offset: 0x000EA550
+	// Token: 0x060016C5 RID: 5829 RVA: 0x000E53C4 File Offset: 0x000E35C4
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -67,12 +67,12 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060016A3 RID: 5795 RVA: 0x000EC39C File Offset: 0x000EA59C
+	// Token: 0x060016C6 RID: 5830 RVA: 0x000E5410 File Offset: 0x000E3610
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
 		{
-			if (parent_.transform.GetChild(i).GetComponent<Item_MyGames_Umsatz>().game_.myID == id_)
+			if (parent_.transform.GetChild(i).gameObject.activeSelf && parent_.transform.GetChild(i).GetComponent<Item_MyGames_Umsatz>().game_.myID == id_)
 			{
 				return true;
 			}
@@ -80,13 +80,13 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060016A4 RID: 5796 RVA: 0x0000FD42 File Offset: 0x0000DF42
+	// Token: 0x060016C7 RID: 5831 RVA: 0x000E546C File Offset: 0x000E366C
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060016A5 RID: 5797 RVA: 0x0000FD4A File Offset: 0x0000DF4A
+	// Token: 0x060016C8 RID: 5832 RVA: 0x000E5474 File Offset: 0x000E3674
 	public void Init()
 	{
 		this.FindScripts();
@@ -94,7 +94,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060016A6 RID: 5798 RVA: 0x000EC3E0 File Offset: 0x000EA5E0
+	// Token: 0x060016C9 RID: 5833 RVA: 0x000E5488 File Offset: 0x000E3688
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[4].name);
@@ -110,7 +110,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.uiObjects[4].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x060016A7 RID: 5799 RVA: 0x000EC4B0 File Offset: 0x000EA6B0
+	// Token: 0x060016CA RID: 5834 RVA: 0x000E5558 File Offset: 0x000E3758
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -119,7 +119,7 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && !component.inDevelopment && component.playerGame && !component.schublade && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && this.CheckGameData(component) && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_MyGames_Umsatz component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_MyGames_Umsatz>();
 					component2.mS_ = this.mS_;
@@ -139,14 +139,31 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x060016A8 RID: 5800 RVA: 0x0000FD5E File Offset: 0x0000DF5E
+	// Token: 0x060016CB RID: 5835 RVA: 0x000E56B8 File Offset: 0x000E38B8
+	public bool CheckGameData(gameScript script_)
+	{
+		if (script_ && (script_.ownerID == this.mS_.myID || script_.publisherID == this.mS_.myID))
+		{
+			if (this.uiObjects[6].GetComponent<Toggle>().isOn && script_.developerID != this.mS_.myID)
+			{
+				return false;
+			}
+			if (!script_.inDevelopment && !script_.schublade)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	// Token: 0x060016CC RID: 5836 RVA: 0x000E572F File Offset: 0x000E392F
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060016A9 RID: 5801 RVA: 0x000EC624 File Offset: 0x000EA824
+	// Token: 0x060016CD RID: 5837 RVA: 0x000E574C File Offset: 0x000E394C
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[4].GetComponent<Dropdown>().value;
@@ -181,30 +198,40 @@ public class Menu_Stats_MyGames_Umsatz : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x04001A8A RID: 6794
+	// Token: 0x060016CE RID: 5838 RVA: 0x000E5888 File Offset: 0x000E3A88
+	public void TOGGLE_OnlyMyGames()
+	{
+		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
+		{
+			this.uiObjects[0].transform.GetChild(i).gameObject.SetActive(false);
+		}
+		this.SetData();
+	}
+
+	// Token: 0x04001A93 RID: 6803
 	private mainScript mS_;
 
-	// Token: 0x04001A8B RID: 6795
+	// Token: 0x04001A94 RID: 6804
 	private GameObject main_;
 
-	// Token: 0x04001A8C RID: 6796
+	// Token: 0x04001A95 RID: 6805
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001A8D RID: 6797
+	// Token: 0x04001A96 RID: 6806
 	private sfxScript sfx_;
 
-	// Token: 0x04001A8E RID: 6798
+	// Token: 0x04001A97 RID: 6807
 	private textScript tS_;
 
-	// Token: 0x04001A8F RID: 6799
+	// Token: 0x04001A98 RID: 6808
 	private genres genres_;
 
-	// Token: 0x04001A90 RID: 6800
+	// Token: 0x04001A99 RID: 6809
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001A91 RID: 6801
+	// Token: 0x04001A9A RID: 6810
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001A92 RID: 6802
+	// Token: 0x04001A9B RID: 6811
 	private float updateTimer;
 }

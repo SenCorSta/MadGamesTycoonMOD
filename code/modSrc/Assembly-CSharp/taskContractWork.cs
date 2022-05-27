@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000307 RID: 775
+// Token: 0x0200030A RID: 778
 public class taskContractWork : MonoBehaviour
 {
-	// Token: 0x06001AE1 RID: 6881 RVA: 0x000121BD File Offset: 0x000103BD
+	// Token: 0x06001B2B RID: 6955 RVA: 0x0010F640 File Offset: 0x0010D840
 	private void Awake()
 	{
 		base.transform.position = new Vector3(210f, 0f, 0f);
 	}
 
-	// Token: 0x06001AE2 RID: 6882 RVA: 0x000121DE File Offset: 0x000103DE
+	// Token: 0x06001B2C RID: 6956 RVA: 0x0010F661 File Offset: 0x0010D861
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001AE3 RID: 6883 RVA: 0x00112E48 File Offset: 0x00111048
+	// Token: 0x06001B2D RID: 6957 RVA: 0x0010F66C File Offset: 0x0010D86C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class taskContractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AE4 RID: 6884 RVA: 0x000121E6 File Offset: 0x000103E6
+	// Token: 0x06001B2E RID: 6958 RVA: 0x0010F712 File Offset: 0x0010D912
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -51,13 +51,13 @@ public class taskContractWork : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001AE5 RID: 6885 RVA: 0x00012217 File Offset: 0x00010417
+	// Token: 0x06001B2F RID: 6959 RVA: 0x0010F743 File Offset: 0x0010D943
 	private void Update()
 	{
 		this.FindMyContractWork();
 	}
 
-	// Token: 0x06001AE6 RID: 6886 RVA: 0x00112EF0 File Offset: 0x001110F0
+	// Token: 0x06001B30 RID: 6960 RVA: 0x0010F74C File Offset: 0x0010D94C
 	private void FindMyContractWork()
 	{
 		if (!this.contract_)
@@ -72,19 +72,19 @@ public class taskContractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AE7 RID: 6887 RVA: 0x0001221F File Offset: 0x0001041F
+	// Token: 0x06001B31 RID: 6961 RVA: 0x0010F7A1 File Offset: 0x0010D9A1
 	public float GetProzent()
 	{
 		return 100f / this.points * (this.points - this.pointsLeft);
 	}
 
-	// Token: 0x06001AE8 RID: 6888 RVA: 0x0001223B File Offset: 0x0001043B
+	// Token: 0x06001B32 RID: 6962 RVA: 0x0010F7BD File Offset: 0x0010D9BD
 	public Sprite GetPic()
 	{
 		return this.guiMain_.uiSprites[10];
 	}
 
-	// Token: 0x06001AE9 RID: 6889 RVA: 0x0001224B File Offset: 0x0001044B
+	// Token: 0x06001B33 RID: 6963 RVA: 0x0010F7CD File Offset: 0x0010D9CD
 	public string GetName()
 	{
 		this.FindMyContractWork();
@@ -95,7 +95,7 @@ public class taskContractWork : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06001AEA RID: 6890 RVA: 0x00012271 File Offset: 0x00010471
+	// Token: 0x06001B34 RID: 6964 RVA: 0x0010F7F3 File Offset: 0x0010D9F3
 	public int GetStrafe()
 	{
 		this.FindMyContractWork();
@@ -106,7 +106,7 @@ public class taskContractWork : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001AEB RID: 6891 RVA: 0x00012293 File Offset: 0x00010493
+	// Token: 0x06001B35 RID: 6965 RVA: 0x0010F815 File Offset: 0x0010DA15
 	public void Work(float f)
 	{
 		if (this.pointsLeft > 0f)
@@ -120,7 +120,7 @@ public class taskContractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AEC RID: 6892 RVA: 0x00112F48 File Offset: 0x00111148
+	// Token: 0x06001B36 RID: 6966 RVA: 0x0010F850 File Offset: 0x0010DA50
 	private void Complete()
 	{
 		this.FindMyContractWork();
@@ -188,7 +188,7 @@ public class taskContractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AED RID: 6893 RVA: 0x00113224 File Offset: 0x00111424
+	// Token: 0x06001B37 RID: 6967 RVA: 0x0010FB2C File Offset: 0x0010DD2C
 	private bool DoAutomatic(int art_)
 	{
 		if (!this.automatic)
@@ -246,7 +246,7 @@ public class taskContractWork : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001AEE RID: 6894 RVA: 0x00113494 File Offset: 0x00111694
+	// Token: 0x06001B38 RID: 6968 RVA: 0x0010FD9C File Offset: 0x0010DF9C
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -263,7 +263,7 @@ public class taskContractWork : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001AEF RID: 6895 RVA: 0x001134F4 File Offset: 0x001116F4
+	// Token: 0x06001B39 RID: 6969 RVA: 0x0010FDFC File Offset: 0x0010DFFC
 	public void Abbrechen()
 	{
 		this.FindMyContractWork();
@@ -290,39 +290,39 @@ public class taskContractWork : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0400222E RID: 8750
+	// Token: 0x04002248 RID: 8776
 	public int myID = -1;
 
-	// Token: 0x0400222F RID: 8751
+	// Token: 0x04002249 RID: 8777
 	public int contractID = -1;
 
-	// Token: 0x04002230 RID: 8752
+	// Token: 0x0400224A RID: 8778
 	public bool automatic;
 
-	// Token: 0x04002231 RID: 8753
+	// Token: 0x0400224B RID: 8779
 	public float points;
 
-	// Token: 0x04002232 RID: 8754
+	// Token: 0x0400224C RID: 8780
 	public float pointsLeft;
 
-	// Token: 0x04002233 RID: 8755
+	// Token: 0x0400224D RID: 8781
 	public contractWork contract_;
 
-	// Token: 0x04002234 RID: 8756
+	// Token: 0x0400224E RID: 8782
 	public bool automaticWait;
 
-	// Token: 0x04002235 RID: 8757
+	// Token: 0x0400224F RID: 8783
 	private GameObject main_;
 
-	// Token: 0x04002236 RID: 8758
+	// Token: 0x04002250 RID: 8784
 	public mainScript mS_;
 
-	// Token: 0x04002237 RID: 8759
+	// Token: 0x04002251 RID: 8785
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002238 RID: 8760
+	// Token: 0x04002252 RID: 8786
 	private textScript tS_;
 
-	// Token: 0x04002239 RID: 8761
+	// Token: 0x04002253 RID: 8787
 	private roomDataScript rdS_;
 }

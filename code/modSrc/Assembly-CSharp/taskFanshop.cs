@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200030B RID: 779
+// Token: 0x0200030E RID: 782
 public class taskFanshop : MonoBehaviour
 {
-	// Token: 0x06001B1A RID: 6938 RVA: 0x000125B6 File Offset: 0x000107B6
+	// Token: 0x06001B64 RID: 7012 RVA: 0x00110D81 File Offset: 0x0010EF81
 	private void Awake()
 	{
 		base.transform.position = new Vector3(270f, 0f, 0f);
 	}
 
-	// Token: 0x06001B1B RID: 6939 RVA: 0x000125D7 File Offset: 0x000107D7
+	// Token: 0x06001B65 RID: 7013 RVA: 0x00110DA2 File Offset: 0x0010EFA2
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001B1C RID: 6940 RVA: 0x00114194 File Offset: 0x00112394
+	// Token: 0x06001B66 RID: 7014 RVA: 0x00110DAC File Offset: 0x0010EFAC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class taskFanshop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B1D RID: 6941 RVA: 0x000125DF File Offset: 0x000107DF
+	// Token: 0x06001B67 RID: 7015 RVA: 0x00110E7B File Offset: 0x0010F07B
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -55,13 +55,13 @@ public class taskFanshop : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001B1E RID: 6942 RVA: 0x00012610 File Offset: 0x00010810
+	// Token: 0x06001B68 RID: 7016 RVA: 0x00110EAC File Offset: 0x0010F0AC
 	public float GetProzent()
 	{
 		return 0f;
 	}
 
-	// Token: 0x06001B1F RID: 6943 RVA: 0x00012617 File Offset: 0x00010817
+	// Token: 0x06001B69 RID: 7017 RVA: 0x00110EB3 File Offset: 0x0010F0B3
 	public void Work(int artikel, int amount, int v)
 	{
 		if (!this.mS_)
@@ -72,13 +72,13 @@ public class taskFanshop : MonoBehaviour
 		this.verdienst += v;
 	}
 
-	// Token: 0x06001B20 RID: 6944 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x06001B6A RID: 7018 RVA: 0x0003D679 File Offset: 0x0003B879
 	public void Abbrechen()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06001B21 RID: 6945 RVA: 0x00114264 File Offset: 0x00112464
+	// Token: 0x06001B6B RID: 7019 RVA: 0x00110EE4 File Offset: 0x0010F0E4
 	public void ResetData()
 	{
 		this.verdienst = 0;
@@ -88,30 +88,30 @@ public class taskFanshop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400225D RID: 8797
+	// Token: 0x04002277 RID: 8823
 	public int myID = -1;
 
-	// Token: 0x0400225E RID: 8798
+	// Token: 0x04002278 RID: 8824
 	public int[] bestellungen;
 
-	// Token: 0x0400225F RID: 8799
+	// Token: 0x04002279 RID: 8825
 	public int verdienst;
 
-	// Token: 0x04002260 RID: 8800
+	// Token: 0x0400227A RID: 8826
 	private GameObject main_;
 
-	// Token: 0x04002261 RID: 8801
+	// Token: 0x0400227B RID: 8827
 	public mainScript mS_;
 
-	// Token: 0x04002262 RID: 8802
+	// Token: 0x0400227C RID: 8828
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002263 RID: 8803
+	// Token: 0x0400227D RID: 8829
 	private textScript tS_;
 
-	// Token: 0x04002264 RID: 8804
+	// Token: 0x0400227E RID: 8830
 	private roomDataScript rdS_;
 
-	// Token: 0x04002265 RID: 8805
+	// Token: 0x0400227F RID: 8831
 	public Menu_Fanshop menuFanshop_;
 }

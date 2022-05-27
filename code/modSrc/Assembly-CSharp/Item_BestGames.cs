@@ -5,12 +5,12 @@ using UnityEngine.UI;
 // Token: 0x020000E3 RID: 227
 public class Item_BestGames : MonoBehaviour
 {
-	// Token: 0x0600079B RID: 1947 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x060007A4 RID: 1956 RVA: 0x00002715 File Offset: 0x00000915
 	private void Start()
 	{
 	}
 
-	// Token: 0x0600079C RID: 1948 RVA: 0x000681AC File Offset: 0x000663AC
+	// Token: 0x060007A5 RID: 1957 RVA: 0x00055F80 File Offset: 0x00054180
 	public void SetData()
 	{
 		if (!this.game_)
@@ -18,11 +18,11 @@ public class Item_BestGames : MonoBehaviour
 			return;
 		}
 		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag();
-		if (this.game_.playerGame)
+		if (this.game_.ownerID == this.mS_.myID || this.game_.publisherID == this.mS_.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
-		if (this.mS_.multiplayer && !this.game_.playerGame && this.game_.multiplayerSlot != -1 && this.game_.multiplayerSlot != this.mS_.GetMyMultiplayerID())
+		if (this.mS_.multiplayer && this.game_.GameFromMitspieler())
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[8];
 		}
@@ -41,7 +41,7 @@ public class Item_BestGames : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x0600079D RID: 1949 RVA: 0x00068328 File Offset: 0x00066528
+	// Token: 0x060007A6 RID: 1958 RVA: 0x000560FC File Offset: 0x000542FC
 	private void Update()
 	{
 		this.frames++;
@@ -75,7 +75,7 @@ public class Item_BestGames : MonoBehaviour
 		base.gameObject.name = this.game_.reviewTotal.ToString();
 	}
 
-	// Token: 0x0600079E RID: 1950 RVA: 0x0006847C File Offset: 0x0006667C
+	// Token: 0x060007A7 RID: 1959 RVA: 0x00056250 File Offset: 0x00054450
 	public void EnableObjects()
 	{
 		if (this.hasEnabled)
@@ -93,13 +93,13 @@ public class Item_BestGames : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600079F RID: 1951 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060007A8 RID: 1960 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007A0 RID: 1952 RVA: 0x000684E0 File Offset: 0x000666E0
+	// Token: 0x060007A9 RID: 1961 RVA: 0x000562B4 File Offset: 0x000544B4
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001AF RID: 431
+// Token: 0x020001B0 RID: 432
 public class Menu_BuyInventar : MonoBehaviour
 {
-	// Token: 0x06001041 RID: 4161 RVA: 0x0000B851 File Offset: 0x00009A51
+	// Token: 0x0600105B RID: 4187 RVA: 0x000AD067 File Offset: 0x000AB267
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001042 RID: 4162 RVA: 0x000B9228 File Offset: 0x000B7428
+	// Token: 0x0600105C RID: 4188 RVA: 0x000AD070 File Offset: 0x000AB270
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -55,9 +55,13 @@ public class Menu_BuyInventar : MonoBehaviour
 		{
 			this.guiMain_ = GameObject.Find("CanvasInGameMenu").GetComponent<GUI_Main>();
 		}
+		if (!this.camera_)
+		{
+			this.camera_ = GameObject.Find("CamMovement");
+		}
 	}
 
-	// Token: 0x06001043 RID: 4163 RVA: 0x000B936C File Offset: 0x000B756C
+	// Token: 0x0600105D RID: 4189 RVA: 0x000AD1D4 File Offset: 0x000AB3D4
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -69,7 +73,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001044 RID: 4164 RVA: 0x000B93F4 File Offset: 0x000B75F4
+	// Token: 0x0600105E RID: 4190 RVA: 0x000AD25C File Offset: 0x000AB45C
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -78,7 +82,11 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 		this.mS_.snapObject = this.uiObjects[3].GetComponent<Toggle>().isOn;
 		this.mS_.snapRotation = this.uiObjects[5].GetComponent<Toggle>().isOn;
-		if (Input.GetMouseButtonUp(1) && this.timerRightMousebutton < 0.2f)
+		if (Input.GetMouseButtonDown(1))
+		{
+			this.lastCameraPosition = this.camera_.transform.position;
+		}
+		if (Input.GetMouseButtonUp(1) && this.timerRightMousebutton < 0.2f && Vector3.Distance(this.lastCameraPosition, this.camera_.transform.position) < 0.01f)
 		{
 			this.BUTTON_Abwahl();
 		}
@@ -90,14 +98,14 @@ public class Menu_BuyInventar : MonoBehaviour
 		this.timerRightMousebutton = 0f;
 	}
 
-	// Token: 0x06001045 RID: 4165 RVA: 0x0000B859 File Offset: 0x00009A59
+	// Token: 0x0600105F RID: 4191 RVA: 0x000AD338 File Offset: 0x000AB538
 	public void OpenDropdown()
 	{
 		this.FindScripts();
 		this.uiObjects[0].SetActive(true);
 	}
 
-	// Token: 0x06001046 RID: 4166 RVA: 0x0000B86F File Offset: 0x00009A6F
+	// Token: 0x06001060 RID: 4192 RVA: 0x000AD34E File Offset: 0x000AB54E
 	public void CloseDropdown()
 	{
 		this.FindScripts();
@@ -105,13 +113,13 @@ public class Menu_BuyInventar : MonoBehaviour
 		this.uiObjects[0].SetActive(false);
 	}
 
-	// Token: 0x06001047 RID: 4167 RVA: 0x0000B892 File Offset: 0x00009A92
+	// Token: 0x06001061 RID: 4193 RVA: 0x000AD371 File Offset: 0x000AB571
 	private void CreatePlaceholder()
 	{
 		UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[1]).transform.parent = this.uiObjects[2].transform;
 	}
 
-	// Token: 0x06001048 RID: 4168 RVA: 0x000B9490 File Offset: 0x000B7690
+	// Token: 0x06001062 RID: 4194 RVA: 0x000AD398 File Offset: 0x000AB598
 	private void CreateInventarKaufenButton(int typ)
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0]);
@@ -126,7 +134,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		component.typ = typ;
 	}
 
-	// Token: 0x06001049 RID: 4169 RVA: 0x000B9528 File Offset: 0x000B7728
+	// Token: 0x06001063 RID: 4195 RVA: 0x000AD430 File Offset: 0x000AB630
 	private void CreateFilter(string c, int filterArrayID)
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[2]);
@@ -146,7 +154,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600104A RID: 4170 RVA: 0x0000B8B8 File Offset: 0x00009AB8
+	// Token: 0x06001064 RID: 4196 RVA: 0x000AD4F9 File Offset: 0x000AB6F9
 	public IEnumerator iButton_Click(Filter_InventarKaufen script_)
 	{
 		yield return new WaitForEndOfFrame();
@@ -154,7 +162,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600104B RID: 4171 RVA: 0x000B95F4 File Offset: 0x000B77F4
+	// Token: 0x06001065 RID: 4197 RVA: 0x000AD508 File Offset: 0x000AB708
 	public void BUTTON_SelectInventar(int room)
 	{
 		this.buyInventar = room;
@@ -523,7 +531,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600104C RID: 4172 RVA: 0x000BA3A8 File Offset: 0x000B85A8
+	// Token: 0x06001066 RID: 4198 RVA: 0x000AE2BC File Offset: 0x000AC4BC
 	private void CreateInventarKaufenButtons_STANDARD(int room)
 	{
 		this.CreateFilter(this.tS_.GetText(1875), 44);
@@ -616,7 +624,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		this.CreateInventarKaufenButton(177);
 	}
 
-	// Token: 0x0600104D RID: 4173 RVA: 0x000BA6FC File Offset: 0x000B88FC
+	// Token: 0x06001067 RID: 4199 RVA: 0x000AE610 File Offset: 0x000AC810
 	public void BUTTON_CloseSelectInventar(bool resetScrollbar)
 	{
 		if (resetScrollbar)
@@ -646,7 +654,7 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600104E RID: 4174 RVA: 0x0000B8C7 File Offset: 0x00009AC7
+	// Token: 0x06001068 RID: 4200 RVA: 0x000AE6F5 File Offset: 0x000AC8F5
 	public void BUTTON_Abwahl()
 	{
 		if (this.mS_.pickedObject)
@@ -655,55 +663,61 @@ public class Menu_BuyInventar : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600104F RID: 4175 RVA: 0x0000B8EB File Offset: 0x00009AEB
+	// Token: 0x06001069 RID: 4201 RVA: 0x000AE719 File Offset: 0x000AC919
 	public void DisableAllMenus()
 	{
 		this.uiObjects[0].SetActive(false);
 		this.uiObjects[1].SetActive(false);
 	}
 
-	// Token: 0x040014C2 RID: 5314
+	// Token: 0x040014CB RID: 5323
 	public GameObject[] uiObjects;
 
-	// Token: 0x040014C3 RID: 5315
+	// Token: 0x040014CC RID: 5324
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040014C4 RID: 5316
-	private GameObject main_;
-
-	// Token: 0x040014C5 RID: 5317
-	private mainScript mS_;
-
-	// Token: 0x040014C6 RID: 5318
-	private textScript tS_;
-
-	// Token: 0x040014C7 RID: 5319
-	private mapScript mapS_;
-
-	// Token: 0x040014C8 RID: 5320
-	private unlockScript unlock_;
-
-	// Token: 0x040014C9 RID: 5321
-	private GUI_Main guiMain_;
-
-	// Token: 0x040014CA RID: 5322
-	private buildRoomScript buildRoomScript_;
-
-	// Token: 0x040014CB RID: 5323
-	private roomDataScript rdS_;
-
-	// Token: 0x040014CC RID: 5324
-	private mainCameraScript mCamS_;
-
 	// Token: 0x040014CD RID: 5325
-	private sfxScript sfx_;
+	private GameObject camera_;
 
 	// Token: 0x040014CE RID: 5326
-	public int buyInventar;
+	private GameObject main_;
 
 	// Token: 0x040014CF RID: 5327
-	public bool[] filter = new bool[100];
+	private mainScript mS_;
 
 	// Token: 0x040014D0 RID: 5328
+	private textScript tS_;
+
+	// Token: 0x040014D1 RID: 5329
+	private mapScript mapS_;
+
+	// Token: 0x040014D2 RID: 5330
+	private unlockScript unlock_;
+
+	// Token: 0x040014D3 RID: 5331
+	private GUI_Main guiMain_;
+
+	// Token: 0x040014D4 RID: 5332
+	private buildRoomScript buildRoomScript_;
+
+	// Token: 0x040014D5 RID: 5333
+	private roomDataScript rdS_;
+
+	// Token: 0x040014D6 RID: 5334
+	private mainCameraScript mCamS_;
+
+	// Token: 0x040014D7 RID: 5335
+	private sfxScript sfx_;
+
+	// Token: 0x040014D8 RID: 5336
+	public int buyInventar;
+
+	// Token: 0x040014D9 RID: 5337
+	public bool[] filter = new bool[100];
+
+	// Token: 0x040014DA RID: 5338
 	private float timerRightMousebutton;
+
+	// Token: 0x040014DB RID: 5339
+	private Vector3 lastCameraPosition;
 }

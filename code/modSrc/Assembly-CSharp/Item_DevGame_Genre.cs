@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000086 RID: 134
 public class Item_DevGame_Genre : MonoBehaviour
 {
-	// Token: 0x06000565 RID: 1381 RVA: 0x00005449 File Offset: 0x00003649
+	// Token: 0x0600056E RID: 1390 RVA: 0x0004958C File Offset: 0x0004778C
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000566 RID: 1382 RVA: 0x0005C6B0 File Offset: 0x0005A8B0
+	// Token: 0x0600056F RID: 1391 RVA: 0x00049594 File Offset: 0x00047794
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.genres_.GetName(this.myID);
@@ -50,13 +50,13 @@ public class Item_DevGame_Genre : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06000567 RID: 1383 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x06000570 RID: 1392 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000568 RID: 1384 RVA: 0x0005C8BC File Offset: 0x0005AABC
+	// Token: 0x06000571 RID: 1393 RVA: 0x000497A0 File Offset: 0x000479A0
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

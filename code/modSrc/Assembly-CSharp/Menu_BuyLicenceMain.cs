@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200018E RID: 398
+// Token: 0x0200018F RID: 399
 public class Menu_BuyLicenceMain : MonoBehaviour
 {
-	// Token: 0x06000F19 RID: 3865 RVA: 0x0000AB3F File Offset: 0x00008D3F
+	// Token: 0x06000F31 RID: 3889 RVA: 0x000A0FBC File Offset: 0x0009F1BC
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F1A RID: 3866 RVA: 0x000ADF50 File Offset: 0x000AC150
+	// Token: 0x06000F32 RID: 3890 RVA: 0x000A0FC4 File Offset: 0x0009F1C4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -35,7 +35,7 @@ public class Menu_BuyLicenceMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F1B RID: 3867 RVA: 0x0000AB47 File Offset: 0x00008D47
+	// Token: 0x06000F33 RID: 3891 RVA: 0x000A106E File Offset: 0x0009F26E
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -46,35 +46,35 @@ public class Menu_BuyLicenceMain : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000F1C RID: 3868 RVA: 0x0000AB82 File Offset: 0x00008D82
+	// Token: 0x06000F34 RID: 3892 RVA: 0x000A10A9 File Offset: 0x0009F2A9
 	public void BUTTON_BuyLicence()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[52]);
 	}
 
-	// Token: 0x06000F1D RID: 3869 RVA: 0x0000ABAA File Offset: 0x00008DAA
+	// Token: 0x06000F35 RID: 3893 RVA: 0x000A10D1 File Offset: 0x0009F2D1
 	public void BUTTON_SellLicence()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[54]);
 	}
 
-	// Token: 0x04001367 RID: 4967
+	// Token: 0x04001370 RID: 4976
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001368 RID: 4968
+	// Token: 0x04001371 RID: 4977
 	private GameObject main_;
 
-	// Token: 0x04001369 RID: 4969
+	// Token: 0x04001372 RID: 4978
 	private mainScript mS_;
 
-	// Token: 0x0400136A RID: 4970
+	// Token: 0x04001373 RID: 4979
 	private textScript tS_;
 
-	// Token: 0x0400136B RID: 4971
+	// Token: 0x04001374 RID: 4980
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400136C RID: 4972
+	// Token: 0x04001375 RID: 4981
 	private sfxScript sfx_;
 }

@@ -2,15 +2,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000279 RID: 633
+// Token: 0x0200027D RID: 637
 public class stars : MonoBehaviour
 {
-	// Token: 0x060018BB RID: 6331 RVA: 0x00002098 File Offset: 0x00000298
+	// Token: 0x06001900 RID: 6400 RVA: 0x00002715 File Offset: 0x00000915
 	private void Start()
 	{
 	}
 
-	// Token: 0x060018BC RID: 6332 RVA: 0x000FDAE8 File Offset: 0x000FBCE8
+	// Token: 0x06001901 RID: 6401 RVA: 0x000F8D20 File Offset: 0x000F6F20
 	private void Update()
 	{
 		for (int i = 0; i < this.myObjects.Length; i++)
@@ -26,12 +26,12 @@ public class stars : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001C44 RID: 7236
+	// Token: 0x04001C5F RID: 7263
 	public Color[] myColors;
 
-	// Token: 0x04001C45 RID: 7237
+	// Token: 0x04001C60 RID: 7264
 	public GameObject[] myObjects;
 
-	// Token: 0x04001C46 RID: 7238
+	// Token: 0x04001C61 RID: 7265
 	public int amount;
 }

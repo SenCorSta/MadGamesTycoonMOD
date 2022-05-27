@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200023C RID: 572
+// Token: 0x0200023D RID: 573
 public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 {
-	// Token: 0x060015F7 RID: 5623 RVA: 0x0000F1FD File Offset: 0x0000D3FD
+	// Token: 0x06001615 RID: 5653 RVA: 0x000E1447 File Offset: 0x000DF647
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060015F8 RID: 5624 RVA: 0x000E9420 File Offset: 0x000E7620
+	// Token: 0x06001616 RID: 5654 RVA: 0x000E1450 File Offset: 0x000DF650
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -52,13 +52,13 @@ public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060015F9 RID: 5625 RVA: 0x0000F205 File Offset: 0x0000D405
+	// Token: 0x06001617 RID: 5655 RVA: 0x000E1572 File Offset: 0x000DF772
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060015FA RID: 5626 RVA: 0x0000F20D File Offset: 0x0000D40D
+	// Token: 0x06001618 RID: 5656 RVA: 0x000E157A File Offset: 0x000DF77A
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -68,7 +68,7 @@ public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060015FB RID: 5627 RVA: 0x000E9544 File Offset: 0x000E7744
+	// Token: 0x06001619 RID: 5657 RVA: 0x000E15B4 File Offset: 0x000DF7B4
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -84,17 +84,17 @@ public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x060015FC RID: 5628 RVA: 0x000E9590 File Offset: 0x000E7790
+	// Token: 0x0600161A RID: 5658 RVA: 0x000E1600 File Offset: 0x000DF800
 	public void Init()
 	{
 		this.FindScripts();
-		this.uiObjects[14].GetComponent<Text>().text = this.tS_.GetText(245) + "<color=blue><b>\n" + this.genres_.GetName(this.mS_.companySpecialGenre) + "</b></color>";
-		this.uiObjects[15].GetComponent<Image>().sprite = this.genres_.GetPic(this.mS_.companySpecialGenre);
+		this.uiObjects[14].GetComponent<Text>().text = this.tS_.GetText(245) + "<color=blue><b>\n" + this.genres_.GetName(this.mS_.GetFanGenreID()) + "</b></color>";
+		this.uiObjects[15].GetComponent<Image>().sprite = this.genres_.GetPic(this.mS_.GetFanGenreID());
 		string text = this.tS_.GetText(481);
 		text = text.Replace("<TIME>", this.mS_.trendWeeks.ToString());
 		this.uiObjects[5].GetComponent<Text>().text = text;
 		text = this.tS_.GetText(1911);
-		text = text.Replace("<NAME>", "<color=blue>" + this.genres_.GetName(this.mS_.companySpecialGenre) + "</color>");
+		text = text.Replace("<NAME>", "<color=blue>" + this.genres_.GetName(this.mS_.GetFanGenreID()) + "</color>");
 		this.uiObjects[8].GetComponent<tooltip>().c = text;
 		for (int i = 0; i < 5; i++)
 		{
@@ -142,7 +142,7 @@ public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[4]);
 	}
 
-	// Token: 0x060015FD RID: 5629 RVA: 0x0000F245 File Offset: 0x0000D445
+	// Token: 0x0600161B RID: 5659 RVA: 0x000E195B File Offset: 0x000DFB5B
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -154,42 +154,42 @@ public class Menu_Stats_GenreBeliebtheit : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001A08 RID: 6664
+	// Token: 0x04001A11 RID: 6673
 	private mainScript mS_;
 
-	// Token: 0x04001A09 RID: 6665
+	// Token: 0x04001A12 RID: 6674
 	private GameObject main_;
 
-	// Token: 0x04001A0A RID: 6666
+	// Token: 0x04001A13 RID: 6675
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001A0B RID: 6667
+	// Token: 0x04001A14 RID: 6676
 	private sfxScript sfx_;
 
-	// Token: 0x04001A0C RID: 6668
+	// Token: 0x04001A15 RID: 6677
 	private textScript tS_;
 
-	// Token: 0x04001A0D RID: 6669
+	// Token: 0x04001A16 RID: 6678
 	private engineFeatures eF_;
 
-	// Token: 0x04001A0E RID: 6670
+	// Token: 0x04001A17 RID: 6679
 	private genres genres_;
 
-	// Token: 0x04001A0F RID: 6671
+	// Token: 0x04001A18 RID: 6680
 	private games games_;
 
-	// Token: 0x04001A10 RID: 6672
+	// Token: 0x04001A19 RID: 6681
 	private themes themes_;
 
-	// Token: 0x04001A11 RID: 6673
+	// Token: 0x04001A1A RID: 6682
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001A12 RID: 6674
+	// Token: 0x04001A1B RID: 6683
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001A13 RID: 6675
+	// Token: 0x04001A1C RID: 6684
 	public bool closeMenu;
 
-	// Token: 0x04001A14 RID: 6676
+	// Token: 0x04001A1D RID: 6685
 	private float updateTimer;
 }

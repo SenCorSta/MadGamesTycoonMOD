@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020002FE RID: 766
+// Token: 0x02000301 RID: 769
 public class splashScript : MonoBehaviour
 {
-	// Token: 0x06001A93 RID: 6803 RVA: 0x00011DCE File Offset: 0x0000FFCE
+	// Token: 0x06001ADD RID: 6877 RVA: 0x0010E119 File Offset: 0x0010C319
 	private void Start()
 	{
 		this.LoadSettings();
 	}
 
-	// Token: 0x06001A94 RID: 6804 RVA: 0x00111D20 File Offset: 0x0010FF20
+	// Token: 0x06001ADE RID: 6878 RVA: 0x0010E124 File Offset: 0x0010C324
 	private void Update()
 	{
 		if (Input.anyKey || Input.GetMouseButton(0) || Input.GetMouseButton(1))
@@ -26,18 +26,18 @@ public class splashScript : MonoBehaviour
 		this.LoadNextScene();
 	}
 
-	// Token: 0x06001A95 RID: 6805 RVA: 0x00011DD6 File Offset: 0x0000FFD6
+	// Token: 0x06001ADF RID: 6879 RVA: 0x0010E179 File Offset: 0x0010C379
 	private void LoadSettings()
 	{
 		PlayerPrefs.SetInt("LoadSavegame", -1);
 	}
 
-	// Token: 0x06001A96 RID: 6806 RVA: 0x00011DE3 File Offset: 0x0000FFE3
+	// Token: 0x06001AE0 RID: 6880 RVA: 0x0010E186 File Offset: 0x0010C386
 	private void LoadNextScene()
 	{
 		SceneManager.LoadScene("scene01");
 	}
 
-	// Token: 0x040021EE RID: 8686
+	// Token: 0x04002208 RID: 8712
 	private float splashTimer;
 }

@@ -5,19 +5,19 @@ using UnityEngine.UI;
 // Token: 0x020000E8 RID: 232
 public class Item_KonsoleDetailsSelect : MonoBehaviour
 {
-	// Token: 0x060007B5 RID: 1973 RVA: 0x0000622E File Offset: 0x0000442E
+	// Token: 0x060007BE RID: 1982 RVA: 0x00056896 File Offset: 0x00054A96
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007B6 RID: 1974 RVA: 0x00006236 File Offset: 0x00004436
+	// Token: 0x060007BF RID: 1983 RVA: 0x0005689E File Offset: 0x00054A9E
 	private void Update()
 	{
 		this.DataUpdate();
 	}
 
-	// Token: 0x060007B7 RID: 1975 RVA: 0x0000623E File Offset: 0x0000443E
+	// Token: 0x060007C0 RID: 1984 RVA: 0x000568A6 File Offset: 0x00054AA6
 	private void DataUpdate()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -29,7 +29,7 @@ public class Item_KonsoleDetailsSelect : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060007B8 RID: 1976 RVA: 0x000689FC File Offset: 0x00066BFC
+	// Token: 0x060007C1 RID: 1985 RVA: 0x000568DC File Offset: 0x00054ADC
 	private void SetData()
 	{
 		if (!this.pS_)
@@ -56,13 +56,13 @@ public class Item_KonsoleDetailsSelect : MonoBehaviour
 		this.tooltip_.c = this.pS_.GetTooltip();
 	}
 
-	// Token: 0x060007B9 RID: 1977 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060007C2 RID: 1986 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007BA RID: 1978 RVA: 0x00068B68 File Offset: 0x00066D68
+	// Token: 0x060007C3 RID: 1987 RVA: 0x00056A48 File Offset: 0x00054C48
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

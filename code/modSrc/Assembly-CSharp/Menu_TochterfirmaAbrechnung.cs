@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200019A RID: 410
+// Token: 0x0200019B RID: 411
 public class Menu_TochterfirmaAbrechnung : MonoBehaviour
 {
-	// Token: 0x06000F81 RID: 3969 RVA: 0x0000B058 File Offset: 0x00009258
+	// Token: 0x06000F99 RID: 3993 RVA: 0x000A5E8E File Offset: 0x000A408E
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F82 RID: 3970 RVA: 0x000B29B4 File Offset: 0x000B0BB4
+	// Token: 0x06000F9A RID: 3994 RVA: 0x000A5E98 File Offset: 0x000A4098
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_TochterfirmaAbrechnung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F83 RID: 3971 RVA: 0x000B2B54 File Offset: 0x000B0D54
+	// Token: 0x06000F9B RID: 3995 RVA: 0x000A6038 File Offset: 0x000A4238
 	public void Init(gameScript game_)
 	{
 		Debug.Log("MENU_TOCHTERFIRMA_ABRECHNUNG");
@@ -140,7 +140,7 @@ public class Menu_TochterfirmaAbrechnung : MonoBehaviour
 		this.sfx_.PlaySound(40, false);
 	}
 
-	// Token: 0x06000F84 RID: 3972 RVA: 0x0000B060 File Offset: 0x00009260
+	// Token: 0x06000F9C RID: 3996 RVA: 0x000A641E File Offset: 0x000A461E
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -149,7 +149,7 @@ public class Menu_TochterfirmaAbrechnung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F85 RID: 3973 RVA: 0x0000B07B File Offset: 0x0000927B
+	// Token: 0x06000F9D RID: 3997 RVA: 0x000A6439 File Offset: 0x000A4639
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -157,48 +157,48 @@ public class Menu_TochterfirmaAbrechnung : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x040013EA RID: 5098
+	// Token: 0x040013F3 RID: 5107
 	public GameObject[] uiObjects;
 
-	// Token: 0x040013EB RID: 5099
+	// Token: 0x040013F4 RID: 5108
 	private GameObject main_;
 
-	// Token: 0x040013EC RID: 5100
+	// Token: 0x040013F5 RID: 5109
 	private mainScript mS_;
 
-	// Token: 0x040013ED RID: 5101
+	// Token: 0x040013F6 RID: 5110
 	private textScript tS_;
 
-	// Token: 0x040013EE RID: 5102
+	// Token: 0x040013F7 RID: 5111
 	private GUI_Main guiMain_;
 
-	// Token: 0x040013EF RID: 5103
+	// Token: 0x040013F8 RID: 5112
 	private sfxScript sfx_;
 
-	// Token: 0x040013F0 RID: 5104
+	// Token: 0x040013F9 RID: 5113
 	private genres genres_;
 
-	// Token: 0x040013F1 RID: 5105
+	// Token: 0x040013FA RID: 5114
 	private themes themes_;
 
-	// Token: 0x040013F2 RID: 5106
+	// Token: 0x040013FB RID: 5115
 	private licences licences_;
 
-	// Token: 0x040013F3 RID: 5107
+	// Token: 0x040013FC RID: 5116
 	private engineFeatures eF_;
 
-	// Token: 0x040013F4 RID: 5108
+	// Token: 0x040013FD RID: 5117
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040013F5 RID: 5109
+	// Token: 0x040013FE RID: 5118
 	private unlockScript unlock_;
 
-	// Token: 0x040013F6 RID: 5110
+	// Token: 0x040013FF RID: 5119
 	private gameplayFeatures gF_;
 
-	// Token: 0x040013F7 RID: 5111
+	// Token: 0x04001400 RID: 5120
 	private games games_;
 
-	// Token: 0x040013F8 RID: 5112
+	// Token: 0x04001401 RID: 5121
 	private gameScript gS_;
 }

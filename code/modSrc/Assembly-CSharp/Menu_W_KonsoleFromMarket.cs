@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000205 RID: 517
+// Token: 0x02000206 RID: 518
 public class Menu_W_KonsoleFromMarket : MonoBehaviour
 {
-	// Token: 0x060013B5 RID: 5045 RVA: 0x0000D764 File Offset: 0x0000B964
+	// Token: 0x060013D0 RID: 5072 RVA: 0x000CF8B6 File Offset: 0x000CDAB6
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060013B6 RID: 5046 RVA: 0x000D985C File Offset: 0x000D7A5C
+	// Token: 0x060013D1 RID: 5073 RVA: 0x000CF8C0 File Offset: 0x000CDAC0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,21 +36,21 @@ public class Menu_W_KonsoleFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013B7 RID: 5047 RVA: 0x0000D76C File Offset: 0x0000B96C
+	// Token: 0x060013D2 RID: 5074 RVA: 0x000CF96A File Offset: 0x000CDB6A
 	public void Init(platformScript plat_)
 	{
 		this.pS_ = plat_;
 		this.uiObjects[0].GetComponent<Text>().text = this.pS_.GetName();
 	}
 
-	// Token: 0x060013B8 RID: 5048 RVA: 0x0000D792 File Offset: 0x0000B992
+	// Token: 0x060013D3 RID: 5075 RVA: 0x000CF990 File Offset: 0x000CDB90
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060013B9 RID: 5049 RVA: 0x000D9908 File Offset: 0x000D7B08
+	// Token: 0x060013D4 RID: 5076 RVA: 0x000CF9AC File Offset: 0x000CDBAC
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -74,24 +74,24 @@ public class Menu_W_KonsoleFromMarket : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040017E4 RID: 6116
+	// Token: 0x040017ED RID: 6125
 	public GameObject[] uiObjects;
 
-	// Token: 0x040017E5 RID: 6117
+	// Token: 0x040017EE RID: 6126
 	private GameObject main_;
 
-	// Token: 0x040017E6 RID: 6118
+	// Token: 0x040017EF RID: 6127
 	private mainScript mS_;
 
-	// Token: 0x040017E7 RID: 6119
+	// Token: 0x040017F0 RID: 6128
 	private textScript tS_;
 
-	// Token: 0x040017E8 RID: 6120
+	// Token: 0x040017F1 RID: 6129
 	private GUI_Main guiMain_;
 
-	// Token: 0x040017E9 RID: 6121
+	// Token: 0x040017F2 RID: 6130
 	private sfxScript sfx_;
 
-	// Token: 0x040017EA RID: 6122
+	// Token: 0x040017F3 RID: 6131
 	private platformScript pS_;
 }

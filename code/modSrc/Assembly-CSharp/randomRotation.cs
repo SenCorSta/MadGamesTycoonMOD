@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002F9 RID: 761
+// Token: 0x020002FC RID: 764
 public class randomRotation : MonoBehaviour
 {
-	// Token: 0x06001A76 RID: 6774 RVA: 0x00110ECC File Offset: 0x0010F0CC
+	// Token: 0x06001AC0 RID: 6848 RVA: 0x0010D178 File Offset: 0x0010B378
 	private void Start()
 	{
 		if (this.randX)
@@ -21,12 +21,12 @@ public class randomRotation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040021C5 RID: 8645
+	// Token: 0x040021DF RID: 8671
 	public bool randX;
 
-	// Token: 0x040021C6 RID: 8646
+	// Token: 0x040021E0 RID: 8672
 	public bool randY;
 
-	// Token: 0x040021C7 RID: 8647
+	// Token: 0x040021E1 RID: 8673
 	public bool randZ;
 }

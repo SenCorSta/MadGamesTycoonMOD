@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002F1 RID: 753
+// Token: 0x020002F4 RID: 756
 public class maschieneScript : MonoBehaviour
 {
-	// Token: 0x06001A52 RID: 6738 RVA: 0x00011B41 File Offset: 0x0000FD41
+	// Token: 0x06001A9C RID: 6812 RVA: 0x0010BFEC File Offset: 0x0010A1EC
 	private void Start()
 	{
 		this.FindScripts();
 		this.InitUI();
 	}
 
-	// Token: 0x06001A53 RID: 6739 RVA: 0x0010FE84 File Offset: 0x0010E084
+	// Token: 0x06001A9D RID: 6813 RVA: 0x0010BFFC File Offset: 0x0010A1FC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A54 RID: 6740 RVA: 0x00011B4F File Offset: 0x0000FD4F
+	// Token: 0x06001A9E RID: 6814 RVA: 0x0010C121 File Offset: 0x0010A321
 	private void OnDestroy()
 	{
 		if (this.myUI)
@@ -62,7 +62,7 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A55 RID: 6741 RVA: 0x0010FFAC File Offset: 0x0010E1AC
+	// Token: 0x06001A9F RID: 6815 RVA: 0x0010C13C File Offset: 0x0010A33C
 	private void InitUI()
 	{
 		this.myUI = UnityEngine.Object.Instantiate<GameObject>(this.uiMaschiene, new Vector3(99999f, 99999f, 0f), Quaternion.identity);
@@ -74,7 +74,7 @@ public class maschieneScript : MonoBehaviour
 		this.uiWorkProgress_Image = this.uiWorkProgress.GetComponent<Image>();
 	}
 
-	// Token: 0x06001A56 RID: 6742 RVA: 0x00110078 File Offset: 0x0010E278
+	// Token: 0x06001AA0 RID: 6816 RVA: 0x0010C208 File Offset: 0x0010A408
 	private void UpdateUI(bool show)
 	{
 		if (this.guiMain.menuOpen || this.oS_.picked || !show)
@@ -114,7 +114,7 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A57 RID: 6743 RVA: 0x001101DC File Offset: 0x0010E3DC
+	// Token: 0x06001AA1 RID: 6817 RVA: 0x0010C36C File Offset: 0x0010A56C
 	private void Update()
 	{
 		if (!this.oS_)
@@ -151,7 +151,7 @@ public class maschieneScript : MonoBehaviour
 		this.myAnimation[1]["maschineLight"].speed = 0f;
 	}
 
-	// Token: 0x06001A58 RID: 6744 RVA: 0x00110328 File Offset: 0x0010E528
+	// Token: 0x06001AA2 RID: 6818 RVA: 0x0010C4B8 File Offset: 0x0010A6B8
 	private bool UpdateMaschine()
 	{
 		if (!this.oS_.isMaschine)
@@ -209,7 +209,7 @@ public class maschieneScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001A59 RID: 6745 RVA: 0x001104D8 File Offset: 0x0010E6D8
+	// Token: 0x06001AA3 RID: 6819 RVA: 0x0010C668 File Offset: 0x0010A868
 	private void UpdateDisketten()
 	{
 		this.updateDisketteTimer += Time.deltaTime;
@@ -295,72 +295,72 @@ public class maschieneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400218B RID: 8587
+	// Token: 0x040021A5 RID: 8613
 	private GameObject main_;
 
-	// Token: 0x0400218C RID: 8588
+	// Token: 0x040021A6 RID: 8614
 	private objectScript oS_;
 
-	// Token: 0x0400218D RID: 8589
+	// Token: 0x040021A7 RID: 8615
 	public mainScript mS_;
 
-	// Token: 0x0400218E RID: 8590
+	// Token: 0x040021A8 RID: 8616
 	private Camera myCamera;
 
-	// Token: 0x0400218F RID: 8591
+	// Token: 0x040021A9 RID: 8617
 	private GUI_Main guiMain;
 
-	// Token: 0x04002190 RID: 8592
+	// Token: 0x040021AA RID: 8618
 	public sfxScript sfx_;
 
-	// Token: 0x04002191 RID: 8593
+	// Token: 0x040021AB RID: 8619
 	public mapScript mapS_;
 
-	// Token: 0x04002192 RID: 8594
+	// Token: 0x040021AC RID: 8620
 	public textScript tS_;
 
-	// Token: 0x04002193 RID: 8595
+	// Token: 0x040021AD RID: 8621
 	private games games_;
 
-	// Token: 0x04002194 RID: 8596
+	// Token: 0x040021AE RID: 8622
 	public Animation[] myAnimation;
 
-	// Token: 0x04002195 RID: 8597
+	// Token: 0x040021AF RID: 8623
 	public MeshRenderer bahn;
 
-	// Token: 0x04002196 RID: 8598
+	// Token: 0x040021B0 RID: 8624
 	public GameObject[] disketten1976;
 
-	// Token: 0x04002197 RID: 8599
+	// Token: 0x040021B1 RID: 8625
 	public GameObject[] disketten1985;
 
-	// Token: 0x04002198 RID: 8600
+	// Token: 0x040021B2 RID: 8626
 	public GameObject[] disketten1995;
 
-	// Token: 0x04002199 RID: 8601
+	// Token: 0x040021B3 RID: 8627
 	public GameObject uiMaschiene;
 
-	// Token: 0x0400219A RID: 8602
+	// Token: 0x040021B4 RID: 8628
 	private GameObject myUI;
 
-	// Token: 0x0400219B RID: 8603
+	// Token: 0x040021B5 RID: 8629
 	private GameObject uiIconMain;
 
-	// Token: 0x0400219C RID: 8604
+	// Token: 0x040021B6 RID: 8630
 	private GameObject uiWorkProgress;
 
-	// Token: 0x0400219D RID: 8605
+	// Token: 0x040021B7 RID: 8631
 	private RectTransform myUI_RectTransform;
 
-	// Token: 0x0400219E RID: 8606
+	// Token: 0x040021B8 RID: 8632
 	private Image uiWorkProgress_Image;
 
-	// Token: 0x0400219F RID: 8607
+	// Token: 0x040021B9 RID: 8633
 	private float invisibleTimer;
 
-	// Token: 0x040021A0 RID: 8608
+	// Token: 0x040021BA RID: 8634
 	private float updateTimer;
 
-	// Token: 0x040021A1 RID: 8609
+	// Token: 0x040021BB RID: 8635
 	private float updateDisketteTimer;
 }

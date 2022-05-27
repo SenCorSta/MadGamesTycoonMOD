@@ -5,19 +5,19 @@ using UnityEngine.UI;
 // Token: 0x02000094 RID: 148
 public class Item_Dev_CopyProtectAddon : MonoBehaviour
 {
-	// Token: 0x060005BB RID: 1467 RVA: 0x000055F5 File Offset: 0x000037F5
+	// Token: 0x060005C4 RID: 1476 RVA: 0x0004B728 File Offset: 0x00049928
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060005BC RID: 1468 RVA: 0x000055FD File Offset: 0x000037FD
+	// Token: 0x060005C5 RID: 1477 RVA: 0x0004B730 File Offset: 0x00049930
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060005BD RID: 1469 RVA: 0x0005E694 File Offset: 0x0005C894
+	// Token: 0x060005C6 RID: 1478 RVA: 0x0004B738 File Offset: 0x00049938
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_Dev_CopyProtectAddon : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060005BE RID: 1470 RVA: 0x0005E6E0 File Offset: 0x0005C8E0
+	// Token: 0x060005C7 RID: 1479 RVA: 0x0004B784 File Offset: 0x00049984
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.cpS_.GetName();
@@ -44,7 +44,7 @@ public class Item_Dev_CopyProtectAddon : MonoBehaviour
 		this.tooltip_.c = this.cpS_.GetTooltip();
 	}
 
-	// Token: 0x060005BF RID: 1471 RVA: 0x0005E7C8 File Offset: 0x0005C9C8
+	// Token: 0x060005C8 RID: 1480 RVA: 0x0004B86C File Offset: 0x00049A6C
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -62,13 +62,13 @@ public class Item_Dev_CopyProtectAddon : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x060005C0 RID: 1472 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x060005C9 RID: 1481 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060005C1 RID: 1473 RVA: 0x0005E83C File Offset: 0x0005CA3C
+	// Token: 0x060005CA RID: 1482 RVA: 0x0004B8E0 File Offset: 0x00049AE0
 	public void BUTTON_Click()
 	{
 		if (this.guiMain_.uiObjects[193].activeSelf)

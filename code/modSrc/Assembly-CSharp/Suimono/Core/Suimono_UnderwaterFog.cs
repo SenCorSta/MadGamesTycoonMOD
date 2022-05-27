@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Suimono.Core
 {
-	// Token: 0x0200039F RID: 927
+	// Token: 0x020003A2 RID: 930
 	[AddComponentMenu("Image Effects/Suimono/UnderwaterFX")]
 	public class Suimono_UnderwaterFog : MonoBehaviour
 	{
-		// Token: 0x0600224E RID: 8782 RVA: 0x001689E0 File Offset: 0x00166BE0
+		// Token: 0x060022A1 RID: 8865 RVA: 0x0016A188 File Offset: 0x00168388
 		private void Start()
 		{
 			this.cam = base.gameObject.GetComponent<Camera>();
@@ -28,7 +28,7 @@ namespace Suimono.Core
 			this.fogMaterial = new Material(this.fogShader);
 		}
 
-		// Token: 0x0600224F RID: 8783 RVA: 0x00168AC4 File Offset: 0x00166CC4
+		// Token: 0x060022A2 RID: 8866 RVA: 0x0016A26C File Offset: 0x0016846C
 		private void LateUpdate()
 		{
 			if (this.dropRand == null)
@@ -54,7 +54,7 @@ namespace Suimono.Core
 			this.trans2Time += this._deltaTime * 0.1f * this.dropsTime;
 		}
 
-		// Token: 0x06002250 RID: 8784 RVA: 0x00168BBC File Offset: 0x00166DBC
+		// Token: 0x060022A3 RID: 8867 RVA: 0x0016A364 File Offset: 0x00168564
 		private void OnRenderImage(RenderTexture source, RenderTexture destination)
 		{
 			Graphics.Blit(source, destination);
@@ -179,7 +179,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002251 RID: 8785 RVA: 0x00169448 File Offset: 0x00167648
+		// Token: 0x060022A4 RID: 8868 RVA: 0x0016ABF0 File Offset: 0x00168DF0
 		private void CustomGraphicsBlit(RenderTexture source, RenderTexture dest, Material fxMaterial, int passNr)
 		{
 			RenderTexture.active = dest;
@@ -200,7 +200,7 @@ namespace Suimono.Core
 			GL.PopMatrix();
 		}
 
-		// Token: 0x06002252 RID: 8786 RVA: 0x0016951C File Offset: 0x0016771C
+		// Token: 0x060022A5 RID: 8869 RVA: 0x0016ACC4 File Offset: 0x00168EC4
 		private void FourTapCone(RenderTexture source, RenderTexture dest, int iteration)
 		{
 			this.offc = 0.5f + (float)iteration * this.blurSpread * 2f;
@@ -213,7 +213,7 @@ namespace Suimono.Core
 			});
 		}
 
-		// Token: 0x06002253 RID: 8787 RVA: 0x001695BC File Offset: 0x001677BC
+		// Token: 0x060022A6 RID: 8870 RVA: 0x0016AD64 File Offset: 0x00168F64
 		private void DownSample4x(RenderTexture source, RenderTexture dest)
 		{
 			this.off = 1f;
@@ -226,199 +226,199 @@ namespace Suimono.Core
 			});
 		}
 
-		// Token: 0x04002BB3 RID: 11187
+		// Token: 0x04002BC9 RID: 11209
 		public bool showScreenMask;
 
-		// Token: 0x04002BB4 RID: 11188
+		// Token: 0x04002BCA RID: 11210
 		public bool doTransition;
 
-		// Token: 0x04002BB5 RID: 11189
+		// Token: 0x04002BCB RID: 11211
 		public bool cancelTransition;
 
-		// Token: 0x04002BB6 RID: 11190
+		// Token: 0x04002BCC RID: 11212
 		public bool useUnderSurfaceView;
 
-		// Token: 0x04002BB7 RID: 11191
+		// Token: 0x04002BCD RID: 11213
 		public bool distanceFog = true;
 
-		// Token: 0x04002BB8 RID: 11192
+		// Token: 0x04002BCE RID: 11214
 		public bool useRadialDistance = true;
 
-		// Token: 0x04002BB9 RID: 11193
+		// Token: 0x04002BCF RID: 11215
 		public bool heightFog;
 
-		// Token: 0x04002BBA RID: 11194
+		// Token: 0x04002BD0 RID: 11216
 		public float height = 1f;
 
-		// Token: 0x04002BBB RID: 11195
+		// Token: 0x04002BD1 RID: 11217
 		public float heightDensity = 2f;
 
-		// Token: 0x04002BBC RID: 11196
+		// Token: 0x04002BD2 RID: 11218
 		public float startDistance;
 
-		// Token: 0x04002BBD RID: 11197
+		// Token: 0x04002BD3 RID: 11219
 		public float fogStart;
 
-		// Token: 0x04002BBE RID: 11198
+		// Token: 0x04002BD4 RID: 11220
 		public float fogEnd = 20f;
 
-		// Token: 0x04002BBF RID: 11199
+		// Token: 0x04002BD5 RID: 11221
 		public float refractAmt = 0.005f;
 
-		// Token: 0x04002BC0 RID: 11200
+		// Token: 0x04002BD6 RID: 11222
 		public float refractSpd = 1.5f;
 
-		// Token: 0x04002BC1 RID: 11201
+		// Token: 0x04002BD7 RID: 11223
 		public float refractScale = 0.5f;
 
-		// Token: 0x04002BC2 RID: 11202
+		// Token: 0x04002BD8 RID: 11224
 		public float lightFactor = 1f;
 
-		// Token: 0x04002BC3 RID: 11203
+		// Token: 0x04002BD9 RID: 11225
 		public Color underwaterColor;
 
-		// Token: 0x04002BC4 RID: 11204
+		// Token: 0x04002BDA RID: 11226
 		public float dropsTime = 2f;
 
-		// Token: 0x04002BC5 RID: 11205
+		// Token: 0x04002BDB RID: 11227
 		public float wipeTime = 1f;
 
-		// Token: 0x04002BC6 RID: 11206
+		// Token: 0x04002BDC RID: 11228
 		public float transitionStrength = 1f;
 
-		// Token: 0x04002BC7 RID: 11207
+		// Token: 0x04002BDD RID: 11229
 		public int iterations = 2;
 
-		// Token: 0x04002BC8 RID: 11208
+		// Token: 0x04002BDE RID: 11230
 		public float blurSpread = 1f;
 
-		// Token: 0x04002BC9 RID: 11209
+		// Token: 0x04002BDF RID: 11231
 		public float darkRange = 40f;
 
-		// Token: 0x04002BCA RID: 11210
+		// Token: 0x04002BE0 RID: 11232
 		public float heightDepth = 1f;
 
-		// Token: 0x04002BCB RID: 11211
+		// Token: 0x04002BE1 RID: 11233
 		public float hFac;
 
-		// Token: 0x04002BCC RID: 11212
+		// Token: 0x04002BE2 RID: 11234
 		public Texture distortTex;
 
-		// Token: 0x04002BCD RID: 11213
+		// Token: 0x04002BE3 RID: 11235
 		public Texture mask2Tex;
 
-		// Token: 0x04002BCE RID: 11214
+		// Token: 0x04002BE4 RID: 11236
 		public Shader fogShader;
 
-		// Token: 0x04002BCF RID: 11215
+		// Token: 0x04002BE5 RID: 11237
 		public Material fogMaterial;
 
-		// Token: 0x04002BD0 RID: 11216
+		// Token: 0x04002BE6 RID: 11238
 		private SuimonoModule moduleObject;
 
-		// Token: 0x04002BD1 RID: 11217
+		// Token: 0x04002BE7 RID: 11239
 		private SuimonoModuleLib moduleLibrary;
 
-		// Token: 0x04002BD2 RID: 11218
+		// Token: 0x04002BE8 RID: 11240
 		private float trans1Time = 1.1f;
 
-		// Token: 0x04002BD3 RID: 11219
+		// Token: 0x04002BE9 RID: 11241
 		private float trans2Time = 1.1f;
 
-		// Token: 0x04002BD4 RID: 11220
+		// Token: 0x04002BEA RID: 11242
 		private int randSeed;
 
-		// Token: 0x04002BD5 RID: 11221
+		// Token: 0x04002BEB RID: 11243
 		private Suimono.Core.Random dropRand;
 
-		// Token: 0x04002BD6 RID: 11222
+		// Token: 0x04002BEC RID: 11244
 		private Vector2 dropOff;
 
-		// Token: 0x04002BD7 RID: 11223
+		// Token: 0x04002BED RID: 11245
 		private Camera cam;
 
-		// Token: 0x04002BD8 RID: 11224
+		// Token: 0x04002BEE RID: 11246
 		private Transform camtr;
 
-		// Token: 0x04002BD9 RID: 11225
+		// Token: 0x04002BEF RID: 11247
 		private int pass;
 
-		// Token: 0x04002BDA RID: 11226
+		// Token: 0x04002BF0 RID: 11248
 		private int rtW;
 
-		// Token: 0x04002BDB RID: 11227
+		// Token: 0x04002BF1 RID: 11249
 		private int rtH;
 
-		// Token: 0x04002BDC RID: 11228
+		// Token: 0x04002BF2 RID: 11250
 		private RenderTexture buffer;
 
-		// Token: 0x04002BDD RID: 11229
+		// Token: 0x04002BF3 RID: 11251
 		private int i;
 
-		// Token: 0x04002BDE RID: 11230
+		// Token: 0x04002BF4 RID: 11252
 		private RenderTexture buffer2;
 
-		// Token: 0x04002BDF RID: 11231
+		// Token: 0x04002BF5 RID: 11253
 		private Vector3 camPos;
 
-		// Token: 0x04002BE0 RID: 11232
+		// Token: 0x04002BF6 RID: 11254
 		private float FdotC;
 
-		// Token: 0x04002BE1 RID: 11233
+		// Token: 0x04002BF7 RID: 11255
 		private float paramK;
 
-		// Token: 0x04002BE2 RID: 11234
+		// Token: 0x04002BF8 RID: 11256
 		private float sceneStart;
 
-		// Token: 0x04002BE3 RID: 11235
+		// Token: 0x04002BF9 RID: 11257
 		private float sceneEnd;
 
-		// Token: 0x04002BE4 RID: 11236
+		// Token: 0x04002BFA RID: 11258
 		private Vector4 sceneParams;
 
-		// Token: 0x04002BE5 RID: 11237
+		// Token: 0x04002BFB RID: 11259
 		private float diff;
 
-		// Token: 0x04002BE6 RID: 11238
+		// Token: 0x04002BFC RID: 11260
 		private float invDiff;
 
-		// Token: 0x04002BE7 RID: 11239
+		// Token: 0x04002BFD RID: 11261
 		private Matrix4x4 frustumCorners;
 
-		// Token: 0x04002BE8 RID: 11240
+		// Token: 0x04002BFE RID: 11262
 		private float fovWHalf;
 
-		// Token: 0x04002BE9 RID: 11241
+		// Token: 0x04002BFF RID: 11263
 		private Vector3 toRight;
 
-		// Token: 0x04002BEA RID: 11242
+		// Token: 0x04002C00 RID: 11264
 		private Vector3 toTop;
 
-		// Token: 0x04002BEB RID: 11243
+		// Token: 0x04002C01 RID: 11265
 		private Vector3 topLeft;
 
-		// Token: 0x04002BEC RID: 11244
+		// Token: 0x04002C02 RID: 11266
 		private float camScale;
 
-		// Token: 0x04002BED RID: 11245
+		// Token: 0x04002C03 RID: 11267
 		private Vector3 topRight;
 
-		// Token: 0x04002BEE RID: 11246
+		// Token: 0x04002C04 RID: 11268
 		private Vector3 bottomRight;
 
-		// Token: 0x04002BEF RID: 11247
+		// Token: 0x04002C05 RID: 11269
 		private Vector3 bottomLeft;
 
-		// Token: 0x04002BF0 RID: 11248
+		// Token: 0x04002C06 RID: 11270
 		private float offc;
 
-		// Token: 0x04002BF1 RID: 11249
+		// Token: 0x04002C07 RID: 11271
 		private float off;
 
-		// Token: 0x04002BF2 RID: 11250
+		// Token: 0x04002C08 RID: 11272
 		private Transform trackobject;
 
-		// Token: 0x04002BF3 RID: 11251
+		// Token: 0x04002C09 RID: 11273
 		private float _deltaTime;
 	}
 }

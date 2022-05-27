@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace MeshDistortLite
 {
-	// Token: 0x020003E8 RID: 1000
+	// Token: 0x020003EB RID: 1003
 	[Serializable]
 	public class MeshDistortData
 	{
-		// Token: 0x170000DA RID: 218
-		// (get) Token: 0x06002387 RID: 9095 RVA: 0x00018319 File Offset: 0x00016519
+		// Token: 0x170000DE RID: 222
+		// (get) Token: 0x060023DA RID: 9178 RVA: 0x00172AB0 File Offset: 0x00170CB0
 		public Matrix4x4 localToWorldMatrix
 		{
 			get
@@ -21,8 +21,8 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x170000DB RID: 219
-		// (get) Token: 0x06002388 RID: 9096 RVA: 0x0001833B File Offset: 0x0001653B
+		// Token: 0x170000DF RID: 223
+		// (get) Token: 0x060023DB RID: 9179 RVA: 0x00172AD2 File Offset: 0x00170CD2
 		public Matrix4x4 worldToLocalMatrix
 		{
 			get
@@ -35,8 +35,8 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x170000DC RID: 220
-		// (get) Token: 0x06002389 RID: 9097 RVA: 0x0016FEB0 File Offset: 0x0016E0B0
+		// Token: 0x170000E0 RID: 224
+		// (get) Token: 0x060023DC RID: 9180 RVA: 0x00172AF4 File Offset: 0x00170CF4
 		public Vector3[] skinVertices
 		{
 			get
@@ -59,7 +59,7 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x0600238A RID: 9098 RVA: 0x0001835D File Offset: 0x0001655D
+		// Token: 0x060023DD RID: 9181 RVA: 0x00172BD9 File Offset: 0x00170DD9
 		public MeshDistortData(Transform transform, Material material, MeshFilter filter)
 		{
 			this.filter = filter;
@@ -69,7 +69,7 @@ namespace MeshDistortLite
 			this.originalVertices = this.mesh.vertices;
 		}
 
-		// Token: 0x0600238B RID: 9099 RVA: 0x0016FF98 File Offset: 0x0016E198
+		// Token: 0x060023DE RID: 9182 RVA: 0x00172C18 File Offset: 0x00170E18
 		public MeshDistortData(Transform transform, Material material, SkinnedMeshRenderer skin)
 		{
 			this.skin = skin;
@@ -84,7 +84,7 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x0600238C RID: 9100 RVA: 0x0001839C File Offset: 0x0001659C
+		// Token: 0x060023DF RID: 9183 RVA: 0x00172C81 File Offset: 0x00170E81
 		public void CreateBuffers()
 		{
 			this.ReleaseBuffers();
@@ -92,7 +92,7 @@ namespace MeshDistortLite
 			this.matrixBuffer = new ComputeBuffer(2, 64);
 		}
 
-		// Token: 0x0600238D RID: 9101 RVA: 0x000183C7 File Offset: 0x000165C7
+		// Token: 0x060023E0 RID: 9184 RVA: 0x00172CAC File Offset: 0x00170EAC
 		public void ReleaseBuffers()
 		{
 			if (this.verticeBuffer != null)
@@ -107,14 +107,14 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x0600238E RID: 9102 RVA: 0x000183FD File Offset: 0x000165FD
+		// Token: 0x060023E1 RID: 9185 RVA: 0x00172CE2 File Offset: 0x00170EE2
 		public void BufferSet(ComputeShader shader, int kernel)
 		{
 			shader.SetBuffer(kernel, "vertices", this.verticeBuffer);
 			shader.SetBuffer(kernel, "matrixList", this.matrixBuffer);
 		}
 
-		// Token: 0x0600238F RID: 9103 RVA: 0x00170004 File Offset: 0x0016E204
+		// Token: 0x060023E2 RID: 9186 RVA: 0x00172D08 File Offset: 0x00170F08
 		public void UpdateMesh()
 		{
 			if (!Application.isPlaying)
@@ -132,7 +132,7 @@ namespace MeshDistortLite
 			this.mesh = this.filter.mesh;
 		}
 
-		// Token: 0x06002390 RID: 9104 RVA: 0x00018423 File Offset: 0x00016623
+		// Token: 0x060023E3 RID: 9187 RVA: 0x00172DA7 File Offset: 0x00170FA7
 		public void ResetMesh()
 		{
 			this.mesh.vertices = this.originalVertices;
@@ -140,43 +140,43 @@ namespace MeshDistortLite
 			this.mesh.RecalculateBounds();
 		}
 
-		// Token: 0x04002DB7 RID: 11703
+		// Token: 0x04002DCD RID: 11725
 		public Mesh mesh;
 
-		// Token: 0x04002DB8 RID: 11704
+		// Token: 0x04002DCE RID: 11726
 		public MeshFilter filter;
 
-		// Token: 0x04002DB9 RID: 11705
+		// Token: 0x04002DCF RID: 11727
 		public Material originalMaterial;
 
-		// Token: 0x04002DBA RID: 11706
+		// Token: 0x04002DD0 RID: 11728
 		public Transform meshTransform;
 
-		// Token: 0x04002DBB RID: 11707
+		// Token: 0x04002DD1 RID: 11729
 		protected Matrix4x4 skinLocalToWorldMatrix;
 
-		// Token: 0x04002DBC RID: 11708
+		// Token: 0x04002DD2 RID: 11730
 		protected Matrix4x4 skinWorldToLocalMatrix;
 
-		// Token: 0x04002DBD RID: 11709
+		// Token: 0x04002DD3 RID: 11731
 		private Mesh bakedMesh = new Mesh();
 
-		// Token: 0x04002DBE RID: 11710
+		// Token: 0x04002DD4 RID: 11732
 		public Vector3[] originalVertices;
 
-		// Token: 0x04002DBF RID: 11711
+		// Token: 0x04002DD5 RID: 11733
 		public SkinnedMeshRenderer skin;
 
-		// Token: 0x04002DC0 RID: 11712
+		// Token: 0x04002DD6 RID: 11734
 		public ComputeBuffer verticeBuffer;
 
-		// Token: 0x04002DC1 RID: 11713
+		// Token: 0x04002DD7 RID: 11735
 		public ComputeBuffer matrixBuffer;
 
-		// Token: 0x04002DC2 RID: 11714
+		// Token: 0x04002DD8 RID: 11736
 		public Transform[] bones;
 
-		// Token: 0x04002DC3 RID: 11715
+		// Token: 0x04002DD9 RID: 11737
 		public Transform root;
 	}
 }

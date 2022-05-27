@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000215 RID: 533
+// Token: 0x02000216 RID: 534
 public class Menu_Bank : MonoBehaviour
 {
-	// Token: 0x06001474 RID: 5236 RVA: 0x0000DE82 File Offset: 0x0000C082
+	// Token: 0x06001492 RID: 5266 RVA: 0x000D58F3 File Offset: 0x000D3AF3
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001475 RID: 5237 RVA: 0x000DF060 File Offset: 0x000DD260
+	// Token: 0x06001493 RID: 5267 RVA: 0x000D58FC File Offset: 0x000D3AFC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,19 +36,19 @@ public class Menu_Bank : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001476 RID: 5238 RVA: 0x0000DE8A File Offset: 0x0000C08A
+	// Token: 0x06001494 RID: 5268 RVA: 0x000D59A6 File Offset: 0x000D3BA6
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001477 RID: 5239 RVA: 0x0000DE92 File Offset: 0x0000C092
+	// Token: 0x06001495 RID: 5269 RVA: 0x000D59AE File Offset: 0x000D3BAE
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06001478 RID: 5240 RVA: 0x000DF10C File Offset: 0x000DD30C
+	// Token: 0x06001496 RID: 5270 RVA: 0x000D59B8 File Offset: 0x000D3BB8
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -64,7 +64,7 @@ public class Menu_Bank : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x06001479 RID: 5241 RVA: 0x000DF158 File Offset: 0x000DD358
+	// Token: 0x06001497 RID: 5271 RVA: 0x000D5A04 File Offset: 0x000D3C04
 	public void Init()
 	{
 		this.FindScripts();
@@ -81,7 +81,7 @@ public class Menu_Bank : MonoBehaviour
 		this.uiObjects[10].GetComponent<Text>().text = this.mS_.GetMoney(250000L, true);
 	}
 
-	// Token: 0x0600147A RID: 5242 RVA: 0x0000DE9A File Offset: 0x0000C09A
+	// Token: 0x06001498 RID: 5272 RVA: 0x000D5BB5 File Offset: 0x000D3DB5
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -89,7 +89,7 @@ public class Menu_Bank : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600147B RID: 5243 RVA: 0x000DF30C File Offset: 0x000DD50C
+	// Token: 0x06001499 RID: 5273 RVA: 0x000D5BDC File Offset: 0x000D3DDC
 	public void BUTTON_KreditAufnehmen(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -114,7 +114,7 @@ public class Menu_Bank : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x0600147C RID: 5244 RVA: 0x000DF3FC File Offset: 0x000DD5FC
+	// Token: 0x0600149A RID: 5274 RVA: 0x000D5CCC File Offset: 0x000D3ECC
 	public void BUTTON_KreditAbzahlen(int i)
 	{
 		if (i == 0)
@@ -147,27 +147,27 @@ public class Menu_Bank : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400189B RID: 6299
+	// Token: 0x040018A2 RID: 6306
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400189C RID: 6300
+	// Token: 0x040018A3 RID: 6307
 	private roomScript rS_;
 
-	// Token: 0x0400189D RID: 6301
+	// Token: 0x040018A4 RID: 6308
 	private GameObject main_;
 
-	// Token: 0x0400189E RID: 6302
+	// Token: 0x040018A5 RID: 6309
 	private mainScript mS_;
 
-	// Token: 0x0400189F RID: 6303
+	// Token: 0x040018A6 RID: 6310
 	private textScript tS_;
 
-	// Token: 0x040018A0 RID: 6304
+	// Token: 0x040018A7 RID: 6311
 	private GUI_Main guiMain_;
 
-	// Token: 0x040018A1 RID: 6305
+	// Token: 0x040018A8 RID: 6312
 	private sfxScript sfx_;
 
-	// Token: 0x040018A2 RID: 6306
+	// Token: 0x040018A9 RID: 6313
 	private float updateTimer;
 }

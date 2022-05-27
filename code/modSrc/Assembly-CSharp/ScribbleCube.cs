@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x02000361 RID: 865
+// Token: 0x02000364 RID: 868
 public class ScribbleCube : MonoBehaviour
 {
-	// Token: 0x06001FB6 RID: 8118 RVA: 0x0014D77C File Offset: 0x0014B97C
+	// Token: 0x06002009 RID: 8201 RVA: 0x0014CF18 File Offset: 0x0014B118
 	private void Start()
 	{
 		this.line = new VectorLine("Line", new List<Vector3>(this.numberOfPoints), this.lineTexture, (float)this.lineWidth, LineType.Continuous);
@@ -15,7 +15,7 @@ public class ScribbleCube : MonoBehaviour
 		this.LineSetup(false);
 	}
 
-	// Token: 0x06001FB7 RID: 8119 RVA: 0x0014D7DC File Offset: 0x0014B9DC
+	// Token: 0x0600200A RID: 8202 RVA: 0x0014CF78 File Offset: 0x0014B178
 	private void LineSetup(bool resize)
 	{
 		if (resize)
@@ -30,7 +30,7 @@ public class ScribbleCube : MonoBehaviour
 		this.SetLineColors();
 	}
 
-	// Token: 0x06001FB8 RID: 8120 RVA: 0x0014D868 File Offset: 0x0014BA68
+	// Token: 0x0600200B RID: 8203 RVA: 0x0014D004 File Offset: 0x0014B204
 	private void SetLineColors()
 	{
 		if (this.lineColors == null)
@@ -44,13 +44,13 @@ public class ScribbleCube : MonoBehaviour
 		this.line.SetColors(this.lineColors);
 	}
 
-	// Token: 0x06001FB9 RID: 8121 RVA: 0x00015071 File Offset: 0x00013271
+	// Token: 0x0600200C RID: 8204 RVA: 0x0014D089 File Offset: 0x0014B289
 	private void LateUpdate()
 	{
 		this.line.Draw();
 	}
 
-	// Token: 0x06001FBA RID: 8122 RVA: 0x0014D8F0 File Offset: 0x0014BAF0
+	// Token: 0x0600200D RID: 8205 RVA: 0x0014D098 File Offset: 0x0014B298
 	private void OnGUI()
 	{
 		GUI.Label(new Rect(20f, 10f, 250f, 30f), "Zoom with scrollwheel or arrow keys");
@@ -75,7 +75,7 @@ public class ScribbleCube : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001FBB RID: 8123 RVA: 0x0014DA1C File Offset: 0x0014BC1C
+	// Token: 0x0600200E RID: 8206 RVA: 0x0014D1C4 File Offset: 0x0014B3C4
 	private Color RandomColor(Color color, int component)
 	{
 		for (int i = 0; i < 3; i++)
@@ -92,27 +92,27 @@ public class ScribbleCube : MonoBehaviour
 		return color;
 	}
 
-	// Token: 0x0400284B RID: 10315
+	// Token: 0x04002861 RID: 10337
 	public Texture lineTexture;
 
-	// Token: 0x0400284C RID: 10316
+	// Token: 0x04002862 RID: 10338
 	public Material lineMaterial;
 
-	// Token: 0x0400284D RID: 10317
+	// Token: 0x04002863 RID: 10339
 	public int lineWidth = 14;
 
-	// Token: 0x0400284E RID: 10318
+	// Token: 0x04002864 RID: 10340
 	private Color color1 = Color.green;
 
-	// Token: 0x0400284F RID: 10319
+	// Token: 0x04002865 RID: 10341
 	private Color color2 = Color.blue;
 
-	// Token: 0x04002850 RID: 10320
+	// Token: 0x04002866 RID: 10342
 	private VectorLine line;
 
-	// Token: 0x04002851 RID: 10321
+	// Token: 0x04002867 RID: 10343
 	private List<Color32> lineColors;
 
-	// Token: 0x04002852 RID: 10322
+	// Token: 0x04002868 RID: 10344
 	private int numberOfPoints = 350;
 }

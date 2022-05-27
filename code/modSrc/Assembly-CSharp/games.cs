@@ -7,13 +7,13 @@ using UnityEngine;
 // Token: 0x02000056 RID: 86
 public class games : MonoBehaviour
 {
-	// Token: 0x0600029C RID: 668 RVA: 0x0000377D File Offset: 0x0000197D
+	// Token: 0x060002A2 RID: 674 RVA: 0x0002A20B File Offset: 0x0002840B
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600029D RID: 669 RVA: 0x0003F3C0 File Offset: 0x0003D5C0
+	// Token: 0x060002A3 RID: 675 RVA: 0x0002A214 File Offset: 0x00028414
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -70,7 +70,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600029E RID: 670 RVA: 0x0003F560 File Offset: 0x0003D760
+	// Token: 0x060002A4 RID: 676 RVA: 0x0002A3B4 File Offset: 0x000285B4
 	public float GetGrundkosten()
 	{
 		float num = (float)this.mS_.difficulty;
@@ -78,7 +78,7 @@ public class games : MonoBehaviour
 		return 2.5f + num;
 	}
 
-	// Token: 0x0600029F RID: 671 RVA: 0x0003F58C File Offset: 0x0003D78C
+	// Token: 0x060002A5 RID: 677 RVA: 0x0002A3E0 File Offset: 0x000285E0
 	public float GetDigitalSells()
 	{
 		if (this.unlock_.Get(59))
@@ -93,7 +93,7 @@ public class games : MonoBehaviour
 		return 0f;
 	}
 
-	// Token: 0x060002A0 RID: 672 RVA: 0x0003F5DC File Offset: 0x0003D7DC
+	// Token: 0x060002A6 RID: 678 RVA: 0x0002A430 File Offset: 0x00028630
 	public float GetSells()
 	{
 		float num = (float)this.mS_.PassedMonth();
@@ -104,7 +104,7 @@ public class games : MonoBehaviour
 		return this.curveSells.Evaluate(num / 600f) * 30f;
 	}
 
-	// Token: 0x060002A1 RID: 673 RVA: 0x0003F61C File Offset: 0x0003D81C
+	// Token: 0x060002A7 RID: 679 RVA: 0x0002A470 File Offset: 0x00028670
 	public float GetSellsArcade()
 	{
 		float num = (float)this.mS_.PassedMonth();
@@ -115,7 +115,7 @@ public class games : MonoBehaviour
 		return this.curveSellsArcade.Evaluate(num / 600f) * 30f;
 	}
 
-	// Token: 0x060002A2 RID: 674 RVA: 0x0003F65C File Offset: 0x0003D85C
+	// Token: 0x060002A8 RID: 680 RVA: 0x0002A4B0 File Offset: 0x000286B0
 	public float GetReviewCurve()
 	{
 		float num = (float)this.mS_.PassedMonth();
@@ -126,7 +126,7 @@ public class games : MonoBehaviour
 		return this.curveReview.Evaluate(num / 600f);
 	}
 
-	// Token: 0x060002A3 RID: 675 RVA: 0x0003F698 File Offset: 0x0003D898
+	// Token: 0x060002A9 RID: 681 RVA: 0x0002A4EC File Offset: 0x000286EC
 	public float GetArcadeCurve()
 	{
 		float num = (float)this.mS_.PassedMonth();
@@ -134,7 +134,7 @@ public class games : MonoBehaviour
 		return this.curveSellsArcade.Evaluate(num / 600f);
 	}
 
-	// Token: 0x060002A4 RID: 676 RVA: 0x0003F6D0 File Offset: 0x0003D8D0
+	// Token: 0x060002AA RID: 682 RVA: 0x0002A524 File Offset: 0x00028724
 	public float GetDeluxeCurve()
 	{
 		float num = (float)this.mS_.PassedMonth();
@@ -142,7 +142,7 @@ public class games : MonoBehaviour
 		return this.curveSellsDeluxe.Evaluate(num / 600f);
 	}
 
-	// Token: 0x060002A5 RID: 677 RVA: 0x0003F708 File Offset: 0x0003D908
+	// Token: 0x060002AB RID: 683 RVA: 0x0002A55C File Offset: 0x0002875C
 	public float GetCollectorsCurve()
 	{
 		float num = (float)this.mS_.PassedMonth();
@@ -150,7 +150,7 @@ public class games : MonoBehaviour
 		return this.curveSellsCollectors.Evaluate(num / 600f);
 	}
 
-	// Token: 0x060002A6 RID: 678 RVA: 0x0003F740 File Offset: 0x0003D940
+	// Token: 0x060002AC RID: 684 RVA: 0x0002A594 File Offset: 0x00028794
 	public gameScript CreateNewGame(bool fromSavegame, bool setDate)
 	{
 		gameScript component = UnityEngine.Object.Instantiate<GameObject>(this.prefabGame).GetComponent<gameScript>();
@@ -184,7 +184,7 @@ public class games : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x060002A7 RID: 679 RVA: 0x0003F834 File Offset: 0x0003DA34
+	// Token: 0x060002AD RID: 685 RVA: 0x0002A688 File Offset: 0x00028888
 	public void InitMMOtoF2PGame(gameScript script_)
 	{
 		script_.myID = this.GetNewID();
@@ -200,7 +200,7 @@ public class games : MonoBehaviour
 		this.FindGames();
 	}
 
-	// Token: 0x060002A8 RID: 680 RVA: 0x0003F894 File Offset: 0x0003DA94
+	// Token: 0x060002AE RID: 686 RVA: 0x0002A6E8 File Offset: 0x000288E8
 	public void InitBudgetGame(gameScript script_)
 	{
 		script_.myID = this.GetNewID();
@@ -209,7 +209,6 @@ public class games : MonoBehaviour
 		script_.exklusivKonsolenSells = 0L;
 		script_.originalGameID = -1;
 		script_.costs_updates = 0L;
-		script_.hype = 0f;
 		script_.ipPunkte = 0f;
 		script_.ipTime = 0;
 		script_.script_mainIP = null;
@@ -220,7 +219,7 @@ public class games : MonoBehaviour
 		this.FindGames();
 	}
 
-	// Token: 0x060002A9 RID: 681 RVA: 0x0003F918 File Offset: 0x0003DB18
+	// Token: 0x060002AF RID: 687 RVA: 0x0002A760 File Offset: 0x00028960
 	public void InitAddonBundle(gameScript script_)
 	{
 		script_.myID = this.GetNewID();
@@ -229,7 +228,6 @@ public class games : MonoBehaviour
 		script_.exklusivKonsolenSells = 0L;
 		script_.originalGameID = -1;
 		script_.costs_updates = 0L;
-		script_.hype = 0f;
 		script_.ipPunkte = 0f;
 		script_.ipTime = 0;
 		script_.script_mainIP = null;
@@ -244,7 +242,7 @@ public class games : MonoBehaviour
 		this.FindGames();
 	}
 
-	// Token: 0x060002AA RID: 682 RVA: 0x0003F894 File Offset: 0x0003DA94
+	// Token: 0x060002B0 RID: 688 RVA: 0x0002A7F4 File Offset: 0x000289F4
 	public void InitGotyGame(gameScript script_)
 	{
 		script_.myID = this.GetNewID();
@@ -253,7 +251,6 @@ public class games : MonoBehaviour
 		script_.exklusivKonsolenSells = 0L;
 		script_.originalGameID = -1;
 		script_.costs_updates = 0L;
-		script_.hype = 0f;
 		script_.ipPunkte = 0f;
 		script_.ipTime = 0;
 		script_.script_mainIP = null;
@@ -264,13 +261,13 @@ public class games : MonoBehaviour
 		this.FindGames();
 	}
 
-	// Token: 0x060002AB RID: 683 RVA: 0x00003785 File Offset: 0x00001985
+	// Token: 0x060002B1 RID: 689 RVA: 0x0002A86C File Offset: 0x00028A6C
 	private int GetNewID()
 	{
 		return UnityEngine.Random.Range(1, 2000000000);
 	}
 
-	// Token: 0x060002AC RID: 684 RVA: 0x0003F9B8 File Offset: 0x0003DBB8
+	// Token: 0x060002B2 RID: 690 RVA: 0x0002A87C File Offset: 0x00028A7C
 	public void RemovePortFlags(gameScript scriptPort_)
 	{
 		if (scriptPort_.portID != -1)
@@ -297,7 +294,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002AD RID: 685 RVA: 0x0003FA30 File Offset: 0x0003DC30
+	// Token: 0x060002B3 RID: 691 RVA: 0x0002A8F4 File Offset: 0x00028AF4
 	public void SetPortFlags(gameScript scriptPort_)
 	{
 		if (scriptPort_.portID != -1)
@@ -324,7 +321,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002AE RID: 686 RVA: 0x0003FAA8 File Offset: 0x0003DCA8
+	// Token: 0x060002B4 RID: 692 RVA: 0x0002A96C File Offset: 0x00028B6C
 	public void FindGames()
 	{
 		this.arrayGames = GameObject.FindGameObjectsWithTag("Game");
@@ -335,7 +332,7 @@ public class games : MonoBehaviour
 			if (this.arrayGames[i])
 			{
 				this.arrayGamesScripts[i] = this.arrayGames[i].GetComponent<gameScript>();
-				if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].playerGame && this.arrayGamesScripts[i].myID == this.arrayGamesScripts[i].mainIP)
+				if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].ownerID == this.mS_.myID && this.arrayGamesScripts[i].myID == this.arrayGamesScripts[i].mainIP)
 				{
 					this.arrayMyIpScripts.Add(this.arrayGamesScripts[i]);
 				}
@@ -343,7 +340,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002AF RID: 687 RVA: 0x0003FB68 File Offset: 0x0003DD68
+	// Token: 0x060002B5 RID: 693 RVA: 0x0002AA3C File Offset: 0x00028C3C
 	public void SellAllGames()
 	{
 		this.poM_.amountPublishingOffers = 0;
@@ -393,7 +390,7 @@ public class games : MonoBehaviour
 						this.poM_.amountPublishingOffers++;
 					}
 				}
-				if (this.arrayGamesScripts[l].playerGame && this.arrayGamesScripts[l].inDevelopment && this.arrayGamesScripts[l].typ_contractGame && !this.arrayGamesScripts[l].auftragsspiel_zeitAbgelaufen)
+				if (this.arrayGamesScripts[l].developerID == this.mS_.myID && this.arrayGamesScripts[l].inDevelopment && this.arrayGamesScripts[l].typ_contractGame && !this.arrayGamesScripts[l].auftragsspiel_zeitAbgelaufen)
 				{
 					this.arrayGamesScripts[l].auftragsspiel_zeitInWochen--;
 					if (this.arrayGamesScripts[l].auftragsspiel_zeitInWochen < 0)
@@ -445,7 +442,7 @@ public class games : MonoBehaviour
 						}
 					}
 				}
-				if (this.arrayGamesScripts[l].playerGame && !this.arrayGamesScripts[l].typ_contractGame && !this.arrayGamesScripts[l].auftragsspiel && this.arrayGamesScripts[l].mainIP == this.arrayGamesScripts[l].myID)
+				if (this.arrayGamesScripts[l].ownerID == this.mS_.myID && !this.arrayGamesScripts[l].typ_contractGame && !this.arrayGamesScripts[l].auftragsspiel && this.arrayGamesScripts[l].mainIP == this.arrayGamesScripts[l].myID)
 				{
 					this.arrayGamesScripts[l].ipTime++;
 					if (this.arrayGamesScripts[l].ipTime > 250)
@@ -492,7 +489,7 @@ public class games : MonoBehaviour
 						}
 					}
 				}
-				if (this.arrayGamesScripts[l].playerGame)
+				if (this.arrayGamesScripts[l].ownerID == this.mS_.myID || this.arrayGamesScripts[l].publisherID == this.mS_.myID)
 				{
 					if (this.arrayGamesScripts[l].inDevelopment)
 					{
@@ -537,11 +534,11 @@ public class games : MonoBehaviour
 				}
 				if (this.mS_.multiplayer)
 				{
-					if (this.mS_.mpCalls_.isServer && (this.arrayGamesScripts[l].playerGame || this.arrayGamesScripts[l].multiplayerSlot == -1 || this.arrayGamesScripts[l].typ_contractGame))
+					if (this.mS_.mpCalls_.isServer && (this.arrayGamesScripts[l].IsMyGame() || this.arrayGamesScripts[l].typ_contractGame || (this.arrayGamesScripts[l].DeveloperIsNPC() && this.arrayGamesScripts[l].PublisherIsNPC() && this.arrayGamesScripts[l].OwnerIsNPC())))
 					{
 						this.arrayGamesScripts[l].SellGame();
 					}
-					if (this.mS_.mpCalls_.isClient && this.arrayGamesScripts[l].playerGame)
+					if (this.mS_.mpCalls_.isClient && this.arrayGamesScripts[l].IsMyGame())
 					{
 						this.arrayGamesScripts[l].SellGame();
 					}
@@ -550,7 +547,7 @@ public class games : MonoBehaviour
 				{
 					this.arrayGamesScripts[l].SellGame();
 				}
-				if (this.arrayGamesScripts[l].playerGame)
+				if (this.arrayGamesScripts[l].ownerID == this.mS_.myID)
 				{
 					this.arrayGamesScripts[l].SellMerchandise();
 				}
@@ -559,7 +556,7 @@ public class games : MonoBehaviour
 		this.LagerplatzVerteilen();
 	}
 
-	// Token: 0x060002B0 RID: 688 RVA: 0x00003792 File Offset: 0x00001992
+	// Token: 0x060002B6 RID: 694 RVA: 0x0002B483 File Offset: 0x00029683
 	private IEnumerator iWaitForSpecialMarketing(gameScript gS_, int kampagne)
 	{
 		bool done = false;
@@ -577,7 +574,7 @@ public class games : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060002B1 RID: 689 RVA: 0x0004054C File Offset: 0x0003E74C
+	// Token: 0x060002B7 RID: 695 RVA: 0x0002B4A0 File Offset: 0x000296A0
 	public int GetAmountOfMMOs()
 	{
 		int num = 0;
@@ -595,7 +592,7 @@ public class games : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060002B2 RID: 690 RVA: 0x000405B0 File Offset: 0x0003E7B0
+	// Token: 0x060002B8 RID: 696 RVA: 0x0002B504 File Offset: 0x00029704
 	public int GetAmountOfF2Ps()
 	{
 		int num = 0;
@@ -613,7 +610,7 @@ public class games : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060002B3 RID: 691 RVA: 0x00040614 File Offset: 0x0003E814
+	// Token: 0x060002B9 RID: 697 RVA: 0x0002B568 File Offset: 0x00029768
 	public Vector4 GetAmountGamesWithGenreAndTopic(gameScript gS_)
 	{
 		int num = 0;
@@ -673,7 +670,7 @@ public class games : MonoBehaviour
 		return new Vector4((float)num, (float)num2, (float)num3, (float)num4);
 	}
 
-	// Token: 0x060002B4 RID: 692 RVA: 0x00040798 File Offset: 0x0003E998
+	// Token: 0x060002BA RID: 698 RVA: 0x0002B6EC File Offset: 0x000298EC
 	public int GetAmountGamesWithGenre_OnMarket(int genreID)
 	{
 		int num = 0;
@@ -691,7 +688,7 @@ public class games : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060002B5 RID: 693 RVA: 0x00040808 File Offset: 0x0003EA08
+	// Token: 0x060002BB RID: 699 RVA: 0x0002B75C File Offset: 0x0002995C
 	private bool SamePlatform(int platformID, gameScript gS_)
 	{
 		if (platformID != -1)
@@ -708,7 +705,7 @@ public class games : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060002B6 RID: 694 RVA: 0x00040840 File Offset: 0x0003EA40
+	// Token: 0x060002BC RID: 700 RVA: 0x0002B794 File Offset: 0x00029994
 	public int GetFreeLagerplatz()
 	{
 		int num = 0;
@@ -726,7 +723,7 @@ public class games : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060002B7 RID: 695 RVA: 0x000037AF File Offset: 0x000019AF
+	// Token: 0x060002BD RID: 701 RVA: 0x0002B7E7 File Offset: 0x000299E7
 	public void LagerplatzVerteilenEinGame(int menge)
 	{
 		if (menge > 0)
@@ -735,7 +732,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002B8 RID: 696 RVA: 0x00040894 File Offset: 0x0003EA94
+	// Token: 0x060002BE RID: 702 RVA: 0x0002B7F4 File Offset: 0x000299F4
 	public void LagerplatzVerteilen()
 	{
 		foreach (GameObject gameObject in this.mS_.arrayRooms)
@@ -751,7 +748,7 @@ public class games : MonoBehaviour
 		}
 		for (int j = 0; j < this.arrayGamesScripts.Length; j++)
 		{
-			if (this.arrayGamesScripts[j] && this.arrayGamesScripts[j].playerGame && this.arrayGamesScripts[j].publisherID == -1)
+			if (this.arrayGamesScripts[j] && this.arrayGamesScripts[j].publisherID == this.mS_.myID)
 			{
 				int lagerbestand = this.arrayGamesScripts[j].GetLagerbestand();
 				if (lagerbestand > 0)
@@ -762,7 +759,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002B9 RID: 697 RVA: 0x00040944 File Offset: 0x0003EB44
+	// Token: 0x060002BF RID: 703 RVA: 0x0002B8A0 File Offset: 0x00029AA0
 	private void SearchLager(int bestand)
 	{
 		foreach (GameObject gameObject in this.mS_.arrayRooms)
@@ -788,7 +785,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002BA RID: 698 RVA: 0x000409C0 File Offset: 0x0003EBC0
+	// Token: 0x060002C0 RID: 704 RVA: 0x0002B91C File Offset: 0x00029B1C
 	public void SaveLastChartPosition()
 	{
 		if (!this.mS_ || !this.mS_.mpCalls_)
@@ -832,7 +829,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002BB RID: 699 RVA: 0x00040B08 File Offset: 0x0003ED08
+	// Token: 0x060002C1 RID: 705 RVA: 0x0002BA64 File Offset: 0x00029C64
 	public void UpdateChartsWeek()
 	{
 		if (!this.mS_ || !this.mS_.mpCalls_)
@@ -914,7 +911,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002BC RID: 700 RVA: 0x00040F64 File Offset: 0x0003F164
+	// Token: 0x060002C2 RID: 706 RVA: 0x0002BEC0 File Offset: 0x0002A0C0
 	public int GetChartsWeekPosition(int gameID_)
 	{
 		for (int i = 0; i < this.chartsWeekList.Count; i++)
@@ -948,7 +945,7 @@ public class games : MonoBehaviour
 		return -1;
 	}
 
-	// Token: 0x060002BD RID: 701 RVA: 0x0004102C File Offset: 0x0003F22C
+	// Token: 0x060002C3 RID: 707 RVA: 0x0002BF88 File Offset: 0x0002A188
 	public void CreateAllTimeCharts(int max)
 	{
 		this.chartsList.Clear();
@@ -968,7 +965,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002BE RID: 702 RVA: 0x000411E4 File Offset: 0x0003F3E4
+	// Token: 0x060002C4 RID: 708 RVA: 0x0002C140 File Offset: 0x0002A340
 	public void CreateBestGamesCharts(int max, int genre)
 	{
 		this.chartsList.Clear();
@@ -988,7 +985,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002BF RID: 703 RVA: 0x000413A0 File Offset: 0x0003F5A0
+	// Token: 0x060002C5 RID: 709 RVA: 0x0002C2FC File Offset: 0x0002A4FC
 	public void CreateAllTimeChartsUmsatz(int max)
 	{
 		this.chartsList.Clear();
@@ -1008,7 +1005,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002C0 RID: 704 RVA: 0x00041544 File Offset: 0x0003F744
+	// Token: 0x060002C6 RID: 710 RVA: 0x0002C4A0 File Offset: 0x0002A6A0
 	public void CreateAllTimeChartsHandy(int max)
 	{
 		this.chartsList.Clear();
@@ -1028,7 +1025,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002C1 RID: 705 RVA: 0x0004170C File Offset: 0x0003F90C
+	// Token: 0x060002C7 RID: 711 RVA: 0x0002C668 File Offset: 0x0002A868
 	public void CreateAllTimeChartsArcade(int max)
 	{
 		this.chartsList.Clear();
@@ -1048,20 +1045,7 @@ public class games : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002C2 RID: 706 RVA: 0x000418D4 File Offset: 0x0003FAD4
-	public gameScript GetGameScriptFromArray(int id_)
-	{
-		for (int i = 0; i < this.arrayGamesScripts.Length; i++)
-		{
-			if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].myID == id_)
-			{
-				return this.arrayGamesScripts[i];
-			}
-		}
-		return null;
-	}
-
-	// Token: 0x060002C3 RID: 707 RVA: 0x00041920 File Offset: 0x0003FB20
+	// Token: 0x060002C8 RID: 712 RVA: 0x0002C830 File Offset: 0x0002AA30
 	public bool IsNewGenreCombination(int maingenre, int subgenre)
 	{
 		if (maingenre <= -1)
@@ -1074,7 +1058,7 @@ public class games : MonoBehaviour
 		}
 		for (int i = 0; i < this.arrayGamesScripts.Length; i++)
 		{
-			if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].playerGame && !this.arrayGamesScripts[i].pubOffer && this.arrayGamesScripts[i].maingenre == maingenre && this.arrayGamesScripts[i].subgenre == subgenre)
+			if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].ownerID == this.mS_.myID && !this.arrayGamesScripts[i].pubOffer && this.arrayGamesScripts[i].maingenre == maingenre && this.arrayGamesScripts[i].subgenre == subgenre)
 			{
 				return false;
 			}
@@ -1082,7 +1066,7 @@ public class games : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060002C4 RID: 708 RVA: 0x0004199C File Offset: 0x0003FB9C
+	// Token: 0x060002C9 RID: 713 RVA: 0x0002C8B8 File Offset: 0x0002AAB8
 	public bool IsNewTopicCombination(int maintopic, int subtopic)
 	{
 		if (maintopic <= -1)
@@ -1095,7 +1079,7 @@ public class games : MonoBehaviour
 		}
 		for (int i = 0; i < this.arrayGamesScripts.Length; i++)
 		{
-			if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].playerGame && !this.arrayGamesScripts[i].pubOffer && this.arrayGamesScripts[i].gameMainTheme == maintopic && this.arrayGamesScripts[i].gameSubTheme == subtopic)
+			if (this.arrayGamesScripts[i] && this.arrayGamesScripts[i].ownerID == this.mS_.myID && !this.arrayGamesScripts[i].pubOffer && this.arrayGamesScripts[i].gameMainTheme == maintopic && this.arrayGamesScripts[i].gameSubTheme == subtopic)
 			{
 				return false;
 			}
@@ -1103,123 +1087,123 @@ public class games : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x04000576 RID: 1398
+	// Token: 0x04000573 RID: 1395
 	public GameObject prefabGame;
 
-	// Token: 0x04000577 RID: 1399
+	// Token: 0x04000574 RID: 1396
 	public Sprite[] gameTypSprites;
 
-	// Token: 0x04000578 RID: 1400
+	// Token: 0x04000575 RID: 1397
 	public Sprite[] gamePlatformTypSprites;
 
-	// Token: 0x04000579 RID: 1401
+	// Token: 0x04000576 RID: 1398
 	public Sprite[] gameSizeSprites;
 
-	// Token: 0x0400057A RID: 1402
+	// Token: 0x04000577 RID: 1399
 	public Sprite[] gameAdds;
 
-	// Token: 0x0400057B RID: 1403
+	// Token: 0x04000578 RID: 1400
 	public Sprite[] gamePEGI;
 
-	// Token: 0x0400057C RID: 1404
+	// Token: 0x04000579 RID: 1401
 	public float[] inAppPurchasePrice;
 
-	// Token: 0x0400057D RID: 1405
+	// Token: 0x0400057A RID: 1402
 	public float[] inAppPurchaseHate;
 
-	// Token: 0x0400057E RID: 1406
+	// Token: 0x0400057B RID: 1403
 	public GameObject[] arrayGames;
 
-	// Token: 0x0400057F RID: 1407
+	// Token: 0x0400057C RID: 1404
 	public gameScript[] arrayGamesScripts;
 
-	// Token: 0x04000580 RID: 1408
+	// Token: 0x0400057D RID: 1405
 	public List<gameScript> arrayMyIpScripts = new List<gameScript>();
 
-	// Token: 0x04000581 RID: 1409
+	// Token: 0x0400057E RID: 1406
 	public float[] preise_inhalt;
 
-	// Token: 0x04000582 RID: 1410
+	// Token: 0x0400057F RID: 1407
 	public float tf_gewinnbeteiligungSelfPublish;
 
-	// Token: 0x04000583 RID: 1411
+	// Token: 0x04000580 RID: 1408
 	public float tf_gewinnbeteiligungTochterfirma;
 
-	// Token: 0x04000584 RID: 1412
+	// Token: 0x04000581 RID: 1409
 	public AnimationCurve curveSellsBewertung;
 
-	// Token: 0x04000585 RID: 1413
+	// Token: 0x04000582 RID: 1410
 	public AnimationCurve curveReview;
 
-	// Token: 0x04000586 RID: 1414
+	// Token: 0x04000583 RID: 1411
 	public AnimationCurve curveSells;
 
-	// Token: 0x04000587 RID: 1415
+	// Token: 0x04000584 RID: 1412
 	public AnimationCurve curveSellsDigital;
 
-	// Token: 0x04000588 RID: 1416
+	// Token: 0x04000585 RID: 1413
 	public AnimationCurve curveSellsDeluxe;
 
-	// Token: 0x04000589 RID: 1417
+	// Token: 0x04000586 RID: 1414
 	public AnimationCurve curveSellsCollectors;
 
-	// Token: 0x0400058A RID: 1418
+	// Token: 0x04000587 RID: 1415
 	public AnimationCurve curveSellsArcade;
 
-	// Token: 0x0400058B RID: 1419
+	// Token: 0x04000588 RID: 1416
 	private GameObject main_;
 
-	// Token: 0x0400058C RID: 1420
+	// Token: 0x04000589 RID: 1417
 	private mainScript mS_;
 
-	// Token: 0x0400058D RID: 1421
+	// Token: 0x0400058A RID: 1418
 	private textScript tS_;
 
-	// Token: 0x0400058E RID: 1422
+	// Token: 0x0400058B RID: 1419
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400058F RID: 1423
+	// Token: 0x0400058C RID: 1420
 	private sfxScript sfx_;
 
-	// Token: 0x04000590 RID: 1424
+	// Token: 0x0400058D RID: 1421
 	private genres genres_;
 
-	// Token: 0x04000591 RID: 1425
+	// Token: 0x0400058E RID: 1422
 	private themes themes_;
 
-	// Token: 0x04000592 RID: 1426
+	// Token: 0x0400058F RID: 1423
 	private licences licences_;
 
-	// Token: 0x04000593 RID: 1427
+	// Token: 0x04000590 RID: 1424
 	private engineFeatures eF_;
 
-	// Token: 0x04000594 RID: 1428
+	// Token: 0x04000591 RID: 1425
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04000595 RID: 1429
+	// Token: 0x04000592 RID: 1426
 	private unlockScript unlock_;
 
-	// Token: 0x04000596 RID: 1430
+	// Token: 0x04000593 RID: 1427
 	private gameplayFeatures gF_;
 
-	// Token: 0x04000597 RID: 1431
+	// Token: 0x04000594 RID: 1428
 	private publishingOfferMain poM_;
 
-	// Token: 0x04000598 RID: 1432
+	// Token: 0x04000595 RID: 1429
 	public int freeServerPlatz;
 
-	// Token: 0x04000599 RID: 1433
+	// Token: 0x04000596 RID: 1430
 	public List<ChartsWeek> chartsWeekList = new List<ChartsWeek>();
 
-	// Token: 0x0400059A RID: 1434
+	// Token: 0x04000597 RID: 1431
 	public List<ChartsWeek> chartsWeekList_Handy = new List<ChartsWeek>();
 
-	// Token: 0x0400059B RID: 1435
+	// Token: 0x04000598 RID: 1432
 	public List<ChartsWeek> chartsWeekList_Arcade = new List<ChartsWeek>();
 
-	// Token: 0x0400059C RID: 1436
+	// Token: 0x04000599 RID: 1433
 	public List<ChartsWeek> chartsWeekList_F2P = new List<ChartsWeek>();
 
-	// Token: 0x0400059D RID: 1437
+	// Token: 0x0400059A RID: 1434
 	public List<ChartsList> chartsList = new List<ChartsList>();
 }

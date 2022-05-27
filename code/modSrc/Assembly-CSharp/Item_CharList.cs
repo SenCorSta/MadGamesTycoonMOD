@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x020000AB RID: 171
 public class Item_CharList : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler
 {
-	// Token: 0x06000642 RID: 1602 RVA: 0x0000598C File Offset: 0x00003B8C
+	// Token: 0x0600064B RID: 1611 RVA: 0x0004F31B File Offset: 0x0004D51B
 	private void Start()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06000643 RID: 1603 RVA: 0x00061E30 File Offset: 0x00060030
+	// Token: 0x0600064C RID: 1612 RVA: 0x0004F324 File Offset: 0x0004D524
 	private void Init()
 	{
 		if (!this.cS_)
@@ -23,7 +23,7 @@ public class Item_CharList : MonoBehaviour, IPointerEnterHandler, IEventSystemHa
 		base.gameObject.GetComponent<tooltip>().c = this.cS_.GetTooltip();
 	}
 
-	// Token: 0x06000644 RID: 1604 RVA: 0x00061EA0 File Offset: 0x000600A0
+	// Token: 0x0600064D RID: 1613 RVA: 0x0004F394 File Offset: 0x0004D594
 	private void Update()
 	{
 		if (!this.cS_)
@@ -43,25 +43,25 @@ public class Item_CharList : MonoBehaviour, IPointerEnterHandler, IEventSystemHa
 		}
 	}
 
-	// Token: 0x06000645 RID: 1605 RVA: 0x00004174 File Offset: 0x00002374
+	// Token: 0x0600064E RID: 1614 RVA: 0x0003D679 File Offset: 0x0003B879
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000646 RID: 1606 RVA: 0x00005994 File Offset: 0x00003B94
+	// Token: 0x0600064F RID: 1615 RVA: 0x0004F47F File Offset: 0x0004D67F
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		this.uiObjects[0].GetComponent<Text>().color = this.colors[1];
 	}
 
-	// Token: 0x06000647 RID: 1607 RVA: 0x000059B4 File Offset: 0x00003BB4
+	// Token: 0x06000650 RID: 1616 RVA: 0x0004F49F File Offset: 0x0004D69F
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		this.uiObjects[0].GetComponent<Text>().color = this.colors[0];
 	}
 
-	// Token: 0x06000648 RID: 1608 RVA: 0x00061F8C File Offset: 0x0006018C
+	// Token: 0x06000651 RID: 1617 RVA: 0x0004F4C0 File Offset: 0x0004D6C0
 	public void BUTTON_Click()
 	{
 		if (!this.cS_)

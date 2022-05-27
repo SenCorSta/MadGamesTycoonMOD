@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000A8 RID: 168
 public class Item_DevKonsole_HardwareFeature : MonoBehaviour
 {
-	// Token: 0x06000633 RID: 1587 RVA: 0x0000596C File Offset: 0x00003B6C
+	// Token: 0x0600063C RID: 1596 RVA: 0x0004EDCC File Offset: 0x0004CFCC
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000634 RID: 1588 RVA: 0x00061900 File Offset: 0x0005FB00
+	// Token: 0x0600063D RID: 1597 RVA: 0x0004EDD4 File Offset: 0x0004CFD4
 	private void Update()
 	{
 		if (this.menu_.hwFeatures[this.myID])
@@ -22,7 +22,7 @@ public class Item_DevKonsole_HardwareFeature : MonoBehaviour
 		base.GetComponent<Image>().color = Color.white;
 	}
 
-	// Token: 0x06000635 RID: 1589 RVA: 0x00061950 File Offset: 0x0005FB50
+	// Token: 0x0600063E RID: 1598 RVA: 0x0004EE24 File Offset: 0x0004D024
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.hardwareFeatures_.GetName(this.myID);
@@ -57,7 +57,7 @@ public class Item_DevKonsole_HardwareFeature : MonoBehaviour
 		this.tooltip_.c = this.hardwareFeatures_.GetTooltip(this.myID);
 	}
 
-	// Token: 0x06000636 RID: 1590 RVA: 0x00061AEC File Offset: 0x0005FCEC
+	// Token: 0x0600063F RID: 1599 RVA: 0x0004EFC0 File Offset: 0x0004D1C0
 	public void BUTTON_Click()
 	{
 		if (base.GetComponent<Button>().interactable)

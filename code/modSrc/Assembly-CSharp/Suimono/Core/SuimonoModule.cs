@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Suimono.Core
 {
-	// Token: 0x02000398 RID: 920
+	// Token: 0x0200039B RID: 923
 	[ExecuteInEditMode]
 	public class SuimonoModule : MonoBehaviour
 	{
-		// Token: 0x060021F7 RID: 8695 RVA: 0x00016C56 File Offset: 0x00014E56
+		// Token: 0x0600224A RID: 8778 RVA: 0x00160398 File Offset: 0x0015E598
 		private void Awake()
 		{
 			this.suimonoVersionNumber = "2.1.13";
@@ -18,7 +18,7 @@ namespace Suimono.Core
 			this.sRendSCs = new List<Renderer>();
 		}
 
-		// Token: 0x060021F8 RID: 8696 RVA: 0x0015F004 File Offset: 0x0015D204
+		// Token: 0x0600224B RID: 8779 RVA: 0x001603D8 File Offset: 0x0015E5D8
 		private void Start()
 		{
 			this.randSeed = Environment.TickCount;
@@ -90,7 +90,7 @@ namespace Suimono.Core
 			Shader.SetGlobalFloat("_useTenkoku", 0f);
 		}
 
-		// Token: 0x060021F9 RID: 8697 RVA: 0x00016C94 File Offset: 0x00014E94
+		// Token: 0x0600224C RID: 8780 RVA: 0x0016067D File Offset: 0x0015E87D
 		private void InitLayers()
 		{
 			if (this.autoSetLayers && !this.layersAreSet)
@@ -99,7 +99,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x060021FA RID: 8698 RVA: 0x0015F2AC File Offset: 0x0015D4AC
+		// Token: 0x0600224D RID: 8781 RVA: 0x00160698 File Offset: 0x0015E898
 		private void LateUpdate()
 		{
 			this._deltaTime = Time.deltaTime;
@@ -222,7 +222,7 @@ namespace Suimono.Core
 			Shader.SetGlobalFloat("_suimono_advancedEdge", this.setEdge);
 		}
 
-		// Token: 0x060021FB RID: 8699 RVA: 0x0015F7C0 File Offset: 0x0015D9C0
+		// Token: 0x0600224E RID: 8782 RVA: 0x00160BAC File Offset: 0x0015EDAC
 		private void FixedUpdate()
 		{
 			if (this.autoSetLayers)
@@ -300,19 +300,19 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x060021FC RID: 8700 RVA: 0x00016CAD File Offset: 0x00014EAD
+		// Token: 0x0600224F RID: 8783 RVA: 0x00160E0A File Offset: 0x0015F00A
 		private void OnDisable()
 		{
 			base.CancelInvoke("StoreSurfaceHeight");
 		}
 
-		// Token: 0x060021FD RID: 8701 RVA: 0x00016CBA File Offset: 0x00014EBA
+		// Token: 0x06002250 RID: 8784 RVA: 0x00160E17 File Offset: 0x0015F017
 		private void OnEnable()
 		{
 			base.InvokeRepeating("StoreSurfaceHeight", 0.01f, 0.1f);
 		}
 
-		// Token: 0x060021FE RID: 8702 RVA: 0x0015FA20 File Offset: 0x0015DC20
+		// Token: 0x06002251 RID: 8785 RVA: 0x00160E30 File Offset: 0x0015F030
 		private void StoreSurfaceHeight()
 		{
 			if (base.enabled && this.setCamera != null)
@@ -328,7 +328,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x060021FF RID: 8703 RVA: 0x0015FAB4 File Offset: 0x0015DCB4
+		// Token: 0x06002252 RID: 8786 RVA: 0x00160EC4 File Offset: 0x0015F0C4
 		private void PlayUnderwaterSound()
 		{
 			if (Application.isPlaying && this.underSoundObject != null && this.setTrack != null && this.underSoundComponent != null)
@@ -371,7 +371,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002200 RID: 8704 RVA: 0x0015FC20 File Offset: 0x0015DE20
+		// Token: 0x06002253 RID: 8787 RVA: 0x00161030 File Offset: 0x0015F230
 		public void AddFX(int fxSystem, Vector3 effectPos, int addRate, float addSize, float addRot, float addARot, Vector3 addVeloc, Color addCol)
 		{
 			if (this.suimonoModuleLibrary.fxObject != null)
@@ -408,7 +408,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002201 RID: 8705 RVA: 0x0015FE80 File Offset: 0x0015E080
+		// Token: 0x06002254 RID: 8788 RVA: 0x00161290 File Offset: 0x0015F490
 		public void AddSoundFX(AudioClip sndClip, Vector3 soundPos, Vector3 sndVelocity)
 		{
 			if (this.enableInteraction)
@@ -448,7 +448,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002202 RID: 8706 RVA: 0x00160038 File Offset: 0x0015E238
+		// Token: 0x06002255 RID: 8789 RVA: 0x00161448 File Offset: 0x0015F648
 		public void AddSound(string sndMode, Vector3 soundPos, Vector3 sndVelocity)
 		{
 			if (this.enableInteraction)
@@ -487,7 +487,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002203 RID: 8707 RVA: 0x001601E4 File Offset: 0x0015E3E4
+		// Token: 0x06002256 RID: 8790 RVA: 0x001615F4 File Offset: 0x0015F7F4
 		private void checkUnderwaterEffects()
 		{
 			if (Application.isPlaying)
@@ -527,7 +527,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002204 RID: 8708 RVA: 0x0016032C File Offset: 0x0015E52C
+		// Token: 0x06002257 RID: 8791 RVA: 0x0016173C File Offset: 0x0015F93C
 		private void checkWaterTransition()
 		{
 			if (Application.isPlaying)
@@ -631,7 +631,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002205 RID: 8709 RVA: 0x001607BC File Offset: 0x0015E9BC
+		// Token: 0x06002258 RID: 8792 RVA: 0x00161BCC File Offset: 0x0015FDCC
 		private void Suimono_CheckCamera()
 		{
 			if (this.cameraTypeIndex == 0)
@@ -675,7 +675,7 @@ namespace Suimono.Core
 			this.InstallCameraEffect();
 		}
 
-		// Token: 0x06002206 RID: 8710 RVA: 0x00160948 File Offset: 0x0015EB48
+		// Token: 0x06002259 RID: 8793 RVA: 0x00161D58 File Offset: 0x0015FF58
 		public Vector2 SuimonoConvertAngleToDegrees(float convertAngle)
 		{
 			this.flow_dir = new Vector3(0f, 0f, 0f);
@@ -693,7 +693,7 @@ namespace Suimono.Core
 			return this.flow_dir;
 		}
 
-		// Token: 0x06002207 RID: 8711 RVA: 0x00160948 File Offset: 0x0015EB48
+		// Token: 0x0600225A RID: 8794 RVA: 0x00161E40 File Offset: 0x00160040
 		public Vector2 SuimonoConvertAngleToVector(float convertAngle)
 		{
 			this.flow_dir = new Vector3(0f, 0f, 0f);
@@ -711,7 +711,7 @@ namespace Suimono.Core
 			return this.flow_dir;
 		}
 
-		// Token: 0x06002208 RID: 8712 RVA: 0x00160A30 File Offset: 0x0015EC30
+		// Token: 0x0600225B RID: 8795 RVA: 0x00161F28 File Offset: 0x00160128
 		public float SuimonoGetHeight(Vector3 testObject, string returnMode)
 		{
 			this.CalculateHeights(testObject);
@@ -785,7 +785,7 @@ namespace Suimono.Core
 			return this.returnValue;
 		}
 
-		// Token: 0x06002209 RID: 8713 RVA: 0x00160C78 File Offset: 0x0015EE78
+		// Token: 0x0600225C RID: 8796 RVA: 0x00162170 File Offset: 0x00160370
 		public float[] SuimonoGetHeightAll(Vector3 testObject)
 		{
 			this.CalculateHeights(testObject);
@@ -865,7 +865,7 @@ namespace Suimono.Core
 			return this.returnValueAll;
 		}
 
-		// Token: 0x0600220A RID: 8714 RVA: 0x00016CD1 File Offset: 0x00014ED1
+		// Token: 0x0600225D RID: 8797 RVA: 0x00162428 File Offset: 0x00160628
 		public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
 		{
 			this.dir = point - pivot;
@@ -874,7 +874,7 @@ namespace Suimono.Core
 			return point;
 		}
 
-		// Token: 0x0600220B RID: 8715 RVA: 0x00160F30 File Offset: 0x0015F130
+		// Token: 0x0600225E RID: 8798 RVA: 0x00162468 File Offset: 0x00160668
 		public Color DecodeHeightPixels(float texPosx, float texPosy, int texNum)
 		{
 			if (texNum == 0)
@@ -932,7 +932,7 @@ namespace Suimono.Core
 			return this.pixCol;
 		}
 
-		// Token: 0x0600220C RID: 8716 RVA: 0x00161150 File Offset: 0x0015F350
+		// Token: 0x0600225F RID: 8799 RVA: 0x00162688 File Offset: 0x00160888
 		private void CalculateHeights(Vector3 testObject)
 		{
 			this.getheight = -1f;
@@ -1035,7 +1035,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x0600220D RID: 8717 RVA: 0x00162038 File Offset: 0x00160238
+		// Token: 0x06002260 RID: 8800 RVA: 0x00163570 File Offset: 0x00161770
 		public void RegisterSurface(SuimonoObject surface)
 		{
 			if (Application.isPlaying && surface != null && this.sObjects != null)
@@ -1050,7 +1050,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x0600220E RID: 8718 RVA: 0x001620C4 File Offset: 0x001602C4
+		// Token: 0x06002261 RID: 8801 RVA: 0x001635FC File Offset: 0x001617FC
 		public void DeregisterSurface(SuimonoObject surface)
 		{
 			if (Application.isPlaying && surface != null && this.sObjects != null)
@@ -1066,7 +1066,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x0600220F RID: 8719 RVA: 0x00162120 File Offset: 0x00160320
+		// Token: 0x06002262 RID: 8802 RVA: 0x00163658 File Offset: 0x00161858
 		private void SetCullFunction()
 		{
 			this.renderCount = 0;
@@ -1097,7 +1097,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x06002210 RID: 8720 RVA: 0x00162204 File Offset: 0x00160404
+		// Token: 0x06002263 RID: 8803 RVA: 0x0016373C File Offset: 0x0016193C
 		private void InstallCameraEffect()
 		{
 			if (this.setCameraComponent != null && this.autoSetCameraFX && !(this.setCameraComponent.gameObject.GetComponent<Suimono_UnderwaterFog>() != null) && this.enableUnderwaterFX)
@@ -1106,49 +1106,49 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x04002971 RID: 10609
+		// Token: 0x04002987 RID: 10631
 		public string suimonoVersionNumber = "";
 
-		// Token: 0x04002972 RID: 10610
+		// Token: 0x04002988 RID: 10632
 		public float systemTime;
 
-		// Token: 0x04002973 RID: 10611
+		// Token: 0x04002989 RID: 10633
 		public bool autoSetLayers = true;
 
-		// Token: 0x04002974 RID: 10612
+		// Token: 0x0400298A RID: 10634
 		public string layerWater;
 
-		// Token: 0x04002975 RID: 10613
+		// Token: 0x0400298B RID: 10635
 		public int layerWaterNum = -1;
 
-		// Token: 0x04002976 RID: 10614
+		// Token: 0x0400298C RID: 10636
 		public string layerDepth;
 
-		// Token: 0x04002977 RID: 10615
+		// Token: 0x0400298D RID: 10637
 		public int layerDepthNum = -1;
 
-		// Token: 0x04002978 RID: 10616
+		// Token: 0x0400298E RID: 10638
 		public string layerScreenFX;
 
-		// Token: 0x04002979 RID: 10617
+		// Token: 0x0400298F RID: 10639
 		public int layerScreenFXNum = -1;
 
-		// Token: 0x0400297A RID: 10618
+		// Token: 0x04002990 RID: 10640
 		public bool layersAreSet;
 
-		// Token: 0x0400297B RID: 10619
+		// Token: 0x04002991 RID: 10641
 		public bool autoSetCameraFX = true;
 
-		// Token: 0x0400297C RID: 10620
+		// Token: 0x04002992 RID: 10642
 		public Transform manualCamera;
 
-		// Token: 0x0400297D RID: 10621
+		// Token: 0x04002993 RID: 10643
 		public Transform mainCamera;
 
-		// Token: 0x0400297E RID: 10622
+		// Token: 0x04002994 RID: 10644
 		public int cameraTypeIndex;
 
-		// Token: 0x0400297F RID: 10623
+		// Token: 0x04002995 RID: 10645
 		[NonSerialized]
 		public List<string> cameraTypeOptions = new List<string>
 		{
@@ -1156,113 +1156,113 @@ namespace Suimono.Core
 			"Manual Select Camera"
 		};
 
-		// Token: 0x04002980 RID: 10624
+		// Token: 0x04002996 RID: 10646
 		public Transform setCamera;
 
-		// Token: 0x04002981 RID: 10625
+		// Token: 0x04002997 RID: 10647
 		public Transform setTrack;
 
-		// Token: 0x04002982 RID: 10626
+		// Token: 0x04002998 RID: 10648
 		public Light setLight;
 
-		// Token: 0x04002983 RID: 10627
+		// Token: 0x04002999 RID: 10649
 		public bool enableUnderwaterFX = true;
 
-		// Token: 0x04002984 RID: 10628
+		// Token: 0x0400299A RID: 10650
 		public bool enableInteraction = true;
 
-		// Token: 0x04002985 RID: 10629
+		// Token: 0x0400299B RID: 10651
 		public float objectEnableUnderwaterFX = 1f;
 
-		// Token: 0x04002986 RID: 10630
+		// Token: 0x0400299C RID: 10652
 		public bool disableMSAA;
 
-		// Token: 0x04002987 RID: 10631
+		// Token: 0x0400299D RID: 10653
 		public bool enableRefraction = true;
 
-		// Token: 0x04002988 RID: 10632
+		// Token: 0x0400299E RID: 10654
 		public bool enableReflections = true;
 
-		// Token: 0x04002989 RID: 10633
+		// Token: 0x0400299F RID: 10655
 		public bool enableDynamicReflections = true;
 
-		// Token: 0x0400298A RID: 10634
+		// Token: 0x040029A0 RID: 10656
 		public bool enableCaustics = true;
 
-		// Token: 0x0400298B RID: 10635
+		// Token: 0x040029A1 RID: 10657
 		public bool enableCausticsBlending;
 
-		// Token: 0x0400298C RID: 10636
+		// Token: 0x040029A2 RID: 10658
 		public bool enableAdvancedEdge = true;
 
-		// Token: 0x0400298D RID: 10637
+		// Token: 0x040029A3 RID: 10659
 		public bool enableAdvancedDistort = true;
 
-		// Token: 0x0400298E RID: 10638
+		// Token: 0x040029A4 RID: 10660
 		public bool enableTenkoku;
 
-		// Token: 0x0400298F RID: 10639
+		// Token: 0x040029A5 RID: 10661
 		public bool enableAutoAdvance = true;
 
-		// Token: 0x04002990 RID: 10640
+		// Token: 0x040029A6 RID: 10662
 		public bool showPerformance;
 
-		// Token: 0x04002991 RID: 10641
+		// Token: 0x040029A7 RID: 10663
 		public bool showGeneral;
 
-		// Token: 0x04002992 RID: 10642
+		// Token: 0x040029A8 RID: 10664
 		public Color underwaterColor = new Color(0.58f, 0.61f, 0.61f, 0f);
 
-		// Token: 0x04002993 RID: 10643
+		// Token: 0x040029A9 RID: 10665
 		public bool enableTransition = true;
 
-		// Token: 0x04002994 RID: 10644
+		// Token: 0x040029AA RID: 10666
 		public float transition_offset = 0.1f;
 
-		// Token: 0x04002995 RID: 10645
+		// Token: 0x040029AB RID: 10667
 		public GameObject fxRippleObject;
 
-		// Token: 0x04002996 RID: 10646
+		// Token: 0x040029AC RID: 10668
 		private float underLightAmt;
 
-		// Token: 0x04002997 RID: 10647
+		// Token: 0x040029AD RID: 10669
 		private GameObject targetSurface;
 
-		// Token: 0x04002998 RID: 10648
+		// Token: 0x040029AE RID: 10670
 		private float doTransitionTimer;
 
-		// Token: 0x04002999 RID: 10649
+		// Token: 0x040029AF RID: 10671
 		public bool isUnderwater;
 
-		// Token: 0x0400299A RID: 10650
+		// Token: 0x040029B0 RID: 10672
 		private static bool doWaterTransition;
 
-		// Token: 0x0400299B RID: 10651
+		// Token: 0x040029B1 RID: 10673
 		public bool enableTransparency = true;
 
-		// Token: 0x0400299C RID: 10652
+		// Token: 0x040029B2 RID: 10674
 		private bool useEnableTransparency = true;
 
-		// Token: 0x0400299D RID: 10653
+		// Token: 0x040029B3 RID: 10675
 		public int transResolution = 3;
 
-		// Token: 0x0400299E RID: 10654
+		// Token: 0x040029B4 RID: 10676
 		public int transLayer;
 
-		// Token: 0x0400299F RID: 10655
+		// Token: 0x040029B5 RID: 10677
 		public LayerMask transLayerMask;
 
-		// Token: 0x040029A0 RID: 10656
+		// Token: 0x040029B6 RID: 10678
 		public int causticLayer;
 
-		// Token: 0x040029A1 RID: 10657
+		// Token: 0x040029B7 RID: 10679
 		public LayerMask causticLayerMask;
 
-		// Token: 0x040029A2 RID: 10658
+		// Token: 0x040029B8 RID: 10680
 		[NonSerialized]
 		public List<string> suiLayerMasks;
 
-		// Token: 0x040029A3 RID: 10659
+		// Token: 0x040029B9 RID: 10681
 		[NonSerialized]
 		public List<string> resOptions = new List<string>
 		{
@@ -1278,7 +1278,7 @@ namespace Suimono.Core
 			"8"
 		};
 
-		// Token: 0x040029A4 RID: 10660
+		// Token: 0x040029BA RID: 10682
 		[NonSerialized]
 		public List<int> resolutions = new List<int>
 		{
@@ -1294,367 +1294,367 @@ namespace Suimono.Core
 			8
 		};
 
-		// Token: 0x040029A5 RID: 10661
+		// Token: 0x040029BB RID: 10683
 		public float transRenderDistance = 100f;
 
-		// Token: 0x040029A6 RID: 10662
+		// Token: 0x040029BC RID: 10684
 		public bool playSounds = true;
 
-		// Token: 0x040029A7 RID: 10663
+		// Token: 0x040029BD RID: 10685
 		public bool playSoundBelow = true;
 
-		// Token: 0x040029A8 RID: 10664
+		// Token: 0x040029BE RID: 10686
 		public bool playSoundAbove = true;
 
-		// Token: 0x040029A9 RID: 10665
+		// Token: 0x040029BF RID: 10687
 		public float maxVolume = 1f;
 
-		// Token: 0x040029AA RID: 10666
+		// Token: 0x040029C0 RID: 10688
 		public int maxSounds = 10;
 
-		// Token: 0x040029AB RID: 10667
+		// Token: 0x040029C1 RID: 10689
 		public AudioClip[] defaultSplashSound;
 
-		// Token: 0x040029AC RID: 10668
+		// Token: 0x040029C2 RID: 10690
 		private float setvolume = 0.65f;
 
-		// Token: 0x040029AD RID: 10669
+		// Token: 0x040029C3 RID: 10691
 		private GameObject underSoundObject;
 
-		// Token: 0x040029AE RID: 10670
+		// Token: 0x040029C4 RID: 10692
 		private AudioSource underSoundComponent;
 
-		// Token: 0x040029AF RID: 10671
+		// Token: 0x040029C5 RID: 10693
 		private AudioSource[] sndComponents;
 
-		// Token: 0x040029B0 RID: 10672
+		// Token: 0x040029C6 RID: 10694
 		private int currentSound;
 
-		// Token: 0x040029B1 RID: 10673
+		// Token: 0x040029C7 RID: 10695
 		public float transitionStrength = 1f;
 
-		// Token: 0x040029B2 RID: 10674
+		// Token: 0x040029C8 RID: 10696
 		public float currentObjectIsOver;
 
-		// Token: 0x040029B3 RID: 10675
+		// Token: 0x040029C9 RID: 10697
 		public float currentObjectDepth;
 
-		// Token: 0x040029B4 RID: 10676
+		// Token: 0x040029CA RID: 10698
 		public float currentTransitionDepth;
 
-		// Token: 0x040029B5 RID: 10677
+		// Token: 0x040029CB RID: 10699
 		public float currentSurfaceLevel;
 
-		// Token: 0x040029B6 RID: 10678
+		// Token: 0x040029CC RID: 10700
 		public float underwaterThreshold = 0.1f;
 
-		// Token: 0x040029B7 RID: 10679
+		// Token: 0x040029CD RID: 10701
 		public SuimonoObject suimonoObject;
 
-		// Token: 0x040029B8 RID: 10680
+		// Token: 0x040029CE RID: 10702
 		private ParticleSystem.Particle[] effectBubbles;
 
-		// Token: 0x040029B9 RID: 10681
+		// Token: 0x040029CF RID: 10703
 		public SuimonoModuleLib suimonoModuleLibrary;
 
-		// Token: 0x040029BA RID: 10682
+		// Token: 0x040029D0 RID: 10704
 		public Camera setCameraComponent;
 
-		// Token: 0x040029BB RID: 10683
+		// Token: 0x040029D1 RID: 10705
 		private float underTrans;
 
-		// Token: 0x040029BC RID: 10684
+		// Token: 0x040029D2 RID: 10706
 		public float useTenkoku;
 
-		// Token: 0x040029BD RID: 10685
+		// Token: 0x040029D3 RID: 10707
 		public float tenkokuWindDir;
 
-		// Token: 0x040029BE RID: 10686
+		// Token: 0x040029D4 RID: 10708
 		public float tenkokuWindAmt;
 
-		// Token: 0x040029BF RID: 10687
+		// Token: 0x040029D5 RID: 10709
 		public bool tenkokuUseWind = true;
 
-		// Token: 0x040029C0 RID: 10688
+		// Token: 0x040029D6 RID: 10710
 		private GameObject tenObject;
 
-		// Token: 0x040029C1 RID: 10689
+		// Token: 0x040029D7 RID: 10711
 		public bool showTenkoku = true;
 
-		// Token: 0x040029C2 RID: 10690
+		// Token: 0x040029D8 RID: 10712
 		public bool tenkokuUseReflect = true;
 
-		// Token: 0x040029C3 RID: 10691
+		// Token: 0x040029D9 RID: 10713
 		private WindZone tenkokuWindModule;
 
-		// Token: 0x040029C4 RID: 10692
+		// Token: 0x040029DA RID: 10714
 		private int lx;
 
-		// Token: 0x040029C5 RID: 10693
+		// Token: 0x040029DB RID: 10715
 		private int fx;
 
-		// Token: 0x040029C6 RID: 10694
+		// Token: 0x040029DC RID: 10716
 		private int px;
 
-		// Token: 0x040029C7 RID: 10695
+		// Token: 0x040029DD RID: 10717
 		private ParticleSystem.Particle[] setParticles;
 
-		// Token: 0x040029C8 RID: 10696
+		// Token: 0x040029DE RID: 10718
 		private AudioClip setstep;
 
-		// Token: 0x040029C9 RID: 10697
+		// Token: 0x040029DF RID: 10719
 		private float setpitch;
 
-		// Token: 0x040029CA RID: 10698
+		// Token: 0x040029E0 RID: 10720
 		private AudioSource useSoundAudioComponent;
 
-		// Token: 0x040029CB RID: 10699
+		// Token: 0x040029E1 RID: 10721
 		private float useRefract;
 
-		// Token: 0x040029CC RID: 10700
+		// Token: 0x040029E2 RID: 10722
 		private float useLight = 1f;
 
-		// Token: 0x040029CD RID: 10701
+		// Token: 0x040029E3 RID: 10723
 		private Color useLightCol;
 
-		// Token: 0x040029CE RID: 10702
+		// Token: 0x040029E4 RID: 10724
 		private Vector2 flow_dir;
 
-		// Token: 0x040029CF RID: 10703
+		// Token: 0x040029E5 RID: 10725
 		private Vector3 tempAngle;
 
-		// Token: 0x040029D0 RID: 10704
+		// Token: 0x040029E6 RID: 10726
 		private float getheight;
 
-		// Token: 0x040029D1 RID: 10705
+		// Token: 0x040029E7 RID: 10727
 		private float getheightC;
 
-		// Token: 0x040029D2 RID: 10706
+		// Token: 0x040029E8 RID: 10728
 		private float getheightT;
 
-		// Token: 0x040029D3 RID: 10707
+		// Token: 0x040029E9 RID: 10729
 		private float getheightR;
 
-		// Token: 0x040029D4 RID: 10708
+		// Token: 0x040029EA RID: 10730
 		private bool isOverWater;
 
-		// Token: 0x040029D5 RID: 10709
+		// Token: 0x040029EB RID: 10731
 		private float surfaceLevel;
 
-		// Token: 0x040029D6 RID: 10710
+		// Token: 0x040029EC RID: 10732
 		private int layer;
 
-		// Token: 0x040029D7 RID: 10711
+		// Token: 0x040029ED RID: 10733
 		private int layermask;
 
-		// Token: 0x040029D8 RID: 10712
+		// Token: 0x040029EE RID: 10734
 		private Vector3 testpos;
 
-		// Token: 0x040029D9 RID: 10713
+		// Token: 0x040029EF RID: 10735
 		private int i;
 
-		// Token: 0x040029DA RID: 10714
+		// Token: 0x040029F0 RID: 10736
 		private RaycastHit hit;
 
-		// Token: 0x040029DB RID: 10715
+		// Token: 0x040029F1 RID: 10737
 		private Vector2 pixelUV;
 
-		// Token: 0x040029DC RID: 10716
+		// Token: 0x040029F2 RID: 10738
 		private float returnValue;
 
-		// Token: 0x040029DD RID: 10717
+		// Token: 0x040029F3 RID: 10739
 		private float[] returnValueAll;
 
-		// Token: 0x040029DE RID: 10718
+		// Token: 0x040029F4 RID: 10740
 		private float h1;
 
-		// Token: 0x040029DF RID: 10719
+		// Token: 0x040029F5 RID: 10741
 		private float setDegrees;
 
-		// Token: 0x040029E0 RID: 10720
+		// Token: 0x040029F6 RID: 10742
 		private float enabledUFX = 1f;
 
-		// Token: 0x040029E1 RID: 10721
+		// Token: 0x040029F7 RID: 10743
 		private float enabledCaustics = 1f;
 
-		// Token: 0x040029E2 RID: 10722
+		// Token: 0x040029F8 RID: 10744
 		private float setUnderBright;
 
-		// Token: 0x040029E3 RID: 10723
+		// Token: 0x040029F9 RID: 10745
 		private float enCaustic;
 
-		// Token: 0x040029E4 RID: 10724
+		// Token: 0x040029FA RID: 10746
 		private float setEdge = 1f;
 
-		// Token: 0x040029E5 RID: 10725
+		// Token: 0x040029FB RID: 10747
 		private Suimono_UnderwaterFog underwaterObject;
 
-		// Token: 0x040029E6 RID: 10726
+		// Token: 0x040029FC RID: 10748
 		private GameObject currentSurfaceObject;
 
-		// Token: 0x040029E7 RID: 10727
+		// Token: 0x040029FD RID: 10749
 		public float[] heightValues;
 
-		// Token: 0x040029E8 RID: 10728
+		// Token: 0x040029FE RID: 10750
 		public float isForward;
 
-		// Token: 0x040029E9 RID: 10729
+		// Token: 0x040029FF RID: 10751
 		public float isAdvDist;
 
-		// Token: 0x040029EA RID: 10730
+		// Token: 0x04002A00 RID: 10752
 		public float waveScale = 1f;
 
-		// Token: 0x040029EB RID: 10731
+		// Token: 0x04002A01 RID: 10753
 		public float flowSpeed = 0.02f;
 
-		// Token: 0x040029EC RID: 10732
+		// Token: 0x04002A02 RID: 10754
 		public float offset;
 
-		// Token: 0x040029ED RID: 10733
+		// Token: 0x04002A03 RID: 10755
 		public Texture2D heightTex;
 
-		// Token: 0x040029EE RID: 10734
+		// Token: 0x04002A04 RID: 10756
 		public Texture2D heightTexT;
 
-		// Token: 0x040029EF RID: 10735
+		// Token: 0x04002A05 RID: 10757
 		public Texture2D heightTexR;
 
-		// Token: 0x040029F0 RID: 10736
+		// Token: 0x04002A06 RID: 10758
 		public Transform heightObject;
 
-		// Token: 0x040029F1 RID: 10737
+		// Token: 0x04002A07 RID: 10759
 		public Vector2 relativePos = new Vector2(0f, 0f);
 
-		// Token: 0x040029F2 RID: 10738
+		// Token: 0x04002A08 RID: 10760
 		public Vector3 texCoord = new Vector3(0f, 0f, 0f);
 
-		// Token: 0x040029F3 RID: 10739
+		// Token: 0x04002A09 RID: 10761
 		public Vector3 texCoord1 = new Vector3(0f, 0f, 0f);
 
-		// Token: 0x040029F4 RID: 10740
+		// Token: 0x04002A0A RID: 10762
 		public Vector3 texCoordT = new Vector3(0f, 0f, 0f);
 
-		// Token: 0x040029F5 RID: 10741
+		// Token: 0x04002A0B RID: 10763
 		public Vector3 texCoordT1 = new Vector3(0f, 0f, 0f);
 
-		// Token: 0x040029F6 RID: 10742
+		// Token: 0x04002A0C RID: 10764
 		public Vector3 texCoordR = new Vector3(0f, 0f, 0f);
 
-		// Token: 0x040029F7 RID: 10743
+		// Token: 0x04002A0D RID: 10765
 		public Vector3 texCoordR1 = new Vector3(0f, 0f, 0f);
 
-		// Token: 0x040029F8 RID: 10744
+		// Token: 0x04002A0E RID: 10766
 		public Color heightVal0;
 
-		// Token: 0x040029F9 RID: 10745
+		// Token: 0x04002A0F RID: 10767
 		public Color heightVal1;
 
-		// Token: 0x040029FA RID: 10746
+		// Token: 0x04002A10 RID: 10768
 		public Color heightValT0;
 
-		// Token: 0x040029FB RID: 10747
+		// Token: 0x04002A11 RID: 10769
 		public Color heightValT1;
 
-		// Token: 0x040029FC RID: 10748
+		// Token: 0x04002A12 RID: 10770
 		public Color heightValR0;
 
-		// Token: 0x040029FD RID: 10749
+		// Token: 0x04002A13 RID: 10771
 		public Color heightValR1;
 
-		// Token: 0x040029FE RID: 10750
+		// Token: 0x04002A14 RID: 10772
 		public float localTime;
 
-		// Token: 0x040029FF RID: 10751
+		// Token: 0x04002A15 RID: 10773
 		private float baseHeight;
 
-		// Token: 0x04002A00 RID: 10752
+		// Token: 0x04002A16 RID: 10774
 		private float baseAngle;
 
-		// Token: 0x04002A01 RID: 10753
+		// Token: 0x04002A17 RID: 10775
 		private Color[] pixelArray;
 
-		// Token: 0x04002A02 RID: 10754
+		// Token: 0x04002A18 RID: 10776
 		private Color[] pixelArrayT;
 
-		// Token: 0x04002A03 RID: 10755
+		// Token: 0x04002A19 RID: 10777
 		private Color[] pixelArrayR;
 
-		// Token: 0x04002A04 RID: 10756
+		// Token: 0x04002A1A RID: 10778
 		private Texture2D useDecodeTex;
 
-		// Token: 0x04002A05 RID: 10757
+		// Token: 0x04002A1B RID: 10779
 		private Color[] useDecodeArray;
 
-		// Token: 0x04002A06 RID: 10758
+		// Token: 0x04002A1C RID: 10780
 		public int row;
 
-		// Token: 0x04002A07 RID: 10759
+		// Token: 0x04002A1D RID: 10781
 		public int pixIndex;
 
-		// Token: 0x04002A08 RID: 10760
+		// Token: 0x04002A1E RID: 10782
 		public Color pixCol;
 
-		// Token: 0x04002A09 RID: 10761
+		// Token: 0x04002A1F RID: 10783
 		public int t;
 
-		// Token: 0x04002A0A RID: 10762
+		// Token: 0x04002A20 RID: 10784
 		public int y;
 
-		// Token: 0x04002A0B RID: 10763
+		// Token: 0x04002A21 RID: 10785
 		public Vector3 dir;
 
-		// Token: 0x04002A0C RID: 10764
+		// Token: 0x04002A22 RID: 10786
 		public Vector3 pivotPoint;
 
-		// Token: 0x04002A0D RID: 10765
+		// Token: 0x04002A23 RID: 10787
 		public float useLocalTime;
 
-		// Token: 0x04002A0E RID: 10766
+		// Token: 0x04002A24 RID: 10788
 		public Vector2 flow_dirC;
 
-		// Token: 0x04002A0F RID: 10767
+		// Token: 0x04002A25 RID: 10789
 		public Vector2 flowSpeed0;
 
-		// Token: 0x04002A10 RID: 10768
+		// Token: 0x04002A26 RID: 10790
 		public Vector2 flowSpeed1;
 
-		// Token: 0x04002A11 RID: 10769
+		// Token: 0x04002A27 RID: 10791
 		public Vector2 flowSpeed2;
 
-		// Token: 0x04002A12 RID: 10770
+		// Token: 0x04002A28 RID: 10792
 		public Vector2 flowSpeed3;
 
-		// Token: 0x04002A13 RID: 10771
+		// Token: 0x04002A29 RID: 10793
 		public float tScale;
 
-		// Token: 0x04002A14 RID: 10772
+		// Token: 0x04002A2A RID: 10794
 		public Vector2 oPos;
 
-		// Token: 0x04002A15 RID: 10773
+		// Token: 0x04002A2B RID: 10795
 		private int renderCount;
 
-		// Token: 0x04002A16 RID: 10774
+		// Token: 0x04002A2C RID: 10796
 		private int randSeed;
 
-		// Token: 0x04002A17 RID: 10775
+		// Token: 0x04002A2D RID: 10797
 		private Suimono.Core.Random modRand;
 
-		// Token: 0x04002A18 RID: 10776
+		// Token: 0x04002A2E RID: 10798
 		private List<SuimonoObject> sObjects;
 
-		// Token: 0x04002A19 RID: 10777
+		// Token: 0x04002A2F RID: 10799
 		private List<Renderer> sRends;
 
-		// Token: 0x04002A1A RID: 10778
+		// Token: 0x04002A30 RID: 10800
 		private List<Renderer> sRendSCs;
 
-		// Token: 0x04002A1B RID: 10779
+		// Token: 0x04002A31 RID: 10801
 		private ParticleSystem.EmissionModule debrisEmission;
 
-		// Token: 0x04002A1C RID: 10780
+		// Token: 0x04002A32 RID: 10802
 		private ColorSpace _colorspace;
 
-		// Token: 0x04002A1D RID: 10781
+		// Token: 0x04002A33 RID: 10803
 		private float _deltaTime;
 	}
 }

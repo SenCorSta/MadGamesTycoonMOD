@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Suimono.Core
 {
-	// Token: 0x0200039E RID: 926
+	// Token: 0x020003A1 RID: 929
 	[ExecuteInEditMode]
 	public class Suimono_ShorelineObject : MonoBehaviour
 	{
-		// Token: 0x0600224A RID: 8778 RVA: 0x00167F3C File Offset: 0x0016613C
+		// Token: 0x0600229D RID: 8861 RVA: 0x001696E4 File Offset: 0x001678E4
 		private void OnDrawGizmos()
 		{
 			this.gizPos = base.transform.position;
@@ -17,7 +17,7 @@ namespace Suimono.Core
 			this.gizPos.y = this.gizPos.y - 0.03f;
 		}
 
-		// Token: 0x0600224B RID: 8779 RVA: 0x00167F94 File Offset: 0x00166194
+		// Token: 0x0600229E RID: 8862 RVA: 0x0016973C File Offset: 0x0016793C
 		private void Start()
 		{
 			if (Application.isPlaying)
@@ -48,7 +48,7 @@ namespace Suimono.Core
 			this.hasRendered = false;
 		}
 
-		// Token: 0x0600224C RID: 8780 RVA: 0x00168118 File Offset: 0x00166318
+		// Token: 0x0600229F RID: 8863 RVA: 0x001698C0 File Offset: 0x00167AC0
 		private void LateUpdate()
 		{
 			if (this.moduleObject != null)
@@ -274,141 +274,141 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x04002B88 RID: 11144
+		// Token: 0x04002B9E RID: 11166
 		public int lodIndex;
 
-		// Token: 0x04002B89 RID: 11145
+		// Token: 0x04002B9F RID: 11167
 		public int shorelineModeIndex;
 
-		// Token: 0x04002B8A RID: 11146
+		// Token: 0x04002BA0 RID: 11168
 		public List<string> shorelineModeOptions = new List<string>
 		{
 			"Auto-Generate",
 			"Custom Texture"
 		};
 
-		// Token: 0x04002B8B RID: 11147
+		// Token: 0x04002BA1 RID: 11169
 		public int shorelineRunIndex;
 
-		// Token: 0x04002B8C RID: 11148
+		// Token: 0x04002BA2 RID: 11170
 		public List<string> shorelineRunOptions = new List<string>
 		{
 			"At Start",
 			"Continuous"
 		};
 
-		// Token: 0x04002B8D RID: 11149
+		// Token: 0x04002BA3 RID: 11171
 		public Transform attachToSurface;
 
-		// Token: 0x04002B8E RID: 11150
+		// Token: 0x04002BA4 RID: 11172
 		public bool autoPosition = true;
 
-		// Token: 0x04002B8F RID: 11151
+		// Token: 0x04002BA5 RID: 11173
 		public float maxDepth = 25f;
 
-		// Token: 0x04002B90 RID: 11152
+		// Token: 0x04002BA6 RID: 11174
 		public float sceneDepth = 14.5f;
 
-		// Token: 0x04002B91 RID: 11153
+		// Token: 0x04002BA7 RID: 11175
 		public float shoreDepth = 27.7f;
 
-		// Token: 0x04002B92 RID: 11154
+		// Token: 0x04002BA8 RID: 11176
 		public bool debug;
 
-		// Token: 0x04002B93 RID: 11155
+		// Token: 0x04002BA9 RID: 11177
 		public string suimonoVersionNumber;
 
-		// Token: 0x04002B94 RID: 11156
+		// Token: 0x04002BAA RID: 11178
 		public int depthLayer = 2;
 
-		// Token: 0x04002B95 RID: 11157
+		// Token: 0x04002BAB RID: 11179
 		public List<string> suiLayerMasks = new List<string>();
 
-		// Token: 0x04002B96 RID: 11158
+		// Token: 0x04002BAC RID: 11180
 		public Texture2D customDepthTex;
 
-		// Token: 0x04002B97 RID: 11159
+		// Token: 0x04002BAD RID: 11181
 		public int useResolution = 512;
 
-		// Token: 0x04002B98 RID: 11160
+		// Token: 0x04002BAE RID: 11182
 		private Material useMat;
 
-		// Token: 0x04002B99 RID: 11161
+		// Token: 0x04002BAF RID: 11183
 		private Texture reflTex;
 
-		// Token: 0x04002B9A RID: 11162
+		// Token: 0x04002BB0 RID: 11184
 		private Texture envTex;
 
-		// Token: 0x04002B9B RID: 11163
+		// Token: 0x04002BB1 RID: 11185
 		private Matrix4x4 MV;
 
-		// Token: 0x04002B9C RID: 11164
+		// Token: 0x04002BB2 RID: 11186
 		private Camera CamInfo;
 
-		// Token: 0x04002B9D RID: 11165
+		// Token: 0x04002BB3 RID: 11187
 		private cameraTools CamTools;
 
-		// Token: 0x04002B9E RID: 11166
+		// Token: 0x04002BB4 RID: 11188
 		private SuimonoCamera_depth CamDepth;
 
-		// Token: 0x04002B9F RID: 11167
+		// Token: 0x04002BB5 RID: 11189
 		private float curr_sceneDepth;
 
-		// Token: 0x04002BA0 RID: 11168
+		// Token: 0x04002BB6 RID: 11190
 		private float curr_shoreDepth;
 
-		// Token: 0x04002BA1 RID: 11169
+		// Token: 0x04002BB7 RID: 11191
 		private float curr_foamDepth;
 
-		// Token: 0x04002BA2 RID: 11170
+		// Token: 0x04002BB8 RID: 11192
 		private float curr_edgeDepth;
 
-		// Token: 0x04002BA3 RID: 11171
+		// Token: 0x04002BB9 RID: 11193
 		private Vector3 currPos;
 
-		// Token: 0x04002BA4 RID: 11172
+		// Token: 0x04002BBA RID: 11194
 		private Vector3 currScale;
 
-		// Token: 0x04002BA5 RID: 11173
+		// Token: 0x04002BBB RID: 11195
 		private Quaternion currRot;
 
-		// Token: 0x04002BA6 RID: 11174
+		// Token: 0x04002BBC RID: 11196
 		private Vector4 camCoords = new Vector4(1f, 1f, 0f, 0f);
 
-		// Token: 0x04002BA7 RID: 11175
+		// Token: 0x04002BBD RID: 11197
 		private Material localMaterial;
 
-		// Token: 0x04002BA8 RID: 11176
+		// Token: 0x04002BBE RID: 11198
 		private Renderer renderObject;
 
-		// Token: 0x04002BA9 RID: 11177
+		// Token: 0x04002BBF RID: 11199
 		private MeshFilter meshObject;
 
-		// Token: 0x04002BAA RID: 11178
+		// Token: 0x04002BC0 RID: 11200
 		private Material matObject;
 
-		// Token: 0x04002BAB RID: 11179
+		// Token: 0x04002BC1 RID: 11201
 		public SuimonoModule moduleObject;
 
-		// Token: 0x04002BAC RID: 11180
+		// Token: 0x04002BC2 RID: 11202
 		private float maxScale;
 
-		// Token: 0x04002BAD RID: 11181
+		// Token: 0x04002BC3 RID: 11203
 		private int i;
 
-		// Token: 0x04002BAE RID: 11182
+		// Token: 0x04002BC4 RID: 11204
 		private string layerName;
 
-		// Token: 0x04002BAF RID: 11183
+		// Token: 0x04002BC5 RID: 11205
 		private bool hasRendered;
 
-		// Token: 0x04002BB0 RID: 11184
+		// Token: 0x04002BC6 RID: 11206
 		private bool renderPass = true;
 
-		// Token: 0x04002BB1 RID: 11185
+		// Token: 0x04002BC7 RID: 11207
 		private int saveMode = -1;
 
-		// Token: 0x04002BB2 RID: 11186
+		// Token: 0x04002BC8 RID: 11208
 		private Vector3 gizPos;
 	}
 }

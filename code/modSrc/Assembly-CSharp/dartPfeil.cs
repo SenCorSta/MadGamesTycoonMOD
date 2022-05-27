@@ -2,16 +2,16 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020002DC RID: 732
+// Token: 0x020002DF RID: 735
 public class dartPfeil : MonoBehaviour
 {
-	// Token: 0x060019FD RID: 6653 RVA: 0x0001183A File Offset: 0x0000FA3A
+	// Token: 0x06001A47 RID: 6727 RVA: 0x0010A533 File Offset: 0x00108733
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060019FE RID: 6654 RVA: 0x0010E66C File Offset: 0x0010C86C
+	// Token: 0x06001A48 RID: 6728 RVA: 0x0010A53C File Offset: 0x0010873C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -28,13 +28,13 @@ public class dartPfeil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019FF RID: 6655 RVA: 0x00011842 File Offset: 0x0000FA42
+	// Token: 0x06001A49 RID: 6729 RVA: 0x0010A5A6 File Offset: 0x001087A6
 	private void OnEnable()
 	{
 		this.timer = 0.72700006f;
 	}
 
-	// Token: 0x06001A00 RID: 6656 RVA: 0x0010E6D8 File Offset: 0x0010C8D8
+	// Token: 0x06001A4A RID: 6730 RVA: 0x0010A5B4 File Offset: 0x001087B4
 	private void Update()
 	{
 		this.timer += this.mS_.GetDeltaTime();
@@ -53,7 +53,7 @@ public class dartPfeil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A01 RID: 6657 RVA: 0x0001184F File Offset: 0x0000FA4F
+	// Token: 0x06001A4B RID: 6731 RVA: 0x0010A6E3 File Offset: 0x001088E3
 	private IEnumerator Fly()
 	{
 		base.gameObject.GetComponent<MeshRenderer>().enabled = false;
@@ -72,21 +72,21 @@ public class dartPfeil : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04002136 RID: 8502
+	// Token: 0x04002150 RID: 8528
 	private GameObject main_;
 
-	// Token: 0x04002137 RID: 8503
+	// Token: 0x04002151 RID: 8529
 	private mainScript mS_;
 
-	// Token: 0x04002138 RID: 8504
+	// Token: 0x04002152 RID: 8530
 	private sfxScript sfx_;
 
-	// Token: 0x04002139 RID: 8505
+	// Token: 0x04002153 RID: 8531
 	public GameObject prefabFlyingDart;
 
-	// Token: 0x0400213A RID: 8506
+	// Token: 0x04002154 RID: 8532
 	private GameObject myDart;
 
-	// Token: 0x0400213B RID: 8507
+	// Token: 0x04002155 RID: 8533
 	public float timer;
 }

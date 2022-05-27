@@ -3,23 +3,23 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x0200027D RID: 637
+// Token: 0x02000283 RID: 643
 public class Menu_WaitForPlayers : MonoBehaviour
 {
-	// Token: 0x060018D1 RID: 6353 RVA: 0x00010FF8 File Offset: 0x0000F1F8
+	// Token: 0x06001920 RID: 6432 RVA: 0x000F9598 File Offset: 0x000F7798
 	private void Awake()
 	{
 		this.manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
 		this.mpCalls_ = GameObject.Find("NetworkManager").GetComponent<mpCalls>();
 	}
 
-	// Token: 0x060018D2 RID: 6354 RVA: 0x00011024 File Offset: 0x0000F224
+	// Token: 0x06001921 RID: 6433 RVA: 0x000F95C4 File Offset: 0x000F77C4
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060018D3 RID: 6355 RVA: 0x0001102C File Offset: 0x0000F22C
+	// Token: 0x06001922 RID: 6434 RVA: 0x000F95CC File Offset: 0x000F77CC
 	private void OnEnable()
 	{
 		if (this.mpCalls_.isClient)
@@ -28,7 +28,7 @@ public class Menu_WaitForPlayers : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018D4 RID: 6356 RVA: 0x000FE238 File Offset: 0x000FC438
+	// Token: 0x06001923 RID: 6435 RVA: 0x000F95E8 File Offset: 0x000F77E8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class Menu_WaitForPlayers : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018D5 RID: 6357 RVA: 0x000FE2E4 File Offset: 0x000FC4E4
+	// Token: 0x06001924 RID: 6436 RVA: 0x000F9694 File Offset: 0x000F7894
 	private void Update()
 	{
 		if (!this.mS_.multiplayer)
@@ -79,7 +79,7 @@ public class Menu_WaitForPlayers : MonoBehaviour
 		Debug.Log("WaitForPlayers() CLOSE");
 	}
 
-	// Token: 0x060018D6 RID: 6358 RVA: 0x000FE378 File Offset: 0x000FC578
+	// Token: 0x06001925 RID: 6437 RVA: 0x000F9728 File Offset: 0x000F7928
 	public void BUTTON_Close()
 	{
 		this.FindScripts();
@@ -94,30 +94,30 @@ public class Menu_WaitForPlayers : MonoBehaviour
 		SceneManager.LoadScene("scene01");
 	}
 
-	// Token: 0x04001C66 RID: 7270
+	// Token: 0x04001C84 RID: 7300
 	private NetworkManager manager;
 
-	// Token: 0x04001C67 RID: 7271
+	// Token: 0x04001C85 RID: 7301
 	private mpCalls mpCalls_;
 
-	// Token: 0x04001C68 RID: 7272
+	// Token: 0x04001C86 RID: 7302
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001C69 RID: 7273
+	// Token: 0x04001C87 RID: 7303
 	private GameObject main_;
 
-	// Token: 0x04001C6A RID: 7274
+	// Token: 0x04001C88 RID: 7304
 	private mainScript mS_;
 
-	// Token: 0x04001C6B RID: 7275
+	// Token: 0x04001C89 RID: 7305
 	private textScript tS_;
 
-	// Token: 0x04001C6C RID: 7276
+	// Token: 0x04001C8A RID: 7306
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001C6D RID: 7277
+	// Token: 0x04001C8B RID: 7307
 	private sfxScript sfx_;
 
-	// Token: 0x04001C6E RID: 7278
+	// Token: 0x04001C8C RID: 7308
 	private float sendTimer;
 }

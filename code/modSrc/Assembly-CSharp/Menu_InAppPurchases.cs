@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001F8 RID: 504
+// Token: 0x020001F9 RID: 505
 public class Menu_InAppPurchases : MonoBehaviour
 {
-	// Token: 0x0600131D RID: 4893 RVA: 0x0000D1AC File Offset: 0x0000B3AC
+	// Token: 0x06001338 RID: 4920 RVA: 0x000CB3F7 File Offset: 0x000C95F7
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600131E RID: 4894 RVA: 0x000D59B4 File Offset: 0x000D3BB4
+	// Token: 0x06001339 RID: 4921 RVA: 0x000CB400 File Offset: 0x000C9600
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_InAppPurchases : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600131F RID: 4895 RVA: 0x0000D1B4 File Offset: 0x0000B3B4
+	// Token: 0x0600133A RID: 4922 RVA: 0x000CB4E6 File Offset: 0x000C96E6
 	public void Init(gameScript game_, bool closeMenu_)
 	{
 		this.closeMenu = closeMenu_;
@@ -53,7 +53,7 @@ public class Menu_InAppPurchases : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001320 RID: 4896 RVA: 0x000D5A9C File Offset: 0x000D3C9C
+	// Token: 0x0600133B RID: 4923 RVA: 0x000CB504 File Offset: 0x000C9704
 	private void SetData()
 	{
 		for (int i = 0; i < this.gS_.inAppPurchase.Length; i++)
@@ -71,7 +71,7 @@ public class Menu_InAppPurchases : MonoBehaviour
 		this.uiObjects[8].GetComponent<Text>().text = this.mS_.GetMoney(this.gS_.umsatzInApp, true);
 	}
 
-	// Token: 0x06001321 RID: 4897 RVA: 0x0000D1D0 File Offset: 0x0000B3D0
+	// Token: 0x0600133C RID: 4924 RVA: 0x000CB717 File Offset: 0x000C9917
 	public void BUTTON_InAppPurchase(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -79,7 +79,7 @@ public class Menu_InAppPurchases : MonoBehaviour
 		this.SetMaxVerdienstInApp();
 	}
 
-	// Token: 0x06001322 RID: 4898 RVA: 0x000D5CB0 File Offset: 0x000D3EB0
+	// Token: 0x0600133D RID: 4925 RVA: 0x000CB740 File Offset: 0x000C9940
 	public void BUTTON_AlleInAppPurchase()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -91,7 +91,7 @@ public class Menu_InAppPurchases : MonoBehaviour
 		this.SetMaxVerdienstInApp();
 	}
 
-	// Token: 0x06001323 RID: 4899 RVA: 0x0000D1F9 File Offset: 0x0000B3F9
+	// Token: 0x0600133E RID: 4926 RVA: 0x000CB782 File Offset: 0x000C9982
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -102,7 +102,7 @@ public class Menu_InAppPurchases : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001324 RID: 4900 RVA: 0x000D5CF4 File Offset: 0x000D3EF4
+	// Token: 0x0600133F RID: 4927 RVA: 0x000CB7B0 File Offset: 0x000C99B0
 	public void BUTTON_Yes()
 	{
 		for (int i = 0; i < this.gS_.inAppPurchase.Length; i++)
@@ -118,7 +118,7 @@ public class Menu_InAppPurchases : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001325 RID: 4901 RVA: 0x000D5D78 File Offset: 0x000D3F78
+	// Token: 0x06001340 RID: 4928 RVA: 0x000CB834 File Offset: 0x000C9A34
 	private float SetMaxVerdienstInApp()
 	{
 		float num = 0f;
@@ -142,7 +142,7 @@ public class Menu_InAppPurchases : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06001326 RID: 4902 RVA: 0x000D5E78 File Offset: 0x000D4078
+	// Token: 0x06001341 RID: 4929 RVA: 0x000CB934 File Offset: 0x000C9B34
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -160,36 +160,36 @@ public class Menu_InAppPurchases : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x0400176F RID: 5999
+	// Token: 0x04001778 RID: 6008
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001770 RID: 6000
+	// Token: 0x04001779 RID: 6009
 	private mainScript mS_;
 
-	// Token: 0x04001771 RID: 6001
+	// Token: 0x0400177A RID: 6010
 	private GameObject main_;
 
-	// Token: 0x04001772 RID: 6002
+	// Token: 0x0400177B RID: 6011
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001773 RID: 6003
+	// Token: 0x0400177C RID: 6012
 	private sfxScript sfx_;
 
-	// Token: 0x04001774 RID: 6004
+	// Token: 0x0400177D RID: 6013
 	private textScript tS_;
 
-	// Token: 0x04001775 RID: 6005
+	// Token: 0x0400177E RID: 6014
 	private genres genres_;
 
-	// Token: 0x04001776 RID: 6006
+	// Token: 0x0400177F RID: 6015
 	private games games_;
 
-	// Token: 0x04001777 RID: 6007
+	// Token: 0x04001780 RID: 6016
 	private gameScript gS_;
 
-	// Token: 0x04001778 RID: 6008
+	// Token: 0x04001781 RID: 6017
 	public bool[] g_InAppPurchase;
 
-	// Token: 0x04001779 RID: 6009
+	// Token: 0x04001782 RID: 6018
 	private bool closeMenu;
 }

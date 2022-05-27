@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x0200034D RID: 845
+// Token: 0x02000350 RID: 848
 public class Ellipse2 : MonoBehaviour
 {
-	// Token: 0x06001F6D RID: 8045 RVA: 0x0014BB1C File Offset: 0x00149D1C
+	// Token: 0x06001FC0 RID: 8128 RVA: 0x0014AF50 File Offset: 0x00149150
 	private void Start()
 	{
 		List<Vector2> points = new List<Vector2>(this.segments * 2 * this.numberOfEllipses);
@@ -19,12 +19,12 @@ public class Ellipse2 : MonoBehaviour
 		vectorLine.Draw();
 	}
 
-	// Token: 0x040027DF RID: 10207
+	// Token: 0x040027F5 RID: 10229
 	public Texture lineTexture;
 
-	// Token: 0x040027E0 RID: 10208
+	// Token: 0x040027F6 RID: 10230
 	public int segments = 60;
 
-	// Token: 0x040027E1 RID: 10209
+	// Token: 0x040027F7 RID: 10231
 	public int numberOfEllipses = 10;
 }

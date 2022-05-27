@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200030C RID: 780
+// Token: 0x0200030F RID: 783
 public class taskForschung : MonoBehaviour
 {
-	// Token: 0x06001B23 RID: 6947 RVA: 0x00012655 File Offset: 0x00010855
+	// Token: 0x06001B6D RID: 7021 RVA: 0x00110F23 File Offset: 0x0010F123
 	private void Awake()
 	{
 		base.transform.position = new Vector3(10f, 0f, 0f);
 	}
 
-	// Token: 0x06001B24 RID: 6948 RVA: 0x00012676 File Offset: 0x00010876
+	// Token: 0x06001B6E RID: 7022 RVA: 0x00110F44 File Offset: 0x0010F144
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001B25 RID: 6949 RVA: 0x00114294 File Offset: 0x00112494
+	// Token: 0x06001B6F RID: 7023 RVA: 0x00110F4C File Offset: 0x0010F14C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -73,7 +73,7 @@ public class taskForschung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B26 RID: 6950 RVA: 0x0001267E File Offset: 0x0001087E
+	// Token: 0x06001B70 RID: 7024 RVA: 0x001110E2 File Offset: 0x0010F2E2
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -83,7 +83,7 @@ public class taskForschung : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001B27 RID: 6951 RVA: 0x0011442C File Offset: 0x0011262C
+	// Token: 0x06001B71 RID: 7025 RVA: 0x00111114 File Offset: 0x0010F314
 	public float GetProzent()
 	{
 		this.FindScripts();
@@ -108,7 +108,7 @@ public class taskForschung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B28 RID: 6952 RVA: 0x001144F0 File Offset: 0x001126F0
+	// Token: 0x06001B72 RID: 7026 RVA: 0x001111D8 File Offset: 0x0010F3D8
 	public void Work(float f)
 	{
 		this.FindScripts();
@@ -230,7 +230,7 @@ public class taskForschung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B29 RID: 6953 RVA: 0x00114918 File Offset: 0x00112B18
+	// Token: 0x06001B73 RID: 7027 RVA: 0x00111600 File Offset: 0x0010F800
 	private void Complete()
 	{
 		int roomID_ = -1;
@@ -294,7 +294,7 @@ public class taskForschung : MonoBehaviour
 		{
 			if (this.mS_.mpCalls_.isServer)
 			{
-				this.mS_.mpCalls_.SERVER_Send_Forschung(this.mS_.mpCalls_.myID);
+				this.mS_.mpCalls_.SERVER_Send_Forschung(this.mS_.myID);
 			}
 			else
 			{
@@ -307,7 +307,7 @@ public class taskForschung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B2A RID: 6954 RVA: 0x00114CC0 File Offset: 0x00112EC0
+	// Token: 0x06001B74 RID: 7028 RVA: 0x001119A4 File Offset: 0x0010FBA4
 	private bool DoAutomatic()
 	{
 		if (!this.automatic)
@@ -445,7 +445,7 @@ public class taskForschung : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001B2B RID: 6955 RVA: 0x001150B8 File Offset: 0x001132B8
+	// Token: 0x06001B75 RID: 7029 RVA: 0x00111D9C File Offset: 0x0010FF9C
 	private void LeftNews(string c, Sprite icon, Sprite iconRoom)
 	{
 		int roomID_ = -1;
@@ -462,7 +462,7 @@ public class taskForschung : MonoBehaviour
 		this.guiMain_.CreateLeftNews(roomID_, icon, c, iconRoom);
 	}
 
-	// Token: 0x06001B2C RID: 6956 RVA: 0x00115118 File Offset: 0x00113318
+	// Token: 0x06001B76 RID: 7030 RVA: 0x00111DFC File Offset: 0x0010FFFC
 	public int GetRueckgeld()
 	{
 		int result = 0;
@@ -514,7 +514,7 @@ public class taskForschung : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001B2D RID: 6957 RVA: 0x0011527C File Offset: 0x0011347C
+	// Token: 0x06001B77 RID: 7031 RVA: 0x00111F60 File Offset: 0x00110160
 	public void Abbrechen()
 	{
 		int rueckgeld = this.GetRueckgeld();
@@ -535,54 +535,54 @@ public class taskForschung : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04002266 RID: 8806
+	// Token: 0x04002280 RID: 8832
 	public int myID = -1;
 
-	// Token: 0x04002267 RID: 8807
+	// Token: 0x04002281 RID: 8833
 	public int typ = -1;
 
-	// Token: 0x04002268 RID: 8808
+	// Token: 0x04002282 RID: 8834
 	public int slot = -1;
 
-	// Token: 0x04002269 RID: 8809
+	// Token: 0x04002283 RID: 8835
 	public bool automatic;
 
-	// Token: 0x0400226A RID: 8810
+	// Token: 0x04002284 RID: 8836
 	private GameObject main_;
 
-	// Token: 0x0400226B RID: 8811
+	// Token: 0x04002285 RID: 8837
 	private mainScript mS_;
 
-	// Token: 0x0400226C RID: 8812
+	// Token: 0x04002286 RID: 8838
 	private genres genres_;
 
-	// Token: 0x0400226D RID: 8813
+	// Token: 0x04002287 RID: 8839
 	private themes themes_;
 
-	// Token: 0x0400226E RID: 8814
+	// Token: 0x04002288 RID: 8840
 	private engineFeatures eF_;
 
-	// Token: 0x0400226F RID: 8815
+	// Token: 0x04002289 RID: 8841
 	private gameplayFeatures gF_;
 
-	// Token: 0x04002270 RID: 8816
+	// Token: 0x0400228A RID: 8842
 	private hardware hardware_;
 
-	// Token: 0x04002271 RID: 8817
+	// Token: 0x0400228B RID: 8843
 	private hardwareFeatures hardwareFeatures_;
 
-	// Token: 0x04002272 RID: 8818
+	// Token: 0x0400228C RID: 8844
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002273 RID: 8819
+	// Token: 0x0400228D RID: 8845
 	private textScript tS_;
 
-	// Token: 0x04002274 RID: 8820
+	// Token: 0x0400228E RID: 8846
 	private roomDataScript rdS_;
 
-	// Token: 0x04002275 RID: 8821
+	// Token: 0x0400228F RID: 8847
 	private unlockScript unlock_;
 
-	// Token: 0x04002276 RID: 8822
+	// Token: 0x04002290 RID: 8848
 	private forschungSonstiges fS_;
 }
