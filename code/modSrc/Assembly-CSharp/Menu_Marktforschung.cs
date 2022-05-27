@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001AD RID: 429
+// Token: 0x020001AC RID: 428
 public class Menu_Marktforschung : MonoBehaviour
 {
-	// Token: 0x06001038 RID: 4152 RVA: 0x000AB521 File Offset: 0x000A9721
+	// Token: 0x0600101E RID: 4126 RVA: 0x0000B640 File Offset: 0x00009840
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001039 RID: 4153 RVA: 0x000AB52C File Offset: 0x000A972C
+	// Token: 0x0600101F RID: 4127 RVA: 0x000B78F4 File Offset: 0x000B5AF4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -48,12 +48,12 @@ public class Menu_Marktforschung : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600103A RID: 4154 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x06001020 RID: 4128 RVA: 0x00002098 File Offset: 0x00000298
 	private void Update()
 	{
 	}
 
-	// Token: 0x0600103B RID: 4155 RVA: 0x000AB634 File Offset: 0x000A9834
+	// Token: 0x06001021 RID: 4129 RVA: 0x000B79FC File Offset: 0x000B5BFC
 	public void Init(roomScript roomS_)
 	{
 		this.FindScripts();
@@ -126,7 +126,7 @@ public class Menu_Marktforschung : MonoBehaviour
 		this.uiObjects[23].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x0600103C RID: 4156 RVA: 0x000ABAE0 File Offset: 0x000A9CE0
+	// Token: 0x06001022 RID: 4130 RVA: 0x000B7EA8 File Offset: 0x000B60A8
 	private void SetPlatform(int id, int objectSlot)
 	{
 		GameObject gameObject = null;
@@ -147,7 +147,7 @@ public class Menu_Marktforschung : MonoBehaviour
 		this.uiObjects[objectSlot].GetComponent<tooltip>().c = "";
 	}
 
-	// Token: 0x0600103D RID: 4157 RVA: 0x000ABB93 File Offset: 0x000A9D93
+	// Token: 0x06001023 RID: 4131 RVA: 0x0000B648 File Offset: 0x00009848
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -158,7 +158,7 @@ public class Menu_Marktforschung : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600103E RID: 4158 RVA: 0x000ABBD0 File Offset: 0x000A9DD0
+	// Token: 0x06001024 RID: 4132 RVA: 0x000B7F5C File Offset: 0x000B615C
 	public void BUTTON_StarteMarktforschung()
 	{
 		if (!this.rS_)
@@ -179,33 +179,33 @@ public class Menu_Marktforschung : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040014AB RID: 5291
+	// Token: 0x040014A2 RID: 5282
 	public GameObject[] uiObjects;
 
-	// Token: 0x040014AC RID: 5292
+	// Token: 0x040014A3 RID: 5283
 	private GameObject main_;
 
-	// Token: 0x040014AD RID: 5293
+	// Token: 0x040014A4 RID: 5284
 	private mainScript mS_;
 
-	// Token: 0x040014AE RID: 5294
+	// Token: 0x040014A5 RID: 5285
 	private textScript tS_;
 
-	// Token: 0x040014AF RID: 5295
+	// Token: 0x040014A6 RID: 5286
 	private unlockScript unlock_;
 
-	// Token: 0x040014B0 RID: 5296
+	// Token: 0x040014A7 RID: 5287
 	private genres genres_;
 
-	// Token: 0x040014B1 RID: 5297
+	// Token: 0x040014A8 RID: 5288
 	private GUI_Main guiMain_;
 
-	// Token: 0x040014B2 RID: 5298
+	// Token: 0x040014A9 RID: 5289
 	private sfxScript sfx_;
 
-	// Token: 0x040014B3 RID: 5299
+	// Token: 0x040014AA RID: 5290
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040014B4 RID: 5300
+	// Token: 0x040014AB RID: 5291
 	private roomScript rS_;
 }

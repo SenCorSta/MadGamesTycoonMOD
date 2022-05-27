@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x02000025 RID: 37
 public class ExampleColorControl : MonoBehaviour
 {
-	// Token: 0x060000A1 RID: 161 RVA: 0x00005414 File Offset: 0x00003614
+	// Token: 0x060000A1 RID: 161 RVA: 0x0001BA98 File Offset: 0x00019C98
 	private void Start()
 	{
 		this.sprites = base.GetComponentsInChildren<SpriteRenderer>();
@@ -18,43 +18,43 @@ public class ExampleColorControl : MonoBehaviour
 		this.SetTexture();
 	}
 
-	// Token: 0x060000A2 RID: 162 RVA: 0x00005472 File Offset: 0x00003672
+	// Token: 0x060000A2 RID: 162 RVA: 0x00002750 File Offset: 0x00000950
 	private void Update()
 	{
 		this.SetColor(new Color(this.r, this.g, this.b, this.a));
 	}
 
-	// Token: 0x060000A3 RID: 163 RVA: 0x00005497 File Offset: 0x00003697
+	// Token: 0x060000A3 RID: 163 RVA: 0x00002775 File Offset: 0x00000975
 	private float GetSinValue(float speed)
 	{
 		return 0.5f + 0.5f * Mathf.Sin(Time.time * speed);
 	}
 
-	// Token: 0x060000A4 RID: 164 RVA: 0x000054B1 File Offset: 0x000036B1
+	// Token: 0x060000A4 RID: 164 RVA: 0x0000278F File Offset: 0x0000098F
 	public void SetHue(float value)
 	{
 		this.r = value;
 	}
 
-	// Token: 0x060000A5 RID: 165 RVA: 0x000054BA File Offset: 0x000036BA
+	// Token: 0x060000A5 RID: 165 RVA: 0x00002798 File Offset: 0x00000998
 	public void SetSaturation(float value)
 	{
 		this.g = value;
 	}
 
-	// Token: 0x060000A6 RID: 166 RVA: 0x000054C3 File Offset: 0x000036C3
+	// Token: 0x060000A6 RID: 166 RVA: 0x000027A1 File Offset: 0x000009A1
 	public void SetValue(float value)
 	{
 		this.b = value;
 	}
 
-	// Token: 0x060000A7 RID: 167 RVA: 0x000054CC File Offset: 0x000036CC
+	// Token: 0x060000A7 RID: 167 RVA: 0x000027AA File Offset: 0x000009AA
 	public void SetAlpha(float value)
 	{
 		this.a = value;
 	}
 
-	// Token: 0x060000A8 RID: 168 RVA: 0x000054D8 File Offset: 0x000036D8
+	// Token: 0x060000A8 RID: 168 RVA: 0x0001BAF8 File Offset: 0x00019CF8
 	public void ChangeTexture(int change)
 	{
 		this.texIndex += change;
@@ -69,7 +69,7 @@ public class ExampleColorControl : MonoBehaviour
 		this.SetTexture();
 	}
 
-	// Token: 0x060000A9 RID: 169 RVA: 0x0000552C File Offset: 0x0000372C
+	// Token: 0x060000A9 RID: 169 RVA: 0x0001BB4C File Offset: 0x00019D4C
 	private void SetColor(Color color)
 	{
 		for (int i = 0; i < this.sprites.Length; i++)
@@ -83,7 +83,7 @@ public class ExampleColorControl : MonoBehaviour
 		this.colorPreview.color = color;
 	}
 
-	// Token: 0x060000AA RID: 170 RVA: 0x00005588 File Offset: 0x00003788
+	// Token: 0x060000AA RID: 170 RVA: 0x0001BBA8 File Offset: 0x00019DA8
 	private void SetTexture()
 	{
 		Sprite sprite = this.textures[this.texIndex];

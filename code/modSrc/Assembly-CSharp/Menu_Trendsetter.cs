@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001D9 RID: 473
+// Token: 0x020001D8 RID: 472
 public class Menu_Trendsetter : MonoBehaviour
 {
-	// Token: 0x060011D3 RID: 4563 RVA: 0x000BC0D7 File Offset: 0x000BA2D7
+	// Token: 0x060011B9 RID: 4537 RVA: 0x0000C67A File Offset: 0x0000A87A
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060011D4 RID: 4564 RVA: 0x000BC0E0 File Offset: 0x000BA2E0
+	// Token: 0x060011BA RID: 4538 RVA: 0x000C72AC File Offset: 0x000C54AC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_Trendsetter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D5 RID: 4565 RVA: 0x000BC1C6 File Offset: 0x000BA3C6
+	// Token: 0x060011BB RID: 4539 RVA: 0x0000C682 File Offset: 0x0000A882
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -53,7 +53,7 @@ public class Menu_Trendsetter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D6 RID: 4566 RVA: 0x000BC1E4 File Offset: 0x000BA3E4
+	// Token: 0x060011BC RID: 4540 RVA: 0x000C7394 File Offset: 0x000C5594
 	public void Init(gameScript script_)
 	{
 		this.FindScripts();
@@ -96,11 +96,7 @@ public class Menu_Trendsetter : MonoBehaviour
 					this.mS_.trendAntiTheme++;
 				}
 			}
-			if (!this.mS_.myPubS_)
-			{
-				this.mS_.FindMyPublisherScript();
-			}
-			this.mS_.AddAwards(6, this.mS_.myPubS_);
+			this.mS_.awards[6]++;
 			if (this.mS_.multiplayer)
 			{
 				if (this.mS_.mpCalls_.isServer)
@@ -120,7 +116,7 @@ public class Menu_Trendsetter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D7 RID: 4567 RVA: 0x000BC430 File Offset: 0x000BA630
+	// Token: 0x060011BD RID: 4541 RVA: 0x000C75C0 File Offset: 0x000C57C0
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -129,33 +125,33 @@ public class Menu_Trendsetter : MonoBehaviour
 		this.guiMain_.CreateTopNewsTrend(this.genres_.GetName(this.mS_.trendGenre) + " / " + this.tS_.GetThemes(this.mS_.trendTheme), this.genres_.GetPic(this.mS_.trendGenre));
 	}
 
-	// Token: 0x060011D8 RID: 4568 RVA: 0x000BC4B8 File Offset: 0x000BA6B8
+	// Token: 0x060011BE RID: 4542 RVA: 0x0000C69D File Offset: 0x0000A89D
 	public void BUTTON_Yes()
 	{
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x0400164D RID: 5709
+	// Token: 0x04001644 RID: 5700
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400164E RID: 5710
+	// Token: 0x04001645 RID: 5701
 	private GameObject main_;
 
-	// Token: 0x0400164F RID: 5711
+	// Token: 0x04001646 RID: 5702
 	private mainScript mS_;
 
-	// Token: 0x04001650 RID: 5712
+	// Token: 0x04001647 RID: 5703
 	private textScript tS_;
 
-	// Token: 0x04001651 RID: 5713
+	// Token: 0x04001648 RID: 5704
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001652 RID: 5714
+	// Token: 0x04001649 RID: 5705
 	private sfxScript sfx_;
 
-	// Token: 0x04001653 RID: 5715
+	// Token: 0x0400164A RID: 5706
 	private genres genres_;
 
-	// Token: 0x04001654 RID: 5716
+	// Token: 0x0400164B RID: 5707
 	private themes themes_;
 }

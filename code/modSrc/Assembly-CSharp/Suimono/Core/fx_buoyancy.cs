@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Suimono.Core
 {
-	// Token: 0x020003AA RID: 938
+	// Token: 0x020003A7 RID: 935
 	public class fx_buoyancy : MonoBehaviour
 	{
-		// Token: 0x060022D1 RID: 8913 RVA: 0x0016D058 File Offset: 0x0016B258
+		// Token: 0x0600227E RID: 8830 RVA: 0x0016B7B0 File Offset: 0x001699B0
 		private void OnDrawGizmos()
 		{
 			this.gizPos = base.transform.position;
@@ -15,7 +15,7 @@ namespace Suimono.Core
 			this.gizPos.y = this.gizPos.y - 0.03f;
 		}
 
-		// Token: 0x060022D2 RID: 8914 RVA: 0x0016D0B0 File Offset: 0x0016B2B0
+		// Token: 0x0600227F RID: 8831 RVA: 0x0016B808 File Offset: 0x00169A08
 		private void Start()
 		{
 			if (GameObject.Find("SUIMONO_Module") != null)
@@ -51,7 +51,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x060022D3 RID: 8915 RVA: 0x0016D1B8 File Offset: 0x0016B3B8
+		// Token: 0x06002280 RID: 8832 RVA: 0x0016B910 File Offset: 0x00169B10
 		private void FixedUpdate()
 		{
 			this.SetUpdate();
@@ -70,7 +70,7 @@ namespace Suimono.Core
 			this.buoyancy = 1f + this.maxVerticalSpeed * this.buoyancyStrength;
 		}
 
-		// Token: 0x060022D4 RID: 8916 RVA: 0x0016D254 File Offset: 0x0016B454
+		// Token: 0x06002281 RID: 8833 RVA: 0x0016B9AC File Offset: 0x00169BAC
 		private void SetUpdate()
 		{
 			if (this.moduleObject != null)
@@ -188,130 +188,130 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x04002C94 RID: 11412
+		// Token: 0x04002C7E RID: 11390
 		public bool applyToParent;
 
-		// Token: 0x04002C95 RID: 11413
+		// Token: 0x04002C7F RID: 11391
 		public bool engageBuoyancy;
 
-		// Token: 0x04002C96 RID: 11414
+		// Token: 0x04002C80 RID: 11392
 		public float activationRange = 5000f;
 
-		// Token: 0x04002C97 RID: 11415
+		// Token: 0x04002C81 RID: 11393
 		public bool inheritForce;
 
-		// Token: 0x04002C98 RID: 11416
+		// Token: 0x04002C82 RID: 11394
 		public bool keepAtSurface;
 
-		// Token: 0x04002C99 RID: 11417
+		// Token: 0x04002C83 RID: 11395
 		public float buoyancyOffset;
 
-		// Token: 0x04002C9A RID: 11418
+		// Token: 0x04002C84 RID: 11396
 		public float buoyancyStrength = 1f;
 
-		// Token: 0x04002C9B RID: 11419
+		// Token: 0x04002C85 RID: 11397
 		public float forceAmount = 1f;
 
-		// Token: 0x04002C9C RID: 11420
+		// Token: 0x04002C86 RID: 11398
 		public float forceHeightFactor;
 
-		// Token: 0x04002C9D RID: 11421
+		// Token: 0x04002C87 RID: 11399
 		private float maxVerticalSpeed = 5f;
 
-		// Token: 0x04002C9E RID: 11422
+		// Token: 0x04002C88 RID: 11400
 		private float surfaceRange = 0.2f;
 
-		// Token: 0x04002C9F RID: 11423
+		// Token: 0x04002C89 RID: 11401
 		private float buoyancy;
 
-		// Token: 0x04002CA0 RID: 11424
+		// Token: 0x04002C8A RID: 11402
 		private float surfaceLevel;
 
-		// Token: 0x04002CA1 RID: 11425
+		// Token: 0x04002C8B RID: 11403
 		private float underwaterLevel;
 
-		// Token: 0x04002CA2 RID: 11426
+		// Token: 0x04002C8C RID: 11404
 		private bool isUnderwater;
 
-		// Token: 0x04002CA3 RID: 11427
+		// Token: 0x04002C8D RID: 11405
 		private Transform physTarget;
 
-		// Token: 0x04002CA4 RID: 11428
+		// Token: 0x04002C8E RID: 11406
 		private SuimonoModule moduleObject;
 
-		// Token: 0x04002CA5 RID: 11429
+		// Token: 0x04002C8F RID: 11407
 		private float waveHeight;
 
-		// Token: 0x04002CA6 RID: 11430
+		// Token: 0x04002C90 RID: 11408
 		private float modTime;
 
-		// Token: 0x04002CA7 RID: 11431
+		// Token: 0x04002C91 RID: 11409
 		private float splitFac = 1f;
 
-		// Token: 0x04002CA8 RID: 11432
+		// Token: 0x04002C92 RID: 11410
 		private Rigidbody rigidbodyComponent;
 
-		// Token: 0x04002CA9 RID: 11433
+		// Token: 0x04002C93 RID: 11411
 		private float isOver;
 
-		// Token: 0x04002CAA RID: 11434
+		// Token: 0x04002C94 RID: 11412
 		private Vector2 forceAngles = new Vector2(0f, 0f);
 
-		// Token: 0x04002CAB RID: 11435
+		// Token: 0x04002C95 RID: 11413
 		private float forceSpeed;
 
-		// Token: 0x04002CAC RID: 11436
+		// Token: 0x04002C96 RID: 11414
 		private float waveHt;
 
-		// Token: 0x04002CAD RID: 11437
+		// Token: 0x04002C97 RID: 11415
 		private int randSeed;
 
-		// Token: 0x04002CAE RID: 11438
+		// Token: 0x04002C98 RID: 11416
 		private Suimono.Core.Random buyRand;
 
-		// Token: 0x04002CAF RID: 11439
+		// Token: 0x04002C99 RID: 11417
 		private Vector3 gizPos;
 
-		// Token: 0x04002CB0 RID: 11440
+		// Token: 0x04002C9A RID: 11418
 		private float testObjectHeight;
 
-		// Token: 0x04002CB1 RID: 11441
+		// Token: 0x04002C9B RID: 11419
 		private float buoyancyFactor;
 
-		// Token: 0x04002CB2 RID: 11442
+		// Token: 0x04002C9C RID: 11420
 		private float forceMod;
 
-		// Token: 0x04002CB3 RID: 11443
+		// Token: 0x04002C9D RID: 11421
 		private float waveFac;
 
-		// Token: 0x04002CB4 RID: 11444
+		// Token: 0x04002C9E RID: 11422
 		private float[] heightValues;
 
-		// Token: 0x04002CB5 RID: 11445
+		// Token: 0x04002C9F RID: 11423
 		private bool isEnabled = true;
 
-		// Token: 0x04002CB6 RID: 11446
+		// Token: 0x04002CA0 RID: 11424
 		private bool performHeight;
 
-		// Token: 0x04002CB7 RID: 11447
+		// Token: 0x04002CA1 RID: 11425
 		private float currRange = -1f;
 
-		// Token: 0x04002CB8 RID: 11448
+		// Token: 0x04002CA2 RID: 11426
 		private Vector3 physPosition;
 
-		// Token: 0x04002CB9 RID: 11449
+		// Token: 0x04002CA3 RID: 11427
 		private bool saveRigidbodyState;
 
-		// Token: 0x04002CBA RID: 11450
+		// Token: 0x04002CA4 RID: 11428
 		private float lerpSurfacePosTime;
 
-		// Token: 0x04002CBB RID: 11451
+		// Token: 0x04002CA5 RID: 11429
 		private float targetYPosition;
 
-		// Token: 0x04002CBC RID: 11452
+		// Token: 0x04002CA6 RID: 11430
 		private float startYPosition;
 
-		// Token: 0x04002CBD RID: 11453
+		// Token: 0x04002CA7 RID: 11431
 		private bool saveKeepAtSurface;
 	}
 }

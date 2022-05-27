@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Vectrosity
 {
-	// Token: 0x02000395 RID: 917
+	// Token: 0x02000392 RID: 914
 	[AddComponentMenu("Vectrosity/VisibilityControlAlways")]
 	public class VisibilityControlAlways : MonoBehaviour
 	{
-		// Token: 0x170000D7 RID: 215
-		// (get) Token: 0x06002224 RID: 8740 RVA: 0x0015FEFB File Offset: 0x0015E0FB
+		// Token: 0x170000D3 RID: 211
+		// (get) Token: 0x060021D1 RID: 8657 RVA: 0x000169DF File Offset: 0x00014BDF
 		public RefInt objectNumber
 		{
 			get
@@ -17,7 +17,7 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x06002225 RID: 8741 RVA: 0x0015FF03 File Offset: 0x0015E103
+		// Token: 0x060021D2 RID: 8658 RVA: 0x000169E7 File Offset: 0x00014BE7
 		public void Setup(VectorLine line)
 		{
 			VectorManager.VisibilitySetup(base.transform, line, out this.m_objectNumber);
@@ -25,7 +25,7 @@ namespace Vectrosity
 			this.m_vectorLine = line;
 		}
 
-		// Token: 0x06002226 RID: 8742 RVA: 0x0015FF2E File Offset: 0x0015E12E
+		// Token: 0x060021D3 RID: 8659 RVA: 0x00016A12 File Offset: 0x00014C12
 		private void OnDestroy()
 		{
 			if (this.m_destroyed)
@@ -41,22 +41,22 @@ namespace Vectrosity
 			VectorLine.Destroy(ref this.m_vectorLine);
 		}
 
-		// Token: 0x06002227 RID: 8743 RVA: 0x0015FF64 File Offset: 0x0015E164
+		// Token: 0x060021D4 RID: 8660 RVA: 0x00016A48 File Offset: 0x00014C48
 		public void DontDestroyLine()
 		{
 			this.m_dontDestroyLine = true;
 		}
 
-		// Token: 0x04002971 RID: 10609
+		// Token: 0x0400295B RID: 10587
 		private RefInt m_objectNumber;
 
-		// Token: 0x04002972 RID: 10610
+		// Token: 0x0400295C RID: 10588
 		private VectorLine m_vectorLine;
 
-		// Token: 0x04002973 RID: 10611
+		// Token: 0x0400295D RID: 10589
 		private bool m_destroyed;
 
-		// Token: 0x04002974 RID: 10612
+		// Token: 0x0400295E RID: 10590
 		private bool m_dontDestroyLine;
 	}
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000158 RID: 344
+// Token: 0x02000157 RID: 343
 public class Menu_W_GameVerwerfen : MonoBehaviour
 {
-	// Token: 0x06000CAD RID: 3245 RVA: 0x00089BCF File Offset: 0x00087DCF
+	// Token: 0x06000C97 RID: 3223 RVA: 0x00008CD7 File Offset: 0x00006ED7
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000CAE RID: 3246 RVA: 0x00089BD8 File Offset: 0x00087DD8
+	// Token: 0x06000C98 RID: 3224 RVA: 0x00098C58 File Offset: 0x00096E58
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_W_GameVerwerfen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CAF RID: 3247 RVA: 0x00089C82 File Offset: 0x00087E82
+	// Token: 0x06000C99 RID: 3225 RVA: 0x00008CDF File Offset: 0x00006EDF
 	public void Init(gameScript script_, taskGame task_)
 	{
 		if (!script_)
@@ -48,14 +48,14 @@ public class Menu_W_GameVerwerfen : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.gS_.GetNameWithTag();
 	}
 
-	// Token: 0x06000CB0 RID: 3248 RVA: 0x00089CB8 File Offset: 0x00087EB8
+	// Token: 0x06000C9A RID: 3226 RVA: 0x00008D15 File Offset: 0x00006F15
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000CB1 RID: 3249 RVA: 0x00089CD4 File Offset: 0x00087ED4
+	// Token: 0x06000C9B RID: 3227 RVA: 0x00098D04 File Offset: 0x00096F04
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -79,30 +79,30 @@ public class Menu_W_GameVerwerfen : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x04001123 RID: 4387
+	// Token: 0x0400111B RID: 4379
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001124 RID: 4388
+	// Token: 0x0400111C RID: 4380
 	private platformScript pS_;
 
-	// Token: 0x04001125 RID: 4389
+	// Token: 0x0400111D RID: 4381
 	private GameObject main_;
 
-	// Token: 0x04001126 RID: 4390
+	// Token: 0x0400111E RID: 4382
 	private mainScript mS_;
 
-	// Token: 0x04001127 RID: 4391
+	// Token: 0x0400111F RID: 4383
 	private textScript tS_;
 
-	// Token: 0x04001128 RID: 4392
+	// Token: 0x04001120 RID: 4384
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001129 RID: 4393
+	// Token: 0x04001121 RID: 4385
 	private sfxScript sfx_;
 
-	// Token: 0x0400112A RID: 4394
+	// Token: 0x04001122 RID: 4386
 	private gameScript gS_;
 
-	// Token: 0x0400112B RID: 4395
+	// Token: 0x04001123 RID: 4387
 	private taskGame taskGame_;
 }

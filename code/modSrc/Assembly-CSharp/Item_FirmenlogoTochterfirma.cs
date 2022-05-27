@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000BB RID: 187
 public class Item_FirmenlogoTochterfirma : MonoBehaviour
 {
-	// Token: 0x060006A2 RID: 1698 RVA: 0x000512E9 File Offset: 0x0004F4E9
+	// Token: 0x06000699 RID: 1689 RVA: 0x00005BEA File Offset: 0x00003DEA
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060006A3 RID: 1699 RVA: 0x000512F4 File Offset: 0x0004F4F4
+	// Token: 0x0600069A RID: 1690 RVA: 0x00063AEC File Offset: 0x00061CEC
 	public void SetData()
 	{
 		if (this.guiMain_.uiObjects[391].GetComponent<Menu_TochterfirmaRename>().pS_.logoID == this.myID)
@@ -22,13 +22,13 @@ public class Item_FirmenlogoTochterfirma : MonoBehaviour
 		this.uiObjects[0].GetComponent<Image>().sprite = this.guiMain_.GetCompanyLogo(this.myID);
 	}
 
-	// Token: 0x060006A4 RID: 1700 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x0600069B RID: 1691 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060006A5 RID: 1701 RVA: 0x0005137C File Offset: 0x0004F57C
+	// Token: 0x0600069C RID: 1692 RVA: 0x00063B74 File Offset: 0x00061D74
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

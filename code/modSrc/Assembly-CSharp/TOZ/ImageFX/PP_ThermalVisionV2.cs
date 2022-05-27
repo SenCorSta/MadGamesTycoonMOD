@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace TOZ.ImageFX
 {
-	// Token: 0x020003DB RID: 987
+	// Token: 0x020003D8 RID: 984
 	[ExecuteInEditMode]
 	public sealed class PP_ThermalVisionV2 : PostProcessBase
 	{
-		// Token: 0x0600239A RID: 9114 RVA: 0x00170D33 File Offset: 0x0016EF33
+		// Token: 0x06002347 RID: 9031 RVA: 0x00017F3B File Offset: 0x0001613B
 		private void Awake()
 		{
 			this.shd = Shader.Find("Hidden/TOZ/ImageFX/ThermalVisionV2");
@@ -15,7 +15,7 @@ namespace TOZ.ImageFX
 			this.cam.depthTextureMode |= DepthTextureMode.DepthNormals;
 		}
 
-		// Token: 0x0600239B RID: 9115 RVA: 0x00170D64 File Offset: 0x0016EF64
+		// Token: 0x06002348 RID: 9032 RVA: 0x0016E5E0 File Offset: 0x0016C7E0
 		private void OnRenderImage(RenderTexture src, RenderTexture dest)
 		{
 			if (!base.enabled)
@@ -53,7 +53,7 @@ namespace TOZ.ImageFX
 			PP_ThermalVisionV2.CustomGraphicsBlit(src, dest, this.mat, 0);
 		}
 
-		// Token: 0x0600239C RID: 9116 RVA: 0x00170F68 File Offset: 0x0016F168
+		// Token: 0x06002349 RID: 9033 RVA: 0x0016DF04 File Offset: 0x0016C104
 		private static void CustomGraphicsBlit(RenderTexture source, RenderTexture dest, Material mat, int pass)
 		{
 			RenderTexture.active = dest;
@@ -74,7 +74,7 @@ namespace TOZ.ImageFX
 			GL.PopMatrix();
 		}
 
-		// Token: 0x0600239D RID: 9117 RVA: 0x0017103C File Offset: 0x0016F23C
+		// Token: 0x0600234A RID: 9034 RVA: 0x0016E7E4 File Offset: 0x0016C9E4
 		private void ApplyVariables()
 		{
 			if (this.NoiseTex != null)
@@ -89,20 +89,20 @@ namespace TOZ.ImageFX
 			this.mat.SetFloat("_Gamma", this.Gamma);
 		}
 
-		// Token: 0x04002D77 RID: 11639
+		// Token: 0x04002D61 RID: 11617
 		public Texture2D ThermalTex;
 
-		// Token: 0x04002D78 RID: 11640
+		// Token: 0x04002D62 RID: 11618
 		public Texture2D NoiseTex;
 
-		// Token: 0x04002D79 RID: 11641
+		// Token: 0x04002D63 RID: 11619
 		public float NoiseAmount = 1f;
 
-		// Token: 0x04002D7A RID: 11642
+		// Token: 0x04002D64 RID: 11620
 		[Range(0f, 2.2f)]
 		public float Gamma = 2.2f;
 
-		// Token: 0x04002D7B RID: 11643
+		// Token: 0x04002D65 RID: 11621
 		private Camera cam;
 	}
 }

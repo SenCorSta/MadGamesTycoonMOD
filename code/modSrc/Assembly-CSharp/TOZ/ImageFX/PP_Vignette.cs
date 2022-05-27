@@ -3,34 +3,34 @@ using UnityEngine;
 
 namespace TOZ.ImageFX
 {
-	// Token: 0x020003DE RID: 990
+	// Token: 0x020003DB RID: 987
 	[ExecuteInEditMode]
 	public sealed class PP_Vignette : PostProcessBase
 	{
-		// Token: 0x060023A6 RID: 9126 RVA: 0x00171160 File Offset: 0x0016F360
+		// Token: 0x06002353 RID: 9043 RVA: 0x0001800F File Offset: 0x0001620F
 		private void Awake()
 		{
 			this.shd = Shader.Find("Hidden/TOZ/ImageFX/Vignette");
 		}
 
-		// Token: 0x060023A7 RID: 9127 RVA: 0x00171172 File Offset: 0x0016F372
+		// Token: 0x06002354 RID: 9044 RVA: 0x00018021 File Offset: 0x00016221
 		private void OnRenderImage(RenderTexture src, RenderTexture dest)
 		{
 			this.ApplyVariables();
 			Graphics.Blit(src, dest, this.mat);
 		}
 
-		// Token: 0x060023A8 RID: 9128 RVA: 0x00171187 File Offset: 0x0016F387
+		// Token: 0x06002355 RID: 9045 RVA: 0x00018036 File Offset: 0x00016236
 		private void ApplyVariables()
 		{
 			this.mat.SetFloat("_Radius", this.Radius);
 			this.mat.SetFloat("_Darkness", this.Darkness);
 		}
 
-		// Token: 0x04002D7E RID: 11646
+		// Token: 0x04002D68 RID: 11624
 		public float Radius = 10f;
 
-		// Token: 0x04002D7F RID: 11647
+		// Token: 0x04002D69 RID: 11625
 		public float Darkness = 0.5f;
 	}
 }

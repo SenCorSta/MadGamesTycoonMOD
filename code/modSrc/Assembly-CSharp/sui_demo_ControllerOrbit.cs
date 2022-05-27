@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x02000037 RID: 55
 public class sui_demo_ControllerOrbit : MonoBehaviour
 {
-	// Token: 0x060000CA RID: 202 RVA: 0x00008D20 File Offset: 0x00006F20
+	// Token: 0x060000CA RID: 202 RVA: 0x0001F230 File Offset: 0x0001D430
 	private void Awake()
 	{
 		this.suimonoGameObject = GameObject.Find("SUIMONO_Module");
@@ -19,7 +19,7 @@ public class sui_demo_ControllerOrbit : MonoBehaviour
 		this.IC = base.gameObject.GetComponent<sui_demo_InputController>();
 	}
 
-	// Token: 0x060000CB RID: 203 RVA: 0x00008DA0 File Offset: 0x00006FA0
+	// Token: 0x060000CB RID: 203 RVA: 0x0001F2B0 File Offset: 0x0001D4B0
 	private void FixedUpdate()
 	{
 		if (this.isActive)

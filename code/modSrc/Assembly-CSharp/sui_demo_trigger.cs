@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x0200003C RID: 60
 public class sui_demo_trigger : MonoBehaviour
 {
-	// Token: 0x060000DA RID: 218 RVA: 0x0000A8FC File Offset: 0x00008AFC
+	// Token: 0x060000DA RID: 218 RVA: 0x00002956 File Offset: 0x00000B56
 	private void Start()
 	{
 		this.CM = GameObject.Find("_CONTROLLER").GetComponent<sui_demo_ControllerMaster>();
 	}
 
-	// Token: 0x060000DB RID: 219 RVA: 0x0000A914 File Offset: 0x00008B14
+	// Token: 0x060000DB RID: 219 RVA: 0x00020D80 File Offset: 0x0001EF80
 	private void FixedUpdate()
 	{
 		this.useLabel = this.label;
@@ -75,7 +75,7 @@ public class sui_demo_trigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000DC RID: 220 RVA: 0x0000AB50 File Offset: 0x00008D50
+	// Token: 0x060000DC RID: 220 RVA: 0x00020FBC File Offset: 0x0001F1BC
 	public bool CheckLineOfSight()
 	{
 		bool result = false;
@@ -107,7 +107,7 @@ public class sui_demo_trigger : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x060000DD RID: 221 RVA: 0x0000AC5C File Offset: 0x00008E5C
+	// Token: 0x060000DD RID: 221 RVA: 0x000210C8 File Offset: 0x0001F2C8
 	private void OnGUI()
 	{
 		if (this.fadeTimer > 0f && this.useLabel != "")

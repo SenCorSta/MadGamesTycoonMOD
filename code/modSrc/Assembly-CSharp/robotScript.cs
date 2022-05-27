@@ -2,10 +2,10 @@
 using Pathfinding;
 using UnityEngine;
 
-// Token: 0x020002FD RID: 765
+// Token: 0x020002FA RID: 762
 public class robotScript : MonoBehaviour
 {
-	// Token: 0x06001AC2 RID: 6850 RVA: 0x0010D25A File Offset: 0x0010B45A
+	// Token: 0x06001A78 RID: 6776 RVA: 0x00011C83 File Offset: 0x0000FE83
 	private void Start()
 	{
 		this.FindScripts();
@@ -15,7 +15,7 @@ public class robotScript : MonoBehaviour
 		this.mS_.findRobots = true;
 	}
 
-	// Token: 0x06001AC3 RID: 6851 RVA: 0x0010D299 File Offset: 0x0010B499
+	// Token: 0x06001A79 RID: 6777 RVA: 0x00011CC2 File Offset: 0x0000FEC2
 	private void OnDestroy()
 	{
 		if (this.mS_)
@@ -24,7 +24,7 @@ public class robotScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AC4 RID: 6852 RVA: 0x0010D2B4 File Offset: 0x0010B4B4
+	// Token: 0x06001A7A RID: 6778 RVA: 0x00110FB0 File Offset: 0x0010F1B0
 	private void FindScripts()
 	{
 		if (!this.sound)
@@ -53,13 +53,13 @@ public class robotScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AC5 RID: 6853 RVA: 0x0010D36C File Offset: 0x0010B56C
+	// Token: 0x06001A7B RID: 6779 RVA: 0x00011CDD File Offset: 0x0000FEDD
 	private void InitPathfinding()
 	{
 		this.aStar = base.GetComponent<IAstarAI>();
 	}
 
-	// Token: 0x06001AC6 RID: 6854 RVA: 0x0010D37A File Offset: 0x0010B57A
+	// Token: 0x06001A7C RID: 6780 RVA: 0x00011CEB File Offset: 0x0000FEEB
 	private void Update()
 	{
 		this.FindTarget();
@@ -67,13 +67,13 @@ public class robotScript : MonoBehaviour
 		this.TargetReached();
 	}
 
-	// Token: 0x06001AC7 RID: 6855 RVA: 0x0010D38E File Offset: 0x0010B58E
+	// Token: 0x06001A7D RID: 6781 RVA: 0x00011CFF File Offset: 0x0000FEFF
 	public void RecalculatePath()
 	{
 		this.aStar.SearchPath();
 	}
 
-	// Token: 0x06001AC8 RID: 6856 RVA: 0x0010D39C File Offset: 0x0010B59C
+	// Token: 0x06001A7E RID: 6782 RVA: 0x00111068 File Offset: 0x0010F268
 	private void Move()
 	{
 		float num = 1.2f;
@@ -84,7 +84,7 @@ public class robotScript : MonoBehaviour
 		this.aStar.FinalizeMovement(nextPosition, nextRotation);
 	}
 
-	// Token: 0x06001AC9 RID: 6857 RVA: 0x0010D410 File Offset: 0x0010B610
+	// Token: 0x06001A7F RID: 6783 RVA: 0x001110DC File Offset: 0x0010F2DC
 	private void FindTarget()
 	{
 		this.findTimer += Time.deltaTime;
@@ -176,7 +176,7 @@ public class robotScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001ACA RID: 6858 RVA: 0x0010D7A2 File Offset: 0x0010B9A2
+	// Token: 0x06001A80 RID: 6784 RVA: 0x00011D0C File Offset: 0x0000FF0C
 	public GameObject GetLadestation()
 	{
 		if (this.ladestation)
@@ -187,7 +187,7 @@ public class robotScript : MonoBehaviour
 		return this.ladestation;
 	}
 
-	// Token: 0x06001ACB RID: 6859 RVA: 0x0010D7E0 File Offset: 0x0010B9E0
+	// Token: 0x06001A81 RID: 6785 RVA: 0x00111470 File Offset: 0x0010F670
 	private void TargetReached()
 	{
 		if (!this.myTarget)
@@ -219,13 +219,13 @@ public class robotScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001ACC RID: 6860 RVA: 0x0010D942 File Offset: 0x0010BB42
+	// Token: 0x06001A82 RID: 6786 RVA: 0x00011D48 File Offset: 0x0000FF48
 	public int GetPosition_RoomID()
 	{
 		return this.mapS_.mapRoomID[Mathf.RoundToInt(base.transform.position.x), Mathf.RoundToInt(base.transform.position.z)];
 	}
 
-	// Token: 0x06001ACD RID: 6861 RVA: 0x0010D980 File Offset: 0x0010BB80
+	// Token: 0x06001A83 RID: 6787 RVA: 0x001115D4 File Offset: 0x0010F7D4
 	public int GetTargetPosition_RoomID()
 	{
 		if (!this.myTarget)
@@ -235,7 +235,7 @@ public class robotScript : MonoBehaviour
 		return this.mapS_.mapRoomID[Mathf.RoundToInt(this.myTarget.transform.position.x), Mathf.RoundToInt(this.myTarget.transform.position.z)];
 	}
 
-	// Token: 0x06001ACE RID: 6862 RVA: 0x0010D9E0 File Offset: 0x0010BBE0
+	// Token: 0x06001A84 RID: 6788 RVA: 0x00111634 File Offset: 0x0010F834
 	private bool IsAnotherRobotNaeher(float myDist, int slotMuell, int buildingID)
 	{
 		for (int i = 0; i < this.mS_.arrayRobots.Length; i++)
@@ -267,45 +267,45 @@ public class robotScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x040021E2 RID: 8674
+	// Token: 0x040021C8 RID: 8648
 	public int stationID = -1;
 
-	// Token: 0x040021E3 RID: 8675
+	// Token: 0x040021C9 RID: 8649
 	public GameObject ladestation;
 
-	// Token: 0x040021E4 RID: 8676
+	// Token: 0x040021CA RID: 8650
 	private GameObject main_;
 
-	// Token: 0x040021E5 RID: 8677
+	// Token: 0x040021CB RID: 8651
 	private mainScript mS_;
 
-	// Token: 0x040021E6 RID: 8678
+	// Token: 0x040021CC RID: 8652
 	private mapScript mapS_;
 
-	// Token: 0x040021E7 RID: 8679
+	// Token: 0x040021CD RID: 8653
 	private IAstarAI aStar;
 
-	// Token: 0x040021E8 RID: 8680
+	// Token: 0x040021CE RID: 8654
 	private Seeker seeker;
 
-	// Token: 0x040021E9 RID: 8681
+	// Token: 0x040021CF RID: 8655
 	public GameObject myTarget;
 
-	// Token: 0x040021EA RID: 8682
+	// Token: 0x040021D0 RID: 8656
 	private Animation cleanAnimation;
 
-	// Token: 0x040021EB RID: 8683
+	// Token: 0x040021D1 RID: 8657
 	public GameObject[] myObjects;
 
-	// Token: 0x040021EC RID: 8684
+	// Token: 0x040021D2 RID: 8658
 	private AudioSource sound;
 
-	// Token: 0x040021ED RID: 8685
+	// Token: 0x040021D3 RID: 8659
 	private bool isAufLadestation = true;
 
-	// Token: 0x040021EE RID: 8686
+	// Token: 0x040021D4 RID: 8660
 	private float findTimer;
 
-	// Token: 0x040021EF RID: 8687
+	// Token: 0x040021D5 RID: 8661
 	private int trysToFindPath;
 }

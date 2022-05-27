@@ -5,17 +5,17 @@ using UnityEngine.UI;
 // Token: 0x0200009A RID: 154
 public class Filter_InventarKaufen : MonoBehaviour
 {
-	// Token: 0x060005EA RID: 1514 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x060005E1 RID: 1505 RVA: 0x00002098 File Offset: 0x00000298
 	private void Start()
 	{
 	}
 
-	// Token: 0x060005EB RID: 1515 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x060005E2 RID: 1506 RVA: 0x00002098 File Offset: 0x00000298
 	private void Update()
 	{
 	}
 
-	// Token: 0x060005EC RID: 1516 RVA: 0x0004C690 File Offset: 0x0004A890
+	// Token: 0x060005E3 RID: 1507 RVA: 0x0005F488 File Offset: 0x0005D688
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Vectrosity
 {
-	// Token: 0x02000384 RID: 900
+	// Token: 0x02000381 RID: 897
 	public class VectorChar
 	{
-		// Token: 0x170000A3 RID: 163
-		// (get) Token: 0x06002092 RID: 8338 RVA: 0x00150640 File Offset: 0x0014E840
+		// Token: 0x1700009F RID: 159
+		// (get) Token: 0x0600203F RID: 8255 RVA: 0x00150960 File Offset: 0x0014EB60
 		public static Vector2[][] data
 		{
 			get
@@ -876,10 +876,10 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x040028CF RID: 10447
+		// Token: 0x040028B9 RID: 10425
 		public const int numberOfCharacters = 256;
 
-		// Token: 0x040028D0 RID: 10448
+		// Token: 0x040028BA RID: 10426
 		private static Vector2[][] points;
 	}
 }

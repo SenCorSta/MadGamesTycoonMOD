@@ -5,12 +5,12 @@ using UnityEngine.UI;
 // Token: 0x020000C6 RID: 198
 public class Item_Arbeitsmarkt : MonoBehaviour
 {
-	// Token: 0x060006E4 RID: 1764 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x060006DB RID: 1755 RVA: 0x00002098 File Offset: 0x00000298
 	private void Start()
 	{
 	}
 
-	// Token: 0x060006E5 RID: 1765 RVA: 0x000524DE File Offset: 0x000506DE
+	// Token: 0x060006DC RID: 1756 RVA: 0x00005D2E File Offset: 0x00003F2E
 	private void Update()
 	{
 		if (!this.charAM_)
@@ -19,7 +19,7 @@ public class Item_Arbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006E6 RID: 1766 RVA: 0x000524F8 File Offset: 0x000506F8
+	// Token: 0x060006DD RID: 1757 RVA: 0x00064B78 File Offset: 0x00062D78
 	public void SetData(string s, float val)
 	{
 		if (!this.charAM_)
@@ -40,13 +40,13 @@ public class Item_Arbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006E7 RID: 1767 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x060006DE RID: 1758 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060006E8 RID: 1768 RVA: 0x00052640 File Offset: 0x00050840
+	// Token: 0x060006DF RID: 1759 RVA: 0x00064CC0 File Offset: 0x00062EC0
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -64,7 +64,7 @@ public class Item_Arbeitsmarkt : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x060006E9 RID: 1769 RVA: 0x000526B4 File Offset: 0x000508B4
+	// Token: 0x060006E0 RID: 1760 RVA: 0x00064D34 File Offset: 0x00062F34
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -72,7 +72,7 @@ public class Item_Arbeitsmarkt : MonoBehaviour
 		this.guiMain_.uiObjects[31].GetComponent<Menu_PersonalViewArbeitsmarkt>().Init(this.charAM_);
 	}
 
-	// Token: 0x060006EA RID: 1770 RVA: 0x00052705 File Offset: 0x00050905
+	// Token: 0x060006E1 RID: 1761 RVA: 0x00005D48 File Offset: 0x00003F48
 	public void BUTTON_Remove()
 	{
 		this.sfx_.PlaySound(3, true);

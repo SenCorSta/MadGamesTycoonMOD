@@ -5,14 +5,14 @@ using UnityEngine.UI;
 // Token: 0x020000A6 RID: 166
 public class Item_GameplayFeatures_GameDesign : MonoBehaviour
 {
-	// Token: 0x06000632 RID: 1586 RVA: 0x0004E815 File Offset: 0x0004CA15
+	// Token: 0x06000629 RID: 1577 RVA: 0x00005923 File Offset: 0x00003B23
 	private void Start()
 	{
 		this.FindScripts();
 		this.SetData();
 	}
 
-	// Token: 0x06000633 RID: 1587 RVA: 0x0004E824 File Offset: 0x0004CA24
+	// Token: 0x0600062A RID: 1578 RVA: 0x00061394 File Offset: 0x0005F594
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -25,7 +25,7 @@ public class Item_GameplayFeatures_GameDesign : MonoBehaviour
 		this.gF_ = this.main_.GetComponent<gameplayFeatures>();
 	}
 
-	// Token: 0x06000634 RID: 1588 RVA: 0x0004E884 File Offset: 0x0004CA84
+	// Token: 0x0600062B RID: 1579 RVA: 0x000613F4 File Offset: 0x0005F5F4
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.gF_.GetName(this.myID);
@@ -73,7 +73,7 @@ public class Item_GameplayFeatures_GameDesign : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000635 RID: 1589 RVA: 0x0004EB1C File Offset: 0x0004CD1C
+	// Token: 0x0600062C RID: 1580 RVA: 0x00005931 File Offset: 0x00003B31
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;

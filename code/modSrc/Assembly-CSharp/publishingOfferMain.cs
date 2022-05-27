@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200033C RID: 828
+// Token: 0x02000339 RID: 825
 public class publishingOfferMain : MonoBehaviour
 {
-	// Token: 0x06001DF5 RID: 7669 RVA: 0x0012ADCE File Offset: 0x00128FCE
+	// Token: 0x06001D9E RID: 7582 RVA: 0x000141F1 File Offset: 0x000123F1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001DF6 RID: 7670 RVA: 0x0012ADD8 File Offset: 0x00128FD8
+	// Token: 0x06001D9F RID: 7583 RVA: 0x0012C0EC File Offset: 0x0012A2EC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -60,7 +60,7 @@ public class publishingOfferMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DF7 RID: 7671 RVA: 0x0012AF34 File Offset: 0x00129134
+	// Token: 0x06001DA0 RID: 7584 RVA: 0x0012C248 File Offset: 0x0012A448
 	public publishingOffer CreatePublishingOffer()
 	{
 		publishingOffer component = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0]).GetComponent<publishingOffer>();
@@ -71,7 +71,7 @@ public class publishingOfferMain : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x06001DF8 RID: 7672 RVA: 0x0012AF84 File Offset: 0x00129184
+	// Token: 0x06001DA1 RID: 7585 RVA: 0x0012C298 File Offset: 0x0012A498
 	public void UpdateGUI()
 	{
 		if (this.amountPublishingOffers > 0 && this.forschungSonstiges_.IsErforscht(33))
@@ -89,12 +89,12 @@ public class publishingOfferMain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DF9 RID: 7673 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x06001DA2 RID: 7586 RVA: 0x00002098 File Offset: 0x00000298
 	public void UpdatePublishingOffer(bool forceNewPublishingOffer)
 	{
 	}
 
-	// Token: 0x06001DFA RID: 7674 RVA: 0x0012B00C File Offset: 0x0012920C
+	// Token: 0x06001DA3 RID: 7587 RVA: 0x0011F870 File Offset: 0x0011DA70
 	private int GetPlatform()
 	{
 		int result = 0;
@@ -117,7 +117,7 @@ public class publishingOfferMain : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001DFB RID: 7675 RVA: 0x0012B08C File Offset: 0x0012928C
+	// Token: 0x06001DA4 RID: 7588 RVA: 0x0012C320 File Offset: 0x0012A520
 	private int GetRandomDeveloperID()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
@@ -140,45 +140,45 @@ public class publishingOfferMain : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x040025B4 RID: 9652
+	// Token: 0x0400259D RID: 9629
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040025B5 RID: 9653
+	// Token: 0x0400259E RID: 9630
 	public GameObject[] uiObjects;
 
-	// Token: 0x040025B6 RID: 9654
+	// Token: 0x0400259F RID: 9631
 	private GameObject main_;
 
-	// Token: 0x040025B7 RID: 9655
+	// Token: 0x040025A0 RID: 9632
 	private mainScript mS_;
 
-	// Token: 0x040025B8 RID: 9656
+	// Token: 0x040025A1 RID: 9633
 	private textScript tS_;
 
-	// Token: 0x040025B9 RID: 9657
+	// Token: 0x040025A2 RID: 9634
 	private GUI_Main guiMain_;
 
-	// Token: 0x040025BA RID: 9658
+	// Token: 0x040025A3 RID: 9635
 	private roomDataScript rdS_;
 
-	// Token: 0x040025BB RID: 9659
+	// Token: 0x040025A4 RID: 9636
 	private forschungSonstiges fS_;
 
-	// Token: 0x040025BC RID: 9660
+	// Token: 0x040025A5 RID: 9637
 	private genres genres_;
 
-	// Token: 0x040025BD RID: 9661
+	// Token: 0x040025A6 RID: 9638
 	private unlockScript unlock_;
 
-	// Token: 0x040025BE RID: 9662
+	// Token: 0x040025A7 RID: 9639
 	private forschungSonstiges forschungSonstiges_;
 
-	// Token: 0x040025BF RID: 9663
+	// Token: 0x040025A8 RID: 9640
 	private platforms platforms_;
 
-	// Token: 0x040025C0 RID: 9664
+	// Token: 0x040025A9 RID: 9641
 	private games games_;
 
-	// Token: 0x040025C1 RID: 9665
+	// Token: 0x040025AA RID: 9642
 	public int amountPublishingOffers;
 }

@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x0200002E RID: 46
 public class utility_AdjustCulling : MonoBehaviour
 {
-	// Token: 0x060000AC RID: 172 RVA: 0x00005649 File Offset: 0x00003849
+	// Token: 0x060000AC RID: 172 RVA: 0x000027E7 File Offset: 0x000009E7
 	private void Start()
 	{
 		this.cam = base.gameObject.GetComponent<Camera>();
 	}
 
-	// Token: 0x060000AD RID: 173 RVA: 0x0000565C File Offset: 0x0000385C
+	// Token: 0x060000AD RID: 173 RVA: 0x0001BC38 File Offset: 0x00019E38
 	private void LateUpdate()
 	{
 		if (this.cam != null)

@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x02000404 RID: 1028
+	// Token: 0x02000401 RID: 1025
 	[ExecuteInEditMode]
 	public class All1CreateUnifiedOutline : MonoBehaviour
 	{
-		// Token: 0x0600244C RID: 9292 RVA: 0x00174DD4 File Offset: 0x00172FD4
+		// Token: 0x060023F9 RID: 9209 RVA: 0x00171D10 File Offset: 0x0016FF10
 		private void Update()
 		{
 			if (this.createUnifiedOutline)
@@ -31,7 +31,7 @@ namespace AllIn1SpriteShader
 			}
 		}
 
-		// Token: 0x0600244D RID: 9293 RVA: 0x00174E74 File Offset: 0x00173074
+		// Token: 0x060023FA RID: 9210 RVA: 0x00171DB0 File Offset: 0x0016FFB0
 		private void CreateOutlineSpriteDuplicate(GameObject target)
 		{
 			bool flag = false;
@@ -78,12 +78,12 @@ namespace AllIn1SpriteShader
 			image.material = this.outlineMaterial;
 		}
 
-		// Token: 0x0600244E RID: 9294 RVA: 0x00002715 File Offset: 0x00000915
+		// Token: 0x060023FB RID: 9211 RVA: 0x00002098 File Offset: 0x00000298
 		private void MissingMaterial()
 		{
 		}
 
-		// Token: 0x0600244F RID: 9295 RVA: 0x00174FD0 File Offset: 0x001731D0
+		// Token: 0x060023FC RID: 9212 RVA: 0x00171F0C File Offset: 0x0017010C
 		private void GetAllChildren(Transform parent, ref List<Transform> transforms)
 		{
 			foreach (object obj in parent)
@@ -94,25 +94,25 @@ namespace AllIn1SpriteShader
 			}
 		}
 
-		// Token: 0x04002E66 RID: 11878
+		// Token: 0x04002E50 RID: 11856
 		[SerializeField]
 		private Material outlineMaterial;
 
-		// Token: 0x04002E67 RID: 11879
+		// Token: 0x04002E51 RID: 11857
 		[SerializeField]
 		private Transform outlineParentTransform;
 
-		// Token: 0x04002E68 RID: 11880
+		// Token: 0x04002E52 RID: 11858
 		[Space]
 		[Header("Only needed if Sprite (ignored if UI)")]
 		[SerializeField]
 		private int duplicateOrderInLayer = -100;
 
-		// Token: 0x04002E69 RID: 11881
+		// Token: 0x04002E53 RID: 11859
 		[SerializeField]
 		private string duplicateSortingLayer = "Default";
 
-		// Token: 0x04002E6A RID: 11882
+		// Token: 0x04002E54 RID: 11860
 		[Space]
 		[Header("This operation will delete the component")]
 		[SerializeField]

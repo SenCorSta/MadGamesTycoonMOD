@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000FF RID: 255
 public class Item_TochterfirmaEngine : MonoBehaviour
 {
-	// Token: 0x06000847 RID: 2119 RVA: 0x00059C5A File Offset: 0x00057E5A
+	// Token: 0x0600083E RID: 2110 RVA: 0x000063A7 File Offset: 0x000045A7
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000848 RID: 2120 RVA: 0x00059C64 File Offset: 0x00057E64
+	// Token: 0x0600083F RID: 2111 RVA: 0x0006BB34 File Offset: 0x00069D34
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.eS_.GetName();
@@ -36,13 +36,13 @@ public class Item_TochterfirmaEngine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000849 RID: 2121 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000840 RID: 2112 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600084A RID: 2122 RVA: 0x00059DE4 File Offset: 0x00057FE4
+	// Token: 0x06000841 RID: 2113 RVA: 0x0006BCB4 File Offset: 0x00069EB4
 	private void Update()
 	{
 		if (!this.mS_.multiplayer)
@@ -58,7 +58,7 @@ public class Item_TochterfirmaEngine : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600084B RID: 2123 RVA: 0x00059E30 File Offset: 0x00058030
+	// Token: 0x06000842 RID: 2114 RVA: 0x0006BD00 File Offset: 0x00069F00
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

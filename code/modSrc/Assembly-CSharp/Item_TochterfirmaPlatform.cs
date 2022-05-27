@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000102 RID: 258
+// Token: 0x02000101 RID: 257
 public class Item_TochterfirmaPlatform : MonoBehaviour
 {
-	// Token: 0x06000859 RID: 2137 RVA: 0x0005A348 File Offset: 0x00058548
+	// Token: 0x0600084A RID: 2122 RVA: 0x000063E4 File Offset: 0x000045E4
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600085A RID: 2138 RVA: 0x0005A350 File Offset: 0x00058550
+	// Token: 0x0600084B RID: 2123 RVA: 0x0006BEC4 File Offset: 0x0006A0C4
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.pS_.GetName();
@@ -42,13 +42,13 @@ public class Item_TochterfirmaPlatform : MonoBehaviour
 		this.uiObjects[8].SetActive(false);
 	}
 
-	// Token: 0x0600085B RID: 2139 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x0600084C RID: 2124 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600085C RID: 2140 RVA: 0x0005A560 File Offset: 0x00058760
+	// Token: 0x0600084D RID: 2125 RVA: 0x0006C0D4 File Offset: 0x0006A2D4
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -57,33 +57,33 @@ public class Item_TochterfirmaPlatform : MonoBehaviour
 		this.guiMain_.uiObjects[402].GetComponent<Menu_Stats_TochterfirmaPlatform>().BUTTON_Close();
 	}
 
-	// Token: 0x04000CA5 RID: 3237
+	// Token: 0x04000C9D RID: 3229
 	public int myID;
 
-	// Token: 0x04000CA6 RID: 3238
+	// Token: 0x04000C9E RID: 3230
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000CA7 RID: 3239
+	// Token: 0x04000C9F RID: 3231
 	public mainScript mS_;
 
-	// Token: 0x04000CA8 RID: 3240
+	// Token: 0x04000CA0 RID: 3232
 	public textScript tS_;
 
-	// Token: 0x04000CA9 RID: 3241
+	// Token: 0x04000CA1 RID: 3233
 	public sfxScript sfx_;
 
-	// Token: 0x04000CAA RID: 3242
+	// Token: 0x04000CA2 RID: 3234
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000CAB RID: 3243
+	// Token: 0x04000CA3 RID: 3235
 	public tooltip tooltip_;
 
-	// Token: 0x04000CAC RID: 3244
+	// Token: 0x04000CA4 RID: 3236
 	public platformScript pS_;
 
-	// Token: 0x04000CAD RID: 3245
+	// Token: 0x04000CA5 RID: 3237
 	public publisherScript pubS_;
 
-	// Token: 0x04000CAE RID: 3246
+	// Token: 0x04000CA6 RID: 3238
 	public int slot;
 }

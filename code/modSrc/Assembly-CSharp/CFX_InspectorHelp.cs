@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x02000011 RID: 17
 public class CFX_InspectorHelp : MonoBehaviour
 {
-	// Token: 0x06000056 RID: 86 RVA: 0x00003A27 File Offset: 0x00001C27
+	// Token: 0x06000056 RID: 86 RVA: 0x0000238B File Offset: 0x0000058B
 	[ContextMenu("Unlock editing")]
 	private void Unlock()
 	{

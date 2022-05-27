@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001DC RID: 476
+// Token: 0x020001DB RID: 475
 public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 {
-	// Token: 0x060011E5 RID: 4581 RVA: 0x000BC719 File Offset: 0x000BA919
+	// Token: 0x060011CB RID: 4555 RVA: 0x0000C732 File Offset: 0x0000A932
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060011E6 RID: 4582 RVA: 0x000BC724 File Offset: 0x000BA924
+	// Token: 0x060011CC RID: 4556 RVA: 0x000C7818 File Offset: 0x000C5A18
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011E7 RID: 4583 RVA: 0x000BC8C2 File Offset: 0x000BAAC2
+	// Token: 0x060011CD RID: 4557 RVA: 0x0000C73A File Offset: 0x0000A93A
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -78,7 +78,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060011E8 RID: 4584 RVA: 0x000BC8E4 File Offset: 0x000BAAE4
+	// Token: 0x060011CE RID: 4558 RVA: 0x000C79B8 File Offset: 0x000C5BB8
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -94,7 +94,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060011E9 RID: 4585 RVA: 0x000BC930 File Offset: 0x000BAB30
+	// Token: 0x060011CF RID: 4559 RVA: 0x0000C75B File Offset: 0x0000A95B
 	public void Init(roomScript roomScript_)
 	{
 		this.FindScripts();
@@ -104,7 +104,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060011EA RID: 4586 RVA: 0x000BC958 File Offset: 0x000BAB58
+	// Token: 0x060011D0 RID: 4560 RVA: 0x000C7A04 File Offset: 0x000C5C04
 	private void DeselectAllButtons()
 	{
 		this.allAdds = false;
@@ -118,7 +118,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011EB RID: 4587 RVA: 0x000BCA14 File Offset: 0x000BAC14
+	// Token: 0x060011D1 RID: 4561 RVA: 0x000C7AC0 File Offset: 0x000C5CC0
 	public int GetCosts(int i)
 	{
 		if (!this.selectedGame)
@@ -134,7 +134,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060011EC RID: 4588 RVA: 0x000BCA64 File Offset: 0x000BAC64
+	// Token: 0x060011D2 RID: 4562 RVA: 0x000C7B10 File Offset: 0x000C5D10
 	private void UpdateGUI()
 	{
 		for (int i = 0; i < this.buttonAdds.Length; i++)
@@ -181,7 +181,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		this.uiObjects[10].GetComponent<Image>().sprite = this.games_.gamePlatformTypSprites[0];
 	}
 
-	// Token: 0x060011ED RID: 4589 RVA: 0x000BCCB4 File Offset: 0x000BAEB4
+	// Token: 0x060011D3 RID: 4563 RVA: 0x0000C782 File Offset: 0x0000A982
 	public void SetGame(gameScript script_)
 	{
 		this.selectedGame = script_;
@@ -189,7 +189,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060011EE RID: 4590 RVA: 0x000BCCCC File Offset: 0x000BAECC
+	// Token: 0x060011D4 RID: 4564 RVA: 0x000C7D60 File Offset: 0x000C5F60
 	public void BUTTON_SelectGame()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -197,7 +197,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		this.guiMain_.uiObjects[179].GetComponent<Menu_MOCAP_AnimationVerbessernSelectGame>().Init();
 	}
 
-	// Token: 0x060011EF RID: 4591 RVA: 0x000BCD20 File Offset: 0x000BAF20
+	// Token: 0x060011D5 RID: 4565 RVA: 0x000C7DB4 File Offset: 0x000C5FB4
 	public gameScript FindGame()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -206,7 +206,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.developerID == this.mS_.myID && !component.isOnMarket && component.inDevelopment && !this.WirdInAnderenRaumBearbeitet(0, component) && !this.WirdInAnderenRaumBearbeitet(1, component) && !this.WirdInAnderenRaumBearbeitet(2, component) && !this.WirdInAnderenRaumBearbeitet(3, component) && !this.WirdInAnderenRaumBearbeitet(4, component) && !this.WirdInAnderenRaumBearbeitet(5, component))
+				if (component && component.playerGame && !component.isOnMarket && component.inDevelopment && !this.WirdInAnderenRaumBearbeitet(0, component) && !this.WirdInAnderenRaumBearbeitet(1, component) && !this.WirdInAnderenRaumBearbeitet(2, component) && !this.WirdInAnderenRaumBearbeitet(3, component) && !this.WirdInAnderenRaumBearbeitet(4, component) && !this.WirdInAnderenRaumBearbeitet(5, component))
 				{
 					return component;
 				}
@@ -215,7 +215,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060011F0 RID: 4592 RVA: 0x000BCDCC File Offset: 0x000BAFCC
+	// Token: 0x060011D6 RID: 4566 RVA: 0x000C7E4C File Offset: 0x000C604C
 	private long GetDevCosts()
 	{
 		long num = 0L;
@@ -229,7 +229,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060011F1 RID: 4593 RVA: 0x000BCE08 File Offset: 0x000BB008
+	// Token: 0x060011D7 RID: 4567 RVA: 0x000C7E88 File Offset: 0x000C6088
 	public bool WirdInAnderenRaumBearbeitet(int slot, gameScript g_)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Task");
@@ -247,7 +247,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060011F2 RID: 4594 RVA: 0x000BCE64 File Offset: 0x000BB064
+	// Token: 0x060011D8 RID: 4568 RVA: 0x0000C797 File Offset: 0x0000A997
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -255,7 +255,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060011F3 RID: 4595 RVA: 0x000BCE8C File Offset: 0x000BB08C
+	// Token: 0x060011D9 RID: 4569 RVA: 0x000C7EE4 File Offset: 0x000C60E4
 	public void BUTTON_Delete(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -274,7 +274,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060011F4 RID: 4596 RVA: 0x000BCEE8 File Offset: 0x000BB0E8
+	// Token: 0x060011DA RID: 4570 RVA: 0x000C7F40 File Offset: 0x000C6140
 	public void BUTTON_Adds(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -350,7 +350,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060011F5 RID: 4597 RVA: 0x000BD0D8 File Offset: 0x000BB2D8
+	// Token: 0x060011DB RID: 4571 RVA: 0x000C8130 File Offset: 0x000C6330
 	public void BUTTON_AlleAdds()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -365,7 +365,7 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x060011F6 RID: 4598 RVA: 0x000BD13C File Offset: 0x000BB33C
+	// Token: 0x060011DC RID: 4572 RVA: 0x000C8194 File Offset: 0x000C6394
 	public void BUTTON_Start()
 	{
 		int num = Mathf.RoundToInt((float)this.GetDevCosts());
@@ -409,66 +409,66 @@ public class Menu_MOCAP_AnimationVerbessern : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001663 RID: 5731
+	// Token: 0x0400165A RID: 5722
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001664 RID: 5732
+	// Token: 0x0400165B RID: 5723
 	public int[] costs;
 
-	// Token: 0x04001665 RID: 5733
+	// Token: 0x0400165C RID: 5724
 	public float[] pointsInPercent;
 
-	// Token: 0x04001666 RID: 5734
+	// Token: 0x0400165D RID: 5725
 	private bool[] buttonAdds = new bool[6];
 
-	// Token: 0x04001667 RID: 5735
+	// Token: 0x0400165E RID: 5726
 	private GameObject main_;
 
-	// Token: 0x04001668 RID: 5736
+	// Token: 0x0400165F RID: 5727
 	private mainScript mS_;
 
-	// Token: 0x04001669 RID: 5737
+	// Token: 0x04001660 RID: 5728
 	private textScript tS_;
 
-	// Token: 0x0400166A RID: 5738
+	// Token: 0x04001661 RID: 5729
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400166B RID: 5739
+	// Token: 0x04001662 RID: 5730
 	private sfxScript sfx_;
 
-	// Token: 0x0400166C RID: 5740
+	// Token: 0x04001663 RID: 5731
 	private genres genres_;
 
-	// Token: 0x0400166D RID: 5741
+	// Token: 0x04001664 RID: 5732
 	private themes themes_;
 
-	// Token: 0x0400166E RID: 5742
+	// Token: 0x04001665 RID: 5733
 	private licences licences_;
 
-	// Token: 0x0400166F RID: 5743
+	// Token: 0x04001666 RID: 5734
 	private engineFeatures eF_;
 
-	// Token: 0x04001670 RID: 5744
+	// Token: 0x04001667 RID: 5735
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04001671 RID: 5745
+	// Token: 0x04001668 RID: 5736
 	private unlockScript unlock_;
 
-	// Token: 0x04001672 RID: 5746
+	// Token: 0x04001669 RID: 5737
 	private gameplayFeatures gF_;
 
-	// Token: 0x04001673 RID: 5747
+	// Token: 0x0400166A RID: 5738
 	private games games_;
 
-	// Token: 0x04001674 RID: 5748
+	// Token: 0x0400166B RID: 5739
 	private gameScript selectedGame;
 
-	// Token: 0x04001675 RID: 5749
+	// Token: 0x0400166C RID: 5740
 	private roomScript rS_;
 
-	// Token: 0x04001676 RID: 5750
+	// Token: 0x0400166D RID: 5741
 	private float updateTimer;
 
-	// Token: 0x04001677 RID: 5751
+	// Token: 0x0400166E RID: 5742
 	private bool allAdds;
 }

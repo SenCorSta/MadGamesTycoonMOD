@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x02000023 RID: 35
 public class Player : MonoBehaviour
 {
-	// Token: 0x06000099 RID: 153 RVA: 0x000052BA File Offset: 0x000034BA
+	// Token: 0x06000099 RID: 153 RVA: 0x000026AD File Offset: 0x000008AD
 	private void Start()
 	{
 		this.rb = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x0600009A RID: 154 RVA: 0x000052C8 File Offset: 0x000034C8
+	// Token: 0x0600009A RID: 154 RVA: 0x0001B9E0 File Offset: 0x00019BE0
 	private void FixedUpdate()
 	{
 		float axis = Input.GetAxis("Horizontal");

@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000279 RID: 633
+// Token: 0x02000275 RID: 629
 public class roomOptionsPosition : MonoBehaviour
 {
-	// Token: 0x060018D1 RID: 6353 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x0600188C RID: 6284 RVA: 0x00002098 File Offset: 0x00000298
 	private void Start()
 	{
 	}
 
-	// Token: 0x060018D2 RID: 6354 RVA: 0x000F6538 File Offset: 0x000F4738
+	// Token: 0x0600188D RID: 6285 RVA: 0x000FB408 File Offset: 0x000F9608
 	private void FindScripts()
 	{
 		if (!this.settings_)
@@ -26,14 +26,14 @@ public class roomOptionsPosition : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060018D3 RID: 6355 RVA: 0x000F65A3 File Offset: 0x000F47A3
+	// Token: 0x0600188E RID: 6286 RVA: 0x00010E69 File Offset: 0x0000F069
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.rect.anchoredPosition = new Vector2(90f, -40f);
 	}
 
-	// Token: 0x060018D4 RID: 6356 RVA: 0x000F65C8 File Offset: 0x000F47C8
+	// Token: 0x0600188F RID: 6287 RVA: 0x000FB474 File Offset: 0x000F9674
 	private void Update()
 	{
 		float x = 174f;
@@ -49,12 +49,12 @@ public class roomOptionsPosition : MonoBehaviour
 		this.rect.anchoredPosition = Vector2.Lerp(this.rect.anchoredPosition, new Vector2(x, y), 0.2f);
 	}
 
-	// Token: 0x04001C4A RID: 7242
+	// Token: 0x04001C2F RID: 7215
 	public settingsScript settings_;
 
-	// Token: 0x04001C4B RID: 7243
+	// Token: 0x04001C30 RID: 7216
 	private RectTransform rect;
 
-	// Token: 0x04001C4C RID: 7244
+	// Token: 0x04001C31 RID: 7217
 	private RectTransform globalRect;
 }

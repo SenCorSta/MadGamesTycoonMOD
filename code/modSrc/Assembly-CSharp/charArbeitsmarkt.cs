@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x02000040 RID: 64
 public class charArbeitsmarkt : MonoBehaviour
 {
-	// Token: 0x060000E6 RID: 230 RVA: 0x0000B217 File Offset: 0x00009417
+	// Token: 0x060000E6 RID: 230 RVA: 0x000029B1 File Offset: 0x00000BB1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060000E7 RID: 231 RVA: 0x0000B220 File Offset: 0x00009420
+	// Token: 0x060000E7 RID: 231 RVA: 0x0002163C File Offset: 0x0001F83C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -39,7 +39,7 @@ public class charArbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000E8 RID: 232 RVA: 0x0000B2E4 File Offset: 0x000094E4
+	// Token: 0x060000E8 RID: 232 RVA: 0x00021700 File Offset: 0x0001F900
 	public void Create(taskMitarbeitersuche task_)
 	{
 		this.FindScripts();
@@ -411,7 +411,7 @@ public class charArbeitsmarkt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000E9 RID: 233 RVA: 0x0000BE04 File Offset: 0x0000A004
+	// Token: 0x060000E9 RID: 233 RVA: 0x00022220 File Offset: 0x00020420
 	public void RemoveFromArbeitsmarkt(bool eingestellt)
 	{
 		if (this.mS_.multiplayer)
@@ -432,7 +432,7 @@ public class charArbeitsmarkt : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060000EA RID: 234 RVA: 0x0000BE9C File Offset: 0x0000A09C
+	// Token: 0x060000EA RID: 234 RVA: 0x000222B8 File Offset: 0x000204B8
 	public int GetGehalt()
 	{
 		int num = Mathf.RoundToInt(0f + this.s_gamedesign + this.s_programmieren + this.s_grafik + this.s_sound + this.s_pr + this.s_gametests + this.s_technik + this.s_forschen) * 10;
@@ -496,7 +496,7 @@ public class charArbeitsmarkt : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060000EB RID: 235 RVA: 0x0000BFE4 File Offset: 0x0000A1E4
+	// Token: 0x060000EB RID: 235 RVA: 0x00022400 File Offset: 0x00020600
 	public int GetBestSkill()
 	{
 		float num = this.s_gamedesign;
@@ -542,7 +542,7 @@ public class charArbeitsmarkt : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x060000EC RID: 236 RVA: 0x0000C280 File Offset: 0x0000A480
+	// Token: 0x060000EC RID: 236 RVA: 0x0002269C File Offset: 0x0002089C
 	public float GetBestSkillValue()
 	{
 		float num = this.s_gamedesign;

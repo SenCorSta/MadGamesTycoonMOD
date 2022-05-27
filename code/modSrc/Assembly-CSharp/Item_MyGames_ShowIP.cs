@@ -5,19 +5,19 @@ using UnityEngine.UI;
 // Token: 0x020000EE RID: 238
 public class Item_MyGames_ShowIP : MonoBehaviour
 {
-	// Token: 0x060007E3 RID: 2019 RVA: 0x00057625 File Offset: 0x00055825
+	// Token: 0x060007DA RID: 2010 RVA: 0x000062C6 File Offset: 0x000044C6
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007E4 RID: 2020 RVA: 0x0005762D File Offset: 0x0005582D
+	// Token: 0x060007DB RID: 2011 RVA: 0x000062CE File Offset: 0x000044CE
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060007E5 RID: 2021 RVA: 0x00057638 File Offset: 0x00055838
+	// Token: 0x060007DC RID: 2012 RVA: 0x000696F0 File Offset: 0x000678F0
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_MyGames_ShowIP : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060007E6 RID: 2022 RVA: 0x00057684 File Offset: 0x00055884
+	// Token: 0x060007DD RID: 2013 RVA: 0x0006973C File Offset: 0x0006793C
 	private void SetData()
 	{
 		if (!this.game_)
@@ -58,13 +58,13 @@ public class Item_MyGames_ShowIP : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060007E7 RID: 2023 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x060007DE RID: 2014 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007E8 RID: 2024 RVA: 0x00057850 File Offset: 0x00055A50
+	// Token: 0x060007DF RID: 2015 RVA: 0x00069908 File Offset: 0x00067B08
 	public void BUTTON_Click()
 	{
 		if (this.game_.reviewTotal > 0)

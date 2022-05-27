@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x020000AC RID: 172
 public class Item_InventarKaufen : MonoBehaviour
 {
-	// Token: 0x06000653 RID: 1619 RVA: 0x0004F560 File Offset: 0x0004D760
+	// Token: 0x0600064A RID: 1610 RVA: 0x0006202C File Offset: 0x0006022C
 	private void Start()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.tS_.GetObjects(this.typ);
@@ -18,7 +18,7 @@ public class Item_InventarKaufen : MonoBehaviour
 		this.SetTooltip();
 	}
 
-	// Token: 0x06000654 RID: 1620 RVA: 0x0004F698 File Offset: 0x0004D898
+	// Token: 0x0600064B RID: 1611 RVA: 0x00062164 File Offset: 0x00060364
 	private void Update()
 	{
 		this.Highlight();
@@ -121,12 +121,12 @@ public class Item_InventarKaufen : MonoBehaviour
 		this.uiObjects[3].GetComponent<Text>().color = this.guiMain_.colors[4];
 	}
 
-	// Token: 0x06000655 RID: 1621 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x0600064C RID: 1612 RVA: 0x00002098 File Offset: 0x00000298
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x06000656 RID: 1622 RVA: 0x0004FB38 File Offset: 0x0004DD38
+	// Token: 0x0600064D RID: 1613 RVA: 0x00062604 File Offset: 0x00060804
 	private void CheckUnlock()
 	{
 		objectScript component = this.mapS_.prefabsInventar[this.typ].GetComponent<objectScript>();
@@ -140,7 +140,7 @@ public class Item_InventarKaufen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000657 RID: 1623 RVA: 0x0004FB88 File Offset: 0x0004DD88
+	// Token: 0x0600064E RID: 1614 RVA: 0x00062654 File Offset: 0x00060854
 	public void BUTTON_Click()
 	{
 		if (this.uiObjects[1].activeSelf)
@@ -156,7 +156,7 @@ public class Item_InventarKaufen : MonoBehaviour
 		this.uiObjects[2].GetComponent<Animation>().Play();
 	}
 
-	// Token: 0x06000658 RID: 1624 RVA: 0x0004FBFC File Offset: 0x0004DDFC
+	// Token: 0x0600064F RID: 1615 RVA: 0x000626C8 File Offset: 0x000608C8
 	private void Highlight()
 	{
 		if (this.mS_.pickedObject && this.mS_.pickedObject.GetComponent<objectScript>().typ == this.typ)
@@ -167,7 +167,7 @@ public class Item_InventarKaufen : MonoBehaviour
 		this.uiObjects[4].GetComponent<Image>().color = this.colors[0];
 	}
 
-	// Token: 0x06000659 RID: 1625 RVA: 0x0004FC78 File Offset: 0x0004DE78
+	// Token: 0x06000650 RID: 1616 RVA: 0x00062744 File Offset: 0x00060944
 	private void SetTooltip()
 	{
 		objectScript component = this.mapS_.prefabsInventar[this.typ].GetComponent<objectScript>();
@@ -249,7 +249,7 @@ public class Item_InventarKaufen : MonoBehaviour
 		base.GetComponent<tooltip>().c = text;
 	}
 
-	// Token: 0x0600065A RID: 1626 RVA: 0x00050038 File Offset: 0x0004E238
+	// Token: 0x06000651 RID: 1617 RVA: 0x0003D590 File Offset: 0x0003B790
 	private string GetQualitatStars(int i)
 	{
 		string result;

@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x0200003A RID: 58
 public class sui_demo_animBoat : MonoBehaviour
 {
-	// Token: 0x060000D2 RID: 210 RVA: 0x00009950 File Offset: 0x00007B50
+	// Token: 0x060000D2 RID: 210 RVA: 0x0001FE50 File Offset: 0x0001E050
 	private void Awake()
 	{
 		GameObject gameObject = new GameObject();
@@ -21,7 +21,7 @@ public class sui_demo_animBoat : MonoBehaviour
 		this.audioObjectB = gameObject2.GetComponent<AudioSource>();
 	}
 
-	// Token: 0x060000D3 RID: 211 RVA: 0x000099F4 File Offset: 0x00007BF4
+	// Token: 0x060000D3 RID: 211 RVA: 0x0001FEF4 File Offset: 0x0001E0F4
 	private void LateUpdate()
 	{
 		if (this.rudderObject != null)

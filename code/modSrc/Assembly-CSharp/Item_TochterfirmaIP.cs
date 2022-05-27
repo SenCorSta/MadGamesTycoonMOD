@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000100 RID: 256
 public class Item_TochterfirmaIP : MonoBehaviour
 {
-	// Token: 0x0600084D RID: 2125 RVA: 0x00059E96 File Offset: 0x00058096
+	// Token: 0x06000844 RID: 2116 RVA: 0x000063AF File Offset: 0x000045AF
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600084E RID: 2126 RVA: 0x00059E9E File Offset: 0x0005809E
+	// Token: 0x06000845 RID: 2117 RVA: 0x000063B7 File Offset: 0x000045B7
 	public void Update()
 	{
 		if (!this.game_)
@@ -21,18 +21,18 @@ public class Item_TochterfirmaIP : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetIpName();
 	}
 
-	// Token: 0x0600084F RID: 2127 RVA: 0x00059ECC File Offset: 0x000580CC
+	// Token: 0x06000846 RID: 2118 RVA: 0x0006BD68 File Offset: 0x00069F68
 	public void SetData()
 	{
 		if (!this.game_)
 		{
 			return;
 		}
-		if (this.game_.ownerID == this.mS_.myID || this.game_.publisherID == this.mS_.myID)
+		if (this.game_.playerGame)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
-		if (this.mS_.multiplayer && this.game_.GameFromMitspieler())
+		if (this.mS_.multiplayer && !this.game_.playerGame && this.game_.multiplayerSlot != -1 && this.game_.multiplayerSlot != this.mS_.GetMyMultiplayerID())
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[8];
 		}
@@ -41,13 +41,13 @@ public class Item_TochterfirmaIP : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltipIP();
 	}
 
-	// Token: 0x06000850 RID: 2128 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000847 RID: 2119 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000851 RID: 2129 RVA: 0x00059FB8 File Offset: 0x000581B8
+	// Token: 0x06000848 RID: 2120 RVA: 0x0006BE54 File Offset: 0x0006A054
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000212 RID: 530
+// Token: 0x02000211 RID: 529
 public class Menu_W_ServerDown : MonoBehaviour
 {
-	// Token: 0x06001461 RID: 5217 RVA: 0x000D3DD0 File Offset: 0x000D1FD0
+	// Token: 0x06001444 RID: 5188 RVA: 0x0000DCC3 File Offset: 0x0000BEC3
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001462 RID: 5218 RVA: 0x000D3DD8 File Offset: 0x000D1FD8
+	// Token: 0x06001445 RID: 5189 RVA: 0x000DD740 File Offset: 0x000DB940
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_W_ServerDown : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001463 RID: 5219 RVA: 0x000D3E84 File Offset: 0x000D2084
+	// Token: 0x06001446 RID: 5190 RVA: 0x000DD7EC File Offset: 0x000DB9EC
 	public void Init(roomScript script_)
 	{
 		this.FindScripts();
@@ -52,7 +52,7 @@ public class Menu_W_ServerDown : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001464 RID: 5220 RVA: 0x000D3EFD File Offset: 0x000D20FD
+	// Token: 0x06001447 RID: 5191 RVA: 0x0000DCCB File Offset: 0x0000BECB
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -60,7 +60,7 @@ public class Menu_W_ServerDown : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001465 RID: 5221 RVA: 0x000D3F23 File Offset: 0x000D2123
+	// Token: 0x06001448 RID: 5192 RVA: 0x0000DCF1 File Offset: 0x0000BEF1
 	public void BUTTON_Yes()
 	{
 		if (this.rS_)
@@ -70,24 +70,24 @@ public class Menu_W_ServerDown : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x0400186C RID: 6252
+	// Token: 0x04001863 RID: 6243
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400186D RID: 6253
+	// Token: 0x04001864 RID: 6244
 	private roomScript rS_;
 
-	// Token: 0x0400186E RID: 6254
+	// Token: 0x04001865 RID: 6245
 	private GameObject main_;
 
-	// Token: 0x0400186F RID: 6255
+	// Token: 0x04001866 RID: 6246
 	private mainScript mS_;
 
-	// Token: 0x04001870 RID: 6256
+	// Token: 0x04001867 RID: 6247
 	private textScript tS_;
 
-	// Token: 0x04001871 RID: 6257
+	// Token: 0x04001868 RID: 6248
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001872 RID: 6258
+	// Token: 0x04001869 RID: 6249
 	private sfxScript sfx_;
 }

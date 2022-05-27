@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Suimono.Core
 {
-	// Token: 0x020003A4 RID: 932
+	// Token: 0x020003A1 RID: 929
 	[ExecuteInEditMode]
 	public class cameraCausticsHandler : MonoBehaviour
 	{
-		// Token: 0x060022A8 RID: 8872 RVA: 0x0016AEC1 File Offset: 0x001690C1
+		// Token: 0x06002255 RID: 8789 RVA: 0x00016F85 File Offset: 0x00015185
 		private void Start()
 		{
 			this.moduleObject = (SuimonoModule)UnityEngine.Object.FindObjectOfType(typeof(SuimonoModule));
@@ -17,7 +17,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x060022A9 RID: 8873 RVA: 0x0016AF01 File Offset: 0x00169101
+		// Token: 0x06002256 RID: 8790 RVA: 0x00016FC5 File Offset: 0x000151C5
 		private void LateUpdate()
 		{
 			if (!Application.isPlaying)
@@ -26,7 +26,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x060022AA RID: 8874 RVA: 0x0016AF18 File Offset: 0x00169118
+		// Token: 0x06002257 RID: 8791 RVA: 0x0016971C File Offset: 0x0016791C
 		private void OnPreCull()
 		{
 			if (this.causticLight != null)
@@ -62,7 +62,7 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x060022AB RID: 8875 RVA: 0x0016B000 File Offset: 0x00169200
+		// Token: 0x06002258 RID: 8792 RVA: 0x00169804 File Offset: 0x00167A04
 		private void OnPostRender()
 		{
 			if (this.causticLight != null)
@@ -82,19 +82,19 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x04002C0D RID: 11277
+		// Token: 0x04002BF7 RID: 11255
 		public bool isUnderwater;
 
-		// Token: 0x04002C0E RID: 11278
+		// Token: 0x04002BF8 RID: 11256
 		public Light causticLight;
 
-		// Token: 0x04002C0F RID: 11279
+		// Token: 0x04002BF9 RID: 11257
 		public suiCausToolType causticType;
 
-		// Token: 0x04002C10 RID: 11280
+		// Token: 0x04002BFA RID: 11258
 		private bool enableCaustics = true;
 
-		// Token: 0x04002C11 RID: 11281
+		// Token: 0x04002BFB RID: 11259
 		private SuimonoModule moduleObject;
 	}
 }

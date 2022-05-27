@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001C3 RID: 451
+// Token: 0x020001C2 RID: 450
 public class Menu_MP_Awards : MonoBehaviour
 {
-	// Token: 0x060010FA RID: 4346 RVA: 0x000B44DC File Offset: 0x000B26DC
+	// Token: 0x060010E0 RID: 4320 RVA: 0x0000BE5F File Offset: 0x0000A05F
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010FB RID: 4347 RVA: 0x000B44E4 File Offset: 0x000B26E4
+	// Token: 0x060010E1 RID: 4321 RVA: 0x000BFF60 File Offset: 0x000BE160
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_MP_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010FC RID: 4348 RVA: 0x000B45CE File Offset: 0x000B27CE
+	// Token: 0x060010E2 RID: 4322 RVA: 0x0000BE67 File Offset: 0x0000A067
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060010FD RID: 4349 RVA: 0x000B45D6 File Offset: 0x000B27D6
+	// Token: 0x060010E3 RID: 4323 RVA: 0x0000BE6F File Offset: 0x0000A06F
 	public void Init()
 	{
 		this.selectedPlayer = -1;
@@ -58,14 +58,14 @@ public class Menu_MP_Awards : MonoBehaviour
 		this.InitPlayerButtons();
 	}
 
-	// Token: 0x060010FE RID: 4350 RVA: 0x000B45EB File Offset: 0x000B27EB
+	// Token: 0x060010E4 RID: 4324 RVA: 0x0000BE84 File Offset: 0x0000A084
 	private void Update()
 	{
 		this.UpdatePlayerButtons();
 		this.SetData(this.selectedPlayer);
 	}
 
-	// Token: 0x060010FF RID: 4351 RVA: 0x000B4600 File Offset: 0x000B2800
+	// Token: 0x060010E5 RID: 4325 RVA: 0x000C004C File Offset: 0x000BE24C
 	public void UpdatePlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -84,7 +84,7 @@ public class Menu_MP_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001100 RID: 4352 RVA: 0x000B4670 File Offset: 0x000B2870
+	// Token: 0x060010E6 RID: 4326 RVA: 0x000C00BC File Offset: 0x000BE2BC
 	public void InitPlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -110,76 +110,73 @@ public class Menu_MP_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001101 RID: 4353 RVA: 0x000B4768 File Offset: 0x000B2968
+	// Token: 0x060010E7 RID: 4327 RVA: 0x0000BE98 File Offset: 0x0000A098
 	public void BUTTON_Player(int p)
 	{
 		this.sfx_.PlaySound(12, true);
 		this.selectedPlayer = p;
 	}
 
-	// Token: 0x06001102 RID: 4354 RVA: 0x000B477F File Offset: 0x000B297F
+	// Token: 0x060010E8 RID: 4328 RVA: 0x0000BEAF File Offset: 0x0000A0AF
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001103 RID: 4355 RVA: 0x000B479C File Offset: 0x000B299C
+	// Token: 0x060010E9 RID: 4329 RVA: 0x000C01B4 File Offset: 0x000BE3B4
 	private void SetData(int p)
 	{
 		if (p >= this.mpCalls_.playersMP.Count)
 		{
 			return;
 		}
-		GameObject gameObject = GameObject.Find("PUB_" + this.mpCalls_.playersMP[p].playerID.ToString());
-		if (gameObject)
-		{
-			publisherScript component = gameObject.GetComponent<publisherScript>();
-			this.uiObjects[0].GetComponent<Text>().text = component.awards[4].ToString() + "x";
-			this.uiObjects[1].GetComponent<Text>().text = component.awards[2].ToString() + "x";
-			this.uiObjects[2].GetComponent<Text>().text = component.awards[3].ToString() + "x";
-			this.uiObjects[3].GetComponent<Text>().text = component.awards[0].ToString() + "x";
-			this.uiObjects[4].GetComponent<Text>().text = component.awards[1].ToString() + "x";
-			this.uiObjects[5].GetComponent<Text>().text = component.awards[8].ToString() + "x";
-			this.uiObjects[6].GetComponent<Text>().text = component.awards[7].ToString() + "x";
-			this.uiObjects[7].GetComponent<Text>().text = component.awards[6].ToString() + "x";
-			this.uiObjects[8].GetComponent<Text>().text = component.awards[5].ToString() + "x";
-			this.uiObjects[9].GetComponent<Text>().text = component.awards[9].ToString() + "x";
-			this.uiObjects[10].GetComponent<Text>().text = component.awards[10].ToString() + "x";
-			this.uiObjects[11].GetComponent<Text>().text = component.awards[11].ToString() + "x";
-		}
+		int[] array = new int[this.mpCalls_.playersMP[p].awards.Length];
+		array = (int[])this.mpCalls_.playersMP[p].awards.Clone();
+		this.uiObjects[0].GetComponent<Text>().text = array[4].ToString() + "x";
+		this.uiObjects[1].GetComponent<Text>().text = array[2].ToString() + "x";
+		this.uiObjects[2].GetComponent<Text>().text = array[3].ToString() + "x";
+		this.uiObjects[3].GetComponent<Text>().text = array[0].ToString() + "x";
+		this.uiObjects[4].GetComponent<Text>().text = array[1].ToString() + "x";
+		this.uiObjects[5].GetComponent<Text>().text = array[8].ToString() + "x";
+		this.uiObjects[6].GetComponent<Text>().text = array[7].ToString() + "x";
+		this.uiObjects[7].GetComponent<Text>().text = array[6].ToString() + "x";
+		this.uiObjects[8].GetComponent<Text>().text = array[5].ToString() + "x";
+		this.uiObjects[9].GetComponent<Text>().text = array[9].ToString() + "x";
+		this.uiObjects[10].GetComponent<Text>().text = array[10].ToString() + "x";
+		this.uiObjects[11].GetComponent<Text>().text = array[11].ToString() + "x";
 	}
 
-	// Token: 0x04001583 RID: 5507
+	// Token: 0x0400157A RID: 5498
 	public GameObject[] uiPlayerButtons;
 
-	// Token: 0x04001584 RID: 5508
+	// Token: 0x0400157B RID: 5499
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001585 RID: 5509
+	// Token: 0x0400157C RID: 5500
 	private roomScript rS_;
 
-	// Token: 0x04001586 RID: 5510
+	// Token: 0x0400157D RID: 5501
 	private GameObject main_;
 
-	// Token: 0x04001587 RID: 5511
+	// Token: 0x0400157E RID: 5502
 	private mainScript mS_;
 
-	// Token: 0x04001588 RID: 5512
+	// Token: 0x0400157F RID: 5503
 	private textScript tS_;
 
-	// Token: 0x04001589 RID: 5513
+	// Token: 0x04001580 RID: 5504
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400158A RID: 5514
+	// Token: 0x04001581 RID: 5505
 	private sfxScript sfx_;
 
-	// Token: 0x0400158B RID: 5515
+	// Token: 0x04001582 RID: 5506
 	private unlockScript unlock_;
 
-	// Token: 0x0400158C RID: 5516
+	// Token: 0x04001583 RID: 5507
 	private mpCalls mpCalls_;
 
-	// Token: 0x0400158D RID: 5517
+	// Token: 0x04001584 RID: 5508
 	public int selectedPlayer = -1;
 }

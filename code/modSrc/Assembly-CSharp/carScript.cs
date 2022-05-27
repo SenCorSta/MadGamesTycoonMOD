@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002DB RID: 731
+// Token: 0x020002D8 RID: 728
 public class carScript : MonoBehaviour
 {
-	// Token: 0x06001A36 RID: 6710 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x060019EC RID: 6636 RVA: 0x00002098 File Offset: 0x00000298
 	private void Start()
 	{
 	}
 
-	// Token: 0x06001A37 RID: 6711 RVA: 0x0010A090 File Offset: 0x00108290
+	// Token: 0x060019ED RID: 6637 RVA: 0x0010E244 File Offset: 0x0010C444
 	private void Update()
 	{
 		if (!this.aktuellesCar)
@@ -25,12 +25,12 @@ public class carScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400213B RID: 8507
+	// Token: 0x04002121 RID: 8481
 	public GameObject[] prefabCars;
 
-	// Token: 0x0400213C RID: 8508
+	// Token: 0x04002122 RID: 8482
 	public AnimationClip carAnimation;
 
-	// Token: 0x0400213D RID: 8509
+	// Token: 0x04002123 RID: 8483
 	private GameObject aktuellesCar;
 }

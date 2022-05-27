@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000300 RID: 768
+// Token: 0x020002FD RID: 765
 public class soundScript : MonoBehaviour
 {
-	// Token: 0x06001ADA RID: 6874 RVA: 0x0010DFC8 File Offset: 0x0010C1C8
+	// Token: 0x06001A90 RID: 6800 RVA: 0x00111BEC File Offset: 0x0010FDEC
 	private void Start()
 	{
 		if (!this.main_)
@@ -27,7 +27,7 @@ public class soundScript : MonoBehaviour
 		this.myRenderer = base.GetComponent<MeshRenderer>();
 	}
 
-	// Token: 0x06001ADB RID: 6875 RVA: 0x0010E064 File Offset: 0x0010C264
+	// Token: 0x06001A91 RID: 6801 RVA: 0x00111C88 File Offset: 0x0010FE88
 	private void Update()
 	{
 		if (this.muteOnPausedGame && this.mS_.GetGameSpeed() <= 0f)
@@ -43,30 +43,30 @@ public class soundScript : MonoBehaviour
 		this.soundSource.volume = this.orgVolume * this.sS_.masterVolume;
 	}
 
-	// Token: 0x040021FF RID: 8703
+	// Token: 0x040021E5 RID: 8677
 	private AudioSource soundSource;
 
-	// Token: 0x04002200 RID: 8704
+	// Token: 0x040021E6 RID: 8678
 	private settingsScript sS_;
 
-	// Token: 0x04002201 RID: 8705
+	// Token: 0x040021E7 RID: 8679
 	private mainScript mS_;
 
-	// Token: 0x04002202 RID: 8706
+	// Token: 0x040021E8 RID: 8680
 	private GameObject main_;
 
-	// Token: 0x04002203 RID: 8707
+	// Token: 0x040021E9 RID: 8681
 	private MeshRenderer myRenderer;
 
-	// Token: 0x04002204 RID: 8708
+	// Token: 0x040021EA RID: 8682
 	private float orgVolume = 1f;
 
-	// Token: 0x04002205 RID: 8709
+	// Token: 0x040021EB RID: 8683
 	private float oldGamespeed = 1f;
 
-	// Token: 0x04002206 RID: 8710
+	// Token: 0x040021EC RID: 8684
 	public bool pitchToGamespeed;
 
-	// Token: 0x04002207 RID: 8711
+	// Token: 0x040021ED RID: 8685
 	public bool muteOnPausedGame;
 }

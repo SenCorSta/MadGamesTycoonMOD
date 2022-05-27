@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001B7 RID: 439
+// Token: 0x020001B6 RID: 438
 public class Menu_PickCharacter : MonoBehaviour
 {
-	// Token: 0x06001094 RID: 4244 RVA: 0x000AFAFA File Offset: 0x000ADCFA
+	// Token: 0x0600107A RID: 4218 RVA: 0x0000BA86 File Offset: 0x00009C86
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001095 RID: 4245 RVA: 0x000AFB04 File Offset: 0x000ADD04
+	// Token: 0x0600107B RID: 4219 RVA: 0x000BB9BC File Offset: 0x000B9BBC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001096 RID: 4246 RVA: 0x000AFBF0 File Offset: 0x000ADDF0
+	// Token: 0x0600107C RID: 4220 RVA: 0x000BBAA8 File Offset: 0x000B9CA8
 	private void Update()
 	{
 		if (!Input.GetKey(KeyCode.LeftShift))
@@ -108,14 +108,14 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001097 RID: 4247 RVA: 0x000AFD39 File Offset: 0x000ADF39
+	// Token: 0x0600107D RID: 4221 RVA: 0x0000BA8E File Offset: 0x00009C8E
 	private void OnDisable()
 	{
 		this.FindScripts();
 		this.guiMain_.DeselectInputField();
 	}
 
-	// Token: 0x06001098 RID: 4248 RVA: 0x000AFD4C File Offset: 0x000ADF4C
+	// Token: 0x0600107E RID: 4222 RVA: 0x0000BAA1 File Offset: 0x00009CA1
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -126,7 +126,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001099 RID: 4249 RVA: 0x000AFD88 File Offset: 0x000ADF88
+	// Token: 0x0600107F RID: 4223 RVA: 0x000BBBF4 File Offset: 0x000B9DF4
 	private void SetAllToGroup(int g)
 	{
 		if (this.mS_.pickedChars.Count > 0)
@@ -142,7 +142,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600109A RID: 4250 RVA: 0x000AFE08 File Offset: 0x000AE008
+	// Token: 0x06001080 RID: 4224 RVA: 0x000BBC74 File Offset: 0x000B9E74
 	public void UpdateData()
 	{
 		if (this.mS_.pickedChars.Count > 0 && this.mS_.pickedChars[0])
@@ -175,7 +175,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600109B RID: 4251 RVA: 0x000B0050 File Offset: 0x000AE250
+	// Token: 0x06001081 RID: 4225 RVA: 0x000BBEBC File Offset: 0x000BA0BC
 	public void SetBalken(GameObject go, float val, int beruf_)
 	{
 		go.transform.Find("Value").GetComponent<Text>().text = this.mS_.Round(val, 1).ToString();
@@ -194,7 +194,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.5f;
 	}
 
-	// Token: 0x0600109C RID: 4252 RVA: 0x000B014C File Offset: 0x000AE34C
+	// Token: 0x06001082 RID: 4226 RVA: 0x000BBFB8 File Offset: 0x000BA1B8
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -212,7 +212,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x0600109D RID: 4253 RVA: 0x000B01C0 File Offset: 0x000AE3C0
+	// Token: 0x06001083 RID: 4227 RVA: 0x000BC02C File Offset: 0x000BA22C
 	public void INPUTFIELD_Name()
 	{
 		if (this.mS_.pickedChars.Count > 0)
@@ -226,13 +226,13 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600109E RID: 4254 RVA: 0x000B0238 File Offset: 0x000AE438
+	// Token: 0x06001084 RID: 4228 RVA: 0x0000BADC File Offset: 0x00009CDC
 	public void INPUTFIELD_NameEnd()
 	{
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x0600109F RID: 4255 RVA: 0x000B0248 File Offset: 0x000AE448
+	// Token: 0x06001085 RID: 4229 RVA: 0x000BC0A4 File Offset: 0x000BA2A4
 	public void BUTTON_Entlassen()
 	{
 		if (this.mS_.pickedChars.Count > 0 && this.mS_.pickedChars[0])
@@ -248,7 +248,7 @@ public class Menu_PickCharacter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010A0 RID: 4256 RVA: 0x000B02F4 File Offset: 0x000AE4F4
+	// Token: 0x06001086 RID: 4230 RVA: 0x000BC150 File Offset: 0x000BA350
 	public void AddCharToList(characterScript cS_)
 	{
 		this.FindScripts();
@@ -259,39 +259,39 @@ public class Menu_PickCharacter : MonoBehaviour
 		component.BUTTON_Click();
 	}
 
-	// Token: 0x060010A1 RID: 4257 RVA: 0x000B034B File Offset: 0x000AE54B
+	// Token: 0x06001087 RID: 4231 RVA: 0x0000BAEA File Offset: 0x00009CEA
 	public void BUTTON_Abbrechen()
 	{
 		this.pcS_.ESC_DropChar();
 	}
 
-	// Token: 0x04001504 RID: 5380
+	// Token: 0x040014F9 RID: 5369
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001505 RID: 5381
+	// Token: 0x040014FA RID: 5370
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001506 RID: 5382
+	// Token: 0x040014FB RID: 5371
 	private GameObject main_;
 
-	// Token: 0x04001507 RID: 5383
+	// Token: 0x040014FC RID: 5372
 	private mainScript mS_;
 
-	// Token: 0x04001508 RID: 5384
+	// Token: 0x040014FD RID: 5373
 	private textScript tS_;
 
-	// Token: 0x04001509 RID: 5385
+	// Token: 0x040014FE RID: 5374
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400150A RID: 5386
+	// Token: 0x040014FF RID: 5375
 	private sfxScript sfx_;
 
-	// Token: 0x0400150B RID: 5387
+	// Token: 0x04001500 RID: 5376
 	private cameraMovementScript cmS_;
 
-	// Token: 0x0400150C RID: 5388
+	// Token: 0x04001501 RID: 5377
 	private characterScript charS_;
 
-	// Token: 0x0400150D RID: 5389
+	// Token: 0x04001502 RID: 5378
 	private pickCharacterScript pcS_;
 }

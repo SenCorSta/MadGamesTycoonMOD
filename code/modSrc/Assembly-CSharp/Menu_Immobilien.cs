@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000197 RID: 407
+// Token: 0x02000196 RID: 406
 public class Menu_Immobilien : MonoBehaviour
 {
-	// Token: 0x06000F70 RID: 3952 RVA: 0x000A4241 File Offset: 0x000A2441
+	// Token: 0x06000F58 RID: 3928 RVA: 0x0000AEB1 File Offset: 0x000090B1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F71 RID: 3953 RVA: 0x000A424C File Offset: 0x000A244C
+	// Token: 0x06000F59 RID: 3929 RVA: 0x000B0F1C File Offset: 0x000AF11C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_Immobilien : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F72 RID: 3954 RVA: 0x000A4338 File Offset: 0x000A2538
+	// Token: 0x06000F5A RID: 3930 RVA: 0x000B1008 File Offset: 0x000AF208
 	public void Init(roomScript script_)
 	{
 		this.FindScripts();
@@ -61,7 +61,7 @@ public class Menu_Immobilien : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x06000F73 RID: 3955 RVA: 0x000A43CD File Offset: 0x000A25CD
+	// Token: 0x06000F5B RID: 3931 RVA: 0x0000AEB9 File Offset: 0x000090B9
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -69,7 +69,7 @@ public class Menu_Immobilien : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x06000F74 RID: 3956 RVA: 0x000A43F4 File Offset: 0x000A25F4
+	// Token: 0x06000F5C RID: 3932 RVA: 0x000B10A0 File Offset: 0x000AF2A0
 	public void BUTTON_OK()
 	{
 		int preis = this.GetPreis();
@@ -85,7 +85,7 @@ public class Menu_Immobilien : MonoBehaviour
 		this.BUTTON_Close();
 	}
 
-	// Token: 0x06000F75 RID: 3957 RVA: 0x000A446C File Offset: 0x000A266C
+	// Token: 0x06000F5D RID: 3933 RVA: 0x000B1118 File Offset: 0x000AF318
 	private int GetPreis()
 	{
 		int count = this.rS_.listGameObjects.Count;
@@ -129,30 +129,30 @@ public class Menu_Immobilien : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x040013C7 RID: 5063
+	// Token: 0x040013BE RID: 5054
 	public GameObject[] uiObjects;
 
-	// Token: 0x040013C8 RID: 5064
+	// Token: 0x040013BF RID: 5055
 	private GameObject main_;
 
-	// Token: 0x040013C9 RID: 5065
+	// Token: 0x040013C0 RID: 5056
 	private mainScript mS_;
 
-	// Token: 0x040013CA RID: 5066
+	// Token: 0x040013C1 RID: 5057
 	private textScript tS_;
 
-	// Token: 0x040013CB RID: 5067
+	// Token: 0x040013C2 RID: 5058
 	private GUI_Main guiMain_;
 
-	// Token: 0x040013CC RID: 5068
+	// Token: 0x040013C3 RID: 5059
 	private sfxScript sfx_;
 
-	// Token: 0x040013CD RID: 5069
+	// Token: 0x040013C4 RID: 5060
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040013CE RID: 5070
+	// Token: 0x040013C5 RID: 5061
 	private unlockScript unlock_;
 
-	// Token: 0x040013CF RID: 5071
+	// Token: 0x040013C6 RID: 5062
 	private roomScript rS_;
 }

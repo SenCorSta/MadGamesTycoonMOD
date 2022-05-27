@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000113 RID: 275
+// Token: 0x02000112 RID: 274
 public class Menu_ArcadePreis : MonoBehaviour
 {
-	// Token: 0x060008FA RID: 2298 RVA: 0x0006124B File Offset: 0x0005F44B
+	// Token: 0x060008EB RID: 2283 RVA: 0x000069B0 File Offset: 0x00004BB0
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060008FB RID: 2299 RVA: 0x00061254 File Offset: 0x0005F454
+	// Token: 0x060008EC RID: 2284 RVA: 0x000727BC File Offset: 0x000709BC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -69,7 +69,7 @@ public class Menu_ArcadePreis : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008FC RID: 2300 RVA: 0x000613F4 File Offset: 0x0005F5F4
+	// Token: 0x060008ED RID: 2285 RVA: 0x0007295C File Offset: 0x00070B5C
 	public void Init(gameScript game_, taskGame t_)
 	{
 		this.FindScripts();
@@ -115,7 +115,7 @@ public class Menu_ArcadePreis : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060008FD RID: 2301 RVA: 0x000615E0 File Offset: 0x0005F7E0
+	// Token: 0x060008EE RID: 2286 RVA: 0x00072B48 File Offset: 0x00070D48
 	private void SetData()
 	{
 		this.uiObjects[15].GetComponent<Text>().text = this.mS_.GetMoney((long)this.prodCostsCase[this.setCase], true);
@@ -140,13 +140,13 @@ public class Menu_ArcadePreis : MonoBehaviour
 		this.uiObjects[12].GetComponent<Text>().text = this.mS_.GetMoney((long)num3, true);
 	}
 
-	// Token: 0x060008FE RID: 2302 RVA: 0x000617E9 File Offset: 0x0005F9E9
+	// Token: 0x060008EF RID: 2287 RVA: 0x000069B8 File Offset: 0x00004BB8
 	public int CalcProdCosts()
 	{
 		return 0 + this.prodCostsCase[this.setCase] + this.prodCostsMonitor[this.setMonitor] + this.prodCostsJoystick[this.setJoystick] + this.prodCostsSound[this.setSound];
 	}
 
-	// Token: 0x060008FF RID: 2303 RVA: 0x00061824 File Offset: 0x0005FA24
+	// Token: 0x060008F0 RID: 2288 RVA: 0x00072D54 File Offset: 0x00070F54
 	public void BUTTON_Minus_Komponent(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -184,7 +184,7 @@ public class Menu_ArcadePreis : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000900 RID: 2304 RVA: 0x000618DC File Offset: 0x0005FADC
+	// Token: 0x060008F1 RID: 2289 RVA: 0x00072E0C File Offset: 0x0007100C
 	public void BUTTON_Plus_Komponent(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -222,13 +222,13 @@ public class Menu_ArcadePreis : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000901 RID: 2305 RVA: 0x00061992 File Offset: 0x0005FB92
+	// Token: 0x060008F2 RID: 2290 RVA: 0x000069F3 File Offset: 0x00004BF3
 	public void SLIDER_Preis()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000902 RID: 2306 RVA: 0x0006199C File Offset: 0x0005FB9C
+	// Token: 0x060008F3 RID: 2291 RVA: 0x00072EC4 File Offset: 0x000710C4
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -242,7 +242,7 @@ public class Menu_ArcadePreis : MonoBehaviour
 		this.task_ = null;
 	}
 
-	// Token: 0x06000903 RID: 2307 RVA: 0x00061A20 File Offset: 0x0005FC20
+	// Token: 0x060008F4 RID: 2292 RVA: 0x00072F48 File Offset: 0x00071148
 	public void BUTTON_Ok()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -253,7 +253,7 @@ public class Menu_ArcadePreis : MonoBehaviour
 		}
 		if (this.task_)
 		{
-			this.gS_.SetPublisher(this.mS_.myID);
+			this.gS_.SetPublisher(-1);
 			this.gS_.SetOnMarket();
 			this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[71]);
 			this.guiMain_.uiObjects[71].GetComponent<Menu_Dev_XP>().Init(this.gS_);
@@ -271,7 +271,7 @@ public class Menu_ArcadePreis : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000904 RID: 2308 RVA: 0x00061B81 File Offset: 0x0005FD81
+	// Token: 0x060008F5 RID: 2293 RVA: 0x000069FB File Offset: 0x00004BFB
 	private IEnumerator iMinusPreis(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -282,7 +282,7 @@ public class Menu_ArcadePreis : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000905 RID: 2309 RVA: 0x00061B98 File Offset: 0x0005FD98
+	// Token: 0x060008F6 RID: 2294 RVA: 0x000730A0 File Offset: 0x000712A0
 	public void BUTTON_MinusPreis(int i)
 	{
 		int num = Mathf.RoundToInt(this.uiObjects[13].GetComponent<Slider>().value);
@@ -297,7 +297,7 @@ public class Menu_ArcadePreis : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000906 RID: 2310 RVA: 0x00061C06 File Offset: 0x0005FE06
+	// Token: 0x060008F7 RID: 2295 RVA: 0x00006A11 File Offset: 0x00004C11
 	private IEnumerator iPlusPreis(int i)
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -308,7 +308,7 @@ public class Menu_ArcadePreis : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000907 RID: 2311 RVA: 0x00061C1C File Offset: 0x0005FE1C
+	// Token: 0x060008F8 RID: 2296 RVA: 0x00073110 File Offset: 0x00071310
 	public void BUTTON_PlusPreis(int i)
 	{
 		int num = Mathf.RoundToInt(this.uiObjects[13].GetComponent<Slider>().value);
@@ -323,78 +323,78 @@ public class Menu_ArcadePreis : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x04000D7A RID: 3450
+	// Token: 0x04000D72 RID: 3442
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000D7B RID: 3451
+	// Token: 0x04000D73 RID: 3443
 	public int[] prodCostsCase;
 
-	// Token: 0x04000D7C RID: 3452
+	// Token: 0x04000D74 RID: 3444
 	public int[] prodCostsMonitor;
 
-	// Token: 0x04000D7D RID: 3453
+	// Token: 0x04000D75 RID: 3445
 	public int[] prodCostsJoystick;
 
-	// Token: 0x04000D7E RID: 3454
+	// Token: 0x04000D76 RID: 3446
 	public int[] prodCostsSound;
 
-	// Token: 0x04000D7F RID: 3455
+	// Token: 0x04000D77 RID: 3447
 	public int setCase;
 
-	// Token: 0x04000D80 RID: 3456
+	// Token: 0x04000D78 RID: 3448
 	public int setMonitor;
 
-	// Token: 0x04000D81 RID: 3457
+	// Token: 0x04000D79 RID: 3449
 	public int setJoystick;
 
-	// Token: 0x04000D82 RID: 3458
+	// Token: 0x04000D7A RID: 3450
 	public int setSound;
 
-	// Token: 0x04000D83 RID: 3459
+	// Token: 0x04000D7B RID: 3451
 	public int orgPreis;
 
-	// Token: 0x04000D84 RID: 3460
+	// Token: 0x04000D7C RID: 3452
 	private GameObject main_;
 
-	// Token: 0x04000D85 RID: 3461
+	// Token: 0x04000D7D RID: 3453
 	private mainScript mS_;
 
-	// Token: 0x04000D86 RID: 3462
+	// Token: 0x04000D7E RID: 3454
 	private textScript tS_;
 
-	// Token: 0x04000D87 RID: 3463
+	// Token: 0x04000D7F RID: 3455
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000D88 RID: 3464
+	// Token: 0x04000D80 RID: 3456
 	private sfxScript sfx_;
 
-	// Token: 0x04000D89 RID: 3465
+	// Token: 0x04000D81 RID: 3457
 	private genres genres_;
 
-	// Token: 0x04000D8A RID: 3466
+	// Token: 0x04000D82 RID: 3458
 	private themes themes_;
 
-	// Token: 0x04000D8B RID: 3467
+	// Token: 0x04000D83 RID: 3459
 	private licences licences_;
 
-	// Token: 0x04000D8C RID: 3468
+	// Token: 0x04000D84 RID: 3460
 	private engineFeatures eF_;
 
-	// Token: 0x04000D8D RID: 3469
+	// Token: 0x04000D85 RID: 3461
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04000D8E RID: 3470
+	// Token: 0x04000D86 RID: 3462
 	private unlockScript unlock_;
 
-	// Token: 0x04000D8F RID: 3471
+	// Token: 0x04000D87 RID: 3463
 	private gameplayFeatures gF_;
 
-	// Token: 0x04000D90 RID: 3472
+	// Token: 0x04000D88 RID: 3464
 	private games games_;
 
-	// Token: 0x04000D91 RID: 3473
+	// Token: 0x04000D89 RID: 3465
 	private gameScript gS_;
 
-	// Token: 0x04000D92 RID: 3474
+	// Token: 0x04000D8A RID: 3466
 	private taskGame task_;
 }

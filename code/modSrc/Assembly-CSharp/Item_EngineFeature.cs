@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000B8 RID: 184
 public class Item_EngineFeature : MonoBehaviour
 {
-	// Token: 0x06000697 RID: 1687 RVA: 0x00050FBC File Offset: 0x0004F1BC
+	// Token: 0x0600068E RID: 1678 RVA: 0x00005BCB File Offset: 0x00003DCB
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000698 RID: 1688 RVA: 0x00050FC4 File Offset: 0x0004F1C4
+	// Token: 0x0600068F RID: 1679 RVA: 0x000637DC File Offset: 0x000619DC
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.eF_.GetName(this.myID);
@@ -21,7 +21,7 @@ public class Item_EngineFeature : MonoBehaviour
 		this.tooltip_.c = this.eF_.GetTooltip(this.myID);
 	}
 
-	// Token: 0x06000699 RID: 1689 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000690 RID: 1680 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);

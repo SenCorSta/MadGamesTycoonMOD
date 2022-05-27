@@ -4,23 +4,23 @@ using UnityEngine;
 
 namespace MeshDistortLite
 {
-	// Token: 0x020003E6 RID: 998
+	// Token: 0x020003E3 RID: 995
 	[DisallowMultipleComponent]
 	[ExecuteInEditMode]
 	public class Distort : MonoBehaviour
 	{
-		// Token: 0x060023C2 RID: 9154 RVA: 0x0017173E File Offset: 0x0016F93E
+		// Token: 0x0600236F RID: 9071 RVA: 0x00018277 File Offset: 0x00016477
 		private void Awake()
 		{
 			this.animDistort = base.GetComponent<AnimatedDistort>();
 		}
 
-		// Token: 0x060023C3 RID: 9155 RVA: 0x00002715 File Offset: 0x00000915
+		// Token: 0x06002370 RID: 9072 RVA: 0x00002098 File Offset: 0x00000298
 		private void Reset()
 		{
 		}
 
-		// Token: 0x060023C4 RID: 9156 RVA: 0x0017174C File Offset: 0x0016F94C
+		// Token: 0x06002371 RID: 9073 RVA: 0x0016EBDC File Offset: 0x0016CDDC
 		private void OnEnable()
 		{
 			if (this.meshList == null)
@@ -41,7 +41,7 @@ namespace MeshDistortLite
 			this.UpdateDistort();
 		}
 
-		// Token: 0x060023C5 RID: 9157 RVA: 0x001717D4 File Offset: 0x0016F9D4
+		// Token: 0x06002372 RID: 9074 RVA: 0x0016EC64 File Offset: 0x0016CE64
 		public UnityEngine.Object[] GetAllMeshes()
 		{
 			List<UnityEngine.Object> list = new List<UnityEngine.Object>();
@@ -52,7 +52,7 @@ namespace MeshDistortLite
 			return list.ToArray();
 		}
 
-		// Token: 0x060023C6 RID: 9158 RVA: 0x00171838 File Offset: 0x0016FA38
+		// Token: 0x06002373 RID: 9075 RVA: 0x0016ECC8 File Offset: 0x0016CEC8
 		private void SetDebugLines()
 		{
 			int num = 10;
@@ -97,7 +97,7 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x060023C7 RID: 9159 RVA: 0x00171BD8 File Offset: 0x0016FDD8
+		// Token: 0x06002374 RID: 9076 RVA: 0x0016F068 File Offset: 0x0016D268
 		private void SetVertices()
 		{
 			this.meshList = new List<MeshDistortData>();
@@ -114,7 +114,7 @@ namespace MeshDistortLite
 			this.SetBounds();
 		}
 
-		// Token: 0x060023C8 RID: 9160 RVA: 0x00171C74 File Offset: 0x0016FE74
+		// Token: 0x06002375 RID: 9077 RVA: 0x0016F104 File Offset: 0x0016D304
 		private void SetBounds()
 		{
 			this.combinedBounds = default(Bounds);
@@ -146,7 +146,7 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x060023C9 RID: 9161 RVA: 0x00171D34 File Offset: 0x0016FF34
+		// Token: 0x06002376 RID: 9078 RVA: 0x0016F1C4 File Offset: 0x0016D3C4
 		private void ResetVertices()
 		{
 			foreach (MeshDistortData meshDistortData in this.meshList)
@@ -155,12 +155,12 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x060023CA RID: 9162 RVA: 0x00002715 File Offset: 0x00000915
+		// Token: 0x06002377 RID: 9079 RVA: 0x00002098 File Offset: 0x00000298
 		public void EditParameters()
 		{
 		}
 
-		// Token: 0x060023CB RID: 9163 RVA: 0x00171D84 File Offset: 0x0016FF84
+		// Token: 0x06002378 RID: 9080 RVA: 0x0016F214 File Offset: 0x0016D414
 		public void LateUpdate()
 		{
 			if (base.transform.hasChanged)
@@ -175,7 +175,7 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x060023CC RID: 9164 RVA: 0x00171DE7 File Offset: 0x0016FFE7
+		// Token: 0x06002379 RID: 9081 RVA: 0x00018285 File Offset: 0x00016485
 		public void UpdateDistort()
 		{
 			if (!base.isActiveAndEnabled)
@@ -185,7 +185,7 @@ namespace MeshDistortLite
 			this.UpdateInCPU();
 		}
 
-		// Token: 0x060023CD RID: 9165 RVA: 0x00171DF8 File Offset: 0x0016FFF8
+		// Token: 0x0600237A RID: 9082 RVA: 0x0016F278 File Offset: 0x0016D478
 		public void UpdateInCPU()
 		{
 			Vector3 position = base.transform.position;
@@ -258,7 +258,7 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x060023CE RID: 9166 RVA: 0x00172134 File Offset: 0x00170334
+		// Token: 0x0600237B RID: 9083 RVA: 0x0016F5B4 File Offset: 0x0016D7B4
 		public void UpdateDebugLines()
 		{
 			this.SetDebugLines();
@@ -279,7 +279,7 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x060023CF RID: 9167 RVA: 0x001721D0 File Offset: 0x001703D0
+		// Token: 0x0600237C RID: 9084 RVA: 0x0016F650 File Offset: 0x0016D850
 		public void MakeDynamic()
 		{
 			foreach (MeshDistortData meshDistortData in this.meshList)
@@ -288,7 +288,7 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x060023D0 RID: 9168 RVA: 0x00172228 File Offset: 0x00170428
+		// Token: 0x0600237D RID: 9085 RVA: 0x0016F6A8 File Offset: 0x0016D8A8
 		public void AddDistortion()
 		{
 			DistortData item = new DistortData();
@@ -299,13 +299,13 @@ namespace MeshDistortLite
 			this.distort.Add(item);
 		}
 
-		// Token: 0x060023D1 RID: 9169 RVA: 0x0017225A File Offset: 0x0017045A
+		// Token: 0x0600237E RID: 9086 RVA: 0x00018296 File Offset: 0x00016496
 		public void RemoveDistort(int index)
 		{
 			this.distort.RemoveAt(index);
 		}
 
-		// Token: 0x060023D2 RID: 9170 RVA: 0x00172268 File Offset: 0x00170468
+		// Token: 0x0600237F RID: 9087 RVA: 0x0016F6DC File Offset: 0x0016D8DC
 		private void OnDrawGizmos()
 		{
 			if (this.showMeshInEditor && !Application.isPlaying && base.isActiveAndEnabled)
@@ -348,66 +348,66 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x04002D9B RID: 11675
+		// Token: 0x04002D85 RID: 11653
 		public Distort.Calculate calculation;
 
-		// Token: 0x04002D9C RID: 11676
+		// Token: 0x04002D86 RID: 11654
 		[HideInInspector]
 		public bool updateIntEditor = true;
 
-		// Token: 0x04002D9D RID: 11677
+		// Token: 0x04002D87 RID: 11655
 		public List<DistortData> distort = new List<DistortData>();
 
-		// Token: 0x04002D9E RID: 11678
+		// Token: 0x04002D88 RID: 11656
 		[NonSerialized]
 		public List<MeshDistortData> meshList;
 
-		// Token: 0x04002D9F RID: 11679
+		// Token: 0x04002D89 RID: 11657
 		public Bounds combinedBounds;
 
-		// Token: 0x04002DA0 RID: 11680
+		// Token: 0x04002D8A RID: 11658
 		public bool showDebugLines;
 
-		// Token: 0x04002DA1 RID: 11681
+		// Token: 0x04002D8B RID: 11659
 		public float debugLinesDistance = 1f;
 
-		// Token: 0x04002DA2 RID: 11682
+		// Token: 0x04002D8C RID: 11660
 		public Vector3[,] debugLines;
 
-		// Token: 0x04002DA3 RID: 11683
+		// Token: 0x04002D8D RID: 11661
 		public bool showMeshInEditor = true;
 
-		// Token: 0x04002DA4 RID: 11684
+		// Token: 0x04002D8E RID: 11662
 		public bool showPreviewWindow = true;
 
-		// Token: 0x04002DA5 RID: 11685
+		// Token: 0x04002D8F RID: 11663
 		public bool calculateInGPU;
 
-		// Token: 0x04002DA6 RID: 11686
+		// Token: 0x04002D90 RID: 11664
 		public ComputeShader distortShader;
 
-		// Token: 0x04002DA7 RID: 11687
+		// Token: 0x04002D91 RID: 11665
 		protected int dirtortKernel;
 
-		// Token: 0x04002DA8 RID: 11688
+		// Token: 0x04002D92 RID: 11666
 		private bool hasSkinnedMesh;
 
-		// Token: 0x04002DA9 RID: 11689
+		// Token: 0x04002D93 RID: 11667
 		private AnimatedDistort animDistort;
 
-		// Token: 0x020003E7 RID: 999
+		// Token: 0x020003E4 RID: 996
 		public enum Type
 		{
-			// Token: 0x04002DAB RID: 11691
+			// Token: 0x04002D95 RID: 11669
 			Stretch
 		}
 
-		// Token: 0x020003E8 RID: 1000
+		// Token: 0x020003E5 RID: 997
 		public enum Calculate
 		{
-			// Token: 0x04002DAD RID: 11693
+			// Token: 0x04002D97 RID: 11671
 			global,
-			// Token: 0x04002DAE RID: 11694
+			// Token: 0x04002D98 RID: 11672
 			local
 		}
 	}

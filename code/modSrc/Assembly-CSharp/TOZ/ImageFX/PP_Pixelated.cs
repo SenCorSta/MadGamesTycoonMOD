@@ -3,34 +3,34 @@ using UnityEngine;
 
 namespace TOZ.ImageFX
 {
-	// Token: 0x020003CF RID: 975
+	// Token: 0x020003CC RID: 972
 	[ExecuteInEditMode]
 	public sealed class PP_Pixelated : PostProcessBase
 	{
-		// Token: 0x0600236A RID: 9066 RVA: 0x00170696 File Offset: 0x0016E896
+		// Token: 0x06002317 RID: 8983 RVA: 0x00017AFE File Offset: 0x00015CFE
 		private void Awake()
 		{
 			this.shd = Shader.Find("Hidden/TOZ/ImageFX/Pixelated");
 		}
 
-		// Token: 0x0600236B RID: 9067 RVA: 0x001706A8 File Offset: 0x0016E8A8
+		// Token: 0x06002318 RID: 8984 RVA: 0x00017B10 File Offset: 0x00015D10
 		private void OnRenderImage(RenderTexture src, RenderTexture dest)
 		{
 			this.ApplyVariables();
 			Graphics.Blit(src, dest, this.mat);
 		}
 
-		// Token: 0x0600236C RID: 9068 RVA: 0x001706BD File Offset: 0x0016E8BD
+		// Token: 0x06002319 RID: 8985 RVA: 0x00017B25 File Offset: 0x00015D25
 		private void ApplyVariables()
 		{
 			this.mat.SetFloat("_PixWidth", (float)this.PixelWidth);
 			this.mat.SetFloat("_PixHeight", (float)this.PixelHeight);
 		}
 
-		// Token: 0x04002D58 RID: 11608
+		// Token: 0x04002D42 RID: 11586
 		public int PixelWidth = 16;
 
-		// Token: 0x04002D59 RID: 11609
+		// Token: 0x04002D43 RID: 11587
 		public int PixelHeight = 16;
 	}
 }

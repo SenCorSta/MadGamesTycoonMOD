@@ -7,13 +7,13 @@ using UnityEngine;
 // Token: 0x02000068 RID: 104
 public class reviewText : MonoBehaviour
 {
-	// Token: 0x060003EB RID: 1003 RVA: 0x0003DBF4 File Offset: 0x0003BDF4
+	// Token: 0x060003E3 RID: 995 RVA: 0x000041DE File Offset: 0x000023DE
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060003EC RID: 1004 RVA: 0x0003DBFC File Offset: 0x0003BDFC
+	// Token: 0x060003E4 RID: 996 RVA: 0x00052064 File Offset: 0x00050264
 	private void FindScripts()
 	{
 		GameObject gameObject = GameObject.Find("Main");
@@ -22,7 +22,7 @@ public class reviewText : MonoBehaviour
 		this.settings_ = gameObject.GetComponent<settingsScript>();
 	}
 
-	// Token: 0x060003ED RID: 1005 RVA: 0x0003DC38 File Offset: 0x0003BE38
+	// Token: 0x060003E5 RID: 997 RVA: 0x000520A0 File Offset: 0x000502A0
 	public string GetReviewText(gameScript game_)
 	{
 		string str;
@@ -227,7 +227,7 @@ public class reviewText : MonoBehaviour
 		return text2 + " " + this.totalList[game_.reviewTotalText];
 	}
 
-	// Token: 0x060003EE RID: 1006 RVA: 0x0003E290 File Offset: 0x0003C490
+	// Token: 0x060003E6 RID: 998 RVA: 0x000526F8 File Offset: 0x000508F8
 	private void GetStrings(int i, int what)
 	{
 		int num = i + 1;
@@ -255,7 +255,7 @@ public class reviewText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003EF RID: 1007 RVA: 0x0003E348 File Offset: 0x0003C548
+	// Token: 0x060003E7 RID: 999 RVA: 0x000041E6 File Offset: 0x000023E6
 	private bool ParseData(string c, int i)
 	{
 		return this.data[i].Contains(c);

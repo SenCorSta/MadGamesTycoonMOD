@@ -3,10 +3,10 @@ using Mirror;
 using Steamworks;
 using UnityEngine;
 
-// Token: 0x02000305 RID: 773
+// Token: 0x02000302 RID: 770
 public class SteamLobby : MonoBehaviour
 {
-	// Token: 0x06001AEA RID: 6890 RVA: 0x0010E2A4 File Offset: 0x0010C4A4
+	// Token: 0x06001AA0 RID: 6816 RVA: 0x00111E48 File Offset: 0x00110048
 	private void Start()
 	{
 		this.FindScripts();
@@ -15,7 +15,7 @@ public class SteamLobby : MonoBehaviour
 		this.lobbyEntered = Callback<LobbyEnter_t>.Create(new Callback<LobbyEnter_t>.DispatchDelegate(this.OnLobbyEntered));
 	}
 
-	// Token: 0x06001AEB RID: 6891 RVA: 0x0010E2FC File Offset: 0x0010C4FC
+	// Token: 0x06001AA1 RID: 6817 RVA: 0x00111EA0 File Offset: 0x001100A0
 	private void FindScripts()
 	{
 		if (!this.guiMain_)
@@ -37,29 +37,27 @@ public class SteamLobby : MonoBehaviour
 		this.networkManager = base.GetComponent<NetworkManager>();
 	}
 
-	// Token: 0x06001AEC RID: 6892 RVA: 0x0010E396 File Offset: 0x0010C596
+	// Token: 0x06001AA2 RID: 6818 RVA: 0x00011E2E File Offset: 0x0001002E
 	public void HostLobby()
 	{
-		Debug.Log("3. HostLobby()");
 		SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, this.networkManager.maxConnections);
 	}
 
-	// Token: 0x06001AED RID: 6893 RVA: 0x0010E3B4 File Offset: 0x0010C5B4
+	// Token: 0x06001AA3 RID: 6819 RVA: 0x00011E42 File Offset: 0x00010042
 	public void LockLobby(bool b)
 	{
 		SteamMatchmaking.SetLobbyJoinable(new CSteamID(this.lobbyID), b);
 	}
 
-	// Token: 0x06001AEE RID: 6894 RVA: 0x0010E3C8 File Offset: 0x0010C5C8
+	// Token: 0x06001AA4 RID: 6820 RVA: 0x00011E56 File Offset: 0x00010056
 	public void LeaveLobby()
 	{
 		SteamMatchmaking.LeaveLobby(new CSteamID(this.lobbyID));
 	}
 
-	// Token: 0x06001AEF RID: 6895 RVA: 0x0010E3DC File Offset: 0x0010C5DC
+	// Token: 0x06001AA5 RID: 6821 RVA: 0x00111F3C File Offset: 0x0011013C
 	private void OnLobbyCreated(LobbyCreated_t callback)
 	{
-		Debug.Log("4. OnLobbyCreated()");
 		if (callback.m_eResult != EResult.k_EResultOK)
 		{
 			return;
@@ -70,13 +68,13 @@ public class SteamLobby : MonoBehaviour
 		this.lobbyID = callback.m_ulSteamIDLobby;
 	}
 
-	// Token: 0x06001AF0 RID: 6896 RVA: 0x0010E448 File Offset: 0x0010C648
+	// Token: 0x06001AA6 RID: 6822 RVA: 0x00011E68 File Offset: 0x00010068
 	private void OnGameLobbyJoinRequested(GameLobbyJoinRequested_t callback)
 	{
 		SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
 	}
 
-	// Token: 0x06001AF1 RID: 6897 RVA: 0x0010E458 File Offset: 0x0010C658
+	// Token: 0x06001AA7 RID: 6823 RVA: 0x00111FA0 File Offset: 0x001101A0
 	private void OnLobbyEntered(LobbyEnter_t callback)
 	{
 		if (NetworkServer.active)
@@ -85,7 +83,7 @@ public class SteamLobby : MonoBehaviour
 		}
 		this.FindScripts();
 		this.mS_.multiplayer = true;
-		this.mS_.myID = -1;
+		this.mS_.mpCalls_.myID = -1;
 		this.RemoveContentFromClient();
 		this.mS_.LoadContent_MultiplayerClient();
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[201]);
@@ -95,7 +93,7 @@ public class SteamLobby : MonoBehaviour
 		this.networkManager.StartClient();
 	}
 
-	// Token: 0x06001AF2 RID: 6898 RVA: 0x0010E4F8 File Offset: 0x0010C6F8
+	// Token: 0x06001AA8 RID: 6824 RVA: 0x00112044 File Offset: 0x00110244
 	private void RemoveContentFromClient()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Platform");
@@ -108,34 +106,34 @@ public class SteamLobby : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400220D RID: 8717
+	// Token: 0x040021F3 RID: 8691
 	[SerializeField]
 	private GameObject Menu_Multiplayer_Main;
 
-	// Token: 0x0400220E RID: 8718
+	// Token: 0x040021F4 RID: 8692
 	protected Callback<LobbyCreated_t> lobbyCreated;
 
-	// Token: 0x0400220F RID: 8719
+	// Token: 0x040021F5 RID: 8693
 	protected Callback<GameLobbyJoinRequested_t> gameLobbyJoinRequested;
 
-	// Token: 0x04002210 RID: 8720
+	// Token: 0x040021F6 RID: 8694
 	protected Callback<LobbyEnter_t> lobbyEntered;
 
-	// Token: 0x04002211 RID: 8721
+	// Token: 0x040021F7 RID: 8695
 	private const string HostAdressKey = "HostAdress";
 
-	// Token: 0x04002212 RID: 8722
+	// Token: 0x040021F8 RID: 8696
 	private NetworkManager networkManager;
 
-	// Token: 0x04002213 RID: 8723
+	// Token: 0x040021F9 RID: 8697
 	private ulong lobbyID;
 
-	// Token: 0x04002214 RID: 8724
+	// Token: 0x040021FA RID: 8698
 	public mainScript mS_;
 
-	// Token: 0x04002215 RID: 8725
+	// Token: 0x040021FB RID: 8699
 	public GUI_Main guiMain_;
 
-	// Token: 0x04002216 RID: 8726
+	// Token: 0x040021FC RID: 8700
 	public GameObject main_;
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200023E RID: 574
+// Token: 0x0200023D RID: 573
 public class Menu_Stats_History : MonoBehaviour
 {
-	// Token: 0x0600161D RID: 5661 RVA: 0x000E1990 File Offset: 0x000DFB90
+	// Token: 0x060015FF RID: 5631 RVA: 0x0000F27A File Offset: 0x0000D47A
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600161E RID: 5662 RVA: 0x000E1998 File Offset: 0x000DFB98
+	// Token: 0x06001600 RID: 5632 RVA: 0x000E98EC File Offset: 0x000E7AEC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,13 +44,13 @@ public class Menu_Stats_History : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600161F RID: 5663 RVA: 0x000E1A7E File Offset: 0x000DFC7E
+	// Token: 0x06001601 RID: 5633 RVA: 0x0000F282 File Offset: 0x0000D482
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06001620 RID: 5664 RVA: 0x000E1A88 File Offset: 0x000DFC88
+	// Token: 0x06001602 RID: 5634 RVA: 0x000E99D4 File Offset: 0x000E7BD4
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -60,7 +60,7 @@ public class Menu_Stats_History : MonoBehaviour
 		this.uiObjects[4].GetComponent<Text>().text = (this.seite + 1).ToString() + " / " + (this.mS_.history.Count / 100 + 1).ToString();
 	}
 
-	// Token: 0x06001621 RID: 5665 RVA: 0x000E1B10 File Offset: 0x000DFD10
+	// Token: 0x06001603 RID: 5635 RVA: 0x000E9A5C File Offset: 0x000E7C5C
 	public void Init()
 	{
 		this.FindScripts();
@@ -79,14 +79,14 @@ public class Menu_Stats_History : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001622 RID: 5666 RVA: 0x000E1BDF File Offset: 0x000DFDDF
+	// Token: 0x06001604 RID: 5636 RVA: 0x0000F28A File Offset: 0x0000D48A
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001623 RID: 5667 RVA: 0x000E1BFC File Offset: 0x000DFDFC
+	// Token: 0x06001605 RID: 5637 RVA: 0x000E9B2C File Offset: 0x000E7D2C
 	public void BUTTON_Seite(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -102,33 +102,33 @@ public class Menu_Stats_History : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x04001A1E RID: 6686
+	// Token: 0x04001A15 RID: 6677
 	private mainScript mS_;
 
-	// Token: 0x04001A1F RID: 6687
+	// Token: 0x04001A16 RID: 6678
 	private GameObject main_;
 
-	// Token: 0x04001A20 RID: 6688
+	// Token: 0x04001A17 RID: 6679
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001A21 RID: 6689
+	// Token: 0x04001A18 RID: 6680
 	private sfxScript sfx_;
 
-	// Token: 0x04001A22 RID: 6690
+	// Token: 0x04001A19 RID: 6681
 	private textScript tS_;
 
-	// Token: 0x04001A23 RID: 6691
+	// Token: 0x04001A1A RID: 6682
 	private engineFeatures eF_;
 
-	// Token: 0x04001A24 RID: 6692
+	// Token: 0x04001A1B RID: 6683
 	private genres genres_;
 
-	// Token: 0x04001A25 RID: 6693
+	// Token: 0x04001A1C RID: 6684
 	public int seite;
 
-	// Token: 0x04001A26 RID: 6694
+	// Token: 0x04001A1D RID: 6685
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001A27 RID: 6695
+	// Token: 0x04001A1E RID: 6686
 	public GameObject[] uiObjects;
 }

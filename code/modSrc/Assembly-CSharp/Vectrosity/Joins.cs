@@ -2,14 +2,14 @@
 
 namespace Vectrosity
 {
-	// Token: 0x02000386 RID: 902
+	// Token: 0x02000383 RID: 899
 	public enum Joins
 	{
-		// Token: 0x040028D6 RID: 10454
+		// Token: 0x040028C0 RID: 10432
 		Fill,
-		// Token: 0x040028D7 RID: 10455
+		// Token: 0x040028C1 RID: 10433
 		Weld,
-		// Token: 0x040028D8 RID: 10456
+		// Token: 0x040028C2 RID: 10434
 		None
 	}
 }

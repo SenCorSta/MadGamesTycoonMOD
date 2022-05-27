@@ -5,12 +5,12 @@ using UnityEngine.UI;
 // Token: 0x020000AD RID: 173
 public class LeftNews : MonoBehaviour
 {
-	// Token: 0x0600065C RID: 1628 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x06000653 RID: 1619 RVA: 0x00002098 File Offset: 0x00000298
 	private void Start()
 	{
 	}
 
-	// Token: 0x0600065D RID: 1629 RVA: 0x000500A4 File Offset: 0x0004E2A4
+	// Token: 0x06000654 RID: 1620 RVA: 0x00062B04 File Offset: 0x00060D04
 	public void Init(int roomID_, Sprite sprite_, string tooltip_, Sprite smallSprite_)
 	{
 		this.roomID = roomID_;
@@ -19,7 +19,7 @@ public class LeftNews : MonoBehaviour
 		base.gameObject.GetComponent<tooltip>().c = tooltip_;
 	}
 
-	// Token: 0x0600065E RID: 1630 RVA: 0x000500F0 File Offset: 0x0004E2F0
+	// Token: 0x06000655 RID: 1621 RVA: 0x000059D4 File Offset: 0x00003BD4
 	private void Update()
 	{
 		this.timer += Time.deltaTime;
@@ -29,7 +29,7 @@ public class LeftNews : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600065F RID: 1631 RVA: 0x00050118 File Offset: 0x0004E318
+	// Token: 0x06000656 RID: 1622 RVA: 0x00062B50 File Offset: 0x00060D50
 	public void BUTTON_Click()
 	{
 		sfxScript component = GameObject.Find("SFX").GetComponent<sfxScript>();
@@ -63,7 +63,7 @@ public class LeftNews : MonoBehaviour
 		this.Remove();
 	}
 
-	// Token: 0x06000660 RID: 1632 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000657 RID: 1623 RVA: 0x00004174 File Offset: 0x00002374
 	private void Remove()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);

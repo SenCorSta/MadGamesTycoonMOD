@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000174 RID: 372
+// Token: 0x02000173 RID: 371
 public class Menu_InGameOptions : MonoBehaviour
 {
-	// Token: 0x06000DCD RID: 3533 RVA: 0x00095117 File Offset: 0x00093317
+	// Token: 0x06000DB5 RID: 3509 RVA: 0x00009879 File Offset: 0x00007A79
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000DCE RID: 3534 RVA: 0x00095120 File Offset: 0x00093320
+	// Token: 0x06000DB6 RID: 3510 RVA: 0x000A3500 File Offset: 0x000A1700
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -48,7 +48,7 @@ public class Menu_InGameOptions : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DCF RID: 3535 RVA: 0x0009521C File Offset: 0x0009341C
+	// Token: 0x06000DB7 RID: 3511 RVA: 0x00009881 File Offset: 0x00007A81
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -59,7 +59,7 @@ public class Menu_InGameOptions : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DD0 RID: 3536 RVA: 0x00095259 File Offset: 0x00093459
+	// Token: 0x06000DB8 RID: 3512 RVA: 0x000098BE File Offset: 0x00007ABE
 	private void OnDisable()
 	{
 		this.camMove_.disableMovement = false;
@@ -67,7 +67,7 @@ public class Menu_InGameOptions : MonoBehaviour
 		this.guiMain_.ShowInGameUI(true);
 	}
 
-	// Token: 0x06000DD1 RID: 3537 RVA: 0x00095280 File Offset: 0x00093480
+	// Token: 0x06000DB9 RID: 3513 RVA: 0x000A35FC File Offset: 0x000A17FC
 	public void Init()
 	{
 		this.camMove_.disableMovement = true;
@@ -215,69 +215,69 @@ public class Menu_InGameOptions : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DD2 RID: 3538 RVA: 0x0009573B File Offset: 0x0009393B
+	// Token: 0x06000DBA RID: 3514 RVA: 0x000098E3 File Offset: 0x00007AE3
 	public void BUTTON_ExitToOS()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[148]);
 	}
 
-	// Token: 0x06000DD3 RID: 3539 RVA: 0x00095766 File Offset: 0x00093966
+	// Token: 0x06000DBB RID: 3515 RVA: 0x0000990E File Offset: 0x00007B0E
 	public void BUTTON_ExitToMainMenu()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[154]);
 	}
 
-	// Token: 0x06000DD4 RID: 3540 RVA: 0x00095791 File Offset: 0x00093991
+	// Token: 0x06000DBC RID: 3516 RVA: 0x00009939 File Offset: 0x00007B39
 	public void BUTTON_LoadGame()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[150]);
 	}
 
-	// Token: 0x06000DD5 RID: 3541 RVA: 0x000957BC File Offset: 0x000939BC
+	// Token: 0x06000DBD RID: 3517 RVA: 0x00009964 File Offset: 0x00007B64
 	public void BUTTON_SaveGame()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[156]);
 	}
 
-	// Token: 0x06000DD6 RID: 3542 RVA: 0x000957E7 File Offset: 0x000939E7
+	// Token: 0x06000DBE RID: 3518 RVA: 0x0000998F File Offset: 0x00007B8F
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000DD7 RID: 3543 RVA: 0x00095802 File Offset: 0x00093A02
+	// Token: 0x06000DBF RID: 3519 RVA: 0x000099AA File Offset: 0x00007BAA
 	public void BUTTON_Options()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[169]);
 	}
 
-	// Token: 0x0400126C RID: 4716
+	// Token: 0x04001264 RID: 4708
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400126D RID: 4717
+	// Token: 0x04001265 RID: 4709
 	private GameObject main_;
 
-	// Token: 0x0400126E RID: 4718
+	// Token: 0x04001266 RID: 4710
 	private mainScript mS_;
 
-	// Token: 0x0400126F RID: 4719
+	// Token: 0x04001267 RID: 4711
 	private textScript tS_;
 
-	// Token: 0x04001270 RID: 4720
+	// Token: 0x04001268 RID: 4712
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001271 RID: 4721
+	// Token: 0x04001269 RID: 4713
 	private sfxScript sfx_;
 
-	// Token: 0x04001272 RID: 4722
+	// Token: 0x0400126A RID: 4714
 	private cameraMovementScript camMove_;
 
-	// Token: 0x04001273 RID: 4723
+	// Token: 0x0400126B RID: 4715
 	private mpCalls mpCalls_;
 }

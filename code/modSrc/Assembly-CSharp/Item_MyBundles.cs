@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000E9 RID: 233
 public class Item_MyBundles : MonoBehaviour
 {
-	// Token: 0x060007C5 RID: 1989 RVA: 0x00056A9A File Offset: 0x00054C9A
+	// Token: 0x060007BC RID: 1980 RVA: 0x00006271 File Offset: 0x00004471
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007C6 RID: 1990 RVA: 0x00056AA4 File Offset: 0x00054CA4
+	// Token: 0x060007BD RID: 1981 RVA: 0x00068BBC File Offset: 0x00066DBC
 	private void Update()
 	{
 		this.uiObjects[1].GetComponent<Text>().text = (base.gameObject.transform.GetSiblingIndex() + 1).ToString();
@@ -33,7 +33,7 @@ public class Item_MyBundles : MonoBehaviour
 		base.gameObject.name = this.game_.reviewTotal.ToString();
 	}
 
-	// Token: 0x060007C7 RID: 1991 RVA: 0x00056B94 File Offset: 0x00054D94
+	// Token: 0x060007BE RID: 1982 RVA: 0x00068CAC File Offset: 0x00066EAC
 	public void SetData()
 	{
 		if (!this.game_)
@@ -56,13 +56,13 @@ public class Item_MyBundles : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060007C8 RID: 1992 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x060007BF RID: 1983 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007C9 RID: 1993 RVA: 0x00056C8C File Offset: 0x00054E8C
+	// Token: 0x060007C0 RID: 1984 RVA: 0x00068DA4 File Offset: 0x00066FA4
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

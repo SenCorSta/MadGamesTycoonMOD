@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x02000076 RID: 118
 public class GUI_Tooltip : MonoBehaviour
 {
-	// Token: 0x06000501 RID: 1281 RVA: 0x0004617C File Offset: 0x0004437C
+	// Token: 0x060004F8 RID: 1272 RVA: 0x000594B8 File Offset: 0x000576B8
 	private void Start()
 	{
 		this.settings_ = GameObject.Find("Main").GetComponent<settingsScript>();
@@ -14,7 +14,7 @@ public class GUI_Tooltip : MonoBehaviour
 		this.rt_tooltipText = this.tooltipText.GetComponent<RectTransform>();
 	}
 
-	// Token: 0x06000502 RID: 1282 RVA: 0x000461D4 File Offset: 0x000443D4
+	// Token: 0x060004F9 RID: 1273 RVA: 0x00059510 File Offset: 0x00057710
 	public void SetActive(string s)
 	{
 		if (s == null)
@@ -36,7 +36,7 @@ public class GUI_Tooltip : MonoBehaviour
 		this.SetInactive();
 	}
 
-	// Token: 0x06000503 RID: 1283 RVA: 0x0004626D File Offset: 0x0004446D
+	// Token: 0x060004FA RID: 1274 RVA: 0x0000521F File Offset: 0x0000341F
 	public void SetInactive()
 	{
 		this.timer = 0f;
@@ -44,7 +44,7 @@ public class GUI_Tooltip : MonoBehaviour
 		this.myText.text = "";
 	}
 
-	// Token: 0x06000504 RID: 1284 RVA: 0x00046294 File Offset: 0x00044494
+	// Token: 0x060004FB RID: 1275 RVA: 0x000595AC File Offset: 0x000577AC
 	private void Update()
 	{
 		if (!this.tooltipEnabled)

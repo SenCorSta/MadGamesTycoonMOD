@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001D1 RID: 465
+// Token: 0x020001D0 RID: 464
 public class Menu_Multiplayer : MonoBehaviour
 {
-	// Token: 0x06001198 RID: 4504 RVA: 0x000B9D07 File Offset: 0x000B7F07
+	// Token: 0x0600117E RID: 4478 RVA: 0x0000C403 File Offset: 0x0000A603
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001199 RID: 4505 RVA: 0x000B9D10 File Offset: 0x000B7F10
+	// Token: 0x0600117F RID: 4479 RVA: 0x000C5158 File Offset: 0x000C3358
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -39,19 +39,19 @@ public class Menu_Multiplayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600119A RID: 4506 RVA: 0x000B9DD8 File Offset: 0x000B7FD8
+	// Token: 0x06001180 RID: 4480 RVA: 0x0000C40B File Offset: 0x0000A60B
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x0600119B RID: 4507 RVA: 0x000B9D07 File Offset: 0x000B7F07
+	// Token: 0x06001181 RID: 4481 RVA: 0x0000C403 File Offset: 0x0000A603
 	public void Init()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600119C RID: 4508 RVA: 0x000B9DE0 File Offset: 0x000B7FE0
+	// Token: 0x06001182 RID: 4482 RVA: 0x0000C413 File Offset: 0x0000A613
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -59,48 +59,48 @@ public class Menu_Multiplayer : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600119D RID: 4509 RVA: 0x000B9E06 File Offset: 0x000B8006
+	// Token: 0x06001183 RID: 4483 RVA: 0x0000C439 File Offset: 0x0000A639
 	public void BUTTON_Unterstuetzen()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[260]);
 	}
 
-	// Token: 0x0600119E RID: 4510 RVA: 0x000B9E31 File Offset: 0x000B8031
+	// Token: 0x06001184 RID: 4484 RVA: 0x0000C464 File Offset: 0x0000A664
 	public void BUTTON_Sabotieren()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.MessageBox(this.tS_.GetText(408), false);
 	}
 
-	// Token: 0x0600119F RID: 4511 RVA: 0x000B9E5C File Offset: 0x000B805C
+	// Token: 0x06001185 RID: 4485 RVA: 0x0000C48F File Offset: 0x0000A68F
 	public void BUTTON_Awards()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[276]);
 	}
 
-	// Token: 0x04001614 RID: 5652
+	// Token: 0x0400160B RID: 5643
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001615 RID: 5653
+	// Token: 0x0400160C RID: 5644
 	private roomScript rS_;
 
-	// Token: 0x04001616 RID: 5654
+	// Token: 0x0400160D RID: 5645
 	private GameObject main_;
 
-	// Token: 0x04001617 RID: 5655
+	// Token: 0x0400160E RID: 5646
 	private mainScript mS_;
 
-	// Token: 0x04001618 RID: 5656
+	// Token: 0x0400160F RID: 5647
 	private textScript tS_;
 
-	// Token: 0x04001619 RID: 5657
+	// Token: 0x04001610 RID: 5648
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400161A RID: 5658
+	// Token: 0x04001611 RID: 5649
 	private sfxScript sfx_;
 
-	// Token: 0x0400161B RID: 5659
+	// Token: 0x04001612 RID: 5650
 	private unlockScript unlock_;
 }

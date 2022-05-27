@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000A2 RID: 162
 public class Item_ForschungSchenken : MonoBehaviour
 {
-	// Token: 0x06000619 RID: 1561 RVA: 0x0004DC8D File Offset: 0x0004BE8D
+	// Token: 0x06000610 RID: 1552 RVA: 0x00005825 File Offset: 0x00003A25
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600061A RID: 1562 RVA: 0x0004DC98 File Offset: 0x0004BE98
+	// Token: 0x06000611 RID: 1553 RVA: 0x0006090C File Offset: 0x0005EB0C
 	private void SetData()
 	{
 		switch (this.art)
@@ -67,7 +67,7 @@ public class Item_ForschungSchenken : MonoBehaviour
 		base.GetComponent<Image>().color = Color.white;
 	}
 
-	// Token: 0x0600061B RID: 1563 RVA: 0x0004E17E File Offset: 0x0004C37E
+	// Token: 0x06000612 RID: 1554 RVA: 0x0000582D File Offset: 0x00003A2D
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -79,13 +79,13 @@ public class Item_ForschungSchenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600061C RID: 1564 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000613 RID: 1555 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600061D RID: 1565 RVA: 0x0004E1B1 File Offset: 0x0004C3B1
+	// Token: 0x06000614 RID: 1556 RVA: 0x00005860 File Offset: 0x00003A60
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

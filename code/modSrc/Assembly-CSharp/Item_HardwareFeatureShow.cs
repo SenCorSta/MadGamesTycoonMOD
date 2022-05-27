@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000A9 RID: 169
 public class Item_HardwareFeatureShow : MonoBehaviour
 {
-	// Token: 0x06000641 RID: 1601 RVA: 0x0004F019 File Offset: 0x0004D219
+	// Token: 0x06000638 RID: 1592 RVA: 0x00005974 File Offset: 0x00003B74
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000642 RID: 1602 RVA: 0x0004F024 File Offset: 0x0004D224
+	// Token: 0x06000639 RID: 1593 RVA: 0x00061B48 File Offset: 0x0005FD48
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.hardwareFeatures_.GetName(this.myID);

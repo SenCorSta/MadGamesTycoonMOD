@@ -3,10 +3,10 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x02000347 RID: 839
+// Token: 0x02000344 RID: 836
 public class textScript : MonoBehaviour
 {
-	// Token: 0x06001ED7 RID: 7895 RVA: 0x00141084 File Offset: 0x0013F284
+	// Token: 0x06001E84 RID: 7812 RVA: 0x001423C4 File Offset: 0x001405C4
 	private void Awake()
 	{
 		this.FindScripts();
@@ -153,7 +153,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001ED8 RID: 7896 RVA: 0x00141688 File Offset: 0x0013F888
+	// Token: 0x06001E85 RID: 7813 RVA: 0x001429C8 File Offset: 0x00140BC8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -178,7 +178,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001ED9 RID: 7897 RVA: 0x00141728 File Offset: 0x0013F928
+	// Token: 0x06001E86 RID: 7814 RVA: 0x00142A68 File Offset: 0x00140C68
 	public void LoadContent_Themes()
 	{
 		this.LoadDevLegends("DATA/DevLegends.txt");
@@ -204,7 +204,7 @@ public class textScript : MonoBehaviour
 		this.themes_.Load_THEMES_MGSR("GE/Themes_GE.txt");
 	}
 
-	// Token: 0x06001EDA RID: 7898 RVA: 0x00141828 File Offset: 0x0013FA28
+	// Token: 0x06001E87 RID: 7815 RVA: 0x00142B68 File Offset: 0x00140D68
 	public string GetStudioBewertung(int sterne)
 	{
 		switch (sterne)
@@ -236,7 +236,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EDB RID: 7899 RVA: 0x001418FB File Offset: 0x0013FAFB
+	// Token: 0x06001E88 RID: 7816 RVA: 0x000145D1 File Offset: 0x000127D1
 	public string GetGameTyp(int i)
 	{
 		switch (i)
@@ -252,7 +252,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EDC RID: 7900 RVA: 0x0014193C File Offset: 0x0013FB3C
+	// Token: 0x06001E89 RID: 7817 RVA: 0x00142C3C File Offset: 0x00140E3C
 	public string GetGameSize(int i)
 	{
 		switch (i)
@@ -272,7 +272,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EDD RID: 7901 RVA: 0x001419A8 File Offset: 0x0013FBA8
+	// Token: 0x06001E8A RID: 7818 RVA: 0x00142CA8 File Offset: 0x00140EA8
 	public string GetGameZielgruppe(int i)
 	{
 		switch (i)
@@ -292,7 +292,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EDE RID: 7902 RVA: 0x00141A14 File Offset: 0x0013FC14
+	// Token: 0x06001E8B RID: 7819 RVA: 0x00142D14 File Offset: 0x00140F14
 	public string GetText(int i)
 	{
 		this.FindScripts();
@@ -409,7 +409,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EDF RID: 7903 RVA: 0x00141C50 File Offset: 0x0013FE50
+	// Token: 0x06001E8C RID: 7820 RVA: 0x00142F50 File Offset: 0x00141150
 	public string GetAchivementName(int i)
 	{
 		this.FindScripts();
@@ -526,7 +526,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EE0 RID: 7904 RVA: 0x00141E8C File Offset: 0x0014008C
+	// Token: 0x06001E8D RID: 7821 RVA: 0x0014318C File Offset: 0x0014138C
 	public string GetAchivementDesc(int i)
 	{
 		this.FindScripts();
@@ -643,7 +643,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EE1 RID: 7905 RVA: 0x001420C8 File Offset: 0x001402C8
+	// Token: 0x06001E8E RID: 7822 RVA: 0x001433C8 File Offset: 0x001415C8
 	public string GetObjects(int i)
 	{
 		switch (this.settings_.language)
@@ -755,7 +755,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EE2 RID: 7906 RVA: 0x001422F0 File Offset: 0x001404F0
+	// Token: 0x06001E8F RID: 7823 RVA: 0x001435F0 File Offset: 0x001417F0
 	public string GetObjectsTooltip(int i)
 	{
 		switch (this.settings_.language)
@@ -867,7 +867,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EE3 RID: 7907 RVA: 0x00142518 File Offset: 0x00140718
+	// Token: 0x06001E90 RID: 7824 RVA: 0x00143818 File Offset: 0x00141A18
 	public string GetCountry(int i)
 	{
 		string result = "";
@@ -996,7 +996,7 @@ public class textScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001EE4 RID: 7908 RVA: 0x00142788 File Offset: 0x00140988
+	// Token: 0x06001E91 RID: 7825 RVA: 0x00143A88 File Offset: 0x00141C88
 	public string GetQuotes()
 	{
 		switch (this.settings_.language)
@@ -1040,7 +1040,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EE5 RID: 7909 RVA: 0x0014296C File Offset: 0x00140B6C
+	// Token: 0x06001E92 RID: 7826 RVA: 0x00143C6C File Offset: 0x00141E6C
 	public string GetFanLetter(int i)
 	{
 		switch (this.settings_.language)
@@ -1152,7 +1152,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EE6 RID: 7910 RVA: 0x00142B94 File Offset: 0x00140D94
+	// Token: 0x06001E93 RID: 7827 RVA: 0x00143E94 File Offset: 0x00142094
 	public string GetTutorial(int i)
 	{
 		switch (this.settings_.language)
@@ -1264,7 +1264,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EE7 RID: 7911 RVA: 0x00142DBC File Offset: 0x00140FBC
+	// Token: 0x06001E94 RID: 7828 RVA: 0x001440BC File Offset: 0x001422BC
 	public string GetThemes(int i)
 	{
 		if (this.themes_EN.Length == 0)
@@ -1380,7 +1380,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EE8 RID: 7912 RVA: 0x00142FF4 File Offset: 0x001411F4
+	// Token: 0x06001E95 RID: 7829 RVA: 0x001442F4 File Offset: 0x001424F4
 	public string GetRandomCharName(bool male)
 	{
 		if (male)
@@ -1390,37 +1390,37 @@ public class textScript : MonoBehaviour
 		return (this.namesFemale[UnityEngine.Random.Range(0, this.namesFemale.Length)] + " " + this.surname[UnityEngine.Random.Range(0, this.surname.Length)]).Replace("\n", string.Empty).Replace("\r", string.Empty).Replace("\t", string.Empty);
 	}
 
-	// Token: 0x06001EE9 RID: 7913 RVA: 0x001430C7 File Offset: 0x001412C7
+	// Token: 0x06001E96 RID: 7830 RVA: 0x00014610 File Offset: 0x00012810
 	public string GetRandomNPCAddonName()
 	{
 		return this.npcAddons[UnityEngine.Random.Range(0, this.npcAddons.Length)];
 	}
 
-	// Token: 0x06001EEA RID: 7914 RVA: 0x001430DE File Offset: 0x001412DE
+	// Token: 0x06001E97 RID: 7831 RVA: 0x00014627 File Offset: 0x00012827
 	public string GetRandomEngineName()
 	{
 		return this.randomEngineNames[UnityEngine.Random.Range(0, this.randomEngineNames.Length)];
 	}
 
-	// Token: 0x06001EEB RID: 7915 RVA: 0x001430F8 File Offset: 0x001412F8
+	// Token: 0x06001E98 RID: 7832 RVA: 0x001443C8 File Offset: 0x001425C8
 	public string GetRandomGameName()
 	{
 		return this.randomGameNames[UnityEngine.Random.Range(0, this.randomGameNames.Length)].Replace("\n", string.Empty).Replace("\r", string.Empty).Replace("\t", string.Empty);
 	}
 
-	// Token: 0x06001EEC RID: 7916 RVA: 0x00143148 File Offset: 0x00141348
+	// Token: 0x06001E99 RID: 7833 RVA: 0x00144418 File Offset: 0x00142618
 	public string GetPlatformName()
 	{
 		return this.randomPlatformNames[UnityEngine.Random.Range(0, this.randomPlatformNames.Length)].Replace("\n", string.Empty).Replace("\r", string.Empty).Replace("\t", string.Empty);
 	}
 
-	// Token: 0x06001EED RID: 7917 RVA: 0x00143198 File Offset: 0x00141398
+	// Token: 0x06001E9A RID: 7834 RVA: 0x00144468 File Offset: 0x00142668
 	public string GetRandomCompanyName()
 	{
 		return this.randomCompanyNames[UnityEngine.Random.Range(0, this.randomCompanyNames.Length)].Replace("\n", string.Empty).Replace("\r", string.Empty).Replace("\t", string.Empty);
 	}
 
-	// Token: 0x06001EEE RID: 7918 RVA: 0x001431E8 File Offset: 0x001413E8
+	// Token: 0x06001E9B RID: 7835 RVA: 0x001444B8 File Offset: 0x001426B8
 	public string GetContractWork(int nr)
 	{
 		string text = "";
@@ -1553,7 +1553,7 @@ public class textScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06001EEF RID: 7919 RVA: 0x00143484 File Offset: 0x00141684
+	// Token: 0x06001E9C RID: 7836 RVA: 0x00144754 File Offset: 0x00142954
 	public int GetRandomContractNumber(int art_)
 	{
 		int num = 0;
@@ -1678,7 +1678,7 @@ public class textScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06001EF0 RID: 7920 RVA: 0x00143788 File Offset: 0x00141988
+	// Token: 0x06001E9D RID: 7837 RVA: 0x00144A58 File Offset: 0x00142C58
 	public string GetRandomNpcGame(int genre_)
 	{
 		string text = "";
@@ -1713,7 +1713,7 @@ public class textScript : MonoBehaviour
 		return text.Substring(0, text.Length - 1);
 	}
 
-	// Token: 0x06001EF1 RID: 7921 RVA: 0x001438A4 File Offset: 0x00141AA4
+	// Token: 0x06001E9E RID: 7838 RVA: 0x00144B74 File Offset: 0x00142D74
 	private int GetGenreFromSonderIP(int i)
 	{
 		for (int j = 0; j < this.genres_.genres_LEVEL.Length; j++)
@@ -1726,7 +1726,7 @@ public class textScript : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001EF2 RID: 7922 RVA: 0x001438F4 File Offset: 0x00141AF4
+	// Token: 0x06001E9F RID: 7839 RVA: 0x00144BC4 File Offset: 0x00142DC4
 	private int GetSubGenreFromSonderIP(int i)
 	{
 		for (int j = 0; j < this.genres_.genres_LEVEL.Length; j++)
@@ -1739,7 +1739,7 @@ public class textScript : MonoBehaviour
 		return -1;
 	}
 
-	// Token: 0x06001EF3 RID: 7923 RVA: 0x00143944 File Offset: 0x00141B44
+	// Token: 0x06001EA0 RID: 7840 RVA: 0x00144C14 File Offset: 0x00142E14
 	private int GetTopicFromSonderIP(int i)
 	{
 		for (int j = 0; j < this.themes_.themes_LEVEL.Length; j++)
@@ -1752,7 +1752,7 @@ public class textScript : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001EF4 RID: 7924 RVA: 0x00143994 File Offset: 0x00141B94
+	// Token: 0x06001EA1 RID: 7841 RVA: 0x00144C64 File Offset: 0x00142E64
 	private int GetSubTopicFromSonderIP(int i)
 	{
 		for (int j = 0; j < this.themes_.themes_LEVEL.Length; j++)
@@ -1765,7 +1765,7 @@ public class textScript : MonoBehaviour
 		return -1;
 	}
 
-	// Token: 0x06001EF5 RID: 7925 RVA: 0x001439E4 File Offset: 0x00141BE4
+	// Token: 0x06001EA2 RID: 7842 RVA: 0x00144CB4 File Offset: 0x00142EB4
 	private int GetReviewFromSonderIP(int i)
 	{
 		for (int j = 100; j > 0; j--)
@@ -1778,7 +1778,7 @@ public class textScript : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001EF6 RID: 7926 RVA: 0x00143A28 File Offset: 0x00141C28
+	// Token: 0x06001EA3 RID: 7843 RVA: 0x00144CF8 File Offset: 0x00142EF8
 	private int GetYearFromSonderIP(int i)
 	{
 		for (int j = 1976; j < 2099; j++)
@@ -1791,7 +1791,7 @@ public class textScript : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001EF7 RID: 7927 RVA: 0x00143A74 File Offset: 0x00141C74
+	// Token: 0x06001EA4 RID: 7844 RVA: 0x00144D44 File Offset: 0x00142F44
 	private int GetTargetGroupFromSonderIP(int i)
 	{
 		for (int j = 0; j < 5; j++)
@@ -1804,7 +1804,7 @@ public class textScript : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06001EF8 RID: 7928 RVA: 0x00143AB8 File Offset: 0x00141CB8
+	// Token: 0x06001EA5 RID: 7845 RVA: 0x00144D88 File Offset: 0x00142F88
 	public string GetRandomNpcIP(int publisher_, gameScript game_)
 	{
 		string text = "";
@@ -1880,7 +1880,7 @@ public class textScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06001EF9 RID: 7929 RVA: 0x00143D88 File Offset: 0x00141F88
+	// Token: 0x06001EA6 RID: 7846 RVA: 0x000528AC File Offset: 0x00050AAC
 	private string OpenFile(string filename)
 	{
 		StreamReader streamReader = new StreamReader(Application.dataPath + "/Extern/Text/" + filename, Encoding.Unicode);
@@ -1889,7 +1889,7 @@ public class textScript : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06001EFA RID: 7930 RVA: 0x00143DBC File Offset: 0x00141FBC
+	// Token: 0x06001EA7 RID: 7847 RVA: 0x00145058 File Offset: 0x00143258
 	private void LoadGlobalText()
 	{
 		this.namesMale = this.OpenFile("DATA/NamesMale.txt").Split(new char[]
@@ -1927,7 +1927,7 @@ public class textScript : MonoBehaviour
 		this.credits = this.OpenFile("DATA/Credits.txt");
 	}
 
-	// Token: 0x06001EFB RID: 7931 RVA: 0x00143F2C File Offset: 0x0014212C
+	// Token: 0x06001EA8 RID: 7848 RVA: 0x001451C8 File Offset: 0x001433C8
 	public void LoadContent_NPCGameNames()
 	{
 		this.npcGames = this.OpenFile("DATA/npcGames.txt").Split(new char[]
@@ -1938,7 +1938,7 @@ public class textScript : MonoBehaviour
 		this.Reshuffle(this.npcGames);
 	}
 
-	// Token: 0x06001EFC RID: 7932 RVA: 0x00143F82 File Offset: 0x00142182
+	// Token: 0x06001EA9 RID: 7849 RVA: 0x0001463E File Offset: 0x0001283E
 	public void LoadContent_NpcIPs()
 	{
 		this.npcIPs = this.OpenFile("DATA/npcIPs.txt").Split(new char[]
@@ -1948,7 +1948,7 @@ public class textScript : MonoBehaviour
 		this.npcIPsInUse = new bool[this.npcIPs.Length];
 	}
 
-	// Token: 0x06001EFD RID: 7933 RVA: 0x00143FC4 File Offset: 0x001421C4
+	// Token: 0x06001EAA RID: 7850 RVA: 0x00145220 File Offset: 0x00143420
 	private void Reshuffle(string[] texts)
 	{
 		for (int i = 0; i < texts.Length; i++)
@@ -1960,7 +1960,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EFE RID: 7934 RVA: 0x00143FF8 File Offset: 0x001421F8
+	// Token: 0x06001EAB RID: 7851 RVA: 0x00145254 File Offset: 0x00143454
 	private void LoadTexts_GE(string filename)
 	{
 		int num = 0;
@@ -1975,7 +1975,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EFF RID: 7935 RVA: 0x00144064 File Offset: 0x00142264
+	// Token: 0x06001EAC RID: 7852 RVA: 0x001452C0 File Offset: 0x001434C0
 	private void LoadTexts_EN(string filename)
 	{
 		int num = 0;
@@ -1990,7 +1990,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F00 RID: 7936 RVA: 0x001440D0 File Offset: 0x001422D0
+	// Token: 0x06001EAD RID: 7853 RVA: 0x0014532C File Offset: 0x0014352C
 	private void LoadTexts_TU(string filename)
 	{
 		int num = 0;
@@ -2005,7 +2005,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F01 RID: 7937 RVA: 0x0014413C File Offset: 0x0014233C
+	// Token: 0x06001EAE RID: 7854 RVA: 0x00145398 File Offset: 0x00143598
 	private void LoadTexts_CH(string filename)
 	{
 		int num = 0;
@@ -2020,7 +2020,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F02 RID: 7938 RVA: 0x001441A8 File Offset: 0x001423A8
+	// Token: 0x06001EAF RID: 7855 RVA: 0x00145404 File Offset: 0x00143604
 	private void LoadTexts_FR(string filename)
 	{
 		int num = 0;
@@ -2035,7 +2035,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F03 RID: 7939 RVA: 0x00144214 File Offset: 0x00142414
+	// Token: 0x06001EB0 RID: 7856 RVA: 0x00145470 File Offset: 0x00143670
 	private void LoadTexts_ES(string filename)
 	{
 		int num = 0;
@@ -2050,7 +2050,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F04 RID: 7940 RVA: 0x00144280 File Offset: 0x00142480
+	// Token: 0x06001EB1 RID: 7857 RVA: 0x001454DC File Offset: 0x001436DC
 	private void LoadTexts_KO(string filename)
 	{
 		int num = 0;
@@ -2065,7 +2065,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F05 RID: 7941 RVA: 0x001442EC File Offset: 0x001424EC
+	// Token: 0x06001EB2 RID: 7858 RVA: 0x00145548 File Offset: 0x00143748
 	private void LoadTexts_PB(string filename)
 	{
 		int num = 0;
@@ -2080,7 +2080,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F06 RID: 7942 RVA: 0x00144358 File Offset: 0x00142558
+	// Token: 0x06001EB3 RID: 7859 RVA: 0x001455B4 File Offset: 0x001437B4
 	private void LoadTexts_HU(string filename)
 	{
 		int num = 0;
@@ -2095,7 +2095,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F07 RID: 7943 RVA: 0x001443C4 File Offset: 0x001425C4
+	// Token: 0x06001EB4 RID: 7860 RVA: 0x00145620 File Offset: 0x00143820
 	private void LoadTexts_RU(string filename)
 	{
 		int num = 0;
@@ -2110,7 +2110,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F08 RID: 7944 RVA: 0x00144430 File Offset: 0x00142630
+	// Token: 0x06001EB5 RID: 7861 RVA: 0x0014568C File Offset: 0x0014388C
 	private void LoadTexts_CT(string filename)
 	{
 		int num = 0;
@@ -2125,7 +2125,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F09 RID: 7945 RVA: 0x0014449C File Offset: 0x0014269C
+	// Token: 0x06001EB6 RID: 7862 RVA: 0x001456F8 File Offset: 0x001438F8
 	private void LoadTexts_PL(string filename)
 	{
 		int num = 0;
@@ -2140,7 +2140,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F0A RID: 7946 RVA: 0x00144508 File Offset: 0x00142708
+	// Token: 0x06001EB7 RID: 7863 RVA: 0x00145764 File Offset: 0x00143964
 	private void LoadTexts_CZ(string filename)
 	{
 		int num = 0;
@@ -2155,7 +2155,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F0B RID: 7947 RVA: 0x00144574 File Offset: 0x00142774
+	// Token: 0x06001EB8 RID: 7864 RVA: 0x001457D0 File Offset: 0x001439D0
 	private void LoadTexts_AR(string filename)
 	{
 		int num = 0;
@@ -2170,7 +2170,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F0C RID: 7948 RVA: 0x001445E0 File Offset: 0x001427E0
+	// Token: 0x06001EB9 RID: 7865 RVA: 0x0014583C File Offset: 0x00143A3C
 	private void LoadTexts_IT(string filename)
 	{
 		int num = 0;
@@ -2185,7 +2185,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F0D RID: 7949 RVA: 0x0014464C File Offset: 0x0014284C
+	// Token: 0x06001EBA RID: 7866 RVA: 0x001458A8 File Offset: 0x00143AA8
 	private void LoadTexts_RO(string filename)
 	{
 		int num = 0;
@@ -2200,7 +2200,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F0E RID: 7950 RVA: 0x001446B8 File Offset: 0x001428B8
+	// Token: 0x06001EBB RID: 7867 RVA: 0x00145914 File Offset: 0x00143B14
 	private void LoadTexts_JA(string filename)
 	{
 		int num = 0;
@@ -2215,7 +2215,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F0F RID: 7951 RVA: 0x00144724 File Offset: 0x00142924
+	// Token: 0x06001EBC RID: 7868 RVA: 0x00145980 File Offset: 0x00143B80
 	private void LoadAchivements_GE(string filename)
 	{
 		int num = 0;
@@ -2235,7 +2235,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F10 RID: 7952 RVA: 0x001447BC File Offset: 0x001429BC
+	// Token: 0x06001EBD RID: 7869 RVA: 0x00145A18 File Offset: 0x00143C18
 	private void LoadAchivements_EN(string filename)
 	{
 		int num = 0;
@@ -2255,7 +2255,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F11 RID: 7953 RVA: 0x00144854 File Offset: 0x00142A54
+	// Token: 0x06001EBE RID: 7870 RVA: 0x00145AB0 File Offset: 0x00143CB0
 	private void LoadAchivements_TU(string filename)
 	{
 		int num = 0;
@@ -2275,7 +2275,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F12 RID: 7954 RVA: 0x001448EC File Offset: 0x00142AEC
+	// Token: 0x06001EBF RID: 7871 RVA: 0x00145B48 File Offset: 0x00143D48
 	private void LoadAchivements_CH(string filename)
 	{
 		int num = 0;
@@ -2295,7 +2295,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F13 RID: 7955 RVA: 0x00144984 File Offset: 0x00142B84
+	// Token: 0x06001EC0 RID: 7872 RVA: 0x00145BE0 File Offset: 0x00143DE0
 	private void LoadAchivements_FR(string filename)
 	{
 		int num = 0;
@@ -2315,7 +2315,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F14 RID: 7956 RVA: 0x00144A1C File Offset: 0x00142C1C
+	// Token: 0x06001EC1 RID: 7873 RVA: 0x00145C78 File Offset: 0x00143E78
 	private void LoadAchivements_ES(string filename)
 	{
 		int num = 0;
@@ -2335,7 +2335,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F15 RID: 7957 RVA: 0x00144AB4 File Offset: 0x00142CB4
+	// Token: 0x06001EC2 RID: 7874 RVA: 0x00145D10 File Offset: 0x00143F10
 	private void LoadAchivements_KO(string filename)
 	{
 		int num = 0;
@@ -2355,7 +2355,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F16 RID: 7958 RVA: 0x00144B4C File Offset: 0x00142D4C
+	// Token: 0x06001EC3 RID: 7875 RVA: 0x00145DA8 File Offset: 0x00143FA8
 	private void LoadAchivements_PB(string filename)
 	{
 		int num = 0;
@@ -2375,7 +2375,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F17 RID: 7959 RVA: 0x00144BE4 File Offset: 0x00142DE4
+	// Token: 0x06001EC4 RID: 7876 RVA: 0x00145E40 File Offset: 0x00144040
 	private void LoadAchivements_HU(string filename)
 	{
 		int num = 0;
@@ -2395,7 +2395,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F18 RID: 7960 RVA: 0x00144C7C File Offset: 0x00142E7C
+	// Token: 0x06001EC5 RID: 7877 RVA: 0x00145ED8 File Offset: 0x001440D8
 	private void LoadAchivements_RU(string filename)
 	{
 		int num = 0;
@@ -2415,7 +2415,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F19 RID: 7961 RVA: 0x00144D14 File Offset: 0x00142F14
+	// Token: 0x06001EC6 RID: 7878 RVA: 0x00145F70 File Offset: 0x00144170
 	private void LoadAchivements_CT(string filename)
 	{
 		int num = 0;
@@ -2435,7 +2435,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F1A RID: 7962 RVA: 0x00144DAC File Offset: 0x00142FAC
+	// Token: 0x06001EC7 RID: 7879 RVA: 0x00146008 File Offset: 0x00144208
 	private void LoadAchivements_PL(string filename)
 	{
 		int num = 0;
@@ -2455,7 +2455,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F1B RID: 7963 RVA: 0x00144E44 File Offset: 0x00143044
+	// Token: 0x06001EC8 RID: 7880 RVA: 0x001460A0 File Offset: 0x001442A0
 	private void LoadAchivements_CZ(string filename)
 	{
 		int num = 0;
@@ -2475,7 +2475,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F1C RID: 7964 RVA: 0x00144EDC File Offset: 0x001430DC
+	// Token: 0x06001EC9 RID: 7881 RVA: 0x00146138 File Offset: 0x00144338
 	private void LoadAchivements_AR(string filename)
 	{
 		int num = 0;
@@ -2495,7 +2495,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F1D RID: 7965 RVA: 0x00144F74 File Offset: 0x00143174
+	// Token: 0x06001ECA RID: 7882 RVA: 0x001461D0 File Offset: 0x001443D0
 	private void LoadAchivements_IT(string filename)
 	{
 		int num = 0;
@@ -2515,7 +2515,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F1E RID: 7966 RVA: 0x0014500C File Offset: 0x0014320C
+	// Token: 0x06001ECB RID: 7883 RVA: 0x00146268 File Offset: 0x00144468
 	private void LoadAchivements_RO(string filename)
 	{
 		int num = 0;
@@ -2535,7 +2535,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F1F RID: 7967 RVA: 0x001450A4 File Offset: 0x001432A4
+	// Token: 0x06001ECC RID: 7884 RVA: 0x00146300 File Offset: 0x00144500
 	private void LoadAchivements_JA(string filename)
 	{
 		int num = 0;
@@ -2555,7 +2555,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F20 RID: 7968 RVA: 0x0014513C File Offset: 0x0014333C
+	// Token: 0x06001ECD RID: 7885 RVA: 0x00146398 File Offset: 0x00144598
 	private void LoadObjects_GE(string filename)
 	{
 		int num = 0;
@@ -2575,7 +2575,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F21 RID: 7969 RVA: 0x001451D4 File Offset: 0x001433D4
+	// Token: 0x06001ECE RID: 7886 RVA: 0x00146430 File Offset: 0x00144630
 	private void LoadObjects_EN(string filename)
 	{
 		int num = 0;
@@ -2595,7 +2595,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F22 RID: 7970 RVA: 0x0014526C File Offset: 0x0014346C
+	// Token: 0x06001ECF RID: 7887 RVA: 0x001464C8 File Offset: 0x001446C8
 	private void LoadObjects_TU(string filename)
 	{
 		int num = 0;
@@ -2615,7 +2615,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F23 RID: 7971 RVA: 0x00145304 File Offset: 0x00143504
+	// Token: 0x06001ED0 RID: 7888 RVA: 0x00146560 File Offset: 0x00144760
 	private void LoadObjects_CH(string filename)
 	{
 		int num = 0;
@@ -2635,7 +2635,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F24 RID: 7972 RVA: 0x0014539C File Offset: 0x0014359C
+	// Token: 0x06001ED1 RID: 7889 RVA: 0x001465F8 File Offset: 0x001447F8
 	private void LoadObjects_FR(string filename)
 	{
 		int num = 0;
@@ -2655,7 +2655,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F25 RID: 7973 RVA: 0x00145434 File Offset: 0x00143634
+	// Token: 0x06001ED2 RID: 7890 RVA: 0x00146690 File Offset: 0x00144890
 	private void LoadObjects_ES(string filename)
 	{
 		int num = 0;
@@ -2675,7 +2675,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F26 RID: 7974 RVA: 0x001454CC File Offset: 0x001436CC
+	// Token: 0x06001ED3 RID: 7891 RVA: 0x00146728 File Offset: 0x00144928
 	private void LoadObjects_KO(string filename)
 	{
 		int num = 0;
@@ -2695,7 +2695,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F27 RID: 7975 RVA: 0x00145564 File Offset: 0x00143764
+	// Token: 0x06001ED4 RID: 7892 RVA: 0x001467C0 File Offset: 0x001449C0
 	private void LoadObjects_PB(string filename)
 	{
 		int num = 0;
@@ -2715,7 +2715,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F28 RID: 7976 RVA: 0x001455FC File Offset: 0x001437FC
+	// Token: 0x06001ED5 RID: 7893 RVA: 0x00146858 File Offset: 0x00144A58
 	private void LoadObjects_HU(string filename)
 	{
 		int num = 0;
@@ -2735,7 +2735,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F29 RID: 7977 RVA: 0x00145694 File Offset: 0x00143894
+	// Token: 0x06001ED6 RID: 7894 RVA: 0x001468F0 File Offset: 0x00144AF0
 	private void LoadObjects_RU(string filename)
 	{
 		int num = 0;
@@ -2755,7 +2755,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F2A RID: 7978 RVA: 0x0014572C File Offset: 0x0014392C
+	// Token: 0x06001ED7 RID: 7895 RVA: 0x00146988 File Offset: 0x00144B88
 	private void LoadObjects_CT(string filename)
 	{
 		int num = 0;
@@ -2775,7 +2775,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F2B RID: 7979 RVA: 0x001457C4 File Offset: 0x001439C4
+	// Token: 0x06001ED8 RID: 7896 RVA: 0x00146A20 File Offset: 0x00144C20
 	private void LoadObjects_PL(string filename)
 	{
 		int num = 0;
@@ -2795,7 +2795,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F2C RID: 7980 RVA: 0x0014585C File Offset: 0x00143A5C
+	// Token: 0x06001ED9 RID: 7897 RVA: 0x00146AB8 File Offset: 0x00144CB8
 	private void LoadObjects_CZ(string filename)
 	{
 		int num = 0;
@@ -2815,7 +2815,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F2D RID: 7981 RVA: 0x001458F4 File Offset: 0x00143AF4
+	// Token: 0x06001EDA RID: 7898 RVA: 0x00146B50 File Offset: 0x00144D50
 	private void LoadObjects_AR(string filename)
 	{
 		int num = 0;
@@ -2835,7 +2835,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F2E RID: 7982 RVA: 0x0014598C File Offset: 0x00143B8C
+	// Token: 0x06001EDB RID: 7899 RVA: 0x00146BE8 File Offset: 0x00144DE8
 	private void LoadObjects_IT(string filename)
 	{
 		int num = 0;
@@ -2855,7 +2855,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F2F RID: 7983 RVA: 0x00145A24 File Offset: 0x00143C24
+	// Token: 0x06001EDC RID: 7900 RVA: 0x00146C80 File Offset: 0x00144E80
 	private void LoadObjects_RO(string filename)
 	{
 		int num = 0;
@@ -2875,7 +2875,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F30 RID: 7984 RVA: 0x00145ABC File Offset: 0x00143CBC
+	// Token: 0x06001EDD RID: 7901 RVA: 0x00146D18 File Offset: 0x00144F18
 	private void LoadObjects_JA(string filename)
 	{
 		int num = 0;
@@ -2895,7 +2895,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F31 RID: 7985 RVA: 0x00145B54 File Offset: 0x00143D54
+	// Token: 0x06001EDE RID: 7902 RVA: 0x00146DB0 File Offset: 0x00144FB0
 	private void LoadCountry_GE(string filename)
 	{
 		this.country_GE = this.OpenFile(filename).Split(new char[]
@@ -2916,7 +2916,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F32 RID: 7986 RVA: 0x00145C0E File Offset: 0x00143E0E
+	// Token: 0x06001EDF RID: 7903 RVA: 0x0001467D File Offset: 0x0001287D
 	private void LoadCountry_EN(string filename)
 	{
 		this.country_EN = this.OpenFile(filename).Split(new char[]
@@ -2925,7 +2925,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F33 RID: 7987 RVA: 0x00145C36 File Offset: 0x00143E36
+	// Token: 0x06001EE0 RID: 7904 RVA: 0x000146A5 File Offset: 0x000128A5
 	private void LoadCountry_TU(string filename)
 	{
 		this.country_TU = this.OpenFile(filename).Split(new char[]
@@ -2934,7 +2934,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F34 RID: 7988 RVA: 0x00145C5E File Offset: 0x00143E5E
+	// Token: 0x06001EE1 RID: 7905 RVA: 0x000146CD File Offset: 0x000128CD
 	private void LoadCountry_CH(string filename)
 	{
 		this.country_CH = this.OpenFile(filename).Split(new char[]
@@ -2943,7 +2943,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F35 RID: 7989 RVA: 0x00145C86 File Offset: 0x00143E86
+	// Token: 0x06001EE2 RID: 7906 RVA: 0x000146F5 File Offset: 0x000128F5
 	private void LoadCountry_FR(string filename)
 	{
 		this.country_FR = this.OpenFile(filename).Split(new char[]
@@ -2952,7 +2952,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F36 RID: 7990 RVA: 0x00145CAE File Offset: 0x00143EAE
+	// Token: 0x06001EE3 RID: 7907 RVA: 0x0001471D File Offset: 0x0001291D
 	private void LoadCountry_ES(string filename)
 	{
 		this.country_ES = this.OpenFile(filename).Split(new char[]
@@ -2961,7 +2961,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F37 RID: 7991 RVA: 0x00145CD6 File Offset: 0x00143ED6
+	// Token: 0x06001EE4 RID: 7908 RVA: 0x00014745 File Offset: 0x00012945
 	private void LoadCountry_KO(string filename)
 	{
 		this.country_KO = this.OpenFile(filename).Split(new char[]
@@ -2970,7 +2970,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F38 RID: 7992 RVA: 0x00145CFE File Offset: 0x00143EFE
+	// Token: 0x06001EE5 RID: 7909 RVA: 0x0001476D File Offset: 0x0001296D
 	private void LoadCountry_PB(string filename)
 	{
 		this.country_PB = this.OpenFile(filename).Split(new char[]
@@ -2979,7 +2979,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F39 RID: 7993 RVA: 0x00145D26 File Offset: 0x00143F26
+	// Token: 0x06001EE6 RID: 7910 RVA: 0x00014795 File Offset: 0x00012995
 	private void LoadCountry_HU(string filename)
 	{
 		this.country_HU = this.OpenFile(filename).Split(new char[]
@@ -2988,7 +2988,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F3A RID: 7994 RVA: 0x00145D4E File Offset: 0x00143F4E
+	// Token: 0x06001EE7 RID: 7911 RVA: 0x000147BD File Offset: 0x000129BD
 	private void LoadCountry_RU(string filename)
 	{
 		this.country_RU = this.OpenFile(filename).Split(new char[]
@@ -2997,7 +2997,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F3B RID: 7995 RVA: 0x00145D76 File Offset: 0x00143F76
+	// Token: 0x06001EE8 RID: 7912 RVA: 0x000147E5 File Offset: 0x000129E5
 	private void LoadCountry_CT(string filename)
 	{
 		this.country_CT = this.OpenFile(filename).Split(new char[]
@@ -3006,7 +3006,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F3C RID: 7996 RVA: 0x00145D9E File Offset: 0x00143F9E
+	// Token: 0x06001EE9 RID: 7913 RVA: 0x0001480D File Offset: 0x00012A0D
 	private void LoadCountry_PL(string filename)
 	{
 		this.country_PL = this.OpenFile(filename).Split(new char[]
@@ -3015,7 +3015,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F3D RID: 7997 RVA: 0x00145DC6 File Offset: 0x00143FC6
+	// Token: 0x06001EEA RID: 7914 RVA: 0x00014835 File Offset: 0x00012A35
 	private void LoadCountry_CZ(string filename)
 	{
 		this.country_CZ = this.OpenFile(filename).Split(new char[]
@@ -3024,7 +3024,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F3E RID: 7998 RVA: 0x00145DEE File Offset: 0x00143FEE
+	// Token: 0x06001EEB RID: 7915 RVA: 0x0001485D File Offset: 0x00012A5D
 	private void LoadCountry_AR(string filename)
 	{
 		this.country_AR = this.OpenFile(filename).Split(new char[]
@@ -3033,7 +3033,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F3F RID: 7999 RVA: 0x00145E16 File Offset: 0x00144016
+	// Token: 0x06001EEC RID: 7916 RVA: 0x00014885 File Offset: 0x00012A85
 	private void LoadCountry_IT(string filename)
 	{
 		this.country_IT = this.OpenFile(filename).Split(new char[]
@@ -3042,7 +3042,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F40 RID: 8000 RVA: 0x00145E3E File Offset: 0x0014403E
+	// Token: 0x06001EED RID: 7917 RVA: 0x000148AD File Offset: 0x00012AAD
 	private void LoadCountry_RO(string filename)
 	{
 		this.country_RO = this.OpenFile(filename).Split(new char[]
@@ -3051,7 +3051,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F41 RID: 8001 RVA: 0x00145E66 File Offset: 0x00144066
+	// Token: 0x06001EEE RID: 7918 RVA: 0x000148D5 File Offset: 0x00012AD5
 	private void LoadCountry_JA(string filename)
 	{
 		this.country_JA = this.OpenFile(filename).Split(new char[]
@@ -3060,7 +3060,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F42 RID: 8002 RVA: 0x00145E90 File Offset: 0x00144090
+	// Token: 0x06001EEF RID: 7919 RVA: 0x00146E6C File Offset: 0x0014506C
 	private void LoadQuotes_GE(string filename)
 	{
 		int num = 0;
@@ -3075,7 +3075,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F43 RID: 8003 RVA: 0x00145EFC File Offset: 0x001440FC
+	// Token: 0x06001EF0 RID: 7920 RVA: 0x00146ED8 File Offset: 0x001450D8
 	private void LoadQuotes_EN(string filename)
 	{
 		int num = 0;
@@ -3090,7 +3090,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F44 RID: 8004 RVA: 0x00145F68 File Offset: 0x00144168
+	// Token: 0x06001EF1 RID: 7921 RVA: 0x00146F44 File Offset: 0x00145144
 	private void LoadQuotes_TU(string filename)
 	{
 		int num = 0;
@@ -3105,7 +3105,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F45 RID: 8005 RVA: 0x00145FD4 File Offset: 0x001441D4
+	// Token: 0x06001EF2 RID: 7922 RVA: 0x00146FB0 File Offset: 0x001451B0
 	private void LoadQuotes_CH(string filename)
 	{
 		int num = 0;
@@ -3120,7 +3120,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F46 RID: 8006 RVA: 0x00146040 File Offset: 0x00144240
+	// Token: 0x06001EF3 RID: 7923 RVA: 0x0014701C File Offset: 0x0014521C
 	private void LoadQuotes_FR(string filename)
 	{
 		int num = 0;
@@ -3135,7 +3135,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F47 RID: 8007 RVA: 0x001460AC File Offset: 0x001442AC
+	// Token: 0x06001EF4 RID: 7924 RVA: 0x00147088 File Offset: 0x00145288
 	private void LoadQuotes_ES(string filename)
 	{
 		int num = 0;
@@ -3150,7 +3150,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F48 RID: 8008 RVA: 0x00146118 File Offset: 0x00144318
+	// Token: 0x06001EF5 RID: 7925 RVA: 0x001470F4 File Offset: 0x001452F4
 	private void LoadQuotes_KO(string filename)
 	{
 		int num = 0;
@@ -3165,7 +3165,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F49 RID: 8009 RVA: 0x00146184 File Offset: 0x00144384
+	// Token: 0x06001EF6 RID: 7926 RVA: 0x00147160 File Offset: 0x00145360
 	private void LoadQuotes_PB(string filename)
 	{
 		int num = 0;
@@ -3180,7 +3180,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F4A RID: 8010 RVA: 0x001461F0 File Offset: 0x001443F0
+	// Token: 0x06001EF7 RID: 7927 RVA: 0x001471CC File Offset: 0x001453CC
 	private void LoadQuotes_HU(string filename)
 	{
 		int num = 0;
@@ -3195,7 +3195,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F4B RID: 8011 RVA: 0x0014625C File Offset: 0x0014445C
+	// Token: 0x06001EF8 RID: 7928 RVA: 0x00147238 File Offset: 0x00145438
 	private void LoadQuotes_RU(string filename)
 	{
 		int num = 0;
@@ -3210,7 +3210,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F4C RID: 8012 RVA: 0x001462C8 File Offset: 0x001444C8
+	// Token: 0x06001EF9 RID: 7929 RVA: 0x001472A4 File Offset: 0x001454A4
 	private void LoadQuotes_CT(string filename)
 	{
 		int num = 0;
@@ -3225,7 +3225,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F4D RID: 8013 RVA: 0x00146334 File Offset: 0x00144534
+	// Token: 0x06001EFA RID: 7930 RVA: 0x00147310 File Offset: 0x00145510
 	private void LoadQuotes_PL(string filename)
 	{
 		int num = 0;
@@ -3240,7 +3240,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F4E RID: 8014 RVA: 0x001463A0 File Offset: 0x001445A0
+	// Token: 0x06001EFB RID: 7931 RVA: 0x0014737C File Offset: 0x0014557C
 	private void LoadQuotes_CZ(string filename)
 	{
 		int num = 0;
@@ -3255,7 +3255,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F4F RID: 8015 RVA: 0x0014640C File Offset: 0x0014460C
+	// Token: 0x06001EFC RID: 7932 RVA: 0x001473E8 File Offset: 0x001455E8
 	private void LoadQuotes_AR(string filename)
 	{
 		int num = 0;
@@ -3270,7 +3270,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F50 RID: 8016 RVA: 0x00146478 File Offset: 0x00144678
+	// Token: 0x06001EFD RID: 7933 RVA: 0x00147454 File Offset: 0x00145654
 	private void LoadQuotes_IT(string filename)
 	{
 		int num = 0;
@@ -3285,7 +3285,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F51 RID: 8017 RVA: 0x001464E4 File Offset: 0x001446E4
+	// Token: 0x06001EFE RID: 7934 RVA: 0x001474C0 File Offset: 0x001456C0
 	private void LoadQuotes_RO(string filename)
 	{
 		int num = 0;
@@ -3300,7 +3300,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F52 RID: 8018 RVA: 0x00146550 File Offset: 0x00144750
+	// Token: 0x06001EFF RID: 7935 RVA: 0x0014752C File Offset: 0x0014572C
 	private void LoadQuotes_JA(string filename)
 	{
 		int num = 0;
@@ -3315,7 +3315,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F53 RID: 8019 RVA: 0x001465BC File Offset: 0x001447BC
+	// Token: 0x06001F00 RID: 7936 RVA: 0x00147598 File Offset: 0x00145798
 	private void LoadContractWork_GE(string filename)
 	{
 		int num = 0;
@@ -3330,7 +3330,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F54 RID: 8020 RVA: 0x00146628 File Offset: 0x00144828
+	// Token: 0x06001F01 RID: 7937 RVA: 0x00147604 File Offset: 0x00145804
 	private void LoadContractWork_EN(string filename)
 	{
 		int num = 0;
@@ -3345,7 +3345,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F55 RID: 8021 RVA: 0x00146694 File Offset: 0x00144894
+	// Token: 0x06001F02 RID: 7938 RVA: 0x00147670 File Offset: 0x00145870
 	private void LoadContractWork_TU(string filename)
 	{
 		int num = 0;
@@ -3360,7 +3360,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F56 RID: 8022 RVA: 0x00146700 File Offset: 0x00144900
+	// Token: 0x06001F03 RID: 7939 RVA: 0x001476DC File Offset: 0x001458DC
 	private void LoadContractWork_CH(string filename)
 	{
 		int num = 0;
@@ -3375,7 +3375,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F57 RID: 8023 RVA: 0x0014676C File Offset: 0x0014496C
+	// Token: 0x06001F04 RID: 7940 RVA: 0x00147748 File Offset: 0x00145948
 	private void LoadContractWork_FR(string filename)
 	{
 		int num = 0;
@@ -3390,7 +3390,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F58 RID: 8024 RVA: 0x001467D8 File Offset: 0x001449D8
+	// Token: 0x06001F05 RID: 7941 RVA: 0x001477B4 File Offset: 0x001459B4
 	private void LoadContractWork_ES(string filename)
 	{
 		int num = 0;
@@ -3405,7 +3405,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F59 RID: 8025 RVA: 0x00146844 File Offset: 0x00144A44
+	// Token: 0x06001F06 RID: 7942 RVA: 0x00147820 File Offset: 0x00145A20
 	private void LoadContractWork_KO(string filename)
 	{
 		int num = 0;
@@ -3420,7 +3420,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F5A RID: 8026 RVA: 0x001468B0 File Offset: 0x00144AB0
+	// Token: 0x06001F07 RID: 7943 RVA: 0x0014788C File Offset: 0x00145A8C
 	private void LoadContractWork_PB(string filename)
 	{
 		int num = 0;
@@ -3435,7 +3435,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F5B RID: 8027 RVA: 0x0014691C File Offset: 0x00144B1C
+	// Token: 0x06001F08 RID: 7944 RVA: 0x001478F8 File Offset: 0x00145AF8
 	private void LoadContractWork_HU(string filename)
 	{
 		int num = 0;
@@ -3450,7 +3450,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F5C RID: 8028 RVA: 0x00146988 File Offset: 0x00144B88
+	// Token: 0x06001F09 RID: 7945 RVA: 0x00147964 File Offset: 0x00145B64
 	private void LoadContractWork_RU(string filename)
 	{
 		int num = 0;
@@ -3465,7 +3465,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F5D RID: 8029 RVA: 0x001469F4 File Offset: 0x00144BF4
+	// Token: 0x06001F0A RID: 7946 RVA: 0x001479D0 File Offset: 0x00145BD0
 	private void LoadContractWork_CT(string filename)
 	{
 		int num = 0;
@@ -3480,7 +3480,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F5E RID: 8030 RVA: 0x00146A60 File Offset: 0x00144C60
+	// Token: 0x06001F0B RID: 7947 RVA: 0x00147A3C File Offset: 0x00145C3C
 	private void LoadContractWork_PL(string filename)
 	{
 		int num = 0;
@@ -3495,7 +3495,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F5F RID: 8031 RVA: 0x00146ACC File Offset: 0x00144CCC
+	// Token: 0x06001F0C RID: 7948 RVA: 0x00147AA8 File Offset: 0x00145CA8
 	private void LoadContractWork_CZ(string filename)
 	{
 		int num = 0;
@@ -3510,7 +3510,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F60 RID: 8032 RVA: 0x00146B38 File Offset: 0x00144D38
+	// Token: 0x06001F0D RID: 7949 RVA: 0x00147B14 File Offset: 0x00145D14
 	private void LoadContractWork_AR(string filename)
 	{
 		int num = 0;
@@ -3525,7 +3525,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F61 RID: 8033 RVA: 0x00146BA4 File Offset: 0x00144DA4
+	// Token: 0x06001F0E RID: 7950 RVA: 0x00147B80 File Offset: 0x00145D80
 	private void LoadContractWork_IT(string filename)
 	{
 		int num = 0;
@@ -3540,7 +3540,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F62 RID: 8034 RVA: 0x00146C10 File Offset: 0x00144E10
+	// Token: 0x06001F0F RID: 7951 RVA: 0x00147BEC File Offset: 0x00145DEC
 	private void LoadContractWork_RO(string filename)
 	{
 		int num = 0;
@@ -3555,7 +3555,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F63 RID: 8035 RVA: 0x00146C7C File Offset: 0x00144E7C
+	// Token: 0x06001F10 RID: 7952 RVA: 0x00147C58 File Offset: 0x00145E58
 	private void LoadContractWork_JA(string filename)
 	{
 		int num = 0;
@@ -3570,7 +3570,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F64 RID: 8036 RVA: 0x00146CE8 File Offset: 0x00144EE8
+	// Token: 0x06001F11 RID: 7953 RVA: 0x00147CC4 File Offset: 0x00145EC4
 	private void LoadFanLetter_GE(string filename)
 	{
 		int num = 0;
@@ -3585,7 +3585,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F65 RID: 8037 RVA: 0x00146D54 File Offset: 0x00144F54
+	// Token: 0x06001F12 RID: 7954 RVA: 0x00147D30 File Offset: 0x00145F30
 	private void LoadFanLetter_EN(string filename)
 	{
 		int num = 0;
@@ -3600,7 +3600,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F66 RID: 8038 RVA: 0x00146DC0 File Offset: 0x00144FC0
+	// Token: 0x06001F13 RID: 7955 RVA: 0x00147D9C File Offset: 0x00145F9C
 	private void LoadFanLetter_TU(string filename)
 	{
 		int num = 0;
@@ -3615,7 +3615,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F67 RID: 8039 RVA: 0x00146E2C File Offset: 0x0014502C
+	// Token: 0x06001F14 RID: 7956 RVA: 0x00147E08 File Offset: 0x00146008
 	private void LoadFanLetter_CH(string filename)
 	{
 		int num = 0;
@@ -3630,7 +3630,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F68 RID: 8040 RVA: 0x00146E98 File Offset: 0x00145098
+	// Token: 0x06001F15 RID: 7957 RVA: 0x00147E74 File Offset: 0x00146074
 	private void LoadFanLetter_FR(string filename)
 	{
 		int num = 0;
@@ -3645,7 +3645,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F69 RID: 8041 RVA: 0x00146F04 File Offset: 0x00145104
+	// Token: 0x06001F16 RID: 7958 RVA: 0x00147EE0 File Offset: 0x001460E0
 	private void LoadFanLetter_ES(string filename)
 	{
 		int num = 0;
@@ -3660,7 +3660,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F6A RID: 8042 RVA: 0x00146F70 File Offset: 0x00145170
+	// Token: 0x06001F17 RID: 7959 RVA: 0x00147F4C File Offset: 0x0014614C
 	private void LoadFanLetter_KO(string filename)
 	{
 		int num = 0;
@@ -3675,7 +3675,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F6B RID: 8043 RVA: 0x00146FDC File Offset: 0x001451DC
+	// Token: 0x06001F18 RID: 7960 RVA: 0x00147FB8 File Offset: 0x001461B8
 	private void LoadFanLetter_PB(string filename)
 	{
 		int num = 0;
@@ -3690,7 +3690,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F6C RID: 8044 RVA: 0x00147048 File Offset: 0x00145248
+	// Token: 0x06001F19 RID: 7961 RVA: 0x00148024 File Offset: 0x00146224
 	private void LoadFanLetter_HU(string filename)
 	{
 		int num = 0;
@@ -3705,7 +3705,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F6D RID: 8045 RVA: 0x001470B4 File Offset: 0x001452B4
+	// Token: 0x06001F1A RID: 7962 RVA: 0x00148090 File Offset: 0x00146290
 	private void LoadFanLetter_RU(string filename)
 	{
 		int num = 0;
@@ -3720,7 +3720,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F6E RID: 8046 RVA: 0x00147120 File Offset: 0x00145320
+	// Token: 0x06001F1B RID: 7963 RVA: 0x001480FC File Offset: 0x001462FC
 	private void LoadFanLetter_CT(string filename)
 	{
 		int num = 0;
@@ -3735,7 +3735,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F6F RID: 8047 RVA: 0x0014718C File Offset: 0x0014538C
+	// Token: 0x06001F1C RID: 7964 RVA: 0x00148168 File Offset: 0x00146368
 	private void LoadFanLetter_PL(string filename)
 	{
 		int num = 0;
@@ -3750,7 +3750,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F70 RID: 8048 RVA: 0x001471F8 File Offset: 0x001453F8
+	// Token: 0x06001F1D RID: 7965 RVA: 0x001481D4 File Offset: 0x001463D4
 	private void LoadFanLetter_CZ(string filename)
 	{
 		int num = 0;
@@ -3765,7 +3765,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F71 RID: 8049 RVA: 0x00147264 File Offset: 0x00145464
+	// Token: 0x06001F1E RID: 7966 RVA: 0x00148240 File Offset: 0x00146440
 	private void LoadFanLetter_AR(string filename)
 	{
 		int num = 0;
@@ -3780,7 +3780,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F72 RID: 8050 RVA: 0x001472D0 File Offset: 0x001454D0
+	// Token: 0x06001F1F RID: 7967 RVA: 0x001482AC File Offset: 0x001464AC
 	private void LoadFanLetter_IT(string filename)
 	{
 		int num = 0;
@@ -3795,7 +3795,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F73 RID: 8051 RVA: 0x0014733C File Offset: 0x0014553C
+	// Token: 0x06001F20 RID: 7968 RVA: 0x00148318 File Offset: 0x00146518
 	private void LoadFanLetter_RO(string filename)
 	{
 		int num = 0;
@@ -3810,7 +3810,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F74 RID: 8052 RVA: 0x001473A8 File Offset: 0x001455A8
+	// Token: 0x06001F21 RID: 7969 RVA: 0x00148384 File Offset: 0x00146584
 	private void LoadFanLetter_JA(string filename)
 	{
 		int num = 0;
@@ -3825,7 +3825,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F75 RID: 8053 RVA: 0x00147414 File Offset: 0x00145614
+	// Token: 0x06001F22 RID: 7970 RVA: 0x001483F0 File Offset: 0x001465F0
 	private void LoadTutorial_GE(string filename)
 	{
 		int num = 0;
@@ -3840,7 +3840,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F76 RID: 8054 RVA: 0x00147480 File Offset: 0x00145680
+	// Token: 0x06001F23 RID: 7971 RVA: 0x0014845C File Offset: 0x0014665C
 	private void LoadTutorial_EN(string filename)
 	{
 		int num = 0;
@@ -3855,7 +3855,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F77 RID: 8055 RVA: 0x001474EC File Offset: 0x001456EC
+	// Token: 0x06001F24 RID: 7972 RVA: 0x001484C8 File Offset: 0x001466C8
 	private void LoadTutorial_TU(string filename)
 	{
 		int num = 0;
@@ -3870,7 +3870,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F78 RID: 8056 RVA: 0x00147558 File Offset: 0x00145758
+	// Token: 0x06001F25 RID: 7973 RVA: 0x00148534 File Offset: 0x00146734
 	private void LoadTutorial_CH(string filename)
 	{
 		int num = 0;
@@ -3885,7 +3885,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F79 RID: 8057 RVA: 0x001475C4 File Offset: 0x001457C4
+	// Token: 0x06001F26 RID: 7974 RVA: 0x001485A0 File Offset: 0x001467A0
 	private void LoadTutorial_FR(string filename)
 	{
 		int num = 0;
@@ -3900,7 +3900,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F7A RID: 8058 RVA: 0x00147630 File Offset: 0x00145830
+	// Token: 0x06001F27 RID: 7975 RVA: 0x0014860C File Offset: 0x0014680C
 	private void LoadTutorial_ES(string filename)
 	{
 		int num = 0;
@@ -3915,7 +3915,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F7B RID: 8059 RVA: 0x0014769C File Offset: 0x0014589C
+	// Token: 0x06001F28 RID: 7976 RVA: 0x00148678 File Offset: 0x00146878
 	private void LoadTutorial_KO(string filename)
 	{
 		int num = 0;
@@ -3930,7 +3930,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F7C RID: 8060 RVA: 0x00147708 File Offset: 0x00145908
+	// Token: 0x06001F29 RID: 7977 RVA: 0x001486E4 File Offset: 0x001468E4
 	private void LoadTutorial_PB(string filename)
 	{
 		int num = 0;
@@ -3945,7 +3945,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F7D RID: 8061 RVA: 0x00147774 File Offset: 0x00145974
+	// Token: 0x06001F2A RID: 7978 RVA: 0x00148750 File Offset: 0x00146950
 	private void LoadTutorial_HU(string filename)
 	{
 		int num = 0;
@@ -3960,7 +3960,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F7E RID: 8062 RVA: 0x001477E0 File Offset: 0x001459E0
+	// Token: 0x06001F2B RID: 7979 RVA: 0x001487BC File Offset: 0x001469BC
 	private void LoadTutorial_RU(string filename)
 	{
 		int num = 0;
@@ -3975,7 +3975,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F7F RID: 8063 RVA: 0x0014784C File Offset: 0x00145A4C
+	// Token: 0x06001F2C RID: 7980 RVA: 0x00148828 File Offset: 0x00146A28
 	private void LoadTutorial_CT(string filename)
 	{
 		int num = 0;
@@ -3990,7 +3990,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F80 RID: 8064 RVA: 0x001478B8 File Offset: 0x00145AB8
+	// Token: 0x06001F2D RID: 7981 RVA: 0x00148894 File Offset: 0x00146A94
 	private void LoadTutorial_PL(string filename)
 	{
 		int num = 0;
@@ -4005,7 +4005,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F81 RID: 8065 RVA: 0x00147924 File Offset: 0x00145B24
+	// Token: 0x06001F2E RID: 7982 RVA: 0x00148900 File Offset: 0x00146B00
 	private void LoadTutorial_CZ(string filename)
 	{
 		int num = 0;
@@ -4020,7 +4020,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F82 RID: 8066 RVA: 0x00147990 File Offset: 0x00145B90
+	// Token: 0x06001F2F RID: 7983 RVA: 0x0014896C File Offset: 0x00146B6C
 	private void LoadTutorial_AR(string filename)
 	{
 		int num = 0;
@@ -4035,7 +4035,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F83 RID: 8067 RVA: 0x001479FC File Offset: 0x00145BFC
+	// Token: 0x06001F30 RID: 7984 RVA: 0x001489D8 File Offset: 0x00146BD8
 	private void LoadTutorial_IT(string filename)
 	{
 		int num = 0;
@@ -4050,7 +4050,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F84 RID: 8068 RVA: 0x00147A68 File Offset: 0x00145C68
+	// Token: 0x06001F31 RID: 7985 RVA: 0x00148A44 File Offset: 0x00146C44
 	private void LoadTutorial_RO(string filename)
 	{
 		int num = 0;
@@ -4065,7 +4065,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F85 RID: 8069 RVA: 0x00147AD4 File Offset: 0x00145CD4
+	// Token: 0x06001F32 RID: 7986 RVA: 0x00148AB0 File Offset: 0x00146CB0
 	private void LoadTutorial_JA(string filename)
 	{
 		int num = 0;
@@ -4080,7 +4080,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F86 RID: 8070 RVA: 0x00147B40 File Offset: 0x00145D40
+	// Token: 0x06001F33 RID: 7987 RVA: 0x00148B1C File Offset: 0x00146D1C
 	private string RemoveThemesFit(string c)
 	{
 		int num = this.genres_.LoadAmountOfGenres("DATA/Genres.txt");
@@ -4102,7 +4102,7 @@ public class textScript : MonoBehaviour
 		return c;
 	}
 
-	// Token: 0x06001F87 RID: 8071 RVA: 0x00147C18 File Offset: 0x00145E18
+	// Token: 0x06001F34 RID: 7988 RVA: 0x00148BF4 File Offset: 0x00146DF4
 	private void LoadThemes_GE(string filename)
 	{
 		int num = 0;
@@ -4117,7 +4117,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F88 RID: 8072 RVA: 0x00147C7A File Offset: 0x00145E7A
+	// Token: 0x06001F35 RID: 7989 RVA: 0x000148FD File Offset: 0x00012AFD
 	private void LoadThemes_EN(string filename)
 	{
 		this.themes_EN = this.OpenFile(filename).Split(new char[]
@@ -4126,7 +4126,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F89 RID: 8073 RVA: 0x00147CA2 File Offset: 0x00145EA2
+	// Token: 0x06001F36 RID: 7990 RVA: 0x00014925 File Offset: 0x00012B25
 	private void LoadThemes_TU(string filename)
 	{
 		this.themes_TU = this.OpenFile(filename).Split(new char[]
@@ -4135,7 +4135,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F8A RID: 8074 RVA: 0x00147CCA File Offset: 0x00145ECA
+	// Token: 0x06001F37 RID: 7991 RVA: 0x0001494D File Offset: 0x00012B4D
 	private void LoadThemes_CH(string filename)
 	{
 		this.themes_CH = this.OpenFile(filename).Split(new char[]
@@ -4144,7 +4144,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F8B RID: 8075 RVA: 0x00147CF2 File Offset: 0x00145EF2
+	// Token: 0x06001F38 RID: 7992 RVA: 0x00014975 File Offset: 0x00012B75
 	private void LoadThemes_FR(string filename)
 	{
 		this.themes_FR = this.OpenFile(filename).Split(new char[]
@@ -4153,7 +4153,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F8C RID: 8076 RVA: 0x00147D1A File Offset: 0x00145F1A
+	// Token: 0x06001F39 RID: 7993 RVA: 0x0001499D File Offset: 0x00012B9D
 	private void LoadThemes_ES(string filename)
 	{
 		this.themes_ES = this.OpenFile(filename).Split(new char[]
@@ -4162,7 +4162,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F8D RID: 8077 RVA: 0x00147D42 File Offset: 0x00145F42
+	// Token: 0x06001F3A RID: 7994 RVA: 0x000149C5 File Offset: 0x00012BC5
 	private void LoadThemes_KO(string filename)
 	{
 		this.themes_KO = this.OpenFile(filename).Split(new char[]
@@ -4171,7 +4171,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F8E RID: 8078 RVA: 0x00147D6A File Offset: 0x00145F6A
+	// Token: 0x06001F3B RID: 7995 RVA: 0x000149ED File Offset: 0x00012BED
 	private void LoadThemes_PB(string filename)
 	{
 		this.themes_PB = this.OpenFile(filename).Split(new char[]
@@ -4180,7 +4180,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F8F RID: 8079 RVA: 0x00147D92 File Offset: 0x00145F92
+	// Token: 0x06001F3C RID: 7996 RVA: 0x00014A15 File Offset: 0x00012C15
 	private void LoadThemes_HU(string filename)
 	{
 		this.themes_HU = this.OpenFile(filename).Split(new char[]
@@ -4189,7 +4189,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F90 RID: 8080 RVA: 0x00147DBA File Offset: 0x00145FBA
+	// Token: 0x06001F3D RID: 7997 RVA: 0x00014A3D File Offset: 0x00012C3D
 	private void LoadThemes_RU(string filename)
 	{
 		this.themes_RU = this.OpenFile(filename).Split(new char[]
@@ -4198,7 +4198,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F91 RID: 8081 RVA: 0x00147DE2 File Offset: 0x00145FE2
+	// Token: 0x06001F3E RID: 7998 RVA: 0x00014A65 File Offset: 0x00012C65
 	private void LoadThemes_CT(string filename)
 	{
 		this.themes_CT = this.OpenFile(filename).Split(new char[]
@@ -4207,7 +4207,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F92 RID: 8082 RVA: 0x00147E0A File Offset: 0x0014600A
+	// Token: 0x06001F3F RID: 7999 RVA: 0x00014A8D File Offset: 0x00012C8D
 	private void LoadThemes_PL(string filename)
 	{
 		this.themes_PL = this.OpenFile(filename).Split(new char[]
@@ -4216,7 +4216,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F93 RID: 8083 RVA: 0x00147E32 File Offset: 0x00146032
+	// Token: 0x06001F40 RID: 8000 RVA: 0x00014AB5 File Offset: 0x00012CB5
 	private void LoadThemes_CZ(string filename)
 	{
 		this.themes_CZ = this.OpenFile(filename).Split(new char[]
@@ -4225,7 +4225,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F94 RID: 8084 RVA: 0x00147E5A File Offset: 0x0014605A
+	// Token: 0x06001F41 RID: 8001 RVA: 0x00014ADD File Offset: 0x00012CDD
 	private void LoadThemes_AR(string filename)
 	{
 		this.themes_AR = this.OpenFile(filename).Split(new char[]
@@ -4234,7 +4234,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F95 RID: 8085 RVA: 0x00147E82 File Offset: 0x00146082
+	// Token: 0x06001F42 RID: 8002 RVA: 0x00014B05 File Offset: 0x00012D05
 	private void LoadThemes_IT(string filename)
 	{
 		this.themes_IT = this.OpenFile(filename).Split(new char[]
@@ -4243,7 +4243,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F96 RID: 8086 RVA: 0x00147EAA File Offset: 0x001460AA
+	// Token: 0x06001F43 RID: 8003 RVA: 0x00014B2D File Offset: 0x00012D2D
 	private void LoadThemes_RO(string filename)
 	{
 		this.themes_RO = this.OpenFile(filename).Split(new char[]
@@ -4252,7 +4252,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F97 RID: 8087 RVA: 0x00147ED2 File Offset: 0x001460D2
+	// Token: 0x06001F44 RID: 8004 RVA: 0x00014B55 File Offset: 0x00012D55
 	private void LoadThemes_JA(string filename)
 	{
 		this.themes_JA = this.OpenFile(filename).Split(new char[]
@@ -4261,7 +4261,7 @@ public class textScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06001F98 RID: 8088 RVA: 0x00147EFC File Offset: 0x001460FC
+	// Token: 0x06001F45 RID: 8005 RVA: 0x00148C58 File Offset: 0x00146E58
 	private void LoadDevLegends(string filename)
 	{
 		int num = 0;
@@ -4354,7 +4354,7 @@ public class textScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F99 RID: 8089 RVA: 0x00148348 File Offset: 0x00146548
+	// Token: 0x06001F46 RID: 8006 RVA: 0x001490A4 File Offset: 0x001472A4
 	private string RemoveDevLegendsTags(string c)
 	{
 		c = c.Replace("<D>", string.Empty);
@@ -4374,7 +4374,7 @@ public class textScript : MonoBehaviour
 		return c;
 	}
 
-	// Token: 0x06001F9A RID: 8090 RVA: 0x0014842C File Offset: 0x0014662C
+	// Token: 0x06001F47 RID: 8007 RVA: 0x00149188 File Offset: 0x00147388
 	public int GetDevLegend()
 	{
 		int i = 0;
@@ -4394,624 +4394,624 @@ public class textScript : MonoBehaviour
 		return -1;
 	}
 
-	// Token: 0x040026BB RID: 9915
+	// Token: 0x040026A5 RID: 9893
 	private GameObject main_;
 
-	// Token: 0x040026BC RID: 9916
+	// Token: 0x040026A6 RID: 9894
 	private mainScript mS_;
 
-	// Token: 0x040026BD RID: 9917
+	// Token: 0x040026A7 RID: 9895
 	private settingsScript settings_;
 
-	// Token: 0x040026BE RID: 9918
+	// Token: 0x040026A8 RID: 9896
 	private themes themes_;
 
-	// Token: 0x040026BF RID: 9919
+	// Token: 0x040026A9 RID: 9897
 	private genres genres_;
 
-	// Token: 0x040026C0 RID: 9920
+	// Token: 0x040026AA RID: 9898
 	public string[] namesFemale;
 
-	// Token: 0x040026C1 RID: 9921
+	// Token: 0x040026AB RID: 9899
 	public string[] namesMale;
 
-	// Token: 0x040026C2 RID: 9922
+	// Token: 0x040026AC RID: 9900
 	public string[] surname;
 
-	// Token: 0x040026C3 RID: 9923
+	// Token: 0x040026AD RID: 9901
 	public string[] devLegends;
 
-	// Token: 0x040026C4 RID: 9924
+	// Token: 0x040026AE RID: 9902
 	public string[] randomEngineNames;
 
-	// Token: 0x040026C5 RID: 9925
+	// Token: 0x040026AF RID: 9903
 	public string[] randomGameNames;
 
-	// Token: 0x040026C6 RID: 9926
+	// Token: 0x040026B0 RID: 9904
 	public string[] randomPlatformNames;
 
-	// Token: 0x040026C7 RID: 9927
+	// Token: 0x040026B1 RID: 9905
 	public string[] randomCompanyNames;
 
-	// Token: 0x040026C8 RID: 9928
+	// Token: 0x040026B2 RID: 9906
 	public string credits;
 
-	// Token: 0x040026C9 RID: 9929
+	// Token: 0x040026B3 RID: 9907
 	public string[] npcGames;
 
-	// Token: 0x040026CA RID: 9930
+	// Token: 0x040026B4 RID: 9908
 	public bool[] npcGameNameInUse;
 
-	// Token: 0x040026CB RID: 9931
+	// Token: 0x040026B5 RID: 9909
 	public string[] npcAddons;
 
-	// Token: 0x040026CC RID: 9932
+	// Token: 0x040026B6 RID: 9910
 	public string[] npcIPs;
 
-	// Token: 0x040026CD RID: 9933
+	// Token: 0x040026B7 RID: 9911
 	public bool[] npcIPsInUse;
 
-	// Token: 0x040026CE RID: 9934
+	// Token: 0x040026B8 RID: 9912
 	public string[] text_EN;
 
-	// Token: 0x040026CF RID: 9935
+	// Token: 0x040026B9 RID: 9913
 	public string[] text_GE;
 
-	// Token: 0x040026D0 RID: 9936
+	// Token: 0x040026BA RID: 9914
 	public string[] text_TU;
 
-	// Token: 0x040026D1 RID: 9937
+	// Token: 0x040026BB RID: 9915
 	public string[] text_CH;
 
-	// Token: 0x040026D2 RID: 9938
+	// Token: 0x040026BC RID: 9916
 	public string[] text_FR;
 
-	// Token: 0x040026D3 RID: 9939
+	// Token: 0x040026BD RID: 9917
 	public string[] text_ES;
 
-	// Token: 0x040026D4 RID: 9940
+	// Token: 0x040026BE RID: 9918
 	public string[] text_KO;
 
-	// Token: 0x040026D5 RID: 9941
+	// Token: 0x040026BF RID: 9919
 	public string[] text_PB;
 
-	// Token: 0x040026D6 RID: 9942
+	// Token: 0x040026C0 RID: 9920
 	public string[] text_HU;
 
-	// Token: 0x040026D7 RID: 9943
+	// Token: 0x040026C1 RID: 9921
 	public string[] text_RU;
 
-	// Token: 0x040026D8 RID: 9944
+	// Token: 0x040026C2 RID: 9922
 	public string[] text_CT;
 
-	// Token: 0x040026D9 RID: 9945
+	// Token: 0x040026C3 RID: 9923
 	public string[] text_PL;
 
-	// Token: 0x040026DA RID: 9946
+	// Token: 0x040026C4 RID: 9924
 	public string[] text_CZ;
 
-	// Token: 0x040026DB RID: 9947
+	// Token: 0x040026C5 RID: 9925
 	public string[] text_AR;
 
-	// Token: 0x040026DC RID: 9948
+	// Token: 0x040026C6 RID: 9926
 	public string[] text_IT;
 
-	// Token: 0x040026DD RID: 9949
+	// Token: 0x040026C7 RID: 9927
 	public string[] text_RO;
 
-	// Token: 0x040026DE RID: 9950
+	// Token: 0x040026C8 RID: 9928
 	public string[] text_JA;
 
-	// Token: 0x040026DF RID: 9951
+	// Token: 0x040026C9 RID: 9929
 	public string[] achivementsName_EN;
 
-	// Token: 0x040026E0 RID: 9952
+	// Token: 0x040026CA RID: 9930
 	public string[] achivementsName_GE;
 
-	// Token: 0x040026E1 RID: 9953
+	// Token: 0x040026CB RID: 9931
 	public string[] achivementsName_TU;
 
-	// Token: 0x040026E2 RID: 9954
+	// Token: 0x040026CC RID: 9932
 	public string[] achivementsName_CH;
 
-	// Token: 0x040026E3 RID: 9955
+	// Token: 0x040026CD RID: 9933
 	public string[] achivementsName_FR;
 
-	// Token: 0x040026E4 RID: 9956
+	// Token: 0x040026CE RID: 9934
 	public string[] achivementsName_ES;
 
-	// Token: 0x040026E5 RID: 9957
+	// Token: 0x040026CF RID: 9935
 	public string[] achivementsName_KO;
 
-	// Token: 0x040026E6 RID: 9958
+	// Token: 0x040026D0 RID: 9936
 	public string[] achivementsName_PB;
 
-	// Token: 0x040026E7 RID: 9959
+	// Token: 0x040026D1 RID: 9937
 	public string[] achivementsName_HU;
 
-	// Token: 0x040026E8 RID: 9960
+	// Token: 0x040026D2 RID: 9938
 	public string[] achivementsName_RU;
 
-	// Token: 0x040026E9 RID: 9961
+	// Token: 0x040026D3 RID: 9939
 	public string[] achivementsName_CT;
 
-	// Token: 0x040026EA RID: 9962
+	// Token: 0x040026D4 RID: 9940
 	public string[] achivementsName_PL;
 
-	// Token: 0x040026EB RID: 9963
+	// Token: 0x040026D5 RID: 9941
 	public string[] achivementsName_CZ;
 
-	// Token: 0x040026EC RID: 9964
+	// Token: 0x040026D6 RID: 9942
 	public string[] achivementsName_AR;
 
-	// Token: 0x040026ED RID: 9965
+	// Token: 0x040026D7 RID: 9943
 	public string[] achivementsName_IT;
 
-	// Token: 0x040026EE RID: 9966
+	// Token: 0x040026D8 RID: 9944
 	public string[] achivementsName_RO;
 
-	// Token: 0x040026EF RID: 9967
+	// Token: 0x040026D9 RID: 9945
 	public string[] achivementsName_JA;
 
-	// Token: 0x040026F0 RID: 9968
+	// Token: 0x040026DA RID: 9946
 	public string[] achivementsDesc_EN;
 
-	// Token: 0x040026F1 RID: 9969
+	// Token: 0x040026DB RID: 9947
 	public string[] achivementsDesc_GE;
 
-	// Token: 0x040026F2 RID: 9970
+	// Token: 0x040026DC RID: 9948
 	public string[] achivementsDesc_TU;
 
-	// Token: 0x040026F3 RID: 9971
+	// Token: 0x040026DD RID: 9949
 	public string[] achivementsDesc_CH;
 
-	// Token: 0x040026F4 RID: 9972
+	// Token: 0x040026DE RID: 9950
 	public string[] achivementsDesc_FR;
 
-	// Token: 0x040026F5 RID: 9973
+	// Token: 0x040026DF RID: 9951
 	public string[] achivementsDesc_ES;
 
-	// Token: 0x040026F6 RID: 9974
+	// Token: 0x040026E0 RID: 9952
 	public string[] achivementsDesc_KO;
 
-	// Token: 0x040026F7 RID: 9975
+	// Token: 0x040026E1 RID: 9953
 	public string[] achivementsDesc_PB;
 
-	// Token: 0x040026F8 RID: 9976
+	// Token: 0x040026E2 RID: 9954
 	public string[] achivementsDesc_HU;
 
-	// Token: 0x040026F9 RID: 9977
+	// Token: 0x040026E3 RID: 9955
 	public string[] achivementsDesc_RU;
 
-	// Token: 0x040026FA RID: 9978
+	// Token: 0x040026E4 RID: 9956
 	public string[] achivementsDesc_CT;
 
-	// Token: 0x040026FB RID: 9979
+	// Token: 0x040026E5 RID: 9957
 	public string[] achivementsDesc_PL;
 
-	// Token: 0x040026FC RID: 9980
+	// Token: 0x040026E6 RID: 9958
 	public string[] achivementsDesc_CZ;
 
-	// Token: 0x040026FD RID: 9981
+	// Token: 0x040026E7 RID: 9959
 	public string[] achivementsDesc_AR;
 
-	// Token: 0x040026FE RID: 9982
+	// Token: 0x040026E8 RID: 9960
 	public string[] achivementsDesc_IT;
 
-	// Token: 0x040026FF RID: 9983
+	// Token: 0x040026E9 RID: 9961
 	public string[] achivementsDesc_RO;
 
-	// Token: 0x04002700 RID: 9984
+	// Token: 0x040026EA RID: 9962
 	public string[] achivementsDesc_JA;
 
-	// Token: 0x04002701 RID: 9985
+	// Token: 0x040026EB RID: 9963
 	public string[] objects_EN;
 
-	// Token: 0x04002702 RID: 9986
+	// Token: 0x040026EC RID: 9964
 	public string[] objects_GE;
 
-	// Token: 0x04002703 RID: 9987
+	// Token: 0x040026ED RID: 9965
 	public string[] objects_TU;
 
-	// Token: 0x04002704 RID: 9988
+	// Token: 0x040026EE RID: 9966
 	public string[] objects_CH;
 
-	// Token: 0x04002705 RID: 9989
+	// Token: 0x040026EF RID: 9967
 	public string[] objects_FR;
 
-	// Token: 0x04002706 RID: 9990
+	// Token: 0x040026F0 RID: 9968
 	public string[] objects_ES;
 
-	// Token: 0x04002707 RID: 9991
+	// Token: 0x040026F1 RID: 9969
 	public string[] objects_KO;
 
-	// Token: 0x04002708 RID: 9992
+	// Token: 0x040026F2 RID: 9970
 	public string[] objects_PB;
 
-	// Token: 0x04002709 RID: 9993
+	// Token: 0x040026F3 RID: 9971
 	public string[] objects_HU;
 
-	// Token: 0x0400270A RID: 9994
+	// Token: 0x040026F4 RID: 9972
 	public string[] objects_RU;
 
-	// Token: 0x0400270B RID: 9995
+	// Token: 0x040026F5 RID: 9973
 	public string[] objects_CT;
 
-	// Token: 0x0400270C RID: 9996
+	// Token: 0x040026F6 RID: 9974
 	public string[] objects_PL;
 
-	// Token: 0x0400270D RID: 9997
+	// Token: 0x040026F7 RID: 9975
 	public string[] objects_CZ;
 
-	// Token: 0x0400270E RID: 9998
+	// Token: 0x040026F8 RID: 9976
 	public string[] objects_AR;
 
-	// Token: 0x0400270F RID: 9999
+	// Token: 0x040026F9 RID: 9977
 	public string[] objects_IT;
 
-	// Token: 0x04002710 RID: 10000
+	// Token: 0x040026FA RID: 9978
 	public string[] objects_RO;
 
-	// Token: 0x04002711 RID: 10001
+	// Token: 0x040026FB RID: 9979
 	public string[] objects_JA;
 
-	// Token: 0x04002712 RID: 10002
+	// Token: 0x040026FC RID: 9980
 	public string[] objectsTooltip_EN;
 
-	// Token: 0x04002713 RID: 10003
+	// Token: 0x040026FD RID: 9981
 	public string[] objectsTooltip_GE;
 
-	// Token: 0x04002714 RID: 10004
+	// Token: 0x040026FE RID: 9982
 	public string[] objectsTooltip_TU;
 
-	// Token: 0x04002715 RID: 10005
+	// Token: 0x040026FF RID: 9983
 	public string[] objectsTooltip_CH;
 
-	// Token: 0x04002716 RID: 10006
+	// Token: 0x04002700 RID: 9984
 	public string[] objectsTooltip_FR;
 
-	// Token: 0x04002717 RID: 10007
+	// Token: 0x04002701 RID: 9985
 	public string[] objectsTooltip_ES;
 
-	// Token: 0x04002718 RID: 10008
+	// Token: 0x04002702 RID: 9986
 	public string[] objectsTooltip_KO;
 
-	// Token: 0x04002719 RID: 10009
+	// Token: 0x04002703 RID: 9987
 	public string[] objectsTooltip_PB;
 
-	// Token: 0x0400271A RID: 10010
+	// Token: 0x04002704 RID: 9988
 	public string[] objectsTooltip_HU;
 
-	// Token: 0x0400271B RID: 10011
+	// Token: 0x04002705 RID: 9989
 	public string[] objectsTooltip_RU;
 
-	// Token: 0x0400271C RID: 10012
+	// Token: 0x04002706 RID: 9990
 	public string[] objectsTooltip_CT;
 
-	// Token: 0x0400271D RID: 10013
+	// Token: 0x04002707 RID: 9991
 	public string[] objectsTooltip_PL;
 
-	// Token: 0x0400271E RID: 10014
+	// Token: 0x04002708 RID: 9992
 	public string[] objectsTooltip_CZ;
 
-	// Token: 0x0400271F RID: 10015
+	// Token: 0x04002709 RID: 9993
 	public string[] objectsTooltip_AR;
 
-	// Token: 0x04002720 RID: 10016
+	// Token: 0x0400270A RID: 9994
 	public string[] objectsTooltip_IT;
 
-	// Token: 0x04002721 RID: 10017
+	// Token: 0x0400270B RID: 9995
 	public string[] objectsTooltip_RO;
 
-	// Token: 0x04002722 RID: 10018
+	// Token: 0x0400270C RID: 9996
 	public string[] objectsTooltip_JA;
 
-	// Token: 0x04002723 RID: 10019
+	// Token: 0x0400270D RID: 9997
 	public string[] country_EN;
 
-	// Token: 0x04002724 RID: 10020
+	// Token: 0x0400270E RID: 9998
 	public string[] country_GE;
 
-	// Token: 0x04002725 RID: 10021
+	// Token: 0x0400270F RID: 9999
 	public string[] country_TU;
 
-	// Token: 0x04002726 RID: 10022
+	// Token: 0x04002710 RID: 10000
 	public string[] country_CH;
 
-	// Token: 0x04002727 RID: 10023
+	// Token: 0x04002711 RID: 10001
 	public string[] country_FR;
 
-	// Token: 0x04002728 RID: 10024
+	// Token: 0x04002712 RID: 10002
 	public string[] country_ES;
 
-	// Token: 0x04002729 RID: 10025
+	// Token: 0x04002713 RID: 10003
 	public string[] country_KO;
 
-	// Token: 0x0400272A RID: 10026
+	// Token: 0x04002714 RID: 10004
 	public string[] country_PB;
 
-	// Token: 0x0400272B RID: 10027
+	// Token: 0x04002715 RID: 10005
 	public string[] country_HU;
 
-	// Token: 0x0400272C RID: 10028
+	// Token: 0x04002716 RID: 10006
 	public string[] country_RU;
 
-	// Token: 0x0400272D RID: 10029
+	// Token: 0x04002717 RID: 10007
 	public string[] country_CT;
 
-	// Token: 0x0400272E RID: 10030
+	// Token: 0x04002718 RID: 10008
 	public string[] country_PL;
 
-	// Token: 0x0400272F RID: 10031
+	// Token: 0x04002719 RID: 10009
 	public string[] country_CZ;
 
-	// Token: 0x04002730 RID: 10032
+	// Token: 0x0400271A RID: 10010
 	public string[] country_AR;
 
-	// Token: 0x04002731 RID: 10033
+	// Token: 0x0400271B RID: 10011
 	public string[] country_IT;
 
-	// Token: 0x04002732 RID: 10034
+	// Token: 0x0400271C RID: 10012
 	public string[] country_RO;
 
-	// Token: 0x04002733 RID: 10035
+	// Token: 0x0400271D RID: 10013
 	public string[] country_JA;
 
-	// Token: 0x04002734 RID: 10036
+	// Token: 0x0400271E RID: 10014
 	public string[] quotes_EN;
 
-	// Token: 0x04002735 RID: 10037
+	// Token: 0x0400271F RID: 10015
 	public string[] quotes_GE;
 
-	// Token: 0x04002736 RID: 10038
+	// Token: 0x04002720 RID: 10016
 	public string[] quotes_TU;
 
-	// Token: 0x04002737 RID: 10039
+	// Token: 0x04002721 RID: 10017
 	public string[] quotes_CH;
 
-	// Token: 0x04002738 RID: 10040
+	// Token: 0x04002722 RID: 10018
 	public string[] quotes_FR;
 
-	// Token: 0x04002739 RID: 10041
+	// Token: 0x04002723 RID: 10019
 	public string[] quotes_ES;
 
-	// Token: 0x0400273A RID: 10042
+	// Token: 0x04002724 RID: 10020
 	public string[] quotes_KO;
 
-	// Token: 0x0400273B RID: 10043
+	// Token: 0x04002725 RID: 10021
 	public string[] quotes_PB;
 
-	// Token: 0x0400273C RID: 10044
+	// Token: 0x04002726 RID: 10022
 	public string[] quotes_HU;
 
-	// Token: 0x0400273D RID: 10045
+	// Token: 0x04002727 RID: 10023
 	public string[] quotes_RU;
 
-	// Token: 0x0400273E RID: 10046
+	// Token: 0x04002728 RID: 10024
 	public string[] quotes_CT;
 
-	// Token: 0x0400273F RID: 10047
+	// Token: 0x04002729 RID: 10025
 	public string[] quotes_PL;
 
-	// Token: 0x04002740 RID: 10048
+	// Token: 0x0400272A RID: 10026
 	public string[] quotes_CZ;
 
-	// Token: 0x04002741 RID: 10049
+	// Token: 0x0400272B RID: 10027
 	public string[] quotes_AR;
 
-	// Token: 0x04002742 RID: 10050
+	// Token: 0x0400272C RID: 10028
 	public string[] quotes_IT;
 
-	// Token: 0x04002743 RID: 10051
+	// Token: 0x0400272D RID: 10029
 	public string[] quotes_RO;
 
-	// Token: 0x04002744 RID: 10052
+	// Token: 0x0400272E RID: 10030
 	public string[] quotes_JA;
 
-	// Token: 0x04002745 RID: 10053
+	// Token: 0x0400272F RID: 10031
 	public string[] themes_EN;
 
-	// Token: 0x04002746 RID: 10054
+	// Token: 0x04002730 RID: 10032
 	public string[] themes_GE;
 
-	// Token: 0x04002747 RID: 10055
+	// Token: 0x04002731 RID: 10033
 	public string[] themes_TU;
 
-	// Token: 0x04002748 RID: 10056
+	// Token: 0x04002732 RID: 10034
 	public string[] themes_CH;
 
-	// Token: 0x04002749 RID: 10057
+	// Token: 0x04002733 RID: 10035
 	public string[] themes_FR;
 
-	// Token: 0x0400274A RID: 10058
+	// Token: 0x04002734 RID: 10036
 	public string[] themes_ES;
 
-	// Token: 0x0400274B RID: 10059
+	// Token: 0x04002735 RID: 10037
 	public string[] themes_KO;
 
-	// Token: 0x0400274C RID: 10060
+	// Token: 0x04002736 RID: 10038
 	public string[] themes_PB;
 
-	// Token: 0x0400274D RID: 10061
+	// Token: 0x04002737 RID: 10039
 	public string[] themes_HU;
 
-	// Token: 0x0400274E RID: 10062
+	// Token: 0x04002738 RID: 10040
 	public string[] themes_RU;
 
-	// Token: 0x0400274F RID: 10063
+	// Token: 0x04002739 RID: 10041
 	public string[] themes_CT;
 
-	// Token: 0x04002750 RID: 10064
+	// Token: 0x0400273A RID: 10042
 	public string[] themes_PL;
 
-	// Token: 0x04002751 RID: 10065
+	// Token: 0x0400273B RID: 10043
 	public string[] themes_CZ;
 
-	// Token: 0x04002752 RID: 10066
+	// Token: 0x0400273C RID: 10044
 	public string[] themes_AR;
 
-	// Token: 0x04002753 RID: 10067
+	// Token: 0x0400273D RID: 10045
 	public string[] themes_IT;
 
-	// Token: 0x04002754 RID: 10068
+	// Token: 0x0400273E RID: 10046
 	public string[] themes_RO;
 
-	// Token: 0x04002755 RID: 10069
+	// Token: 0x0400273F RID: 10047
 	public string[] themes_JA;
 
-	// Token: 0x04002756 RID: 10070
+	// Token: 0x04002740 RID: 10048
 	public string[] contractWork_EN;
 
-	// Token: 0x04002757 RID: 10071
+	// Token: 0x04002741 RID: 10049
 	public string[] contractWork_GE;
 
-	// Token: 0x04002758 RID: 10072
+	// Token: 0x04002742 RID: 10050
 	public string[] contractWork_TU;
 
-	// Token: 0x04002759 RID: 10073
+	// Token: 0x04002743 RID: 10051
 	public string[] contractWork_CH;
 
-	// Token: 0x0400275A RID: 10074
+	// Token: 0x04002744 RID: 10052
 	public string[] contractWork_FR;
 
-	// Token: 0x0400275B RID: 10075
+	// Token: 0x04002745 RID: 10053
 	public string[] contractWork_ES;
 
-	// Token: 0x0400275C RID: 10076
+	// Token: 0x04002746 RID: 10054
 	public string[] contractWork_KO;
 
-	// Token: 0x0400275D RID: 10077
+	// Token: 0x04002747 RID: 10055
 	public string[] contractWork_PB;
 
-	// Token: 0x0400275E RID: 10078
+	// Token: 0x04002748 RID: 10056
 	public string[] contractWork_HU;
 
-	// Token: 0x0400275F RID: 10079
+	// Token: 0x04002749 RID: 10057
 	public string[] contractWork_RU;
 
-	// Token: 0x04002760 RID: 10080
+	// Token: 0x0400274A RID: 10058
 	public string[] contractWork_CT;
 
-	// Token: 0x04002761 RID: 10081
+	// Token: 0x0400274B RID: 10059
 	public string[] contractWork_PL;
 
-	// Token: 0x04002762 RID: 10082
+	// Token: 0x0400274C RID: 10060
 	public string[] contractWork_CZ;
 
-	// Token: 0x04002763 RID: 10083
+	// Token: 0x0400274D RID: 10061
 	public string[] contractWork_AR;
 
-	// Token: 0x04002764 RID: 10084
+	// Token: 0x0400274E RID: 10062
 	public string[] contractWork_IT;
 
-	// Token: 0x04002765 RID: 10085
+	// Token: 0x0400274F RID: 10063
 	public string[] contractWork_RO;
 
-	// Token: 0x04002766 RID: 10086
+	// Token: 0x04002750 RID: 10064
 	public string[] contractWork_JA;
 
-	// Token: 0x04002767 RID: 10087
+	// Token: 0x04002751 RID: 10065
 	public string[] fanLetter_EN;
 
-	// Token: 0x04002768 RID: 10088
+	// Token: 0x04002752 RID: 10066
 	public string[] fanLetter_GE;
 
-	// Token: 0x04002769 RID: 10089
+	// Token: 0x04002753 RID: 10067
 	public string[] fanLetter_TU;
 
-	// Token: 0x0400276A RID: 10090
+	// Token: 0x04002754 RID: 10068
 	public string[] fanLetter_CH;
 
-	// Token: 0x0400276B RID: 10091
+	// Token: 0x04002755 RID: 10069
 	public string[] fanLetter_FR;
 
-	// Token: 0x0400276C RID: 10092
+	// Token: 0x04002756 RID: 10070
 	public string[] fanLetter_ES;
 
-	// Token: 0x0400276D RID: 10093
+	// Token: 0x04002757 RID: 10071
 	public string[] fanLetter_KO;
 
-	// Token: 0x0400276E RID: 10094
+	// Token: 0x04002758 RID: 10072
 	public string[] fanLetter_PB;
 
-	// Token: 0x0400276F RID: 10095
+	// Token: 0x04002759 RID: 10073
 	public string[] fanLetter_HU;
 
-	// Token: 0x04002770 RID: 10096
+	// Token: 0x0400275A RID: 10074
 	public string[] fanLetter_RU;
 
-	// Token: 0x04002771 RID: 10097
+	// Token: 0x0400275B RID: 10075
 	public string[] fanLetter_CT;
 
-	// Token: 0x04002772 RID: 10098
+	// Token: 0x0400275C RID: 10076
 	public string[] fanLetter_PL;
 
-	// Token: 0x04002773 RID: 10099
+	// Token: 0x0400275D RID: 10077
 	public string[] fanLetter_CZ;
 
-	// Token: 0x04002774 RID: 10100
+	// Token: 0x0400275E RID: 10078
 	public string[] fanLetter_AR;
 
-	// Token: 0x04002775 RID: 10101
+	// Token: 0x0400275F RID: 10079
 	public string[] fanLetter_IT;
 
-	// Token: 0x04002776 RID: 10102
+	// Token: 0x04002760 RID: 10080
 	public string[] fanLetter_RO;
 
-	// Token: 0x04002777 RID: 10103
+	// Token: 0x04002761 RID: 10081
 	public string[] fanLetter_JA;
 
-	// Token: 0x04002778 RID: 10104
+	// Token: 0x04002762 RID: 10082
 	public string[] tutorial_EN;
 
-	// Token: 0x04002779 RID: 10105
+	// Token: 0x04002763 RID: 10083
 	public string[] tutorial_GE;
 
-	// Token: 0x0400277A RID: 10106
+	// Token: 0x04002764 RID: 10084
 	public string[] tutorial_TU;
 
-	// Token: 0x0400277B RID: 10107
+	// Token: 0x04002765 RID: 10085
 	public string[] tutorial_CH;
 
-	// Token: 0x0400277C RID: 10108
+	// Token: 0x04002766 RID: 10086
 	public string[] tutorial_FR;
 
-	// Token: 0x0400277D RID: 10109
+	// Token: 0x04002767 RID: 10087
 	public string[] tutorial_ES;
 
-	// Token: 0x0400277E RID: 10110
+	// Token: 0x04002768 RID: 10088
 	public string[] tutorial_KO;
 
-	// Token: 0x0400277F RID: 10111
+	// Token: 0x04002769 RID: 10089
 	public string[] tutorial_PB;
 
-	// Token: 0x04002780 RID: 10112
+	// Token: 0x0400276A RID: 10090
 	public string[] tutorial_HU;
 
-	// Token: 0x04002781 RID: 10113
+	// Token: 0x0400276B RID: 10091
 	public string[] tutorial_RU;
 
-	// Token: 0x04002782 RID: 10114
+	// Token: 0x0400276C RID: 10092
 	public string[] tutorial_CT;
 
-	// Token: 0x04002783 RID: 10115
+	// Token: 0x0400276D RID: 10093
 	public string[] tutorial_PL;
 
-	// Token: 0x04002784 RID: 10116
+	// Token: 0x0400276E RID: 10094
 	public string[] tutorial_CZ;
 
-	// Token: 0x04002785 RID: 10117
+	// Token: 0x0400276F RID: 10095
 	public string[] tutorial_AR;
 
-	// Token: 0x04002786 RID: 10118
+	// Token: 0x04002770 RID: 10096
 	public string[] tutorial_IT;
 
-	// Token: 0x04002787 RID: 10119
+	// Token: 0x04002771 RID: 10097
 	public string[] tutorial_RO;
 
-	// Token: 0x04002788 RID: 10120
+	// Token: 0x04002772 RID: 10098
 	public string[] tutorial_JA;
 
-	// Token: 0x04002789 RID: 10121
+	// Token: 0x04002773 RID: 10099
 	private bool textLoaded;
 }

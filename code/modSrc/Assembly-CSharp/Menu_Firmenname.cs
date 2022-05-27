@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000194 RID: 404
+// Token: 0x02000193 RID: 403
 public class Menu_Firmenname : MonoBehaviour
 {
-	// Token: 0x06000F5A RID: 3930 RVA: 0x000A24F6 File Offset: 0x000A06F6
+	// Token: 0x06000F42 RID: 3906 RVA: 0x0000AD60 File Offset: 0x00008F60
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F5B RID: 3931 RVA: 0x000A2500 File Offset: 0x000A0700
+	// Token: 0x06000F43 RID: 3907 RVA: 0x000AF284 File Offset: 0x000AD484
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,14 +44,14 @@ public class Menu_Firmenname : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F5C RID: 3932 RVA: 0x000A25DA File Offset: 0x000A07DA
+	// Token: 0x06000F44 RID: 3908 RVA: 0x0000AD68 File Offset: 0x00008F68
 	private void OnEnable()
 	{
 		this.Init();
 		this.cmS_.disableMovement = true;
 	}
 
-	// Token: 0x06000F5D RID: 3933 RVA: 0x000A25EE File Offset: 0x000A07EE
+	// Token: 0x06000F45 RID: 3909 RVA: 0x0000AD7C File Offset: 0x00008F7C
 	private void OnDisable()
 	{
 		this.FindScripts();
@@ -62,22 +62,22 @@ public class Menu_Firmenname : MonoBehaviour
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x06000F5E RID: 3934 RVA: 0x000A2610 File Offset: 0x000A0810
+	// Token: 0x06000F46 RID: 3910 RVA: 0x0000AD9E File Offset: 0x00008F9E
 	public void Init()
 	{
 		this.FindScripts();
-		this.uiObjects[0].GetComponent<InputField>().text = this.mS_.GetCompanyName();
-		this.SetLogo(this.mS_.GetCompanyLogoID());
+		this.uiObjects[0].GetComponent<InputField>().text = this.mS_.companyName;
+		this.SetLogo(this.mS_.logo);
 	}
 
-	// Token: 0x06000F5F RID: 3935 RVA: 0x000A2646 File Offset: 0x000A0846
+	// Token: 0x06000F47 RID: 3911 RVA: 0x0000ADD4 File Offset: 0x00008FD4
 	public void BUTTON_Firmenlogo()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[48]);
 	}
 
-	// Token: 0x06000F60 RID: 3936 RVA: 0x000A266E File Offset: 0x000A086E
+	// Token: 0x06000F48 RID: 3912 RVA: 0x0000ADFC File Offset: 0x00008FFC
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -85,7 +85,7 @@ public class Menu_Firmenname : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000F61 RID: 3937 RVA: 0x000A2694 File Offset: 0x000A0894
+	// Token: 0x06000F49 RID: 3913 RVA: 0x000AF360 File Offset: 0x000AD560
 	public void BUTTON_Yes()
 	{
 		if (this.uiObjects[0].GetComponent<InputField>().text.Length <= 0)
@@ -93,40 +93,57 @@ public class Menu_Firmenname : MonoBehaviour
 			this.guiMain_.MessageBox(this.tS_.GetText(814), false);
 			return;
 		}
-		this.mS_.SetCompanyName(this.uiObjects[0].GetComponent<InputField>().text);
-		this.mS_.SetCompanyLogoID(this.logo);
+		this.mS_.logo = this.logo;
+		this.mS_.companyName = this.uiObjects[0].GetComponent<InputField>().text;
 		this.guiMain_.SetMainGuiData();
+		if (this.mS_.multiplayer)
+		{
+			if (this.mS_.mpCalls_.isServer)
+			{
+				player_mp player_mp = this.mS_.mpCalls_.FindPlayer(this.mS_.mpCalls_.myID);
+				if (player_mp != null)
+				{
+					player_mp.companyName = this.mS_.companyName;
+					player_mp.companyLogo = this.mS_.logo;
+				}
+				this.mS_.mpCalls_.SERVER_Send_PlayerInfos();
+			}
+			if (this.mS_.mpCalls_.isClient)
+			{
+				this.mS_.mpCalls_.CLIENT_Send_PlayerInfos();
+			}
+		}
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x06000F62 RID: 3938 RVA: 0x000A2717 File Offset: 0x000A0917
+	// Token: 0x06000F4A RID: 3914 RVA: 0x0000AE22 File Offset: 0x00009022
 	public void SetLogo(int i)
 	{
 		this.uiObjects[1].GetComponent<Image>().sprite = this.guiMain_.GetCompanyLogo(i);
 		this.logo = i;
 	}
 
-	// Token: 0x040013A0 RID: 5024
+	// Token: 0x04001397 RID: 5015
 	public GameObject[] uiObjects;
 
-	// Token: 0x040013A1 RID: 5025
+	// Token: 0x04001398 RID: 5016
 	private GameObject main_;
 
-	// Token: 0x040013A2 RID: 5026
+	// Token: 0x04001399 RID: 5017
 	private mainScript mS_;
 
-	// Token: 0x040013A3 RID: 5027
+	// Token: 0x0400139A RID: 5018
 	private textScript tS_;
 
-	// Token: 0x040013A4 RID: 5028
+	// Token: 0x0400139B RID: 5019
 	private GUI_Main guiMain_;
 
-	// Token: 0x040013A5 RID: 5029
+	// Token: 0x0400139C RID: 5020
 	private sfxScript sfx_;
 
-	// Token: 0x040013A6 RID: 5030
+	// Token: 0x0400139D RID: 5021
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040013A7 RID: 5031
+	// Token: 0x0400139E RID: 5022
 	private int logo = -1;
 }

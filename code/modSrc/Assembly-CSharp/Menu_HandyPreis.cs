@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000152 RID: 338
+// Token: 0x02000151 RID: 337
 public class Menu_HandyPreis : MonoBehaviour
 {
-	// Token: 0x06000C74 RID: 3188 RVA: 0x00085F1E File Offset: 0x0008411E
+	// Token: 0x06000C5E RID: 3166 RVA: 0x00008AB4 File Offset: 0x00006CB4
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000C75 RID: 3189 RVA: 0x00085F28 File Offset: 0x00084128
+	// Token: 0x06000C5F RID: 3167 RVA: 0x000952DC File Offset: 0x000934DC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_HandyPreis : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C76 RID: 3190 RVA: 0x000860C8 File Offset: 0x000842C8
+	// Token: 0x06000C60 RID: 3168 RVA: 0x0009547C File Offset: 0x0009367C
 	public void Init(gameScript game_)
 	{
 		this.FindScripts();
@@ -91,7 +91,7 @@ public class Menu_HandyPreis : MonoBehaviour
 		this.uiObjects[4].SetActive(true);
 	}
 
-	// Token: 0x06000C77 RID: 3191 RVA: 0x00086184 File Offset: 0x00084384
+	// Token: 0x06000C61 RID: 3169 RVA: 0x00095538 File Offset: 0x00093738
 	public void SLIDER_Preis()
 	{
 		this.uiObjects[1].GetComponent<Text>().text = this.mS_.GetMoney((long)Mathf.RoundToInt(this.uiObjects[2].GetComponent<Slider>().value), true);
@@ -123,21 +123,21 @@ public class Menu_HandyPreis : MonoBehaviour
 		this.uiObjects[3].GetComponent<Text>().text = "$6.49";
 	}
 
-	// Token: 0x06000C78 RID: 3192 RVA: 0x000862A2 File Offset: 0x000844A2
+	// Token: 0x06000C62 RID: 3170 RVA: 0x00008ABC File Offset: 0x00006CBC
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000C79 RID: 3193 RVA: 0x000862C0 File Offset: 0x000844C0
+	// Token: 0x06000C63 RID: 3171 RVA: 0x00095658 File Offset: 0x00093858
 	public void BUTTON_Ok()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.gS_.verkaufspreis[3] = Mathf.RoundToInt(this.uiObjects[2].GetComponent<Slider>().value);
 		if (!this.guiMain_.uiObjects[308].activeSelf)
 		{
-			this.gS_.SetPublisher(this.mS_.myID);
+			this.gS_.SetPublisher(-1);
 			this.gS_.SetOnMarket();
 			this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[71]);
 			this.guiMain_.uiObjects[71].GetComponent<Menu_Dev_XP>().Init(this.gS_);
@@ -145,48 +145,48 @@ public class Menu_HandyPreis : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040010C1 RID: 4289
+	// Token: 0x040010B9 RID: 4281
 	public GameObject[] uiObjects;
 
-	// Token: 0x040010C2 RID: 4290
+	// Token: 0x040010BA RID: 4282
 	private GameObject main_;
 
-	// Token: 0x040010C3 RID: 4291
+	// Token: 0x040010BB RID: 4283
 	private mainScript mS_;
 
-	// Token: 0x040010C4 RID: 4292
+	// Token: 0x040010BC RID: 4284
 	private textScript tS_;
 
-	// Token: 0x040010C5 RID: 4293
+	// Token: 0x040010BD RID: 4285
 	private GUI_Main guiMain_;
 
-	// Token: 0x040010C6 RID: 4294
+	// Token: 0x040010BE RID: 4286
 	private sfxScript sfx_;
 
-	// Token: 0x040010C7 RID: 4295
+	// Token: 0x040010BF RID: 4287
 	private genres genres_;
 
-	// Token: 0x040010C8 RID: 4296
+	// Token: 0x040010C0 RID: 4288
 	private themes themes_;
 
-	// Token: 0x040010C9 RID: 4297
+	// Token: 0x040010C1 RID: 4289
 	private licences licences_;
 
-	// Token: 0x040010CA RID: 4298
+	// Token: 0x040010C2 RID: 4290
 	private engineFeatures eF_;
 
-	// Token: 0x040010CB RID: 4299
+	// Token: 0x040010C3 RID: 4291
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040010CC RID: 4300
+	// Token: 0x040010C4 RID: 4292
 	private unlockScript unlock_;
 
-	// Token: 0x040010CD RID: 4301
+	// Token: 0x040010C5 RID: 4293
 	private gameplayFeatures gF_;
 
-	// Token: 0x040010CE RID: 4302
+	// Token: 0x040010C6 RID: 4294
 	private games games_;
 
-	// Token: 0x040010CF RID: 4303
+	// Token: 0x040010C7 RID: 4295
 	private gameScript gS_;
 }

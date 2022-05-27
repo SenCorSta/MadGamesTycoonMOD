@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002DD RID: 733
+// Token: 0x020002DA RID: 730
 public class createRenderTexture : MonoBehaviour
 {
-	// Token: 0x06001A3D RID: 6717 RVA: 0x0010A327 File Offset: 0x00108527
+	// Token: 0x060019F3 RID: 6643 RVA: 0x000117C6 File Offset: 0x0000F9C6
 	private void Start()
 	{
 		this.CreateNewTexture();
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001A3E RID: 6718 RVA: 0x0010A33B File Offset: 0x0010853B
+	// Token: 0x060019F4 RID: 6644 RVA: 0x000117DA File Offset: 0x0000F9DA
 	private void Update()
 	{
 		if (this.screenW != Screen.width)
@@ -27,7 +27,7 @@ public class createRenderTexture : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A3F RID: 6719 RVA: 0x0010A365 File Offset: 0x00108565
+	// Token: 0x060019F5 RID: 6645 RVA: 0x00011804 File Offset: 0x0000FA04
 	private void OnEnable()
 	{
 		if (this.cameraOutlineImage)
@@ -36,7 +36,7 @@ public class createRenderTexture : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A40 RID: 6720 RVA: 0x0010A380 File Offset: 0x00108580
+	// Token: 0x060019F6 RID: 6646 RVA: 0x0001181F File Offset: 0x0000FA1F
 	private void OnDisable()
 	{
 		if (this.cameraOutlineImage)
@@ -45,7 +45,7 @@ public class createRenderTexture : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A41 RID: 6721 RVA: 0x0010A39C File Offset: 0x0010859C
+	// Token: 0x060019F7 RID: 6647 RVA: 0x0010E4D4 File Offset: 0x0010C6D4
 	private void CreateNewTexture()
 	{
 		this.rt = new RenderTexture(Screen.width, Screen.height, 16, RenderTextureFormat.ARGB32);
@@ -57,18 +57,18 @@ public class createRenderTexture : MonoBehaviour
 		this.screenH = Screen.height;
 	}
 
-	// Token: 0x04002148 RID: 8520
+	// Token: 0x0400212E RID: 8494
 	private RenderTexture rt;
 
-	// Token: 0x04002149 RID: 8521
+	// Token: 0x0400212F RID: 8495
 	private Camera camera_;
 
-	// Token: 0x0400214A RID: 8522
+	// Token: 0x04002130 RID: 8496
 	public GameObject cameraOutlineImage;
 
-	// Token: 0x0400214B RID: 8523
+	// Token: 0x04002131 RID: 8497
 	private int screenW;
 
-	// Token: 0x0400214C RID: 8524
+	// Token: 0x04002132 RID: 8498
 	private int screenH;
 }

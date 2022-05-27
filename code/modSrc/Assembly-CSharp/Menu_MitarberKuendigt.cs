@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001E2 RID: 482
+// Token: 0x020001E1 RID: 481
 public class Menu_MitarberKuendigt : MonoBehaviour
 {
-	// Token: 0x0600123E RID: 4670 RVA: 0x000C1661 File Offset: 0x000BF861
+	// Token: 0x06001223 RID: 4643 RVA: 0x0000C98F File Offset: 0x0000AB8F
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600123F RID: 4671 RVA: 0x000C166C File Offset: 0x000BF86C
+	// Token: 0x06001224 RID: 4644 RVA: 0x000CC468 File Offset: 0x000CA668
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_MitarberKuendigt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001240 RID: 4672 RVA: 0x000C1734 File Offset: 0x000BF934
+	// Token: 0x06001225 RID: 4645 RVA: 0x000CC530 File Offset: 0x000CA730
 	public void Init(characterScript cS_)
 	{
 		Debug.Log("MITARBEITER KÜNDIGT: " + cS_.myName);
@@ -66,7 +66,7 @@ public class Menu_MitarberKuendigt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001241 RID: 4673 RVA: 0x000C17E8 File Offset: 0x000BF9E8
+	// Token: 0x06001226 RID: 4646 RVA: 0x0000C997 File Offset: 0x0000AB97
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -75,7 +75,7 @@ public class Menu_MitarberKuendigt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001242 RID: 4674 RVA: 0x000C1803 File Offset: 0x000BFA03
+	// Token: 0x06001227 RID: 4647 RVA: 0x0000C9B2 File Offset: 0x0000ABB2
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -83,13 +83,13 @@ public class Menu_MitarberKuendigt : MonoBehaviour
 		this.guiMain_.CloseMenu();
 	}
 
-	// Token: 0x06001243 RID: 4675 RVA: 0x000C1829 File Offset: 0x000BFA29
+	// Token: 0x06001228 RID: 4648 RVA: 0x0000C9D8 File Offset: 0x0000ABD8
 	public void BUTTON_Yes()
 	{
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x06001244 RID: 4676 RVA: 0x000C1834 File Offset: 0x000BFA34
+	// Token: 0x06001229 RID: 4649 RVA: 0x000CC5E4 File Offset: 0x000CA7E4
 	public void BUTTON_JumpToRoom()
 	{
 		if (this.rS_ && this.guiMain_ && this.guiMain_.camera_)
@@ -99,27 +99,27 @@ public class Menu_MitarberKuendigt : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x040016AE RID: 5806
+	// Token: 0x040016A5 RID: 5797
 	public GameObject[] uiObjects;
 
-	// Token: 0x040016AF RID: 5807
+	// Token: 0x040016A6 RID: 5798
 	private GameObject main_;
 
-	// Token: 0x040016B0 RID: 5808
+	// Token: 0x040016A7 RID: 5799
 	private mainScript mS_;
 
-	// Token: 0x040016B1 RID: 5809
+	// Token: 0x040016A8 RID: 5800
 	private textScript tS_;
 
-	// Token: 0x040016B2 RID: 5810
+	// Token: 0x040016A9 RID: 5801
 	private GUI_Main guiMain_;
 
-	// Token: 0x040016B3 RID: 5811
+	// Token: 0x040016AA RID: 5802
 	private sfxScript sfx_;
 
-	// Token: 0x040016B4 RID: 5812
+	// Token: 0x040016AB RID: 5803
 	private settingsScript settings_;
 
-	// Token: 0x040016B5 RID: 5813
+	// Token: 0x040016AC RID: 5804
 	private roomScript rS_;
 }

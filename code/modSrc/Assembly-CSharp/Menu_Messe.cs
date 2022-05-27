@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001CC RID: 460
+// Token: 0x020001CB RID: 459
 public class Menu_Messe : MonoBehaviour
 {
-	// Token: 0x06001169 RID: 4457 RVA: 0x000B8205 File Offset: 0x000B6405
+	// Token: 0x0600114F RID: 4431 RVA: 0x0000C1FA File Offset: 0x0000A3FA
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600116A RID: 4458 RVA: 0x000B8210 File Offset: 0x000B6410
+	// Token: 0x06001150 RID: 4432 RVA: 0x000C38A8 File Offset: 0x000C1AA8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_Messe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116B RID: 4459 RVA: 0x000B82BC File Offset: 0x000B64BC
+	// Token: 0x06001151 RID: 4433 RVA: 0x000C3954 File Offset: 0x000C1B54
 	public void Init()
 	{
 		this.FindScripts();
@@ -68,7 +68,7 @@ public class Menu_Messe : MonoBehaviour
 		this.sfx_.PlaySound(50, false);
 	}
 
-	// Token: 0x0600116C RID: 4460 RVA: 0x000B8485 File Offset: 0x000B6685
+	// Token: 0x06001152 RID: 4434 RVA: 0x0000C202 File Offset: 0x0000A402
 	private void Update()
 	{
 		if (!base.gameObject.activeSelf)
@@ -81,7 +81,7 @@ public class Menu_Messe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116D RID: 4461 RVA: 0x000B84B0 File Offset: 0x000B66B0
+	// Token: 0x06001153 RID: 4435 RVA: 0x000C3B20 File Offset: 0x000C1D20
 	public int GetPrice(int i)
 	{
 		int num = this.mS_.year - 1975;
@@ -92,7 +92,7 @@ public class Menu_Messe : MonoBehaviour
 		return this.price[i] * num + 5000;
 	}
 
-	// Token: 0x0600116E RID: 4462 RVA: 0x000B84E8 File Offset: 0x000B66E8
+	// Token: 0x06001154 RID: 4436 RVA: 0x000C3B58 File Offset: 0x000C1D58
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -104,7 +104,7 @@ public class Menu_Messe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116F RID: 4463 RVA: 0x000B854C File Offset: 0x000B674C
+	// Token: 0x06001155 RID: 4437 RVA: 0x000C3BBC File Offset: 0x000C1DBC
 	public void BUTTON_Stand(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -112,24 +112,24 @@ public class Menu_Messe : MonoBehaviour
 		this.guiMain_.uiObjects[186].GetComponent<Menu_MesseSelect>().Init(i);
 	}
 
-	// Token: 0x040015E3 RID: 5603
+	// Token: 0x040015DA RID: 5594
 	public GameObject[] uiObjects;
 
-	// Token: 0x040015E4 RID: 5604
+	// Token: 0x040015DB RID: 5595
 	public int[] price;
 
-	// Token: 0x040015E5 RID: 5605
+	// Token: 0x040015DC RID: 5596
 	private GameObject main_;
 
-	// Token: 0x040015E6 RID: 5606
+	// Token: 0x040015DD RID: 5597
 	private mainScript mS_;
 
-	// Token: 0x040015E7 RID: 5607
+	// Token: 0x040015DE RID: 5598
 	private textScript tS_;
 
-	// Token: 0x040015E8 RID: 5608
+	// Token: 0x040015DF RID: 5599
 	private GUI_Main guiMain_;
 
-	// Token: 0x040015E9 RID: 5609
+	// Token: 0x040015E0 RID: 5600
 	private sfxScript sfx_;
 }

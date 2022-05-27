@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001F6 RID: 502
+// Token: 0x020001F5 RID: 501
 public class Menu_GOTYGamename : MonoBehaviour
 {
-	// Token: 0x06001316 RID: 4886 RVA: 0x000CA286 File Offset: 0x000C8486
+	// Token: 0x060012FB RID: 4859 RVA: 0x0000D041 File Offset: 0x0000B241
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001317 RID: 4887 RVA: 0x000CA290 File Offset: 0x000C8490
+	// Token: 0x060012FC RID: 4860 RVA: 0x000D49CC File Offset: 0x000D2BCC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_GOTYGamename : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001318 RID: 4888 RVA: 0x000CA358 File Offset: 0x000C8558
+	// Token: 0x060012FD RID: 4861 RVA: 0x0000D049 File Offset: 0x0000B249
 	public void Init(gameScript gS_)
 	{
 		this.FindScripts();
@@ -48,14 +48,14 @@ public class Menu_GOTYGamename : MonoBehaviour
 		this.BUTTON_Name(this.lastName);
 	}
 
-	// Token: 0x06001319 RID: 4889 RVA: 0x000CA373 File Offset: 0x000C8573
+	// Token: 0x060012FE RID: 4862 RVA: 0x0000D064 File Offset: 0x0000B264
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600131A RID: 4890 RVA: 0x000CA390 File Offset: 0x000C8590
+	// Token: 0x060012FF RID: 4863 RVA: 0x000D4A94 File Offset: 0x000D2C94
 	public void BUTTON_Name(int i)
 	{
 		this.lastName = i;
@@ -68,12 +68,12 @@ public class Menu_GOTYGamename : MonoBehaviour
 		{
 			if (i == 1)
 			{
-				this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameSimple() + " <color=orange><i>" + this.tS_.GetText(1361) + "</i></color>";
+				this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag() + " <color=orange><i>" + this.tS_.GetText(1361) + "</i></color>";
 			}
 		}
 		else
 		{
-			this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameSimple() + " <color=orange><i>" + this.tS_.GetText(1359) + "</i></color>";
+			this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag() + " <color=orange><i>" + this.tS_.GetText(1359) + "</i></color>";
 		}
 		for (int j = 0; j < this.uiObjects[1].transform.childCount; j++)
 		{
@@ -82,7 +82,7 @@ public class Menu_GOTYGamename : MonoBehaviour
 		this.uiObjects[1].transform.GetChild(i).GetComponent<Button>().interactable = false;
 	}
 
-	// Token: 0x0600131B RID: 4891 RVA: 0x000CA49C File Offset: 0x000C869C
+	// Token: 0x06001300 RID: 4864 RVA: 0x000D4BA0 File Offset: 0x000D2DA0
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -110,13 +110,17 @@ public class Menu_GOTYGamename : MonoBehaviour
 		this.CreateGotyGame();
 	}
 
-	// Token: 0x0600131C RID: 4892 RVA: 0x000CA570 File Offset: 0x000C8770
+	// Token: 0x06001301 RID: 4865 RVA: 0x000D4C74 File Offset: 0x000D2E74
 	private void CreateGotyGame()
 	{
 		this.game_.goty_created = true;
 		gameScript component = UnityEngine.Object.Instantiate<GameObject>(this.game_.gameObject).GetComponent<gameScript>();
 		this.games_.InitGotyGame(component);
 		component.originalGameID = this.game_.myID;
+		if (this.mS_.multiplayer)
+		{
+			component.multiplayerSlot = this.mS_.mpCalls_.myID;
+		}
 		component.SetMyName(this.uiObjects[0].GetComponent<Text>().text);
 		component.typ_standard = false;
 		component.typ_goty = true;
@@ -130,6 +134,7 @@ public class Menu_GOTYGamename : MonoBehaviour
 		component.typ_bundleAddon = false;
 		component.spielbericht = false;
 		component.spielbericht_favorit = false;
+		component.hype = 0f;
 		component.warBeiAwards = true;
 		component.weeksOnMarket = 0;
 		component.releaseDate = 0;
@@ -142,18 +147,12 @@ public class Menu_GOTYGamename : MonoBehaviour
 		component.sellsTotalOnline = 0L;
 		component.sellsTotal = 0L;
 		component.umsatzTotal = 0L;
-		component.umsatzInApp = 0L;
-		component.umsatzAbos = 0L;
-		component.tw_gewinnanteil = 0L;
 		component.costs_entwicklung = 0L;
 		component.costs_mitarbeiter = 0L;
 		component.costs_marketing = 0L;
 		component.costs_enginegebuehren = 0L;
 		component.costs_server = 0L;
 		component.costs_production = 0L;
-		component.costs_updates = 0L;
-		component.bestChartPosition = 0;
-		component.lastChartPosition = 0;
 		for (int i = 0; i < component.sellsPerWeek.Length; i++)
 		{
 			component.sellsPerWeek[i] = 0;
@@ -178,30 +177,30 @@ public class Menu_GOTYGamename : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0400175D RID: 5981
+	// Token: 0x04001754 RID: 5972
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400175E RID: 5982
+	// Token: 0x04001755 RID: 5973
 	private GameObject main_;
 
-	// Token: 0x0400175F RID: 5983
+	// Token: 0x04001756 RID: 5974
 	private mainScript mS_;
 
-	// Token: 0x04001760 RID: 5984
+	// Token: 0x04001757 RID: 5975
 	private textScript tS_;
 
-	// Token: 0x04001761 RID: 5985
+	// Token: 0x04001758 RID: 5976
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001762 RID: 5986
+	// Token: 0x04001759 RID: 5977
 	private sfxScript sfx_;
 
-	// Token: 0x04001763 RID: 5987
+	// Token: 0x0400175A RID: 5978
 	private games games_;
 
-	// Token: 0x04001764 RID: 5988
+	// Token: 0x0400175B RID: 5979
 	private gameScript game_;
 
-	// Token: 0x04001765 RID: 5989
+	// Token: 0x0400175C RID: 5980
 	private int lastName;
 }

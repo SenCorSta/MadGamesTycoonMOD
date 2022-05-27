@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002EA RID: 746
+// Token: 0x020002E7 RID: 743
 public class golfMainObject : MonoBehaviour
 {
-	// Token: 0x06001A6F RID: 6767 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x06001A25 RID: 6693 RVA: 0x00002098 File Offset: 0x00000298
 	private void Start()
 	{
 	}
 
-	// Token: 0x06001A70 RID: 6768 RVA: 0x0010AF38 File Offset: 0x00109138
+	// Token: 0x06001A26 RID: 6694 RVA: 0x0010EE84 File Offset: 0x0010D084
 	public void RandomRotation()
 	{
 		if (this.mainObject)
@@ -19,9 +19,9 @@ public class golfMainObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002173 RID: 8563
+	// Token: 0x04002159 RID: 8537
 	public GameObject mainObject;
 
-	// Token: 0x04002174 RID: 8564
+	// Token: 0x0400215A RID: 8538
 	public AudioSource audio_;
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002F3 RID: 755
+// Token: 0x020002F0 RID: 752
 public class lockDestroy : MonoBehaviour
 {
-	// Token: 0x06001A98 RID: 6808 RVA: 0x0010BEA8 File Offset: 0x0010A0A8
+	// Token: 0x06001A4E RID: 6734 RVA: 0x00011B2A File Offset: 0x0000FD2A
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001A99 RID: 6809 RVA: 0x0010BEB0 File Offset: 0x0010A0B0
+	// Token: 0x06001A4F RID: 6735 RVA: 0x0010FD54 File Offset: 0x0010DF54
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -35,7 +35,7 @@ public class lockDestroy : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A9A RID: 6810 RVA: 0x0010BF54 File Offset: 0x0010A154
+	// Token: 0x06001A50 RID: 6736 RVA: 0x0010FDF8 File Offset: 0x0010DFF8
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -65,27 +65,27 @@ public class lockDestroy : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400219D RID: 8605
+	// Token: 0x04002183 RID: 8579
 	public int unlockSlot = -1;
 
-	// Token: 0x0400219E RID: 8606
+	// Token: 0x04002184 RID: 8580
 	public bool sonstigeForschung;
 
-	// Token: 0x0400219F RID: 8607
+	// Token: 0x04002185 RID: 8581
 	public bool gameplayFeatures;
 
-	// Token: 0x040021A0 RID: 8608
+	// Token: 0x04002186 RID: 8582
 	private GameObject main_;
 
-	// Token: 0x040021A1 RID: 8609
+	// Token: 0x04002187 RID: 8583
 	private mainScript mS_;
 
-	// Token: 0x040021A2 RID: 8610
+	// Token: 0x04002188 RID: 8584
 	private unlockScript unlock_;
 
-	// Token: 0x040021A3 RID: 8611
+	// Token: 0x04002189 RID: 8585
 	private forschungSonstiges forschungSonstiges_;
 
-	// Token: 0x040021A4 RID: 8612
+	// Token: 0x0400218A RID: 8586
 	private gameplayFeatures gF_;
 }

@@ -10,14 +10,14 @@ public class uiRoomMouseOver : MonoBehaviour
 	{
 	}
 
-	// Token: 0x0600190B RID: 6411 RVA: 0x000F9102 File Offset: 0x000F7302
+	// Token: 0x0600190B RID: 6411 RVA: 0x000F912E File Offset: 0x000F732E
 	private void OnMouseOver()
 	{
 		Debug.Log("KKKKKKKKKKK");
 		base.StartCoroutine(this.iSetAsLastSibling());
 	}
 
-	// Token: 0x0600190C RID: 6412 RVA: 0x000F911B File Offset: 0x000F731B
+	// Token: 0x0600190C RID: 6412 RVA: 0x000F9147 File Offset: 0x000F7347
 	private IEnumerator iSetAsLastSibling()
 	{
 		yield return new WaitForEndOfFrame();

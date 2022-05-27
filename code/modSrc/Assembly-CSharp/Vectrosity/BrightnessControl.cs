@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Vectrosity
 {
-	// Token: 0x0200037E RID: 894
+	// Token: 0x0200037B RID: 891
 	[AddComponentMenu("Vectrosity/BrightnessControl")]
 	public class BrightnessControl : MonoBehaviour
 	{
-		// Token: 0x170000A0 RID: 160
-		// (get) Token: 0x06002065 RID: 8293 RVA: 0x0015024A File Offset: 0x0014E44A
+		// Token: 0x1700009C RID: 156
+		// (get) Token: 0x06002012 RID: 8210 RVA: 0x00015401 File Offset: 0x00013601
 		public RefInt objectNumber
 		{
 			get
@@ -17,7 +17,7 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x06002066 RID: 8294 RVA: 0x00150254 File Offset: 0x0014E454
+		// Token: 0x06002013 RID: 8211 RVA: 0x00150714 File Offset: 0x0014E914
 		public void Setup(VectorLine line, bool m_useLine)
 		{
 			this.m_objectNumber = new RefInt(0);
@@ -30,13 +30,13 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x06002067 RID: 8295 RVA: 0x001502AB File Offset: 0x0014E4AB
+		// Token: 0x06002014 RID: 8212 RVA: 0x00015409 File Offset: 0x00013609
 		public void SetUseLine(bool useLine)
 		{
 			this.m_useLine = useLine;
 		}
 
-		// Token: 0x06002068 RID: 8296 RVA: 0x001502B4 File Offset: 0x0014E4B4
+		// Token: 0x06002015 RID: 8213 RVA: 0x00015412 File Offset: 0x00013612
 		private void OnBecameVisible()
 		{
 			VectorManager.SetOldDistance(this.m_objectNumber.i, -1);
@@ -48,7 +48,7 @@ namespace Vectrosity
 			this.m_vectorLine.active = true;
 		}
 
-		// Token: 0x06002069 RID: 8297 RVA: 0x001502EC File Offset: 0x0014E4EC
+		// Token: 0x06002016 RID: 8214 RVA: 0x0001544A File Offset: 0x0001364A
 		public void OnBecameInvisible()
 		{
 			if (!this.m_useLine)
@@ -58,7 +58,7 @@ namespace Vectrosity
 			this.m_vectorLine.active = false;
 		}
 
-		// Token: 0x0600206A RID: 8298 RVA: 0x00150303 File Offset: 0x0014E503
+		// Token: 0x06002017 RID: 8215 RVA: 0x00015461 File Offset: 0x00013661
 		private void OnDestroy()
 		{
 			if (this.m_destroyed)
@@ -73,16 +73,16 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x040028B7 RID: 10423
+		// Token: 0x040028A1 RID: 10401
 		private RefInt m_objectNumber;
 
-		// Token: 0x040028B8 RID: 10424
+		// Token: 0x040028A2 RID: 10402
 		private VectorLine m_vectorLine;
 
-		// Token: 0x040028B9 RID: 10425
+		// Token: 0x040028A3 RID: 10403
 		private bool m_useLine;
 
-		// Token: 0x040028BA RID: 10426
+		// Token: 0x040028A4 RID: 10404
 		private bool m_destroyed;
 	}
 }

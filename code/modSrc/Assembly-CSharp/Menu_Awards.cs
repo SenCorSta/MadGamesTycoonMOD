@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001BE RID: 446
+// Token: 0x020001BD RID: 445
 public class Menu_Awards : MonoBehaviour
 {
-	// Token: 0x060010CF RID: 4303 RVA: 0x000B2363 File Offset: 0x000B0563
+	// Token: 0x060010B5 RID: 4277 RVA: 0x0000BCCF File Offset: 0x00009ECF
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010D0 RID: 4304 RVA: 0x000B236C File Offset: 0x000B056C
+	// Token: 0x060010B6 RID: 4278 RVA: 0x000BDFD4 File Offset: 0x000BC1D4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class Menu_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D1 RID: 4305 RVA: 0x000B2492 File Offset: 0x000B0692
+	// Token: 0x060010B7 RID: 4279 RVA: 0x0000BCD7 File Offset: 0x00009ED7
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -62,15 +62,19 @@ public class Menu_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D2 RID: 4306 RVA: 0x000B24B0 File Offset: 0x000B06B0
-	public void Multiplayer_FindWinners(int IDbestGrafik, int IDbestSound, int IDbestStudio, int IDbestPublisher, int IDbestGame, int IDbadGame)
+	// Token: 0x060010B8 RID: 4280 RVA: 0x000BE0FC File Offset: 0x000BC2FC
+	public void Multiplayer_FindWinners(int IDbestGrafik, int IDbestSound, int IDbestStudio, int bestStudioPlayer_, int IDbestPublisher, int bestPublisherPlayer_, int IDbestGame, int IDbadGame)
 	{
 		this.bestGrafik = null;
 		this.bestSound = null;
 		this.bestStudio = null;
+		this.bestStudioPlayer = -1;
 		this.bestPublisher = null;
+		this.bestPublisherPlayer = -1;
 		this.bestGame = null;
 		this.badGame = null;
+		this.bestStudioPlayer = bestStudioPlayer_;
+		this.bestPublisherPlayer = bestPublisherPlayer_;
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
 		if (array.Length != 0)
 		{
@@ -113,7 +117,7 @@ public class Menu_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D3 RID: 4307 RVA: 0x000B259C File Offset: 0x000B079C
+	// Token: 0x060010B9 RID: 4281 RVA: 0x000BE208 File Offset: 0x000BC408
 	public void Init()
 	{
 		this.FindScripts();
@@ -124,9 +128,19 @@ public class Menu_Awards : MonoBehaviour
 			this.bestGrafik = null;
 			this.bestSound = null;
 			this.bestStudio = null;
+			this.bestStudioPlayer = -1;
 			this.bestPublisher = null;
+			this.bestPublisherPlayer = -1;
 			this.bestGame = null;
 			this.badGame = null;
+			if (this.mS_.multiplayer)
+			{
+				for (int i = 0; i < this.mpCalls_.playersMP.Count; i++)
+				{
+					this.mpCalls_.playersMP[i].awards_SOTY = 0L;
+					this.mpCalls_.playersMP[i].awards_POTY = 0L;
+				}
+			}
 			this.bestGrafik = this.GetBesteGrafik();
 			this.bestSound = this.GetBesterSound();
 			this.bestStudio = this.GetBestesStudio();
@@ -167,7 +181,7 @@ public class Menu_Awards : MonoBehaviour
 			{
 				badGame_ = this.badGame.myID;
 			}
-			this.mpCalls_.SERVER_Send_Award(bestGrafik_, bestSound_, bestStudio_, bestPublisher_, bestGame_, badGame_);
+			this.mpCalls_.SERVER_Send_Award(bestGrafik_, bestSound_, bestStudio_, this.bestStudioPlayer, bestPublisher_, this.bestPublisherPlayer, bestGame_, badGame_);
 		}
 		this.uiObjects[0].GetComponent<Text>().text = "";
 		this.uiObjects[1].GetComponent<Text>().text = "";
@@ -185,7 +199,7 @@ public class Menu_Awards : MonoBehaviour
 		base.StartCoroutine(this.ShowAwards());
 	}
 
-	// Token: 0x060010D4 RID: 4308 RVA: 0x000B284C File Offset: 0x000B0A4C
+	// Token: 0x060010BA RID: 4282 RVA: 0x000BE530 File Offset: 0x000BC730
 	private void AddVerlauf()
 	{
 		int bestGrafik_ = -1;
@@ -218,10 +232,10 @@ public class Menu_Awards : MonoBehaviour
 		{
 			badBame_ = this.badGame.myID;
 		}
-		this.mS_.AddMadGameConvetionVerlauf(bestGrafik_, bestSound_, bestStudio_, bestPublisher_, bestGame_, badBame_);
+		this.mS_.AddMadGameConvetionVerlauf(bestGrafik_, bestSound_, bestStudio_, this.bestStudioPlayer, bestPublisher_, this.bestPublisherPlayer, bestGame_, badBame_);
 	}
 
-	// Token: 0x060010D5 RID: 4309 RVA: 0x000B2912 File Offset: 0x000B0B12
+	// Token: 0x060010BB RID: 4283 RVA: 0x0000BCF2 File Offset: 0x00009EF2
 	private IEnumerator ShowAwards()
 	{
 		if (this.mS_.settings_ && this.mS_.settings_.hideAwards)
@@ -229,22 +243,38 @@ public class Menu_Awards : MonoBehaviour
 			this.timeToWait = 0f;
 		}
 		float myFans = (float)this.genres_.GetAmountFans();
-		this.mS_.awardBonus = 0;
-		this.mS_.awardBonusAmount = 0f;
 		yield return new WaitForSeconds(this.timeToWait);
 		gameScript gameScript = this.bestGrafik;
 		if (gameScript)
 		{
 			gameScript.AddHype(50f);
-			if (gameScript.developerID == this.mS_.myID)
+			if (!gameScript.playerGame)
+			{
+				this.uiObjects[0].GetComponent<Text>().text = gameScript.GetNameWithTag();
+				if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
+				{
+					this.uiObjects[0].GetComponent<Text>().text = string.Concat(new string[]
+					{
+						"<color=magenta>",
+						gameScript.GetNameWithTag(),
+						"\n",
+						this.mpCalls_.GetCompanyName(gameScript.multiplayerSlot),
+						"</color>"
+					});
+				}
+				this.sfx_.PlaySound(45);
+				if (!gameScript.playerGame && gameScript.multiplayerSlot == -1)
+				{
+					gameScript.AddIpPoints(40f);
+				}
+			}
+			else
 			{
 				float num = myFans * 0.02f;
 				if (num > 40000f)
 				{
 					num = (float)(40000 + UnityEngine.Random.Range(0, 10000));
 				}
-				this.mS_.awardBonus = 20;
-				this.mS_.awardBonusAmount += 0.05f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(38);
@@ -254,30 +284,11 @@ public class Menu_Awards : MonoBehaviour
 				this.uiObjects[0].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>\n" + text;
 				this.mS_.AddFans(Mathf.RoundToInt(num + 1000f), -1);
 				this.sfx_.PlaySound(44);
+				this.mS_.awards[0]++;
 				this.mS_.award_Grafik++;
 				this.mS_.AddStudioPoints(40);
 				gameScript.AddIpPoints(40f);
 				this.uiObjects[6].SetActive(true);
-			}
-			else
-			{
-				this.uiObjects[0].GetComponent<Text>().text = gameScript.GetNameWithTag();
-				if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
-				{
-					this.uiObjects[0].GetComponent<Text>().text = string.Concat(new string[]
-					{
-						"<color=magenta>",
-						gameScript.GetNameWithTag(),
-						"\n",
-						this.mpCalls_.GetCompanyName(gameScript.ownerID),
-						"</color>"
-					});
-				}
-				this.sfx_.PlaySound(45);
-				if (gameScript.OwnerIsNPC())
-				{
-					gameScript.AddIpPoints(40f);
-				}
 			}
 		}
 		else
@@ -289,15 +300,33 @@ public class Menu_Awards : MonoBehaviour
 		if (gameScript)
 		{
 			gameScript.AddHype(50f);
-			if (gameScript.developerID == this.mS_.myID)
+			if (!gameScript.playerGame)
+			{
+				this.uiObjects[1].GetComponent<Text>().text = gameScript.GetNameWithTag();
+				if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
+				{
+					this.uiObjects[1].GetComponent<Text>().text = string.Concat(new string[]
+					{
+						"<color=magenta>",
+						gameScript.GetNameWithTag(),
+						"\n",
+						this.mpCalls_.GetCompanyName(gameScript.multiplayerSlot),
+						"</color>"
+					});
+				}
+				this.sfx_.PlaySound(45);
+				if (!gameScript.playerGame && gameScript.multiplayerSlot == -1)
+				{
+					gameScript.AddIpPoints(40f);
+				}
+			}
+			else
 			{
 				float num2 = myFans * 0.015f;
 				if (num2 > 40000f)
 				{
 					num2 = (float)(40000 + UnityEngine.Random.Range(0, 10000));
 				}
-				this.mS_.awardBonus = 20;
-				this.mS_.awardBonusAmount += 0.05f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(39);
@@ -307,30 +336,11 @@ public class Menu_Awards : MonoBehaviour
 				this.uiObjects[1].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>\n" + text;
 				this.mS_.AddFans(Mathf.RoundToInt(num2 + 1000f), -1);
 				this.sfx_.PlaySound(44);
+				this.mS_.awards[1]++;
 				this.mS_.award_Sound++;
 				this.mS_.AddStudioPoints(40);
 				gameScript.AddIpPoints(40f);
 				this.uiObjects[7].SetActive(true);
-			}
-			else
-			{
-				this.uiObjects[1].GetComponent<Text>().text = gameScript.GetNameWithTag();
-				if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
-				{
-					this.uiObjects[1].GetComponent<Text>().text = string.Concat(new string[]
-					{
-						"<color=magenta>",
-						gameScript.GetNameWithTag(),
-						"\n",
-						this.mpCalls_.GetCompanyName(gameScript.ownerID),
-						"</color>"
-					});
-				}
-				this.sfx_.PlaySound(45);
-				if (gameScript.OwnerIsNPC())
-				{
-					gameScript.AddIpPoints(40f);
-				}
 			}
 		}
 		else
@@ -341,73 +351,67 @@ public class Menu_Awards : MonoBehaviour
 		publisherScript publisherScript = this.bestStudio;
 		if (publisherScript)
 		{
-			if (publisherScript.myID != this.mS_.myID)
+			this.uiObjects[2].GetComponent<Text>().text = publisherScript.GetName();
+			this.sfx_.PlaySound(45);
+		}
+		else if (!this.mS_.multiplayer || this.bestStudioPlayer == this.mpCalls_.myID)
+		{
+			float num3 = myFans * 0.045f;
+			if (num3 > 40000f)
 			{
-				this.sfx_.PlaySound(45);
-				this.uiObjects[2].GetComponent<Text>().text = publisherScript.GetName();
-				if (publisherScript.isPlayer)
-				{
-					this.uiObjects[2].GetComponent<Text>().text = "<color=magenta>" + publisherScript.GetName() + "</color>";
-				}
+				num3 = (float)(40000 + UnityEngine.Random.Range(0, 10000));
 			}
-			else
+			if (this.mS_.achScript_)
 			{
-				float num3 = myFans * 0.045f;
-				if (num3 > 40000f)
-				{
-					num3 = (float)(40000 + UnityEngine.Random.Range(0, 10000));
-				}
-				this.mS_.awardBonus = 20;
-				this.mS_.awardBonusAmount += 0.2f;
-				if (this.mS_.achScript_)
-				{
-					this.mS_.achScript_.SetAchivement(36);
-				}
-				string text = this.tS_.GetText(763);
-				text = text.Replace("<NUM>", "<color=green>+" + this.mS_.GetMoney((long)Mathf.RoundToInt(num3 + 2500f), false) + "</color>");
-				this.uiObjects[2].GetComponent<Text>().text = "<color=blue>" + publisherScript.GetName() + "</color>\n" + text;
-				this.mS_.AddFans(Mathf.RoundToInt(num3 + 2500f), -1);
-				this.sfx_.PlaySound(44);
-				this.mS_.award_Studio++;
-				this.mS_.AddStudioPoints(100);
-				this.uiObjects[8].SetActive(true);
+				this.mS_.achScript_.SetAchivement(36);
 			}
+			string text = this.tS_.GetText(763);
+			text = text.Replace("<NUM>", "<color=green>+" + this.mS_.GetMoney((long)Mathf.RoundToInt(num3 + 2500f), false) + "</color>");
+			this.uiObjects[2].GetComponent<Text>().text = "<color=blue>" + this.mS_.companyName + "</color>\n" + text;
+			this.mS_.AddFans(Mathf.RoundToInt(num3 + 2500f), -1);
+			this.sfx_.PlaySound(44);
+			this.mS_.awards[2]++;
+			this.mS_.award_Studio++;
+			this.mS_.AddStudioPoints(100);
+			this.uiObjects[8].SetActive(true);
+		}
+		else
+		{
+			this.uiObjects[2].GetComponent<Text>().text = "<color=magenta>" + this.mpCalls_.GetCompanyName(this.bestStudioPlayer) + "</color>";
+			this.sfx_.PlaySound(45);
 		}
 		yield return new WaitForSeconds(this.timeToWait);
 		publisherScript = this.bestPublisher;
 		if (publisherScript)
 		{
-			if (publisherScript.myID != this.mS_.myID)
+			this.uiObjects[3].GetComponent<Text>().text = publisherScript.GetName();
+			this.sfx_.PlaySound(45);
+		}
+		else if (!this.mS_.multiplayer || this.bestPublisherPlayer == this.mpCalls_.myID)
+		{
+			float num4 = myFans * 0.04f;
+			if (num4 > 40000f)
 			{
-				this.uiObjects[3].GetComponent<Text>().text = publisherScript.GetName();
-				this.sfx_.PlaySound(45);
-				if (publisherScript.isPlayer)
-				{
-					this.uiObjects[3].GetComponent<Text>().text = "<color=magenta>" + publisherScript.GetName() + "</color>";
-				}
+				num4 = (float)(40000 + UnityEngine.Random.Range(0, 10000));
 			}
-			else
+			if (this.mS_.achScript_)
 			{
-				float num4 = myFans * 0.04f;
-				if (num4 > 40000f)
-				{
-					num4 = (float)(40000 + UnityEngine.Random.Range(0, 10000));
-				}
-				this.mS_.awardBonus = 20;
-				this.mS_.awardBonusAmount += 0.2f;
-				if (this.mS_.achScript_)
-				{
-					this.mS_.achScript_.SetAchivement(37);
-				}
-				string text = this.tS_.GetText(763);
-				text = text.Replace("<NUM>", "<color=green>+" + this.mS_.GetMoney((long)Mathf.RoundToInt(num4 + 2500f), false) + "</color>");
-				this.uiObjects[3].GetComponent<Text>().text = "<color=blue>" + publisherScript.GetName() + "</color>\n" + text;
-				this.mS_.AddFans(Mathf.RoundToInt(num4 + 2500f), -1);
-				this.sfx_.PlaySound(44);
-				this.mS_.award_Publisher++;
-				this.mS_.AddStudioPoints(100);
-				this.uiObjects[9].SetActive(true);
+				this.mS_.achScript_.SetAchivement(37);
 			}
+			string text = this.tS_.GetText(763);
+			text = text.Replace("<NUM>", "<color=green>+" + this.mS_.GetMoney((long)Mathf.RoundToInt(num4 + 2500f), false) + "</color>");
+			this.uiObjects[3].GetComponent<Text>().text = "<color=blue>" + this.mS_.companyName + "</color>\n" + text;
+			this.mS_.AddFans(Mathf.RoundToInt(num4 + 2500f), -1);
+			this.sfx_.PlaySound(44);
+			this.mS_.awards[3]++;
+			this.mS_.award_Publisher++;
+			this.mS_.AddStudioPoints(100);
+			this.uiObjects[9].SetActive(true);
+		}
+		else
+		{
+			this.uiObjects[3].GetComponent<Text>().text = "<color=magenta>" + this.mpCalls_.GetCompanyName(this.bestPublisherPlayer) + "</color>";
+			this.sfx_.PlaySound(45);
 		}
 		yield return new WaitForSeconds(this.timeToWait);
 		gameScript = this.bestGame;
@@ -415,15 +419,33 @@ public class Menu_Awards : MonoBehaviour
 		{
 			gameScript.AddHype(100f);
 			gameScript.goty = true;
-			if (gameScript.developerID == this.mS_.myID)
+			if (!gameScript.playerGame)
+			{
+				this.uiObjects[4].GetComponent<Text>().text = gameScript.GetNameWithTag();
+				if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
+				{
+					this.uiObjects[4].GetComponent<Text>().text = string.Concat(new string[]
+					{
+						"<color=magenta>",
+						gameScript.GetNameWithTag(),
+						"\n",
+						this.mpCalls_.GetCompanyName(gameScript.multiplayerSlot),
+						"</color>"
+					});
+				}
+				this.sfx_.PlaySound(45);
+				if (!gameScript.playerGame && gameScript.multiplayerSlot == -1)
+				{
+					gameScript.AddIpPoints(100f);
+				}
+			}
+			else
 			{
 				float num5 = myFans * 0.05f;
 				if (num5 > 40000f)
 				{
 					num5 = (float)(40000 + UnityEngine.Random.Range(0, 10000));
 				}
-				this.mS_.awardBonus = 20;
-				this.mS_.awardBonusAmount += 0.1f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(35);
@@ -433,30 +455,11 @@ public class Menu_Awards : MonoBehaviour
 				this.uiObjects[4].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>\n" + text;
 				this.mS_.AddFans(Mathf.RoundToInt(num5 + 3000f), -1);
 				this.sfx_.PlaySound(44);
+				this.mS_.awards[4]++;
 				this.mS_.award_GOTY++;
 				this.mS_.AddStudioPoints(75);
 				gameScript.AddIpPoints(100f);
 				this.uiObjects[10].SetActive(true);
-			}
-			else
-			{
-				this.uiObjects[4].GetComponent<Text>().text = gameScript.GetNameWithTag();
-				if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
-				{
-					this.uiObjects[4].GetComponent<Text>().text = string.Concat(new string[]
-					{
-						"<color=magenta>",
-						gameScript.GetNameWithTag(),
-						"\n",
-						this.mpCalls_.GetCompanyName(gameScript.ownerID),
-						"</color>"
-					});
-				}
-				this.sfx_.PlaySound(45);
-				if (gameScript.OwnerIsNPC())
-				{
-					gameScript.AddIpPoints(100f);
-				}
 			}
 		}
 		else
@@ -468,7 +471,23 @@ public class Menu_Awards : MonoBehaviour
 		if (gameScript)
 		{
 			gameScript.AddHype(-50f);
-			if (gameScript.developerID == this.mS_.myID)
+			if (!gameScript.playerGame)
+			{
+				this.uiObjects[5].GetComponent<Text>().text = gameScript.GetNameWithTag();
+				if (this.mS_.multiplayer && gameScript.multiplayerSlot != -1)
+				{
+					this.uiObjects[5].GetComponent<Text>().text = string.Concat(new string[]
+					{
+						"<color=magenta>",
+						gameScript.GetNameWithTag(),
+						"\n",
+						this.mpCalls_.GetCompanyName(gameScript.multiplayerSlot),
+						"</color>"
+					});
+				}
+				this.sfx_.PlaySound(44);
+			}
+			else
 			{
 				float num6 = myFans * 0.05f;
 				if (num6 > 40000f)
@@ -484,23 +503,8 @@ public class Menu_Awards : MonoBehaviour
 				this.uiObjects[5].GetComponent<Text>().text = "<color=blue>" + gameScript.GetNameWithTag() + "</color>\n" + text;
 				this.mS_.AddFans(-Mathf.RoundToInt(num6 + 2000f), -1);
 				this.sfx_.PlaySound(45);
+				this.mS_.awards[5]++;
 				this.uiObjects[11].SetActive(true);
-			}
-			else
-			{
-				this.uiObjects[5].GetComponent<Text>().text = gameScript.GetNameWithTag();
-				if (this.mS_.multiplayer && gameScript.GameFromMitspieler())
-				{
-					this.uiObjects[5].GetComponent<Text>().text = string.Concat(new string[]
-					{
-						"<color=magenta>",
-						gameScript.GetNameWithTag(),
-						"\n",
-						this.mpCalls_.GetCompanyName(gameScript.ownerID),
-						"</color>"
-					});
-				}
-				this.sfx_.PlaySound(44);
 			}
 		}
 		else
@@ -516,7 +520,7 @@ public class Menu_Awards : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060010D6 RID: 4310 RVA: 0x000B2924 File Offset: 0x000B0B24
+	// Token: 0x060010BC RID: 4284 RVA: 0x000BE604 File Offset: 0x000BC804
 	private void SetAsTeilgenommen()
 	{
 		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
@@ -528,13 +532,13 @@ public class Menu_Awards : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D7 RID: 4311 RVA: 0x000B2988 File Offset: 0x000B0B88
+	// Token: 0x060010BD RID: 4285 RVA: 0x000BE668 File Offset: 0x000BC868
 	private bool CheckGame(gameScript script_)
 	{
-		return script_ && !script_.inDevelopment && !script_.schublade && !script_.pubAngebot && !script_.auftragsspiel && (script_.typ_standard || script_.typ_nachfolger || script_.typ_remaster || script_.typ_spinoff) && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_mmoaddon && !script_.typ_bundle && !script_.typ_budget && !script_.typ_bundleAddon && !script_.typ_goty && script_.weeksOnMarket > 0;
+		return script_ && !script_.inDevelopment && !script_.schublade && !script_.pubAngebot && !script_.auftragsspiel && (script_.typ_standard || script_.typ_nachfolger || script_.typ_remaster || script_.typ_spinoff) && !script_.typ_addon && !script_.typ_addonStandalone && !script_.typ_mmoaddon && !script_.typ_bundle && !script_.typ_budget && !script_.typ_bundleAddon && !script_.typ_goty;
 	}
 
-	// Token: 0x060010D8 RID: 4312 RVA: 0x000B2A24 File Offset: 0x000B0C24
+	// Token: 0x060010BE RID: 4286 RVA: 0x000BE6F8 File Offset: 0x000BC8F8
 	private gameScript GetBesteGrafik()
 	{
 		int num = -1;
@@ -549,20 +553,12 @@ public class Menu_Awards : MonoBehaviour
 		}
 		if (num != -1)
 		{
-			if (!this.games_.arrayGamesScripts[num].devS_)
-			{
-				this.games_.arrayGamesScripts[num].FindMyDeveloper();
-			}
-			if (this.games_.arrayGamesScripts[num].devS_)
-			{
-				this.mS_.AddAwards(0, this.games_.arrayGamesScripts[num].devS_);
-			}
 			return this.games_.arrayGamesScripts[num];
 		}
 		return null;
 	}
 
-	// Token: 0x060010D9 RID: 4313 RVA: 0x000B2B18 File Offset: 0x000B0D18
+	// Token: 0x060010BF RID: 4287 RVA: 0x000BE788 File Offset: 0x000BC988
 	private gameScript GetBesterSound()
 	{
 		int num = -1;
@@ -577,20 +573,12 @@ public class Menu_Awards : MonoBehaviour
 		}
 		if (num != -1)
 		{
-			if (!this.games_.arrayGamesScripts[num].devS_)
-			{
-				this.games_.arrayGamesScripts[num].FindMyDeveloper();
-			}
-			if (this.games_.arrayGamesScripts[num].devS_)
-			{
-				this.mS_.AddAwards(1, this.games_.arrayGamesScripts[num].devS_);
-			}
 			return this.games_.arrayGamesScripts[num];
 		}
 		return null;
 	}
 
-	// Token: 0x060010DA RID: 4314 RVA: 0x000B2C0C File Offset: 0x000B0E0C
+	// Token: 0x060010C0 RID: 4288 RVA: 0x000BE818 File Offset: 0x000BCA18
 	private gameScript GetBestesSpiel()
 	{
 		int num = -1;
@@ -609,20 +597,12 @@ public class Menu_Awards : MonoBehaviour
 		}
 		if (num != -1)
 		{
-			if (!this.games_.arrayGamesScripts[num].devS_)
-			{
-				this.games_.arrayGamesScripts[num].FindMyDeveloper();
-			}
-			if (this.games_.arrayGamesScripts[num].devS_)
-			{
-				this.mS_.AddAwards(4, this.games_.arrayGamesScripts[num].devS_);
-			}
 			return this.games_.arrayGamesScripts[num];
 		}
 		return null;
 	}
 
-	// Token: 0x060010DB RID: 4315 RVA: 0x000B2D08 File Offset: 0x000B0F08
+	// Token: 0x060010C1 RID: 4289 RVA: 0x000BE8B0 File Offset: 0x000BCAB0
 	private gameScript GetBadGame(gameScript bestGame_)
 	{
 		int num = -1;
@@ -641,114 +621,144 @@ public class Menu_Awards : MonoBehaviour
 		}
 		if (bestGame_ != this.games_.arrayGamesScripts[num])
 		{
-			if (!this.games_.arrayGamesScripts[num].devS_)
-			{
-				this.games_.arrayGamesScripts[num].FindMyDeveloper();
-			}
-			if (this.games_.arrayGamesScripts[num].devS_)
-			{
-				this.mS_.AddAwards(5, this.games_.arrayGamesScripts[num].devS_);
-			}
 			return this.games_.arrayGamesScripts[num];
 		}
 		return null;
 	}
 
-	// Token: 0x060010DC RID: 4316 RVA: 0x000B2E30 File Offset: 0x000B1030
+	// Token: 0x060010C2 RID: 4290 RVA: 0x000BE970 File Offset: 0x000BCB70
 	private publisherScript GetBestesStudio()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
-		for (int i = 0; i < array.Length; i++)
+		long[] array2 = new long[array.Length];
+		int num = 0;
+		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
 		{
-			array[i].GetComponent<publisherScript>().awards_bestStudioPoints = 0L;
-		}
-		for (int j = 0; j < this.games_.arrayGamesScripts.Length; j++)
-		{
-			if (!this.games_.arrayGamesScripts[j].warBeiAwards && !this.games_.arrayGamesScripts[j].inDevelopment && !this.games_.arrayGamesScripts[j].schublade && !this.games_.arrayGamesScripts[j].pubAngebot && !this.games_.arrayGamesScripts[j].auftragsspiel && (this.games_.arrayGamesScripts[j].typ_standard || this.games_.arrayGamesScripts[j].typ_nachfolger || this.games_.arrayGamesScripts[j].typ_remaster || this.games_.arrayGamesScripts[j].typ_spinoff))
+			if (!this.games_.arrayGamesScripts[i].warBeiAwards && !this.games_.arrayGamesScripts[i].inDevelopment && !this.games_.arrayGamesScripts[i].schublade && !this.games_.arrayGamesScripts[i].pubAngebot && !this.games_.arrayGamesScripts[i].auftragsspiel && (this.games_.arrayGamesScripts[i].typ_standard || this.games_.arrayGamesScripts[i].typ_nachfolger || this.games_.arrayGamesScripts[i].typ_remaster || this.games_.arrayGamesScripts[i].typ_spinoff))
 			{
-				if (!this.games_.arrayGamesScripts[j].devS_)
+				if (this.games_.arrayGamesScripts[i].developerID != -1)
 				{
-					this.games_.arrayGamesScripts[j].FindMyDeveloper();
+					array2[this.games_.arrayGamesScripts[i].developerID] += (long)this.games_.arrayGamesScripts[i].reviewTotal;
 				}
-				if (this.games_.arrayGamesScripts[j].devS_)
+				else if (this.games_.arrayGamesScripts[i].reviewTotal >= 80)
 				{
-					if (!this.games_.arrayGamesScripts[j].devS_.isPlayer)
+					if (!this.mS_.multiplayer)
 					{
-						this.games_.arrayGamesScripts[j].devS_.awards_bestStudioPoints += (long)this.games_.arrayGamesScripts[j].reviewTotal;
+						num += this.games_.arrayGamesScripts[i].reviewTotal;
 					}
-					else if (this.games_.arrayGamesScripts[j].reviewTotal >= 80)
+					else
 					{
-						this.games_.arrayGamesScripts[j].devS_.awards_bestStudioPoints += (long)this.games_.arrayGamesScripts[j].reviewTotal;
+						player_mp player_mp = this.mpCalls_.FindPlayer(this.games_.arrayGamesScripts[i].multiplayerSlot);
+						if (player_mp != null)
+						{
+							player_mp.awards_SOTY += (long)this.games_.arrayGamesScripts[i].reviewTotal;
+						}
 					}
 				}
 			}
 		}
-		long num = -1L;
-		publisherScript publisherScript = null;
-		for (int k = 0; k < array.Length; k++)
+		long num2 = -1L;
+		int num3 = -1;
+		for (int j = 0; j < array2.Length; j++)
 		{
-			publisherScript component = array[k].GetComponent<publisherScript>();
-			if (component && component.awards_bestStudioPoints > num)
+			if (array2[j] > num2)
 			{
-				num = component.awards_bestStudioPoints;
-				publisherScript = component;
+				num2 = array2[j];
+				num3 = j;
 			}
 		}
-		if (publisherScript)
+		if (this.mS_.multiplayer)
 		{
-			publisherScript.awards[2]++;
+			long num4 = -1L;
+			int num5 = -1;
+			for (int k = 0; k < this.mpCalls_.playersMP.Count; k++)
+			{
+				if (this.mpCalls_.playersMP[k].awards_SOTY > num4)
+				{
+					num4 = this.mpCalls_.playersMP[k].awards_SOTY;
+					num5 = this.mpCalls_.playersMP[k].playerID;
+				}
+			}
+			if (num2 < num4)
+			{
+				this.bestStudioPlayer = num5;
+				return null;
+			}
 		}
-		return publisherScript;
+		if (!this.mS_.multiplayer && num2 < (long)num)
+		{
+			return null;
+		}
+		return array[num3].GetComponent<publisherScript>();
 	}
 
-	// Token: 0x060010DD RID: 4317 RVA: 0x000B3094 File Offset: 0x000B1294
+	// Token: 0x060010C3 RID: 4291 RVA: 0x000BEC2C File Offset: 0x000BCE2C
 	private publisherScript GetBesterPublisher()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Publisher");
-		for (int i = 0; i < array.Length; i++)
+		long[] array2 = new long[array.Length];
+		long num = 0L;
+		for (int i = 0; i < this.games_.arrayGamesScripts.Length; i++)
 		{
-			array[i].GetComponent<publisherScript>().awards_bestPublisherPoints = 0L;
-		}
-		for (int j = 0; j < this.games_.arrayGamesScripts.Length; j++)
-		{
-			if (!this.games_.arrayGamesScripts[j].warBeiAwards && !this.games_.arrayGamesScripts[j].inDevelopment && !this.games_.arrayGamesScripts[j].schublade && !this.games_.arrayGamesScripts[j].pubAngebot && !this.games_.arrayGamesScripts[j].auftragsspiel && !this.games_.arrayGamesScripts[j].handy && this.games_.arrayGamesScripts[j].gameTyp != 2 && (this.games_.arrayGamesScripts[j].typ_standard || this.games_.arrayGamesScripts[j].typ_nachfolger || this.games_.arrayGamesScripts[j].typ_remaster || this.games_.arrayGamesScripts[j].typ_spinoff))
+			if (!this.games_.arrayGamesScripts[i].warBeiAwards && !this.games_.arrayGamesScripts[i].inDevelopment && !this.games_.arrayGamesScripts[i].schublade && !this.games_.arrayGamesScripts[i].pubAngebot && !this.games_.arrayGamesScripts[i].auftragsspiel && !this.games_.arrayGamesScripts[i].handy && this.games_.arrayGamesScripts[i].gameTyp != 2 && (this.games_.arrayGamesScripts[i].typ_standard || this.games_.arrayGamesScripts[i].typ_nachfolger || this.games_.arrayGamesScripts[i].typ_remaster || this.games_.arrayGamesScripts[i].typ_spinoff))
 			{
-				if (!this.games_.arrayGamesScripts[j].pS_)
+				if (this.games_.arrayGamesScripts[i].publisherID != -1)
 				{
-					this.games_.arrayGamesScripts[j].FindMyPublisher();
+					array2[this.games_.arrayGamesScripts[i].publisherID] += this.games_.arrayGamesScripts[i].sellsTotal;
 				}
-				if (this.games_.arrayGamesScripts[j].pS_)
+				else if (this.games_.arrayGamesScripts[i].reviewTotal >= 80)
 				{
-					if (!this.games_.arrayGamesScripts[j].devS_.isPlayer)
+					if (!this.mS_.multiplayer)
 					{
-						this.games_.arrayGamesScripts[j].devS_.awards_bestPublisherPoints += this.games_.arrayGamesScripts[j].sellsTotal;
+						num += this.games_.arrayGamesScripts[i].sellsTotal;
 					}
-					else if (this.games_.arrayGamesScripts[j].reviewTotal >= 80)
+					else
 					{
-						this.games_.arrayGamesScripts[j].devS_.awards_bestPublisherPoints += this.games_.arrayGamesScripts[j].sellsTotal;
+						player_mp player_mp = this.mpCalls_.FindPlayer(this.games_.arrayGamesScripts[i].multiplayerSlot);
+						if (player_mp != null)
+						{
+							player_mp.awards_POTY += this.games_.arrayGamesScripts[i].sellsTotal;
+						}
 					}
 				}
 			}
 		}
-		long num = -1L;
-		publisherScript publisherScript = null;
-		for (int k = 0; k < array.Length; k++)
+		long num2 = -1L;
+		int num3 = -1;
+		for (int j = 0; j < array2.Length; j++)
 		{
-			publisherScript component = array[k].GetComponent<publisherScript>();
-			if (component && component.awards_bestPublisherPoints > num)
+			if (array2[j] > num2)
 			{
-				num = component.awards_bestPublisherPoints;
-				publisherScript = component;
+				num2 = array2[j];
+				num3 = j;
 			}
 		}
-		if (publisherScript)
+		if (this.mS_.multiplayer)
 		{
-			publisherScript.awards[3]++;
+			long num4 = -1L;
+			int num5 = -1;
+			for (int k = 0; k < this.mpCalls_.playersMP.Count; k++)
+			{
+				if (this.mpCalls_.playersMP[k].awards_SOTY > num4)
+				{
+					num4 = this.mpCalls_.playersMP[k].awards_SOTY;
+					num5 = this.mpCalls_.playersMP[k].playerID;
+				}
+			}
+			if (num2 < num4)
+			{
+				this.bestPublisherPlayer = num5;
+				return null;
+			}
 		}
-		return publisherScript;
+		if (!this.mS_.multiplayer && num2 < num)
+		{
+			return null;
+		}
+		return array[num3].GetComponent<publisherScript>();
 	}
 
-	// Token: 0x060010DE RID: 4318 RVA: 0x000B3326 File Offset: 0x000B1526
+	// Token: 0x060010C4 RID: 4292 RVA: 0x0000BD01 File Offset: 0x00009F01
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -761,60 +771,66 @@ public class Menu_Awards : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060010DF RID: 4319 RVA: 0x000B3365 File Offset: 0x000B1565
+	// Token: 0x060010C5 RID: 4293 RVA: 0x0000BD40 File Offset: 0x00009F40
 	public void BUTTON_Yes()
 	{
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x0400155A RID: 5466
+	// Token: 0x0400154F RID: 5455
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400155B RID: 5467
+	// Token: 0x04001550 RID: 5456
 	private GameObject main_;
 
-	// Token: 0x0400155C RID: 5468
+	// Token: 0x04001551 RID: 5457
 	private mainScript mS_;
 
-	// Token: 0x0400155D RID: 5469
+	// Token: 0x04001552 RID: 5458
 	private textScript tS_;
 
-	// Token: 0x0400155E RID: 5470
+	// Token: 0x04001553 RID: 5459
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400155F RID: 5471
+	// Token: 0x04001554 RID: 5460
 	private sfxScript sfx_;
 
-	// Token: 0x04001560 RID: 5472
+	// Token: 0x04001555 RID: 5461
 	private genres genres_;
 
-	// Token: 0x04001561 RID: 5473
+	// Token: 0x04001556 RID: 5462
 	private themes themes_;
 
-	// Token: 0x04001562 RID: 5474
+	// Token: 0x04001557 RID: 5463
 	private games games_;
 
-	// Token: 0x04001563 RID: 5475
+	// Token: 0x04001558 RID: 5464
 	private mpCalls mpCalls_;
 
-	// Token: 0x04001564 RID: 5476
+	// Token: 0x04001559 RID: 5465
 	private float timeToWait;
 
-	// Token: 0x04001565 RID: 5477
+	// Token: 0x0400155A RID: 5466
 	public gameScript bestGrafik;
 
-	// Token: 0x04001566 RID: 5478
+	// Token: 0x0400155B RID: 5467
 	public gameScript bestSound;
 
-	// Token: 0x04001567 RID: 5479
+	// Token: 0x0400155C RID: 5468
 	public publisherScript bestStudio;
 
-	// Token: 0x04001568 RID: 5480
+	// Token: 0x0400155D RID: 5469
+	public int bestStudioPlayer;
+
+	// Token: 0x0400155E RID: 5470
 	public publisherScript bestPublisher;
 
-	// Token: 0x04001569 RID: 5481
+	// Token: 0x0400155F RID: 5471
+	public int bestPublisherPlayer;
+
+	// Token: 0x04001560 RID: 5472
 	public gameScript bestGame;
 
-	// Token: 0x0400156A RID: 5482
+	// Token: 0x04001561 RID: 5473
 	public gameScript badGame;
 }

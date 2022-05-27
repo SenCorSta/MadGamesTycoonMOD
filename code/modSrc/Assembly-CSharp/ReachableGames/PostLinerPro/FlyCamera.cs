@@ -3,17 +3,17 @@ using UnityEngine;
 
 namespace ReachableGames.PostLinerPro
 {
-	// Token: 0x020003F7 RID: 1015
+	// Token: 0x020003F4 RID: 1012
 	public class FlyCamera : MonoBehaviour
 	{
-		// Token: 0x06002418 RID: 9240 RVA: 0x00173EB3 File Offset: 0x001720B3
+		// Token: 0x060023C5 RID: 9157 RVA: 0x000185BA File Offset: 0x000167BA
 		private void Start()
 		{
 			Cursor.visible = false;
 			Cursor.lockState = CursorLockMode.Locked;
 		}
 
-		// Token: 0x06002419 RID: 9241 RVA: 0x00173EC4 File Offset: 0x001720C4
+		// Token: 0x060023C6 RID: 9158 RVA: 0x00171018 File Offset: 0x0016F218
 		private void Update()
 		{
 			if (Cursor.visible)
@@ -57,13 +57,13 @@ namespace ReachableGames.PostLinerPro
 			}
 		}
 
-		// Token: 0x04002E2F RID: 11823
+		// Token: 0x04002E19 RID: 11801
 		public float Speed = 1f;
 
-		// Token: 0x04002E30 RID: 11824
+		// Token: 0x04002E1A RID: 11802
 		public float MouseSensitivity = 1f;
 
-		// Token: 0x04002E31 RID: 11825
+		// Token: 0x04002E1B RID: 11803
 		public bool InvertMouse;
 	}
 }

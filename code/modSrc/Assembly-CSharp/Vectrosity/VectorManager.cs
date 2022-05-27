@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Vectrosity
 {
-	// Token: 0x0200038D RID: 909
+	// Token: 0x0200038A RID: 906
 	public class VectorManager
 	{
-		// Token: 0x060021C6 RID: 8646 RVA: 0x0015E948 File Offset: 0x0015CB48
+		// Token: 0x06002173 RID: 8563 RVA: 0x00016562 File Offset: 0x00014762
 		public static void SetBrightnessParameters(float fadeOutDistance, float fullBrightDistance, int levels, float frequency, Color color)
 		{
 			VectorManager.minBrightnessDistance = fadeOutDistance * fadeOutDistance;
@@ -17,7 +17,7 @@ namespace Vectrosity
 			VectorManager.fogColor = color;
 		}
 
-		// Token: 0x060021C7 RID: 8647 RVA: 0x0015E970 File Offset: 0x0015CB70
+		// Token: 0x06002174 RID: 8564 RVA: 0x0015DCAC File Offset: 0x0015BEAC
 		public static float GetBrightnessValue(Vector3 pos)
 		{
 			if (!VectorLine.camTransformExists)
@@ -27,13 +27,13 @@ namespace Vectrosity
 			return Mathf.InverseLerp(VectorManager.minBrightnessDistance, VectorManager.maxBrightnessDistance, (pos - VectorLine.camTransformPosition).sqrMagnitude);
 		}
 
-		// Token: 0x060021C8 RID: 8648 RVA: 0x0015E9AB File Offset: 0x0015CBAB
+		// Token: 0x06002175 RID: 8565 RVA: 0x00016587 File Offset: 0x00014787
 		public static void ObjectSetup(GameObject go, VectorLine line, Visibility visibility, Brightness brightness)
 		{
 			VectorManager.ObjectSetup(go, line, visibility, brightness, true);
 		}
 
-		// Token: 0x060021C9 RID: 8649 RVA: 0x0015E9B8 File Offset: 0x0015CBB8
+		// Token: 0x06002176 RID: 8566 RVA: 0x0015DCE8 File Offset: 0x0015BEE8
 		public static void ObjectSetup(GameObject go, VectorLine line, Visibility visibility, Brightness brightness, bool makeBounds)
 		{
 			VisibilityControl visibilityControl = go.GetComponent(typeof(VisibilityControl)) as VisibilityControl;
@@ -136,7 +136,7 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x060021CA RID: 8650 RVA: 0x0015EC0C File Offset: 0x0015CE0C
+		// Token: 0x06002177 RID: 8567 RVA: 0x0015DF3C File Offset: 0x0015C13C
 		private static void ResetLinePoints(VisibilityControlStatic vcs, VectorLine line)
 		{
 			Matrix4x4 inverse = vcs.GetMatrix().inverse;
@@ -146,8 +146,8 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x170000CE RID: 206
-		// (get) Token: 0x060021CB RID: 8651 RVA: 0x0015EC5D File Offset: 0x0015CE5D
+		// Token: 0x170000CA RID: 202
+		// (get) Token: 0x06002178 RID: 8568 RVA: 0x00016593 File Offset: 0x00014793
 		public static int arrayCount
 		{
 			get
@@ -156,7 +156,7 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x060021CC RID: 8652 RVA: 0x0015EC64 File Offset: 0x0015CE64
+		// Token: 0x06002179 RID: 8569 RVA: 0x0015DF90 File Offset: 0x0015C190
 		public static void VisibilityStaticSetup(VectorLine line, out RefInt objectNum)
 		{
 			if (VectorManager.vectorLines == null)
@@ -171,7 +171,7 @@ namespace Vectrosity
 			VectorLine.LineManagerEnable();
 		}
 
-		// Token: 0x060021CD RID: 8653 RVA: 0x0015ECC4 File Offset: 0x0015CEC4
+		// Token: 0x0600217A RID: 8570 RVA: 0x0015DFF0 File Offset: 0x0015C1F0
 		public static void VisibilityStaticRemove(int objectNumber)
 		{
 			if (objectNumber >= VectorManager.vectorLines.Count)
@@ -189,8 +189,8 @@ namespace Vectrosity
 			VectorLine.LineManagerDisable();
 		}
 
-		// Token: 0x170000CF RID: 207
-		// (get) Token: 0x060021CE RID: 8654 RVA: 0x0015ED3A File Offset: 0x0015CF3A
+		// Token: 0x170000CB RID: 203
+		// (get) Token: 0x0600217B RID: 8571 RVA: 0x0001659A File Offset: 0x0001479A
 		public static int arrayCount2
 		{
 			get
@@ -199,7 +199,7 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x060021CF RID: 8655 RVA: 0x0015ED44 File Offset: 0x0015CF44
+		// Token: 0x0600217C RID: 8572 RVA: 0x0015E068 File Offset: 0x0015C268
 		public static void VisibilitySetup(Transform thisTransform, VectorLine line, out RefInt objectNum)
 		{
 			if (VectorManager.vectorLines2 == null)
@@ -214,7 +214,7 @@ namespace Vectrosity
 			VectorLine.LineManagerEnable();
 		}
 
-		// Token: 0x060021D0 RID: 8656 RVA: 0x0015EDA4 File Offset: 0x0015CFA4
+		// Token: 0x0600217D RID: 8573 RVA: 0x0015E0C8 File Offset: 0x0015C2C8
 		public static void VisibilityRemove(int objectNumber)
 		{
 			if (objectNumber >= VectorManager.vectorLines2.Count)
@@ -232,7 +232,7 @@ namespace Vectrosity
 			VectorLine.LineManagerDisable();
 		}
 
-		// Token: 0x060021D1 RID: 8657 RVA: 0x0015EE1C File Offset: 0x0015D01C
+		// Token: 0x0600217E RID: 8574 RVA: 0x0015E140 File Offset: 0x0015C340
 		public static void CheckDistanceSetup(Transform thisTransform, VectorLine line, Color color, RefInt objectNum)
 		{
 			VectorLine.LineManagerEnable();
@@ -253,7 +253,7 @@ namespace Vectrosity
 			VectorManager.objectNumbers3.Add(objectNum);
 		}
 
-		// Token: 0x060021D2 RID: 8658 RVA: 0x0015EEB8 File Offset: 0x0015D0B8
+		// Token: 0x0600217F RID: 8575 RVA: 0x0015E1DC File Offset: 0x0015C3DC
 		public static void DistanceRemove(int objectNumber)
 		{
 			if (objectNumber >= VectorManager.vectorLines3.Count)
@@ -273,7 +273,7 @@ namespace Vectrosity
 			VectorManager._arrayCount3--;
 		}
 
-		// Token: 0x060021D3 RID: 8659 RVA: 0x0015EF4C File Offset: 0x0015D14C
+		// Token: 0x06002180 RID: 8576 RVA: 0x0015E270 File Offset: 0x0015C470
 		public static void CheckDistance()
 		{
 			for (int i = 0; i < VectorManager._arrayCount3; i++)
@@ -282,13 +282,13 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x060021D4 RID: 8660 RVA: 0x0015EF6F File Offset: 0x0015D16F
+		// Token: 0x06002181 RID: 8577 RVA: 0x000165A1 File Offset: 0x000147A1
 		public static void SetOldDistance(int objectNumber, int val)
 		{
 			VectorManager.oldDistances[objectNumber] = val;
 		}
 
-		// Token: 0x060021D5 RID: 8661 RVA: 0x0015EF80 File Offset: 0x0015D180
+		// Token: 0x06002182 RID: 8578 RVA: 0x0015E294 File Offset: 0x0015C494
 		public static void SetDistanceColor(int i)
 		{
 			if (!VectorManager.vectorLines3[i].active)
@@ -304,7 +304,7 @@ namespace Vectrosity
 			VectorManager.oldDistances[i] = num;
 		}
 
-		// Token: 0x060021D6 RID: 8662 RVA: 0x0015F005 File Offset: 0x0015D205
+		// Token: 0x06002183 RID: 8579 RVA: 0x000165AF File Offset: 0x000147AF
 		public static void DrawArrayLine(int i)
 		{
 			if (VectorManager.useDraw3D)
@@ -315,7 +315,7 @@ namespace Vectrosity
 			VectorManager.vectorLines[i].Draw();
 		}
 
-		// Token: 0x060021D7 RID: 8663 RVA: 0x0015F02F File Offset: 0x0015D22F
+		// Token: 0x06002184 RID: 8580 RVA: 0x000165D9 File Offset: 0x000147D9
 		public static void DrawArrayLine2(int i)
 		{
 			if (VectorManager.useDraw3D)
@@ -326,7 +326,7 @@ namespace Vectrosity
 			VectorManager.vectorLines2[i].Draw();
 		}
 
-		// Token: 0x060021D8 RID: 8664 RVA: 0x0015F05C File Offset: 0x0015D25C
+		// Token: 0x06002185 RID: 8581 RVA: 0x0015E31C File Offset: 0x0015C51C
 		public static void DrawArrayLines()
 		{
 			if (VectorManager.useDraw3D)
@@ -343,7 +343,7 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x060021D9 RID: 8665 RVA: 0x0015F0B4 File Offset: 0x0015D2B4
+		// Token: 0x06002186 RID: 8582 RVA: 0x0015E374 File Offset: 0x0015C574
 		public static void DrawArrayLines2()
 		{
 			if (VectorManager.useDraw3D)
@@ -360,7 +360,7 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x060021DA RID: 8666 RVA: 0x0015F10C File Offset: 0x0015D30C
+		// Token: 0x06002187 RID: 8583 RVA: 0x0015E3CC File Offset: 0x0015C5CC
 		public static Bounds GetBounds(VectorLine line)
 		{
 			if (line.points3 == null)
@@ -371,7 +371,7 @@ namespace Vectrosity
 			return VectorManager.GetBounds(line.points3);
 		}
 
-		// Token: 0x060021DB RID: 8667 RVA: 0x0015F140 File Offset: 0x0015D340
+		// Token: 0x06002188 RID: 8584 RVA: 0x0015E400 File Offset: 0x0015C600
 		public static Bounds GetBounds(List<Vector3> points3)
 		{
 			Bounds result = default(Bounds);
@@ -410,7 +410,7 @@ namespace Vectrosity
 			return result;
 		}
 
-		// Token: 0x060021DC RID: 8668 RVA: 0x0015F2AC File Offset: 0x0015D4AC
+		// Token: 0x06002189 RID: 8585 RVA: 0x0015E56C File Offset: 0x0015C76C
 		private static Mesh MakeBoundsMesh(Bounds bounds)
 		{
 			return new Mesh
@@ -429,7 +429,7 @@ namespace Vectrosity
 			};
 		}
 
-		// Token: 0x060021DD RID: 8669 RVA: 0x0015F4B8 File Offset: 0x0015D6B8
+		// Token: 0x0600218A RID: 8586 RVA: 0x0015E778 File Offset: 0x0015C978
 		public static void SetupBoundsMesh(GameObject go, VectorLine line)
 		{
 			MeshFilter meshFilter = go.GetComponent<MeshFilter>();
@@ -455,61 +455,61 @@ namespace Vectrosity
 			meshFilter.mesh = VectorManager.meshTable[line.name];
 		}
 
-		// Token: 0x0400293C RID: 10556
+		// Token: 0x04002926 RID: 10534
 		public static float minBrightnessDistance = 500f;
 
-		// Token: 0x0400293D RID: 10557
+		// Token: 0x04002927 RID: 10535
 		public static float maxBrightnessDistance = 250f;
 
-		// Token: 0x0400293E RID: 10558
+		// Token: 0x04002928 RID: 10536
 		private static int brightnessLevels = 32;
 
-		// Token: 0x0400293F RID: 10559
+		// Token: 0x04002929 RID: 10537
 		public static float distanceCheckFrequency = 0.2f;
 
-		// Token: 0x04002940 RID: 10560
+		// Token: 0x0400292A RID: 10538
 		private static Color fogColor;
 
-		// Token: 0x04002941 RID: 10561
+		// Token: 0x0400292B RID: 10539
 		public static bool useDraw3D = false;
 
-		// Token: 0x04002942 RID: 10562
+		// Token: 0x0400292C RID: 10540
 		private static List<VectorLine> vectorLines;
 
-		// Token: 0x04002943 RID: 10563
+		// Token: 0x0400292D RID: 10541
 		private static List<RefInt> objectNumbers;
 
-		// Token: 0x04002944 RID: 10564
+		// Token: 0x0400292E RID: 10542
 		public static int _arrayCount = 0;
 
-		// Token: 0x04002945 RID: 10565
+		// Token: 0x0400292F RID: 10543
 		private static List<VectorLine> vectorLines2;
 
-		// Token: 0x04002946 RID: 10566
+		// Token: 0x04002930 RID: 10544
 		private static List<RefInt> objectNumbers2;
 
-		// Token: 0x04002947 RID: 10567
+		// Token: 0x04002931 RID: 10545
 		private static int _arrayCount2 = 0;
 
-		// Token: 0x04002948 RID: 10568
+		// Token: 0x04002932 RID: 10546
 		private static List<Transform> transforms3;
 
-		// Token: 0x04002949 RID: 10569
+		// Token: 0x04002933 RID: 10547
 		private static List<VectorLine> vectorLines3;
 
-		// Token: 0x0400294A RID: 10570
+		// Token: 0x04002934 RID: 10548
 		private static List<int> oldDistances;
 
-		// Token: 0x0400294B RID: 10571
+		// Token: 0x04002935 RID: 10549
 		private static List<Color> colors;
 
-		// Token: 0x0400294C RID: 10572
+		// Token: 0x04002936 RID: 10550
 		private static List<RefInt> objectNumbers3;
 
-		// Token: 0x0400294D RID: 10573
+		// Token: 0x04002937 RID: 10551
 		private static int _arrayCount3 = 0;
 
-		// Token: 0x0400294E RID: 10574
+		// Token: 0x04002938 RID: 10552
 		private static Dictionary<string, Mesh> meshTable;
 	}
 }

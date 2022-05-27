@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001B8 RID: 440
+// Token: 0x020001B7 RID: 439
 public class Menu_RenameRoom : MonoBehaviour
 {
-	// Token: 0x060010A3 RID: 4259 RVA: 0x000B0359 File Offset: 0x000AE559
+	// Token: 0x06001089 RID: 4233 RVA: 0x0000BAF8 File Offset: 0x00009CF8
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010A4 RID: 4260 RVA: 0x000B0364 File Offset: 0x000AE564
+	// Token: 0x0600108A RID: 4234 RVA: 0x000BC1A8 File Offset: 0x000BA3A8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_RenameRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010A5 RID: 4261 RVA: 0x000B0430 File Offset: 0x000AE630
+	// Token: 0x0600108B RID: 4235 RVA: 0x0000BB00 File Offset: 0x00009D00
 	public void Init(roomScript script_)
 	{
 		this.FindScripts();
@@ -52,7 +52,7 @@ public class Menu_RenameRoom : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010A6 RID: 4262 RVA: 0x000B0470 File Offset: 0x000AE670
+	// Token: 0x0600108C RID: 4236 RVA: 0x0000BB40 File Offset: 0x00009D40
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -61,7 +61,7 @@ public class Menu_RenameRoom : MonoBehaviour
 		this.cmS_.disableMovement = false;
 	}
 
-	// Token: 0x060010A7 RID: 4263 RVA: 0x000B04A2 File Offset: 0x000AE6A2
+	// Token: 0x0600108D RID: 4237 RVA: 0x0000BB72 File Offset: 0x00009D72
 	public void BUTTON_Yes()
 	{
 		if (this.rS_)
@@ -71,27 +71,27 @@ public class Menu_RenameRoom : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x0400150E RID: 5390
+	// Token: 0x04001503 RID: 5379
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400150F RID: 5391
+	// Token: 0x04001504 RID: 5380
 	private roomScript rS_;
 
-	// Token: 0x04001510 RID: 5392
+	// Token: 0x04001505 RID: 5381
 	private GameObject main_;
 
-	// Token: 0x04001511 RID: 5393
+	// Token: 0x04001506 RID: 5382
 	private mainScript mS_;
 
-	// Token: 0x04001512 RID: 5394
+	// Token: 0x04001507 RID: 5383
 	private textScript tS_;
 
-	// Token: 0x04001513 RID: 5395
+	// Token: 0x04001508 RID: 5384
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001514 RID: 5396
+	// Token: 0x04001509 RID: 5385
 	private sfxScript sfx_;
 
-	// Token: 0x04001515 RID: 5397
+	// Token: 0x0400150A RID: 5386
 	private cameraMovementScript cmS_;
 }

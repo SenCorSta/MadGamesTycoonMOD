@@ -2,17 +2,17 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x020002EF RID: 751
+// Token: 0x020002EC RID: 748
 public class loadResources : MonoBehaviour
 {
-	// Token: 0x06001A85 RID: 6789 RVA: 0x0010B6AA File Offset: 0x001098AA
+	// Token: 0x06001A3B RID: 6715 RVA: 0x00011A74 File Offset: 0x0000FC74
 	private void Start()
 	{
 		this.FindScripts();
 		this.LoadLogos();
 	}
 
-	// Token: 0x06001A86 RID: 6790 RVA: 0x0010B6B8 File Offset: 0x001098B8
+	// Token: 0x06001A3C RID: 6716 RVA: 0x00011A82 File Offset: 0x0000FC82
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -25,7 +25,7 @@ public class loadResources : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A87 RID: 6791 RVA: 0x0010B6F8 File Offset: 0x001098F8
+	// Token: 0x06001A3D RID: 6717 RVA: 0x0010F5AC File Offset: 0x0010D7AC
 	private void LoadLogos()
 	{
 		string text = Application.dataPath + "/Extern/CompanyLogos/";
@@ -38,9 +38,9 @@ public class loadResources : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400218C RID: 8588
+	// Token: 0x04002172 RID: 8562
 	private mainScript mS_;
 
-	// Token: 0x0400218D RID: 8589
+	// Token: 0x04002173 RID: 8563
 	private GUI_Main guiMain_;
 }

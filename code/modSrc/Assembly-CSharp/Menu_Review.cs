@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000199 RID: 409
+// Token: 0x02000198 RID: 408
 public class Menu_Review : MonoBehaviour
 {
-	// Token: 0x06000F84 RID: 3972 RVA: 0x000A4AFB File Offset: 0x000A2CFB
+	// Token: 0x06000F6C RID: 3948 RVA: 0x0000AFD1 File Offset: 0x000091D1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F85 RID: 3973 RVA: 0x000A4B04 File Offset: 0x000A2D04
+	// Token: 0x06000F6D RID: 3949 RVA: 0x000B16A8 File Offset: 0x000AF8A8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -52,7 +52,7 @@ public class Menu_Review : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F86 RID: 3974 RVA: 0x000A4C28 File Offset: 0x000A2E28
+	// Token: 0x06000F6E RID: 3950 RVA: 0x000B17CC File Offset: 0x000AF9CC
 	private void Update()
 	{
 		if (this.game_)
@@ -66,7 +66,7 @@ public class Menu_Review : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F87 RID: 3975 RVA: 0x000A4D00 File Offset: 0x000A2F00
+	// Token: 0x06000F6F RID: 3951 RVA: 0x000B18A4 File Offset: 0x000AFAA4
 	private void ShowRewards(bool playSound)
 	{
 		if (this.game_.typ_addon || this.game_.typ_addonStandalone || this.game_.typ_bundle || this.game_.typ_mmoaddon || this.game_.typ_bundleAddon)
@@ -106,14 +106,14 @@ public class Menu_Review : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F88 RID: 3976 RVA: 0x000A4E22 File Offset: 0x000A3022
+	// Token: 0x06000F70 RID: 3952 RVA: 0x0000AFD9 File Offset: 0x000091D9
 	public void InitContractGame(gameScript s_)
 	{
 		this.Init(s_);
 		this.showContractAbrechnung = true;
 	}
 
-	// Token: 0x06000F89 RID: 3977 RVA: 0x000A4E34 File Offset: 0x000A3034
+	// Token: 0x06000F71 RID: 3953 RVA: 0x000B19C8 File Offset: 0x000AFBC8
 	public void Init(gameScript s_)
 	{
 		this.FindScripts();
@@ -227,7 +227,7 @@ public class Menu_Review : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F8A RID: 3978 RVA: 0x000A5564 File Offset: 0x000A3764
+	// Token: 0x06000F72 RID: 3954 RVA: 0x000B20F8 File Offset: 0x000B02F8
 	public void BUTTON_Close()
 	{
 		if (this.game_ && Mathf.RoundToInt(this.reviewTotalLerp) != this.game_.reviewTotal)
@@ -260,7 +260,7 @@ public class Menu_Review : MonoBehaviour
 		this.showContractAbrechnung = false;
 	}
 
-	// Token: 0x06000F8B RID: 3979 RVA: 0x000A58D8 File Offset: 0x000A3AD8
+	// Token: 0x06000F73 RID: 3955 RVA: 0x000B246C File Offset: 0x000B066C
 	public void BUTTON_Spielbeschreibung()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -268,42 +268,42 @@ public class Menu_Review : MonoBehaviour
 		this.guiMain_.uiObjects[199].GetComponent<Menu_Dev_ShowBeschreibung>().Init(this.game_);
 	}
 
-	// Token: 0x040013DD RID: 5085
+	// Token: 0x040013D4 RID: 5076
 	public gameScript game_;
 
-	// Token: 0x040013DE RID: 5086
+	// Token: 0x040013D5 RID: 5077
 	private mainScript mS_;
 
-	// Token: 0x040013DF RID: 5087
+	// Token: 0x040013D6 RID: 5078
 	private GameObject main_;
 
-	// Token: 0x040013E0 RID: 5088
+	// Token: 0x040013D7 RID: 5079
 	private GUI_Main guiMain_;
 
-	// Token: 0x040013E1 RID: 5089
+	// Token: 0x040013D8 RID: 5080
 	private sfxScript sfx_;
 
-	// Token: 0x040013E2 RID: 5090
+	// Token: 0x040013D9 RID: 5081
 	private textScript tS_;
 
-	// Token: 0x040013E3 RID: 5091
+	// Token: 0x040013DA RID: 5082
 	private genres genres_;
 
-	// Token: 0x040013E4 RID: 5092
+	// Token: 0x040013DB RID: 5083
 	private reviewText reviewText_;
 
-	// Token: 0x040013E5 RID: 5093
+	// Token: 0x040013DC RID: 5084
 	private unlockScript unlock_;
 
-	// Token: 0x040013E6 RID: 5094
+	// Token: 0x040013DD RID: 5085
 	private games games_;
 
-	// Token: 0x040013E7 RID: 5095
+	// Token: 0x040013DE RID: 5086
 	public GameObject[] uiObjects;
 
-	// Token: 0x040013E8 RID: 5096
+	// Token: 0x040013DF RID: 5087
 	private float reviewTotalLerp;
 
-	// Token: 0x040013E9 RID: 5097
+	// Token: 0x040013E0 RID: 5088
 	private bool showContractAbrechnung;
 }

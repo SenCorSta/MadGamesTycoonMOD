@@ -3,35 +3,35 @@ using UnityEngine;
 
 namespace TOZ.ImageFX
 {
-	// Token: 0x020003DD RID: 989
+	// Token: 0x020003DA RID: 986
 	[ExecuteInEditMode]
 	public sealed class PP_Tonemap : PostProcessBase
 	{
-		// Token: 0x060023A2 RID: 9122 RVA: 0x001710ED File Offset: 0x0016F2ED
+		// Token: 0x0600234F RID: 9039 RVA: 0x00017F9C File Offset: 0x0001619C
 		private void Awake()
 		{
 			this.shd = Shader.Find("Hidden/TOZ/ImageFX/Tonemap");
 		}
 
-		// Token: 0x060023A3 RID: 9123 RVA: 0x001710FF File Offset: 0x0016F2FF
+		// Token: 0x06002350 RID: 9040 RVA: 0x00017FAE File Offset: 0x000161AE
 		private void OnRenderImage(RenderTexture src, RenderTexture dest)
 		{
 			this.ApplyVariables();
 			Graphics.Blit(src, dest, this.mat);
 		}
 
-		// Token: 0x060023A4 RID: 9124 RVA: 0x00171114 File Offset: 0x0016F314
+		// Token: 0x06002351 RID: 9041 RVA: 0x00017FC3 File Offset: 0x000161C3
 		private void ApplyVariables()
 		{
 			this.mat.SetFloat("_Exposure", this.Exposure);
 			this.mat.SetFloat("_Gamma", this.Gamma);
 		}
 
-		// Token: 0x04002D7C RID: 11644
+		// Token: 0x04002D66 RID: 11622
 		[Range(0f, 1f)]
 		public float Exposure = 0.1f;
 
-		// Token: 0x04002D7D RID: 11645
+		// Token: 0x04002D67 RID: 11623
 		[Range(0f, 2.2f)]
 		public float Gamma = 1f;
 	}

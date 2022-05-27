@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace ReachableGames.PostLinerPro
 {
-	// Token: 0x020003EE RID: 1006
+	// Token: 0x020003EB RID: 1003
 	public class PostLinerOutline : MonoBehaviour
 	{
-		// Token: 0x060023E9 RID: 9193 RVA: 0x00173210 File Offset: 0x00171410
+		// Token: 0x06002396 RID: 9110 RVA: 0x001704D0 File Offset: 0x0016E6D0
 		private void OnEnable()
 		{
 			if (this._inProcess != null)
@@ -22,7 +22,7 @@ namespace ReachableGames.PostLinerPro
 			this._inProcess = base.StartCoroutine(this.Add());
 		}
 
-		// Token: 0x060023EA RID: 9194 RVA: 0x00173264 File Offset: 0x00171464
+		// Token: 0x06002397 RID: 9111 RVA: 0x00170524 File Offset: 0x0016E724
 		private void OnDisable()
 		{
 			if (this._inProcess != null)
@@ -40,13 +40,13 @@ namespace ReachableGames.PostLinerPro
 			}
 		}
 
-		// Token: 0x060023EB RID: 9195 RVA: 0x001732BD File Offset: 0x001714BD
+		// Token: 0x06002398 RID: 9112 RVA: 0x0001845E File Offset: 0x0001665E
 		private void OnApplicationQuit()
 		{
 			this._isQuitting = true;
 		}
 
-		// Token: 0x060023EC RID: 9196 RVA: 0x001732C6 File Offset: 0x001714C6
+		// Token: 0x06002399 RID: 9113 RVA: 0x00018467 File Offset: 0x00016667
 		private IEnumerator Add()
 		{
 			yield return new WaitUntil(() => PostLinerRenderer.Instance != null);
@@ -54,7 +54,7 @@ namespace ReachableGames.PostLinerPro
 			yield break;
 		}
 
-		// Token: 0x060023ED RID: 9197 RVA: 0x001732D5 File Offset: 0x001714D5
+		// Token: 0x0600239A RID: 9114 RVA: 0x00018476 File Offset: 0x00016676
 		private IEnumerator Remove()
 		{
 			yield return new WaitUntil(() => PostLinerRenderer.Instance != null);
@@ -62,10 +62,10 @@ namespace ReachableGames.PostLinerPro
 			yield break;
 		}
 
-		// Token: 0x04002DF4 RID: 11764
+		// Token: 0x04002DDE RID: 11742
 		private Coroutine _inProcess;
 
-		// Token: 0x04002DF5 RID: 11765
+		// Token: 0x04002DDF RID: 11743
 		private bool _isQuitting;
 	}
 }

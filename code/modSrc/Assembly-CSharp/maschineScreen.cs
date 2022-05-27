@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002F6 RID: 758
+// Token: 0x020002F3 RID: 755
 public class maschineScreen : MonoBehaviour
 {
-	// Token: 0x06001AA8 RID: 6824 RVA: 0x0010C9C7 File Offset: 0x0010ABC7
+	// Token: 0x06001A5E RID: 6750 RVA: 0x00011BA6 File Offset: 0x0000FDA6
 	private void Start()
 	{
 		this.mS_ = GameObject.FindGameObjectWithTag("Main").GetComponent<mainScript>();
 	}
 
-	// Token: 0x06001AA9 RID: 6825 RVA: 0x0010C9E0 File Offset: 0x0010ABE0
+	// Token: 0x06001A5F RID: 6751 RVA: 0x001107FC File Offset: 0x0010E9FC
 	private void Update()
 	{
 		this.timer += this.mS_.GetDeltaTime();
@@ -22,27 +22,27 @@ public class maschineScreen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040021C1 RID: 8641
+	// Token: 0x040021A7 RID: 8615
 	public MeshRenderer renderer;
 
-	// Token: 0x040021C2 RID: 8642
+	// Token: 0x040021A8 RID: 8616
 	public Material[] mat;
 
-	// Token: 0x040021C3 RID: 8643
+	// Token: 0x040021A9 RID: 8617
 	private float timer;
 
-	// Token: 0x040021C4 RID: 8644
+	// Token: 0x040021AA RID: 8618
 	private float rnd;
 
-	// Token: 0x040021C5 RID: 8645
+	// Token: 0x040021AB RID: 8619
 	private roomScript roomS_;
 
-	// Token: 0x040021C6 RID: 8646
+	// Token: 0x040021AC RID: 8620
 	private mapScript mapS_;
 
-	// Token: 0x040021C7 RID: 8647
+	// Token: 0x040021AD RID: 8621
 	private mainScript mS_;
 
-	// Token: 0x040021C8 RID: 8648
+	// Token: 0x040021AE RID: 8622
 	private objectScript oS_;
 }

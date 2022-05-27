@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x0200034C RID: 844
+// Token: 0x02000349 RID: 841
 public class DrawLines : MonoBehaviour
 {
-	// Token: 0x06001FB0 RID: 8112 RVA: 0x0014A572 File Offset: 0x00148772
+	// Token: 0x06001F5D RID: 8029 RVA: 0x00014C18 File Offset: 0x00012E18
 	private void Start()
 	{
 		this.SetLine();
 	}
 
-	// Token: 0x06001FB1 RID: 8113 RVA: 0x0014A57C File Offset: 0x0014877C
+	// Token: 0x06001F5E RID: 8030 RVA: 0x0014B230 File Offset: 0x00149430
 	private void SetLine()
 	{
 		VectorLine.Destroy(ref this.line);
@@ -28,7 +28,7 @@ public class DrawLines : MonoBehaviour
 		this.endReached = false;
 	}
 
-	// Token: 0x06001FB2 RID: 8114 RVA: 0x0014A5FC File Offset: 0x001487FC
+	// Token: 0x06001F5F RID: 8031 RVA: 0x0014B2B0 File Offset: 0x001494B0
 	private void Update()
 	{
 		Vector3 v = base.transform.InverseTransformPoint(Input.mousePosition);
@@ -52,7 +52,7 @@ public class DrawLines : MonoBehaviour
 		base.transform.RotateAround(new Vector2((float)(Screen.width / 2), (float)(Screen.height / 2)), Vector3.forward, Time.deltaTime * this.rotateSpeed * Input.GetAxis("Horizontal"));
 	}
 
-	// Token: 0x06001FB3 RID: 8115 RVA: 0x0014A718 File Offset: 0x00148918
+	// Token: 0x06001F60 RID: 8032 RVA: 0x0014B3CC File Offset: 0x001495CC
 	private void OnGUI()
 	{
 		Rect screenRect = new Rect(20f, 20f, 265f, 220f);
@@ -134,13 +134,13 @@ public class DrawLines : MonoBehaviour
 		GUILayout.EndArea();
 	}
 
-	// Token: 0x06001FB4 RID: 8116 RVA: 0x0014A982 File Offset: 0x00148B82
+	// Token: 0x06001F61 RID: 8033 RVA: 0x00014C20 File Offset: 0x00012E20
 	private void RandomizeColor()
 	{
 		this.line.color = new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
 	}
 
-	// Token: 0x06001FB5 RID: 8117 RVA: 0x0014A9A8 File Offset: 0x00148BA8
+	// Token: 0x06001F62 RID: 8034 RVA: 0x0014B638 File Offset: 0x00149838
 	private void RandomizeAllColors()
 	{
 		int segmentNumber = this.line.GetSegmentNumber();
@@ -150,39 +150,39 @@ public class DrawLines : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040027C9 RID: 10185
+	// Token: 0x040027B3 RID: 10163
 	public float rotateSpeed = 90f;
 
-	// Token: 0x040027CA RID: 10186
+	// Token: 0x040027B4 RID: 10164
 	public float maxPoints = 500f;
 
-	// Token: 0x040027CB RID: 10187
+	// Token: 0x040027B5 RID: 10165
 	private VectorLine line;
 
-	// Token: 0x040027CC RID: 10188
+	// Token: 0x040027B6 RID: 10166
 	private bool endReached;
 
-	// Token: 0x040027CD RID: 10189
+	// Token: 0x040027B7 RID: 10167
 	private bool continuous = true;
 
-	// Token: 0x040027CE RID: 10190
+	// Token: 0x040027B8 RID: 10168
 	private bool oldContinuous = true;
 
-	// Token: 0x040027CF RID: 10191
+	// Token: 0x040027B9 RID: 10169
 	private bool fillJoins;
 
-	// Token: 0x040027D0 RID: 10192
+	// Token: 0x040027BA RID: 10170
 	private bool oldFillJoins;
 
-	// Token: 0x040027D1 RID: 10193
+	// Token: 0x040027BB RID: 10171
 	private bool weldJoins;
 
-	// Token: 0x040027D2 RID: 10194
+	// Token: 0x040027BC RID: 10172
 	private bool oldWeldJoins;
 
-	// Token: 0x040027D3 RID: 10195
+	// Token: 0x040027BD RID: 10173
 	private bool thickLine;
 
-	// Token: 0x040027D4 RID: 10196
+	// Token: 0x040027BE RID: 10174
 	private bool canClick = true;
 }

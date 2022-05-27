@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000282 RID: 642
+// Token: 0x0200027C RID: 636
 public class Menu_MultiplayerSave : MonoBehaviour
 {
-	// Token: 0x06001919 RID: 6425 RVA: 0x000F943A File Offset: 0x000F763A
+	// Token: 0x060018CA RID: 6346 RVA: 0x00010FB9 File Offset: 0x0000F1B9
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600191A RID: 6426 RVA: 0x000F9444 File Offset: 0x000F7644
+	// Token: 0x060018CB RID: 6347 RVA: 0x000FE11C File Offset: 0x000FC31C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,19 +40,19 @@ public class Menu_MultiplayerSave : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600191B RID: 6427 RVA: 0x000F943A File Offset: 0x000F763A
+	// Token: 0x060018CC RID: 6348 RVA: 0x00010FB9 File Offset: 0x0000F1B9
 	public void OnEnable()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600191C RID: 6428 RVA: 0x000F950C File Offset: 0x000F770C
+	// Token: 0x060018CD RID: 6349 RVA: 0x00010FC1 File Offset: 0x0000F1C1
 	public void Init(int saveID_)
 	{
 		this.saveID = saveID_;
 	}
 
-	// Token: 0x0600191D RID: 6429 RVA: 0x000F9518 File Offset: 0x000F7718
+	// Token: 0x060018CE RID: 6350 RVA: 0x000FE1E4 File Offset: 0x000FC3E4
 	private void Update()
 	{
 		if (this.uiObjects[1].GetComponent<Button>().interactable)
@@ -70,37 +70,37 @@ public class Menu_MultiplayerSave : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600191E RID: 6430 RVA: 0x000F956A File Offset: 0x000F776A
+	// Token: 0x060018CF RID: 6351 RVA: 0x00010FCA File Offset: 0x0000F1CA
 	public void BUTTON_Yes()
 	{
 		this.save_.Save(this.saveID);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001C7B RID: 7291
+	// Token: 0x04001C5D RID: 7261
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001C7C RID: 7292
+	// Token: 0x04001C5E RID: 7262
 	private GameObject main_;
 
-	// Token: 0x04001C7D RID: 7293
+	// Token: 0x04001C5F RID: 7263
 	private mainScript mS_;
 
-	// Token: 0x04001C7E RID: 7294
+	// Token: 0x04001C60 RID: 7264
 	private textScript tS_;
 
-	// Token: 0x04001C7F RID: 7295
+	// Token: 0x04001C61 RID: 7265
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001C80 RID: 7296
+	// Token: 0x04001C62 RID: 7266
 	private sfxScript sfx_;
 
-	// Token: 0x04001C81 RID: 7297
+	// Token: 0x04001C63 RID: 7267
 	private savegameScript save_;
 
-	// Token: 0x04001C82 RID: 7298
+	// Token: 0x04001C64 RID: 7268
 	private int saveID = -1;
 
-	// Token: 0x04001C83 RID: 7299
+	// Token: 0x04001C65 RID: 7269
 	private float timer;
 }

@@ -6,13 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(ParticleSystem))]
 public class CFX_AutoDestructShuriken : MonoBehaviour
 {
-	// Token: 0x0600004B RID: 75 RVA: 0x00003925 File Offset: 0x00001B25
+	// Token: 0x0600004B RID: 75 RVA: 0x00002325 File Offset: 0x00000525
 	private void OnEnable()
 	{
 		base.StartCoroutine("CheckIfAlive");
 	}
 
-	// Token: 0x0600004C RID: 76 RVA: 0x00003933 File Offset: 0x00001B33
+	// Token: 0x0600004C RID: 76 RVA: 0x00002333 File Offset: 0x00000533
 	private IEnumerator CheckIfAlive()
 	{
 		ParticleSystem ps = base.GetComponent<ParticleSystem>();

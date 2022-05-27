@@ -5,16 +5,16 @@ using UnityEngine.UI;
 // Token: 0x020000BA RID: 186
 public class Item_Firmenlogo : MonoBehaviour
 {
-	// Token: 0x0600069D RID: 1693 RVA: 0x00051085 File Offset: 0x0004F285
+	// Token: 0x06000694 RID: 1684 RVA: 0x00005BD3 File Offset: 0x00003DD3
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600069E RID: 1694 RVA: 0x00051090 File Offset: 0x0004F290
+	// Token: 0x06000695 RID: 1685 RVA: 0x000638A0 File Offset: 0x00061AA0
 	public void SetData()
 	{
-		if (this.guiMain_.uiObjects[47].activeSelf && this.mS_.GetCompanyLogoID() == this.myID)
+		if (this.guiMain_.uiObjects[47].activeSelf && this.mS_.logo == this.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 			this.uiObjects[0].GetComponent<Animation>().Play();
@@ -24,7 +24,7 @@ public class Item_Firmenlogo : MonoBehaviour
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 			this.uiObjects[0].GetComponent<Animation>().Play();
 		}
-		if (this.guiMain_.uiObjects[201].activeSelf && this.mS_.GetCompanyLogoID() == this.myID)
+		if (this.guiMain_.uiObjects[201].activeSelf && this.mS_.logo == this.myID)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 			this.uiObjects[0].GetComponent<Animation>().Play();
@@ -32,13 +32,13 @@ public class Item_Firmenlogo : MonoBehaviour
 		this.uiObjects[0].GetComponent<Image>().sprite = this.guiMain_.GetCompanyLogo(this.myID);
 	}
 
-	// Token: 0x0600069F RID: 1695 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000696 RID: 1686 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060006A0 RID: 1696 RVA: 0x000511DC File Offset: 0x0004F3DC
+	// Token: 0x06000697 RID: 1687 RVA: 0x000639EC File Offset: 0x00061BEC
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

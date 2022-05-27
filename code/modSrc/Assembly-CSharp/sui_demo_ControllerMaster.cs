@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x02000035 RID: 53
 public class sui_demo_ControllerMaster : MonoBehaviour
 {
-	// Token: 0x060000C7 RID: 199 RVA: 0x000089D0 File Offset: 0x00006BD0
+	// Token: 0x060000C7 RID: 199 RVA: 0x0000287A File Offset: 0x00000A7A
 	private void Start()
 	{
 		this.characterController = base.gameObject.GetComponent<sui_demo_ControllerCharacter>();
@@ -12,7 +12,7 @@ public class sui_demo_ControllerMaster : MonoBehaviour
 		this.orbitController = base.gameObject.GetComponent<sui_demo_ControllerOrbit>();
 	}
 
-	// Token: 0x060000C8 RID: 200 RVA: 0x00008A08 File Offset: 0x00006C08
+	// Token: 0x060000C8 RID: 200 RVA: 0x0001EF2C File Offset: 0x0001D12C
 	private void LateUpdate()
 	{
 		if (this.currentControllerType != this.useController)

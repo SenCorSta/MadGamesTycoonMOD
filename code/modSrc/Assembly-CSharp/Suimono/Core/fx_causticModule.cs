@@ -3,17 +3,17 @@ using UnityEngine;
 
 namespace Suimono.Core
 {
-	// Token: 0x020003AB RID: 939
+	// Token: 0x020003A8 RID: 936
 	public class fx_causticModule : MonoBehaviour
 	{
-		// Token: 0x060022D6 RID: 8918 RVA: 0x0016D8D8 File Offset: 0x0016BAD8
+		// Token: 0x06002283 RID: 8835 RVA: 0x00017087 File Offset: 0x00015287
 		private void Start()
 		{
 			this.moduleObject = (SuimonoModule)UnityEngine.Object.FindObjectOfType(typeof(SuimonoModule));
 			this.lightObject = base.transform.Find("mainCausticObject").gameObject;
 		}
 
-		// Token: 0x060022D7 RID: 8919 RVA: 0x0016D910 File Offset: 0x0016BB10
+		// Token: 0x06002284 RID: 8836 RVA: 0x0016C030 File Offset: 0x0016A230
 		private void LateUpdate()
 		{
 			if (base.enabled)
@@ -43,49 +43,49 @@ namespace Suimono.Core
 			}
 		}
 
-		// Token: 0x04002CBE RID: 11454
+		// Token: 0x04002CA8 RID: 11432
 		public bool enableCaustics = true;
 
-		// Token: 0x04002CBF RID: 11455
+		// Token: 0x04002CA9 RID: 11433
 		public Light sceneLightObject;
 
-		// Token: 0x04002CC0 RID: 11456
+		// Token: 0x04002CAA RID: 11434
 		public bool inheritLightColor;
 
-		// Token: 0x04002CC1 RID: 11457
+		// Token: 0x04002CAB RID: 11435
 		public bool inheritLightDirection;
 
-		// Token: 0x04002CC2 RID: 11458
+		// Token: 0x04002CAC RID: 11436
 		public Color causticTint = new Color(1f, 1f, 1f, 1f);
 
-		// Token: 0x04002CC3 RID: 11459
+		// Token: 0x04002CAD RID: 11437
 		public float causticIntensity = 2f;
 
-		// Token: 0x04002CC4 RID: 11460
+		// Token: 0x04002CAE RID: 11438
 		public float causticScale = 4f;
 
-		// Token: 0x04002CC5 RID: 11461
+		// Token: 0x04002CAF RID: 11439
 		public float heightFac;
 
-		// Token: 0x04002CC6 RID: 11462
+		// Token: 0x04002CB0 RID: 11440
 		public int causticFPS = 32;
 
-		// Token: 0x04002CC7 RID: 11463
+		// Token: 0x04002CB1 RID: 11441
 		public Texture2D[] causticFrames;
 
-		// Token: 0x04002CC8 RID: 11464
+		// Token: 0x04002CB2 RID: 11442
 		public Texture2D useTex;
 
-		// Token: 0x04002CC9 RID: 11465
+		// Token: 0x04002CB3 RID: 11443
 		private float causticsTime;
 
-		// Token: 0x04002CCA RID: 11466
+		// Token: 0x04002CB4 RID: 11444
 		private SuimonoModule moduleObject;
 
-		// Token: 0x04002CCB RID: 11467
+		// Token: 0x04002CB5 RID: 11445
 		private GameObject lightObject;
 
-		// Token: 0x04002CCC RID: 11468
+		// Token: 0x04002CB6 RID: 11446
 		private int frameIndex;
 	}
 }

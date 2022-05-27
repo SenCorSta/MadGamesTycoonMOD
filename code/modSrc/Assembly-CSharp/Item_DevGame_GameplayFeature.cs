@@ -5,14 +5,14 @@ using UnityEngine.UI;
 // Token: 0x02000085 RID: 133
 public class Item_DevGame_GameplayFeature : MonoBehaviour
 {
-	// Token: 0x06000566 RID: 1382 RVA: 0x0004919F File Offset: 0x0004739F
+	// Token: 0x0600055D RID: 1373 RVA: 0x0000542C File Offset: 0x0000362C
 	private void Start()
 	{
 		this.SetData();
 		this.FindScripts();
 	}
 
-	// Token: 0x06000567 RID: 1383 RVA: 0x000491B0 File Offset: 0x000473B0
+	// Token: 0x0600055E RID: 1374 RVA: 0x0005C2E0 File Offset: 0x0005A4E0
 	private void FindScripts()
 	{
 		if (!this.myButton)
@@ -25,7 +25,7 @@ public class Item_DevGame_GameplayFeature : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000568 RID: 1384 RVA: 0x000491FC File Offset: 0x000473FC
+	// Token: 0x0600055F RID: 1375 RVA: 0x0005C32C File Offset: 0x0005A52C
 	private void Update()
 	{
 		if (!this.menuDevGame_)
@@ -45,7 +45,7 @@ public class Item_DevGame_GameplayFeature : MonoBehaviour
 		this.tooltip_.c = this.gF_.GetTooltip(this.myID, this.menuDevGame_.g_GameMainGenre);
 	}
 
-	// Token: 0x06000569 RID: 1385 RVA: 0x000492A4 File Offset: 0x000474A4
+	// Token: 0x06000560 RID: 1376 RVA: 0x0005C3D4 File Offset: 0x0005A5D4
 	private void SetData()
 	{
 		this.FindScripts();
@@ -57,7 +57,7 @@ public class Item_DevGame_GameplayFeature : MonoBehaviour
 		this.SetGoodBadIcon();
 	}
 
-	// Token: 0x0600056A RID: 1386 RVA: 0x00049380 File Offset: 0x00047580
+	// Token: 0x06000561 RID: 1377 RVA: 0x0005C4B0 File Offset: 0x0005A6B0
 	public void BUTTON_Click()
 	{
 		this.FindScripts();
@@ -77,7 +77,7 @@ public class Item_DevGame_GameplayFeature : MonoBehaviour
 		base.GetComponent<Image>().color = Color.white;
 	}
 
-	// Token: 0x0600056B RID: 1387 RVA: 0x00049418 File Offset: 0x00047618
+	// Token: 0x06000562 RID: 1378 RVA: 0x0005C548 File Offset: 0x0005A748
 	private void SetGoodBadIcon()
 	{
 		if (this.menuDevGame_.g_GameMainGenre != -1)
@@ -99,7 +99,7 @@ public class Item_DevGame_GameplayFeature : MonoBehaviour
 		this.goodBad = 1;
 	}
 
-	// Token: 0x0600056C RID: 1388 RVA: 0x000494F4 File Offset: 0x000476F4
+	// Token: 0x06000563 RID: 1379 RVA: 0x0005C624 File Offset: 0x0005A824
 	private void SetPlattformLock()
 	{
 		int value = this.menuDevGame_.uiObjects[146].GetComponent<Dropdown>().value;

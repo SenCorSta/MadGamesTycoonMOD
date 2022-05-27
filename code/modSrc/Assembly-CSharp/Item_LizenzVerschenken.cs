@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000BD RID: 189
 public class Item_LizenzVerschenken : MonoBehaviour
 {
-	// Token: 0x060006AE RID: 1710 RVA: 0x0005158D File Offset: 0x0004F78D
+	// Token: 0x060006A5 RID: 1701 RVA: 0x00005C09 File Offset: 0x00003E09
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060006AF RID: 1711 RVA: 0x00051598 File Offset: 0x0004F798
+	// Token: 0x060006A6 RID: 1702 RVA: 0x00063D4C File Offset: 0x00061F4C
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.licences_.GetName(this.myID);
@@ -30,13 +30,13 @@ public class Item_LizenzVerschenken : MonoBehaviour
 		base.GetComponent<Image>().color = Color.white;
 	}
 
-	// Token: 0x060006B0 RID: 1712 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x060006A7 RID: 1703 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060006B1 RID: 1713 RVA: 0x000516F2 File Offset: 0x0004F8F2
+	// Token: 0x060006A8 RID: 1704 RVA: 0x00005C11 File Offset: 0x00003E11
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -48,7 +48,7 @@ public class Item_LizenzVerschenken : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060006B2 RID: 1714 RVA: 0x00051725 File Offset: 0x0004F925
+	// Token: 0x060006A9 RID: 1705 RVA: 0x00005C44 File Offset: 0x00003E44
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

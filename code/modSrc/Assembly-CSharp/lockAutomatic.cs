@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002F2 RID: 754
+// Token: 0x020002EF RID: 751
 public class lockAutomatic : MonoBehaviour
 {
-	// Token: 0x06001A96 RID: 6806 RVA: 0x0010BC54 File Offset: 0x00109E54
+	// Token: 0x06001A4C RID: 6732 RVA: 0x0010FB00 File Offset: 0x0010DD00
 	private void OnEnable()
 	{
 		if (this.uiRoom)
@@ -68,9 +68,9 @@ public class lockAutomatic : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400219B RID: 8603
+	// Token: 0x04002181 RID: 8577
 	public GameObject uiRoom;
 
-	// Token: 0x0400219C RID: 8604
+	// Token: 0x04002182 RID: 8578
 	public GameObject lockGameObject;
 }

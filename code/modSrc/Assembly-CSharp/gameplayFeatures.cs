@@ -6,13 +6,13 @@ using UnityEngine;
 // Token: 0x02000055 RID: 85
 public class gameplayFeatures : MonoBehaviour
 {
-	// Token: 0x0600027C RID: 636 RVA: 0x00028867 File Offset: 0x00026A67
+	// Token: 0x06000276 RID: 630 RVA: 0x00003642 File Offset: 0x00001842
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600027D RID: 637 RVA: 0x00028870 File Offset: 0x00026A70
+	// Token: 0x06000277 RID: 631 RVA: 0x0003DB38 File Offset: 0x0003BD38
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -33,13 +33,13 @@ public class gameplayFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600027E RID: 638 RVA: 0x000288E1 File Offset: 0x00026AE1
+	// Token: 0x06000278 RID: 632 RVA: 0x0000364A File Offset: 0x0000184A
 	public void Init()
 	{
 		this.gameplayFeatures_PIC = new Sprite[this.gameplayFeatures_UNLOCK.Length];
 	}
 
-	// Token: 0x0600027F RID: 639 RVA: 0x000288F8 File Offset: 0x00026AF8
+	// Token: 0x06000279 RID: 633 RVA: 0x0003DBAC File Offset: 0x0003BDAC
 	public bool[] Return1DimensionArray_GOOD()
 	{
 		int num = this.gameplayFeatures_UNLOCK.Length;
@@ -55,7 +55,7 @@ public class gameplayFeatures : MonoBehaviour
 		return array;
 	}
 
-	// Token: 0x06000280 RID: 640 RVA: 0x00028958 File Offset: 0x00026B58
+	// Token: 0x0600027A RID: 634 RVA: 0x0003DC0C File Offset: 0x0003BE0C
 	public bool[] Return1DimensionArray_BAD()
 	{
 		int num = this.gameplayFeatures_UNLOCK.Length;
@@ -71,7 +71,7 @@ public class gameplayFeatures : MonoBehaviour
 		return array;
 	}
 
-	// Token: 0x06000281 RID: 641 RVA: 0x000289B8 File Offset: 0x00026BB8
+	// Token: 0x0600027B RID: 635 RVA: 0x0003DC6C File Offset: 0x0003BE6C
 	public bool[] Return1DimensionArray_LOCKPLATFORM()
 	{
 		int num = this.gameplayFeatures_UNLOCK.Length;
@@ -87,7 +87,7 @@ public class gameplayFeatures : MonoBehaviour
 		return array;
 	}
 
-	// Token: 0x06000282 RID: 642 RVA: 0x00028A0C File Offset: 0x00026C0C
+	// Token: 0x0600027C RID: 636 RVA: 0x0003DCC0 File Offset: 0x0003BEC0
 	public void Copy2DimensionArray_GOOD(bool[] arr)
 	{
 		int num = this.gameplayFeatures_UNLOCK.Length;
@@ -102,7 +102,7 @@ public class gameplayFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000283 RID: 643 RVA: 0x00028A64 File Offset: 0x00026C64
+	// Token: 0x0600027D RID: 637 RVA: 0x0003DD18 File Offset: 0x0003BF18
 	public void Copy2DimensionArray_BAD(bool[] arr)
 	{
 		int num = this.gameplayFeatures_UNLOCK.Length;
@@ -117,7 +117,7 @@ public class gameplayFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000284 RID: 644 RVA: 0x00028ABC File Offset: 0x00026CBC
+	// Token: 0x0600027E RID: 638 RVA: 0x0003DD70 File Offset: 0x0003BF70
 	public void Copy2DimensionArray_LOCKPLATFORM(bool[] arr)
 	{
 		int num = this.gameplayFeatures_UNLOCK.Length;
@@ -132,7 +132,7 @@ public class gameplayFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000285 RID: 645 RVA: 0x00028B14 File Offset: 0x00026D14
+	// Token: 0x0600027F RID: 639 RVA: 0x0003DDC8 File Offset: 0x0003BFC8
 	public void LoadGameplayFeatures(string filename)
 	{
 		int num = 0;
@@ -151,6 +151,7 @@ public class gameplayFeatures : MonoBehaviour
 				num2++;
 			}
 		}
+		Debug.Log("Gameplay Features Amount: " + num2.ToString());
 		this.gameplayFeatures_PIC = new Sprite[num2];
 		this.gameplayFeatures_TYP = new int[num2];
 		this.gameplayFeatures_RES_POINTS = new int[num2];
@@ -463,13 +464,14 @@ public class gameplayFeatures : MonoBehaviour
 			}
 			if (this.ParseData("[EOF]", j))
 			{
-				break;
+				Debug.Log("GameplayFeatures.txt -> EOF");
+				return;
 			}
 			num++;
 		}
 	}
 
-	// Token: 0x06000286 RID: 646 RVA: 0x00029644 File Offset: 0x00027844
+	// Token: 0x06000280 RID: 640 RVA: 0x0003E918 File Offset: 0x0003CB18
 	private bool ParseData(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -481,7 +483,7 @@ public class gameplayFeatures : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000287 RID: 647 RVA: 0x000296A4 File Offset: 0x000278A4
+	// Token: 0x06000281 RID: 641 RVA: 0x0000365F File Offset: 0x0000185F
 	private bool ParseDataDontCutLastChar(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -492,7 +494,7 @@ public class gameplayFeatures : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000288 RID: 648 RVA: 0x000296D4 File Offset: 0x000278D4
+	// Token: 0x06000282 RID: 642 RVA: 0x0003E978 File Offset: 0x0003CB78
 	public string GetName(int i)
 	{
 		string text = "";
@@ -616,7 +618,7 @@ public class gameplayFeatures : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06000289 RID: 649 RVA: 0x000298D0 File Offset: 0x00027AD0
+	// Token: 0x06000283 RID: 643 RVA: 0x0003EB74 File Offset: 0x0003CD74
 	public string GetDesc(int i)
 	{
 		string text = "";
@@ -740,7 +742,7 @@ public class gameplayFeatures : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x0600028A RID: 650 RVA: 0x00029ACA File Offset: 0x00027CCA
+	// Token: 0x06000284 RID: 644 RVA: 0x0000368F File Offset: 0x0000188F
 	public float GetBonus(int i, int genre_)
 	{
 		if (genre_ != -1)
@@ -757,7 +759,7 @@ public class gameplayFeatures : MonoBehaviour
 		return 1f;
 	}
 
-	// Token: 0x0600028B RID: 651 RVA: 0x00029B00 File Offset: 0x00027D00
+	// Token: 0x06000285 RID: 645 RVA: 0x0003ED70 File Offset: 0x0003CF70
 	public int GetGameplay(int i, int genre_)
 	{
 		if (this.gameplayFeatures_GAMEPLAY[i] <= 0)
@@ -770,7 +772,7 @@ public class gameplayFeatures : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x0600028C RID: 652 RVA: 0x00029B54 File Offset: 0x00027D54
+	// Token: 0x06000286 RID: 646 RVA: 0x0003EDC4 File Offset: 0x0003CFC4
 	public int GetGraphic(int i, int genre_)
 	{
 		if (this.gameplayFeatures_GRAPHIC[i] <= 0)
@@ -783,7 +785,7 @@ public class gameplayFeatures : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x0600028D RID: 653 RVA: 0x00029BA8 File Offset: 0x00027DA8
+	// Token: 0x06000287 RID: 647 RVA: 0x0003EE18 File Offset: 0x0003D018
 	public int GetSound(int i, int genre_)
 	{
 		if (this.gameplayFeatures_SOUND[i] <= 0)
@@ -796,7 +798,7 @@ public class gameplayFeatures : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x0600028E RID: 654 RVA: 0x00029BFC File Offset: 0x00027DFC
+	// Token: 0x06000288 RID: 648 RVA: 0x0003EE6C File Offset: 0x0003D06C
 	public int GetTechnik(int i, int genre_)
 	{
 		if (this.gameplayFeatures_TECHNIK[i] <= 0)
@@ -809,7 +811,7 @@ public class gameplayFeatures : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x0600028F RID: 655 RVA: 0x00029C50 File Offset: 0x00027E50
+	// Token: 0x06000289 RID: 649 RVA: 0x0003EEC0 File Offset: 0x0003D0C0
 	public int GetDevCosts(int i)
 	{
 		float num = (float)this.gameplayFeatures_LEVEL[i] * 0.1f;
@@ -817,49 +819,49 @@ public class gameplayFeatures : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x06000290 RID: 656 RVA: 0x0001A799 File Offset: 0x00018999
+	// Token: 0x0600028A RID: 650 RVA: 0x000030EA File Offset: 0x000012EA
 	public int GetTypGrafik()
 	{
 		return 0;
 	}
 
-	// Token: 0x06000291 RID: 657 RVA: 0x0001A79C File Offset: 0x0001899C
+	// Token: 0x0600028B RID: 651 RVA: 0x000030ED File Offset: 0x000012ED
 	public int GetTypSound()
 	{
 		return 1;
 	}
 
-	// Token: 0x06000292 RID: 658 RVA: 0x0001A79F File Offset: 0x0001899F
+	// Token: 0x0600028C RID: 652 RVA: 0x000030F0 File Offset: 0x000012F0
 	public int GetTypKI()
 	{
 		return 2;
 	}
 
-	// Token: 0x06000293 RID: 659 RVA: 0x0001A7A2 File Offset: 0x000189A2
+	// Token: 0x0600028D RID: 653 RVA: 0x000030F3 File Offset: 0x000012F3
 	public int GetTypPhysik()
 	{
 		return 3;
 	}
 
-	// Token: 0x06000294 RID: 660 RVA: 0x00029C85 File Offset: 0x00027E85
+	// Token: 0x0600028E RID: 654 RVA: 0x000036C4 File Offset: 0x000018C4
 	public int GetTypGameplay()
 	{
 		return 4;
 	}
 
-	// Token: 0x06000295 RID: 661 RVA: 0x00029C88 File Offset: 0x00027E88
+	// Token: 0x0600028F RID: 655 RVA: 0x000036C7 File Offset: 0x000018C7
 	public int GetTypSteuerung()
 	{
 		return 5;
 	}
 
-	// Token: 0x06000296 RID: 662 RVA: 0x00029C8B File Offset: 0x00027E8B
+	// Token: 0x06000290 RID: 656 RVA: 0x000036CA File Offset: 0x000018CA
 	public int GetTypMultiplayer()
 	{
 		return 6;
 	}
 
-	// Token: 0x06000297 RID: 663 RVA: 0x00029C90 File Offset: 0x00027E90
+	// Token: 0x06000291 RID: 657 RVA: 0x0003EEF8 File Offset: 0x0003D0F8
 	public Sprite GetTypSprite(int i)
 	{
 		if (this.gameplayFeatures_ICONFILE[i] == null)
@@ -881,31 +883,31 @@ public class gameplayFeatures : MonoBehaviour
 		return this.gameplayfeatures_PICTYP[this.gameplayFeatures_TYP[i]];
 	}
 
-	// Token: 0x06000298 RID: 664 RVA: 0x00029D38 File Offset: 0x00027F38
+	// Token: 0x06000292 RID: 658 RVA: 0x000036CD File Offset: 0x000018CD
 	public int GetPrice(int i)
 	{
 		return this.gameplayFeatures_PRICE[i];
 	}
 
-	// Token: 0x06000299 RID: 665 RVA: 0x00029D42 File Offset: 0x00027F42
+	// Token: 0x06000293 RID: 659 RVA: 0x000036D7 File Offset: 0x000018D7
 	public bool IsErforscht(int i)
 	{
 		return this.gameplayFeatures_RES_POINTS_LEFT.Length >= i + 1 && this.gameplayFeatures_RES_POINTS_LEFT[i] <= 0f;
 	}
 
-	// Token: 0x0600029A RID: 666 RVA: 0x00029D65 File Offset: 0x00027F65
+	// Token: 0x06000294 RID: 660 RVA: 0x000036FA File Offset: 0x000018FA
 	public float GetProzent(int i)
 	{
 		return 100f / (float)this.gameplayFeatures_RES_POINTS[i] * ((float)this.gameplayFeatures_RES_POINTS[i] - this.gameplayFeatures_RES_POINTS_LEFT[i]);
 	}
 
-	// Token: 0x0600029B RID: 667 RVA: 0x00029D89 File Offset: 0x00027F89
+	// Token: 0x06000295 RID: 661 RVA: 0x0000371E File Offset: 0x0000191E
 	public int GetDevPoints(int i)
 	{
 		return 10 + this.gameplayFeatures_RES_POINTS[i] / 10;
 	}
 
-	// Token: 0x0600029C RID: 668 RVA: 0x00029D9C File Offset: 0x00027F9C
+	// Token: 0x06000296 RID: 662 RVA: 0x0003EFA0 File Offset: 0x0003D1A0
 	public void UnlockAll()
 	{
 		for (int i = 0; i < this.gameplayFeatures_UNLOCK.Length; i++)
@@ -915,13 +917,13 @@ public class gameplayFeatures : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600029D RID: 669 RVA: 0x00029DD2 File Offset: 0x00027FD2
+	// Token: 0x06000297 RID: 663 RVA: 0x0000372E File Offset: 0x0000192E
 	public bool ForschungGestartet(int i)
 	{
 		return this.gameplayFeatures_RES_POINTS_LEFT[i] != (float)this.gameplayFeatures_RES_POINTS[i];
 	}
 
-	// Token: 0x0600029E RID: 670 RVA: 0x00029DEA File Offset: 0x00027FEA
+	// Token: 0x06000298 RID: 664 RVA: 0x00003746 File Offset: 0x00001946
 	public bool Pay(int i)
 	{
 		if (!this.ForschungGestartet(i))
@@ -935,7 +937,7 @@ public class gameplayFeatures : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600029F RID: 671 RVA: 0x00029E24 File Offset: 0x00028024
+	// Token: 0x06000299 RID: 665 RVA: 0x0003EFD8 File Offset: 0x0003D1D8
 	public bool BereitsInAnderenRaumAktiv(int s)
 	{
 		for (int i = 0; i < this.mS_.arrayRooms.Length; i++)
@@ -956,7 +958,7 @@ public class gameplayFeatures : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060002A0 RID: 672 RVA: 0x00029EB0 File Offset: 0x000280B0
+	// Token: 0x0600029A RID: 666 RVA: 0x0003F064 File Offset: 0x0003D264
 	public string GetTooltip(int i, int genre_)
 	{
 		string text = "<b>" + this.GetName(i) + "</b>\n";
@@ -1027,171 +1029,171 @@ public class gameplayFeatures : MonoBehaviour
 		});
 	}
 
-	// Token: 0x0400053B RID: 1339
+	// Token: 0x0400053E RID: 1342
 	private mainScript mS_;
 
-	// Token: 0x0400053C RID: 1340
+	// Token: 0x0400053F RID: 1343
 	private textScript tS_;
 
-	// Token: 0x0400053D RID: 1341
+	// Token: 0x04000540 RID: 1344
 	private settingsScript settings_;
 
-	// Token: 0x0400053E RID: 1342
+	// Token: 0x04000541 RID: 1345
 	private genres genres_;
 
-	// Token: 0x0400053F RID: 1343
+	// Token: 0x04000542 RID: 1346
 	private Sprite[] gameplayFeatures_PIC;
 
-	// Token: 0x04000540 RID: 1344
+	// Token: 0x04000543 RID: 1347
 	public Sprite[] gameplayfeatures_PICTYP;
 
-	// Token: 0x04000541 RID: 1345
+	// Token: 0x04000544 RID: 1348
 	public int[] gameplayFeatures_TYP;
 
-	// Token: 0x04000542 RID: 1346
+	// Token: 0x04000545 RID: 1349
 	public int[] gameplayFeatures_RES_POINTS;
 
-	// Token: 0x04000543 RID: 1347
+	// Token: 0x04000546 RID: 1350
 	public float[] gameplayFeatures_RES_POINTS_LEFT;
 
-	// Token: 0x04000544 RID: 1348
+	// Token: 0x04000547 RID: 1351
 	public int[] gameplayFeatures_PRICE;
 
-	// Token: 0x04000545 RID: 1349
+	// Token: 0x04000548 RID: 1352
 	public int[] gameplayFeatures_DEV_COSTS;
 
-	// Token: 0x04000546 RID: 1350
+	// Token: 0x04000549 RID: 1353
 	public int[] gameplayFeatures_DATE_YEAR;
 
-	// Token: 0x04000547 RID: 1351
+	// Token: 0x0400054A RID: 1354
 	public int[] gameplayFeatures_DATE_MONTH;
 
-	// Token: 0x04000548 RID: 1352
+	// Token: 0x0400054B RID: 1355
 	public int[] gameplayFeatures_GAMEPLAY;
 
-	// Token: 0x04000549 RID: 1353
+	// Token: 0x0400054C RID: 1356
 	public int[] gameplayFeatures_GRAPHIC;
 
-	// Token: 0x0400054A RID: 1354
+	// Token: 0x0400054D RID: 1357
 	public int[] gameplayFeatures_SOUND;
 
-	// Token: 0x0400054B RID: 1355
+	// Token: 0x0400054E RID: 1358
 	public int[] gameplayFeatures_TECHNIK;
 
-	// Token: 0x0400054C RID: 1356
+	// Token: 0x0400054F RID: 1359
 	public int[] gameplayFeatures_LEVEL;
 
-	// Token: 0x0400054D RID: 1357
+	// Token: 0x04000550 RID: 1360
 	public bool[] gameplayFeatures_UNLOCK;
 
-	// Token: 0x0400054E RID: 1358
+	// Token: 0x04000551 RID: 1361
 	public string[] gameplayFeatures_ICONFILE;
 
-	// Token: 0x0400054F RID: 1359
+	// Token: 0x04000552 RID: 1362
 	public bool[,] gameplayFeatures_GOOD;
 
-	// Token: 0x04000550 RID: 1360
+	// Token: 0x04000553 RID: 1363
 	public bool[,] gameplayFeatures_BAD;
 
-	// Token: 0x04000551 RID: 1361
+	// Token: 0x04000554 RID: 1364
 	public bool[,] gameplayFeatures_LOCKPLATFORM;
 
-	// Token: 0x04000552 RID: 1362
+	// Token: 0x04000555 RID: 1365
 	public string[] gameplayFeatures_NAME_EN;
 
-	// Token: 0x04000553 RID: 1363
+	// Token: 0x04000556 RID: 1366
 	public string[] gameplayFeatures_NAME_GE;
 
-	// Token: 0x04000554 RID: 1364
+	// Token: 0x04000557 RID: 1367
 	public string[] gameplayFeatures_NAME_TU;
 
-	// Token: 0x04000555 RID: 1365
+	// Token: 0x04000558 RID: 1368
 	public string[] gameplayFeatures_NAME_CH;
 
-	// Token: 0x04000556 RID: 1366
+	// Token: 0x04000559 RID: 1369
 	public string[] gameplayFeatures_NAME_FR;
 
-	// Token: 0x04000557 RID: 1367
+	// Token: 0x0400055A RID: 1370
 	public string[] gameplayFeatures_NAME_PB;
 
-	// Token: 0x04000558 RID: 1368
+	// Token: 0x0400055B RID: 1371
 	public string[] gameplayFeatures_NAME_CT;
 
-	// Token: 0x04000559 RID: 1369
+	// Token: 0x0400055C RID: 1372
 	public string[] gameplayFeatures_NAME_HU;
 
-	// Token: 0x0400055A RID: 1370
+	// Token: 0x0400055D RID: 1373
 	public string[] gameplayFeatures_NAME_ES;
 
-	// Token: 0x0400055B RID: 1371
+	// Token: 0x0400055E RID: 1374
 	public string[] gameplayFeatures_NAME_CZ;
 
-	// Token: 0x0400055C RID: 1372
+	// Token: 0x0400055F RID: 1375
 	public string[] gameplayFeatures_NAME_KO;
 
-	// Token: 0x0400055D RID: 1373
+	// Token: 0x04000560 RID: 1376
 	public string[] gameplayFeatures_NAME_RU;
 
-	// Token: 0x0400055E RID: 1374
+	// Token: 0x04000561 RID: 1377
 	public string[] gameplayFeatures_NAME_IT;
 
-	// Token: 0x0400055F RID: 1375
+	// Token: 0x04000562 RID: 1378
 	public string[] gameplayFeatures_NAME_AR;
 
-	// Token: 0x04000560 RID: 1376
+	// Token: 0x04000563 RID: 1379
 	public string[] gameplayFeatures_NAME_JA;
 
-	// Token: 0x04000561 RID: 1377
+	// Token: 0x04000564 RID: 1380
 	public string[] gameplayFeatures_NAME_PL;
 
-	// Token: 0x04000562 RID: 1378
+	// Token: 0x04000565 RID: 1381
 	public string[] gameplayFeatures_DESC_EN;
 
-	// Token: 0x04000563 RID: 1379
+	// Token: 0x04000566 RID: 1382
 	public string[] gameplayFeatures_DESC_GE;
 
-	// Token: 0x04000564 RID: 1380
+	// Token: 0x04000567 RID: 1383
 	public string[] gameplayFeatures_DESC_TU;
 
-	// Token: 0x04000565 RID: 1381
+	// Token: 0x04000568 RID: 1384
 	public string[] gameplayFeatures_DESC_CH;
 
-	// Token: 0x04000566 RID: 1382
+	// Token: 0x04000569 RID: 1385
 	public string[] gameplayFeatures_DESC_FR;
 
-	// Token: 0x04000567 RID: 1383
+	// Token: 0x0400056A RID: 1386
 	public string[] gameplayFeatures_DESC_PB;
 
-	// Token: 0x04000568 RID: 1384
+	// Token: 0x0400056B RID: 1387
 	public string[] gameplayFeatures_DESC_CT;
 
-	// Token: 0x04000569 RID: 1385
+	// Token: 0x0400056C RID: 1388
 	public string[] gameplayFeatures_DESC_HU;
 
-	// Token: 0x0400056A RID: 1386
+	// Token: 0x0400056D RID: 1389
 	public string[] gameplayFeatures_DESC_ES;
 
-	// Token: 0x0400056B RID: 1387
+	// Token: 0x0400056E RID: 1390
 	public string[] gameplayFeatures_DESC_CZ;
 
-	// Token: 0x0400056C RID: 1388
+	// Token: 0x0400056F RID: 1391
 	public string[] gameplayFeatures_DESC_KO;
 
-	// Token: 0x0400056D RID: 1389
+	// Token: 0x04000570 RID: 1392
 	public string[] gameplayFeatures_DESC_RU;
 
-	// Token: 0x0400056E RID: 1390
+	// Token: 0x04000571 RID: 1393
 	public string[] gameplayFeatures_DESC_IT;
 
-	// Token: 0x0400056F RID: 1391
+	// Token: 0x04000572 RID: 1394
 	public string[] gameplayFeatures_DESC_AR;
 
-	// Token: 0x04000570 RID: 1392
+	// Token: 0x04000573 RID: 1395
 	public string[] gameplayFeatures_DESC_JA;
 
-	// Token: 0x04000571 RID: 1393
+	// Token: 0x04000574 RID: 1396
 	public string[] gameplayFeatures_DESC_PL;
 
-	// Token: 0x04000572 RID: 1394
+	// Token: 0x04000575 RID: 1397
 	private string[] data;
 }

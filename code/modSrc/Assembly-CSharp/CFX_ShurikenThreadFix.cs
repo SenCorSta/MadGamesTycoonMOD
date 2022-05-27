@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x02000014 RID: 20
 public class CFX_ShurikenThreadFix : MonoBehaviour
 {
-	// Token: 0x06000060 RID: 96 RVA: 0x00003BB8 File Offset: 0x00001DB8
+	// Token: 0x06000060 RID: 96 RVA: 0x0001A514 File Offset: 0x00018714
 	private void OnEnable()
 	{
 		this.systems = base.GetComponentsInChildren<ParticleSystem>();
@@ -17,7 +17,7 @@ public class CFX_ShurikenThreadFix : MonoBehaviour
 		base.StartCoroutine("WaitFrame");
 	}
 
-	// Token: 0x06000061 RID: 97 RVA: 0x00003C02 File Offset: 0x00001E02
+	// Token: 0x06000061 RID: 97 RVA: 0x00002472 File Offset: 0x00000672
 	private IEnumerator WaitFrame()
 	{
 		yield return null;

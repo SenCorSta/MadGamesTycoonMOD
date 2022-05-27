@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000195 RID: 405
+// Token: 0x02000194 RID: 404
 public class Menu_GameFromMarket : MonoBehaviour
 {
-	// Token: 0x06000F64 RID: 3940 RVA: 0x000A274D File Offset: 0x000A094D
+	// Token: 0x06000F4C RID: 3916 RVA: 0x0000AE58 File Offset: 0x00009058
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000F65 RID: 3941 RVA: 0x000A2758 File Offset: 0x000A0958
+	// Token: 0x06000F4D RID: 3917 RVA: 0x000AF480 File Offset: 0x000AD680
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -69,7 +69,7 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F66 RID: 3942 RVA: 0x000A28F8 File Offset: 0x000A0AF8
+	// Token: 0x06000F4E RID: 3918 RVA: 0x000AF620 File Offset: 0x000AD820
 	public void Init(gameScript game_, bool selbstVomMarktGenommen)
 	{
 		this.FindScripts();
@@ -329,7 +329,7 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F67 RID: 3943 RVA: 0x000A3447 File Offset: 0x000A1647
+	// Token: 0x06000F4F RID: 3919 RVA: 0x0000AE60 File Offset: 0x00009060
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -338,7 +338,7 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F68 RID: 3944 RVA: 0x000A3464 File Offset: 0x000A1664
+	// Token: 0x06000F50 RID: 3920 RVA: 0x000B0170 File Offset: 0x000AE370
 	public void BUTTON_Close()
 	{
 		this.FindScripts();
@@ -359,51 +359,51 @@ public class Menu_GameFromMarket : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013A8 RID: 5032
+	// Token: 0x0400139F RID: 5023
 	public GameObject[] uiObjects;
 
-	// Token: 0x040013A9 RID: 5033
+	// Token: 0x040013A0 RID: 5024
 	private GameObject main_;
 
-	// Token: 0x040013AA RID: 5034
+	// Token: 0x040013A1 RID: 5025
 	private mainScript mS_;
 
-	// Token: 0x040013AB RID: 5035
+	// Token: 0x040013A2 RID: 5026
 	private textScript tS_;
 
-	// Token: 0x040013AC RID: 5036
+	// Token: 0x040013A3 RID: 5027
 	private GUI_Main guiMain_;
 
-	// Token: 0x040013AD RID: 5037
+	// Token: 0x040013A4 RID: 5028
 	private sfxScript sfx_;
 
-	// Token: 0x040013AE RID: 5038
+	// Token: 0x040013A5 RID: 5029
 	private genres genres_;
 
-	// Token: 0x040013AF RID: 5039
+	// Token: 0x040013A6 RID: 5030
 	private themes themes_;
 
-	// Token: 0x040013B0 RID: 5040
+	// Token: 0x040013A7 RID: 5031
 	private licences licences_;
 
-	// Token: 0x040013B1 RID: 5041
+	// Token: 0x040013A8 RID: 5032
 	private engineFeatures eF_;
 
-	// Token: 0x040013B2 RID: 5042
+	// Token: 0x040013A9 RID: 5033
 	private cameraMovementScript cmS_;
 
-	// Token: 0x040013B3 RID: 5043
+	// Token: 0x040013AA RID: 5034
 	private unlockScript unlock_;
 
-	// Token: 0x040013B4 RID: 5044
+	// Token: 0x040013AB RID: 5035
 	private gameplayFeatures gF_;
 
-	// Token: 0x040013B5 RID: 5045
+	// Token: 0x040013AC RID: 5036
 	private games games_;
 
-	// Token: 0x040013B6 RID: 5046
+	// Token: 0x040013AD RID: 5037
 	private gameScript gS_;
 
-	// Token: 0x040013B7 RID: 5047
+	// Token: 0x040013AE RID: 5038
 	public List<gameScript> listMenu = new List<gameScript>();
 }

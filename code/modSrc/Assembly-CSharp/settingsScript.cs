@@ -3,17 +3,17 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
-// Token: 0x02000343 RID: 835
+// Token: 0x02000340 RID: 832
 public class settingsScript : MonoBehaviour
 {
-	// Token: 0x06001EB7 RID: 7863 RVA: 0x00140244 File Offset: 0x0013E444
+	// Token: 0x06001E64 RID: 7780 RVA: 0x0001449D File Offset: 0x0001269D
 	private void Awake()
 	{
 		this.LoadSettings();
 		this.UpdateSettings();
 	}
 
-	// Token: 0x06001EB8 RID: 7864 RVA: 0x00140254 File Offset: 0x0013E454
+	// Token: 0x06001E65 RID: 7781 RVA: 0x001416B8 File Offset: 0x0013F8B8
 	public void LoadSettings()
 	{
 		string filePath = "settings.txt";
@@ -85,7 +85,7 @@ public class settingsScript : MonoBehaviour
 		this.reader.Dispose();
 	}
 
-	// Token: 0x06001EB9 RID: 7865 RVA: 0x001404A8 File Offset: 0x0013E6A8
+	// Token: 0x06001E66 RID: 7782 RVA: 0x0014190C File Offset: 0x0013FB0C
 	public void SaveSettings()
 	{
 		string filePath = "settings.txt";
@@ -144,7 +144,7 @@ public class settingsScript : MonoBehaviour
 		this.writer.Dispose();
 	}
 
-	// Token: 0x06001EBA RID: 7866 RVA: 0x001406E4 File Offset: 0x0013E8E4
+	// Token: 0x06001E67 RID: 7783 RVA: 0x00141B48 File Offset: 0x0013FD48
 	public void UpdateSettings()
 	{
 		QualitySettings.vSyncCount = this.vSync;
@@ -233,7 +233,7 @@ public class settingsScript : MonoBehaviour
 		this.SaveSettings();
 	}
 
-	// Token: 0x06001EBB RID: 7867 RVA: 0x0014091C File Offset: 0x0013EB1C
+	// Token: 0x06001E68 RID: 7784 RVA: 0x00141D80 File Offset: 0x0013FF80
 	public void SetAutomaticGuiScale(int screen_width)
 	{
 		if (screen_width <= 1366)
@@ -324,150 +324,150 @@ public class settingsScript : MonoBehaviour
 		Debug.Log(this.uiScale);
 	}
 
-	// Token: 0x04002675 RID: 9845
+	// Token: 0x0400265F RID: 9823
 	private ES3Writer writer;
 
-	// Token: 0x04002676 RID: 9846
+	// Token: 0x04002660 RID: 9824
 	private ES3Reader reader;
 
-	// Token: 0x04002677 RID: 9847
+	// Token: 0x04002661 RID: 9825
 	public bool splashScreen;
 
-	// Token: 0x04002678 RID: 9848
+	// Token: 0x04002662 RID: 9826
 	public int language;
 
-	// Token: 0x04002679 RID: 9849
+	// Token: 0x04002663 RID: 9827
 	public int saveInterval = 12;
 
-	// Token: 0x0400267A RID: 9850
+	// Token: 0x04002664 RID: 9828
 	public float uiScale = 1f;
 
-	// Token: 0x0400267B RID: 9851
+	// Token: 0x04002665 RID: 9829
 	public bool roomConnections = true;
 
-	// Token: 0x0400267C RID: 9852
+	// Token: 0x04002666 RID: 9830
 	public bool pauseUI = true;
 
-	// Token: 0x0400267D RID: 9853
+	// Token: 0x04002667 RID: 9831
 	public bool leaderboard = true;
 
-	// Token: 0x0400267E RID: 9854
+	// Token: 0x04002668 RID: 9832
 	public bool chat = true;
 
-	// Token: 0x0400267F RID: 9855
+	// Token: 0x04002669 RID: 9833
 	public bool sprechblasen = true;
 
-	// Token: 0x04002680 RID: 9856
+	// Token: 0x0400266A RID: 9834
 	public bool scrollScreen = true;
 
-	// Token: 0x04002681 RID: 9857
+	// Token: 0x0400266B RID: 9835
 	public bool disableEngineAbrechnung;
 
-	// Token: 0x04002682 RID: 9858
+	// Token: 0x0400266C RID: 9836
 	public bool disableWorkIcons;
 
-	// Token: 0x04002683 RID: 9859
+	// Token: 0x0400266D RID: 9837
 	public bool disableArbeiterBeschwerden;
 
-	// Token: 0x04002684 RID: 9860
+	// Token: 0x0400266E RID: 9838
 	public bool singleplayerPause;
 
-	// Token: 0x04002685 RID: 9861
+	// Token: 0x0400266F RID: 9839
 	public float fanletterTime = 5f;
 
-	// Token: 0x04002686 RID: 9862
+	// Token: 0x04002670 RID: 9840
 	public float newsTime = 5f;
 
-	// Token: 0x04002687 RID: 9863
+	// Token: 0x04002671 RID: 9841
 	public bool gameTabData;
 
-	// Token: 0x04002688 RID: 9864
+	// Token: 0x04002672 RID: 9842
 	public bool dontAsk_TaskAbbrechen;
 
-	// Token: 0x04002689 RID: 9865
+	// Token: 0x04002673 RID: 9843
 	public bool middleMouseClose;
 
-	// Token: 0x0400268A RID: 9866
+	// Token: 0x04002674 RID: 9844
 	public bool camera90GradRotation;
 
-	// Token: 0x0400268B RID: 9867
+	// Token: 0x04002675 RID: 9845
 	public bool hideConvention;
 
-	// Token: 0x0400268C RID: 9868
+	// Token: 0x04002676 RID: 9846
 	public bool hideAwards;
 
-	// Token: 0x0400268D RID: 9869
+	// Token: 0x04002677 RID: 9847
 	public bool hideEvents;
 
-	// Token: 0x0400268E RID: 9870
+	// Token: 0x04002678 RID: 9848
 	public bool disableTochterfirmaAbrechnung;
 
-	// Token: 0x0400268F RID: 9871
+	// Token: 0x04002679 RID: 9849
 	public bool hideKuendigungen;
 
-	// Token: 0x04002690 RID: 9872
+	// Token: 0x0400267A RID: 9850
 	public bool tochtefirmaTAG = true;
 
-	// Token: 0x04002691 RID: 9873
+	// Token: 0x0400267B RID: 9851
 	public float musicVolume = 1f;
 
-	// Token: 0x04002692 RID: 9874
+	// Token: 0x0400267C RID: 9852
 	public float masterVolume = 1f;
 
-	// Token: 0x04002693 RID: 9875
+	// Token: 0x0400267D RID: 9853
 	public bool disableWorkIconSound;
 
-	// Token: 0x04002694 RID: 9876
+	// Token: 0x0400267E RID: 9854
 	public int screenX = 1024;
 
-	// Token: 0x04002695 RID: 9877
+	// Token: 0x0400267F RID: 9855
 	public int screenY = 768;
 
-	// Token: 0x04002696 RID: 9878
+	// Token: 0x04002680 RID: 9856
 	public bool vollbild = true;
 
-	// Token: 0x04002697 RID: 9879
+	// Token: 0x04002681 RID: 9857
 	public int framerate = 60;
 
-	// Token: 0x04002698 RID: 9880
+	// Token: 0x04002682 RID: 9858
 	public int fullScreenMode = 1;
 
-	// Token: 0x04002699 RID: 9881
+	// Token: 0x04002683 RID: 9859
 	public int vSync = 1;
 
-	// Token: 0x0400269A RID: 9882
+	// Token: 0x04002684 RID: 9860
 	public bool shadows = true;
 
-	// Token: 0x0400269B RID: 9883
+	// Token: 0x04002685 RID: 9861
 	public bool SSAO = true;
 
-	// Token: 0x0400269C RID: 9884
+	// Token: 0x04002686 RID: 9862
 	public bool screenSpaceReflections = true;
 
-	// Token: 0x0400269D RID: 9885
+	// Token: 0x04002687 RID: 9863
 	public bool bloom = true;
 
-	// Token: 0x0400269E RID: 9886
+	// Token: 0x04002688 RID: 9864
 	public bool ambientOcclusion = true;
 
-	// Token: 0x0400269F RID: 9887
+	// Token: 0x04002689 RID: 9865
 	public bool colorGrading = true;
 
-	// Token: 0x040026A0 RID: 9888
+	// Token: 0x0400268A RID: 9866
 	public bool disableWetter = true;
 
-	// Token: 0x040026A1 RID: 9889
+	// Token: 0x0400268B RID: 9867
 	public float helligkeit = 1.81f;
 
-	// Token: 0x040026A2 RID: 9890
+	// Token: 0x0400268C RID: 9868
 	private GameObject mainCanvas;
 
-	// Token: 0x040026A3 RID: 9891
+	// Token: 0x0400268D RID: 9869
 	private GUI_Main guiMain_;
 
-	// Token: 0x040026A4 RID: 9892
+	// Token: 0x0400268E RID: 9870
 	public PostProcessProfile postProcess;
 
-	// Token: 0x040026A5 RID: 9893
+	// Token: 0x0400268F RID: 9871
 	public PostProcessLayer postLayer;
 }

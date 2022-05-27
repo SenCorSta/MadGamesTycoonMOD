@@ -3,19 +3,19 @@ using UnityEngine;
 
 namespace Suimono.Core
 {
-	// Token: 0x020003AD RID: 941
+	// Token: 0x020003AA RID: 938
 	public class fx_soundModule : MonoBehaviour
 	{
-		// Token: 0x04002CD2 RID: 11474
+		// Token: 0x04002CBC RID: 11452
 		public int maxSounds = 10;
 
-		// Token: 0x04002CD3 RID: 11475
+		// Token: 0x04002CBD RID: 11453
 		public AudioClip abovewaterSound;
 
-		// Token: 0x04002CD4 RID: 11476
+		// Token: 0x04002CBE RID: 11454
 		public AudioClip underwaterSound;
 
-		// Token: 0x04002CD5 RID: 11477
+		// Token: 0x04002CBF RID: 11455
 		public AudioClip[] defaultSplashSound;
 	}
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x0200003B RID: 59
 public class sui_demo_animCharacter : MonoBehaviour
 {
-	// Token: 0x060000D5 RID: 213 RVA: 0x00009E95 File Offset: 0x00008095
+	// Token: 0x060000D5 RID: 213 RVA: 0x000028EB File Offset: 0x00000AEB
 	private void Start()
 	{
 		this.physRigidbody = base.GetComponent<Rigidbody>();
@@ -14,7 +14,7 @@ public class sui_demo_animCharacter : MonoBehaviour
 		this.SetBoneTransforms();
 	}
 
-	// Token: 0x060000D6 RID: 214 RVA: 0x00009ECC File Offset: 0x000080CC
+	// Token: 0x060000D6 RID: 214 RVA: 0x00020384 File Offset: 0x0001E584
 	private void LateUpdate()
 	{
 		if (!this.isInWater)
@@ -212,14 +212,14 @@ public class sui_demo_animCharacter : MonoBehaviour
 		this.boneREye.transform.localEulerAngles = new Vector3(this.eyeRand, this.boneREye.transform.localEulerAngles.y, this.boneREye.transform.localEulerAngles.z);
 	}
 
-	// Token: 0x060000D7 RID: 215 RVA: 0x0000A780 File Offset: 0x00008980
+	// Token: 0x060000D7 RID: 215 RVA: 0x00020C38 File Offset: 0x0001EE38
 	private void resetPos()
 	{
 		float y = base.transform.position.y;
 		base.transform.position = new Vector3(this.boneRoot.transform.position.x, y, this.boneRoot.transform.position.z);
 	}
 
-	// Token: 0x060000D8 RID: 216 RVA: 0x0000A7DC File Offset: 0x000089DC
+	// Token: 0x060000D8 RID: 216 RVA: 0x00020C94 File Offset: 0x0001EE94
 	private void SetBoneTransforms()
 	{
 		this.boneRoot = base.transform.Find("Bip01");

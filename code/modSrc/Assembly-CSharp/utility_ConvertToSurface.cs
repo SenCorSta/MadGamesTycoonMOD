@@ -6,17 +6,17 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class utility_ConvertToSurface : MonoBehaviour
 {
-	// Token: 0x060000AF RID: 175 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x060000AF RID: 175 RVA: 0x00002098 File Offset: 0x00000298
 	private void Start()
 	{
 	}
 
-	// Token: 0x060000B0 RID: 176 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x060000B0 RID: 176 RVA: 0x00002098 File Offset: 0x00000298
 	private void LateUpdate()
 	{
 	}
 
-	// Token: 0x060000B1 RID: 177 RVA: 0x00005724 File Offset: 0x00003924
+	// Token: 0x060000B1 RID: 177 RVA: 0x0001BCCC File Offset: 0x00019ECC
 	private bool CheckAllResources()
 	{
 		bool result = true;

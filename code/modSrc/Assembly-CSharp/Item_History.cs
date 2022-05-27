@@ -5,19 +5,19 @@ using UnityEngine.UI;
 // Token: 0x020000E7 RID: 231
 public class Item_History : MonoBehaviour
 {
-	// Token: 0x060007BA RID: 1978 RVA: 0x00056864 File Offset: 0x00054A64
+	// Token: 0x060007B1 RID: 1969 RVA: 0x000061FC File Offset: 0x000043FC
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007BB RID: 1979 RVA: 0x0005686C File Offset: 0x00054A6C
+	// Token: 0x060007B2 RID: 1970 RVA: 0x00006204 File Offset: 0x00004404
 	public void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.mS_.history[this.index];
 	}
 
-	// Token: 0x060007BC RID: 1980 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x060007B3 RID: 1971 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);

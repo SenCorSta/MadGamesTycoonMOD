@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000276 RID: 630
+// Token: 0x02000272 RID: 626
 public class objectTooltip : MonoBehaviour
 {
-	// Token: 0x06001877 RID: 6263 RVA: 0x000F278C File Offset: 0x000F098C
+	// Token: 0x06001834 RID: 6196 RVA: 0x000F7980 File Offset: 0x000F5B80
 	private void Start()
 	{
 		this.myText = this.tooltipText.GetComponent<Text>();
@@ -14,7 +14,7 @@ public class objectTooltip : MonoBehaviour
 		this.rt_tooltipText = this.tooltipText.GetComponent<RectTransform>();
 	}
 
-	// Token: 0x06001878 RID: 6264 RVA: 0x000F27DD File Offset: 0x000F09DD
+	// Token: 0x06001835 RID: 6197 RVA: 0x00010CB0 File Offset: 0x0000EEB0
 	public void SetActive(objectScript script_)
 	{
 		if (!script_)
@@ -27,7 +27,7 @@ public class objectTooltip : MonoBehaviour
 		this.tooltipEnabled = true;
 	}
 
-	// Token: 0x06001879 RID: 6265 RVA: 0x000F2807 File Offset: 0x000F0A07
+	// Token: 0x06001836 RID: 6198 RVA: 0x00010CDA File Offset: 0x0000EEDA
 	public void SetInactive()
 	{
 		this.timer = 0f;
@@ -35,7 +35,7 @@ public class objectTooltip : MonoBehaviour
 		this.myText.text = "";
 	}
 
-	// Token: 0x0600187A RID: 6266 RVA: 0x000F282C File Offset: 0x000F0A2C
+	// Token: 0x06001837 RID: 6199 RVA: 0x000F79D4 File Offset: 0x000F5BD4
 	private void Update()
 	{
 		if (!this.tooltipEnabled)
@@ -94,36 +94,36 @@ public class objectTooltip : MonoBehaviour
 		this.rt_tooltipPic.anchoredPosition = new Vector2(num2, num3);
 	}
 
-	// Token: 0x04001C29 RID: 7209
+	// Token: 0x04001C0F RID: 7183
 	public float timeToShow = 1f;
 
-	// Token: 0x04001C2A RID: 7210
+	// Token: 0x04001C10 RID: 7184
 	public GameObject tooltipPic;
 
-	// Token: 0x04001C2B RID: 7211
+	// Token: 0x04001C11 RID: 7185
 	public GameObject tooltipText;
 
-	// Token: 0x04001C2C RID: 7212
+	// Token: 0x04001C12 RID: 7186
 	public GameObject tooltipFill;
 
-	// Token: 0x04001C2D RID: 7213
+	// Token: 0x04001C13 RID: 7187
 	private RectTransform rt_tooltipPic;
 
-	// Token: 0x04001C2E RID: 7214
+	// Token: 0x04001C14 RID: 7188
 	private RectTransform rt_tooltipText;
 
-	// Token: 0x04001C2F RID: 7215
+	// Token: 0x04001C15 RID: 7189
 	public Text myText;
 
-	// Token: 0x04001C30 RID: 7216
+	// Token: 0x04001C16 RID: 7190
 	public Image myFill;
 
-	// Token: 0x04001C31 RID: 7217
+	// Token: 0x04001C17 RID: 7191
 	private float timer;
 
-	// Token: 0x04001C32 RID: 7218
+	// Token: 0x04001C18 RID: 7192
 	public bool tooltipEnabled;
 
-	// Token: 0x04001C33 RID: 7219
+	// Token: 0x04001C19 RID: 7193
 	private objectScript objectScript_;
 }

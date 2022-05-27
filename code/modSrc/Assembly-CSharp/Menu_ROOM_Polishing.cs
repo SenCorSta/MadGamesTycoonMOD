@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200015C RID: 348
+// Token: 0x0200015B RID: 347
 public class Menu_ROOM_Polishing : MonoBehaviour
 {
-	// Token: 0x06000CDE RID: 3294 RVA: 0x0008C919 File Offset: 0x0008AB19
+	// Token: 0x06000CC7 RID: 3271 RVA: 0x00008F01 File Offset: 0x00007101
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000CDF RID: 3295 RVA: 0x0008C924 File Offset: 0x0008AB24
+	// Token: 0x06000CC8 RID: 3272 RVA: 0x0009B74C File Offset: 0x0009994C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_ROOM_Polishing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CE0 RID: 3296 RVA: 0x0008C9EC File Offset: 0x0008ABEC
+	// Token: 0x06000CC9 RID: 3273 RVA: 0x00008F09 File Offset: 0x00007109
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -50,7 +50,7 @@ public class Menu_ROOM_Polishing : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000CE1 RID: 3297 RVA: 0x0008CA24 File Offset: 0x0008AC24
+	// Token: 0x06000CCA RID: 3274 RVA: 0x0009B814 File Offset: 0x00099A14
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -66,7 +66,7 @@ public class Menu_ROOM_Polishing : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000CE2 RID: 3298 RVA: 0x0008CA70 File Offset: 0x0008AC70
+	// Token: 0x06000CCB RID: 3275 RVA: 0x0009B860 File Offset: 0x00099A60
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -79,7 +79,7 @@ public class Menu_ROOM_Polishing : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000CE3 RID: 3299 RVA: 0x0008CACC File Offset: 0x0008ACCC
+	// Token: 0x06000CCC RID: 3276 RVA: 0x00008F41 File Offset: 0x00007141
 	public void Init(roomScript script_)
 	{
 		this.rS_ = script_;
@@ -87,7 +87,7 @@ public class Menu_ROOM_Polishing : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000CE4 RID: 3300 RVA: 0x0008CAE4 File Offset: 0x0008ACE4
+	// Token: 0x06000CCD RID: 3277 RVA: 0x0009B8BC File Offset: 0x00099ABC
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -96,7 +96,7 @@ public class Menu_ROOM_Polishing : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && this.CheckGameData(component) && !this.Exists(this.uiObjects[0], component.myID))
+				if (component && component.playerGame && component.inDevelopment && !this.Exists(this.uiObjects[0], component.myID))
 				{
 					Item_Polishing component2 = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform).GetComponent<Item_Polishing>();
 					component2.mS_ = this.mS_;
@@ -112,13 +112,7 @@ public class Menu_ROOM_Polishing : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06000CE5 RID: 3301 RVA: 0x0008CBF7 File Offset: 0x0008ADF7
-	public bool CheckGameData(gameScript script_)
-	{
-		return script_ && script_.developerID == this.mS_.myID && script_.inDevelopment;
-	}
-
-	// Token: 0x06000CE6 RID: 3302 RVA: 0x0008CC1F File Offset: 0x0008AE1F
+	// Token: 0x06000CCE RID: 3278 RVA: 0x00008F56 File Offset: 0x00007156
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -126,7 +120,7 @@ public class Menu_ROOM_Polishing : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000CE7 RID: 3303 RVA: 0x0008CC48 File Offset: 0x0008AE48
+	// Token: 0x06000CCF RID: 3279 RVA: 0x0009B9DC File Offset: 0x00099BDC
 	public void StartPolishing(gameScript gS_)
 	{
 		if (!gS_)
@@ -152,7 +146,7 @@ public class Menu_ROOM_Polishing : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000CE8 RID: 3304 RVA: 0x0008CD00 File Offset: 0x0008AF00
+	// Token: 0x06000CD0 RID: 3280 RVA: 0x0009BA94 File Offset: 0x00099C94
 	public void StartPolishingAutomatic(gameScript gS_, int taskID)
 	{
 		if (!gS_)
@@ -183,33 +177,33 @@ public class Menu_ROOM_Polishing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400115F RID: 4447
+	// Token: 0x04001157 RID: 4439
 	private mainScript mS_;
 
-	// Token: 0x04001160 RID: 4448
+	// Token: 0x04001158 RID: 4440
 	private GameObject main_;
 
-	// Token: 0x04001161 RID: 4449
+	// Token: 0x04001159 RID: 4441
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001162 RID: 4450
+	// Token: 0x0400115A RID: 4442
 	private sfxScript sfx_;
 
-	// Token: 0x04001163 RID: 4451
+	// Token: 0x0400115B RID: 4443
 	private textScript tS_;
 
-	// Token: 0x04001164 RID: 4452
+	// Token: 0x0400115C RID: 4444
 	private genres genres_;
 
-	// Token: 0x04001165 RID: 4453
+	// Token: 0x0400115D RID: 4445
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001166 RID: 4454
+	// Token: 0x0400115E RID: 4446
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001167 RID: 4455
+	// Token: 0x0400115F RID: 4447
 	private roomScript rS_;
 
-	// Token: 0x04001168 RID: 4456
+	// Token: 0x04001160 RID: 4448
 	private float updateTimer;
 }

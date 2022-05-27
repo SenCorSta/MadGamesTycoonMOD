@@ -4,16 +4,16 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000218 RID: 536
+// Token: 0x02000217 RID: 535
 public class Menu_Charts_BestIPs : MonoBehaviour
 {
-	// Token: 0x060014A6 RID: 5286 RVA: 0x000D60E1 File Offset: 0x000D42E1
+	// Token: 0x06001488 RID: 5256 RVA: 0x0000DF38 File Offset: 0x0000C138
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060014A7 RID: 5287 RVA: 0x000D60EC File Offset: 0x000D42EC
+	// Token: 0x06001489 RID: 5257 RVA: 0x000DF79C File Offset: 0x000DD99C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -46,7 +46,7 @@ public class Menu_Charts_BestIPs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060014A8 RID: 5288 RVA: 0x000D61D2 File Offset: 0x000D43D2
+	// Token: 0x0600148A RID: 5258 RVA: 0x0000DF40 File Offset: 0x0000C140
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -56,7 +56,7 @@ public class Menu_Charts_BestIPs : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060014A9 RID: 5289 RVA: 0x000D620C File Offset: 0x000D440C
+	// Token: 0x0600148B RID: 5259 RVA: 0x000DF884 File Offset: 0x000DDA84
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -72,7 +72,7 @@ public class Menu_Charts_BestIPs : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060014AA RID: 5290 RVA: 0x000D6258 File Offset: 0x000D4458
+	// Token: 0x0600148C RID: 5260 RVA: 0x000DF8D0 File Offset: 0x000DDAD0
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -85,13 +85,13 @@ public class Menu_Charts_BestIPs : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060014AB RID: 5291 RVA: 0x000D629C File Offset: 0x000D449C
+	// Token: 0x0600148D RID: 5261 RVA: 0x0000DF78 File Offset: 0x0000C178
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060014AC RID: 5292 RVA: 0x000D62A4 File Offset: 0x000D44A4
+	// Token: 0x0600148E RID: 5262 RVA: 0x000DF914 File Offset: 0x000DDB14
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -105,7 +105,7 @@ public class Menu_Charts_BestIPs : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x060014AD RID: 5293 RVA: 0x000D634A File Offset: 0x000D454A
+	// Token: 0x0600148F RID: 5263 RVA: 0x0000DF80 File Offset: 0x0000C180
 	public void Init()
 	{
 		this.FindScripts();
@@ -114,7 +114,7 @@ public class Menu_Charts_BestIPs : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060014AE RID: 5294 RVA: 0x000D6368 File Offset: 0x000D4568
+	// Token: 0x06001490 RID: 5264 RVA: 0x000DF9BC File Offset: 0x000DDBBC
 	private void SetData()
 	{
 		for (int i = 0; i < this.bestIPsList.Count; i++)
@@ -138,20 +138,20 @@ public class Menu_Charts_BestIPs : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x060014AF RID: 5295 RVA: 0x000D6486 File Offset: 0x000D4686
+	// Token: 0x06001491 RID: 5265 RVA: 0x0000DF9C File Offset: 0x0000C19C
 	public bool CheckGameData(gameScript script_)
 	{
 		return script_ && !script_.pubAngebot && !script_.auftragsspiel && script_.mainIP == script_.myID && !script_.inDevelopment;
 	}
 
-	// Token: 0x060014B0 RID: 5296 RVA: 0x000D64B9 File Offset: 0x000D46B9
+	// Token: 0x06001492 RID: 5266 RVA: 0x0000DFCF File Offset: 0x0000C1CF
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060014B1 RID: 5297 RVA: 0x000D64D4 File Offset: 0x000D46D4
+	// Token: 0x06001493 RID: 5267 RVA: 0x000DFADC File Offset: 0x000DDCDC
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -193,7 +193,7 @@ public class Menu_Charts_BestIPs : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x060014B2 RID: 5298 RVA: 0x000D661C File Offset: 0x000D481C
+	// Token: 0x06001494 RID: 5268 RVA: 0x000DFC24 File Offset: 0x000DDE24
 	public void CreateBestIPsCharts(int max)
 	{
 		this.bestIPsList.Clear();
@@ -213,36 +213,36 @@ public class Menu_Charts_BestIPs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040018B4 RID: 6324
+	// Token: 0x040018AD RID: 6317
 	private mainScript mS_;
 
-	// Token: 0x040018B5 RID: 6325
+	// Token: 0x040018AE RID: 6318
 	private GameObject main_;
 
-	// Token: 0x040018B6 RID: 6326
+	// Token: 0x040018AF RID: 6319
 	private GUI_Main guiMain_;
 
-	// Token: 0x040018B7 RID: 6327
+	// Token: 0x040018B0 RID: 6320
 	private sfxScript sfx_;
 
-	// Token: 0x040018B8 RID: 6328
+	// Token: 0x040018B1 RID: 6321
 	private textScript tS_;
 
-	// Token: 0x040018B9 RID: 6329
+	// Token: 0x040018B2 RID: 6322
 	private genres genres_;
 
-	// Token: 0x040018BA RID: 6330
+	// Token: 0x040018B3 RID: 6323
 	private games games_;
 
-	// Token: 0x040018BB RID: 6331
+	// Token: 0x040018B4 RID: 6324
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040018BC RID: 6332
+	// Token: 0x040018B5 RID: 6325
 	public GameObject[] uiObjects;
 
-	// Token: 0x040018BD RID: 6333
+	// Token: 0x040018B6 RID: 6326
 	private float updateTimer;
 
-	// Token: 0x040018BE RID: 6334
+	// Token: 0x040018B7 RID: 6327
 	public List<BestIPsList> bestIPsList = new List<BestIPsList>();
 }

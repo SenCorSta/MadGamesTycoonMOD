@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002FF RID: 767
+// Token: 0x020002FC RID: 764
 public class serverLamp : MonoBehaviour
 {
-	// Token: 0x06001AD4 RID: 6868 RVA: 0x0010DD34 File Offset: 0x0010BF34
+	// Token: 0x06001A8A RID: 6794 RVA: 0x00011DA2 File Offset: 0x0000FFA2
 	private void Start()
 	{
 		this.FindScripts();
 		this.FindRenderer();
 	}
 
-	// Token: 0x06001AD5 RID: 6869 RVA: 0x0010DD44 File Offset: 0x0010BF44
+	// Token: 0x06001A8B RID: 6795 RVA: 0x00111968 File Offset: 0x0010FB68
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -25,7 +25,7 @@ public class serverLamp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AD6 RID: 6870 RVA: 0x0010DDA4 File Offset: 0x0010BFA4
+	// Token: 0x06001A8C RID: 6796 RVA: 0x001119C8 File Offset: 0x0010FBC8
 	private void FindRenderer()
 	{
 		this.goLamps_Renderer = new Renderer[this.goLamps.Length];
@@ -38,7 +38,7 @@ public class serverLamp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AD7 RID: 6871 RVA: 0x0010DDFC File Offset: 0x0010BFFC
+	// Token: 0x06001A8D RID: 6797 RVA: 0x00111A20 File Offset: 0x0010FC20
 	private void Update()
 	{
 		this.timer += this.mS_.GetDeltaTime();
@@ -75,7 +75,7 @@ public class serverLamp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AD8 RID: 6872 RVA: 0x0010DF24 File Offset: 0x0010C124
+	// Token: 0x06001A8E RID: 6798 RVA: 0x00111B48 File Offset: 0x0010FD48
 	private void FindRoomScript()
 	{
 		if (this.rS_)
@@ -99,24 +99,24 @@ public class serverLamp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040021F8 RID: 8696
+	// Token: 0x040021DE RID: 8670
 	public objectScript oS_;
 
-	// Token: 0x040021F9 RID: 8697
+	// Token: 0x040021DF RID: 8671
 	private mainScript mS_;
 
-	// Token: 0x040021FA RID: 8698
+	// Token: 0x040021E0 RID: 8672
 	private roomScript rS_;
 
-	// Token: 0x040021FB RID: 8699
+	// Token: 0x040021E1 RID: 8673
 	public GameObject[] goLamps;
 
-	// Token: 0x040021FC RID: 8700
+	// Token: 0x040021E2 RID: 8674
 	private Renderer[] goLamps_Renderer;
 
-	// Token: 0x040021FD RID: 8701
+	// Token: 0x040021E3 RID: 8675
 	public Material[] materials;
 
-	// Token: 0x040021FE RID: 8702
+	// Token: 0x040021E4 RID: 8676
 	private float timer;
 }

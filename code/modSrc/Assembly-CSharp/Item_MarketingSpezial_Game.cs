@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000C0 RID: 192
 public class Item_MarketingSpezial_Game : MonoBehaviour
 {
-	// Token: 0x060006BE RID: 1726 RVA: 0x00051A64 File Offset: 0x0004FC64
+	// Token: 0x060006B5 RID: 1717 RVA: 0x00005CC8 File Offset: 0x00003EC8
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060006BF RID: 1727 RVA: 0x00051A6C File Offset: 0x0004FC6C
+	// Token: 0x060006B6 RID: 1718 RVA: 0x00064164 File Offset: 0x00062364
 	private void Update()
 	{
 		if (this.game_ && !this.game_.inDevelopment && !this.game_.isOnMarket && !this.game_.schublade)
@@ -22,7 +22,7 @@ public class Item_MarketingSpezial_Game : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060006C0 RID: 1728 RVA: 0x00051AC0 File Offset: 0x0004FCC0
+	// Token: 0x060006B7 RID: 1719 RVA: 0x000641B8 File Offset: 0x000623B8
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -38,7 +38,7 @@ public class Item_MarketingSpezial_Game : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060006C1 RID: 1729 RVA: 0x00051B0C File Offset: 0x0004FD0C
+	// Token: 0x060006B8 RID: 1720 RVA: 0x00064204 File Offset: 0x00062404
 	public void SetData()
 	{
 		if (!this.game_)
@@ -71,13 +71,13 @@ public class Item_MarketingSpezial_Game : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060006C2 RID: 1730 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x060006B9 RID: 1721 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060006C3 RID: 1731 RVA: 0x00051C9C File Offset: 0x0004FE9C
+	// Token: 0x060006BA RID: 1722 RVA: 0x00064394 File Offset: 0x00062594
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

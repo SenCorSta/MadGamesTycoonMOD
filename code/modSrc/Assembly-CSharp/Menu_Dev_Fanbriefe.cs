@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000135 RID: 309
+// Token: 0x02000134 RID: 308
 public class Menu_Dev_Fanbriefe : MonoBehaviour
 {
-	// Token: 0x06000B13 RID: 2835 RVA: 0x00077C9D File Offset: 0x00075E9D
+	// Token: 0x06000B01 RID: 2817 RVA: 0x00007D65 File Offset: 0x00005F65
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000B14 RID: 2836 RVA: 0x00077CA8 File Offset: 0x00075EA8
+	// Token: 0x06000B02 RID: 2818 RVA: 0x00087E34 File Offset: 0x00086034
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_Dev_Fanbriefe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B15 RID: 2837 RVA: 0x00077D70 File Offset: 0x00075F70
+	// Token: 0x06000B03 RID: 2819 RVA: 0x00007D6D File Offset: 0x00005F6D
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -49,7 +49,7 @@ public class Menu_Dev_Fanbriefe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B16 RID: 2838 RVA: 0x00077DA4 File Offset: 0x00075FA4
+	// Token: 0x06000B04 RID: 2820 RVA: 0x00087EFC File Offset: 0x000860FC
 	public void Init(gameScript game_)
 	{
 		this.FindScripts();
@@ -70,37 +70,37 @@ public class Menu_Dev_Fanbriefe : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x06000B17 RID: 2839 RVA: 0x00077E9C File Offset: 0x0007609C
+	// Token: 0x06000B05 RID: 2821 RVA: 0x00007D9F File Offset: 0x00005F9F
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04000F66 RID: 3942
+	// Token: 0x04000F5E RID: 3934
 	private mainScript mS_;
 
-	// Token: 0x04000F67 RID: 3943
+	// Token: 0x04000F5F RID: 3935
 	private GameObject main_;
 
-	// Token: 0x04000F68 RID: 3944
+	// Token: 0x04000F60 RID: 3936
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000F69 RID: 3945
+	// Token: 0x04000F61 RID: 3937
 	private sfxScript sfx_;
 
-	// Token: 0x04000F6A RID: 3946
+	// Token: 0x04000F62 RID: 3938
 	private textScript tS_;
 
-	// Token: 0x04000F6B RID: 3947
+	// Token: 0x04000F63 RID: 3939
 	private genres genres_;
 
-	// Token: 0x04000F6C RID: 3948
+	// Token: 0x04000F64 RID: 3940
 	private gameScript gS_;
 
-	// Token: 0x04000F6D RID: 3949
+	// Token: 0x04000F65 RID: 3941
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04000F6E RID: 3950
+	// Token: 0x04000F66 RID: 3942
 	public GameObject[] uiObjects;
 }

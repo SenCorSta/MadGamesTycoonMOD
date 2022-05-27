@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000182 RID: 386
+// Token: 0x02000181 RID: 385
 public class Menu_Tutorial : MonoBehaviour
 {
-	// Token: 0x06000E82 RID: 3714 RVA: 0x0009C106 File Offset: 0x0009A306
+	// Token: 0x06000E6A RID: 3690 RVA: 0x0000A1B4 File Offset: 0x000083B4
 	private void Start()
 	{
 		this.FindScripts();
 		this.BUTTON_Next(0);
 	}
 
-	// Token: 0x06000E83 RID: 3715 RVA: 0x0009C118 File Offset: 0x0009A318
+	// Token: 0x06000E6B RID: 3691 RVA: 0x000A9AC4 File Offset: 0x000A7CC4
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,14 +41,14 @@ public class Menu_Tutorial : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E84 RID: 3716 RVA: 0x0009C1D0 File Offset: 0x0009A3D0
+	// Token: 0x06000E6C RID: 3692 RVA: 0x0000A1C3 File Offset: 0x000083C3
 	public void BUTTON_Next(int i)
 	{
 		this.sfx_.PlaySound(3, true);
 		this.SetStep(this.step + i);
 	}
 
-	// Token: 0x06000E85 RID: 3717 RVA: 0x0009C1F0 File Offset: 0x0009A3F0
+	// Token: 0x06000E6D RID: 3693 RVA: 0x000A9B7C File Offset: 0x000A7D7C
 	public void SetStep(int s)
 	{
 		base.gameObject.GetComponent<Animation>().Play();
@@ -89,7 +89,7 @@ public class Menu_Tutorial : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E86 RID: 3718 RVA: 0x0009C310 File Offset: 0x0009A510
+	// Token: 0x06000E6E RID: 3694 RVA: 0x000A9C9C File Offset: 0x000A7E9C
 	private void DisableAllArrows()
 	{
 		for (int i = 0; i < this.arrows.Length; i++)
@@ -101,30 +101,30 @@ public class Menu_Tutorial : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040012F2 RID: 4850
+	// Token: 0x040012E9 RID: 4841
 	public GameObject[] uiObjects;
 
-	// Token: 0x040012F3 RID: 4851
+	// Token: 0x040012EA RID: 4842
 	public GameObject[] arrows;
 
-	// Token: 0x040012F4 RID: 4852
+	// Token: 0x040012EB RID: 4843
 	public bool[] showNextButton;
 
-	// Token: 0x040012F5 RID: 4853
+	// Token: 0x040012EC RID: 4844
 	private GameObject main_;
 
-	// Token: 0x040012F6 RID: 4854
+	// Token: 0x040012ED RID: 4845
 	private mainScript mS_;
 
-	// Token: 0x040012F7 RID: 4855
+	// Token: 0x040012EE RID: 4846
 	private textScript tS_;
 
-	// Token: 0x040012F8 RID: 4856
+	// Token: 0x040012EF RID: 4847
 	private GUI_Main guiMain_;
 
-	// Token: 0x040012F9 RID: 4857
+	// Token: 0x040012F0 RID: 4848
 	private sfxScript sfx_;
 
-	// Token: 0x040012FA RID: 4858
+	// Token: 0x040012F1 RID: 4849
 	public int step;
 }

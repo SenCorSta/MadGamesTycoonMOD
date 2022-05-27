@@ -5,14 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class U10PS_SnowOverTime : MonoBehaviour
 {
-	// Token: 0x06000083 RID: 131 RVA: 0x00004879 File Offset: 0x00002A79
+	// Token: 0x06000083 RID: 131 RVA: 0x00002619 File Offset: 0x00000819
 	private void Start()
 	{
 		this.meshRenderer = base.gameObject.GetComponent<MeshRenderer>();
 		this.totalTime = 1f / this.speed * 4.71f;
 	}
 
-	// Token: 0x06000084 RID: 132 RVA: 0x000048A4 File Offset: 0x00002AA4
+	// Token: 0x06000084 RID: 132 RVA: 0x0001B034 File Offset: 0x00019234
 	private void Update()
 	{
 		Material[] materials = this.meshRenderer.materials;

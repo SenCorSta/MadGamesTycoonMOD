@@ -10,7 +10,7 @@ using UnityEngine;
 public class SSAOPro : MonoBehaviour
 {
 	// Token: 0x17000008 RID: 8
-	// (get) Token: 0x06000076 RID: 118 RVA: 0x00004189 File Offset: 0x00002389
+	// (get) Token: 0x06000076 RID: 118 RVA: 0x00002556 File Offset: 0x00000756
 	public Material Material
 	{
 		get
@@ -27,7 +27,7 @@ public class SSAOPro : MonoBehaviour
 	}
 
 	// Token: 0x17000009 RID: 9
-	// (get) Token: 0x06000077 RID: 119 RVA: 0x000041B8 File Offset: 0x000023B8
+	// (get) Token: 0x06000077 RID: 119 RVA: 0x00002585 File Offset: 0x00000785
 	public Shader ShaderSSAO
 	{
 		get
@@ -40,7 +40,7 @@ public class SSAOPro : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000078 RID: 120 RVA: 0x000041E0 File Offset: 0x000023E0
+	// Token: 0x06000078 RID: 120 RVA: 0x0001AA04 File Offset: 0x00018C04
 	private void OnEnable()
 	{
 		this.m_Camera = base.GetComponent<Camera>();
@@ -70,13 +70,13 @@ public class SSAOPro : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000079 RID: 121 RVA: 0x0000426B File Offset: 0x0000246B
+	// Token: 0x06000079 RID: 121 RVA: 0x000025AB File Offset: 0x000007AB
 	private void OnPreRender()
 	{
 		this.m_Camera.depthTextureMode |= (DepthTextureMode.Depth | DepthTextureMode.DepthNormals);
 	}
 
-	// Token: 0x0600007A RID: 122 RVA: 0x00004280 File Offset: 0x00002480
+	// Token: 0x0600007A RID: 122 RVA: 0x000025C0 File Offset: 0x000007C0
 	private void OnDisable()
 	{
 		if (this.m_Material != null)
@@ -86,7 +86,7 @@ public class SSAOPro : MonoBehaviour
 		this.m_Material = null;
 	}
 
-	// Token: 0x0600007B RID: 123 RVA: 0x000042A4 File Offset: 0x000024A4
+	// Token: 0x0600007B RID: 123 RVA: 0x0001AA90 File Offset: 0x00018C90
 	[ImageEffectOpaque]
 	private void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{

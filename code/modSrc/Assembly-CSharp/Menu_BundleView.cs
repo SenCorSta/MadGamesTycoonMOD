@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001F5 RID: 501
+// Token: 0x020001F4 RID: 500
 public class Menu_BundleView : MonoBehaviour
 {
-	// Token: 0x0600130F RID: 4879 RVA: 0x000C9EA2 File Offset: 0x000C80A2
+	// Token: 0x060012F4 RID: 4852 RVA: 0x0000D00D File Offset: 0x0000B20D
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001310 RID: 4880 RVA: 0x000C9EAC File Offset: 0x000C80AC
+	// Token: 0x060012F5 RID: 4853 RVA: 0x000D461C File Offset: 0x000D281C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,7 +44,7 @@ public class Menu_BundleView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001311 RID: 4881 RVA: 0x000C9F94 File Offset: 0x000C8194
+	// Token: 0x060012F6 RID: 4854 RVA: 0x000D4704 File Offset: 0x000D2904
 	public void Init(gameScript script_)
 	{
 		this.FindScripts();
@@ -63,7 +63,7 @@ public class Menu_BundleView : MonoBehaviour
 		this.uiObjects[28].GetComponent<Text>().text = "<color=red>" + this.mS_.GetMoney(this.gS_.GetGesamtGewinn(), true) + "</color>";
 	}
 
-	// Token: 0x06001312 RID: 4882 RVA: 0x000CA094 File Offset: 0x000C8294
+	// Token: 0x060012F7 RID: 4855 RVA: 0x000D4804 File Offset: 0x000D2A04
 	public void SetGame(int slot, gameScript script_)
 	{
 		if (!script_)
@@ -87,46 +87,46 @@ public class Menu_BundleView : MonoBehaviour
 		this.guiMain_.DrawStarsColor(this.uiObjects[1], Mathf.RoundToInt(this.GetQuality()), Color.white);
 	}
 
-	// Token: 0x06001313 RID: 4883 RVA: 0x000CA25A File Offset: 0x000C845A
+	// Token: 0x060012F8 RID: 4856 RVA: 0x0000D015 File Offset: 0x0000B215
 	public float GetQuality()
 	{
 		return (float)(this.gS_.reviewTotal / 20);
 	}
 
-	// Token: 0x06001314 RID: 4884 RVA: 0x000CA26B File Offset: 0x000C846B
+	// Token: 0x060012F9 RID: 4857 RVA: 0x0000D026 File Offset: 0x0000B226
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001753 RID: 5971
+	// Token: 0x0400174A RID: 5962
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001754 RID: 5972
+	// Token: 0x0400174B RID: 5963
 	private roomScript rS_;
 
-	// Token: 0x04001755 RID: 5973
+	// Token: 0x0400174C RID: 5964
 	private GameObject main_;
 
-	// Token: 0x04001756 RID: 5974
+	// Token: 0x0400174D RID: 5965
 	private mainScript mS_;
 
-	// Token: 0x04001757 RID: 5975
+	// Token: 0x0400174E RID: 5966
 	private textScript tS_;
 
-	// Token: 0x04001758 RID: 5976
+	// Token: 0x0400174F RID: 5967
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001759 RID: 5977
+	// Token: 0x04001750 RID: 5968
 	private sfxScript sfx_;
 
-	// Token: 0x0400175A RID: 5978
+	// Token: 0x04001751 RID: 5969
 	private genres genres_;
 
-	// Token: 0x0400175B RID: 5979
+	// Token: 0x04001752 RID: 5970
 	private games games_;
 
-	// Token: 0x0400175C RID: 5980
+	// Token: 0x04001753 RID: 5971
 	public gameScript gS_;
 }

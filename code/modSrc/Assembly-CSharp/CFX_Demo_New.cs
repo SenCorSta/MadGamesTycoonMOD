@@ -7,7 +7,7 @@ using UnityEngine.UI;
 // Token: 0x02000007 RID: 7
 public class CFX_Demo_New : MonoBehaviour
 {
-	// Token: 0x06000029 RID: 41 RVA: 0x000030D8 File Offset: 0x000012D8
+	// Token: 0x06000029 RID: 41 RVA: 0x00019D54 File Offset: 0x00017F54
 	private void Awake()
 	{
 		List<GameObject> list = new List<GameObject>();
@@ -25,7 +25,7 @@ public class CFX_Demo_New : MonoBehaviour
 		this.UpdateUI();
 	}
 
-	// Token: 0x0600002A RID: 42 RVA: 0x0000318C File Offset: 0x0000138C
+	// Token: 0x0600002A RID: 42 RVA: 0x00019E08 File Offset: 0x00018008
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -61,7 +61,7 @@ public class CFX_Demo_New : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600002B RID: 43 RVA: 0x000032A0 File Offset: 0x000014A0
+	// Token: 0x0600002B RID: 43 RVA: 0x00019F1C File Offset: 0x0001811C
 	public void OnToggleGround()
 	{
 		Color white = Color.white;
@@ -71,7 +71,7 @@ public class CFX_Demo_New : MonoBehaviour
 		this.groundLabel.color = white;
 	}
 
-	// Token: 0x0600002C RID: 44 RVA: 0x00003304 File Offset: 0x00001504
+	// Token: 0x0600002C RID: 44 RVA: 0x00019F80 File Offset: 0x00018180
 	public void OnToggleCamera()
 	{
 		Color white = Color.white;
@@ -81,7 +81,7 @@ public class CFX_Demo_New : MonoBehaviour
 		this.camRotLabel.color = white;
 	}
 
-	// Token: 0x0600002D RID: 45 RVA: 0x00003358 File Offset: 0x00001558
+	// Token: 0x0600002D RID: 45 RVA: 0x00019FD4 File Offset: 0x000181D4
 	public void OnToggleSlowMo()
 	{
 		Color white = Color.white;
@@ -100,26 +100,26 @@ public class CFX_Demo_New : MonoBehaviour
 		this.slowMoLabel.color = white;
 	}
 
-	// Token: 0x0600002E RID: 46 RVA: 0x000033C8 File Offset: 0x000015C8
+	// Token: 0x0600002E RID: 46 RVA: 0x00002150 File Offset: 0x00000350
 	public void OnPreviousEffect()
 	{
 		this.prevParticle();
 	}
 
-	// Token: 0x0600002F RID: 47 RVA: 0x000033D0 File Offset: 0x000015D0
+	// Token: 0x0600002F RID: 47 RVA: 0x00002158 File Offset: 0x00000358
 	public void OnNextEffect()
 	{
 		this.nextParticle();
 	}
 
-	// Token: 0x06000030 RID: 48 RVA: 0x000033D8 File Offset: 0x000015D8
+	// Token: 0x06000030 RID: 48 RVA: 0x0001A044 File Offset: 0x00018244
 	private void UpdateUI()
 	{
 		this.EffectLabel.text = this.ParticleExamples[this.exampleIndex].name;
 		this.EffectIndexLabel.text = string.Format("{0}/{1}", (this.exampleIndex + 1).ToString("00"), this.ParticleExamples.Length.ToString("00"));
 	}
 
-	// Token: 0x06000031 RID: 49 RVA: 0x00003444 File Offset: 0x00001644
+	// Token: 0x06000031 RID: 49 RVA: 0x0001A0B0 File Offset: 0x000182B0
 	private GameObject spawnParticle()
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.ParticleExamples[this.exampleIndex]);
@@ -135,7 +135,7 @@ public class CFX_Demo_New : MonoBehaviour
 		return gameObject;
 	}
 
-	// Token: 0x06000032 RID: 50 RVA: 0x000034DA File Offset: 0x000016DA
+	// Token: 0x06000032 RID: 50 RVA: 0x00002160 File Offset: 0x00000360
 	private IEnumerator CheckForDeletedParticles()
 	{
 		for (;;)
@@ -152,7 +152,7 @@ public class CFX_Demo_New : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000033 RID: 51 RVA: 0x000034E9 File Offset: 0x000016E9
+	// Token: 0x06000033 RID: 51 RVA: 0x0000216F File Offset: 0x0000036F
 	private void prevParticle()
 	{
 		this.exampleIndex--;
@@ -163,7 +163,7 @@ public class CFX_Demo_New : MonoBehaviour
 		this.UpdateUI();
 	}
 
-	// Token: 0x06000034 RID: 52 RVA: 0x00003518 File Offset: 0x00001718
+	// Token: 0x06000034 RID: 52 RVA: 0x0000219E File Offset: 0x0000039E
 	private void nextParticle()
 	{
 		this.exampleIndex++;
@@ -174,7 +174,7 @@ public class CFX_Demo_New : MonoBehaviour
 		this.UpdateUI();
 	}
 
-	// Token: 0x06000035 RID: 53 RVA: 0x00003548 File Offset: 0x00001748
+	// Token: 0x06000035 RID: 53 RVA: 0x0001A148 File Offset: 0x00018348
 	private void destroyParticles()
 	{
 		for (int i = this.onScreenParticles.Count - 1; i >= 0; i--)

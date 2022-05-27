@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001A5 RID: 421
+// Token: 0x020001A4 RID: 420
 public class Menu_W_SellLicence : MonoBehaviour
 {
-	// Token: 0x06000FD8 RID: 4056 RVA: 0x000A7E39 File Offset: 0x000A6039
+	// Token: 0x06000FC0 RID: 4032 RVA: 0x0000B2B4 File Offset: 0x000094B4
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FD9 RID: 4057 RVA: 0x000A7E44 File Offset: 0x000A6044
+	// Token: 0x06000FC1 RID: 4033 RVA: 0x000B46FC File Offset: 0x000B28FC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_W_SellLicence : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FDA RID: 4058 RVA: 0x000A7F0C File Offset: 0x000A610C
+	// Token: 0x06000FC2 RID: 4034 RVA: 0x0000B2BC File Offset: 0x000094BC
 	public void Init(int id)
 	{
 		this.FindScripts();
@@ -48,14 +48,14 @@ public class Menu_W_SellLicence : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.licences_.GetTooltip(this.myID);
 	}
 
-	// Token: 0x06000FDB RID: 4059 RVA: 0x000A7F3E File Offset: 0x000A613E
+	// Token: 0x06000FC3 RID: 4035 RVA: 0x0000B2EE File Offset: 0x000094EE
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FDC RID: 4060 RVA: 0x000A7F59 File Offset: 0x000A6159
+	// Token: 0x06000FC4 RID: 4036 RVA: 0x0000B309 File Offset: 0x00009509
 	public void BUTTON_Yes()
 	{
 		this.licences_.Sell(this.myID);
@@ -63,30 +63,30 @@ public class Menu_W_SellLicence : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x0400144F RID: 5199
+	// Token: 0x04001446 RID: 5190
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001450 RID: 5200
+	// Token: 0x04001447 RID: 5191
 	private platformScript pS_;
 
-	// Token: 0x04001451 RID: 5201
+	// Token: 0x04001448 RID: 5192
 	private GameObject main_;
 
-	// Token: 0x04001452 RID: 5202
+	// Token: 0x04001449 RID: 5193
 	private mainScript mS_;
 
-	// Token: 0x04001453 RID: 5203
+	// Token: 0x0400144A RID: 5194
 	private textScript tS_;
 
-	// Token: 0x04001454 RID: 5204
+	// Token: 0x0400144B RID: 5195
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001455 RID: 5205
+	// Token: 0x0400144C RID: 5196
 	private sfxScript sfx_;
 
-	// Token: 0x04001456 RID: 5206
+	// Token: 0x0400144D RID: 5197
 	private licences licences_;
 
-	// Token: 0x04001457 RID: 5207
+	// Token: 0x0400144E RID: 5198
 	public int myID;
 }

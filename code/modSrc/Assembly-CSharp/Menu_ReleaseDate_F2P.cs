@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000157 RID: 343
+// Token: 0x02000156 RID: 342
 public class Menu_ReleaseDate_F2P : MonoBehaviour
 {
-	// Token: 0x06000CA6 RID: 3238 RVA: 0x0008980D File Offset: 0x00087A0D
+	// Token: 0x06000C90 RID: 3216 RVA: 0x00008C7B File Offset: 0x00006E7B
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000CA7 RID: 3239 RVA: 0x00089818 File Offset: 0x00087A18
+	// Token: 0x06000C91 RID: 3217 RVA: 0x000988FC File Offset: 0x00096AFC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_ReleaseDate_F2P : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CA8 RID: 3240 RVA: 0x000899B6 File Offset: 0x00087BB6
+	// Token: 0x06000C92 RID: 3218 RVA: 0x00008C83 File Offset: 0x00006E83
 	public void Init(gameScript game_, taskGame t_)
 	{
 		this.FindScripts();
@@ -78,7 +78,7 @@ public class Menu_ReleaseDate_F2P : MonoBehaviour
 		this.SLIDER_Wochen();
 	}
 
-	// Token: 0x06000CA9 RID: 3241 RVA: 0x000899F0 File Offset: 0x00087BF0
+	// Token: 0x06000C93 RID: 3219 RVA: 0x00098A9C File Offset: 0x00096C9C
 	public void SLIDER_Wochen()
 	{
 		if (this.uiObjects[2].GetComponent<Slider>().value > 1f)
@@ -91,14 +91,14 @@ public class Menu_ReleaseDate_F2P : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = this.tS_.GetText(1864);
 	}
 
-	// Token: 0x06000CAA RID: 3242 RVA: 0x00089A88 File Offset: 0x00087C88
+	// Token: 0x06000C94 RID: 3220 RVA: 0x00008CBC File Offset: 0x00006EBC
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000CAB RID: 3243 RVA: 0x00089AA4 File Offset: 0x00087CA4
+	// Token: 0x06000C95 RID: 3221 RVA: 0x00098B34 File Offset: 0x00096D34
 	public void BUTTON_Ok()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -114,7 +114,7 @@ public class Menu_ReleaseDate_F2P : MonoBehaviour
 		}
 		else
 		{
-			this.gS_.SetPublisher(this.mS_.myID);
+			this.gS_.SetPublisher(-1);
 			this.gS_.SetOnMarket();
 			this.guiMain_.ActivateMenu(this.guiMain_.uiObjects[71]);
 			this.guiMain_.uiObjects[71].GetComponent<Menu_Dev_XP>().Init(this.gS_);
@@ -123,51 +123,51 @@ public class Menu_ReleaseDate_F2P : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001113 RID: 4371
+	// Token: 0x0400110B RID: 4363
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001114 RID: 4372
+	// Token: 0x0400110C RID: 4364
 	private GameObject main_;
 
-	// Token: 0x04001115 RID: 4373
+	// Token: 0x0400110D RID: 4365
 	private mainScript mS_;
 
-	// Token: 0x04001116 RID: 4374
+	// Token: 0x0400110E RID: 4366
 	private textScript tS_;
 
-	// Token: 0x04001117 RID: 4375
+	// Token: 0x0400110F RID: 4367
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001118 RID: 4376
+	// Token: 0x04001110 RID: 4368
 	private sfxScript sfx_;
 
-	// Token: 0x04001119 RID: 4377
+	// Token: 0x04001111 RID: 4369
 	private genres genres_;
 
-	// Token: 0x0400111A RID: 4378
+	// Token: 0x04001112 RID: 4370
 	private themes themes_;
 
-	// Token: 0x0400111B RID: 4379
+	// Token: 0x04001113 RID: 4371
 	private licences licences_;
 
-	// Token: 0x0400111C RID: 4380
+	// Token: 0x04001114 RID: 4372
 	private engineFeatures eF_;
 
-	// Token: 0x0400111D RID: 4381
+	// Token: 0x04001115 RID: 4373
 	private cameraMovementScript cmS_;
 
-	// Token: 0x0400111E RID: 4382
+	// Token: 0x04001116 RID: 4374
 	private unlockScript unlock_;
 
-	// Token: 0x0400111F RID: 4383
+	// Token: 0x04001117 RID: 4375
 	private gameplayFeatures gF_;
 
-	// Token: 0x04001120 RID: 4384
+	// Token: 0x04001118 RID: 4376
 	private games games_;
 
-	// Token: 0x04001121 RID: 4385
+	// Token: 0x04001119 RID: 4377
 	private gameScript gS_;
 
-	// Token: 0x04001122 RID: 4386
+	// Token: 0x0400111A RID: 4378
 	private taskGame task_;
 }

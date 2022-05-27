@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001D8 RID: 472
+// Token: 0x020001D7 RID: 471
 public class Menu_RandomEventGlobal : MonoBehaviour
 {
-	// Token: 0x060011CB RID: 4555 RVA: 0x000BB729 File Offset: 0x000B9929
+	// Token: 0x060011B1 RID: 4529 RVA: 0x0000C631 File Offset: 0x0000A831
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060011CC RID: 4556 RVA: 0x000BB734 File Offset: 0x000B9934
+	// Token: 0x060011B2 RID: 4530 RVA: 0x000C6948 File Offset: 0x000C4B48
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_RandomEventGlobal : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011CD RID: 4557 RVA: 0x000BB7FC File Offset: 0x000B99FC
+	// Token: 0x060011B3 RID: 4531 RVA: 0x0000C639 File Offset: 0x0000A839
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -49,7 +49,7 @@ public class Menu_RandomEventGlobal : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011CE RID: 4558 RVA: 0x000BB818 File Offset: 0x000B9A18
+	// Token: 0x060011B4 RID: 4532 RVA: 0x000C6A10 File Offset: 0x000C4C10
 	public void Init(int forceEvent)
 	{
 		this.FindScripts();
@@ -169,7 +169,7 @@ public class Menu_RandomEventGlobal : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011CF RID: 4559 RVA: 0x000BBE1C File Offset: 0x000BA01C
+	// Token: 0x060011B5 RID: 4533 RVA: 0x000C7014 File Offset: 0x000C5214
 	public void History()
 	{
 		this.FindScripts();
@@ -253,7 +253,7 @@ public class Menu_RandomEventGlobal : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060011D0 RID: 4560 RVA: 0x000BC0B1 File Offset: 0x000BA2B1
+	// Token: 0x060011B6 RID: 4534 RVA: 0x0000C654 File Offset: 0x0000A854
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -261,7 +261,7 @@ public class Menu_RandomEventGlobal : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060011D1 RID: 4561 RVA: 0x000BC0B1 File Offset: 0x000BA2B1
+	// Token: 0x060011B7 RID: 4535 RVA: 0x0000C654 File Offset: 0x0000A854
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -269,27 +269,27 @@ public class Menu_RandomEventGlobal : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001645 RID: 5701
+	// Token: 0x0400163C RID: 5692
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001646 RID: 5702
+	// Token: 0x0400163D RID: 5693
 	private GameObject main_;
 
-	// Token: 0x04001647 RID: 5703
+	// Token: 0x0400163E RID: 5694
 	private mainScript mS_;
 
-	// Token: 0x04001648 RID: 5704
+	// Token: 0x0400163F RID: 5695
 	private textScript tS_;
 
-	// Token: 0x04001649 RID: 5705
+	// Token: 0x04001640 RID: 5696
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400164A RID: 5706
+	// Token: 0x04001641 RID: 5697
 	private sfxScript sfx_;
 
-	// Token: 0x0400164B RID: 5707
+	// Token: 0x04001642 RID: 5698
 	private unlockScript unlock_;
 
-	// Token: 0x0400164C RID: 5708
+	// Token: 0x04001643 RID: 5699
 	private bool closeMenu;
 }

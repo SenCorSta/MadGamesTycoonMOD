@@ -4,29 +4,29 @@ using UnityEngine;
 
 namespace ReachableGames.PostLinerPro
 {
-	// Token: 0x020003F4 RID: 1012
+	// Token: 0x020003F1 RID: 1009
 	[ExecuteInEditMode]
 	public class PostLinerRenderer : MonoBehaviour
 	{
-		// Token: 0x06002404 RID: 9220 RVA: 0x001739AA File Offset: 0x00171BAA
+		// Token: 0x060023B1 RID: 9137 RVA: 0x000184D4 File Offset: 0x000166D4
 		private void Awake()
 		{
 			PostLinerRenderer.Instance = null;
 		}
 
-		// Token: 0x06002405 RID: 9221 RVA: 0x001739B2 File Offset: 0x00171BB2
+		// Token: 0x060023B2 RID: 9138 RVA: 0x000184DC File Offset: 0x000166DC
 		private void Start()
 		{
 			PostLinerRenderer.Instance = this;
 		}
 
-		// Token: 0x06002406 RID: 9222 RVA: 0x001739AA File Offset: 0x00171BAA
+		// Token: 0x060023B3 RID: 9139 RVA: 0x000184D4 File Offset: 0x000166D4
 		private void OnDestroy()
 		{
 			PostLinerRenderer.Instance = null;
 		}
 
-		// Token: 0x06002407 RID: 9223 RVA: 0x001739BA File Offset: 0x00171BBA
+		// Token: 0x060023B4 RID: 9140 RVA: 0x000184E4 File Offset: 0x000166E4
 		public void ClearAllOutlines()
 		{
 			this._recursiveList.Clear();
@@ -34,7 +34,7 @@ namespace ReachableGames.PostLinerPro
 			this._objectLayers.Clear();
 		}
 
-		// Token: 0x06002408 RID: 9224 RVA: 0x001739DD File Offset: 0x00171BDD
+		// Token: 0x060023B5 RID: 9141 RVA: 0x00018507 File Offset: 0x00016707
 		public void AddToOutlines(Transform t)
 		{
 			this.DoRecursive(t, delegate(Transform o)
@@ -43,7 +43,7 @@ namespace ReachableGames.PostLinerPro
 			});
 		}
 
-		// Token: 0x06002409 RID: 9225 RVA: 0x001739F2 File Offset: 0x00171BF2
+		// Token: 0x060023B6 RID: 9142 RVA: 0x0001851C File Offset: 0x0001671C
 		public void RemoveFromOutlines(Transform t)
 		{
 			this.DoRecursive(t, delegate(Transform o)
@@ -52,7 +52,7 @@ namespace ReachableGames.PostLinerPro
 			});
 		}
 
-		// Token: 0x0600240A RID: 9226 RVA: 0x00173A08 File Offset: 0x00171C08
+		// Token: 0x060023B7 RID: 9143 RVA: 0x00170BF8 File Offset: 0x0016EDF8
 		private void DoRecursive(Transform root, PostLinerRenderer.DoAction action)
 		{
 			this._recursiveList.Clear();
@@ -69,13 +69,13 @@ namespace ReachableGames.PostLinerPro
 			}
 		}
 
-		// Token: 0x0600240B RID: 9227 RVA: 0x00173A9C File Offset: 0x00171C9C
+		// Token: 0x060023B8 RID: 9144 RVA: 0x00018531 File Offset: 0x00016731
 		public void OnPreRender()
 		{
 			this.UpdateRenderTexture(Camera.current);
 		}
 
-		// Token: 0x0600240C RID: 9228 RVA: 0x00173AAC File Offset: 0x00171CAC
+		// Token: 0x060023B9 RID: 9145 RVA: 0x00170C8C File Offset: 0x0016EE8C
 		private void UpdateRenderTexture(Camera c)
 		{
 			if (c.depthTextureMode == DepthTextureMode.None)
@@ -142,33 +142,33 @@ namespace ReachableGames.PostLinerPro
 			goto IL_92;
 		}
 
-		// Token: 0x04002E23 RID: 11811
+		// Token: 0x04002E0D RID: 11789
 		[HideInInspector]
 		public int _outlineLayer;
 
-		// Token: 0x04002E24 RID: 11812
+		// Token: 0x04002E0E RID: 11790
 		private Camera _hiddenCamera;
 
-		// Token: 0x04002E25 RID: 11813
+		// Token: 0x04002E0F RID: 11791
 		private RenderTexture _renderTexture;
 
-		// Token: 0x04002E26 RID: 11814
+		// Token: 0x04002E10 RID: 11792
 		private static int _globalTextureId = Shader.PropertyToID("_OutlineDepth");
 
-		// Token: 0x04002E27 RID: 11815
+		// Token: 0x04002E11 RID: 11793
 		private HashSet<Transform> _outlineObjects = new HashSet<Transform>();
 
-		// Token: 0x04002E28 RID: 11816
+		// Token: 0x04002E12 RID: 11794
 		private List<int> _objectLayers = new List<int>();
 
-		// Token: 0x04002E29 RID: 11817
+		// Token: 0x04002E13 RID: 11795
 		public static PostLinerRenderer Instance = null;
 
-		// Token: 0x04002E2A RID: 11818
+		// Token: 0x04002E14 RID: 11796
 		private Queue<Transform> _recursiveList = new Queue<Transform>();
 
-		// Token: 0x020003F5 RID: 1013
-		// (Invoke) Token: 0x06002412 RID: 9234
+		// Token: 0x020003F2 RID: 1010
+		// (Invoke) Token: 0x060023BF RID: 9151
 		private delegate void DoAction(Transform g);
 	}
 }

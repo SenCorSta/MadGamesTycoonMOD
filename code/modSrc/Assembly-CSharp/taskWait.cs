@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000320 RID: 800
+// Token: 0x0200031D RID: 797
 public class taskWait : MonoBehaviour
 {
-	// Token: 0x06001C63 RID: 7267 RVA: 0x001181D3 File Offset: 0x001163D3
+	// Token: 0x06001C19 RID: 7193 RVA: 0x00013580 File Offset: 0x00011780
 	private void Awake()
 	{
 		base.transform.position = new Vector3(260f, 0f, 0f);
 	}
 
-	// Token: 0x06001C64 RID: 7268 RVA: 0x001181F4 File Offset: 0x001163F4
+	// Token: 0x06001C1A RID: 7194 RVA: 0x000135A1 File Offset: 0x000117A1
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001C65 RID: 7269 RVA: 0x001181FC File Offset: 0x001163FC
+	// Token: 0x06001C1B RID: 7195 RVA: 0x0011A62C File Offset: 0x0011882C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class taskWait : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C66 RID: 7270 RVA: 0x001182A2 File Offset: 0x001164A2
+	// Token: 0x06001C1C RID: 7196 RVA: 0x000135A9 File Offset: 0x000117A9
 	public void Init(bool fromSavegame)
 	{
 		if (!fromSavegame)
@@ -51,13 +51,13 @@ public class taskWait : MonoBehaviour
 		base.name = "Task_" + this.myID.ToString();
 	}
 
-	// Token: 0x06001C67 RID: 7271 RVA: 0x001182D3 File Offset: 0x001164D3
+	// Token: 0x06001C1D RID: 7197 RVA: 0x000135DA File Offset: 0x000117DA
 	private void Update()
 	{
 		this.AutomaticWait(this.art);
 	}
 
-	// Token: 0x06001C68 RID: 7272 RVA: 0x001182E4 File Offset: 0x001164E4
+	// Token: 0x06001C1E RID: 7198 RVA: 0x0011A6D4 File Offset: 0x001188D4
 	public Sprite GetPic()
 	{
 		this.FindScripts();
@@ -68,7 +68,7 @@ public class taskWait : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06001C69 RID: 7273 RVA: 0x00118314 File Offset: 0x00116514
+	// Token: 0x06001C1F RID: 7199 RVA: 0x0011A704 File Offset: 0x00118904
 	private void AutomaticWait(int art_)
 	{
 		if (art_ == -1)
@@ -117,33 +117,33 @@ public class taskWait : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C6A RID: 7274 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06001C20 RID: 7200 RVA: 0x00004174 File Offset: 0x00002374
 	public void Abbrechen()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04002366 RID: 9062
+	// Token: 0x0400234C RID: 9036
 	public int myID = -1;
 
-	// Token: 0x04002367 RID: 9063
+	// Token: 0x0400234D RID: 9037
 	public int art = -1;
 
-	// Token: 0x04002368 RID: 9064
+	// Token: 0x0400234E RID: 9038
 	private float waitTimer = 10f;
 
-	// Token: 0x04002369 RID: 9065
+	// Token: 0x0400234F RID: 9039
 	private GameObject main_;
 
-	// Token: 0x0400236A RID: 9066
+	// Token: 0x04002350 RID: 9040
 	public mainScript mS_;
 
-	// Token: 0x0400236B RID: 9067
+	// Token: 0x04002351 RID: 9041
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400236C RID: 9068
+	// Token: 0x04002352 RID: 9042
 	private textScript tS_;
 
-	// Token: 0x0400236D RID: 9069
+	// Token: 0x04002353 RID: 9043
 	private roomDataScript rdS_;
 }

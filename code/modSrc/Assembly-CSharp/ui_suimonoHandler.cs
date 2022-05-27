@@ -6,7 +6,7 @@ using UnityEngine.UI;
 // Token: 0x0200003F RID: 63
 public class ui_suimonoHandler : MonoBehaviour
 {
-	// Token: 0x060000E3 RID: 227 RVA: 0x0000B084 File Offset: 0x00009284
+	// Token: 0x060000E3 RID: 227 RVA: 0x000214BC File Offset: 0x0001F6BC
 	private void Start()
 	{
 		this.lightObject = GameObject.Find("Directional Light").GetComponent<Transform>();
@@ -18,7 +18,7 @@ public class ui_suimonoHandler : MonoBehaviour
 		this.sliderBeaufort = GameObject.Find("Slider_Beaufort").GetComponent<Slider>();
 	}
 
-	// Token: 0x060000E4 RID: 228 RVA: 0x0000B120 File Offset: 0x00009320
+	// Token: 0x060000E4 RID: 228 RVA: 0x00021558 File Offset: 0x0001F758
 	private void LateUpdate()
 	{
 		if (this.uiCanvasScale != null)

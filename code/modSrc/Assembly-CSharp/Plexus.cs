@@ -6,7 +6,7 @@ using UnityEngine;
 // Token: 0x0200001F RID: 31
 public class Plexus : MonoBehaviour
 {
-	// Token: 0x06000086 RID: 134 RVA: 0x0000491C File Offset: 0x00002B1C
+	// Token: 0x06000086 RID: 134 RVA: 0x0001B098 File Offset: 0x00019298
 	private void Start()
 	{
 		this.lineMaterial.SetVector("_BoxDims", new Vector4(this.box.x, this.box.y, this.box.z, 1f));
@@ -33,14 +33,14 @@ public class Plexus : MonoBehaviour
 		base.StartCoroutine(this.ConnectDots());
 	}
 
-	// Token: 0x06000087 RID: 135 RVA: 0x00004A7F File Offset: 0x00002C7F
+	// Token: 0x06000087 RID: 135 RVA: 0x00002657 File Offset: 0x00000857
 	private void Update()
 	{
 		this.MovePoints();
 		this.RenderLines();
 	}
 
-	// Token: 0x06000088 RID: 136 RVA: 0x00004A90 File Offset: 0x00002C90
+	// Token: 0x06000088 RID: 136 RVA: 0x0001B1FC File Offset: 0x000193FC
 	private void MovePoints()
 	{
 		int kernelIndex = this.plexus.FindKernel("MoveParticels");
@@ -63,13 +63,13 @@ public class Plexus : MonoBehaviour
 		computeBuffer3.Release();
 	}
 
-	// Token: 0x06000089 RID: 137 RVA: 0x00004BAC File Offset: 0x00002DAC
+	// Token: 0x06000089 RID: 137 RVA: 0x0001B318 File Offset: 0x00019518
 	private static float DistanceSqr(Vector3 p1, Vector3 p2)
 	{
 		return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y) + (p1.z - p2.z) * (p1.z - p2.z);
 	}
 
-	// Token: 0x0600008A RID: 138 RVA: 0x00004C0C File Offset: 0x00002E0C
+	// Token: 0x0600008A RID: 138 RVA: 0x0001B378 File Offset: 0x00019578
 	private void RenderLines()
 	{
 		this.lineMesh = new Mesh();
@@ -100,7 +100,7 @@ public class Plexus : MonoBehaviour
 		this.lineVerts.Clear();
 	}
 
-	// Token: 0x0600008B RID: 139 RVA: 0x00004E77 File Offset: 0x00003077
+	// Token: 0x0600008B RID: 139 RVA: 0x00002665 File Offset: 0x00000865
 	private IEnumerator ConnectDots()
 	{
 		WaitForEndOfFrame wfeof = new WaitForEndOfFrame();

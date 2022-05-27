@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020002C8 RID: 712
+// Token: 0x020002C5 RID: 709
 public class object_mp
 {
-	// Token: 0x060019CD RID: 6605 RVA: 0x001073A5 File Offset: 0x001055A5
+	// Token: 0x06001984 RID: 6532 RVA: 0x000111B8 File Offset: 0x0000F3B8
 	public object_mp(int id_, int typ_, float posX_, float posY_, float rotation_)
 	{
 		this.id = id_;
@@ -13,18 +13,18 @@ public class object_mp
 		this.rotation = rotation_;
 	}
 
-	// Token: 0x040020C5 RID: 8389
+	// Token: 0x040020A6 RID: 8358
 	public int id;
 
-	// Token: 0x040020C6 RID: 8390
+	// Token: 0x040020A7 RID: 8359
 	public int typ;
 
-	// Token: 0x040020C7 RID: 8391
+	// Token: 0x040020A8 RID: 8360
 	public float posX;
 
-	// Token: 0x040020C8 RID: 8392
+	// Token: 0x040020A9 RID: 8361
 	public float posY;
 
-	// Token: 0x040020C9 RID: 8393
+	// Token: 0x040020AA RID: 8362
 	public float rotation;
 }

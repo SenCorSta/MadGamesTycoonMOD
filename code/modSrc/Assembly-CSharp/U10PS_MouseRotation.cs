@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x0200001D RID: 29
 public class U10PS_MouseRotation : MonoBehaviour
 {
-	// Token: 0x06000080 RID: 128 RVA: 0x00004781 File Offset: 0x00002981
+	// Token: 0x06000080 RID: 128 RVA: 0x00002603 File Offset: 0x00000803
 	private void Start()
 	{
 		if (this.lockMouse)
@@ -14,7 +14,7 @@ public class U10PS_MouseRotation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000081 RID: 129 RVA: 0x00004798 File Offset: 0x00002998
+	// Token: 0x06000081 RID: 129 RVA: 0x0001AF50 File Offset: 0x00019150
 	private void Update()
 	{
 		this.yValue = base.transform.eulerAngles.y + this.sensitivity * Input.GetAxis("Mouse X");

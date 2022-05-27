@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002E7 RID: 743
+// Token: 0x020002E4 RID: 740
 public class eyeScript : MonoBehaviour
 {
-	// Token: 0x06001A65 RID: 6757 RVA: 0x0010ADB2 File Offset: 0x00108FB2
+	// Token: 0x06001A1B RID: 6683 RVA: 0x000119AB File Offset: 0x0000FBAB
 	private void Start()
 	{
 		this.myCamera = GameObject.Find("Camera");
 		this.myAnimation = base.GetComponent<Animation>();
 	}
 
-	// Token: 0x06001A66 RID: 6758 RVA: 0x0010ADD0 File Offset: 0x00108FD0
+	// Token: 0x06001A1C RID: 6684 RVA: 0x0010ED7C File Offset: 0x0010CF7C
 	private void Update()
 	{
 		this.timer += Time.deltaTime;
@@ -30,12 +30,12 @@ public class eyeScript : MonoBehaviour
 		Debug.Log("PLAY");
 	}
 
-	// Token: 0x0400216A RID: 8554
+	// Token: 0x04002150 RID: 8528
 	public float timer;
 
-	// Token: 0x0400216B RID: 8555
+	// Token: 0x04002151 RID: 8529
 	public GameObject myCamera;
 
-	// Token: 0x0400216C RID: 8556
+	// Token: 0x04002152 RID: 8530
 	public Animation myAnimation;
 }

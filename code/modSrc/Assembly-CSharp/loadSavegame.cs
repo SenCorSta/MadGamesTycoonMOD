@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020002F0 RID: 752
+// Token: 0x020002ED RID: 749
 public class loadSavegame : MonoBehaviour
 {
-	// Token: 0x06001A89 RID: 6793 RVA: 0x0010B773 File Offset: 0x00109973
+	// Token: 0x06001A3F RID: 6719 RVA: 0x00011ABF File Offset: 0x0000FCBF
 	private void Start()
 	{
 		this.FindScripts();
@@ -20,7 +20,7 @@ public class loadSavegame : MonoBehaviour
 		this.guiMain_.uiObjects[151].SetActive(true);
 	}
 
-	// Token: 0x06001A8A RID: 6794 RVA: 0x0010B7A4 File Offset: 0x001099A4
+	// Token: 0x06001A40 RID: 6720 RVA: 0x0010F628 File Offset: 0x0010D828
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -53,7 +53,7 @@ public class loadSavegame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A8B RID: 6795 RVA: 0x0010B88C File Offset: 0x00109A8C
+	// Token: 0x06001A41 RID: 6721 RVA: 0x0010F710 File Offset: 0x0010D910
 	private bool ShouldSavegameLoad()
 	{
 		int @int = PlayerPrefs.GetInt("LoadSavegame", -1);
@@ -66,7 +66,7 @@ public class loadSavegame : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001A8C RID: 6796 RVA: 0x0010B8C8 File Offset: 0x00109AC8
+	// Token: 0x06001A42 RID: 6722 RVA: 0x0010F74C File Offset: 0x0010D94C
 	private bool ShouldMultiplayerSavegameLoad()
 	{
 		int @int = PlayerPrefs.GetInt("LoadMPSavegame", -1);
@@ -81,7 +81,7 @@ public class loadSavegame : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001A8D RID: 6797 RVA: 0x0010B91D File Offset: 0x00109B1D
+	// Token: 0x06001A43 RID: 6723 RVA: 0x00011AF0 File Offset: 0x0000FCF0
 	private IEnumerator LoadSaveGameAfterOneFrame(int i)
 	{
 		this.sfX_.SetRandomMusic();
@@ -112,6 +112,10 @@ public class loadSavegame : MonoBehaviour
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				this.mpCalls_.SERVER_Send_Load(this.mS_.multiplayerSaveID);
+				if (this.save_.savegamePlayerID != this.mpCalls_.myID)
+				{
+					this.mpCalls_.myID = this.save_.savegamePlayerID;
+				}
 			}
 			else
 			{
@@ -120,35 +124,39 @@ public class loadSavegame : MonoBehaviour
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
 				yield return new WaitForEndOfFrame();
+				if (this.save_.savegamePlayerID != this.mpCalls_.myID)
+				{
+					this.mpCalls_.myID = this.save_.savegamePlayerID;
+				}
 			}
 		}
 		yield break;
 	}
 
-	// Token: 0x0400218E RID: 8590
+	// Token: 0x04002174 RID: 8564
 	private GameObject main_;
 
-	// Token: 0x0400218F RID: 8591
+	// Token: 0x04002175 RID: 8565
 	private mainScript mS_;
 
-	// Token: 0x04002190 RID: 8592
+	// Token: 0x04002176 RID: 8566
 	private mpMain mpMain_;
 
-	// Token: 0x04002191 RID: 8593
+	// Token: 0x04002177 RID: 8567
 	private savegameScript save_;
 
-	// Token: 0x04002192 RID: 8594
+	// Token: 0x04002178 RID: 8568
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002193 RID: 8595
+	// Token: 0x04002179 RID: 8569
 	private mpCalls mpCalls_;
 
-	// Token: 0x04002194 RID: 8596
+	// Token: 0x0400217A RID: 8570
 	private sfxScript sfX_;
 
-	// Token: 0x04002195 RID: 8597
+	// Token: 0x0400217B RID: 8571
 	private ES3Writer writer;
 
-	// Token: 0x04002196 RID: 8598
+	// Token: 0x0400217C RID: 8572
 	private ES3Reader reader;
 }

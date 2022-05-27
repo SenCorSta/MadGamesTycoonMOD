@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // Token: 0x0200008C RID: 140
 public class Item_DevGame_PublisherBeziehung : MonoBehaviour
 {
-	// Token: 0x06000594 RID: 1428 RVA: 0x0004A768 File Offset: 0x00048968
+	// Token: 0x0600058B RID: 1419 RVA: 0x0005D7C0 File Offset: 0x0005B9C0
 	public void SetData(string text_, Sprite sprite_, int stars_)
 	{
 		this.uiObjects[0].GetComponent<Text>().text = text_;
@@ -13,7 +13,7 @@ public class Item_DevGame_PublisherBeziehung : MonoBehaviour
 		this.guiMain_.DrawStarsColor(this.uiObjects[2], stars_, Color.red);
 	}
 
-	// Token: 0x06000595 RID: 1429 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x0600058C RID: 1420 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);

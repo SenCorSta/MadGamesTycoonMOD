@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001B4 RID: 436
+// Token: 0x020001B3 RID: 435
 public class Menu_MessageBoxSave : MonoBehaviour
 {
-	// Token: 0x0600107E RID: 4222 RVA: 0x000AF05A File Offset: 0x000AD25A
+	// Token: 0x06001064 RID: 4196 RVA: 0x0000B9A5 File Offset: 0x00009BA5
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600107F RID: 4223 RVA: 0x000AF064 File Offset: 0x000AD264
+	// Token: 0x06001065 RID: 4197 RVA: 0x000BB06C File Offset: 0x000B926C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_MessageBoxSave : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001080 RID: 4224 RVA: 0x000AF110 File Offset: 0x000AD310
+	// Token: 0x06001066 RID: 4198 RVA: 0x000BB118 File Offset: 0x000B9318
 	public void Init(int id_, bool close)
 	{
 		this.FindScripts();
@@ -61,14 +61,14 @@ public class Menu_MessageBoxSave : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = this.tS_.GetText(1443);
 	}
 
-	// Token: 0x06001081 RID: 4225 RVA: 0x000AF1C7 File Offset: 0x000AD3C7
+	// Token: 0x06001067 RID: 4199 RVA: 0x0000B9AD File Offset: 0x00009BAD
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001082 RID: 4226 RVA: 0x000AF1E4 File Offset: 0x000AD3E4
+	// Token: 0x06001068 RID: 4200 RVA: 0x000BB1D0 File Offset: 0x000B93D0
 	public void BUTTON_Yes()
 	{
 		if (this.uiObjects[1].GetComponent<Toggle>().isOn)
@@ -82,7 +82,7 @@ public class Menu_MessageBoxSave : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x06001083 RID: 4227 RVA: 0x000AF23C File Offset: 0x000AD43C
+	// Token: 0x06001069 RID: 4201 RVA: 0x000BB228 File Offset: 0x000B9428
 	public void BUTTON_No()
 	{
 		if (this.uiObjects[1].GetComponent<Toggle>().isOn)
@@ -108,27 +108,27 @@ public class Menu_MessageBoxSave : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x040014ED RID: 5357
+	// Token: 0x040014E2 RID: 5346
 	public GameObject[] uiObjects;
 
-	// Token: 0x040014EE RID: 5358
+	// Token: 0x040014E3 RID: 5347
 	private GameObject main_;
 
-	// Token: 0x040014EF RID: 5359
+	// Token: 0x040014E4 RID: 5348
 	private mainScript mS_;
 
-	// Token: 0x040014F0 RID: 5360
+	// Token: 0x040014E5 RID: 5349
 	private textScript tS_;
 
-	// Token: 0x040014F1 RID: 5361
+	// Token: 0x040014E6 RID: 5350
 	private GUI_Main guiMain_;
 
-	// Token: 0x040014F2 RID: 5362
+	// Token: 0x040014E7 RID: 5351
 	private sfxScript sfx_;
 
-	// Token: 0x040014F3 RID: 5363
+	// Token: 0x040014E8 RID: 5352
 	private bool closeMenu;
 
-	// Token: 0x040014F4 RID: 5364
+	// Token: 0x040014E9 RID: 5353
 	private int id;
 }

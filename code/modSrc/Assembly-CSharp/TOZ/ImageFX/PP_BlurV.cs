@@ -3,30 +3,30 @@ using UnityEngine;
 
 namespace TOZ.ImageFX
 {
-	// Token: 0x020003BB RID: 955
+	// Token: 0x020003B8 RID: 952
 	[ExecuteInEditMode]
 	public sealed class PP_BlurV : PostProcessBase
 	{
-		// Token: 0x0600231D RID: 8989 RVA: 0x0016F9C9 File Offset: 0x0016DBC9
+		// Token: 0x060022CA RID: 8906 RVA: 0x000174AC File Offset: 0x000156AC
 		private void Awake()
 		{
 			this.shd = Shader.Find("Hidden/TOZ/ImageFX/BlurV");
 		}
 
-		// Token: 0x0600231E RID: 8990 RVA: 0x0016F9DB File Offset: 0x0016DBDB
+		// Token: 0x060022CB RID: 8907 RVA: 0x000174BE File Offset: 0x000156BE
 		private void OnRenderImage(RenderTexture src, RenderTexture dest)
 		{
 			this.ApplyVariables();
 			Graphics.Blit(src, dest, this.mat);
 		}
 
-		// Token: 0x0600231F RID: 8991 RVA: 0x0016F9F0 File Offset: 0x0016DBF0
+		// Token: 0x060022CC RID: 8908 RVA: 0x000174D3 File Offset: 0x000156D3
 		private void ApplyVariables()
 		{
 			this.mat.SetFloat("_Strength", this.Strength);
 		}
 
-		// Token: 0x04002D2E RID: 11566
+		// Token: 0x04002D18 RID: 11544
 		public float Strength = 1f;
 	}
 }

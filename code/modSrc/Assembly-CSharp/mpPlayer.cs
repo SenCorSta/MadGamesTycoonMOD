@@ -2,22 +2,22 @@
 using Mirror;
 using UnityEngine;
 
-// Token: 0x020002CB RID: 715
+// Token: 0x020002C8 RID: 712
 public class mpPlayer : NetworkBehaviour
 {
-	// Token: 0x060019F1 RID: 6641 RVA: 0x00108D4F File Offset: 0x00106F4F
+	// Token: 0x060019A7 RID: 6567 RVA: 0x000114DD File Offset: 0x0000F6DD
 	private void Awake()
 	{
 		UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
 	}
 
-	// Token: 0x060019F2 RID: 6642 RVA: 0x00108D5C File Offset: 0x00106F5C
+	// Token: 0x060019A8 RID: 6568 RVA: 0x000114EA File Offset: 0x0000F6EA
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060019F3 RID: 6643 RVA: 0x00108D64 File Offset: 0x00106F64
+	// Token: 0x060019A9 RID: 6569 RVA: 0x000114F2 File Offset: 0x0000F6F2
 	private void FindScripts()
 	{
 		if (!this.mpCalls_)
@@ -26,12 +26,12 @@ public class mpPlayer : NetworkBehaviour
 		}
 	}
 
-	// Token: 0x060019F4 RID: 6644 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x060019AA RID: 6570 RVA: 0x00002098 File Offset: 0x00000298
 	private void Update()
 	{
 	}
 
-	// Token: 0x060019F5 RID: 6645 RVA: 0x00108D88 File Offset: 0x00106F88
+	// Token: 0x060019AB RID: 6571 RVA: 0x00011516 File Offset: 0x0000F716
 	public override void OnStartServer()
 	{
 		this.FindScripts();
@@ -39,7 +39,7 @@ public class mpPlayer : NetworkBehaviour
 		Debug.Log("OnStartServer()");
 	}
 
-	// Token: 0x060019F6 RID: 6646 RVA: 0x00108DAC File Offset: 0x00106FAC
+	// Token: 0x060019AC RID: 6572 RVA: 0x0001153A File Offset: 0x0000F73A
 	public override void OnStopServer()
 	{
 		this.FindScripts();
@@ -47,14 +47,14 @@ public class mpPlayer : NetworkBehaviour
 		Debug.Log("OnStopServer()");
 	}
 
-	// Token: 0x060019F8 RID: 6648 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x060019AE RID: 6574 RVA: 0x00002098 File Offset: 0x00000298
 	private void MirrorProcessed()
 	{
 	}
 
-	// Token: 0x040020E9 RID: 8425
+	// Token: 0x040020CF RID: 8399
 	public mpCalls mpCalls_;
 
-	// Token: 0x040020EA RID: 8426
+	// Token: 0x040020D0 RID: 8400
 	public int playerID = -1;
 }

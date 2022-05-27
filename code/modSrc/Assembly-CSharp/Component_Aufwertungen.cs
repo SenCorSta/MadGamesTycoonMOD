@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000108 RID: 264
+// Token: 0x02000107 RID: 263
 public class Component_Aufwertungen : MonoBehaviour
 {
-	// Token: 0x06000881 RID: 2177 RVA: 0x0005CFAF File Offset: 0x0005B1AF
+	// Token: 0x06000872 RID: 2162 RVA: 0x00006495 File Offset: 0x00004695
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000882 RID: 2178 RVA: 0x0005CFB8 File Offset: 0x0005B1B8
+	// Token: 0x06000873 RID: 2163 RVA: 0x0006EA44 File Offset: 0x0006CC44
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Component_Aufwertungen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000883 RID: 2179 RVA: 0x0005D158 File Offset: 0x0005B358
+	// Token: 0x06000874 RID: 2164 RVA: 0x0006EBE4 File Offset: 0x0006CDE4
 	public void Init(gameScript gS_)
 	{
 		if (!gS_)
@@ -150,51 +150,51 @@ public class Component_Aufwertungen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000CFD RID: 3325
+	// Token: 0x04000CF5 RID: 3317
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000CFE RID: 3326
+	// Token: 0x04000CF6 RID: 3318
 	public Sprite[] uiSprites;
 
-	// Token: 0x04000CFF RID: 3327
+	// Token: 0x04000CF7 RID: 3319
 	public Color[] colors;
 
-	// Token: 0x04000D00 RID: 3328
+	// Token: 0x04000CF8 RID: 3320
 	private GameObject main_;
 
-	// Token: 0x04000D01 RID: 3329
+	// Token: 0x04000CF9 RID: 3321
 	private mainScript mS_;
 
-	// Token: 0x04000D02 RID: 3330
+	// Token: 0x04000CFA RID: 3322
 	private textScript tS_;
 
-	// Token: 0x04000D03 RID: 3331
+	// Token: 0x04000CFB RID: 3323
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000D04 RID: 3332
+	// Token: 0x04000CFC RID: 3324
 	private sfxScript sfx_;
 
-	// Token: 0x04000D05 RID: 3333
+	// Token: 0x04000CFD RID: 3325
 	private genres genres_;
 
-	// Token: 0x04000D06 RID: 3334
+	// Token: 0x04000CFE RID: 3326
 	private themes themes_;
 
-	// Token: 0x04000D07 RID: 3335
+	// Token: 0x04000CFF RID: 3327
 	private licences licences_;
 
-	// Token: 0x04000D08 RID: 3336
+	// Token: 0x04000D00 RID: 3328
 	private engineFeatures eF_;
 
-	// Token: 0x04000D09 RID: 3337
+	// Token: 0x04000D01 RID: 3329
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04000D0A RID: 3338
+	// Token: 0x04000D02 RID: 3330
 	private unlockScript unlock_;
 
-	// Token: 0x04000D0B RID: 3339
+	// Token: 0x04000D03 RID: 3331
 	private gameplayFeatures gF_;
 
-	// Token: 0x04000D0C RID: 3340
+	// Token: 0x04000D04 RID: 3332
 	private games games_;
 }

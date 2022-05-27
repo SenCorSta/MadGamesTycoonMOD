@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001D4 RID: 468
+// Token: 0x020001D3 RID: 467
 public class Menu_RandomEventBugs : MonoBehaviour
 {
-	// Token: 0x060011AF RID: 4527 RVA: 0x000BA578 File Offset: 0x000B8778
+	// Token: 0x06001195 RID: 4501 RVA: 0x0000C50D File Offset: 0x0000A70D
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060011B0 RID: 4528 RVA: 0x000BA580 File Offset: 0x000B8780
+	// Token: 0x06001196 RID: 4502 RVA: 0x000C58C0 File Offset: 0x000C3AC0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_RandomEventBugs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011B1 RID: 4529 RVA: 0x000BA62A File Offset: 0x000B882A
+	// Token: 0x06001197 RID: 4503 RVA: 0x0000C515 File Offset: 0x0000A715
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -45,7 +45,7 @@ public class Menu_RandomEventBugs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011B2 RID: 4530 RVA: 0x000BA648 File Offset: 0x000B8848
+	// Token: 0x06001198 RID: 4504 RVA: 0x000C596C File Offset: 0x000C3B6C
 	public void Init(gameScript gS_)
 	{
 		if (!gS_)
@@ -65,7 +65,7 @@ public class Menu_RandomEventBugs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011B3 RID: 4531 RVA: 0x000BA6F5 File Offset: 0x000B88F5
+	// Token: 0x06001199 RID: 4505 RVA: 0x0000C530 File Offset: 0x0000A730
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -73,7 +73,7 @@ public class Menu_RandomEventBugs : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060011B4 RID: 4532 RVA: 0x000BA6F5 File Offset: 0x000B88F5
+	// Token: 0x0600119A RID: 4506 RVA: 0x0000C530 File Offset: 0x0000A730
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -81,21 +81,21 @@ public class Menu_RandomEventBugs : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0400162C RID: 5676
+	// Token: 0x04001623 RID: 5667
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400162D RID: 5677
+	// Token: 0x04001624 RID: 5668
 	private GameObject main_;
 
-	// Token: 0x0400162E RID: 5678
+	// Token: 0x04001625 RID: 5669
 	private mainScript mS_;
 
-	// Token: 0x0400162F RID: 5679
+	// Token: 0x04001626 RID: 5670
 	private textScript tS_;
 
-	// Token: 0x04001630 RID: 5680
+	// Token: 0x04001627 RID: 5671
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001631 RID: 5681
+	// Token: 0x04001628 RID: 5672
 	private sfxScript sfx_;
 }

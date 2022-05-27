@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x020003FA RID: 1018
+	// Token: 0x020003F7 RID: 1015
 	public class All1TextureOffsetOverTime : MonoBehaviour
 	{
-		// Token: 0x06002424 RID: 9252 RVA: 0x0017445C File Offset: 0x0017265C
+		// Token: 0x060023D1 RID: 9169 RVA: 0x00171534 File Offset: 0x0016F734
 		private void Start()
 		{
 			if (this.mat == null)
@@ -39,7 +39,7 @@ namespace AllIn1SpriteShader
 			this.DestroyComponentAndLogError(base.gameObject.name + "'s Material doesn't have a " + this.texturePropertyName + " property");
 		}
 
-		// Token: 0x06002425 RID: 9253 RVA: 0x00174528 File Offset: 0x00172728
+		// Token: 0x060023D2 RID: 9170 RVA: 0x00171600 File Offset: 0x0016F800
 		private void Update()
 		{
 			this.currOffset.x = this.currOffset.x + this.offsetSpeed.x * Time.deltaTime;
@@ -47,30 +47,30 @@ namespace AllIn1SpriteShader
 			this.mat.SetTextureOffset(this.textureShaderId, this.currOffset);
 		}
 
-		// Token: 0x06002426 RID: 9254 RVA: 0x0017458C File Offset: 0x0017278C
+		// Token: 0x060023D3 RID: 9171 RVA: 0x00018646 File Offset: 0x00016846
 		private void DestroyComponentAndLogError(string logError)
 		{
 			Debug.LogError(logError);
 			UnityEngine.Object.Destroy(this);
 		}
 
-		// Token: 0x04002E3E RID: 11838
+		// Token: 0x04002E28 RID: 11816
 		[SerializeField]
 		private string texturePropertyName = "_MainTex";
 
-		// Token: 0x04002E3F RID: 11839
+		// Token: 0x04002E29 RID: 11817
 		[SerializeField]
 		private Vector2 offsetSpeed;
 
-		// Token: 0x04002E40 RID: 11840
+		// Token: 0x04002E2A RID: 11818
 		[SerializeField]
 		[Header("If missing will search object Sprite Renderer or UI Image")]
 		private Material mat;
 
-		// Token: 0x04002E41 RID: 11841
+		// Token: 0x04002E2B RID: 11819
 		private int textureShaderId;
 
-		// Token: 0x04002E42 RID: 11842
+		// Token: 0x04002E2C RID: 11820
 		private Vector2 currOffset = Vector2.zero;
 	}
 }

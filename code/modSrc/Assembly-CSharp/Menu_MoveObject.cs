@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001B6 RID: 438
+// Token: 0x020001B5 RID: 437
 public class Menu_MoveObject : MonoBehaviour
 {
-	// Token: 0x0600108B RID: 4235 RVA: 0x000AF3DE File Offset: 0x000AD5DE
+	// Token: 0x06001071 RID: 4209 RVA: 0x0000BA28 File Offset: 0x00009C28
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600108C RID: 4236 RVA: 0x000AF3E8 File Offset: 0x000AD5E8
+	// Token: 0x06001072 RID: 4210 RVA: 0x000BB36C File Offset: 0x000B956C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -44,14 +44,14 @@ public class Menu_MoveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600108D RID: 4237 RVA: 0x000AF4CE File Offset: 0x000AD6CE
+	// Token: 0x06001073 RID: 4211 RVA: 0x0000BA30 File Offset: 0x00009C30
 	private void Update()
 	{
 		this.mS_.snapObject = this.uiObjects[0].GetComponent<Toggle>().isOn;
 		this.mS_.snapRotation = this.uiObjects[4].GetComponent<Toggle>().isOn;
 	}
 
-	// Token: 0x0600108E RID: 4238 RVA: 0x000AF50C File Offset: 0x000AD70C
+	// Token: 0x06001074 RID: 4212 RVA: 0x000BB454 File Offset: 0x000B9654
 	public void BUTTON_Sell()
 	{
 		bool flag = false;
@@ -78,7 +78,7 @@ public class Menu_MoveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600108F RID: 4239 RVA: 0x000AF5FC File Offset: 0x000AD7FC
+	// Token: 0x06001075 RID: 4213 RVA: 0x000BB544 File Offset: 0x000B9744
 	private void OnEnable()
 	{
 		this.FindScripts();
@@ -94,7 +94,7 @@ public class Menu_MoveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001090 RID: 4240 RVA: 0x000AF714 File Offset: 0x000AD914
+	// Token: 0x06001076 RID: 4214 RVA: 0x0000BA6C File Offset: 0x00009C6C
 	private void OnDisable()
 	{
 		if (this.mS_)
@@ -103,7 +103,7 @@ public class Menu_MoveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001091 RID: 4241 RVA: 0x000AF730 File Offset: 0x000AD930
+	// Token: 0x06001077 RID: 4215 RVA: 0x000BB65C File Offset: 0x000B985C
 	private string SetTooltip(int typ)
 	{
 		objectScript component = this.mapS_.prefabsInventar[typ].GetComponent<objectScript>();
@@ -177,7 +177,7 @@ public class Menu_MoveObject : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06001092 RID: 4242 RVA: 0x000AFA90 File Offset: 0x000ADC90
+	// Token: 0x06001078 RID: 4216 RVA: 0x0003D590 File Offset: 0x0003B790
 	private string GetQualitatStars(int i)
 	{
 		string result;
@@ -208,27 +208,27 @@ public class Menu_MoveObject : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x040014FC RID: 5372
+	// Token: 0x040014F1 RID: 5361
 	public GameObject[] uiObjects;
 
-	// Token: 0x040014FD RID: 5373
+	// Token: 0x040014F2 RID: 5362
 	private GameObject main_;
 
-	// Token: 0x040014FE RID: 5374
+	// Token: 0x040014F3 RID: 5363
 	private mainScript mS_;
 
-	// Token: 0x040014FF RID: 5375
+	// Token: 0x040014F4 RID: 5364
 	private textScript tS_;
 
-	// Token: 0x04001500 RID: 5376
+	// Token: 0x040014F5 RID: 5365
 	private mapScript mapS_;
 
-	// Token: 0x04001501 RID: 5377
+	// Token: 0x040014F6 RID: 5366
 	private unlockScript unlock_;
 
-	// Token: 0x04001502 RID: 5378
+	// Token: 0x040014F7 RID: 5367
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001503 RID: 5379
+	// Token: 0x040014F8 RID: 5368
 	private sfxScript sfx_;
 }

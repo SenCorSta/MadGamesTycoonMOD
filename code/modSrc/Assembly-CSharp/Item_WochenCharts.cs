@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000FD RID: 253
 public class Item_WochenCharts : MonoBehaviour
 {
-	// Token: 0x0600083B RID: 2107 RVA: 0x0005980E File Offset: 0x00057A0E
+	// Token: 0x06000832 RID: 2098 RVA: 0x00006397 File Offset: 0x00004597
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600083C RID: 2108 RVA: 0x00059818 File Offset: 0x00057A18
+	// Token: 0x06000833 RID: 2099 RVA: 0x0006B6F8 File Offset: 0x000698F8
 	public void SetData()
 	{
 		if (!this.game_)
@@ -19,11 +19,11 @@ public class Item_WochenCharts : MonoBehaviour
 			return;
 		}
 		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag();
-		if (this.game_.ownerID == this.mS_.myID || this.game_.publisherID == this.mS_.myID)
+		if (this.game_.playerGame)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
-		if (this.mS_.multiplayer && this.game_.GameFromMitspieler())
+		if (this.mS_.multiplayer && !this.game_.playerGame && this.game_.multiplayerSlot != -1 && this.game_.multiplayerSlot != this.mS_.GetMyMultiplayerID())
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[8];
 		}
@@ -33,7 +33,7 @@ public class Item_WochenCharts : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x0600083D RID: 2109 RVA: 0x00059960 File Offset: 0x00057B60
+	// Token: 0x06000834 RID: 2100 RVA: 0x0006B840 File Offset: 0x00069A40
 	private void Update()
 	{
 		int siblingIndex = base.gameObject.transform.GetSiblingIndex();
@@ -66,13 +66,13 @@ public class Item_WochenCharts : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600083E RID: 2110 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000835 RID: 2101 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600083F RID: 2111 RVA: 0x00059A9C File Offset: 0x00057C9C
+	// Token: 0x06000836 RID: 2102 RVA: 0x0006B97C File Offset: 0x00069B7C
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

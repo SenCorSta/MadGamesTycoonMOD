@@ -5,19 +5,19 @@ using UnityEngine.UI;
 // Token: 0x020000D3 RID: 211
 public class Item_KonsoleRemove : MonoBehaviour
 {
-	// Token: 0x0600073B RID: 1851 RVA: 0x00054327 File Offset: 0x00052527
+	// Token: 0x06000732 RID: 1842 RVA: 0x00005F00 File Offset: 0x00004100
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600073C RID: 1852 RVA: 0x0005432F File Offset: 0x0005252F
+	// Token: 0x06000733 RID: 1843 RVA: 0x00005F08 File Offset: 0x00004108
 	private void Update()
 	{
 		this.DataUpdate();
 	}
 
-	// Token: 0x0600073D RID: 1853 RVA: 0x00054337 File Offset: 0x00052537
+	// Token: 0x06000734 RID: 1844 RVA: 0x00005F10 File Offset: 0x00004110
 	private void DataUpdate()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -29,7 +29,7 @@ public class Item_KonsoleRemove : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600073E RID: 1854 RVA: 0x0005436C File Offset: 0x0005256C
+	// Token: 0x06000735 RID: 1845 RVA: 0x000667F8 File Offset: 0x000649F8
 	private void SetData()
 	{
 		if (!this.pS_)
@@ -44,13 +44,13 @@ public class Item_KonsoleRemove : MonoBehaviour
 		this.tooltip_.c = this.pS_.GetTooltip();
 	}
 
-	// Token: 0x0600073F RID: 1855 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000736 RID: 1846 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000740 RID: 1856 RVA: 0x0005442C File Offset: 0x0005262C
+	// Token: 0x06000737 RID: 1847 RVA: 0x000668B8 File Offset: 0x00064AB8
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

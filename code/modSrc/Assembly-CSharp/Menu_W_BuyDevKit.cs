@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001A0 RID: 416
+// Token: 0x0200019F RID: 415
 public class Menu_W_BuyDevKit : MonoBehaviour
 {
-	// Token: 0x06000FB7 RID: 4023 RVA: 0x000A7350 File Offset: 0x000A5550
+	// Token: 0x06000F9F RID: 3999 RVA: 0x0000B170 File Offset: 0x00009370
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000FB8 RID: 4024 RVA: 0x000A7358 File Offset: 0x000A5558
+	// Token: 0x06000FA0 RID: 4000 RVA: 0x000B3D60 File Offset: 0x000B1F60
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_W_BuyDevKit : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FB9 RID: 4025 RVA: 0x000A7404 File Offset: 0x000A5604
+	// Token: 0x06000FA1 RID: 4001 RVA: 0x000B3E0C File Offset: 0x000B200C
 	public void Init(platformScript script_)
 	{
 		if (!script_)
@@ -48,52 +48,52 @@ public class Menu_W_BuyDevKit : MonoBehaviour
 		this.pS_.SetPic(this.uiObjects[1]);
 	}
 
-	// Token: 0x06000FBA RID: 4026 RVA: 0x000A7451 File Offset: 0x000A5651
+	// Token: 0x06000FA2 RID: 4002 RVA: 0x0000B178 File Offset: 0x00009378
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000FBB RID: 4027 RVA: 0x000A746C File Offset: 0x000A566C
+	// Token: 0x06000FA3 RID: 4003 RVA: 0x000B3E5C File Offset: 0x000B205C
 	public void BUTTON_Yes()
 	{
 		this.pS_.inBesitz = true;
 		this.sfx_.PlaySound(3, true);
 		this.BUTTON_Abbrechen();
 		this.mS_.Pay((long)this.pS_.GetPrice(), 3);
-		if (this.mS_.multiplayer && !this.pS_.OwnerIsNPC())
+		if (this.pS_.multiplaySlot != -1)
 		{
 			if (this.mS_.mpCalls_.isServer)
 			{
-				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.myID, this.pS_.ownerID, 2, this.pS_.price);
+				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.mpCalls_.myID, this.pS_.multiplaySlot, 2, this.pS_.price);
 			}
 			if (this.mS_.mpCalls_.isClient)
 			{
-				this.mS_.mpCalls_.CLIENT_Send_Payment(this.pS_.ownerID, 2, this.pS_.price);
+				this.mS_.mpCalls_.CLIENT_Send_Payment(this.pS_.multiplaySlot, 2, this.pS_.price);
 			}
 		}
 		this.guiMain_.uiObjects[33].GetComponent<Menu_BuyDevKit>().TAB_DevKitsBuy(0);
 	}
 
-	// Token: 0x04001428 RID: 5160
+	// Token: 0x0400141F RID: 5151
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001429 RID: 5161
+	// Token: 0x04001420 RID: 5152
 	private platformScript pS_;
 
-	// Token: 0x0400142A RID: 5162
+	// Token: 0x04001421 RID: 5153
 	private GameObject main_;
 
-	// Token: 0x0400142B RID: 5163
+	// Token: 0x04001422 RID: 5154
 	private mainScript mS_;
 
-	// Token: 0x0400142C RID: 5164
+	// Token: 0x04001423 RID: 5155
 	private textScript tS_;
 
-	// Token: 0x0400142D RID: 5165
+	// Token: 0x04001424 RID: 5156
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400142E RID: 5166
+	// Token: 0x04001425 RID: 5157
 	private sfxScript sfx_;
 }

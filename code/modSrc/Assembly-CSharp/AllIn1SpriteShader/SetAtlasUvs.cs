@@ -4,23 +4,23 @@ using UnityEngine.UI;
 
 namespace AllIn1SpriteShader
 {
-	// Token: 0x02000406 RID: 1030
+	// Token: 0x02000403 RID: 1027
 	[ExecuteInEditMode]
 	public class SetAtlasUvs : MonoBehaviour
 	{
-		// Token: 0x06002453 RID: 9299 RVA: 0x00175125 File Offset: 0x00173325
+		// Token: 0x06002400 RID: 9216 RVA: 0x000187FD File Offset: 0x000169FD
 		private void Start()
 		{
 			this.Setup();
 		}
 
-		// Token: 0x06002454 RID: 9300 RVA: 0x00175125 File Offset: 0x00173325
+		// Token: 0x06002401 RID: 9217 RVA: 0x000187FD File Offset: 0x000169FD
 		private void Reset()
 		{
 			this.Setup();
 		}
 
-		// Token: 0x06002455 RID: 9301 RVA: 0x0017512D File Offset: 0x0017332D
+		// Token: 0x06002402 RID: 9218 RVA: 0x00018805 File Offset: 0x00016A05
 		private void Setup()
 		{
 			if (this.GetRendererReferencesIfNeeded())
@@ -33,7 +33,7 @@ namespace AllIn1SpriteShader
 			}
 		}
 
-		// Token: 0x06002456 RID: 9302 RVA: 0x0017515C File Offset: 0x0017335C
+		// Token: 0x06002403 RID: 9219 RVA: 0x00018834 File Offset: 0x00016A34
 		private void OnWillRenderObject()
 		{
 			if (this.updateEveryFrame)
@@ -42,7 +42,7 @@ namespace AllIn1SpriteShader
 			}
 		}
 
-		// Token: 0x06002457 RID: 9303 RVA: 0x0017516C File Offset: 0x0017336C
+		// Token: 0x06002404 RID: 9220 RVA: 0x00172048 File Offset: 0x00170248
 		public void GetAndSetUVs()
 		{
 			if (!this.GetRendererReferencesIfNeeded())
@@ -73,7 +73,7 @@ namespace AllIn1SpriteShader
 			this.uiImage.material.SetFloat("_MaxYUV", textureRect2.yMax);
 		}
 
-		// Token: 0x06002458 RID: 9304 RVA: 0x001753B0 File Offset: 0x001735B0
+		// Token: 0x06002405 RID: 9221 RVA: 0x0017228C File Offset: 0x0017048C
 		public void ResetAtlasUvs()
 		{
 			if (!this.GetRendererReferencesIfNeeded())
@@ -94,13 +94,13 @@ namespace AllIn1SpriteShader
 			this.uiImage.material.SetFloat("_MaxYUV", 1f);
 		}
 
-		// Token: 0x06002459 RID: 9305 RVA: 0x0017549F File Offset: 0x0017369F
+		// Token: 0x06002406 RID: 9222 RVA: 0x00018844 File Offset: 0x00016A44
 		public void UpdateEveryFrame(bool everyFrame)
 		{
 			this.updateEveryFrame = everyFrame;
 		}
 
-		// Token: 0x0600245A RID: 9306 RVA: 0x001754A8 File Offset: 0x001736A8
+		// Token: 0x06002407 RID: 9223 RVA: 0x0017237C File Offset: 0x0017057C
 		private bool GetRendererReferencesIfNeeded()
 		{
 			if (this.spriteRender == null)
@@ -145,20 +145,20 @@ namespace AllIn1SpriteShader
 			return true;
 		}
 
-		// Token: 0x04002E6B RID: 11883
+		// Token: 0x04002E55 RID: 11861
 		[SerializeField]
 		private bool updateEveryFrame;
 
-		// Token: 0x04002E6C RID: 11884
+		// Token: 0x04002E56 RID: 11862
 		private Renderer render;
 
-		// Token: 0x04002E6D RID: 11885
+		// Token: 0x04002E57 RID: 11863
 		private SpriteRenderer spriteRender;
 
-		// Token: 0x04002E6E RID: 11886
+		// Token: 0x04002E58 RID: 11864
 		private Image uiImage;
 
-		// Token: 0x04002E6F RID: 11887
+		// Token: 0x04002E59 RID: 11865
 		private bool isUI;
 	}
 }

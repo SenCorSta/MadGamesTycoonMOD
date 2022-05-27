@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002E8 RID: 744
+// Token: 0x020002E5 RID: 741
 public class fanletterTime : MonoBehaviour
 {
-	// Token: 0x06001A68 RID: 6760 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x06001A1E RID: 6686 RVA: 0x00002098 File Offset: 0x00000298
 	private void Start()
 	{
 	}
 
-	// Token: 0x06001A69 RID: 6761 RVA: 0x0010AE50 File Offset: 0x00109050
+	// Token: 0x06001A1F RID: 6687 RVA: 0x000119C9 File Offset: 0x0000FBC9
 	public void Init(float f)
 	{
 		this.anzeigeDauer = f;
@@ -17,7 +17,7 @@ public class fanletterTime : MonoBehaviour
 		this.pause = false;
 	}
 
-	// Token: 0x06001A6A RID: 6762 RVA: 0x0010AE6C File Offset: 0x0010906C
+	// Token: 0x06001A20 RID: 6688 RVA: 0x0010EDFC File Offset: 0x0010CFFC
 	private void Update()
 	{
 		this.timer += Time.deltaTime;
@@ -37,15 +37,15 @@ public class fanletterTime : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400216D RID: 8557
+	// Token: 0x04002153 RID: 8531
 	public float anzeigeDauer = 1f;
 
-	// Token: 0x0400216E RID: 8558
+	// Token: 0x04002154 RID: 8532
 	public float timer;
 
-	// Token: 0x0400216F RID: 8559
+	// Token: 0x04002155 RID: 8533
 	public Animation myAnimation;
 
-	// Token: 0x04002170 RID: 8560
+	// Token: 0x04002156 RID: 8534
 	public bool pause;
 }

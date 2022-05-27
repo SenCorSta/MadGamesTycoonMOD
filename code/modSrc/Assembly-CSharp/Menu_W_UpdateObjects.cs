@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001DB RID: 475
+// Token: 0x020001DA RID: 474
 public class Menu_W_UpdateObjects : MonoBehaviour
 {
-	// Token: 0x060011DF RID: 4575 RVA: 0x000BC60F File Offset: 0x000BA80F
+	// Token: 0x060011C5 RID: 4549 RVA: 0x0000C6D3 File Offset: 0x0000A8D3
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060011E0 RID: 4576 RVA: 0x000BC618 File Offset: 0x000BA818
+	// Token: 0x060011C6 RID: 4550 RVA: 0x000C776C File Offset: 0x000C596C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -35,14 +35,14 @@ public class Menu_W_UpdateObjects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011E1 RID: 4577 RVA: 0x000BC6C2 File Offset: 0x000BA8C2
+	// Token: 0x060011C7 RID: 4551 RVA: 0x0000C6DB File Offset: 0x0000A8DB
 	public void Init(roomScript script_)
 	{
 		this.FindScripts();
 		this.rS_ = script_;
 	}
 
-	// Token: 0x060011E2 RID: 4578 RVA: 0x000BC6D1 File Offset: 0x000BA8D1
+	// Token: 0x060011C8 RID: 4552 RVA: 0x0000C6EA File Offset: 0x0000A8EA
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -50,7 +50,7 @@ public class Menu_W_UpdateObjects : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060011E3 RID: 4579 RVA: 0x000BC6F7 File Offset: 0x000BA8F7
+	// Token: 0x060011C9 RID: 4553 RVA: 0x0000C710 File Offset: 0x0000A910
 	public void BUTTON_Yes()
 	{
 		if (this.rS_)
@@ -60,24 +60,24 @@ public class Menu_W_UpdateObjects : MonoBehaviour
 		this.BUTTON_Abbrechen();
 	}
 
-	// Token: 0x0400165C RID: 5724
+	// Token: 0x04001653 RID: 5715
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400165D RID: 5725
+	// Token: 0x04001654 RID: 5716
 	private roomScript rS_;
 
-	// Token: 0x0400165E RID: 5726
+	// Token: 0x04001655 RID: 5717
 	private GameObject main_;
 
-	// Token: 0x0400165F RID: 5727
+	// Token: 0x04001656 RID: 5718
 	private mainScript mS_;
 
-	// Token: 0x04001660 RID: 5728
+	// Token: 0x04001657 RID: 5719
 	private textScript tS_;
 
-	// Token: 0x04001661 RID: 5729
+	// Token: 0x04001658 RID: 5720
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001662 RID: 5730
+	// Token: 0x04001659 RID: 5721
 	private sfxScript sfx_;
 }

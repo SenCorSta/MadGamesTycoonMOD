@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200024D RID: 589
+// Token: 0x0200024C RID: 588
 public class Menu_Stats_MyKonsolen_AllTimeCharts : MonoBehaviour
 {
-	// Token: 0x060016DE RID: 5854 RVA: 0x000E5F2B File Offset: 0x000E412B
+	// Token: 0x060016B9 RID: 5817 RVA: 0x0000FE44 File Offset: 0x0000E044
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060016DF RID: 5855 RVA: 0x000E5F34 File Offset: 0x000E4134
+	// Token: 0x060016BA RID: 5818 RVA: 0x000ECCF0 File Offset: 0x000EAEF0
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_Stats_MyKonsolen_AllTimeCharts : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060016E0 RID: 5856 RVA: 0x000E5FFC File Offset: 0x000E41FC
+	// Token: 0x060016BB RID: 5819 RVA: 0x0000FE4C File Offset: 0x0000E04C
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -50,7 +50,7 @@ public class Menu_Stats_MyKonsolen_AllTimeCharts : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060016E1 RID: 5857 RVA: 0x000E6030 File Offset: 0x000E4230
+	// Token: 0x060016BC RID: 5820 RVA: 0x000ECDB8 File Offset: 0x000EAFB8
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -63,13 +63,13 @@ public class Menu_Stats_MyKonsolen_AllTimeCharts : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060016E2 RID: 5858 RVA: 0x000E6074 File Offset: 0x000E4274
+	// Token: 0x060016BD RID: 5821 RVA: 0x0000FE7E File Offset: 0x0000E07E
 	private void OnEnable()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060016E3 RID: 5859 RVA: 0x000E607C File Offset: 0x000E427C
+	// Token: 0x060016BE RID: 5822 RVA: 0x0000FE86 File Offset: 0x0000E086
 	public void Init()
 	{
 		this.FindScripts();
@@ -77,7 +77,7 @@ public class Menu_Stats_MyKonsolen_AllTimeCharts : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060016E4 RID: 5860 RVA: 0x000E6090 File Offset: 0x000E4290
+	// Token: 0x060016BF RID: 5823 RVA: 0x000ECDFC File Offset: 0x000EAFFC
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[4].name);
@@ -91,7 +91,7 @@ public class Menu_Stats_MyKonsolen_AllTimeCharts : MonoBehaviour
 		this.uiObjects[4].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x060016E5 RID: 5861 RVA: 0x000E6138 File Offset: 0x000E4338
+	// Token: 0x060016C0 RID: 5824 RVA: 0x000ECEA4 File Offset: 0x000EB0A4
 	private void SetData()
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
@@ -121,20 +121,20 @@ public class Menu_Stats_MyKonsolen_AllTimeCharts : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x060016E6 RID: 5862 RVA: 0x000E627C File Offset: 0x000E447C
+	// Token: 0x060016C1 RID: 5825 RVA: 0x000ECFE8 File Offset: 0x000EB1E8
 	public bool CheckKonsoleData(platformScript script_)
 	{
 		return script_ && script_.isUnlocked && script_.units > 0 && (script_.typ == 1 || script_.typ == 2) && (this.uiObjects[4].GetComponent<Dropdown>().value == 0 || (this.uiObjects[4].GetComponent<Dropdown>().value == 1 && script_.typ == 1) || (this.uiObjects[4].GetComponent<Dropdown>().value == 2 && script_.typ == 2));
 	}
 
-	// Token: 0x060016E7 RID: 5863 RVA: 0x000E6307 File Offset: 0x000E4507
+	// Token: 0x060016C2 RID: 5826 RVA: 0x0000FE9A File Offset: 0x0000E09A
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060016E8 RID: 5864 RVA: 0x000E6324 File Offset: 0x000E4524
+	// Token: 0x060016C3 RID: 5827 RVA: 0x000ED074 File Offset: 0x000EB274
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[4].GetComponent<Dropdown>().value;
@@ -142,27 +142,27 @@ public class Menu_Stats_MyKonsolen_AllTimeCharts : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x04001AA6 RID: 6822
+	// Token: 0x04001A9D RID: 6813
 	private mainScript mS_;
 
-	// Token: 0x04001AA7 RID: 6823
+	// Token: 0x04001A9E RID: 6814
 	private GameObject main_;
 
-	// Token: 0x04001AA8 RID: 6824
+	// Token: 0x04001A9F RID: 6815
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001AA9 RID: 6825
+	// Token: 0x04001AA0 RID: 6816
 	private sfxScript sfx_;
 
-	// Token: 0x04001AAA RID: 6826
+	// Token: 0x04001AA1 RID: 6817
 	private textScript tS_;
 
-	// Token: 0x04001AAB RID: 6827
+	// Token: 0x04001AA2 RID: 6818
 	private genres genres_;
 
-	// Token: 0x04001AAC RID: 6828
+	// Token: 0x04001AA3 RID: 6819
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001AAD RID: 6829
+	// Token: 0x04001AA4 RID: 6820
 	public GameObject[] uiObjects;
 }

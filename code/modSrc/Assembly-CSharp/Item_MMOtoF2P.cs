@@ -5,19 +5,19 @@ using UnityEngine.UI;
 // Token: 0x020000DF RID: 223
 public class Item_MMOtoF2P : MonoBehaviour
 {
-	// Token: 0x0600078A RID: 1930 RVA: 0x00055842 File Offset: 0x00053A42
+	// Token: 0x06000781 RID: 1921 RVA: 0x00006145 File Offset: 0x00004345
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600078B RID: 1931 RVA: 0x0005584A File Offset: 0x00053A4A
+	// Token: 0x06000782 RID: 1922 RVA: 0x0000614D File Offset: 0x0000434D
 	private void Update()
 	{
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x0600078C RID: 1932 RVA: 0x00055854 File Offset: 0x00053A54
+	// Token: 0x06000783 RID: 1923 RVA: 0x00067ACC File Offset: 0x00065CCC
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -33,7 +33,7 @@ public class Item_MMOtoF2P : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600078D RID: 1933 RVA: 0x000558A0 File Offset: 0x00053AA0
+	// Token: 0x06000784 RID: 1924 RVA: 0x00067B18 File Offset: 0x00065D18
 	private void SetData()
 	{
 		if (!this.game_)
@@ -48,13 +48,13 @@ public class Item_MMOtoF2P : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x0600078E RID: 1934 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000785 RID: 1925 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600078F RID: 1935 RVA: 0x0005597C File Offset: 0x00053B7C
+	// Token: 0x06000786 RID: 1926 RVA: 0x00067BF4 File Offset: 0x00065DF4
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002D3 RID: 723
+// Token: 0x020002D0 RID: 720
 public class animationSpeed : MonoBehaviour
 {
-	// Token: 0x06001A17 RID: 6679 RVA: 0x00109720 File Offset: 0x00107920
+	// Token: 0x060019CD RID: 6605 RVA: 0x0010DA1C File Offset: 0x0010BC1C
 	private void Start()
 	{
 		this.myAnimation = base.GetComponent<Animation>();
@@ -19,7 +19,7 @@ public class animationSpeed : MonoBehaviour
 		this.SetAnimationSpeed();
 	}
 
-	// Token: 0x06001A18 RID: 6680 RVA: 0x0010977A File Offset: 0x0010797A
+	// Token: 0x060019CE RID: 6606 RVA: 0x00011673 File Offset: 0x0000F873
 	private void Update()
 	{
 		if (this.oldGamespeed != this.mS_.GetGameSpeed())
@@ -29,24 +29,24 @@ public class animationSpeed : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001A19 RID: 6681 RVA: 0x001097A6 File Offset: 0x001079A6
+	// Token: 0x060019CF RID: 6607 RVA: 0x0001169F File Offset: 0x0000F89F
 	private void SetAnimationSpeed()
 	{
 		this.myAnimation[this.animationString].speed = this.mS_.GetGameSpeed();
 	}
 
-	// Token: 0x0400211A RID: 8474
+	// Token: 0x04002100 RID: 8448
 	public string animationString;
 
-	// Token: 0x0400211B RID: 8475
+	// Token: 0x04002101 RID: 8449
 	private Animation myAnimation;
 
-	// Token: 0x0400211C RID: 8476
+	// Token: 0x04002102 RID: 8450
 	private mainScript mS_;
 
-	// Token: 0x0400211D RID: 8477
+	// Token: 0x04002103 RID: 8451
 	private GameObject main_;
 
-	// Token: 0x0400211E RID: 8478
+	// Token: 0x04002104 RID: 8452
 	private float oldGamespeed;
 }

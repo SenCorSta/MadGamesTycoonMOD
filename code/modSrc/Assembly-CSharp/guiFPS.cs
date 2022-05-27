@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x02000032 RID: 50
 public class guiFPS : MonoBehaviour
 {
-	// Token: 0x060000BA RID: 186 RVA: 0x0000583C File Offset: 0x00003A3C
+	// Token: 0x060000BA RID: 186 RVA: 0x0001BDA0 File Offset: 0x00019FA0
 	private void Awake()
 	{
 		if (GameObject.Find("SUIMONO_Module") != null)
@@ -18,13 +18,13 @@ public class guiFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000BB RID: 187 RVA: 0x000058A1 File Offset: 0x00003AA1
+	// Token: 0x060000BB RID: 187 RVA: 0x00002871 File Offset: 0x00000A71
 	private void Start()
 	{
 		this.currentPreset = 0;
 	}
 
-	// Token: 0x060000BC RID: 188 RVA: 0x000058AC File Offset: 0x00003AAC
+	// Token: 0x060000BC RID: 188 RVA: 0x0001BE08 File Offset: 0x0001A008
 	private void LateUpdate()
 	{
 		if (this.moduleObject != null)
@@ -136,7 +136,7 @@ public class guiFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000BD RID: 189 RVA: 0x00005BCC File Offset: 0x00003DCC
+	// Token: 0x060000BD RID: 189 RVA: 0x0001C128 File Offset: 0x0001A328
 	private void OnGUI()
 	{
 		GUI.color = new Color(0f, 0f, 0f, 1f);

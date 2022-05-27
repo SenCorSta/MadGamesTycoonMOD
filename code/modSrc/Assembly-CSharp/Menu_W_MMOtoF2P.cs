@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000211 RID: 529
+// Token: 0x02000210 RID: 528
 public class Menu_W_MMOtoF2P : MonoBehaviour
 {
-	// Token: 0x06001459 RID: 5209 RVA: 0x000D3992 File Offset: 0x000D1B92
+	// Token: 0x0600143C RID: 5180 RVA: 0x0000DC8D File Offset: 0x0000BE8D
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600145A RID: 5210 RVA: 0x000D399C File Offset: 0x000D1B9C
+	// Token: 0x0600143D RID: 5181 RVA: 0x000DD318 File Offset: 0x000DB518
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,7 +40,7 @@ public class Menu_W_MMOtoF2P : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600145B RID: 5211 RVA: 0x000D3A64 File Offset: 0x000D1C64
+	// Token: 0x0600143E RID: 5182 RVA: 0x000DD3E0 File Offset: 0x000DB5E0
 	public void Init(gameScript gS_)
 	{
 		this.FindScripts();
@@ -49,20 +49,20 @@ public class Menu_W_MMOtoF2P : MonoBehaviour
 		this.uiObjects[1].GetComponent<Text>().text = this.mS_.GetMoney((long)this.GetPrice(), true);
 	}
 
-	// Token: 0x0600145C RID: 5212 RVA: 0x000D3ABB File Offset: 0x000D1CBB
+	// Token: 0x0600143F RID: 5183 RVA: 0x0000DC95 File Offset: 0x0000BE95
 	private int GetPrice()
 	{
 		return this.game_.GetGesamtDevPoints() * 500;
 	}
 
-	// Token: 0x0600145D RID: 5213 RVA: 0x000D3ACE File Offset: 0x000D1CCE
+	// Token: 0x06001440 RID: 5184 RVA: 0x0000DCA8 File Offset: 0x0000BEA8
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600145E RID: 5214 RVA: 0x000D3AEC File Offset: 0x000D1CEC
+	// Token: 0x06001441 RID: 5185 RVA: 0x000DD438 File Offset: 0x000DB638
 	public void BUTTON_Yes()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -90,12 +90,16 @@ public class Menu_W_MMOtoF2P : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600145F RID: 5215 RVA: 0x000D3BC8 File Offset: 0x000D1DC8
+	// Token: 0x06001442 RID: 5186 RVA: 0x000DD514 File Offset: 0x000DB714
 	private void CreateGame()
 	{
 		this.game_.mmoTOf2p_created = true;
 		gameScript component = UnityEngine.Object.Instantiate<GameObject>(this.game_.gameObject).GetComponent<gameScript>();
 		this.games_.InitMMOtoF2PGame(component);
+		if (this.mS_.multiplayer)
+		{
+			component.multiplayerSlot = this.mS_.mpCalls_.myID;
+		}
 		component.SetMyName(this.game_.GetNameSimple());
 		component.gameTyp = 2;
 		component.f2pConverted = true;
@@ -147,27 +151,27 @@ public class Menu_W_MMOtoF2P : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001864 RID: 6244
+	// Token: 0x0400185B RID: 6235
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001865 RID: 6245
+	// Token: 0x0400185C RID: 6236
 	private GameObject main_;
 
-	// Token: 0x04001866 RID: 6246
+	// Token: 0x0400185D RID: 6237
 	private mainScript mS_;
 
-	// Token: 0x04001867 RID: 6247
+	// Token: 0x0400185E RID: 6238
 	private textScript tS_;
 
-	// Token: 0x04001868 RID: 6248
+	// Token: 0x0400185F RID: 6239
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001869 RID: 6249
+	// Token: 0x04001860 RID: 6240
 	private sfxScript sfx_;
 
-	// Token: 0x0400186A RID: 6250
+	// Token: 0x04001861 RID: 6241
 	private gameScript game_;
 
-	// Token: 0x0400186B RID: 6251
+	// Token: 0x04001862 RID: 6242
 	private games games_;
 }

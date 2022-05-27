@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000133 RID: 307
+// Token: 0x02000132 RID: 306
 public class Menu_Dev_F2PUpdate : MonoBehaviour
 {
-	// Token: 0x06000AFA RID: 2810 RVA: 0x00076E6F File Offset: 0x0007506F
+	// Token: 0x06000AE9 RID: 2793 RVA: 0x00007CA4 File Offset: 0x00005EA4
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000AFB RID: 2811 RVA: 0x00076E78 File Offset: 0x00075078
+	// Token: 0x06000AEA RID: 2794 RVA: 0x000870FC File Offset: 0x000852FC
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_Dev_F2PUpdate : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AFC RID: 2812 RVA: 0x00077016 File Offset: 0x00075216
+	// Token: 0x06000AEB RID: 2795 RVA: 0x00007CAC File Offset: 0x00005EAC
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -77,7 +77,7 @@ public class Menu_Dev_F2PUpdate : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AFD RID: 2813 RVA: 0x00077034 File Offset: 0x00075234
+	// Token: 0x06000AEC RID: 2796 RVA: 0x0008729C File Offset: 0x0008549C
 	public void Init(roomScript roomScript_, gameScript gameScript_)
 	{
 		this.FindScripts();
@@ -101,7 +101,7 @@ public class Menu_Dev_F2PUpdate : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x06000AFE RID: 2814 RVA: 0x00077158 File Offset: 0x00075358
+	// Token: 0x06000AED RID: 2797 RVA: 0x000873C0 File Offset: 0x000855C0
 	private void UpdateGUI()
 	{
 		for (int i = 0; i < this.buttonAdds.Length; i++)
@@ -118,7 +118,7 @@ public class Menu_Dev_F2PUpdate : MonoBehaviour
 		this.uiObjects[3].GetComponent<Text>().text = this.mS_.GetMoney(this.GetDevCosts(), true);
 	}
 
-	// Token: 0x06000AFF RID: 2815 RVA: 0x000771E4 File Offset: 0x000753E4
+	// Token: 0x06000AEE RID: 2798 RVA: 0x0008744C File Offset: 0x0008564C
 	private long GetDevCosts()
 	{
 		long num = 0L;
@@ -132,7 +132,7 @@ public class Menu_Dev_F2PUpdate : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000B00 RID: 2816 RVA: 0x00077230 File Offset: 0x00075430
+	// Token: 0x06000AEF RID: 2799 RVA: 0x00087498 File Offset: 0x00085698
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -141,7 +141,7 @@ public class Menu_Dev_F2PUpdate : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000B01 RID: 2817 RVA: 0x00077293 File Offset: 0x00075493
+	// Token: 0x06000AF0 RID: 2800 RVA: 0x00007CC7 File Offset: 0x00005EC7
 	public void BUTTON_Adds(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -149,7 +149,7 @@ public class Menu_Dev_F2PUpdate : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x06000B02 RID: 2818 RVA: 0x000772BC File Offset: 0x000754BC
+	// Token: 0x06000AF1 RID: 2801 RVA: 0x000874FC File Offset: 0x000856FC
 	public void BUTTON_AlleAdds()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -161,7 +161,7 @@ public class Menu_Dev_F2PUpdate : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x06000B03 RID: 2819 RVA: 0x0007730C File Offset: 0x0007550C
+	// Token: 0x06000AF2 RID: 2802 RVA: 0x0008754C File Offset: 0x0008574C
 	public void BUTTON_Start()
 	{
 		int num = Mathf.RoundToInt((float)this.GetDevCosts());
@@ -223,66 +223,66 @@ public class Menu_Dev_F2PUpdate : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04000F46 RID: 3910
+	// Token: 0x04000F3E RID: 3902
 	public GameObject[] uiObjects;
 
-	// Token: 0x04000F47 RID: 3911
+	// Token: 0x04000F3F RID: 3903
 	public float[] devCostsPercent;
 
-	// Token: 0x04000F48 RID: 3912
+	// Token: 0x04000F40 RID: 3904
 	private bool[] buttonAdds = new bool[12];
 
-	// Token: 0x04000F49 RID: 3913
+	// Token: 0x04000F41 RID: 3905
 	public float[] interestBoost;
 
-	// Token: 0x04000F4A RID: 3914
+	// Token: 0x04000F42 RID: 3906
 	public GameObject[] goButtons;
 
-	// Token: 0x04000F4B RID: 3915
+	// Token: 0x04000F43 RID: 3907
 	private GameObject main_;
 
-	// Token: 0x04000F4C RID: 3916
+	// Token: 0x04000F44 RID: 3908
 	private mainScript mS_;
 
-	// Token: 0x04000F4D RID: 3917
+	// Token: 0x04000F45 RID: 3909
 	private textScript tS_;
 
-	// Token: 0x04000F4E RID: 3918
+	// Token: 0x04000F46 RID: 3910
 	private GUI_Main guiMain_;
 
-	// Token: 0x04000F4F RID: 3919
+	// Token: 0x04000F47 RID: 3911
 	private sfxScript sfx_;
 
-	// Token: 0x04000F50 RID: 3920
+	// Token: 0x04000F48 RID: 3912
 	private genres genres_;
 
-	// Token: 0x04000F51 RID: 3921
+	// Token: 0x04000F49 RID: 3913
 	private themes themes_;
 
-	// Token: 0x04000F52 RID: 3922
+	// Token: 0x04000F4A RID: 3914
 	private licences licences_;
 
-	// Token: 0x04000F53 RID: 3923
+	// Token: 0x04000F4B RID: 3915
 	private engineFeatures eF_;
 
-	// Token: 0x04000F54 RID: 3924
+	// Token: 0x04000F4C RID: 3916
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04000F55 RID: 3925
+	// Token: 0x04000F4D RID: 3917
 	private unlockScript unlock_;
 
-	// Token: 0x04000F56 RID: 3926
+	// Token: 0x04000F4E RID: 3918
 	private gameplayFeatures gF_;
 
-	// Token: 0x04000F57 RID: 3927
+	// Token: 0x04000F4F RID: 3919
 	private games games_;
 
-	// Token: 0x04000F58 RID: 3928
+	// Token: 0x04000F50 RID: 3920
 	private gameScript gS_;
 
-	// Token: 0x04000F59 RID: 3929
+	// Token: 0x04000F51 RID: 3921
 	private roomScript rS_;
 
-	// Token: 0x04000F5A RID: 3930
+	// Token: 0x04000F52 RID: 3922
 	private bool allAdds;
 }

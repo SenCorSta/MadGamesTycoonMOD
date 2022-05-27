@@ -6,13 +6,13 @@ using UnityEngine;
 // Token: 0x0200005F RID: 95
 public class npcEngines : MonoBehaviour
 {
-	// Token: 0x06000342 RID: 834 RVA: 0x00031AE6 File Offset: 0x0002FCE6
+	// Token: 0x0600033D RID: 829 RVA: 0x00003C5A File Offset: 0x00001E5A
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000343 RID: 835 RVA: 0x00031AF0 File Offset: 0x0002FCF0
+	// Token: 0x0600033E RID: 830 RVA: 0x00046770 File Offset: 0x00044970
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -33,7 +33,7 @@ public class npcEngines : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000344 RID: 836 RVA: 0x00031B64 File Offset: 0x0002FD64
+	// Token: 0x0600033F RID: 831 RVA: 0x000467E4 File Offset: 0x000449E4
 	public void LoadNpcEngines(string filename)
 	{
 		StreamReader streamReader = new StreamReader(Application.dataPath + "/Extern/Text/" + filename, Encoding.Unicode);
@@ -51,6 +51,7 @@ public class npcEngines : MonoBehaviour
 				num++;
 			}
 		}
+		Debug.Log("NpcEngines Amount: " + num.ToString());
 		engineScript engineScript = null;
 		for (int j = 0; j < this.data.Length; j++)
 		{
@@ -58,7 +59,8 @@ public class npcEngines : MonoBehaviour
 			{
 				engineScript = this.eF_.CreateEngine();
 				engineScript.myID = int.Parse(this.data[j]);
-				engineScript.ownerID = -1;
+				engineScript.playerEngine = false;
+				engineScript.multiplayerSlot = -1;
 				engineScript.sellEngine = true;
 				engineScript.devPoints = 0f;
 				engineScript.Init();
@@ -193,13 +195,14 @@ public class npcEngines : MonoBehaviour
 				}
 				if (this.ParseData("[EOF]", j))
 				{
-					break;
+					Debug.Log("NpcEngines.txt -> EOF");
+					return;
 				}
 			}
 		}
 	}
 
-	// Token: 0x06000345 RID: 837 RVA: 0x00031FD0 File Offset: 0x000301D0
+	// Token: 0x06000340 RID: 832 RVA: 0x00046C78 File Offset: 0x00044E78
 	private bool ParseData(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -211,7 +214,7 @@ public class npcEngines : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000346 RID: 838 RVA: 0x00032030 File Offset: 0x00030230
+	// Token: 0x06000341 RID: 833 RVA: 0x00003C62 File Offset: 0x00001E62
 	private bool ParseDataDontCutLastChar(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -222,21 +225,21 @@ public class npcEngines : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x04000668 RID: 1640
+	// Token: 0x0400066B RID: 1643
 	public GameObject prefabEngine;
 
-	// Token: 0x04000669 RID: 1641
+	// Token: 0x0400066C RID: 1644
 	private mainScript mS_;
 
-	// Token: 0x0400066A RID: 1642
+	// Token: 0x0400066D RID: 1645
 	private textScript tS_;
 
-	// Token: 0x0400066B RID: 1643
+	// Token: 0x0400066E RID: 1646
 	private settingsScript settings_;
 
-	// Token: 0x0400066C RID: 1644
+	// Token: 0x0400066F RID: 1647
 	private engineFeatures eF_;
 
-	// Token: 0x0400066D RID: 1645
+	// Token: 0x04000670 RID: 1648
 	private string[] data;
 }

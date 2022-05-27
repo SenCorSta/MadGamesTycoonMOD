@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 namespace Vectrosity
 {
-	// Token: 0x0200038E RID: 910
+	// Token: 0x0200038B RID: 907
 	[Serializable]
 	public class VectorObject2D : RawImage, IVectorObject
 	{
-		// Token: 0x060021E0 RID: 8672 RVA: 0x0015F5B2 File Offset: 0x0015D7B2
+		// Token: 0x0600218D RID: 8589 RVA: 0x00016642 File Offset: 0x00014842
 		public void SetVectorLine(VectorLine vectorLine, Texture tex, Material mat, bool useCustomMaterial)
 		{
 			this.vectorLine = vectorLine;
@@ -16,19 +16,19 @@ namespace Vectrosity
 			this.SetMaterial(mat);
 		}
 
-		// Token: 0x060021E1 RID: 8673 RVA: 0x0015F5C9 File Offset: 0x0015D7C9
+		// Token: 0x0600218E RID: 8590 RVA: 0x00016659 File Offset: 0x00014859
 		public void Destroy()
 		{
 			UnityEngine.Object.Destroy(this.m_mesh);
 		}
 
-		// Token: 0x060021E2 RID: 8674 RVA: 0x0015F5D6 File Offset: 0x0015D7D6
+		// Token: 0x0600218F RID: 8591 RVA: 0x00016666 File Offset: 0x00014866
 		public void DestroyNow()
 		{
 			UnityEngine.Object.DestroyImmediate(this.m_mesh);
 		}
 
-		// Token: 0x060021E3 RID: 8675 RVA: 0x0015F5E3 File Offset: 0x0015D7E3
+		// Token: 0x06002190 RID: 8592 RVA: 0x00016673 File Offset: 0x00014873
 		public void Enable(bool enable)
 		{
 			if (this == null)
@@ -38,19 +38,19 @@ namespace Vectrosity
 			base.enabled = enable;
 		}
 
-		// Token: 0x060021E4 RID: 8676 RVA: 0x0015F5F6 File Offset: 0x0015D7F6
+		// Token: 0x06002191 RID: 8593 RVA: 0x00016686 File Offset: 0x00014886
 		public void SetTexture(Texture tex)
 		{
 			base.texture = tex;
 		}
 
-		// Token: 0x060021E5 RID: 8677 RVA: 0x0015F5FF File Offset: 0x0015D7FF
+		// Token: 0x06002192 RID: 8594 RVA: 0x0001668F File Offset: 0x0001488F
 		public void SetMaterial(Material mat)
 		{
 			this.material = mat;
 		}
 
-		// Token: 0x060021E6 RID: 8678 RVA: 0x0015F608 File Offset: 0x0015D808
+		// Token: 0x06002193 RID: 8595 RVA: 0x0015E834 File Offset: 0x0015CA34
 		protected override void UpdateGeometry()
 		{
 			if (this.m_mesh == null)
@@ -64,7 +64,7 @@ namespace Vectrosity
 			base.canvasRenderer.SetMesh(this.m_mesh);
 		}
 
-		// Token: 0x060021E7 RID: 8679 RVA: 0x0015F687 File Offset: 0x0015D887
+		// Token: 0x06002194 RID: 8596 RVA: 0x00016698 File Offset: 0x00014898
 		private void SetupMesh()
 		{
 			this.m_mesh = new Mesh();
@@ -73,7 +73,7 @@ namespace Vectrosity
 			this.SetMeshBounds();
 		}
 
-		// Token: 0x060021E8 RID: 8680 RVA: 0x0015F6C0 File Offset: 0x0015D8C0
+		// Token: 0x06002195 RID: 8597 RVA: 0x0015E8B4 File Offset: 0x0015CAB4
 		private void SetMeshBounds()
 		{
 			if (this.m_mesh != null)
@@ -82,7 +82,7 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x060021E9 RID: 8681 RVA: 0x0015F71C File Offset: 0x0015D91C
+		// Token: 0x06002196 RID: 8598 RVA: 0x0015E910 File Offset: 0x0015CB10
 		protected override void OnPopulateMesh(VertexHelper vh)
 		{
 			if (this.m_updateVerts)
@@ -125,7 +125,7 @@ namespace Vectrosity
 			}
 		}
 
-		// Token: 0x060021EA RID: 8682 RVA: 0x0015F864 File Offset: 0x0015DA64
+		// Token: 0x06002197 RID: 8599 RVA: 0x000166CE File Offset: 0x000148CE
 		public void SetName(string name)
 		{
 			if (this.m_mesh == null)
@@ -135,49 +135,49 @@ namespace Vectrosity
 			this.m_mesh.name = name;
 		}
 
-		// Token: 0x060021EB RID: 8683 RVA: 0x0015F881 File Offset: 0x0015DA81
+		// Token: 0x06002198 RID: 8600 RVA: 0x000166EB File Offset: 0x000148EB
 		public void UpdateVerts()
 		{
 			this.m_updateVerts = true;
 			this.SetVerticesDirty();
 		}
 
-		// Token: 0x060021EC RID: 8684 RVA: 0x0015F890 File Offset: 0x0015DA90
+		// Token: 0x06002199 RID: 8601 RVA: 0x000166FA File Offset: 0x000148FA
 		public void UpdateUVs()
 		{
 			this.m_updateUVs = true;
 			this.SetVerticesDirty();
 		}
 
-		// Token: 0x060021ED RID: 8685 RVA: 0x0015F89F File Offset: 0x0015DA9F
+		// Token: 0x0600219A RID: 8602 RVA: 0x00016709 File Offset: 0x00014909
 		public void UpdateColors()
 		{
 			this.m_updateColors = true;
 			this.SetVerticesDirty();
 		}
 
-		// Token: 0x060021EE RID: 8686 RVA: 0x0015F8AE File Offset: 0x0015DAAE
+		// Token: 0x0600219B RID: 8603 RVA: 0x00016718 File Offset: 0x00014918
 		public void UpdateNormals()
 		{
 			this.m_updateNormals = true;
 			this.SetVerticesDirty();
 		}
 
-		// Token: 0x060021EF RID: 8687 RVA: 0x0015F8BD File Offset: 0x0015DABD
+		// Token: 0x0600219C RID: 8604 RVA: 0x00016727 File Offset: 0x00014927
 		public void UpdateTangents()
 		{
 			this.m_updateTangents = true;
 			this.SetVerticesDirty();
 		}
 
-		// Token: 0x060021F0 RID: 8688 RVA: 0x0015F8CC File Offset: 0x0015DACC
+		// Token: 0x0600219D RID: 8605 RVA: 0x00016736 File Offset: 0x00014936
 		public void UpdateTris()
 		{
 			this.m_updateTris = true;
 			this.SetVerticesDirty();
 		}
 
-		// Token: 0x060021F1 RID: 8689 RVA: 0x0015F8DC File Offset: 0x0015DADC
+		// Token: 0x0600219E RID: 8606 RVA: 0x0015EA58 File Offset: 0x0015CC58
 		public void UpdateMeshAttributes()
 		{
 			if (this.m_mesh != null)
@@ -192,7 +192,7 @@ namespace Vectrosity
 			this.SetMeshBounds();
 		}
 
-		// Token: 0x060021F2 RID: 8690 RVA: 0x0015F92A File Offset: 0x0015DB2A
+		// Token: 0x0600219F RID: 8607 RVA: 0x00016745 File Offset: 0x00014945
 		public void ClearMesh()
 		{
 			if (this.m_mesh == null)
@@ -203,37 +203,37 @@ namespace Vectrosity
 			this.UpdateGeometry();
 		}
 
-		// Token: 0x060021F3 RID: 8691 RVA: 0x0015F94C File Offset: 0x0015DB4C
+		// Token: 0x060021A0 RID: 8608 RVA: 0x00016767 File Offset: 0x00014967
 		public int VertexCount()
 		{
 			return this.m_mesh.vertexCount;
 		}
 
-		// Token: 0x0400294F RID: 10575
+		// Token: 0x04002939 RID: 10553
 		private bool m_updateVerts = true;
 
-		// Token: 0x04002950 RID: 10576
+		// Token: 0x0400293A RID: 10554
 		private bool m_updateUVs = true;
 
-		// Token: 0x04002951 RID: 10577
+		// Token: 0x0400293B RID: 10555
 		private bool m_updateColors = true;
 
-		// Token: 0x04002952 RID: 10578
+		// Token: 0x0400293C RID: 10556
 		private bool m_updateNormals;
 
-		// Token: 0x04002953 RID: 10579
+		// Token: 0x0400293D RID: 10557
 		private bool m_updateTangents;
 
-		// Token: 0x04002954 RID: 10580
+		// Token: 0x0400293E RID: 10558
 		private bool m_updateTris = true;
 
-		// Token: 0x04002955 RID: 10581
+		// Token: 0x0400293F RID: 10559
 		private Mesh m_mesh;
 
-		// Token: 0x04002956 RID: 10582
+		// Token: 0x04002940 RID: 10560
 		public VectorLine vectorLine;
 
-		// Token: 0x04002957 RID: 10583
+		// Token: 0x04002941 RID: 10561
 		private static VertexHelper vertexHelper;
 	}
 }

@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001BD RID: 445
+// Token: 0x020001BC RID: 444
 public class GamesGroupContent : MonoBehaviour
 {
-	// Token: 0x060010C8 RID: 4296 RVA: 0x000B19DD File Offset: 0x000AFBDD
+	// Token: 0x060010AE RID: 4270 RVA: 0x0000BC9C File Offset: 0x00009E9C
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010C9 RID: 4297 RVA: 0x000B19E8 File Offset: 0x000AFBE8
+	// Token: 0x060010AF RID: 4271 RVA: 0x000BD684 File Offset: 0x000BB884
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,13 +40,13 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CA RID: 4298 RVA: 0x000B19DD File Offset: 0x000AFBDD
+	// Token: 0x060010B0 RID: 4272 RVA: 0x0000BC9C File Offset: 0x00009E9C
 	private void OnEnable()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060010CB RID: 4299 RVA: 0x000B1AA0 File Offset: 0x000AFCA0
+	// Token: 0x060010B1 RID: 4273 RVA: 0x000BD73C File Offset: 0x000BB93C
 	private void Update()
 	{
 		if (!this.mS_)
@@ -196,7 +196,7 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CC RID: 4300 RVA: 0x000B1F80 File Offset: 0x000B0180
+	// Token: 0x060010B2 RID: 4274 RVA: 0x000BDC1C File Offset: 0x000BBE1C
 	private void SetTabKonsole(GameObject go, konsoleTab script_)
 	{
 		if (this.uiTabs[0].GetComponent<Toggle>().isOn || this.uiTabs[4].GetComponent<Toggle>().isOn)
@@ -213,7 +213,7 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CD RID: 4301 RVA: 0x000B1FD4 File Offset: 0x000B01D4
+	// Token: 0x060010B3 RID: 4275 RVA: 0x000BDC70 File Offset: 0x000BBE70
 	private void SetTab(GameObject go, gameTab script_)
 	{
 		if (!this.uiTabs[0].GetComponent<Toggle>().isOn)
@@ -337,45 +337,45 @@ public class GamesGroupContent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400154C RID: 5452
+	// Token: 0x04001541 RID: 5441
 	public GameObject[] uiTabs;
 
-	// Token: 0x0400154D RID: 5453
+	// Token: 0x04001542 RID: 5442
 	public GameObject[] uiObjects;
 
-	// Token: 0x0400154E RID: 5454
+	// Token: 0x04001543 RID: 5443
 	private GameObject main_;
 
-	// Token: 0x0400154F RID: 5455
+	// Token: 0x04001544 RID: 5444
 	private mainScript mS_;
 
-	// Token: 0x04001550 RID: 5456
+	// Token: 0x04001545 RID: 5445
 	private textScript tS_;
 
-	// Token: 0x04001551 RID: 5457
+	// Token: 0x04001546 RID: 5446
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001552 RID: 5458
+	// Token: 0x04001547 RID: 5447
 	private sfxScript sfx_;
 
-	// Token: 0x04001553 RID: 5459
+	// Token: 0x04001548 RID: 5448
 	public float timer;
 
-	// Token: 0x04001554 RID: 5460
+	// Token: 0x04001549 RID: 5449
 	private int oldAmount;
 
-	// Token: 0x04001555 RID: 5461
+	// Token: 0x0400154A RID: 5450
 	private bool noStandardGame = true;
 
-	// Token: 0x04001556 RID: 5462
+	// Token: 0x0400154B RID: 5451
 	private bool noHandy = true;
 
-	// Token: 0x04001557 RID: 5463
+	// Token: 0x0400154C RID: 5452
 	private bool noEigeneKonsole = true;
 
-	// Token: 0x04001558 RID: 5464
+	// Token: 0x0400154D RID: 5453
 	private bool noArcade = true;
 
-	// Token: 0x04001559 RID: 5465
+	// Token: 0x0400154E RID: 5454
 	private bool noSchublade = true;
 }

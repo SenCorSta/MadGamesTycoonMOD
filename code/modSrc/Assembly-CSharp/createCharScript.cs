@@ -4,12 +4,12 @@ using UnityEngine;
 // Token: 0x02000047 RID: 71
 public class createCharScript : MonoBehaviour
 {
-	// Token: 0x06000164 RID: 356 RVA: 0x00002715 File Offset: 0x00000915
+	// Token: 0x06000164 RID: 356 RVA: 0x00002098 File Offset: 0x00000298
 	private void Start()
 	{
 	}
 
-	// Token: 0x06000165 RID: 357 RVA: 0x00015204 File Offset: 0x00013404
+	// Token: 0x06000165 RID: 357 RVA: 0x0002B370 File Offset: 0x00029570
 	public characterScript CreateCharacter(int id_, bool male, int forceModel)
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.charMainObject);

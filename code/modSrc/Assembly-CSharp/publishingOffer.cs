@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x02000067 RID: 103
 public class publishingOffer : MonoBehaviour
 {
-	// Token: 0x060003DC RID: 988 RVA: 0x0003D5D0 File Offset: 0x0003B7D0
+	// Token: 0x060003D4 RID: 980 RVA: 0x0000414F File Offset: 0x0000234F
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060003DD RID: 989 RVA: 0x0003D5D8 File Offset: 0x0003B7D8
+	// Token: 0x060003D5 RID: 981 RVA: 0x00051B38 File Offset: 0x0004FD38
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -31,25 +31,25 @@ public class publishingOffer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003DE RID: 990 RVA: 0x0003D65C File Offset: 0x0003B85C
+	// Token: 0x060003D6 RID: 982 RVA: 0x00004157 File Offset: 0x00002357
 	public void Init()
 	{
 		base.name = "PUBOFFER_" + this.myID.ToString();
 	}
 
-	// Token: 0x060003DF RID: 991 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x060003D7 RID: 983 RVA: 0x00004174 File Offset: 0x00002374
 	public void Delete()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060003E0 RID: 992 RVA: 0x0003D686 File Offset: 0x0003B886
+	// Token: 0x060003D8 RID: 984 RVA: 0x00004181 File Offset: 0x00002381
 	public string GetGameName()
 	{
 		return this.gameName;
 	}
 
-	// Token: 0x060003E1 RID: 993 RVA: 0x0003D690 File Offset: 0x0003B890
+	// Token: 0x060003D9 RID: 985 RVA: 0x00051BBC File Offset: 0x0004FDBC
 	public string GetDeveloperName()
 	{
 		GameObject gameObject = GameObject.Find("PUB_" + this.developer.ToString());
@@ -60,7 +60,7 @@ public class publishingOffer : MonoBehaviour
 		return "<missing>";
 	}
 
-	// Token: 0x060003E2 RID: 994 RVA: 0x0003D6D4 File Offset: 0x0003B8D4
+	// Token: 0x060003DA RID: 986 RVA: 0x00051C00 File Offset: 0x0004FE00
 	public Sprite GetDeveloperLogo()
 	{
 		GameObject gameObject = GameObject.Find("PUB_" + this.developer.ToString());
@@ -71,13 +71,13 @@ public class publishingOffer : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060003E3 RID: 995 RVA: 0x0003D711 File Offset: 0x0003B911
+	// Token: 0x060003DB RID: 987 RVA: 0x00004189 File Offset: 0x00002389
 	public Sprite GetScreenshot()
 	{
 		return this.genres_.GetScreenshot(this.genre, Mathf.RoundToInt(this.points_grafik));
 	}
 
-	// Token: 0x060003E4 RID: 996 RVA: 0x0003D730 File Offset: 0x0003B930
+	// Token: 0x060003DC RID: 988 RVA: 0x00051C40 File Offset: 0x0004FE40
 	public platformScript GetPlattformScript(int i)
 	{
 		GameObject gameObject = GameObject.Find("PLATFORM_" + this.gamePlatform[i].ToString());
@@ -88,7 +88,7 @@ public class publishingOffer : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060003E5 RID: 997 RVA: 0x0003D770 File Offset: 0x0003B970
+	// Token: 0x060003DD RID: 989 RVA: 0x00051C80 File Offset: 0x0004FE80
 	public string GetRetailDigitalString()
 	{
 		if (this.tS_)
@@ -109,7 +109,7 @@ public class publishingOffer : MonoBehaviour
 		return "<missing>";
 	}
 
-	// Token: 0x060003E6 RID: 998 RVA: 0x0003D7F4 File Offset: 0x0003B9F4
+	// Token: 0x060003DE RID: 990 RVA: 0x00051D04 File Offset: 0x0004FF04
 	public string GetTooltip()
 	{
 		string text = "<b>" + this.GetGameName() + "</b>";
@@ -183,7 +183,7 @@ public class publishingOffer : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x060003E7 RID: 999 RVA: 0x0003DAFC File Offset: 0x0003BCFC
+	// Token: 0x060003DF RID: 991 RVA: 0x0003D590 File Offset: 0x0003B790
 	private string GetQualitatStars(int i)
 	{
 		string result;
@@ -214,7 +214,7 @@ public class publishingOffer : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x060003E8 RID: 1000 RVA: 0x0003DB68 File Offset: 0x0003BD68
+	// Token: 0x060003E0 RID: 992 RVA: 0x0005200C File Offset: 0x0005020C
 	public int GetGarantiesumme()
 	{
 		float num = this.verhandlungProzent;
@@ -222,7 +222,7 @@ public class publishingOffer : MonoBehaviour
 		return Mathf.RoundToInt((float)this.garantiesumme * num);
 	}
 
-	// Token: 0x060003E9 RID: 1001 RVA: 0x0003DB94 File Offset: 0x0003BD94
+	// Token: 0x060003E1 RID: 993 RVA: 0x00052038 File Offset: 0x00050238
 	public int GetGewinnbeteiligung()
 	{
 		float num = this.verhandlungProzent;

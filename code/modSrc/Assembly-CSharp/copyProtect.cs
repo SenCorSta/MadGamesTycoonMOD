@@ -6,13 +6,13 @@ using UnityEngine;
 // Token: 0x0200004D RID: 77
 public class copyProtect : MonoBehaviour
 {
-	// Token: 0x060001A6 RID: 422 RVA: 0x00018D3D File Offset: 0x00016F3D
+	// Token: 0x060001A6 RID: 422 RVA: 0x00002F84 File Offset: 0x00001184
 	private void Awake()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060001A7 RID: 423 RVA: 0x00018D48 File Offset: 0x00016F48
+	// Token: 0x060001A7 RID: 423 RVA: 0x0002EB5C File Offset: 0x0002CD5C
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -29,7 +29,7 @@ public class copyProtect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001A8 RID: 424 RVA: 0x00018DA0 File Offset: 0x00016FA0
+	// Token: 0x060001A8 RID: 424 RVA: 0x0002EBB4 File Offset: 0x0002CDB4
 	public copyProtectScript CreateCopyProtect()
 	{
 		copyProtectScript component = UnityEngine.Object.Instantiate<GameObject>(this.prefabCopyProtect).GetComponent<copyProtectScript>();
@@ -40,7 +40,7 @@ public class copyProtect : MonoBehaviour
 		return component;
 	}
 
-	// Token: 0x060001A9 RID: 425 RVA: 0x00018DF0 File Offset: 0x00016FF0
+	// Token: 0x060001A9 RID: 425 RVA: 0x0002EC04 File Offset: 0x0002CE04
 	public void LoadCopyProtect(string filename)
 	{
 		StreamReader streamReader = new StreamReader(Application.dataPath + "/Extern/Text/" + filename, Encoding.Unicode);
@@ -58,6 +58,7 @@ public class copyProtect : MonoBehaviour
 				num++;
 			}
 		}
+		Debug.Log("CopyProtect Amount: " + num.ToString());
 		copyProtectScript copyProtectScript = null;
 		for (int j = 0; j < this.data.Length; j++)
 		{
@@ -175,13 +176,14 @@ public class copyProtect : MonoBehaviour
 				}
 				if (this.ParseData("[EOF]", j))
 				{
-					break;
+					Debug.Log("CopyProtect.txt -> EOF");
+					return;
 				}
 			}
 		}
 	}
 
-	// Token: 0x060001AA RID: 426 RVA: 0x00019198 File Offset: 0x00017398
+	// Token: 0x060001AA RID: 426 RVA: 0x0002EFD0 File Offset: 0x0002D1D0
 	private bool ParseData(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -193,7 +195,7 @@ public class copyProtect : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060001AB RID: 427 RVA: 0x000191F8 File Offset: 0x000173F8
+	// Token: 0x060001AB RID: 427 RVA: 0x00002F8C File Offset: 0x0000118C
 	private bool ParseDataDontCutLastChar(string c, int i)
 	{
 		if (this.data[i].Contains(c))
@@ -204,7 +206,7 @@ public class copyProtect : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060001AC RID: 428 RVA: 0x00019228 File Offset: 0x00017428
+	// Token: 0x060001AC RID: 428 RVA: 0x0002F030 File Offset: 0x0002D230
 	public void UpdateEffekt()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("CopyProtect");

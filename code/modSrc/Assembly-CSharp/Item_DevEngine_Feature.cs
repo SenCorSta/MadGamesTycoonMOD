@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x0200007B RID: 123
 public class Item_DevEngine_Feature : MonoBehaviour
 {
-	// Token: 0x06000524 RID: 1316 RVA: 0x00047799 File Offset: 0x00045999
+	// Token: 0x0600051B RID: 1307 RVA: 0x0000531C File Offset: 0x0000351C
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000525 RID: 1317 RVA: 0x000477A4 File Offset: 0x000459A4
+	// Token: 0x0600051C RID: 1308 RVA: 0x0005A9F8 File Offset: 0x00058BF8
 	private void SetData()
 	{
 		this.uiObjects[0].GetComponent<Text>().text = this.eF_.GetName(this.myID);
@@ -28,13 +28,13 @@ public class Item_DevEngine_Feature : MonoBehaviour
 		this.uiObjects[2].GetComponent<Text>().text = "$0";
 	}
 
-	// Token: 0x06000526 RID: 1318 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x0600051D RID: 1309 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000527 RID: 1319 RVA: 0x000478E4 File Offset: 0x00045AE4
+	// Token: 0x0600051E RID: 1310 RVA: 0x0005AB38 File Offset: 0x00058D38
 	public void BUTTON_Click()
 	{
 		Menu_Dev_Engine component = this.guiMain_.uiObjects[37].GetComponent<Menu_Dev_Engine>();
@@ -47,7 +47,7 @@ public class Item_DevEngine_Feature : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000528 RID: 1320 RVA: 0x00047948 File Offset: 0x00045B48
+	// Token: 0x0600051F RID: 1311 RVA: 0x0005AB9C File Offset: 0x00058D9C
 	private void SetButtonColor()
 	{
 		if (this.guiMain_.uiObjects[37].GetComponent<Menu_Dev_Engine>().featuresLock[this.myID])

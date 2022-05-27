@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001C5 RID: 453
+// Token: 0x020001C4 RID: 452
 public class Menu_MP_ForschungSchenken : MonoBehaviour
 {
-	// Token: 0x06001115 RID: 4373 RVA: 0x000B53E2 File Offset: 0x000B35E2
+	// Token: 0x060010FB RID: 4347 RVA: 0x0000BF44 File Offset: 0x0000A144
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001116 RID: 4374 RVA: 0x000B53EC File Offset: 0x000B35EC
+	// Token: 0x060010FC RID: 4348 RVA: 0x000C0D3C File Offset: 0x000BEF3C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -77,7 +77,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001117 RID: 4375 RVA: 0x000B55C6 File Offset: 0x000B37C6
+	// Token: 0x060010FD RID: 4349 RVA: 0x0000BF4C File Offset: 0x0000A14C
 	private void OnEnable()
 	{
 		this.selectedForschung = -1;
@@ -88,7 +88,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.InitPlayerButtons();
 	}
 
-	// Token: 0x06001118 RID: 4376 RVA: 0x000B5600 File Offset: 0x000B3800
+	// Token: 0x060010FE RID: 4350 RVA: 0x000C0F18 File Offset: 0x000BF118
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -106,7 +106,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.UpdatePlayerButtons();
 	}
 
-	// Token: 0x06001119 RID: 4377 RVA: 0x000B5674 File Offset: 0x000B3874
+	// Token: 0x060010FF RID: 4351 RVA: 0x000C0F8C File Offset: 0x000BF18C
 	public void UpdatePlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -125,7 +125,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600111A RID: 4378 RVA: 0x000B56E4 File Offset: 0x000B38E4
+	// Token: 0x06001100 RID: 4352 RVA: 0x000C0FFC File Offset: 0x000BF1FC
 	public void InitPlayerButtons()
 	{
 		for (int i = 0; i < 4; i++)
@@ -138,7 +138,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		for (int j = 0; j < this.mpCalls_.playersMP.Count; j++)
 		{
 			int playerID = this.mpCalls_.playersMP[j].playerID;
-			if (playerID == this.mS_.myID)
+			if (playerID == this.mpCalls_.myID)
 			{
 				if (this.uiPlayerButtons[j].activeSelf)
 				{
@@ -161,14 +161,14 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600111B RID: 4379 RVA: 0x000B580F File Offset: 0x000B3A0F
+	// Token: 0x06001101 RID: 4353 RVA: 0x0000BF85 File Offset: 0x0000A185
 	public void BUTTON_Player(int p)
 	{
 		this.sfx_.PlaySound(12, true);
 		this.selectedPlayer = p;
 	}
 
-	// Token: 0x0600111C RID: 4380 RVA: 0x000B5828 File Offset: 0x000B3A28
+	// Token: 0x06001102 RID: 4354 RVA: 0x000C1128 File Offset: 0x000BF328
 	public void Init(int i)
 	{
 		this.FindScripts();
@@ -455,7 +455,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x0600111D RID: 4381 RVA: 0x000B64F4 File Offset: 0x000B46F4
+	// Token: 0x06001103 RID: 4355 RVA: 0x000C1DF4 File Offset: 0x000BFFF4
 	private void CreateItem(int id_)
 	{
 		if (this.fS_.IsErforscht(id_))
@@ -472,7 +472,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600111E RID: 4382 RVA: 0x000B659C File Offset: 0x000B479C
+	// Token: 0x06001104 RID: 4356 RVA: 0x000C1E9C File Offset: 0x000C009C
 	public void BUTTON_Search()
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
@@ -483,14 +483,14 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.Init(this.forschungsTyp);
 	}
 
-	// Token: 0x0600111F RID: 4383 RVA: 0x000B6608 File Offset: 0x000B4808
+	// Token: 0x06001105 RID: 4357 RVA: 0x0000BF9C File Offset: 0x0000A19C
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001120 RID: 4384 RVA: 0x000B6624 File Offset: 0x000B4824
+	// Token: 0x06001106 RID: 4358 RVA: 0x000C1F08 File Offset: 0x000C0108
 	public void InitDropdowns()
 	{
 		int @int = PlayerPrefs.GetInt(this.uiObjects[6].name);
@@ -503,7 +503,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.uiObjects[6].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x06001121 RID: 4385 RVA: 0x000B66C4 File Offset: 0x000B48C4
+	// Token: 0x06001107 RID: 4359 RVA: 0x000C1FA8 File Offset: 0x000C01A8
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[6].GetComponent<Dropdown>().value;
@@ -597,7 +597,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x06001122 RID: 4386 RVA: 0x000B6A80 File Offset: 0x000B4C80
+	// Token: 0x06001108 RID: 4360 RVA: 0x000C2364 File Offset: 0x000C0564
 	public void BUTTON_Ok()
 	{
 		if (this.selectedForschung == -1)
@@ -611,7 +611,7 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		this.sfx_.PlaySound(3, true);
 		if (this.mpCalls_.isServer)
 		{
-			this.mpCalls_.SERVER_Send_Help(this.mS_.myID, this.mpCalls_.playersMP[this.selectedPlayer].playerID, 3, this.selectedForschung, this.forschungsTyp, 0);
+			this.mpCalls_.SERVER_Send_Help(this.mpCalls_.myID, this.mpCalls_.playersMP[this.selectedPlayer].playerID, 3, this.selectedForschung, this.forschungsTyp, 0);
 		}
 		else
 		{
@@ -647,69 +647,69 @@ public class Menu_MP_ForschungSchenken : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0400159C RID: 5532
+	// Token: 0x04001593 RID: 5523
 	private mainScript mS_;
 
-	// Token: 0x0400159D RID: 5533
+	// Token: 0x04001594 RID: 5524
 	private GameObject main_;
 
-	// Token: 0x0400159E RID: 5534
+	// Token: 0x04001595 RID: 5525
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400159F RID: 5535
+	// Token: 0x04001596 RID: 5526
 	private sfxScript sfx_;
 
-	// Token: 0x040015A0 RID: 5536
+	// Token: 0x04001597 RID: 5527
 	private textScript tS_;
 
-	// Token: 0x040015A1 RID: 5537
+	// Token: 0x04001598 RID: 5528
 	private genres genres_;
 
-	// Token: 0x040015A2 RID: 5538
+	// Token: 0x04001599 RID: 5529
 	private themes themes_;
 
-	// Token: 0x040015A3 RID: 5539
+	// Token: 0x0400159A RID: 5530
 	private engineFeatures eF_;
 
-	// Token: 0x040015A4 RID: 5540
+	// Token: 0x0400159B RID: 5531
 	private gameplayFeatures gF_;
 
-	// Token: 0x040015A5 RID: 5541
+	// Token: 0x0400159C RID: 5532
 	private hardware hardware_;
 
-	// Token: 0x040015A6 RID: 5542
+	// Token: 0x0400159D RID: 5533
 	private hardwareFeatures hardwareFeature_;
 
-	// Token: 0x040015A7 RID: 5543
+	// Token: 0x0400159E RID: 5534
 	private unlockScript unlock_;
 
-	// Token: 0x040015A8 RID: 5544
+	// Token: 0x0400159F RID: 5535
 	private forschungSonstiges fS_;
 
-	// Token: 0x040015A9 RID: 5545
+	// Token: 0x040015A0 RID: 5536
 	private copyProtect copyProtect_;
 
-	// Token: 0x040015AA RID: 5546
+	// Token: 0x040015A1 RID: 5537
 	private mpCalls mpCalls_;
 
-	// Token: 0x040015AB RID: 5547
+	// Token: 0x040015A2 RID: 5538
 	private int forschungsTyp;
 
-	// Token: 0x040015AC RID: 5548
+	// Token: 0x040015A3 RID: 5539
 	public int selectedPlayer = -1;
 
-	// Token: 0x040015AD RID: 5549
+	// Token: 0x040015A4 RID: 5540
 	public int selectedForschung = -1;
 
-	// Token: 0x040015AE RID: 5550
+	// Token: 0x040015A5 RID: 5541
 	public GameObject[] uiPlayerButtons;
 
-	// Token: 0x040015AF RID: 5551
+	// Token: 0x040015A6 RID: 5542
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040015B0 RID: 5552
+	// Token: 0x040015A7 RID: 5543
 	public GameObject[] uiObjects;
 
-	// Token: 0x040015B1 RID: 5553
+	// Token: 0x040015A8 RID: 5544
 	private string searchStringA = "";
 }

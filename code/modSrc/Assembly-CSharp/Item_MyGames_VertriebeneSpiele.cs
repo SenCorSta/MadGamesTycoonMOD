@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000F1 RID: 241
 public class Item_MyGames_VertriebeneSpiele : MonoBehaviour
 {
-	// Token: 0x060007F5 RID: 2037 RVA: 0x00057C41 File Offset: 0x00055E41
+	// Token: 0x060007EC RID: 2028 RVA: 0x000062E6 File Offset: 0x000044E6
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007F6 RID: 2038 RVA: 0x00057C4C File Offset: 0x00055E4C
+	// Token: 0x060007ED RID: 2029 RVA: 0x00069CEC File Offset: 0x00067EEC
 	private void Update()
 	{
 		this.uiObjects[1].GetComponent<Text>().text = (base.gameObject.transform.GetSiblingIndex() + 1).ToString();
@@ -23,7 +23,7 @@ public class Item_MyGames_VertriebeneSpiele : MonoBehaviour
 		base.gameObject.name = this.game_.reviewTotal.ToString();
 	}
 
-	// Token: 0x060007F7 RID: 2039 RVA: 0x00057CD8 File Offset: 0x00055ED8
+	// Token: 0x060007EE RID: 2030 RVA: 0x00069D78 File Offset: 0x00067F78
 	public void SetData()
 	{
 		if (!this.game_)
@@ -52,13 +52,13 @@ public class Item_MyGames_VertriebeneSpiele : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060007F8 RID: 2040 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x060007EF RID: 2031 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007F9 RID: 2041 RVA: 0x00057DF0 File Offset: 0x00055FF0
+	// Token: 0x060007F0 RID: 2032 RVA: 0x00069E90 File Offset: 0x00068090
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

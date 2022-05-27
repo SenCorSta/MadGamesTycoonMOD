@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000CA RID: 202
 public class Item_Platform_BuyDevKit : MonoBehaviour
 {
-	// Token: 0x060006FD RID: 1789 RVA: 0x00052F68 File Offset: 0x00051168
+	// Token: 0x060006F4 RID: 1780 RVA: 0x00005DAC File Offset: 0x00003FAC
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060006FE RID: 1790 RVA: 0x00052F70 File Offset: 0x00051170
+	// Token: 0x060006F5 RID: 1781 RVA: 0x0006558C File Offset: 0x0006378C
 	private void SetData()
 	{
 		if (this.pS_.inBesitz)
@@ -46,7 +46,7 @@ public class Item_Platform_BuyDevKit : MonoBehaviour
 		this.uiObjects[8].SetActive(false);
 	}
 
-	// Token: 0x060006FF RID: 1791 RVA: 0x0005319D File Offset: 0x0005139D
+	// Token: 0x060006F6 RID: 1782 RVA: 0x00005DB4 File Offset: 0x00003FB4
 	private void Update()
 	{
 		this.updateTimer += Time.deltaTime;
@@ -58,13 +58,13 @@ public class Item_Platform_BuyDevKit : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000700 RID: 1792 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x060006F7 RID: 1783 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000701 RID: 1793 RVA: 0x000531D0 File Offset: 0x000513D0
+	// Token: 0x060006F8 RID: 1784 RVA: 0x000657BC File Offset: 0x000639BC
 	public void BUTTON_Click()
 	{
 		if (!this.pS_.inBesitz)

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000274 RID: 628
+// Token: 0x02000270 RID: 624
 public class keyInfo : MonoBehaviour
 {
-	// Token: 0x06001870 RID: 6256 RVA: 0x000F252C File Offset: 0x000F072C
+	// Token: 0x0600182D RID: 6189 RVA: 0x000F7758 File Offset: 0x000F5958
 	private void Start()
 	{
 		string text = "";
@@ -20,9 +20,9 @@ public class keyInfo : MonoBehaviour
 		this.uiObjects[0].GetComponent<Text>().text = text;
 	}
 
-	// Token: 0x04001C20 RID: 7200
+	// Token: 0x04001C06 RID: 7174
 	public KeyCode[] keys;
 
-	// Token: 0x04001C21 RID: 7201
+	// Token: 0x04001C07 RID: 7175
 	public GameObject[] uiObjects;
 }

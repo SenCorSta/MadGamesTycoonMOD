@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001E0 RID: 480
+// Token: 0x020001DF RID: 479
 public class Menu_Mitarbeitersuche : MonoBehaviour
 {
-	// Token: 0x06001229 RID: 4649 RVA: 0x000C0917 File Offset: 0x000BEB17
+	// Token: 0x0600120E RID: 4622 RVA: 0x0000C8EA File Offset: 0x0000AAEA
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x0600122A RID: 4650 RVA: 0x000C0920 File Offset: 0x000BEB20
+	// Token: 0x0600120F RID: 4623 RVA: 0x000CB820 File Offset: 0x000C9A20
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -45,7 +45,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600122B RID: 4651 RVA: 0x000C0A08 File Offset: 0x000BEC08
+	// Token: 0x06001210 RID: 4624 RVA: 0x000CB908 File Offset: 0x000C9B08
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -72,7 +72,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x0600122C RID: 4652 RVA: 0x000C0BCD File Offset: 0x000BEDCD
+	// Token: 0x06001211 RID: 4625 RVA: 0x0000C8F2 File Offset: 0x0000AAF2
 	public void Init(roomScript room_)
 	{
 		this.rS_ = room_;
@@ -81,7 +81,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x0600122D RID: 4653 RVA: 0x000C0BE8 File Offset: 0x000BEDE8
+	// Token: 0x06001212 RID: 4626 RVA: 0x000CBAD0 File Offset: 0x000C9CD0
 	private void SetData()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -96,7 +96,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		this.uiObjects[6].GetComponent<Image>().color = this.GetValColor(this.workPoints[value]);
 	}
 
-	// Token: 0x0600122E RID: 4654 RVA: 0x000C0D18 File Offset: 0x000BEF18
+	// Token: 0x06001213 RID: 4627 RVA: 0x000CBC00 File Offset: 0x000C9E00
 	public float GetChance(int i)
 	{
 		this.FindScripts();
@@ -115,7 +115,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600122F RID: 4655 RVA: 0x000C0D9C File Offset: 0x000BEF9C
+	// Token: 0x06001214 RID: 4628 RVA: 0x000CBC84 File Offset: 0x000C9E84
 	private Color GetValColor(float val)
 	{
 		if (val < 30f)
@@ -133,7 +133,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		return this.guiMain_.colorsBalken[0];
 	}
 
-	// Token: 0x06001230 RID: 4656 RVA: 0x000C0E10 File Offset: 0x000BF010
+	// Token: 0x06001215 RID: 4629 RVA: 0x000CBCF8 File Offset: 0x000C9EF8
 	public void DROPDOWN_Erfahrung()
 	{
 		PlayerPrefs.SetInt(this.uiObjects[0].name, this.uiObjects[0].GetComponent<Dropdown>().value);
@@ -141,7 +141,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001231 RID: 4657 RVA: 0x000C0E6C File Offset: 0x000BF06C
+	// Token: 0x06001216 RID: 4630 RVA: 0x000CBCF8 File Offset: 0x000C9EF8
 	public void DROPDOWN_Profession()
 	{
 		PlayerPrefs.SetInt(this.uiObjects[0].name, this.uiObjects[0].GetComponent<Dropdown>().value);
@@ -149,7 +149,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06001232 RID: 4658 RVA: 0x000C0EC7 File Offset: 0x000BF0C7
+	// Token: 0x06001217 RID: 4631 RVA: 0x0000C90D File Offset: 0x0000AB0D
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -157,7 +157,7 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001233 RID: 4659 RVA: 0x000C0EF0 File Offset: 0x000BF0F0
+	// Token: 0x06001218 RID: 4632 RVA: 0x000CBD54 File Offset: 0x000C9F54
 	public void BUTTON_OK()
 	{
 		if (!this.rS_)
@@ -188,42 +188,42 @@ public class Menu_Mitarbeitersuche : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001698 RID: 5784
+	// Token: 0x0400168F RID: 5775
 	private mainScript mS_;
 
-	// Token: 0x04001699 RID: 5785
+	// Token: 0x04001690 RID: 5776
 	private GameObject main_;
 
-	// Token: 0x0400169A RID: 5786
+	// Token: 0x04001691 RID: 5777
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400169B RID: 5787
+	// Token: 0x04001692 RID: 5778
 	private sfxScript sfx_;
 
-	// Token: 0x0400169C RID: 5788
+	// Token: 0x04001693 RID: 5779
 	private textScript tS_;
 
-	// Token: 0x0400169D RID: 5789
+	// Token: 0x04001694 RID: 5780
 	private pickCharacterScript pcS_;
 
-	// Token: 0x0400169E RID: 5790
+	// Token: 0x04001695 RID: 5781
 	private roomDataScript rdS_;
 
-	// Token: 0x0400169F RID: 5791
+	// Token: 0x04001696 RID: 5782
 	private roomScript rS_;
 
-	// Token: 0x040016A0 RID: 5792
+	// Token: 0x04001697 RID: 5783
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x040016A1 RID: 5793
+	// Token: 0x04001698 RID: 5784
 	public GameObject[] uiObjects;
 
-	// Token: 0x040016A2 RID: 5794
+	// Token: 0x04001699 RID: 5785
 	public int[] price;
 
-	// Token: 0x040016A3 RID: 5795
+	// Token: 0x0400169A RID: 5786
 	public float[] chance;
 
-	// Token: 0x040016A4 RID: 5796
+	// Token: 0x0400169B RID: 5787
 	public float[] workPoints;
 }

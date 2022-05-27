@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200017F RID: 383
+// Token: 0x0200017E RID: 382
 public class Menu_SaveGame : MonoBehaviour
 {
-	// Token: 0x06000E62 RID: 3682 RVA: 0x0009B69E File Offset: 0x0009989E
+	// Token: 0x06000E4A RID: 3658 RVA: 0x00009FD5 File Offset: 0x000081D5
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000E63 RID: 3683 RVA: 0x0009B6A8 File Offset: 0x000998A8
+	// Token: 0x06000E4B RID: 3659 RVA: 0x000A9258 File Offset: 0x000A7458
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -40,14 +40,14 @@ public class Menu_SaveGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E64 RID: 3684 RVA: 0x0009B770 File Offset: 0x00099970
+	// Token: 0x06000E4C RID: 3660 RVA: 0x00009FDD File Offset: 0x000081DD
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x06000E65 RID: 3685 RVA: 0x0009B780 File Offset: 0x00099980
+	// Token: 0x06000E4D RID: 3661 RVA: 0x000A9320 File Offset: 0x000A7520
 	public void Init()
 	{
 		for (int i = 0; i < this.uiObjects[0].transform.childCount; i++)
@@ -56,7 +56,7 @@ public class Menu_SaveGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E66 RID: 3686 RVA: 0x0009B7B4 File Offset: 0x000999B4
+	// Token: 0x06000E4E RID: 3662 RVA: 0x000A9354 File Offset: 0x000A7554
 	private void LoadFile(int i)
 	{
 		string text = this.mS_.GetSavegameTitle() + i.ToString() + ".txt";
@@ -136,7 +136,7 @@ public class Menu_SaveGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E67 RID: 3687 RVA: 0x0009B9E6 File Offset: 0x00099BE6
+	// Token: 0x06000E4F RID: 3663 RVA: 0x00009FEB File Offset: 0x000081EB
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -145,14 +145,14 @@ public class Menu_SaveGame : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E68 RID: 3688 RVA: 0x0009BA18 File Offset: 0x00099C18
+	// Token: 0x06000E50 RID: 3664 RVA: 0x0000A01D File Offset: 0x0000821D
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000E69 RID: 3689 RVA: 0x0009BA34 File Offset: 0x00099C34
+	// Token: 0x06000E51 RID: 3665 RVA: 0x000A9588 File Offset: 0x000A7788
 	public void BUTTON_SaveGame(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -178,7 +178,7 @@ public class Menu_SaveGame : MonoBehaviour
 		this.guiMain_.uiObjects[157].GetComponent<Menu_OverwriteSavegame>().Init(i, this.save_.LoadSaveGameName(i));
 	}
 
-	// Token: 0x06000E6A RID: 3690 RVA: 0x0009BB1C File Offset: 0x00099D1C
+	// Token: 0x06000E52 RID: 3666 RVA: 0x000A9670 File Offset: 0x000A7870
 	public void BUTTON_DeleteSaveGame(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -186,37 +186,37 @@ public class Menu_SaveGame : MonoBehaviour
 		this.guiMain_.uiObjects[153].GetComponent<Menu_DeleteSaveGame>().Init(i, this.save_.LoadSaveGameName(i));
 	}
 
-	// Token: 0x06000E6B RID: 3691 RVA: 0x0009BB75 File Offset: 0x00099D75
+	// Token: 0x06000E53 RID: 3667 RVA: 0x0000A038 File Offset: 0x00008238
 	public void BUTTON_DeleteAllSaveGames()
 	{
 		this.sfx_.PlaySound(3, true);
 		this.guiMain_.uiObjects[264].SetActive(true);
 	}
 
-	// Token: 0x040012DA RID: 4826
+	// Token: 0x040012D1 RID: 4817
 	public GameObject[] uiObjects;
 
-	// Token: 0x040012DB RID: 4827
+	// Token: 0x040012D2 RID: 4818
 	private GameObject main_;
 
-	// Token: 0x040012DC RID: 4828
+	// Token: 0x040012D3 RID: 4819
 	private mainScript mS_;
 
-	// Token: 0x040012DD RID: 4829
+	// Token: 0x040012D4 RID: 4820
 	private textScript tS_;
 
-	// Token: 0x040012DE RID: 4830
+	// Token: 0x040012D5 RID: 4821
 	private GUI_Main guiMain_;
 
-	// Token: 0x040012DF RID: 4831
+	// Token: 0x040012D6 RID: 4822
 	private sfxScript sfx_;
 
-	// Token: 0x040012E0 RID: 4832
+	// Token: 0x040012D7 RID: 4823
 	private savegameScript save_;
 
-	// Token: 0x040012E1 RID: 4833
+	// Token: 0x040012D8 RID: 4824
 	private ES3Writer writer;
 
-	// Token: 0x040012E2 RID: 4834
+	// Token: 0x040012D9 RID: 4825
 	private ES3Reader reader;
 }

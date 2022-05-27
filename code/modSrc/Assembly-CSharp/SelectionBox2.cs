@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x02000368 RID: 872
+// Token: 0x02000365 RID: 869
 public class SelectionBox2 : MonoBehaviour
 {
-	// Token: 0x06002020 RID: 8224 RVA: 0x0014D5BC File Offset: 0x0014B7BC
+	// Token: 0x06001FCD RID: 8141 RVA: 0x0014DD10 File Offset: 0x0014BF10
 	private void Start()
 	{
 		this.selectionLine = new VectorLine("Selection", new List<Vector2>(5), this.lineTexture, 4f, LineType.Continuous);
@@ -14,13 +14,13 @@ public class SelectionBox2 : MonoBehaviour
 		this.selectionLine.alignOddWidthToPixels = true;
 	}
 
-	// Token: 0x06002021 RID: 8225 RVA: 0x0014D447 File Offset: 0x0014B647
+	// Token: 0x06001FCE RID: 8142 RVA: 0x00015134 File Offset: 0x00013334
 	private void OnGUI()
 	{
 		GUI.Label(new Rect(10f, 10f, 300f, 25f), "Click & drag to make a selection box");
 	}
 
-	// Token: 0x06002022 RID: 8226 RVA: 0x0014D608 File Offset: 0x0014B808
+	// Token: 0x06001FCF RID: 8143 RVA: 0x0014DD5C File Offset: 0x0014BF5C
 	private void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
@@ -35,15 +35,15 @@ public class SelectionBox2 : MonoBehaviour
 		this.selectionLine.textureOffset = -Time.time * 2f % 1f;
 	}
 
-	// Token: 0x04002874 RID: 10356
+	// Token: 0x0400285E RID: 10334
 	public Texture lineTexture;
 
-	// Token: 0x04002875 RID: 10357
+	// Token: 0x0400285F RID: 10335
 	public float textureScale = 4f;
 
-	// Token: 0x04002876 RID: 10358
+	// Token: 0x04002860 RID: 10336
 	private VectorLine selectionLine;
 
-	// Token: 0x04002877 RID: 10359
+	// Token: 0x04002861 RID: 10337
 	private Vector2 originalPos;
 }

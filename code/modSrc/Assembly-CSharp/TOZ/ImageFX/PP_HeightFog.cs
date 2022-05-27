@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace TOZ.ImageFX
 {
-	// Token: 0x020003C6 RID: 966
+	// Token: 0x020003C3 RID: 963
 	[ExecuteInEditMode]
 	public sealed class PP_HeightFog : PostProcessBase
 	{
-		// Token: 0x06002347 RID: 9031 RVA: 0x0016FDBC File Offset: 0x0016DFBC
+		// Token: 0x060022F4 RID: 8948 RVA: 0x0001789F File Offset: 0x00015A9F
 		private void Awake()
 		{
 			this.shd = Shader.Find("Hidden/TOZ/ImageFX/HeightFog");
@@ -15,7 +15,7 @@ namespace TOZ.ImageFX
 			this.cam.depthTextureMode |= DepthTextureMode.Depth;
 		}
 
-		// Token: 0x06002348 RID: 9032 RVA: 0x0016FDF0 File Offset: 0x0016DFF0
+		// Token: 0x060022F5 RID: 8949 RVA: 0x0016DD00 File Offset: 0x0016BF00
 		private void OnRenderImage(RenderTexture src, RenderTexture dest)
 		{
 			if (!base.enabled)
@@ -53,7 +53,7 @@ namespace TOZ.ImageFX
 			PP_HeightFog.CustomGraphicsBlit(src, dest, this.mat, 0);
 		}
 
-		// Token: 0x06002349 RID: 9033 RVA: 0x0016FFF4 File Offset: 0x0016E1F4
+		// Token: 0x060022F6 RID: 8950 RVA: 0x0016DF04 File Offset: 0x0016C104
 		private static void CustomGraphicsBlit(RenderTexture source, RenderTexture dest, Material mat, int pass)
 		{
 			RenderTexture.active = dest;
@@ -74,7 +74,7 @@ namespace TOZ.ImageFX
 			GL.PopMatrix();
 		}
 
-		// Token: 0x0600234A RID: 9034 RVA: 0x001700C8 File Offset: 0x0016E2C8
+		// Token: 0x060022F7 RID: 8951 RVA: 0x0016DFD8 File Offset: 0x0016C1D8
 		private void ApplyVariables()
 		{
 			if (this.NoiseTex != null)
@@ -88,29 +88,29 @@ namespace TOZ.ImageFX
 			this.mat.SetFloat("_Speed", this.Speed);
 		}
 
-		// Token: 0x04002D3D RID: 11581
+		// Token: 0x04002D27 RID: 11559
 		[Range(0f, 100f)]
 		public float Density = 100f;
 
-		// Token: 0x04002D3E RID: 11582
+		// Token: 0x04002D28 RID: 11560
 		public float Height;
 
-		// Token: 0x04002D3F RID: 11583
+		// Token: 0x04002D29 RID: 11561
 		public float FallOff = 1f;
 
-		// Token: 0x04002D40 RID: 11584
+		// Token: 0x04002D2A RID: 11562
 		public float Scale = 0.0025f;
 
-		// Token: 0x04002D41 RID: 11585
+		// Token: 0x04002D2B RID: 11563
 		public float Speed = 0.005f;
 
-		// Token: 0x04002D42 RID: 11586
+		// Token: 0x04002D2C RID: 11564
 		public Texture2D NoiseTex;
 
-		// Token: 0x04002D43 RID: 11587
+		// Token: 0x04002D2D RID: 11565
 		public Color FogColor = Color.gray;
 
-		// Token: 0x04002D44 RID: 11588
+		// Token: 0x04002D2E RID: 11566
 		private Camera cam;
 	}
 }

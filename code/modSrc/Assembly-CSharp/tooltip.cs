@@ -3,16 +3,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x0200027E RID: 638
+// Token: 0x0200027A RID: 634
 public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler
 {
-	// Token: 0x06001903 RID: 6403 RVA: 0x000F8D87 File Offset: 0x000F6F87
+	// Token: 0x060018BE RID: 6334 RVA: 0x00010F6A File Offset: 0x0000F16A
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001904 RID: 6404 RVA: 0x000F8D90 File Offset: 0x000F6F90
+	// Token: 0x060018BF RID: 6335 RVA: 0x000FDB50 File Offset: 0x000FBD50
 	private void FindScripts()
 	{
 		if (this.main_)
@@ -41,7 +41,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001905 RID: 6405 RVA: 0x000F8E44 File Offset: 0x000F7044
+	// Token: 0x060018C0 RID: 6336 RVA: 0x000FDC04 File Offset: 0x000FBE04
 	private void Update()
 	{
 		if (this.guiMain_.selectInputField)
@@ -88,7 +88,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001906 RID: 6406 RVA: 0x000F8FA4 File Offset: 0x000F71A4
+	// Token: 0x060018C1 RID: 6337 RVA: 0x000FDD64 File Offset: 0x000FBF64
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		this.FindScripts();
@@ -129,7 +129,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001907 RID: 6407 RVA: 0x000F90C3 File Offset: 0x000F72C3
+	// Token: 0x060018C2 RID: 6338 RVA: 0x00010F72 File Offset: 0x0000F172
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		if (this.guiTooltip)
@@ -138,7 +138,7 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06001908 RID: 6408 RVA: 0x000F90C3 File Offset: 0x000F72C3
+	// Token: 0x060018C3 RID: 6339 RVA: 0x00010F72 File Offset: 0x0000F172
 	public void OnDisable()
 	{
 		if (this.guiTooltip)
@@ -147,42 +147,42 @@ public class tooltip : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x04001C62 RID: 7266
+	// Token: 0x04001C47 RID: 7239
 	private textScript tS_;
 
-	// Token: 0x04001C63 RID: 7267
+	// Token: 0x04001C48 RID: 7240
 	private settingsScript settings_;
 
-	// Token: 0x04001C64 RID: 7268
+	// Token: 0x04001C49 RID: 7241
 	private GameObject main_;
 
-	// Token: 0x04001C65 RID: 7269
+	// Token: 0x04001C4A RID: 7242
 	private mainScript mS_;
 
-	// Token: 0x04001C66 RID: 7270
+	// Token: 0x04001C4B RID: 7243
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001C67 RID: 7271
+	// Token: 0x04001C4C RID: 7244
 	public int textID = -1;
 
-	// Token: 0x04001C68 RID: 7272
+	// Token: 0x04001C4D RID: 7245
 	public string textArray = "";
 
-	// Token: 0x04001C69 RID: 7273
+	// Token: 0x04001C4E RID: 7246
 	public string c = "";
 
-	// Token: 0x04001C6A RID: 7274
+	// Token: 0x04001C4F RID: 7247
 	public KeyCode shortcut;
 
-	// Token: 0x04001C6B RID: 7275
+	// Token: 0x04001C50 RID: 7248
 	private GUI_Tooltip guiTooltip;
 
-	// Token: 0x04001C6C RID: 7276
+	// Token: 0x04001C51 RID: 7249
 	public Camera mainCamera;
 
-	// Token: 0x04001C6D RID: 7277
+	// Token: 0x04001C52 RID: 7250
 	private RaycastHit raycastHit;
 
-	// Token: 0x04001C6E RID: 7278
+	// Token: 0x04001C53 RID: 7251
 	private float middleMouseTimer;
 }

@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace MeshDistortLite
 {
-	// Token: 0x020003E9 RID: 1001
+	// Token: 0x020003E6 RID: 998
 	[Serializable]
 	public class DistortData
 	{
-		// Token: 0x060023D4 RID: 9172 RVA: 0x001723E0 File Offset: 0x001705E0
+		// Token: 0x06002381 RID: 9089 RVA: 0x0016F820 File Offset: 0x0016DA20
 		public void SetBounds(Bounds bounds)
 		{
 			this.bMin = bounds.min;
@@ -26,7 +26,7 @@ namespace MeshDistortLite
 			}
 		}
 
-		// Token: 0x060023D5 RID: 9173 RVA: 0x0017247C File Offset: 0x0017067C
+		// Token: 0x06002382 RID: 9090 RVA: 0x0016F8BC File Offset: 0x0016DABC
 		public void DistortVertice(ref Vector3 vertice)
 		{
 			this.x = 0f;
@@ -73,106 +73,106 @@ namespace MeshDistortLite
 			vertice.z += this.z * this.multiplier;
 		}
 
-		// Token: 0x04002DAF RID: 11695
+		// Token: 0x04002D99 RID: 11673
 		public bool enabled = true;
 
-		// Token: 0x04002DB0 RID: 11696
+		// Token: 0x04002D9A RID: 11674
 		public string name = "Effect";
 
-		// Token: 0x04002DB1 RID: 11697
+		// Token: 0x04002D9B RID: 11675
 		public float animationSpeed = 1f;
 
-		// Token: 0x04002DB2 RID: 11698
+		// Token: 0x04002D9C RID: 11676
 		public Distort.Type type;
 
-		// Token: 0x04002DB3 RID: 11699
+		// Token: 0x04002D9D RID: 11677
 		public float force = 1f;
 
-		// Token: 0x04002DB4 RID: 11700
+		// Token: 0x04002D9E RID: 11678
 		public float movementDisplacement;
 
-		// Token: 0x04002DB5 RID: 11701
+		// Token: 0x04002D9F RID: 11679
 		public Vector3 tile = Vector3.one;
 
-		// Token: 0x04002DB6 RID: 11702
+		// Token: 0x04002DA0 RID: 11680
 		public AnimationCurve displacedForceX = new AnimationCurve();
 
-		// Token: 0x04002DB7 RID: 11703
+		// Token: 0x04002DA1 RID: 11681
 		public AnimationCurve displacedForceY = new AnimationCurve();
 
-		// Token: 0x04002DB8 RID: 11704
+		// Token: 0x04002DA2 RID: 11682
 		public AnimationCurve displacedForceZ = new AnimationCurve();
 
-		// Token: 0x04002DB9 RID: 11705
+		// Token: 0x04002DA3 RID: 11683
 		public AnimationCurve displacedForceXY = new AnimationCurve();
 
-		// Token: 0x04002DBA RID: 11706
+		// Token: 0x04002DA4 RID: 11684
 		public AnimationCurve displacedForceXZ = new AnimationCurve();
 
-		// Token: 0x04002DBB RID: 11707
+		// Token: 0x04002DA5 RID: 11685
 		public AnimationCurve displacedForceYX = new AnimationCurve();
 
-		// Token: 0x04002DBC RID: 11708
+		// Token: 0x04002DA6 RID: 11686
 		public AnimationCurve displacedForceYZ = new AnimationCurve();
 
-		// Token: 0x04002DBD RID: 11709
+		// Token: 0x04002DA7 RID: 11687
 		public AnimationCurve displacedForceZX = new AnimationCurve();
 
-		// Token: 0x04002DBE RID: 11710
+		// Token: 0x04002DA8 RID: 11688
 		public AnimationCurve displacedForceZY = new AnimationCurve();
 
-		// Token: 0x04002DBF RID: 11711
+		// Token: 0x04002DA9 RID: 11689
 		public AnimationCurve staticForceX = new AnimationCurve(new Keyframe[]
 		{
 			new Keyframe(0f, 1f),
 			new Keyframe(1f, 1f)
 		});
 
-		// Token: 0x04002DC0 RID: 11712
+		// Token: 0x04002DAA RID: 11690
 		public AnimationCurve staticForceY = new AnimationCurve(new Keyframe[]
 		{
 			new Keyframe(0f, 1f),
 			new Keyframe(1f, 1f)
 		});
 
-		// Token: 0x04002DC1 RID: 11713
+		// Token: 0x04002DAB RID: 11691
 		public AnimationCurve staticForceZ = new AnimationCurve(new Keyframe[]
 		{
 			new Keyframe(0f, 1f),
 			new Keyframe(1f, 1f)
 		});
 
-		// Token: 0x04002DC2 RID: 11714
+		// Token: 0x04002DAC RID: 11692
 		public bool isPingPong = true;
 
-		// Token: 0x04002DC3 RID: 11715
+		// Token: 0x04002DAD RID: 11693
 		public bool showInEditor = true;
 
-		// Token: 0x04002DC4 RID: 11716
+		// Token: 0x04002DAE RID: 11694
 		public bool calculateInWorldSpace;
 
-		// Token: 0x04002DC5 RID: 11717
+		// Token: 0x04002DAF RID: 11695
 		private float x;
 
-		// Token: 0x04002DC6 RID: 11718
+		// Token: 0x04002DB0 RID: 11696
 		private float y;
 
-		// Token: 0x04002DC7 RID: 11719
+		// Token: 0x04002DB1 RID: 11697
 		private float z;
 
-		// Token: 0x04002DC8 RID: 11720
+		// Token: 0x04002DB2 RID: 11698
 		private Vector3 bMin;
 
-		// Token: 0x04002DC9 RID: 11721
+		// Token: 0x04002DB3 RID: 11699
 		private Vector3 bNormalized;
 
-		// Token: 0x04002DCA RID: 11722
+		// Token: 0x04002DB4 RID: 11700
 		private Vector3 percentage;
 
-		// Token: 0x04002DCB RID: 11723
+		// Token: 0x04002DB5 RID: 11701
 		private float multiplier;
 
-		// Token: 0x04002DCC RID: 11724
+		// Token: 0x04002DB6 RID: 11702
 		private Vector3 dir;
 	}
 }

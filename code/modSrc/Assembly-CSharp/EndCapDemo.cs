@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x02000351 RID: 849
+// Token: 0x0200034E RID: 846
 public class EndCapDemo : MonoBehaviour
 {
-	// Token: 0x06001FC2 RID: 8130 RVA: 0x0014B014 File Offset: 0x00149214
+	// Token: 0x06001F6F RID: 8047 RVA: 0x0014BBC8 File Offset: 0x00149DC8
 	private void Start()
 	{
 		VectorLine.SetEndCap("arrow", EndCap.Front, new Texture2D[]
@@ -63,21 +63,21 @@ public class EndCapDemo : MonoBehaviour
 		}.Draw();
 	}
 
-	// Token: 0x040027F8 RID: 10232
+	// Token: 0x040027E2 RID: 10210
 	public Texture2D lineTex;
 
-	// Token: 0x040027F9 RID: 10233
+	// Token: 0x040027E3 RID: 10211
 	public Texture2D lineTex2;
 
-	// Token: 0x040027FA RID: 10234
+	// Token: 0x040027E4 RID: 10212
 	public Texture2D lineTex3;
 
-	// Token: 0x040027FB RID: 10235
+	// Token: 0x040027E5 RID: 10213
 	public Texture2D frontTex;
 
-	// Token: 0x040027FC RID: 10236
+	// Token: 0x040027E6 RID: 10214
 	public Texture2D backTex;
 
-	// Token: 0x040027FD RID: 10237
+	// Token: 0x040027E7 RID: 10215
 	public Texture2D capTex;
 }

@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace MeshDistortLite
 {
-	// Token: 0x020003EA RID: 1002
+	// Token: 0x020003E7 RID: 999
 	public class Math : ScriptableObject
 	{
-		// Token: 0x060023D7 RID: 9175 RVA: 0x00172A6E File Offset: 0x00170C6E
+		// Token: 0x06002384 RID: 9092 RVA: 0x000182D7 File Offset: 0x000164D7
 		public static float Repeat(float num, float min, float max)
 		{
 			if (num < min)
@@ -16,7 +16,7 @@ namespace MeshDistortLite
 			return min + (num - min) % (max - min);
 		}
 
-		// Token: 0x060023D8 RID: 9176 RVA: 0x00172A87 File Offset: 0x00170C87
+		// Token: 0x06002385 RID: 9093 RVA: 0x000182F0 File Offset: 0x000164F0
 		public static float PingPong(float num, float min, float max)
 		{
 			min = Math.Repeat(num, min, 2f * max);

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000060 RID: 96
 public class platformScript : MonoBehaviour
 {
-	// Token: 0x06000348 RID: 840 RVA: 0x00032060 File Offset: 0x00030260
+	// Token: 0x06000343 RID: 835 RVA: 0x00003C92 File Offset: 0x00001E92
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000349 RID: 841 RVA: 0x00032068 File Offset: 0x00030268
+	// Token: 0x06000344 RID: 836 RVA: 0x00046CD8 File Offset: 0x00044ED8
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -56,22 +56,22 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600034A RID: 842 RVA: 0x000321A4 File Offset: 0x000303A4
+	// Token: 0x06000345 RID: 837 RVA: 0x00003C9A File Offset: 0x00001E9A
 	public void Init()
 	{
 		base.name = "PLATFORM_" + this.myID.ToString();
 	}
 
-	// Token: 0x0600034B RID: 843 RVA: 0x000321C1 File Offset: 0x000303C1
+	// Token: 0x06000346 RID: 838 RVA: 0x00003CB7 File Offset: 0x00001EB7
 	public float GetHype()
 	{
 		return this.hype;
 	}
 
-	// Token: 0x0600034C RID: 844 RVA: 0x000321CC File Offset: 0x000303CC
+	// Token: 0x06000347 RID: 839 RVA: 0x00046E14 File Offset: 0x00045014
 	public string GetName()
 	{
-		if (!this.OwnerIsNPC())
+		if (this.playerConsole || (this.multiplaySlot != -1 && this.mS_.multiplayer))
 		{
 			return this.myName;
 		}
@@ -81,36 +81,36 @@ public class platformScript : MonoBehaviour
 		{
 		case 0:
 			text = this.name_EN;
-			goto IL_98;
+			goto IL_A8;
 		case 1:
 			text = this.name_GE;
-			goto IL_98;
+			goto IL_A8;
 		case 2:
 			text = this.name_TU;
-			goto IL_98;
+			goto IL_A8;
 		case 3:
 			text = this.name_CH;
-			goto IL_98;
+			goto IL_A8;
 		case 4:
 			text = this.name_FR;
-			goto IL_98;
+			goto IL_A8;
 		case 5:
 		case 6:
 		case 7:
 			break;
 		case 8:
 			text = this.name_HU;
-			goto IL_98;
+			goto IL_A8;
 		default:
 			if (language == 16)
 			{
 				text = this.name_JA;
-				goto IL_98;
+				goto IL_A8;
 			}
 			break;
 		}
 		text = this.name_EN;
-		IL_98:
+		IL_A8:
 		if (text == null)
 		{
 			return this.name_EN;
@@ -122,18 +122,18 @@ public class platformScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x0600034D RID: 845 RVA: 0x0003228C File Offset: 0x0003048C
+	// Token: 0x06000348 RID: 840 RVA: 0x00046EE4 File Offset: 0x000450E4
 	public string GetManufacturer()
 	{
-		if (this.ownerID == this.mS_.myID)
+		if (this.playerConsole)
 		{
-			return this.mS_.GetCompanyName();
+			return this.mS_.companyName;
 		}
-		if (this.mS_.multiplayer)
+		if (this.mS_.multiplayer && this.multiplaySlot != -1)
 		{
-			if (!this.OwnerIsNPC() && this.mS_.mpCalls_)
+			if (this.mS_.mpCalls_)
 			{
-				return this.mS_.mpCalls_.GetCompanyName(this.ownerID);
+				return this.mS_.mpCalls_.GetCompanyName(this.multiplaySlot);
 			}
 			return "";
 		}
@@ -145,36 +145,36 @@ public class platformScript : MonoBehaviour
 			{
 			case 0:
 				text = this.manufacturer_EN;
-				goto IL_EC;
+				goto IL_DC;
 			case 1:
 				text = this.manufacturer_GE;
-				goto IL_EC;
+				goto IL_DC;
 			case 2:
 				text = this.manufacturer_TU;
-				goto IL_EC;
+				goto IL_DC;
 			case 3:
 				text = this.manufacturer_CH;
-				goto IL_EC;
+				goto IL_DC;
 			case 4:
 				text = this.manufacturer_FR;
-				goto IL_EC;
+				goto IL_DC;
 			case 5:
 			case 6:
 			case 7:
 				break;
 			case 8:
 				text = this.manufacturer_HU;
-				goto IL_EC;
+				goto IL_DC;
 			default:
 				if (language == 16)
 				{
 					text = this.manufacturer_JA;
-					goto IL_EC;
+					goto IL_DC;
 				}
 				break;
 			}
 			text = this.manufacturer_EN;
-			IL_EC:
+			IL_DC:
 			if (text == null)
 			{
 				return this.manufacturer_EN;
@@ -187,10 +187,10 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600034E RID: 846 RVA: 0x000323A0 File Offset: 0x000305A0
+	// Token: 0x06000349 RID: 841 RVA: 0x00003CBF File Offset: 0x00001EBF
 	public void GetColor(GameObject go)
 	{
-		if (this.ownerID == this.mS_.myID)
+		if (this.playerConsole)
 		{
 			Material material = go.GetComponent<Image>().material;
 			material.SetFloat("_HsvShift", this.conHueShift);
@@ -198,10 +198,10 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600034F RID: 847 RVA: 0x000323EC File Offset: 0x000305EC
+	// Token: 0x0600034A RID: 842 RVA: 0x00046FE8 File Offset: 0x000451E8
 	public void SetPic(GameObject go)
 	{
-		if (!this.OwnerIsNPC())
+		if (this.playerConsole || (this.multiplaySlot != -1 && this.mS_.multiplayer))
 		{
 			if (this.component_case != -1)
 			{
@@ -243,13 +243,13 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000350 RID: 848 RVA: 0x0003259D File Offset: 0x0003079D
+	// Token: 0x0600034B RID: 843 RVA: 0x00003CF5 File Offset: 0x00001EF5
 	public int GetVerkaufspreis()
 	{
 		return this.verkaufspreis;
 	}
 
-	// Token: 0x06000351 RID: 849 RVA: 0x000325A8 File Offset: 0x000307A8
+	// Token: 0x0600034C RID: 844 RVA: 0x000471B0 File Offset: 0x000453B0
 	public int GetAktuellProductionsCosts()
 	{
 		float num = (float)(this.startProduktionskosten - (50 + this.anzController * 5));
@@ -270,7 +270,7 @@ public class platformScript : MonoBehaviour
 		return Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x06000352 RID: 850 RVA: 0x00032624 File Offset: 0x00030824
+	// Token: 0x0600034D RID: 845 RVA: 0x0004722C File Offset: 0x0004542C
 	public int CalcStartProductionsCosts()
 	{
 		float num = 0f;
@@ -341,37 +341,37 @@ public class platformScript : MonoBehaviour
 		return Mathf.RoundToInt(num7);
 	}
 
-	// Token: 0x06000353 RID: 851 RVA: 0x00032808 File Offset: 0x00030A08
+	// Token: 0x0600034E RID: 846 RVA: 0x00003CFD File Offset: 0x00001EFD
 	public int GetPrice()
 	{
 		return this.price;
 	}
 
-	// Token: 0x06000354 RID: 852 RVA: 0x00032810 File Offset: 0x00030A10
+	// Token: 0x0600034F RID: 847 RVA: 0x00003D05 File Offset: 0x00001F05
 	public int GetDevCosts()
 	{
 		return this.dev_costs;
 	}
 
-	// Token: 0x06000355 RID: 853 RVA: 0x00032818 File Offset: 0x00030A18
+	// Token: 0x06000350 RID: 848 RVA: 0x00003D0D File Offset: 0x00001F0D
 	public long GetGesamtAusgaben()
 	{
 		return this.entwicklungsKosten + (long)this.costs_mitarbeiter + (long)this.costs_marketing + this.costs_production;
 	}
 
-	// Token: 0x06000356 RID: 854 RVA: 0x00032837 File Offset: 0x00030A37
+	// Token: 0x06000351 RID: 849 RVA: 0x00003D2C File Offset: 0x00001F2C
 	public long GetEntwicklungskosten()
 	{
 		return this.entwicklungsKosten + (long)this.costs_mitarbeiter;
 	}
 
-	// Token: 0x06000357 RID: 855 RVA: 0x00032847 File Offset: 0x00030A47
+	// Token: 0x06000352 RID: 850 RVA: 0x00003D3C File Offset: 0x00001F3C
 	public long GetGesamtGewinn()
 	{
 		return this.umsatzTotal - this.GetGesamtAusgaben();
 	}
 
-	// Token: 0x06000358 RID: 856 RVA: 0x00032856 File Offset: 0x00030A56
+	// Token: 0x06000353 RID: 851 RVA: 0x00003D4B File Offset: 0x00001F4B
 	public float GetMarktanteil()
 	{
 		if (this.typ == 4)
@@ -381,13 +381,13 @@ public class platformScript : MonoBehaviour
 		return this.marktanteil;
 	}
 
-	// Token: 0x06000359 RID: 857 RVA: 0x0003286D File Offset: 0x00030A6D
+	// Token: 0x06000354 RID: 852 RVA: 0x00003D62 File Offset: 0x00001F62
 	public float GetProzent()
 	{
 		return 100f / this.devPointsStart * (this.devPointsStart - this.devPoints);
 	}
 
-	// Token: 0x0600035A RID: 858 RVA: 0x0003288C File Offset: 0x00030A8C
+	// Token: 0x06000355 RID: 853 RVA: 0x0004740C File Offset: 0x0004560C
 	public string GetMarktanteilString()
 	{
 		if (this.typ == 4)
@@ -404,13 +404,13 @@ public class platformScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x0600035B RID: 859 RVA: 0x0003291B File Offset: 0x00030B1B
+	// Token: 0x06000356 RID: 854 RVA: 0x00003D7E File Offset: 0x00001F7E
 	public int GetAktiveNutzer()
 	{
 		return Mathf.RoundToInt((float)this.units * this.powerFromMarket);
 	}
 
-	// Token: 0x0600035C RID: 860 RVA: 0x00032930 File Offset: 0x00030B30
+	// Token: 0x06000357 RID: 855 RVA: 0x0004749C File Offset: 0x0004569C
 	public void SetMarktanteil(long gesamtUnits)
 	{
 		this.marktanteil = 0f;
@@ -429,7 +429,7 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600035D RID: 861 RVA: 0x000329B4 File Offset: 0x00030BB4
+	// Token: 0x06000358 RID: 856 RVA: 0x00047520 File Offset: 0x00045720
 	public void ZaehleGames()
 	{
 		this.games = 0;
@@ -453,19 +453,19 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600035E RID: 862 RVA: 0x00032A97 File Offset: 0x00030C97
+	// Token: 0x06000359 RID: 857 RVA: 0x00003D93 File Offset: 0x00001F93
 	public int GetGames()
 	{
 		return this.games;
 	}
 
-	// Token: 0x0600035F RID: 863 RVA: 0x00032A9F File Offset: 0x00030C9F
+	// Token: 0x0600035A RID: 858 RVA: 0x00003D9B File Offset: 0x00001F9B
 	public int GetExklusivGames()
 	{
 		return this.exklusivGames;
 	}
 
-	// Token: 0x06000360 RID: 864 RVA: 0x00032AA8 File Offset: 0x00030CA8
+	// Token: 0x0600035B RID: 859 RVA: 0x00047604 File Offset: 0x00045804
 	public string GetDateString()
 	{
 		if (!this.isUnlocked)
@@ -475,7 +475,7 @@ public class platformScript : MonoBehaviour
 		return this.date_year.ToString() + " " + this.tS_.GetText(this.date_month + 220);
 	}
 
-	// Token: 0x06000361 RID: 865 RVA: 0x00032AFC File Offset: 0x00030CFC
+	// Token: 0x0600035C RID: 860 RVA: 0x00047658 File Offset: 0x00045858
 	public string GetDateStringEnd()
 	{
 		if (!this.isUnlocked)
@@ -485,7 +485,7 @@ public class platformScript : MonoBehaviour
 		return this.date_year_end.ToString() + " " + this.tS_.GetText(this.date_month_end + 220);
 	}
 
-	// Token: 0x06000362 RID: 866 RVA: 0x00032B50 File Offset: 0x00030D50
+	// Token: 0x0600035D RID: 861 RVA: 0x000476AC File Offset: 0x000458AC
 	public string GetTooltip()
 	{
 		string text = "<b><size=18>" + this.GetName() + "</size></b>";
@@ -510,7 +510,7 @@ public class platformScript : MonoBehaviour
 			this.tech.ToString(),
 			"</color></b>\n"
 		});
-		if (!this.OwnerIsNPC())
+		if (this.playerConsole || (this.multiplaySlot != -1 && this.mS_.multiplayer))
 		{
 			text = string.Concat(new string[]
 			{
@@ -579,7 +579,7 @@ public class platformScript : MonoBehaviour
 				"</color>"
 			});
 		}
-		if (this.isUnlocked && !this.OwnerIsNPC())
+		if (this.isUnlocked && (this.playerConsole || (this.multiplaySlot != -1 && this.mS_.multiplayer)))
 		{
 			text = string.Concat(new string[]
 			{
@@ -628,7 +628,7 @@ public class platformScript : MonoBehaviour
 				"%</color>"
 			});
 		}
-		if (this.ownerID == this.mS_.myID && this.isUnlocked)
+		if (this.playerConsole && this.isUnlocked)
 		{
 			text += "\n";
 			text = string.Concat(new string[]
@@ -688,20 +688,20 @@ public class platformScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06000363 RID: 867 RVA: 0x000331D6 File Offset: 0x000313D6
+	// Token: 0x0600035E RID: 862 RVA: 0x00003DA3 File Offset: 0x00001FA3
 	public bool IsVerfuegbar()
 	{
 		return this.isUnlocked && !this.vomMarktGenommen;
 	}
 
-	// Token: 0x06000364 RID: 868 RVA: 0x000331ED File Offset: 0x000313ED
+	// Token: 0x0600035F RID: 863 RVA: 0x00003DB8 File Offset: 0x00001FB8
 	public void Sell()
 	{
 		if (this.IsVerfuegbar())
 		{
 			this.weeksOnMarket++;
 		}
-		if (this.OwnerIsNPC())
+		if (this.npc)
 		{
 			this.SellNPC();
 			return;
@@ -709,14 +709,14 @@ public class platformScript : MonoBehaviour
 		this.SellPlayer();
 	}
 
-	// Token: 0x06000365 RID: 869 RVA: 0x0003321C File Offset: 0x0003141C
+	// Token: 0x06000360 RID: 864 RVA: 0x00047D54 File Offset: 0x00045F54
 	public void BonusSellsExklusiv(int i)
 	{
 		if (!this.IsVerfuegbar())
 		{
 			return;
 		}
-		if (this.OwnerIsNPC())
+		if (this.npc)
 		{
 			this.units += i;
 			this.units_max += i;
@@ -731,7 +731,7 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000366 RID: 870 RVA: 0x00033288 File Offset: 0x00031488
+	// Token: 0x06000361 RID: 865 RVA: 0x00047DC0 File Offset: 0x00045FC0
 	private void SellNPC()
 	{
 		if (!this.IsVerfuegbar())
@@ -795,10 +795,10 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000367 RID: 871 RVA: 0x000333E8 File Offset: 0x000315E8
+	// Token: 0x06000362 RID: 866 RVA: 0x00047F20 File Offset: 0x00046120
 	private void SellPlayer()
 	{
-		if (this.ownerID != this.mS_.myID)
+		if (!this.playerConsole)
 		{
 			return;
 		}
@@ -1163,42 +1163,60 @@ public class platformScript : MonoBehaviour
 								num7 = num * 0.15f;
 							}
 							num7 *= this.GetPriceAbzug();
-							float num8 = (float)Mathf.RoundToInt(UnityEngine.Random.Range((float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * 0.2f, (float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * 0.3f));
-							num8 = num8 / 100f * (130f - this.GetMarktanteil());
+							int reviewTotal = this.games_.arrayGamesScripts[l].reviewTotal;
+							float num8 = (float)Mathf.RoundToInt(UnityEngine.Random.Range((float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * (float)reviewTotal / 300f, (float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * (float)reviewTotal / 150f));
+							if (reviewTotal < 75)
+							{
+								num8 = 0f;
+							}
+							if (reviewTotal > 80)
+							{
+								num8 = num8 * 105f / 100f;
+							}
+							if (reviewTotal > 85)
+							{
+								num8 = num8 * 110f / 100f;
+							}
+							if (reviewTotal > 90)
+							{
+								num8 = num8 * 115f / 100f;
+							}
+							if (reviewTotal > 93)
+							{
+								num8 = num8 * 120f / 100f;
+							}
+							if (reviewTotal > 95)
+							{
+								num8 = num8 * 140f / 100f;
+							}
+							if (reviewTotal > 97)
+							{
+								num8 = num8 * 160f / 100f;
+							}
+							if (reviewTotal > 99)
+							{
+								num8 = num8 * 180f / 100f;
+							}
 							if (num8 > (float)this.sellsPerWeek[0])
 							{
 								num8 = (float)this.sellsPerWeek[0];
 							}
-							if (num7 >= num8)
+							if (num7 * 5f <= num8)
 							{
-								this.games_.arrayGamesScripts[l].exklusivKonsolenSells += (long)Mathf.RoundToInt(num8);
-								num += num8;
-								if (this.mS_.multiplayer)
-								{
-									if (this.mS_.mpCalls_.isServer)
-									{
-										this.mS_.mpCalls_.SERVER_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num8));
-									}
-									if (this.mS_.mpCalls_.isClient)
-									{
-										this.mS_.mpCalls_.CLIENT_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num8));
-									}
-								}
+								num8 = num7 * 5f;
 							}
-							else
+							num7 += num8;
+							this.games_.arrayGamesScripts[l].exklusivKonsolenSells += (long)Mathf.RoundToInt(num7);
+							num += num7;
+							if (this.mS_.multiplayer)
 							{
-								this.games_.arrayGamesScripts[l].exklusivKonsolenSells += (long)Mathf.RoundToInt(num7);
-								num += num7;
-								if (this.mS_.multiplayer)
+								if (this.mS_.mpCalls_.isServer)
 								{
-									if (this.mS_.mpCalls_.isServer)
-									{
-										this.mS_.mpCalls_.SERVER_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
-									}
-									if (this.mS_.mpCalls_.isClient)
-									{
-										this.mS_.mpCalls_.CLIENT_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
-									}
+									this.mS_.mpCalls_.SERVER_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
+								}
+								if (this.mS_.mpCalls_.isClient)
+								{
+									this.mS_.mpCalls_.CLIENT_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
 								}
 							}
 						}
@@ -1261,13 +1279,13 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000368 RID: 872 RVA: 0x000340F6 File Offset: 0x000322F6
+	// Token: 0x06000363 RID: 867 RVA: 0x00003DE5 File Offset: 0x00001FE5
 	public bool IsOutdatet()
 	{
 		return this.weeksOnMarket >= 500;
 	}
 
-	// Token: 0x06000369 RID: 873 RVA: 0x00034108 File Offset: 0x00032308
+	// Token: 0x06000364 RID: 868 RVA: 0x00048C2C File Offset: 0x00046E2C
 	private float GetPriceAbzug()
 	{
 		if (this.verkaufspreis <= 60)
@@ -1397,7 +1415,7 @@ public class platformScript : MonoBehaviour
 		return 1f;
 	}
 
-	// Token: 0x0600036A RID: 874 RVA: 0x000344D4 File Offset: 0x000326D4
+	// Token: 0x06000365 RID: 869 RVA: 0x00048FF8 File Offset: 0x000471F8
 	public void AddHype(float f)
 	{
 		if (this.hype <= 100f)
@@ -1418,19 +1436,19 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600036B RID: 875 RVA: 0x0003454F File Offset: 0x0003274F
+	// Token: 0x06000366 RID: 870 RVA: 0x00003DF7 File Offset: 0x00001FF7
 	public Sprite GetComplexSprite()
 	{
 		return this.platforms_.complexSprites[this.complex];
 	}
 
-	// Token: 0x0600036C RID: 876 RVA: 0x00034563 File Offset: 0x00032763
+	// Token: 0x06000367 RID: 871 RVA: 0x00003E0B File Offset: 0x0000200B
 	public Sprite GetTypSprite()
 	{
 		return this.platforms_.typSprites[this.typ];
 	}
 
-	// Token: 0x0600036D RID: 877 RVA: 0x00034578 File Offset: 0x00032778
+	// Token: 0x06000368 RID: 872 RVA: 0x00049074 File Offset: 0x00047274
 	public string GetTypString()
 	{
 		switch (this.typ)
@@ -1450,7 +1468,7 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600036E RID: 878 RVA: 0x00034610 File Offset: 0x00032810
+	// Token: 0x06000369 RID: 873 RVA: 0x0004910C File Offset: 0x0004730C
 	public void RemoveFromMarket()
 	{
 		this.vomMarktGenommen = true;
@@ -1466,7 +1484,7 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600036F RID: 879 RVA: 0x0003467C File Offset: 0x0003287C
+	// Token: 0x0600036A RID: 874 RVA: 0x00049178 File Offset: 0x00047378
 	public void SetOnMarket()
 	{
 		this.FindScripts();
@@ -1474,7 +1492,7 @@ public class platformScript : MonoBehaviour
 		this.date_year = this.mS_.year;
 		this.date_month = this.mS_.month;
 		this.InitUI();
-		if (this.ownerID == this.mS_.myID)
+		if (this.playerConsole)
 		{
 			this.mS_.AddStudioPoints(Mathf.RoundToInt(5f * this.review));
 			if (this.mS_.achScript_)
@@ -1506,10 +1524,10 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000370 RID: 880 RVA: 0x000347A4 File Offset: 0x000329A4
+	// Token: 0x0600036B RID: 875 RVA: 0x00049294 File Offset: 0x00047494
 	public void InitUI()
 	{
-		if (this.ownerID != this.mS_.myID)
+		if (!this.playerConsole)
 		{
 			return;
 		}
@@ -1532,7 +1550,7 @@ public class platformScript : MonoBehaviour
 		this.konsoleTab_.Init(this.myID);
 	}
 
-	// Token: 0x06000371 RID: 881 RVA: 0x00034874 File Offset: 0x00032A74
+	// Token: 0x0600036C RID: 876 RVA: 0x00049358 File Offset: 0x00047558
 	public float GetTechDifference()
 	{
 		float num = 0f;
@@ -1558,7 +1576,7 @@ public class platformScript : MonoBehaviour
 		return (float)this.tech - num3;
 	}
 
-	// Token: 0x06000372 RID: 882 RVA: 0x00034928 File Offset: 0x00032B28
+	// Token: 0x0600036D RID: 877 RVA: 0x0004940C File Offset: 0x0004760C
 	public int GetAmountOfOwnKonsolesSameTyp()
 	{
 		int num = 0;
@@ -1568,7 +1586,7 @@ public class platformScript : MonoBehaviour
 			if (array[i])
 			{
 				platformScript component = array[i].GetComponent<platformScript>();
-				if (component && component.ownerID == this.mS_.myID && component.isUnlocked && !component.vomMarktGenommen && component.typ == this.typ && component.tech >= this.tech)
+				if (component && component.playerConsole && component.isUnlocked && !component.vomMarktGenommen && component.typ == this.typ && component.tech >= this.tech)
 				{
 					num++;
 				}
@@ -1577,7 +1595,7 @@ public class platformScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000373 RID: 883 RVA: 0x000349B0 File Offset: 0x00032BB0
+	// Token: 0x0600036E RID: 878 RVA: 0x00049488 File Offset: 0x00047688
 	public int GetAmountOfOwnKonsolesSameTypRemoved()
 	{
 		int num = 0;
@@ -1587,7 +1605,7 @@ public class platformScript : MonoBehaviour
 			if (array[i])
 			{
 				platformScript component = array[i].GetComponent<platformScript>();
-				if (component && component.ownerID == this.mS_.myID && component.isUnlocked && component.typ == this.typ && component.vomMarktGenommen && component.tech > this.tech)
+				if (component && component.playerConsole && component.isUnlocked && component.typ == this.typ && component.vomMarktGenommen && component.tech > this.tech)
 				{
 					num++;
 				}
@@ -1596,7 +1614,7 @@ public class platformScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000374 RID: 884 RVA: 0x00034A38 File Offset: 0x00032C38
+	// Token: 0x0600036F RID: 879 RVA: 0x00049504 File Offset: 0x00047704
 	public int GetAmountOfKonsolesSameTyp()
 	{
 		int num = 0;
@@ -1615,7 +1633,7 @@ public class platformScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000375 RID: 885 RVA: 0x00034AA0 File Offset: 0x00032CA0
+	// Token: 0x06000370 RID: 880 RVA: 0x0004956C File Offset: 0x0004776C
 	public void FindMyGame()
 	{
 		if (this.gameID == -1)
@@ -1640,7 +1658,7 @@ public class platformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000376 RID: 886 RVA: 0x00034B18 File Offset: 0x00032D18
+	// Token: 0x06000371 RID: 881 RVA: 0x000495E4 File Offset: 0x000477E4
 	public void SellPlayerKonsoleToNPC(publisherScript pS_)
 	{
 		if (!pS_)
@@ -1655,7 +1673,7 @@ public class platformScript : MonoBehaviour
 		if (!this.publisherBuyed[pS_.myID])
 		{
 			this.publisherBuyed[pS_.myID] = true;
-			if (this.ownerID == this.mS_.myID)
+			if (this.playerConsole)
 			{
 				this.mS_.Earn((long)this.price, 10);
 				string text = this.tS_.GetText(1659);
@@ -1664,14 +1682,14 @@ public class platformScript : MonoBehaviour
 				text = text + "\n<color=green><b>+" + this.mS_.GetMoney((long)this.price, true) + "</b></color>";
 				this.guiMain_.CreateTopNewsInfo(text);
 			}
-			if (this.mS_.multiplayer && this.PlatformFromMitspieler())
+			if (this.mS_.multiplayer && !this.playerConsole && this.multiplaySlot != -1)
 			{
-				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.myID, this.ownerID, 4, this.price);
+				this.mS_.mpCalls_.SERVER_Send_Payment(this.mS_.mpCalls_.myID, this.multiplaySlot, 4, this.price);
 			}
 		}
 	}
 
-	// Token: 0x06000377 RID: 887 RVA: 0x00034C3C File Offset: 0x00032E3C
+	// Token: 0x06000372 RID: 882 RVA: 0x00049708 File Offset: 0x00047908
 	public bool GetPlattformEnd()
 	{
 		int num = Mathf.RoundToInt(this.GetMarktanteil());
@@ -1698,7 +1716,7 @@ public class platformScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000378 RID: 888 RVA: 0x00034CB0 File Offset: 0x00032EB0
+	// Token: 0x06000373 RID: 883 RVA: 0x0004977C File Offset: 0x0004797C
 	public float GetExklusivBonus()
 	{
 		float result = 0f;
@@ -1751,295 +1769,289 @@ public class platformScript : MonoBehaviour
 		{
 			result = 0f;
 		}
-		if (!this.OwnerIsNPC())
+		if (this.playerConsole || (this.multiplaySlot != -1 && this.mS_.multiplayer))
 		{
 			result = 0f;
 		}
 		return result;
 	}
 
-	// Token: 0x06000379 RID: 889 RVA: 0x00034D90 File Offset: 0x00032F90
-	public bool OwnerIsNPC()
-	{
-		return this.ownerID < 100000;
-	}
-
-	// Token: 0x0600037A RID: 890 RVA: 0x00034DA4 File Offset: 0x00032FA4
-	public bool PlatformFromMitspieler()
-	{
-		return this.mS_.multiplayer && this.ownerID >= 100000 && this.ownerID != this.mS_.myID && this.ownerID >= 100000;
-	}
-
-	// Token: 0x0400066E RID: 1646
+	// Token: 0x04000671 RID: 1649
 	public GameObject main_;
 
-	// Token: 0x0400066F RID: 1647
+	// Token: 0x04000672 RID: 1650
 	public mainScript mS_;
 
-	// Token: 0x04000670 RID: 1648
+	// Token: 0x04000673 RID: 1651
 	public settingsScript settings_;
 
-	// Token: 0x04000671 RID: 1649
+	// Token: 0x04000674 RID: 1652
 	public textScript tS_;
 
-	// Token: 0x04000672 RID: 1650
+	// Token: 0x04000675 RID: 1653
 	public gameplayFeatures gF_;
 
-	// Token: 0x04000673 RID: 1651
+	// Token: 0x04000676 RID: 1654
 	public platforms platforms_;
 
-	// Token: 0x04000674 RID: 1652
+	// Token: 0x04000677 RID: 1655
 	public hardware hardware_;
 
-	// Token: 0x04000675 RID: 1653
+	// Token: 0x04000678 RID: 1656
 	public hardwareFeatures hardwareFeatures_;
 
-	// Token: 0x04000676 RID: 1654
+	// Token: 0x04000679 RID: 1657
 	public GUI_Main guiMain_;
 
-	// Token: 0x04000677 RID: 1655
+	// Token: 0x0400067A RID: 1658
 	public games games_;
 
-	// Token: 0x04000678 RID: 1656
+	// Token: 0x0400067B RID: 1659
 	public konsoleTab konsoleTab_;
 
-	// Token: 0x04000679 RID: 1657
+	// Token: 0x0400067C RID: 1660
 	public int myID;
 
-	// Token: 0x0400067A RID: 1658
-	public int ownerID = -1;
-
-	// Token: 0x0400067B RID: 1659
+	// Token: 0x0400067D RID: 1661
 	public int date_year;
 
-	// Token: 0x0400067C RID: 1660
+	// Token: 0x0400067E RID: 1662
 	public int date_month;
 
-	// Token: 0x0400067D RID: 1661
+	// Token: 0x0400067F RID: 1663
 	public int date_year_end;
 
-	// Token: 0x0400067E RID: 1662
+	// Token: 0x04000680 RID: 1664
 	public int date_month_end;
 
-	// Token: 0x0400067F RID: 1663
-	public int price;
-
-	// Token: 0x04000680 RID: 1664
-	public int dev_costs;
-
 	// Token: 0x04000681 RID: 1665
-	public int tech;
+	public bool npc;
 
 	// Token: 0x04000682 RID: 1666
-	public int typ;
+	public int price;
 
 	// Token: 0x04000683 RID: 1667
-	public float marktanteil;
+	public int dev_costs;
 
 	// Token: 0x04000684 RID: 1668
-	public int[] needFeatures;
+	public int tech;
 
 	// Token: 0x04000685 RID: 1669
-	public int units;
+	public int typ;
 
 	// Token: 0x04000686 RID: 1670
-	public int units_max;
+	public float marktanteil;
 
 	// Token: 0x04000687 RID: 1671
-	public string name_EN = "";
+	public int[] needFeatures;
 
 	// Token: 0x04000688 RID: 1672
-	public string name_GE = "";
+	public int units;
 
 	// Token: 0x04000689 RID: 1673
-	public string name_TU = "";
+	public int units_max;
 
 	// Token: 0x0400068A RID: 1674
-	public string name_CH = "";
+	public string name_EN = "";
 
 	// Token: 0x0400068B RID: 1675
-	public string name_FR = "";
+	public string name_GE = "";
 
 	// Token: 0x0400068C RID: 1676
-	public string name_HU = "";
+	public string name_TU = "";
 
 	// Token: 0x0400068D RID: 1677
-	public string name_JA = "";
+	public string name_CH = "";
 
 	// Token: 0x0400068E RID: 1678
-	public string manufacturer_EN = "";
+	public string name_FR = "";
 
 	// Token: 0x0400068F RID: 1679
-	public string manufacturer_GE = "";
+	public string name_HU = "";
 
 	// Token: 0x04000690 RID: 1680
-	public string manufacturer_TU = "";
+	public string name_JA = "";
 
 	// Token: 0x04000691 RID: 1681
-	public string manufacturer_CH = "";
+	public string manufacturer_EN = "";
 
 	// Token: 0x04000692 RID: 1682
-	public string manufacturer_FR = "";
+	public string manufacturer_GE = "";
 
 	// Token: 0x04000693 RID: 1683
-	public string manufacturer_HU = "";
+	public string manufacturer_TU = "";
 
 	// Token: 0x04000694 RID: 1684
-	public string manufacturer_JA = "";
+	public string manufacturer_CH = "";
 
 	// Token: 0x04000695 RID: 1685
-	private Sprite pic1;
+	public string manufacturer_FR = "";
 
 	// Token: 0x04000696 RID: 1686
-	private Sprite pic2;
+	public string manufacturer_HU = "";
 
 	// Token: 0x04000697 RID: 1687
-	public string pic1_file = "";
+	public string manufacturer_JA = "";
 
 	// Token: 0x04000698 RID: 1688
-	public string pic2_file = "";
+	private Sprite pic1;
 
 	// Token: 0x04000699 RID: 1689
-	public int pic2_year;
+	private Sprite pic2;
 
 	// Token: 0x0400069A RID: 1690
-	public int games;
+	public string pic1_file = "";
 
 	// Token: 0x0400069B RID: 1691
-	public int exklusivGames;
+	public string pic2_file = "";
 
 	// Token: 0x0400069C RID: 1692
-	public int erfahrung;
+	public int pic2_year;
 
 	// Token: 0x0400069D RID: 1693
-	public bool isUnlocked;
+	public int games;
 
 	// Token: 0x0400069E RID: 1694
-	public bool inBesitz;
+	public int exklusivGames;
 
 	// Token: 0x0400069F RID: 1695
-	public bool vomMarktGenommen;
+	public int erfahrung;
 
 	// Token: 0x040006A0 RID: 1696
-	public int complex;
+	public bool isUnlocked;
 
 	// Token: 0x040006A1 RID: 1697
-	public bool internet;
+	public bool inBesitz;
 
 	// Token: 0x040006A2 RID: 1698
-	public float powerFromMarket = 1f;
+	public bool vomMarktGenommen;
 
 	// Token: 0x040006A3 RID: 1699
-	public string myName;
+	public int complex;
 
 	// Token: 0x040006A4 RID: 1700
-	public int gameID = -1;
+	public bool internet;
 
 	// Token: 0x040006A5 RID: 1701
-	public gameScript vorinstalledGame_;
+	public float powerFromMarket = 1f;
 
 	// Token: 0x040006A6 RID: 1702
-	public int anzController;
+	public string myName;
 
 	// Token: 0x040006A7 RID: 1703
-	public float conHueShift;
+	public bool playerConsole;
 
 	// Token: 0x040006A8 RID: 1704
-	public float conSaturation;
+	public int multiplaySlot = -1;
 
 	// Token: 0x040006A9 RID: 1705
-	public int component_cpu = -1;
+	public int gameID = -1;
 
 	// Token: 0x040006AA RID: 1706
-	public int component_gfx = -1;
+	public gameScript vorinstalledGame_;
 
 	// Token: 0x040006AB RID: 1707
-	public int component_ram = -1;
+	public int anzController;
 
 	// Token: 0x040006AC RID: 1708
-	public int component_hdd = -1;
+	public float conHueShift;
 
 	// Token: 0x040006AD RID: 1709
-	public int component_sfx = -1;
+	public float conSaturation;
 
 	// Token: 0x040006AE RID: 1710
-	public int component_cooling = -1;
+	public int component_cpu = -1;
 
 	// Token: 0x040006AF RID: 1711
-	public int component_disc = -1;
+	public int component_gfx = -1;
 
 	// Token: 0x040006B0 RID: 1712
-	public int component_controller = -1;
+	public int component_ram = -1;
 
 	// Token: 0x040006B1 RID: 1713
-	public int component_case = -1;
+	public int component_hdd = -1;
 
 	// Token: 0x040006B2 RID: 1714
-	public int component_monitor = -1;
+	public int component_sfx = -1;
 
 	// Token: 0x040006B3 RID: 1715
-	public bool[] hwFeatures;
+	public int component_cooling = -1;
 
 	// Token: 0x040006B4 RID: 1716
-	public float devPoints;
+	public int component_disc = -1;
 
 	// Token: 0x040006B5 RID: 1717
-	public float devPointsStart;
+	public int component_controller = -1;
 
 	// Token: 0x040006B6 RID: 1718
-	public long entwicklungsKosten;
+	public int component_case = -1;
 
 	// Token: 0x040006B7 RID: 1719
-	public long einnahmen;
+	public int component_monitor = -1;
 
 	// Token: 0x040006B8 RID: 1720
-	public float hype;
+	public bool[] hwFeatures;
 
 	// Token: 0x040006B9 RID: 1721
-	public int costs_marketing;
+	public float devPoints;
 
 	// Token: 0x040006BA RID: 1722
-	public int costs_mitarbeiter;
+	public float devPointsStart;
 
 	// Token: 0x040006BB RID: 1723
-	public int startProduktionskosten;
+	public long entwicklungsKosten;
 
 	// Token: 0x040006BC RID: 1724
-	public int verkaufspreis = 399;
+	public long einnahmen;
 
 	// Token: 0x040006BD RID: 1725
-	public float kostenreduktion;
+	public float hype;
 
 	// Token: 0x040006BE RID: 1726
-	public bool autoPreis;
+	public int costs_marketing;
 
 	// Token: 0x040006BF RID: 1727
-	public bool thridPartyGames;
+	public int costs_mitarbeiter;
 
 	// Token: 0x040006C0 RID: 1728
-	public long umsatzTotal;
+	public int startProduktionskosten;
 
 	// Token: 0x040006C1 RID: 1729
-	public long costs_production;
+	public int verkaufspreis = 399;
 
 	// Token: 0x040006C2 RID: 1730
-	public int[] sellsPerWeek;
+	public float kostenreduktion;
 
 	// Token: 0x040006C3 RID: 1731
-	public int weeksOnMarket;
+	public bool autoPreis;
 
 	// Token: 0x040006C4 RID: 1732
-	public float review;
+	public bool thridPartyGames;
 
 	// Token: 0x040006C5 RID: 1733
-	public bool[] publisherBuyed;
+	public long umsatzTotal;
 
 	// Token: 0x040006C6 RID: 1734
-	public int performancePoints;
+	public long costs_production;
 
 	// Token: 0x040006C7 RID: 1735
-	public int autoPreisGewinn;
+	public int[] sellsPerWeek;
 
 	// Token: 0x040006C8 RID: 1736
+	public int weeksOnMarket;
+
+	// Token: 0x040006C9 RID: 1737
+	public float review;
+
+	// Token: 0x040006CA RID: 1738
+	public bool[] publisherBuyed;
+
+	// Token: 0x040006CB RID: 1739
+	public int performancePoints;
+
+	// Token: 0x040006CC RID: 1740
+	public int autoPreisGewinn;
+
+	// Token: 0x040006CD RID: 1741
 	public int weeksInDevelopment;
 }

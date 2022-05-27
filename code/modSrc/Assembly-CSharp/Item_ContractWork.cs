@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x02000079 RID: 121
 public class Item_ContractWork : MonoBehaviour
 {
-	// Token: 0x06000515 RID: 1301 RVA: 0x00047125 File Offset: 0x00045325
+	// Token: 0x0600050C RID: 1292 RVA: 0x000052AC File Offset: 0x000034AC
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000516 RID: 1302 RVA: 0x0004712D File Offset: 0x0004532D
+	// Token: 0x0600050D RID: 1293 RVA: 0x000052B4 File Offset: 0x000034B4
 	private void Update()
 	{
 		if (!this.contract_)
@@ -22,7 +22,7 @@ public class Item_ContractWork : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x06000517 RID: 1303 RVA: 0x00047150 File Offset: 0x00045350
+	// Token: 0x0600050E RID: 1294 RVA: 0x0005A3F4 File Offset: 0x000585F4
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -38,7 +38,7 @@ public class Item_ContractWork : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x06000518 RID: 1304 RVA: 0x0004719C File Offset: 0x0004539C
+	// Token: 0x0600050F RID: 1295 RVA: 0x0005A440 File Offset: 0x00058640
 	private void SetData()
 	{
 		if (this.contract_.art != 5 && this.contract_.art != 6)
@@ -76,13 +76,13 @@ public class Item_ContractWork : MonoBehaviour
 		this.tooltip_.c = this.contract_.GetTooltip();
 	}
 
-	// Token: 0x06000519 RID: 1305 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000510 RID: 1296 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600051A RID: 1306 RVA: 0x0004743A File Offset: 0x0004563A
+	// Token: 0x06000511 RID: 1297 RVA: 0x000052D5 File Offset: 0x000034D5
 	public void BUTTON_Remove()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -93,7 +93,7 @@ public class Item_ContractWork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600051B RID: 1307 RVA: 0x00047474 File Offset: 0x00045674
+	// Token: 0x06000512 RID: 1298 RVA: 0x0005A6E0 File Offset: 0x000588E0
 	public void BUTTON_Click()
 	{
 		Menu_Dev_AuftragSelect component = this.guiMain_.uiObjects[96].GetComponent<Menu_Dev_AuftragSelect>();

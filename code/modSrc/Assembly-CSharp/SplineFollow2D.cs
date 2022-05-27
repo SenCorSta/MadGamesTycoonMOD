@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x0200036A RID: 874
+// Token: 0x02000367 RID: 871
 public class SplineFollow2D : MonoBehaviour
 {
-	// Token: 0x06002026 RID: 8230 RVA: 0x0014D788 File Offset: 0x0014B988
+	// Token: 0x06001FD3 RID: 8147 RVA: 0x000151AC File Offset: 0x000133AC
 	private IEnumerator Start()
 	{
 		List<Vector2> list = new List<Vector2>();
@@ -34,15 +34,15 @@ public class SplineFollow2D : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0400287B RID: 10363
+	// Token: 0x04002865 RID: 10341
 	public int segments = 250;
 
-	// Token: 0x0400287C RID: 10364
+	// Token: 0x04002866 RID: 10342
 	public bool loop = true;
 
-	// Token: 0x0400287D RID: 10365
+	// Token: 0x04002867 RID: 10343
 	public Transform cube;
 
-	// Token: 0x0400287E RID: 10366
+	// Token: 0x04002868 RID: 10344
 	public float speed = 0.05f;
 }

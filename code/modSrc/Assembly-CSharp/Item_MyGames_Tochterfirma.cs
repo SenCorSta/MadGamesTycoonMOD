@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000EF RID: 239
 public class Item_MyGames_Tochterfirma : MonoBehaviour
 {
-	// Token: 0x060007EA RID: 2026 RVA: 0x000578AA File Offset: 0x00055AAA
+	// Token: 0x060007E1 RID: 2017 RVA: 0x000062D6 File Offset: 0x000044D6
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x060007EB RID: 2027 RVA: 0x000578B4 File Offset: 0x00055AB4
+	// Token: 0x060007E2 RID: 2018 RVA: 0x00069964 File Offset: 0x00067B64
 	public void SetData()
 	{
 		if (!this.game_)
@@ -35,13 +35,13 @@ public class Item_MyGames_Tochterfirma : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060007EC RID: 2028 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x060007E3 RID: 2019 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007ED RID: 2029 RVA: 0x000579D8 File Offset: 0x00055BD8
+	// Token: 0x060007E4 RID: 2020 RVA: 0x00069A88 File Offset: 0x00067C88
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);

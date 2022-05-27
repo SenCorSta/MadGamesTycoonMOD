@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // Token: 0x020000E0 RID: 224
 public class Item_AllTimeCharts : MonoBehaviour
 {
-	// Token: 0x06000791 RID: 1937 RVA: 0x000559F2 File Offset: 0x00053BF2
+	// Token: 0x06000788 RID: 1928 RVA: 0x00006155 File Offset: 0x00004355
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x06000792 RID: 1938 RVA: 0x000559FC File Offset: 0x00053BFC
+	// Token: 0x06000789 RID: 1929 RVA: 0x00067C6C File Offset: 0x00065E6C
 	public void SetData()
 	{
 		if (!this.game_)
@@ -20,11 +20,11 @@ public class Item_AllTimeCharts : MonoBehaviour
 			return;
 		}
 		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag();
-		if (this.game_.ownerID == this.mS_.myID || this.game_.publisherID == this.mS_.myID)
+		if (this.game_.playerGame)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
-		if (this.mS_.multiplayer && this.game_.GameFromMitspieler())
+		if (this.mS_.multiplayer && !this.game_.playerGame && this.game_.multiplayerSlot != -1 && this.game_.multiplayerSlot != this.mS_.GetMyMultiplayerID())
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[8];
 		}
@@ -41,7 +41,7 @@ public class Item_AllTimeCharts : MonoBehaviour
 		base.StartCoroutine(this.iSetTooltip());
 	}
 
-	// Token: 0x06000793 RID: 1939 RVA: 0x00055B78 File Offset: 0x00053D78
+	// Token: 0x0600078A RID: 1930 RVA: 0x00067DEC File Offset: 0x00065FEC
 	private void Update()
 	{
 		this.uiObjects[1].GetComponent<Text>().text = (base.gameObject.transform.GetSiblingIndex() + 1).ToString();
@@ -59,13 +59,13 @@ public class Item_AllTimeCharts : MonoBehaviour
 		base.gameObject.name = this.game_.sellsTotal.ToString();
 	}
 
-	// Token: 0x06000794 RID: 1940 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x0600078B RID: 1931 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000795 RID: 1941 RVA: 0x00055C60 File Offset: 0x00053E60
+	// Token: 0x0600078C RID: 1932 RVA: 0x00067ED4 File Offset: 0x000660D4
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -73,7 +73,7 @@ public class Item_AllTimeCharts : MonoBehaviour
 		this.guiMain_.uiObjects[46].GetComponent<Menu_Review>().Init(this.game_);
 	}
 
-	// Token: 0x06000796 RID: 1942 RVA: 0x00055CAC File Offset: 0x00053EAC
+	// Token: 0x0600078D RID: 1933 RVA: 0x0000615D File Offset: 0x0000435D
 	private IEnumerator iSetTooltip()
 	{
 		yield return new WaitForSeconds(UnityEngine.Random.Range(0.1f, 1f));

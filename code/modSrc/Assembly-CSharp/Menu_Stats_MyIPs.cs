@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200024C RID: 588
+// Token: 0x0200024B RID: 587
 public class Menu_Stats_MyIPs : MonoBehaviour
 {
-	// Token: 0x060016D0 RID: 5840 RVA: 0x000E58D6 File Offset: 0x000E3AD6
+	// Token: 0x060016AB RID: 5803 RVA: 0x0000FD79 File Offset: 0x0000DF79
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x060016D1 RID: 5841 RVA: 0x000E58E0 File Offset: 0x000E3AE0
+	// Token: 0x060016AC RID: 5804 RVA: 0x000EC760 File Offset: 0x000EA960
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -41,7 +41,7 @@ public class Menu_Stats_MyIPs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060016D2 RID: 5842 RVA: 0x000E59A8 File Offset: 0x000E3BA8
+	// Token: 0x060016AD RID: 5805 RVA: 0x0000FD81 File Offset: 0x0000DF81
 	private void Update()
 	{
 		if (this.uiObjects[2].GetComponent<Animation>().IsPlaying("openMenu"))
@@ -51,7 +51,7 @@ public class Menu_Stats_MyIPs : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x060016D3 RID: 5843 RVA: 0x000E59E0 File Offset: 0x000E3BE0
+	// Token: 0x060016AE RID: 5806 RVA: 0x000EC828 File Offset: 0x000EAA28
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -67,7 +67,7 @@ public class Menu_Stats_MyIPs : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060016D4 RID: 5844 RVA: 0x000E5A2C File Offset: 0x000E3C2C
+	// Token: 0x060016AF RID: 5807 RVA: 0x000EC874 File Offset: 0x000EAA74
 	private bool Exists(GameObject parent_, int id_)
 	{
 		for (int i = 0; i < parent_.transform.childCount; i++)
@@ -80,14 +80,14 @@ public class Menu_Stats_MyIPs : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060016D5 RID: 5845 RVA: 0x000E5A88 File Offset: 0x000E3C88
+	// Token: 0x060016B0 RID: 5808 RVA: 0x0000FDB9 File Offset: 0x0000DFB9
 	private void OnEnable()
 	{
 		this.FindScripts();
 		this.Init();
 	}
 
-	// Token: 0x060016D6 RID: 5846 RVA: 0x000E5A98 File Offset: 0x000E3C98
+	// Token: 0x060016B1 RID: 5809 RVA: 0x000EC8D0 File Offset: 0x000EAAD0
 	public void InitDropdowns()
 	{
 		this.FindScripts();
@@ -103,7 +103,7 @@ public class Menu_Stats_MyIPs : MonoBehaviour
 		this.uiObjects[1].GetComponent<Dropdown>().value = @int;
 	}
 
-	// Token: 0x060016D7 RID: 5847 RVA: 0x000E5B6A File Offset: 0x000E3D6A
+	// Token: 0x060016B2 RID: 5810 RVA: 0x0000FDC7 File Offset: 0x0000DFC7
 	public void Init()
 	{
 		this.FindScripts();
@@ -111,7 +111,7 @@ public class Menu_Stats_MyIPs : MonoBehaviour
 		this.SetData();
 	}
 
-	// Token: 0x060016D8 RID: 5848 RVA: 0x000E5B80 File Offset: 0x000E3D80
+	// Token: 0x060016B3 RID: 5811 RVA: 0x000EC9A4 File Offset: 0x000EABA4
 	private void SetData()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -142,20 +142,20 @@ public class Menu_Stats_MyIPs : MonoBehaviour
 		this.guiMain_.KeinEintrag(this.uiObjects[0], this.uiObjects[5]);
 	}
 
-	// Token: 0x060016D9 RID: 5849 RVA: 0x000E5CD4 File Offset: 0x000E3ED4
+	// Token: 0x060016B4 RID: 5812 RVA: 0x0000FDDB File Offset: 0x0000DFDB
 	public bool CheckGameData(gameScript script_)
 	{
-		return script_ && script_.ownerID == this.mS_.myID && script_.mainIP == script_.myID;
+		return script_ && script_.playerGame && !script_.pubOffer && !script_.auftragsspiel && !script_.typ_contractGame && script_.mainIP == script_.myID;
 	}
 
-	// Token: 0x060016DA RID: 5850 RVA: 0x000E5D02 File Offset: 0x000E3F02
+	// Token: 0x060016B5 RID: 5813 RVA: 0x0000FE16 File Offset: 0x0000E016
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060016DB RID: 5851 RVA: 0x000E5D20 File Offset: 0x000E3F20
+	// Token: 0x060016B6 RID: 5814 RVA: 0x000ECAF8 File Offset: 0x000EACF8
 	public void DROPDOWN_Sort()
 	{
 		int value = this.uiObjects[1].GetComponent<Dropdown>().value;
@@ -203,7 +203,7 @@ public class Menu_Stats_MyIPs : MonoBehaviour
 		this.mS_.SortChildrenByFloat(this.uiObjects[0]);
 	}
 
-	// Token: 0x060016DC RID: 5852 RVA: 0x000E5EA4 File Offset: 0x000E40A4
+	// Token: 0x060016B7 RID: 5815 RVA: 0x000ECC7C File Offset: 0x000EAE7C
 	public void BUTTON_Search()
 	{
 		if (!base.gameObject.activeSelf)
@@ -218,33 +218,33 @@ public class Menu_Stats_MyIPs : MonoBehaviour
 		this.Init();
 	}
 
-	// Token: 0x04001A9C RID: 6812
+	// Token: 0x04001A93 RID: 6803
 	private mainScript mS_;
 
-	// Token: 0x04001A9D RID: 6813
+	// Token: 0x04001A94 RID: 6804
 	private GameObject main_;
 
-	// Token: 0x04001A9E RID: 6814
+	// Token: 0x04001A95 RID: 6805
 	private GUI_Main guiMain_;
 
-	// Token: 0x04001A9F RID: 6815
+	// Token: 0x04001A96 RID: 6806
 	private sfxScript sfx_;
 
-	// Token: 0x04001AA0 RID: 6816
+	// Token: 0x04001A97 RID: 6807
 	private textScript tS_;
 
-	// Token: 0x04001AA1 RID: 6817
+	// Token: 0x04001A98 RID: 6808
 	private genres genres_;
 
-	// Token: 0x04001AA2 RID: 6818
+	// Token: 0x04001A99 RID: 6809
 	public GameObject[] uiPrefabs;
 
-	// Token: 0x04001AA3 RID: 6819
+	// Token: 0x04001A9A RID: 6810
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001AA4 RID: 6820
+	// Token: 0x04001A9B RID: 6811
 	private float updateTimer;
 
-	// Token: 0x04001AA5 RID: 6821
+	// Token: 0x04001A9C RID: 6812
 	private string searchStringA = "";
 }

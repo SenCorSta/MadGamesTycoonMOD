@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x02000369 RID: 873
+// Token: 0x02000366 RID: 870
 public class MakeSpline : MonoBehaviour
 {
-	// Token: 0x06002024 RID: 8228 RVA: 0x0014D68C File Offset: 0x0014B88C
+	// Token: 0x06001FD1 RID: 8145 RVA: 0x0014DDCC File Offset: 0x0014BFCC
 	private void Start()
 	{
 		List<Vector3> list = new List<Vector3>();
@@ -29,12 +29,12 @@ public class MakeSpline : MonoBehaviour
 		vectorLine2.Draw3D();
 	}
 
-	// Token: 0x04002878 RID: 10360
+	// Token: 0x04002862 RID: 10338
 	public int segments = 250;
 
-	// Token: 0x04002879 RID: 10361
+	// Token: 0x04002863 RID: 10339
 	public bool loop = true;
 
-	// Token: 0x0400287A RID: 10362
+	// Token: 0x04002864 RID: 10340
 	public bool usePoints;
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
 
-// Token: 0x0200034B RID: 843
+// Token: 0x02000348 RID: 840
 public class SimpleCurve : MonoBehaviour
 {
-	// Token: 0x06001FAE RID: 8110 RVA: 0x0014A508 File Offset: 0x00148708
+	// Token: 0x06001F5B RID: 8027 RVA: 0x0014B1D4 File Offset: 0x001493D4
 	private void Start()
 	{
 		if (this.curvePoints.Length != 4)
@@ -20,9 +20,9 @@ public class SimpleCurve : MonoBehaviour
 		vectorLine.Draw();
 	}
 
-	// Token: 0x040027C7 RID: 10183
+	// Token: 0x040027B1 RID: 10161
 	public Vector2[] curvePoints;
 
-	// Token: 0x040027C8 RID: 10184
+	// Token: 0x040027B2 RID: 10162
 	public int segments = 50;
 }

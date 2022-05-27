@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x0200004A RID: 74
 public class antiCheatScript : MonoBehaviour
 {
-	// Token: 0x06000184 RID: 388 RVA: 0x00018755 File Offset: 0x00016955
+	// Token: 0x06000184 RID: 388 RVA: 0x00002DBB File Offset: 0x00000FBB
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06000185 RID: 389 RVA: 0x00018760 File Offset: 0x00016960
+	// Token: 0x06000185 RID: 389 RVA: 0x0002E73C File Offset: 0x0002C93C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -31,13 +31,13 @@ public class antiCheatScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000186 RID: 390 RVA: 0x000187E4 File Offset: 0x000169E4
+	// Token: 0x06000186 RID: 390 RVA: 0x00002DC3 File Offset: 0x00000FC3
 	public void Init()
 	{
 		base.name = "ANTICHEAT_" + this.myID.ToString();
 	}
 
-	// Token: 0x06000187 RID: 391 RVA: 0x00018804 File Offset: 0x00016A04
+	// Token: 0x06000187 RID: 391 RVA: 0x0002E7C0 File Offset: 0x0002C9C0
 	public string GetName()
 	{
 		string text;
@@ -84,25 +84,25 @@ public class antiCheatScript : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06000188 RID: 392 RVA: 0x000188E2 File Offset: 0x00016AE2
+	// Token: 0x06000188 RID: 392 RVA: 0x00002DE0 File Offset: 0x00000FE0
 	public int GetPrice()
 	{
 		return this.price;
 	}
 
-	// Token: 0x06000189 RID: 393 RVA: 0x000188EA File Offset: 0x00016AEA
+	// Token: 0x06000189 RID: 393 RVA: 0x00002DE8 File Offset: 0x00000FE8
 	public int GetDevCosts()
 	{
 		return this.dev_costs;
 	}
 
-	// Token: 0x0600018A RID: 394 RVA: 0x000188F2 File Offset: 0x00016AF2
+	// Token: 0x0600018A RID: 394 RVA: 0x00002DF0 File Offset: 0x00000FF0
 	public string GetDateString()
 	{
 		return this.date_year.ToString() + " " + this.tS_.GetText(this.date_month + 220);
 	}
 
-	// Token: 0x0600018B RID: 395 RVA: 0x00018920 File Offset: 0x00016B20
+	// Token: 0x0600018B RID: 395 RVA: 0x0002E8A0 File Offset: 0x0002CAA0
 	public string GetTooltip()
 	{
 		string text = "<b>" + this.GetName() + "</b>";
@@ -134,13 +134,13 @@ public class antiCheatScript : MonoBehaviour
 		});
 	}
 
-	// Token: 0x0600018C RID: 396 RVA: 0x00018A33 File Offset: 0x00016C33
+	// Token: 0x0600018C RID: 396 RVA: 0x00002E1E File Offset: 0x0000101E
 	public bool IsVerfuegbar()
 	{
 		return this.isUnlocked;
 	}
 
-	// Token: 0x0600018D RID: 397 RVA: 0x00018A40 File Offset: 0x00016C40
+	// Token: 0x0600018D RID: 397 RVA: 0x00002E2B File Offset: 0x0000102B
 	public void EffektVerschlechtern()
 	{
 		if (this.IsVerfuegbar() && !this.neverLooseEffect)

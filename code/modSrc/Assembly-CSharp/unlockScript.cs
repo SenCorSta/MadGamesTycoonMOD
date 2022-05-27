@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000348 RID: 840
+// Token: 0x02000345 RID: 837
 public class unlockScript : MonoBehaviour
 {
-	// Token: 0x06001F9C RID: 8092 RVA: 0x00148475 File Offset: 0x00146675
+	// Token: 0x06001F49 RID: 8009 RVA: 0x00014B7D File Offset: 0x00012D7D
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001F9D RID: 8093 RVA: 0x00148480 File Offset: 0x00146680
+	// Token: 0x06001F4A RID: 8010 RVA: 0x001491D4 File Offset: 0x001473D4
 	private void FindScripts()
 	{
 		if (!this.mS_)
@@ -59,7 +59,7 @@ public class unlockScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001F9E RID: 8094 RVA: 0x001485AC File Offset: 0x001467AC
+	// Token: 0x06001F4B RID: 8011 RVA: 0x00149300 File Offset: 0x00147500
 	public void NewGameUnlocks()
 	{
 		for (int i = 0; i < this.unlock.Length; i++)
@@ -73,13 +73,13 @@ public class unlockScript : MonoBehaviour
 		this.unlock[58] = true;
 	}
 
-	// Token: 0x06001F9F RID: 8095 RVA: 0x00148605 File Offset: 0x00146805
+	// Token: 0x06001F4C RID: 8012 RVA: 0x00014B85 File Offset: 0x00012D85
 	public bool Get(int i)
 	{
 		return this.unlock[i];
 	}
 
-	// Token: 0x06001FA0 RID: 8096 RVA: 0x00148610 File Offset: 0x00146810
+	// Token: 0x06001F4D RID: 8013 RVA: 0x0014935C File Offset: 0x0014755C
 	public void CheckUnlock(bool showMessage)
 	{
 		this.FindScripts();
@@ -161,7 +161,7 @@ public class unlockScript : MonoBehaviour
 			if (array[n])
 			{
 				platformScript component = array[n].GetComponent<platformScript>();
-				if (component && component.OwnerIsNPC())
+				if (component && ((this.mS_.multiplayer && !component.playerConsole && component.multiplaySlot == -1) || (!this.mS_.multiplayer && !component.playerConsole)))
 				{
 					if (!component.isUnlocked)
 					{
@@ -214,7 +214,7 @@ public class unlockScript : MonoBehaviour
 			if (array[num2])
 			{
 				engineScript component2 = array[num2].GetComponent<engineScript>();
-				if (component2 && !component2.isUnlocked && component2.ownerID != this.mS_.myID && component2.date_year == this.mS_.year && component2.date_month == this.mS_.month)
+				if (component2 && !component2.isUnlocked && !component2.playerEngine && component2.date_year == this.mS_.year && component2.date_month == this.mS_.month)
 				{
 					component2.isUnlocked = true;
 					component2.InitNpcEngine();
@@ -424,7 +424,7 @@ public class unlockScript : MonoBehaviour
 						gameScript component7 = array[num9].GetComponent<gameScript>();
 						if (component7 && !component7.inDevelopment && !component7.schublade && !component7.pubAngebot && !component7.auftragsspiel)
 						{
-							if (component7.developerID == this.mS_.myID || component7.IsMyAuftragsspiel())
+							if (component7.playerGame || component7.IsMyAuftragsspiel())
 							{
 								num8++;
 								if (num8 >= 5 && !this.Get(28))
@@ -458,7 +458,7 @@ public class unlockScript : MonoBehaviour
 									}
 								}
 							}
-							if (!this.Get(26) && component7.developerID == this.mS_.myID && component7.reviewTotal >= 70)
+							if (!this.Get(26) && component7.playerGame && component7.reviewTotal >= 70)
 							{
 								this.unlock[26] = true;
 								if (showMessage)
@@ -468,7 +468,7 @@ public class unlockScript : MonoBehaviour
 									return;
 								}
 							}
-							if (!this.Get(66) && component7.developerID == this.mS_.myID && component7.sellsTotal >= 50000L)
+							if (!this.Get(66) && component7.playerGame && component7.sellsTotal >= 50000L)
 							{
 								this.unlock[66] = true;
 								if (showMessage)
@@ -478,7 +478,7 @@ public class unlockScript : MonoBehaviour
 									return;
 								}
 							}
-							if (!this.Get(67) && component7.developerID == this.mS_.myID && component7.isOnMarket)
+							if (!this.Get(67) && component7.playerGame && component7.isOnMarket)
 							{
 								this.unlock[67] = true;
 								if (showMessage)
@@ -494,126 +494,126 @@ public class unlockScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400278A RID: 10122
+	// Token: 0x04002774 RID: 10100
 	private mainScript mS_;
 
-	// Token: 0x0400278B RID: 10123
+	// Token: 0x04002775 RID: 10101
 	private genres genres_;
 
-	// Token: 0x0400278C RID: 10124
+	// Token: 0x04002776 RID: 10102
 	private engineFeatures eF_;
 
-	// Token: 0x0400278D RID: 10125
+	// Token: 0x04002777 RID: 10103
 	private gameplayFeatures gF_;
 
-	// Token: 0x0400278E RID: 10126
+	// Token: 0x04002778 RID: 10104
 	private hardware hardware_;
 
-	// Token: 0x0400278F RID: 10127
+	// Token: 0x04002779 RID: 10105
 	private hardwareFeatures hardwareFeatures_;
 
-	// Token: 0x04002790 RID: 10128
+	// Token: 0x0400277A RID: 10106
 	private games games_;
 
-	// Token: 0x04002791 RID: 10129
+	// Token: 0x0400277B RID: 10107
 	private themes themes_;
 
-	// Token: 0x04002792 RID: 10130
+	// Token: 0x0400277C RID: 10108
 	private textScript tS_;
 
-	// Token: 0x04002793 RID: 10131
+	// Token: 0x0400277D RID: 10109
 	private roomDataScript rdS_;
 
-	// Token: 0x04002794 RID: 10132
+	// Token: 0x0400277E RID: 10110
 	private GUI_Main guiMain_;
 
-	// Token: 0x04002795 RID: 10133
+	// Token: 0x0400277F RID: 10111
 	public bool[] unlock;
 
-	// Token: 0x04002796 RID: 10134
+	// Token: 0x04002780 RID: 10112
 	public const int roomEntwicklung = 0;
 
-	// Token: 0x04002797 RID: 10135
+	// Token: 0x04002781 RID: 10113
 	public const int roomHardware = 1;
 
-	// Token: 0x04002798 RID: 10136
+	// Token: 0x04002782 RID: 10114
 	public const int roomForschung = 2;
 
-	// Token: 0x04002799 RID: 10137
+	// Token: 0x04002783 RID: 10115
 	public const int roomMotion = 8;
 
-	// Token: 0x0400279A RID: 10138
+	// Token: 0x04002784 RID: 10116
 	public const int roomServer = 9;
 
-	// Token: 0x0400279B RID: 10139
+	// Token: 0x04002785 RID: 10117
 	public const int roomAufenthalt = 13;
 
-	// Token: 0x0400279C RID: 10140
+	// Token: 0x04002786 RID: 10118
 	public const int roomWC = 14;
 
-	// Token: 0x0400279D RID: 10141
+	// Token: 0x04002787 RID: 10119
 	public const int gameTypClassic = 20;
 
-	// Token: 0x0400279E RID: 10142
+	// Token: 0x04002788 RID: 10120
 	public const int gameTypMMO = 21;
 
-	// Token: 0x0400279F RID: 10143
+	// Token: 0x04002789 RID: 10121
 	public const int gameTypF2P = 22;
 
-	// Token: 0x040027A0 RID: 10144
+	// Token: 0x0400278A RID: 10122
 	public const int gameLicence = 25;
 
-	// Token: 0x040027A1 RID: 10145
+	// Token: 0x0400278B RID: 10123
 	public const int gameNachfolger = 26;
 
-	// Token: 0x040027A2 RID: 10146
+	// Token: 0x0400278C RID: 10124
 	public const int gameRemaster = 27;
 
-	// Token: 0x040027A3 RID: 10147
+	// Token: 0x0400278D RID: 10125
 	public const int gamePlatform2 = 28;
 
-	// Token: 0x040027A4 RID: 10148
+	// Token: 0x0400278E RID: 10126
 	public const int gamePlatform3 = 29;
 
-	// Token: 0x040027A5 RID: 10149
+	// Token: 0x0400278F RID: 10127
 	public const int gamePlatform4 = 30;
 
-	// Token: 0x040027A6 RID: 10150
+	// Token: 0x04002790 RID: 10128
 	public const int gameCopyProtect = 31;
 
-	// Token: 0x040027A7 RID: 10151
+	// Token: 0x04002791 RID: 10129
 	public const int marketingInternet = 56;
 
-	// Token: 0x040027A8 RID: 10152
+	// Token: 0x04002792 RID: 10130
 	public const int marketingStreamer = 57;
 
-	// Token: 0x040027A9 RID: 10153
+	// Token: 0x04002793 RID: 10131
 	public const int createEngine = 58;
 
-	// Token: 0x040027AA RID: 10154
+	// Token: 0x04002794 RID: 10132
 	public const int onlineSells = 59;
 
-	// Token: 0x040027AB RID: 10155
+	// Token: 0x04002795 RID: 10133
 	public const int inventar2 = 60;
 
-	// Token: 0x040027AC RID: 10156
+	// Token: 0x04002796 RID: 10134
 	public const int inventar3 = 61;
 
-	// Token: 0x040027AD RID: 10157
+	// Token: 0x04002797 RID: 10135
 	public const int inventar4 = 62;
 
-	// Token: 0x040027AE RID: 10158
+	// Token: 0x04002798 RID: 10136
 	public const int inventar5 = 63;
 
-	// Token: 0x040027AF RID: 10159
+	// Token: 0x04002799 RID: 10137
 	public const int gameAntiCheat = 64;
 
-	// Token: 0x040027B0 RID: 10160
+	// Token: 0x0400279A RID: 10138
 	public const int handyGames = 65;
 
-	// Token: 0x040027B1 RID: 10161
+	// Token: 0x0400279B RID: 10139
 	public const int gameSpinoff = 66;
 
-	// Token: 0x040027B2 RID: 10162
+	// Token: 0x0400279C RID: 10140
 	public const int gamePorts = 67;
 }

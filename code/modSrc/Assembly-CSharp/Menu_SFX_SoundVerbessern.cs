@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000213 RID: 531
+// Token: 0x02000212 RID: 530
 public class Menu_SFX_SoundVerbessern : MonoBehaviour
 {
-	// Token: 0x06001467 RID: 5223 RVA: 0x000D3F51 File Offset: 0x000D2151
+	// Token: 0x0600144A RID: 5194 RVA: 0x0000DD1F File Offset: 0x0000BF1F
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001468 RID: 5224 RVA: 0x000D3F5C File Offset: 0x000D215C
+	// Token: 0x0600144B RID: 5195 RVA: 0x000DD868 File Offset: 0x000DBA68
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -68,7 +68,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001469 RID: 5225 RVA: 0x000D40FA File Offset: 0x000D22FA
+	// Token: 0x0600144C RID: 5196 RVA: 0x0000DD27 File Offset: 0x0000BF27
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -78,7 +78,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		this.MultiplayerUpdate();
 	}
 
-	// Token: 0x0600146A RID: 5226 RVA: 0x000D411C File Offset: 0x000D231C
+	// Token: 0x0600144D RID: 5197 RVA: 0x000DDA08 File Offset: 0x000DBC08
 	private void MultiplayerUpdate()
 	{
 		if (!this.mS_.multiplayer)
@@ -94,7 +94,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x0600146B RID: 5227 RVA: 0x000D4168 File Offset: 0x000D2368
+	// Token: 0x0600144E RID: 5198 RVA: 0x0000DD48 File Offset: 0x0000BF48
 	public void Init(roomScript roomScript_)
 	{
 		this.FindScripts();
@@ -104,7 +104,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x0600146C RID: 5228 RVA: 0x000D4190 File Offset: 0x000D2390
+	// Token: 0x0600144F RID: 5199 RVA: 0x000DDA54 File Offset: 0x000DBC54
 	private void DeselectAllButtons()
 	{
 		this.allAdds = false;
@@ -119,7 +119,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600146D RID: 5229 RVA: 0x000D4268 File Offset: 0x000D2468
+	// Token: 0x06001450 RID: 5200 RVA: 0x000DDB2C File Offset: 0x000DBD2C
 	public int GetCosts(int i)
 	{
 		if (!this.selectedGame)
@@ -135,7 +135,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600146E RID: 5230 RVA: 0x000D42B8 File Offset: 0x000D24B8
+	// Token: 0x06001451 RID: 5201 RVA: 0x000DDB7C File Offset: 0x000DBD7C
 	private void UpdateGUI()
 	{
 		for (int i = 0; i < this.buttonAdds.Length; i++)
@@ -190,7 +190,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		this.uiObjects[10].GetComponent<Image>().sprite = this.games_.gamePlatformTypSprites[0];
 	}
 
-	// Token: 0x0600146F RID: 5231 RVA: 0x000D45A1 File Offset: 0x000D27A1
+	// Token: 0x06001452 RID: 5202 RVA: 0x0000DD6F File Offset: 0x0000BF6F
 	public void SetGame(gameScript script_)
 	{
 		this.selectedGame = script_;
@@ -198,7 +198,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x06001470 RID: 5232 RVA: 0x000D45B8 File Offset: 0x000D27B8
+	// Token: 0x06001453 RID: 5203 RVA: 0x000DDE68 File Offset: 0x000DC068
 	public void BUTTON_SelectGame()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -206,7 +206,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		this.guiMain_.uiObjects[177].GetComponent<Menu_SFX_SoundVerbessernSelectGame>().Init();
 	}
 
-	// Token: 0x06001471 RID: 5233 RVA: 0x000D460C File Offset: 0x000D280C
+	// Token: 0x06001454 RID: 5204 RVA: 0x0009B0D8 File Offset: 0x000992D8
 	public gameScript FindGame()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Game");
@@ -215,7 +215,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 			if (array[i])
 			{
 				gameScript component = array[i].GetComponent<gameScript>();
-				if (component && component.developerID == this.mS_.myID && !component.isOnMarket && component.inDevelopment)
+				if (component && component.playerGame && !component.isOnMarket && component.inDevelopment)
 				{
 					return component;
 				}
@@ -224,7 +224,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06001472 RID: 5234 RVA: 0x000D4674 File Offset: 0x000D2874
+	// Token: 0x06001455 RID: 5205 RVA: 0x000DDEBC File Offset: 0x000DC0BC
 	private long GetDevCosts()
 	{
 		long num = 0L;
@@ -238,7 +238,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06001473 RID: 5235 RVA: 0x000D46B0 File Offset: 0x000D28B0
+	// Token: 0x06001456 RID: 5206 RVA: 0x000DDEF8 File Offset: 0x000DC0F8
 	private bool WirdInAnderenRaumBearbeitet(int slot)
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Task");
@@ -256,7 +256,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001474 RID: 5236 RVA: 0x000D4711 File Offset: 0x000D2911
+	// Token: 0x06001457 RID: 5207 RVA: 0x0000DD84 File Offset: 0x0000BF84
 	public void BUTTON_Close()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -264,7 +264,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001475 RID: 5237 RVA: 0x000D4737 File Offset: 0x000D2937
+	// Token: 0x06001458 RID: 5208 RVA: 0x0000DDAA File Offset: 0x0000BFAA
 	public void BUTTON_Adds(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -272,7 +272,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x06001476 RID: 5238 RVA: 0x000D4760 File Offset: 0x000D2960
+	// Token: 0x06001459 RID: 5209 RVA: 0x000DDF5C File Offset: 0x000DC15C
 	public void BUTTON_AlleAdds()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -287,7 +287,7 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		this.UpdateGUI();
 	}
 
-	// Token: 0x06001477 RID: 5239 RVA: 0x000D47C4 File Offset: 0x000D29C4
+	// Token: 0x0600145A RID: 5210 RVA: 0x000DDFC0 File Offset: 0x000DC1C0
 	public void BUTTON_Start()
 	{
 		int num = Mathf.RoundToInt((float)this.GetDevCosts());
@@ -331,69 +331,69 @@ public class Menu_SFX_SoundVerbessern : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001873 RID: 6259
+	// Token: 0x0400186A RID: 6250
 	public GameObject[] uiObjects;
 
-	// Token: 0x04001874 RID: 6260
+	// Token: 0x0400186B RID: 6251
 	public int[] costs;
 
-	// Token: 0x04001875 RID: 6261
+	// Token: 0x0400186C RID: 6252
 	public float[] points;
 
-	// Token: 0x04001876 RID: 6262
+	// Token: 0x0400186D RID: 6253
 	public float[] pointsInPercent;
 
-	// Token: 0x04001877 RID: 6263
+	// Token: 0x0400186E RID: 6254
 	private bool[] buttonAdds = new bool[6];
 
-	// Token: 0x04001878 RID: 6264
+	// Token: 0x0400186F RID: 6255
 	private GameObject main_;
 
-	// Token: 0x04001879 RID: 6265
+	// Token: 0x04001870 RID: 6256
 	private mainScript mS_;
 
-	// Token: 0x0400187A RID: 6266
+	// Token: 0x04001871 RID: 6257
 	private textScript tS_;
 
-	// Token: 0x0400187B RID: 6267
+	// Token: 0x04001872 RID: 6258
 	private GUI_Main guiMain_;
 
-	// Token: 0x0400187C RID: 6268
+	// Token: 0x04001873 RID: 6259
 	private sfxScript sfx_;
 
-	// Token: 0x0400187D RID: 6269
+	// Token: 0x04001874 RID: 6260
 	private genres genres_;
 
-	// Token: 0x0400187E RID: 6270
+	// Token: 0x04001875 RID: 6261
 	private themes themes_;
 
-	// Token: 0x0400187F RID: 6271
+	// Token: 0x04001876 RID: 6262
 	private licences licences_;
 
-	// Token: 0x04001880 RID: 6272
+	// Token: 0x04001877 RID: 6263
 	private engineFeatures eF_;
 
-	// Token: 0x04001881 RID: 6273
+	// Token: 0x04001878 RID: 6264
 	private cameraMovementScript cmS_;
 
-	// Token: 0x04001882 RID: 6274
+	// Token: 0x04001879 RID: 6265
 	private unlockScript unlock_;
 
-	// Token: 0x04001883 RID: 6275
+	// Token: 0x0400187A RID: 6266
 	private gameplayFeatures gF_;
 
-	// Token: 0x04001884 RID: 6276
+	// Token: 0x0400187B RID: 6267
 	private games games_;
 
-	// Token: 0x04001885 RID: 6277
+	// Token: 0x0400187C RID: 6268
 	private gameScript selectedGame;
 
-	// Token: 0x04001886 RID: 6278
+	// Token: 0x0400187D RID: 6269
 	private roomScript rS_;
 
-	// Token: 0x04001887 RID: 6279
+	// Token: 0x0400187E RID: 6270
 	private float updateTimer;
 
-	// Token: 0x04001888 RID: 6280
+	// Token: 0x0400187F RID: 6271
 	private bool allAdds;
 }

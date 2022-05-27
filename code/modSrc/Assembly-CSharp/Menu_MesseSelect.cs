@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001CE RID: 462
+// Token: 0x020001CD RID: 461
 public class Menu_MesseSelect : MonoBehaviour
 {
-	// Token: 0x06001177 RID: 4471 RVA: 0x000B8B01 File Offset: 0x000B6D01
+	// Token: 0x0600115D RID: 4445 RVA: 0x0000C233 File Offset: 0x0000A433
 	private void Start()
 	{
 		this.FindScripts();
 	}
 
-	// Token: 0x06001178 RID: 4472 RVA: 0x000B8B0C File Offset: 0x000B6D0C
+	// Token: 0x0600115E RID: 4446 RVA: 0x000C416C File Offset: 0x000C236C
 	private void FindScripts()
 	{
 		if (!this.main_)
@@ -36,7 +36,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001179 RID: 4473 RVA: 0x000B8BB8 File Offset: 0x000B6DB8
+	// Token: 0x0600115F RID: 4447 RVA: 0x000C4218 File Offset: 0x000C2418
 	public void Init(int standgroesse)
 	{
 		this.standGroesse = standgroesse;
@@ -78,7 +78,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600117A RID: 4474 RVA: 0x000B8D1D File Offset: 0x000B6F1D
+	// Token: 0x06001160 RID: 4448 RVA: 0x0000C23B File Offset: 0x0000A43B
 	private void Update()
 	{
 		if (!this.guiMain_.menuOpen)
@@ -87,14 +87,14 @@ public class Menu_MesseSelect : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600117B RID: 4475 RVA: 0x000B8D38 File Offset: 0x000B6F38
+	// Token: 0x06001161 RID: 4449 RVA: 0x0000C256 File Offset: 0x0000A456
 	public void BUTTON_Abbrechen()
 	{
 		this.sfx_.PlaySound(3, true);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600117C RID: 4476 RVA: 0x000B8D54 File Offset: 0x000B6F54
+	// Token: 0x06001162 RID: 4450 RVA: 0x000C4380 File Offset: 0x000C2580
 	public void BUTTON_SelectGame(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -102,7 +102,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		this.guiMain_.uiObjects[187].GetComponent<Menu_MesseSelectGame>().Init(i);
 	}
 
-	// Token: 0x0600117D RID: 4477 RVA: 0x000B8DA8 File Offset: 0x000B6FA8
+	// Token: 0x06001163 RID: 4451 RVA: 0x000C43D4 File Offset: 0x000C25D4
 	public void BUTTON_SelectKonsole(int i)
 	{
 		this.sfx_.PlaySound(3, true);
@@ -110,7 +110,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		this.guiMain_.uiObjects[323].GetComponent<Menu_MesseSelectKonsole>().Init(i);
 	}
 
-	// Token: 0x0600117E RID: 4478 RVA: 0x000B8DFC File Offset: 0x000B6FFC
+	// Token: 0x06001164 RID: 4452 RVA: 0x000C4428 File Offset: 0x000C2628
 	public void SetGame(int slot_, gameScript game_)
 	{
 		this.games[slot_] = game_;
@@ -138,7 +138,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		this.uiObjects[2].GetComponent<Text>().text = this.tS_.GetText(948);
 	}
 
-	// Token: 0x0600117F RID: 4479 RVA: 0x000B8F34 File Offset: 0x000B7134
+	// Token: 0x06001165 RID: 4453 RVA: 0x000C4560 File Offset: 0x000C2760
 	public void SetKonsole(int slot_, platformScript script_)
 	{
 		this.konsolen[slot_] = script_;
@@ -158,7 +158,7 @@ public class Menu_MesseSelect : MonoBehaviour
 		this.uiObjects[9].GetComponent<Text>().text = this.tS_.GetText(949);
 	}
 
-	// Token: 0x06001180 RID: 4480 RVA: 0x000B9010 File Offset: 0x000B7210
+	// Token: 0x06001166 RID: 4454 RVA: 0x000C463C File Offset: 0x000C283C
 	public void BUTTON_OK()
 	{
 		this.sfx_.PlaySound(3, true);
@@ -209,30 +209,30 @@ public class Menu_MesseSelect : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040015F7 RID: 5623
+	// Token: 0x040015EE RID: 5614
 	public GameObject[] uiObjects;
 
-	// Token: 0x040015F8 RID: 5624
+	// Token: 0x040015EF RID: 5615
 	private GameObject main_;
 
-	// Token: 0x040015F9 RID: 5625
+	// Token: 0x040015F0 RID: 5616
 	private mainScript mS_;
 
-	// Token: 0x040015FA RID: 5626
+	// Token: 0x040015F1 RID: 5617
 	private textScript tS_;
 
-	// Token: 0x040015FB RID: 5627
+	// Token: 0x040015F2 RID: 5618
 	private GUI_Main guiMain_;
 
-	// Token: 0x040015FC RID: 5628
+	// Token: 0x040015F3 RID: 5619
 	private sfxScript sfx_;
 
-	// Token: 0x040015FD RID: 5629
+	// Token: 0x040015F4 RID: 5620
 	public int standGroesse;
 
-	// Token: 0x040015FE RID: 5630
+	// Token: 0x040015F5 RID: 5621
 	public gameScript[] games;
 
-	// Token: 0x040015FF RID: 5631
+	// Token: 0x040015F6 RID: 5622
 	public platformScript[] konsolen;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000356 RID: 854
+// Token: 0x02000353 RID: 851
 public class MakeSpheres : MonoBehaviour
 {
-	// Token: 0x06001FDB RID: 8155 RVA: 0x0014BDCC File Offset: 0x00149FCC
+	// Token: 0x06001F88 RID: 8072 RVA: 0x0014C880 File Offset: 0x0014AA80
 	private void Start()
 	{
 		for (int i = 0; i < this.numberOfSpheres; i++)
@@ -13,12 +13,12 @@ public class MakeSpheres : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400281C RID: 10268
+	// Token: 0x04002806 RID: 10246
 	public GameObject spherePrefab;
 
-	// Token: 0x0400281D RID: 10269
+	// Token: 0x04002807 RID: 10247
 	public int numberOfSpheres = 12;
 
-	// Token: 0x0400281E RID: 10270
+	// Token: 0x04002808 RID: 10248
 	public float area = 4.5f;
 }

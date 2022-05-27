@@ -5,14 +5,14 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class PostProcessing_Sobel : MonoBehaviour
 {
-	// Token: 0x06000073 RID: 115 RVA: 0x000040E8 File Offset: 0x000022E8
+	// Token: 0x06000073 RID: 115 RVA: 0x00002521 File Offset: 0x00000721
 	private void Start()
 	{
 		Camera.main.depthTextureMode = DepthTextureMode.Depth;
 		this.sobelMat = new Material(Shader.Find("Nasty-Screen/SobelOutline"));
 	}
 
-	// Token: 0x06000074 RID: 116 RVA: 0x0000410C File Offset: 0x0000230C
+	// Token: 0x06000074 RID: 116 RVA: 0x0001A998 File Offset: 0x00018B98
 	private void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
 		this.sobelMat.SetFloat("_ResX", (float)Screen.width * this.SobelResolution);

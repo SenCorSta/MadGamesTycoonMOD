@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000373 RID: 883
+// Token: 0x02000370 RID: 880
 public class XrayLineData : MonoBehaviour
 {
-	// Token: 0x06002045 RID: 8261 RVA: 0x0014DF60 File Offset: 0x0014C160
+	// Token: 0x06001FF2 RID: 8178 RVA: 0x0014E588 File Offset: 0x0014C788
 	private void Awake()
 	{
 		XrayLineData.use = this;
@@ -218,16 +218,16 @@ public class XrayLineData : MonoBehaviour
 		});
 	}
 
-	// Token: 0x0400289E RID: 10398
+	// Token: 0x04002888 RID: 10376
 	public static XrayLineData use;
 
-	// Token: 0x0400289F RID: 10399
+	// Token: 0x04002889 RID: 10377
 	public Texture lineTexture;
 
-	// Token: 0x040028A0 RID: 10400
+	// Token: 0x0400288A RID: 10378
 	public float lineWidth = 1f;
 
-	// Token: 0x040028A1 RID: 10401
+	// Token: 0x0400288B RID: 10379
 	[HideInInspector]
 	public List<List<Vector3>> shapePoints;
 }

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 // Token: 0x020000E2 RID: 226
 public class Item_BestF2P : MonoBehaviour
 {
-	// Token: 0x0600079E RID: 1950 RVA: 0x00055D4D File Offset: 0x00053F4D
+	// Token: 0x06000795 RID: 1941 RVA: 0x00006183 File Offset: 0x00004383
 	private void Start()
 	{
 		this.SetData();
 	}
 
-	// Token: 0x0600079F RID: 1951 RVA: 0x00055D58 File Offset: 0x00053F58
+	// Token: 0x06000796 RID: 1942 RVA: 0x00067F9C File Offset: 0x0006619C
 	public void SetData()
 	{
 		if (!this.game_)
@@ -19,11 +19,11 @@ public class Item_BestF2P : MonoBehaviour
 			return;
 		}
 		this.uiObjects[0].GetComponent<Text>().text = this.game_.GetNameWithTag();
-		if (this.game_.ownerID == this.mS_.myID || this.game_.publisherID == this.mS_.myID)
+		if (this.game_.playerGame)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[4];
 		}
-		if (this.mS_.multiplayer && this.game_.GameFromMitspieler())
+		if (this.mS_.multiplayer && !this.game_.playerGame && this.game_.multiplayerSlot != -1)
 		{
 			base.GetComponent<Image>().color = this.guiMain_.colors[8];
 		}
@@ -33,7 +33,7 @@ public class Item_BestF2P : MonoBehaviour
 		this.tooltip_.c = this.game_.GetTooltip();
 	}
 
-	// Token: 0x060007A0 RID: 1952 RVA: 0x00055EA8 File Offset: 0x000540A8
+	// Token: 0x06000797 RID: 1943 RVA: 0x000680D4 File Offset: 0x000662D4
 	private void Update()
 	{
 		if (!this.mS_.multiplayer)
@@ -45,13 +45,13 @@ public class Item_BestF2P : MonoBehaviour
 		base.gameObject.name = this.game_.sellsTotal.ToString();
 	}
 
-	// Token: 0x060007A1 RID: 1953 RVA: 0x0003D679 File Offset: 0x0003B879
+	// Token: 0x06000798 RID: 1944 RVA: 0x00004174 File Offset: 0x00002374
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007A2 RID: 1954 RVA: 0x00055F34 File Offset: 0x00054134
+	// Token: 0x06000799 RID: 1945 RVA: 0x00068160 File Offset: 0x00066360
 	public void BUTTON_Click()
 	{
 		this.sfx_.PlaySound(3, true);
