@@ -1163,60 +1163,42 @@ public class platformScript : MonoBehaviour
 								num7 = num * 0.15f;
 							}
 							num7 *= this.GetPriceAbzug();
-							int reviewTotal = this.games_.arrayGamesScripts[l].reviewTotal;
-							float num8 = (float)Mathf.RoundToInt(UnityEngine.Random.Range((float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * (float)reviewTotal / 300f, (float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * (float)reviewTotal / 150f));
-							if (reviewTotal < 75)
-							{
-								num8 = 0f;
-							}
-							if (reviewTotal > 80)
-							{
-								num8 = num8 * 105f / 100f;
-							}
-							if (reviewTotal > 85)
-							{
-								num8 = num8 * 110f / 100f;
-							}
-							if (reviewTotal > 90)
-							{
-								num8 = num8 * 115f / 100f;
-							}
-							if (reviewTotal > 93)
-							{
-								num8 = num8 * 120f / 100f;
-							}
-							if (reviewTotal > 95)
-							{
-								num8 = num8 * 140f / 100f;
-							}
-							if (reviewTotal > 97)
-							{
-								num8 = num8 * 160f / 100f;
-							}
-							if (reviewTotal > 99)
-							{
-								num8 = num8 * 180f / 100f;
-							}
+							float num8 = (float)Mathf.RoundToInt(UnityEngine.Random.Range((float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * 0.2f, (float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * 0.3f));
+							num8 = num8 / 100f * (130f - this.GetMarktanteil());
 							if (num8 > (float)this.sellsPerWeek[0])
 							{
 								num8 = (float)this.sellsPerWeek[0];
 							}
-							if (num7 * 5f <= num8)
+							if (num7 >= num8)
 							{
-								num8 = num7 * 5f;
-							}
-							num7 += num8;
-							this.games_.arrayGamesScripts[l].exklusivKonsolenSells += (long)Mathf.RoundToInt(num7);
-							num += num7;
-							if (this.mS_.multiplayer)
-							{
-								if (this.mS_.mpCalls_.isServer)
+								this.games_.arrayGamesScripts[l].exklusivKonsolenSells += (long)Mathf.RoundToInt(num8);
+								num += num8;
+								if (this.mS_.multiplayer)
 								{
-									this.mS_.mpCalls_.SERVER_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
+									if (this.mS_.mpCalls_.isServer)
+									{
+										this.mS_.mpCalls_.SERVER_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num8));
+									}
+									if (this.mS_.mpCalls_.isClient)
+									{
+										this.mS_.mpCalls_.CLIENT_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num8));
+									}
 								}
-								if (this.mS_.mpCalls_.isClient)
+							}
+							else
+							{
+								this.games_.arrayGamesScripts[l].exklusivKonsolenSells += (long)Mathf.RoundToInt(num7);
+								num += num7;
+								if (this.mS_.multiplayer)
 								{
-									this.mS_.mpCalls_.CLIENT_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
+									if (this.mS_.mpCalls_.isServer)
+									{
+										this.mS_.mpCalls_.SERVER_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
+									}
+									if (this.mS_.mpCalls_.isClient)
+									{
+										this.mS_.mpCalls_.CLIENT_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
+									}
 								}
 							}
 						}

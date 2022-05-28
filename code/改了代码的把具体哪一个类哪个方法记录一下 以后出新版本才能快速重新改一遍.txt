@@ -1,0 +1,531 @@
+------GameScript：
++平台市场占有率对游戏销量的影响减小（避免出现满分独占游戏只卖了几百份）
+if (!this.arcade)
+		{
+			if (this.debug)
+			{
+				Debug.Log("Platform Start: " + num2);
+			}
+			float num23 = 10f;
+			for (int i = 0; i < this.gamePlatform.Length; i++)
+			{
+				if (this.gamePlatform[i] != -1)
+				{
+					if (!this.gamePlatformScript[i])
+					{
+						this.FindMyPlatforms();
+					}
+					if (this.gamePlatformScript[i])
+					{
+						num23 += this.gamePlatformScript[i].GetMarktanteil();
+					}
+				}
+			}
+			num23 *= 0.007f;
+			num2 *= num23;
+			if (this.debug)
+			{
+				Debug.Log("Platform End: " + num2);
+			}
+		}
+		改为
+		if (this.debug)
+		{
+			Debug.Log("Platform Start: " + num2);
+		}
+		float num22 = 100f;
+		for (int i = 0; i < this.gamePlatform.Length; i++)
+		{
+			if (this.gamePlatform[i] != -1)
+			{
+				if (!this.gamePlatformScript[i])
+				{
+					this.FindMyPlatforms();
+				}
+				if (this.gamePlatformScript[i])
+				{
+					num22 += 100f + this.gamePlatformScript[i].GetMarktanteil();
+				}
+			}
+		}
+		num22 *= 0.007f;
+		num2 *= num22;
+		if (this.debug)
+		{
+			Debug.Log("Platform End: " + num2);
+		}
+		
+
+
++取消大部分时候只有98分的限制，是多少分就是多少分
+删除
+if (num6 >= 98f)
+		{
+			num6 = 98f;
+			if (UnityEngine.Random.Range(0, 25) == 1)
+			{
+				num6 = 99f;
+			}
+			if (UnityEngine.Random.Range(0, 50) == 1)
+			{
+				num6 = 100f;
+			}
+		}
+		if (num2 >= 98f)
+		{
+			num2 = 98f;
+			if (UnityEngine.Random.Range(0, 10) == 1)
+			{
+				num2 = 99f;
+			}
+			if (UnityEngine.Random.Range(0, 25) == 1)
+			{
+				num2 = 100f;
+			}
+		}
+		if (num3 >= 98f)
+		{
+			num3 = 98f;
+			if (UnityEngine.Random.Range(0, 10) == 1)
+			{
+				num3 = 99f;
+			}
+			if (UnityEngine.Random.Range(0, 25) == 1)
+			{
+				num3 = 100f;
+			}
+		}
+		if (num4 >= 98f)
+		{
+			num4 = 98f;
+			if (UnityEngine.Random.Range(0, 10) == 1)
+			{
+				num4 = 99f;
+			}
+			if (UnityEngine.Random.Range(0, 25) == 1)
+			{
+				num4 = 100f;
+			}
+		}
+		if (num5 >= 98f)
+		{
+			num5 = 98f;
+			if (UnityEngine.Random.Range(0, 10) == 1)
+			{
+				num5 = 99f;
+			}
+			if (UnityEngine.Random.Range(0, 25) == 1)
+			{
+				num5 = 100f;
+			}
+		}
+
+
+开发时自动调整配比 开发时绿色高亮提示推荐选项
+---------Assembly-CSharp/Menu_DevGame.cs
+
+public void BUTTON_AutoDesignSettings()
+	{
+		this.sfx_.PlaySound(3, true);
+		for (int i = 0; i < this.g_Designschwerpunkt.Length; i++)
+		{
+			this.g_Designschwerpunkt[i] = this.genres_.GetFocus(i, this.g_GameMainGenre, this.g_GameSubGenre);
+		}
+		for (int j = 0; j < this.g_Designausrichtung.Length; j++)
+		{
+			this.uiDesignausrichtung[j].transform.GetChild(2).transform.GetChild(0).GetComponent<Text>().text = this.g_Designausrichtung[j].ToString();
+			this.g_Designausrichtung[j] = this.genres_.GetAlign(j, this.g_GameMainGenre, this.g_GameSubGenre);
+		}
+		this.UpdateDesignSettings();
+		this.UpdateDesignSlider();
+		genres component = this.main_.GetComponent<genres>();
+		this.uiObjects[97].GetComponent<Slider>().value = component.genres_GAMEPLAY[this.g_GameMainGenre] / 5f;
+		this.uiObjects[98].GetComponent<Slider>().value = component.genres_GRAPHIC[this.g_GameMainGenre] / 5f;
+		this.uiObjects[99].GetComponent<Slider>().value = component.genres_SOUND[this.g_GameMainGenre] / 5f;
+		this.uiObjects[100].GetComponent<Slider>().value = component.genres_CONTROL[this.g_GameMainGenre] / 5f;
+		this.SetAP_Gameplay();
+		this.SetAP_Grafik();
+		this.SetAP_Sound();
+		this.SetAP_Technik();
+	}
+
+-------------Assembly-CSharp/Menu_DevGame_Genre.cs
+
+if (this.genres_.genres_UNLOCK[j] && this.genres_.IsErforscht(j) && !this.Exists(this.uiObjects[0], j))
+			{
+				GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform);
+				Item_DevGame_Genre component = gameObject.GetComponent<Item_DevGame_Genre>();
+				component.myID = j;
+				component.mS_ = this.mS_;
+				component.tS_ = this.tS_;
+				component.sfx_ = this.sfx_;
+				component.guiMain_ = this.guiMain_;
+				component.genres_ = this.genres_;
+				component.genreArt = g;
+				if (j == this.mDevGame_.g_GameSubGenre || j == this.mDevGame_.g_GameMainGenre)
+				{
+					gameObject.GetComponent<Button>().interactable = false;
+				}
+				if (this.genres_.IsGenreCombination(this.mDevGame_.g_GameMainGenre, j) && g != 0)
+				{
+					gameObject.GetComponent<Image>().color = Color.green;
+				}
+
+
+--------------------Assembly-CSharp/Menu_DevGame_Theme.cs
+
+if (length <= 0 || flag)
+				{
+					GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.uiPrefabs[0], new Vector3(0f, 0f, 0f), Quaternion.identity, this.uiObjects[0].transform);
+					Item_DevGame_Theme component = gameObject.GetComponent<Item_DevGame_Theme>();
+					component.myID = i;
+					component.mS_ = this.mS_;
+					component.tS_ = this.tS_;
+					component.sfx_ = this.sfx_;
+					component.guiMain_ = this.guiMain_;
+					component.themes_ = this.themes_;
+					component.themeArt = g;
+					component.fitGenre = this.FitGenre(i);
+					if (this.guiMain_.uiObjects[56].activeSelf && (i == this.mDevGame_.g_GameSubTheme || i == this.mDevGame_.g_GameMainTheme))
+					{
+						gameObject.GetComponent<Button>().interactable = false;
+					}
+					if (this.guiMain_.uiObjects[193].activeSelf && (i == this.mDevAddon_.g_GameSubTheme || i == this.mDevAddon_.gS_.gameMainTheme))
+					{
+						gameObject.GetComponent<Button>().interactable = false;
+					}
+					if (this.guiMain_.uiObjects[247].activeSelf && (i == this.mDevMMOAddon_.g_GameSubTheme || i == this.mDevMMOAddon_.gS_.gameMainTheme))
+					{
+						gameObject.GetComponent<Button>().interactable = false;
+					}
+					if (this.themes_.IsThemesFitWithGenre(i, this.mDevGame_.g_GameMainGenre))
+					{
+						gameObject.GetComponent<Image>().color = Color.green;
+					}
+				}
+
+-----------Assembly-CSharp/Menu_DevGame_Zielgruppe.cs
+
+private void UpdateGUI()
+	{
+		genres component = this.main_.GetComponent<genres>();
+		for (int i = 0; i < 5; i++)
+		{
+			this.uiObjects[i + 1].GetComponent<Image>().color = (component.genres_TARGETGROUP[this.mDevGame_.g_GameMainGenre, i] ? Color.green : Color.red);
+		}
+		this.uiObjects[1 + this.zielgruppe].GetComponent<Image>().color = this.guiMain_.colors[4];
+	}
+
+初始角色可以无限制加点
+------------Assembly-CSharp/Menu_NewGameCEO.cs
+
+删除
+		if (this.s_skills > 0f)
+		{
+			this.guiMain_.MessageBox(this.tS_.GetText(831), false);
+			return;
+		}
+		
+		
+		
+		if (this.s_skills > 50f)
+		{
+			this.s_skills = 50f;
+			this.s_gamedesign = 15f;
+			this.s_programmieren = 15f;
+			this.s_grafik = 15f;
+			this.s_sound = 15f;
+			this.s_pr = 15f;
+			this.s_gametests = 15f;
+			this.s_technik = 15f;
+			this.s_forschen = 15f;
+		}
+		改为
+		this.s_skills = 100f;
+		
+		
+		BUTTON_AddStats
+		100f改为255
+		
+		BUTTON_Perk
+		if (num >= 5)
+		改为
+		if (num >= 18)
+		
+		text = text.Replace("<NUM>", (18 - num).ToString());
+
+
+private float GetSkillCap()
+	{
+		if (!this.perks[15])
+		{
+			return 50f;
+		}
+		return 60f;
+	}
+	
+	改为
+	private float GetSkillCap()
+	{
+		if (!this.perks[15])
+		{
+			return 200f;
+		}
+		return 255f;
+	}
+	
+	
+	
+	public void SetBalken(GameObject go, float val, int beruf_)
+	{
+		go.transform.Find("Value").GetComponent<Text>().text = this.mS_.Round(val, 1).ToString();
+		go.transform.Find("Fill").GetComponent<Image>().fillAmount = val * 0.003921f;
+		go.transform.Find("Fill").GetComponent<Image>().color = this.GetValColor(val);
+		if (this.beruf == beruf_)
+		{
+			go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 1f;
+			return;
+		}
+		if (this.perks[15])
+		{
+			go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.6f;
+			return;
+		}
+		go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.5f;
+	}
+	
+	private Color GetValColor(float val)
+	{
+		if (val < 80f)
+		{
+			return this.guiMain_.colorsBalken[0];
+		}
+		if (val >= 80f && val < 150f)
+		{
+			return this.guiMain_.colorsBalken[1];
+		}
+		if (val >= 150f)
+		{
+			return this.guiMain_.colorsBalken[2];
+		}
+		return this.guiMain_.colorsBalken[0];
+	}
+
+
+员工技能最大值改为255 增加培训的乐趣
+--------------Assembly-CSharp/characterScript.cs
+
+private void UpdateBeduerfnisse()
+float num = 0f;
+
+public void AddMotivation(float f)
+	{
+		this.s_motivation = 100f;
+	}
+
+private float GetSkillCap()
+	{
+		if (!this.perks[15])
+		{
+			return 200f;
+		}
+		return 255f;
+	}
+	
+	private float GetSkillCap_Skill(int i)
+	100f改为255
+	
+	private void Learn()
+	100f改为this.GetSkillCap_Skill(this.beruf)
+
++游戏带动的主机销量大幅增加（评分越好的提升量越大，最多比原版多10倍左右）
+
+-------------Assembly-CSharp/platformScript.cs
+num7 *= this.GetPriceAbzug();
+							int reviewTotal = this.games_.arrayGamesScripts[l].reviewTotal;
+							float num8 = (float)Mathf.RoundToInt(UnityEngine.Random.Range((float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * (float)reviewTotal / 300f, (float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * (float)reviewTotal / 150f));
+							if (reviewTotal < 75)
+							{
+								num8 = 0f;
+							}
+							if (reviewTotal > 80)
+							{
+								num8 = num8 * 105f / 100f;
+							}
+							if (reviewTotal > 85)
+							{
+								num8 = num8 * 110f / 100f;
+							}
+							if (reviewTotal > 90)
+							{
+								num8 = num8 * 115f / 100f;
+							}
+							if (reviewTotal > 93)
+							{
+								num8 = num8 * 120f / 100f;
+							}
+							if (reviewTotal > 95)
+							{
+								num8 = num8 * 140f / 100f;
+							}
+							if (reviewTotal > 97)
+							{
+								num8 = num8 * 160f / 100f;
+							}
+							if (reviewTotal > 99)
+							{
+								num8 = num8 * 180f / 100f;
+							}
+							if (num8 > (float)this.sellsPerWeek[0])
+							{
+								num8 = (float)this.sellsPerWeek[0];
+							}
+							if (num7 * 5f <= num8)
+							{
+								num8 = num7 * 5f;
+							}
+							num7 += num8;
+							this.games_.arrayGamesScripts[l].exklusivKonsolenSells += (long)Mathf.RoundToInt(num7);
+							num += num7;
+							if (this.mS_.multiplayer)
+							{
+								if (this.mS_.mpCalls_.isServer)
+								{
+									this.mS_.mpCalls_.SERVER_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
+								}
+								if (this.mS_.mpCalls_.isClient)
+								{
+									this.mS_.mpCalls_.CLIENT_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
+								}
+
+
+员工无需求 最大效率
+--------------Assembly-CSharp/roomScript.cs
+
+private bool IsCrunchtime()
+	{
+		return false;
+		}
+
+
+
+子公司选择较新的平台开发游戏
+改component4.date_year+component4.GetMarktanteil()
+
+for (int l = 0; l < array.Length; l++)
+			{
+				if (array[l])
+				{
+					platformScript component4 = array[l].GetComponent<platformScript>();
+					if (component4 && component4.isUnlocked && gS_.gamePlatform[0] != component4.myID && gS_.gamePlatform[1] != component4.myID && gS_.gamePlatform[2] != component4.myID && gS_.gamePlatform[3] != component4.myID && ((gS_.retro && component4.vomMarktGenommen) || (!gS_.retro && !component4.vomMarktGenommen)))
+					{
+						this.platformList.Add(new publisherScript.PlatformList(component4, (component4.date_year+component4.GetMarktanteil()));
+					}
+				}
+			}
+			
+			
+			
+			
+			在	if (this.ownPlatform)下面增加下面代码   if (this.IsTochterfirma())也是同样的改法
+						this.platformList.Clear();
+			for (int l = 0; l < array.Length; l++)
+			{
+				if (array[l])
+				{
+					platformScript component4 = array[l].GetComponent<platformScript>();
+					if (component4 && component4.isUnlocked && gS_.gamePlatform[0] != component4.myID && gS_.gamePlatform[1] != component4.myID && gS_.gamePlatform[2] != component4.myID && gS_.gamePlatform[3] != component4.myID && ((gS_.retro && component4.vomMarktGenommen) || (!gS_.retro && !component4.vomMarktGenommen)))
+					{
+						this.platformList.Add(new publisherScript.PlatformList(component4, (float)component4.date_year + component4.GetMarktanteil()));
+					}
+				}
+			}
+			this.platformList = (from i in this.platformList
+			orderby i.marktanteil descending
+			select i).ToList<publisherScript.PlatformList>();
+			for (int k = 0; k < this.platformList.ToArray().Length; k++)
+			{
+					platformScript component3 = this.platformList[k].script_;
+					if (component3 && gS_.gamePlatform[0] != component3.myID && gS_.gamePlatform[1] != component3.myID && gS_.gamePlatform[2] != component3.myID && gS_.gamePlatform[3] != component3.myID && ((gS_.handy && component3.typ == 3) || (gS_.arcade && component3.typ == 4) || (!gS_.handy && !gS_.arcade && component3.typ == 0) || (!gS_.handy && !gS_.arcade && component3.typ == 1) || (!gS_.handy && !gS_.arcade && component3.typ == 2)) && component3.isUnlocked && ((gS_.retro && component3.vomMarktGenommen) || (!gS_.retro && !component3.vomMarktGenommen)) && (gS_.gameTyp == 0 || (gS_.gameTyp == 1 && component3.internet) || (gS_.gameTyp == 2 && component3.internet)) && component3.OwnerIsNPC())
+					{
+						num = component3.myID;
+						bool flag = false;
+						if (component3.manufacturer_GE.Contains(this.name_GE))
+						{
+							flag = true;
+						}
+						if (flag)
+						{
+							gS_.gamePlatform[num2] = component3.myID;
+							gS_.gamePlatformScript[num2] = component3;
+							gS_.costs_entwicklung += (long)component3.dev_costs;
+							if (gS_.exklusiv)
+							{
+								this.ClearPlatforms(gS_);
+								return;
+							}
+							num2++;
+							if (num2 >= 4)
+							{
+								this.ClearPlatforms(gS_);
+								return;
+							}
+						}
+				}
+			}
+			
+授权价格增加10倍使用次数增加10倍			
+			licences：
+			public int GetPrice(int i)
+	{
+		int num = 0;
+		if (this.licence_QUALITY[i] >= 0f && this.licence_QUALITY[i] < 33f)
+		{
+			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 1500f * (float)this.licence_ANGEBOT[i]);
+		}
+		if (this.licence_QUALITY[i] >= 33f && this.licence_QUALITY[i] < 66f)
+		{
+			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 4000f * (float)this.licence_ANGEBOT[i]);
+		}
+		if (this.licence_QUALITY[i] >= 66f && this.licence_QUALITY[i] < 80f)
+		{
+			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 7000f * (float)this.licence_ANGEBOT[i]);
+		}
+		if (this.licence_QUALITY[i] >= 80f)
+		{
+			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 11000f * (float)this.licence_ANGEBOT[i]);
+		}
+		return num / 500 * 5000;
+	}
+
+	// Token: 0x0600033D RID: 829 RVA: 0x000466FC File Offset: 0x000448FC
+	public int GetSellPrice(int i)
+	{
+		int num = 0;
+		if (this.licence_QUALITY[i] >= 0f && this.licence_QUALITY[i] < 33f)
+		{
+			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 1000f * (float)this.licence_GEKAUFT[i]);
+		}
+		if (this.licence_QUALITY[i] >= 33f && this.licence_QUALITY[i] < 66f)
+		{
+			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 3000f * (float)this.licence_GEKAUFT[i]);
+		}
+		if (this.licence_QUALITY[i] >= 66f && this.licence_QUALITY[i] < 80f)
+		{
+			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 6000f * (float)this.licence_GEKAUFT[i]);
+		}
+		if (this.licence_QUALITY[i] >= 80f)
+		{
+			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 8000f * (float)this.licence_GEKAUFT[i]);
+		}
+		return num / 500 * 5000;
+	}
+	
+	 LizenzenUpdaten()
+	 UnityEngine.Random.Range(1, 6) 改大
+	 
+	 在game里的sellgame：可以修改许可证对销量的影响
+	 if (this.gameLicence != -1)
+		{
+			num2 += num2 * (this.licences_.licence_QUALITY[this.gameLicence] * 0.01f);
+		}

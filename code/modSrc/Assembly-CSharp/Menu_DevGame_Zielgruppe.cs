@@ -55,11 +55,11 @@ public class Menu_DevGame_Zielgruppe : MonoBehaviour
 	
 	private void UpdateGUI()
 	{
-		genres component = this.main_.GetComponent<genres>();
-		for (int i = 0; i < 5; i++)
-		{
-			this.uiObjects[i + 1].GetComponent<Image>().color = (component.genres_TARGETGROUP[this.mDevGame_.g_GameMainGenre, i] ? Color.green : Color.red);
-		}
+		this.uiObjects[1].GetComponent<Image>().color = Color.white;
+		this.uiObjects[2].GetComponent<Image>().color = Color.white;
+		this.uiObjects[3].GetComponent<Image>().color = Color.white;
+		this.uiObjects[4].GetComponent<Image>().color = Color.white;
+		this.uiObjects[5].GetComponent<Image>().color = Color.white;
 		this.uiObjects[1 + this.zielgruppe].GetComponent<Image>().color = this.guiMain_.colors[4];
 	}
 

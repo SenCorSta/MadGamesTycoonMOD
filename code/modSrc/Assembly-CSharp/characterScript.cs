@@ -1136,7 +1136,7 @@ public class characterScript : MonoBehaviour
 		{
 			return;
 		}
-		float num = 0f;
+		float num = 0.1f;
 		int num2 = Mathf.RoundToInt(base.transform.position.x);
 		int num3 = Mathf.RoundToInt(base.transform.position.z);
 		if (!this.mapS_.IsInMapLimit(num2, num3))
@@ -1424,7 +1424,19 @@ public class characterScript : MonoBehaviour
 	
 	public void AddMotivation(float f)
 	{
-		this.s_motivation = 100f;
+		if (this.perks[0])
+		{
+			return;
+		}
+		this.s_motivation += f;
+		if (this.s_motivation < 0f)
+		{
+			this.s_motivation = 0f;
+		}
+		if (this.s_motivation > 100f)
+		{
+			this.s_motivation = 100f;
+		}
 	}
 
 	
@@ -3810,9 +3822,9 @@ public class characterScript : MonoBehaviour
 	{
 		if (!this.perks[15])
 		{
-			return 200f;
+			return 50f;
 		}
-		return 255f;
+		return 60f;
 	}
 
 	
@@ -3825,49 +3837,49 @@ public class characterScript : MonoBehaviour
 			{
 				return this.GetSkillCap();
 			}
-			return 255f;
+			return 100f;
 		case 1:
 			if (this.beruf != 1)
 			{
 				return this.GetSkillCap();
 			}
-			return 255f;
+			return 100f;
 		case 2:
 			if (this.beruf != 2)
 			{
 				return this.GetSkillCap();
 			}
-			return 255f;
+			return 100f;
 		case 3:
 			if (this.beruf != 3)
 			{
 				return this.GetSkillCap();
 			}
-			return 255f;
+			return 100f;
 		case 4:
 			if (this.beruf != 4)
 			{
 				return this.GetSkillCap();
 			}
-			return 255f;
+			return 100f;
 		case 5:
 			if (this.beruf != 5)
 			{
 				return this.GetSkillCap();
 			}
-			return 255f;
+			return 100f;
 		case 6:
 			if (this.beruf != 6)
 			{
 				return this.GetSkillCap();
 			}
-			return 255f;
+			return 100f;
 		case 7:
 			if (this.beruf != 7)
 			{
 				return this.GetSkillCap();
 			}
-			return 255f;
+			return 100f;
 		default:
 			return this.GetSkillCap();
 		}
@@ -3895,9 +3907,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_gamedesign = this.GetSkillCap();
 			}
-			if (this.s_gamedesign > this.GetSkillCap_Skill(this.beruf))
+			if (this.s_gamedesign > 100f)
 			{
-				this.s_gamedesign = this.GetSkillCap_Skill(this.beruf);
+				this.s_gamedesign = 100f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3912,9 +3924,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_programmieren = this.GetSkillCap();
 			}
-			if (this.s_programmieren > this.GetSkillCap_Skill(this.beruf))
+			if (this.s_programmieren > 100f)
 			{
-				this.s_programmieren = this.GetSkillCap_Skill(this.beruf);
+				this.s_programmieren = 100f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3929,9 +3941,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_grafik = this.GetSkillCap();
 			}
-			if (this.s_grafik > this.GetSkillCap_Skill(this.beruf))
+			if (this.s_grafik > 100f)
 			{
-				this.s_grafik = this.GetSkillCap_Skill(this.beruf);
+				this.s_grafik = 100f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3946,9 +3958,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_sound = this.GetSkillCap();
 			}
-			if (this.s_sound > this.GetSkillCap_Skill(this.beruf))
+			if (this.s_sound > 100f)
 			{
-				this.s_sound = this.GetSkillCap_Skill(this.beruf);
+				this.s_sound = 100f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3963,9 +3975,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_pr = this.GetSkillCap();
 			}
-			if (this.s_pr > this.GetSkillCap_Skill(this.beruf))
+			if (this.s_pr > 100f)
 			{
-				this.s_pr = this.GetSkillCap_Skill(this.beruf);
+				this.s_pr = 100f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3980,9 +3992,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_gametests = this.GetSkillCap();
 			}
-			if (this.s_gametests > this.GetSkillCap_Skill(this.beruf))
+			if (this.s_gametests > 100f)
 			{
-				this.s_gametests = this.GetSkillCap_Skill(this.beruf);
+				this.s_gametests = 100f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -3997,9 +4009,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_technik = this.GetSkillCap();
 			}
-			if (this.s_technik > this.GetSkillCap_Skill(this.beruf))
+			if (this.s_technik > 100f)
 			{
-				this.s_technik = this.GetSkillCap_Skill(this.beruf);
+				this.s_technik = 100f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);
@@ -4014,9 +4026,9 @@ public class characterScript : MonoBehaviour
 			{
 				this.s_forschen = this.GetSkillCap();
 			}
-			if (this.s_forschen > this.GetSkillCap_Skill(this.beruf))
+			if (this.s_forschen > 100f)
 			{
-				this.s_forschen = this.GetSkillCap_Skill(this.beruf);
+				this.s_forschen = 100f;
 				if (this.mS_.achScript_)
 				{
 					this.mS_.achScript_.SetAchivement(59);

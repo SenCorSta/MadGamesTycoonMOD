@@ -566,7 +566,151 @@ public class roomScript : MonoBehaviour
 	
 	private bool IsCrunchtime()
 	{
-		return false;
+		if (!this.taskGameObject)
+		{
+			return false;
+		}
+		if (this.typ == 11)
+		{
+			return false;
+		}
+		if (this.typ == 9)
+		{
+			return false;
+		}
+		if (this.typ == 0)
+		{
+			return false;
+		}
+		if (this.typ == 15)
+		{
+			return false;
+		}
+		if (this.typ == 12)
+		{
+			return false;
+		}
+		if (this.typ == 14)
+		{
+			return false;
+		}
+		float num = 0f;
+		if (this.typ == 2 && num == 0f && this.GetTaskForschung())
+		{
+			num = this.GetTaskForschung().GetProzent();
+		}
+		if (this.typ == 1)
+		{
+			if (num == 0f && this.GetTaskEngine())
+			{
+				num = this.GetTaskEngine().GetProzent();
+			}
+			if (num == 0f && this.GetTaskUpdate())
+			{
+				num = this.GetTaskUpdate().GetProzent();
+			}
+			if (num == 0f && this.GetTaskGame())
+			{
+				num = this.GetTaskGame().GetProzent();
+			}
+			if (num == 0f && this.GetTaskF2PUpdate())
+			{
+				num = this.GetTaskF2PUpdate().GetProzent();
+			}
+		}
+		if (this.typ == 6)
+		{
+			if (num == 0f && this.GetTaskMarketing())
+			{
+				num = this.GetTaskMarketing().GetProzent();
+			}
+			if (num == 0f && this.GetTaskMarketingSpezial())
+			{
+				num = this.GetTaskMarketingSpezial().GetProzent();
+			}
+			if (num == 0f && this.GetTaskMitarbeitersuche())
+			{
+				num = this.GetTaskMitarbeitersuche().GetProzent();
+			}
+		}
+		if (this.typ == 13 && num == 0f && this.GetTaskTraining())
+		{
+			num = this.GetTaskTraining().GetProzent();
+		}
+		if (num == 0f && this.GetTaskContractWork())
+		{
+			num = this.GetTaskContractWork().GetProzent();
+		}
+		if (num == 0f)
+		{
+			if (this.GetTaskContractWait())
+			{
+				return false;
+			}
+			if (this.GetTaskWait())
+			{
+				return false;
+			}
+		}
+		if (this.typ == 7)
+		{
+			if (num == 0f && this.GetTaskFankampagne())
+			{
+				num = this.GetTaskFankampagne().GetProzent();
+			}
+			if (num == 0f && this.GetTaskSupport())
+			{
+				num = this.GetTaskSupport().GetProzent();
+				if (num > 99.9f)
+				{
+				}
+				return false;
+			}
+			if (num == 0f && this.GetTaskFanshop())
+			{
+				return false;
+			}
+		}
+		if (this.typ == 3)
+		{
+			if (num == 0f && this.GetTaskBugfixing())
+			{
+				num = this.GetTaskBugfixing().GetProzent();
+			}
+			if (num == 0f && this.GetTaskGameplayVerbessern())
+			{
+				num = this.GetTaskGameplayVerbessern().GetProzent();
+			}
+			if (num == 0f && this.GetTaskSpielbericht())
+			{
+				num = this.GetTaskSpielbericht().GetProzent();
+			}
+		}
+		if (this.typ == 4 && num == 0f && this.GetTaskGrafikVerbessern())
+		{
+			num = this.GetTaskGrafikVerbessern().GetProzent();
+		}
+		if (this.typ == 5 && num == 0f && this.GetTaskSoundVerbessern())
+		{
+			num = this.GetTaskSoundVerbessern().GetProzent();
+		}
+		if (this.typ == 10 && num == 0f && this.GetTaskAnimationVerbessern())
+		{
+			num = this.GetTaskAnimationVerbessern().GetProzent();
+		}
+		if (this.typ == 17 && num == 0f && this.GetTaskArcadeProduction())
+		{
+			num = this.GetTaskArcadeProduction().GetProzent();
+		}
+		if (this.typ == 8 && num == 0f && this.GetTaskKonsole())
+		{
+			num = this.GetTaskKonsole().GetProzent();
+		}
+		if (num <= 0f && this.GetTaskUnterstuetzen() && this.GetTaskUnterstuetzen().roomID != this.myID)
+		{
+			return this.GetTaskUnterstuetzen().IsCrunchtime();
+		}
+		return num < 100f && num > (float)this.mS_.personal_crunch;
 	}
 
 	

@@ -2249,24 +2249,21 @@ public class Menu_DevGame : MonoBehaviour
 		this.sfx_.PlaySound(3, true);
 		for (int i = 0; i < this.g_Designschwerpunkt.Length; i++)
 		{
-			this.g_Designschwerpunkt[i] = this.genres_.GetFocus(i, this.g_GameMainGenre, this.g_GameSubGenre);
+			if (this.g_GameMainGenre != -1 && this.genres_.GetFocusKnown(i, this.g_GameMainGenre, this.g_GameSubGenre))
+			{
+				this.g_Designschwerpunkt[i] = this.genres_.GetFocus(i, this.g_GameMainGenre, this.g_GameSubGenre);
+			}
 		}
 		for (int j = 0; j < this.g_Designausrichtung.Length; j++)
 		{
 			this.uiDesignausrichtung[j].transform.GetChild(2).transform.GetChild(0).GetComponent<Text>().text = this.g_Designausrichtung[j].ToString();
-			this.g_Designausrichtung[j] = this.genres_.GetAlign(j, this.g_GameMainGenre, this.g_GameSubGenre);
+			if (this.g_GameMainGenre != -1 && this.genres_.GetAlignKnown(j, this.g_GameMainGenre, this.g_GameSubGenre))
+			{
+				this.g_Designausrichtung[j] = this.genres_.GetAlign(j, this.g_GameMainGenre, this.g_GameSubGenre);
+			}
 		}
 		this.UpdateDesignSettings();
 		this.UpdateDesignSlider();
-		genres component = this.main_.GetComponent<genres>();
-		this.uiObjects[97].GetComponent<Slider>().value = component.genres_GAMEPLAY[this.g_GameMainGenre] / 5f;
-		this.uiObjects[98].GetComponent<Slider>().value = component.genres_GRAPHIC[this.g_GameMainGenre] / 5f;
-		this.uiObjects[99].GetComponent<Slider>().value = component.genres_SOUND[this.g_GameMainGenre] / 5f;
-		this.uiObjects[100].GetComponent<Slider>().value = component.genres_CONTROL[this.g_GameMainGenre] / 5f;
-		this.SetAP_Gameplay();
-		this.SetAP_Grafik();
-		this.SetAP_Sound();
-		this.SetAP_Technik();
 	}
 
 	

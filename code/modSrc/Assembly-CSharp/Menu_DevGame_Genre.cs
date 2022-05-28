@@ -152,10 +152,6 @@ public class Menu_DevGame_Genre : MonoBehaviour
 				{
 					gameObject.GetComponent<Button>().interactable = false;
 				}
-				if (this.genres_.IsGenreCombination(this.mDevGame_.g_GameMainGenre, j) && g != 0)
-				{
-					gameObject.GetComponent<Image>().color = Color.green;
-				}
 			}
 		}
 		this.DROPDOWN_Sort();

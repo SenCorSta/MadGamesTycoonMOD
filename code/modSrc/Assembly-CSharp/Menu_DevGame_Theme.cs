@@ -179,10 +179,6 @@ public class Menu_DevGame_Theme : MonoBehaviour
 					{
 						gameObject.GetComponent<Button>().interactable = false;
 					}
-					if (this.themes_.IsThemesFitWithGenre(i, this.mDevGame_.g_GameMainGenre))
-					{
-						gameObject.GetComponent<Image>().color = Color.green;
-					}
 				}
 			}
 		}

@@ -53,7 +53,18 @@ public class Menu_NewGameCEO : MonoBehaviour
 	
 	private void Update()
 	{
-		this.s_skills = 100f;
+		if (this.s_skills > 50f)
+		{
+			this.s_skills = 50f;
+			this.s_gamedesign = 15f;
+			this.s_programmieren = 15f;
+			this.s_grafik = 15f;
+			this.s_sound = 15f;
+			this.s_pr = 15f;
+			this.s_gametests = 15f;
+			this.s_technik = 15f;
+			this.s_forschen = 15f;
+		}
 	}
 
 	
@@ -69,7 +80,7 @@ public class Menu_NewGameCEO : MonoBehaviour
 		this.InitDropdowns();
 		if (this.uiObjects[12].GetComponent<InputField>().text.Length <= 0)
 		{
-			this.s_skills = 5000f;
+			this.s_skills = 50f;
 			this.s_gamedesign = 15f;
 			this.s_programmieren = 15f;
 			this.s_grafik = 15f;
@@ -457,6 +468,11 @@ public class Menu_NewGameCEO : MonoBehaviour
 			this.guiMain_.MessageBox(this.tS_.GetText(824), false);
 			return;
 		}
+		if (this.s_skills > 0f)
+		{
+			this.guiMain_.MessageBox(this.tS_.GetText(831), false);
+			return;
+		}
 		int num = 0;
 		for (int i = 0; i < this.perks.Length; i++)
 		{
@@ -643,7 +659,7 @@ public class Menu_NewGameCEO : MonoBehaviour
 		switch (i)
 		{
 		case 0:
-			if (this.s_gamedesign < 255f && this.beruf == 0)
+			if (this.s_gamedesign < 100f && this.beruf == 0)
 			{
 				this.s_gamedesign += 5f;
 				this.s_skills -= 5f;
@@ -655,7 +671,7 @@ public class Menu_NewGameCEO : MonoBehaviour
 			}
 			break;
 		case 1:
-			if (this.s_programmieren < 255f && this.beruf == 1)
+			if (this.s_programmieren < 100f && this.beruf == 1)
 			{
 				this.s_programmieren += 5f;
 				this.s_skills -= 5f;
@@ -667,7 +683,7 @@ public class Menu_NewGameCEO : MonoBehaviour
 			}
 			break;
 		case 2:
-			if (this.s_grafik < 255f && this.beruf == 2)
+			if (this.s_grafik < 100f && this.beruf == 2)
 			{
 				this.s_grafik += 5f;
 				this.s_skills -= 5f;
@@ -679,7 +695,7 @@ public class Menu_NewGameCEO : MonoBehaviour
 			}
 			break;
 		case 3:
-			if (this.s_sound < 255f && this.beruf == 3)
+			if (this.s_sound < 100f && this.beruf == 3)
 			{
 				this.s_sound += 5f;
 				this.s_skills -= 5f;
@@ -691,7 +707,7 @@ public class Menu_NewGameCEO : MonoBehaviour
 			}
 			break;
 		case 4:
-			if (this.s_pr < 255f && this.beruf == 4)
+			if (this.s_pr < 100f && this.beruf == 4)
 			{
 				this.s_pr += 5f;
 				this.s_skills -= 5f;
@@ -703,7 +719,7 @@ public class Menu_NewGameCEO : MonoBehaviour
 			}
 			break;
 		case 5:
-			if (this.s_gametests < 255f && this.beruf == 5)
+			if (this.s_gametests < 100f && this.beruf == 5)
 			{
 				this.s_gametests += 5f;
 				this.s_skills -= 5f;
@@ -715,7 +731,7 @@ public class Menu_NewGameCEO : MonoBehaviour
 			}
 			break;
 		case 6:
-			if (this.s_technik < 255f && this.beruf == 6)
+			if (this.s_technik < 100f && this.beruf == 6)
 			{
 				this.s_technik += 5f;
 				this.s_skills -= 5f;
@@ -727,7 +743,7 @@ public class Menu_NewGameCEO : MonoBehaviour
 			}
 			break;
 		case 7:
-			if (this.s_forschen < 255f && this.beruf == 7)
+			if (this.s_forschen < 100f && this.beruf == 7)
 			{
 				this.s_forschen += 5f;
 				this.s_skills -= 5f;
@@ -851,7 +867,7 @@ public class Menu_NewGameCEO : MonoBehaviour
 		string text = this.tS_.GetText(1682);
 		text = text.Replace("<NUM>", (5 - num).ToString());
 		this.uiObjects[25].GetComponent<Text>().text = text;
-		if (num >= 18)
+		if (num >= 5)
 		{
 			for (int k = 0; k < this.perks.Length; k++)
 			{
@@ -880,9 +896,9 @@ public class Menu_NewGameCEO : MonoBehaviour
 	{
 		if (!this.perks[15])
 		{
-			return 200f;
+			return 50f;
 		}
-		return 255f;
+		return 60f;
 	}
 
 	
