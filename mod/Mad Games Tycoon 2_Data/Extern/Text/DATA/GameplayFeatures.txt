@@ -1245,12 +1245,12 @@
 
 [ID]27
 [TYP]6
-[NAME EN]Voice Over
-[NAME GE]Voice Over
+[NAME EN]Voice Over IP
+[NAME GE]Voice Over IP
 [NAME CH]语音
 [NAME TU]Sesli İletişim
-[DESC EN]With Voice-Over, players can communicate via headset.
-[DESC GE]Mit Voice-Over können sich Spieler<br>per Headset unterhalten.
+[DESC EN]With Voice Over IP, players can communicate via headset.
+[DESC GE]Mit Voice Over IP können sich Spieler<br>per Headset unterhalten.
 [DESC CH]语音系统，玩家可以通过耳机进行交流.
 [DESC TU]Sesli İletişim ile oyuncular kulaklık aracılığıyla iletişim kurabilir.
 [NAME FR]Chat Vocal
@@ -1266,7 +1266,7 @@
 [NAME CZ]Hlasová komunikace
 [DESC CZ]Tato funkce umožňuje hráčům komunikovat mezi sebou pomocí sluchátek.
 [NAME KO]음성 채팅
-[DESC KO]플레이어는 헤드셋을 통해 대화할 수 있습니다.
+[DESC KO]With Voice-Over, players can communicate via headset.
 [NAME RU]Голосовая связь
 [DESC RU]Позволяет общаться в игре с использованием гарнитуры.
 [NAME IT]Chat vocale
@@ -1890,7 +1890,7 @@
 
 [ID]41
 [TYP]1
-[NAME EN]Voice Output
+[NAME EN]Voice Acting
 [NAME GE]Sprachausgabe
 [NAME CH]配音
 [NAME TU]Ses Çıkışı
@@ -1911,7 +1911,7 @@
 [NAME CZ]Hlasový výstup
 [DESC CZ]Díky této funkci již není hráč nucen číst ani psát všechen text v chatu.
 [NAME KO]음성 출력
-[DESC KO]플레이어는 더 이상 모든 텍스트를 읽을 필요 없습니다.
+[DESC KO]With this feature the player is no，<br>longer forced to read all texts.
 [NAME RU]Озвучка
 [DESC RU]C этой опцией игрку больше не<br>придется читать все тексты.
 [NAME IT]Riproduzione Vocale
@@ -3201,49 +3201,49 @@
 
 [ID]69
 [TYP]4
-[NAME EN]3D-Scan
-[NAME GE]3D-Scan
-[NAME CH]3D 扫描
-[NAME TU]3D Tarama
-[NAME FR]Numérisation 3D
-[NAME PB]3D-Scan
-[NAME CT]3D掃描
-[NAME HU]3D szkennelés
-[NAME ES]Escaneo 3D
-[NAME CZ]3D skenování
-[NAME KO]3D 스캔
-[NAME RU]3D-Сканирование
-[NAME IT]Scansione 3D
-[NAME AR]مسح ثلاثي الأبعاد
-[NAME JA]3Dスキャン
-[DESC EN]3D scanning and facial recognition technology allows systems to transfer your appearance<br>to the game world or transfer the facial expressions of actors to create animations.
-[DESC GE]3D-Scan und Gesichtserkennungstechnologie ermöglicht es Systemen, Ihr Aussehen in die Spielwelt<br>zu übertragen oder die Mimik von Schauspielern zu übertragen, um Animationen zu erstellen.
-[DESC CH]3D 扫描和面部识别技术允许系统将您的外观转移到游戏世界或转移演员的面部表情以创建动画。
-[DESC TU]3D tarama ve yüz tanıma teknolojisi, sistemlerin görünüşünüzü oyun dünyasına aktarmasına<br>veya animasyonlar oluşturmak için oyuncuların yüz ifadelerini aktarmasına olanak tanır.
-[DESC FR]La technologie de numérisation 3D et de reconnaissance faciale permet aux systèmes de transférer votre apparence<br>dans le monde du jeu ou de transférer les expressions faciales des acteurs pour créer des animations.
-[DESC PB]A digitalização 3D e a tecnologia de reconhecimento facial permitem que os sistemas transfiram sua aparência para o mundo<br>do jogo ou transfiram as expressões faciais dos atores para criar animações.
-[DESC CT]3D掃描和臉部識別技術允許轉移玩家的外表到遊戲世界<br>或轉移角色臉部表情來產生動畫
-[DESC HU]A 3D szkennelés és az arcfelismerési technológia lehetővé teszi a rendszerek számára, hogy megjelenését<br>a játék világába helyezzék, vagy a színészek arckifejezéseit animációk készítéséhez.
-[DESC ES]La tecnología de escaneo 3D y reconocimiento facial permite que los sistemas transfieran su apariencia al mundo<br>del juego o transfieran las expresiones faciales de los actores para crear animaciones.
-[DESC CZ]Technologie 3D skenování a rozpoznávání obličeje umožňuje systémům přenášet váš vzhled do herního<br>světa nebo přenášet mimiku herců a vytvářet animace.
-[DESC KO]3D 스캔 및 안면 인식 기술을 사용하면 플레이어의 외모를 게임 세계로 전송하거나<br>배우의 표정을 전송하여 애니메이션을 만들 수 있습니다.
-[DESC RU]Технология 3D-сканирования и распознавания лиц позволяет системам переносить ваш облик<br>в игровой мир или переносить мимику актеров для создания анимаций.
-[DESC IT]La tecnologia di scansione 3D e riconoscimento facciale consente ai sistemi di trasferire il tuo aspetto<br>nel mondo di gioco o trasferire le espressioni facciali degli attori per creare animazioni.
-[DESC AR]تسمح تقنية المسح ثلاثي الأبعاد والتعرف على الوجه للأنظمة بنقل مظهرك إلى عالم اللعبة أو نقل تعابير وجه الممثلين لإنشاء رسوم متحركة.
-[DESC JA]3Dスキャンと顔認識技術により、システムはあなたの外観をゲームの世界に転送したり、<br>俳優の顔の表情を転送してアニメーションを作成したりできます。
-[NAME PL]Skanowanie 3D
-[DESC PL]Technologia skanowania 3D i rozpoznawania twarzy umożliwia systemom przeniesienie Twojego wyglądu<br>do świata gry lub przeniesienie mimiki twarzy aktorów w celu tworzenia animacji.
-[DATE]APR 2008
-[RES POINTS]780
-[PRICE]180000
-[DEV COSTS]85000
+[NAME EN]Facial Recognition
+[NAME GE]Gesichtserkennungen
+[NAME CH]Facial Recognition
+[NAME TU]Facial Recognition
+[NAME FR]Facial Recognition
+[NAME PB]Facial Recognition
+[NAME CT]Facial Recognition
+[NAME HU]Facial Recognition
+[NAME ES]Facial Recognition
+[NAME CZ]Facial Recognition
+[NAME KO]Facial Recognition
+[NAME RU]Facial Recognition
+[NAME IT]Facial Recognition
+[NAME AR]Facial Recognition
+[NAME JA]Facial Recognition
+[NAME PL]Facial Recognition
+[DESC EN]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC GE]Mit Gesichtserkennungen kann dein Aussehen<br>und deine Emotionen direkt in das Spiel übertragen werden.
+[DESC CH]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC TU]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC FR]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC PB]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC CT]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC HU]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC ES]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC CZ]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC KO]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC RU]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC IT]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC AR]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC JA]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC PL]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DATE]NOV 2018
+[RES POINTS]980
+[PRICE]300000
+[DEV COSTS]150000
 [PIC]3dscan.png
-[GAMEPLAY]205
-[GRAPHIC]70
+[GAMEPLAY]300
+[GRAPHIC]100
 [SOUND]0
-[TECH]30
-[GOOD]<2><3><5><7><12><14><16>
-[BAD]<1><6><11><15><17>
+[TECH]200
+[GOOD]<7><8><12><14><15><16>
+[BAD]<9>
 
 [ID]70
 [TYP]4
@@ -3293,50 +3293,188 @@
 
 [ID]71
 [TYP]5
-[NAME EN]Teslasuit Support
-[NAME GE]Teslasuit-Support
-[NAME CH]Teslasuit 支持
-[NAME TU]Teslasuit Desteği
-[NAME FR]Assistance Teslasuit
-[NAME PB]Suporte Teslasuit
-[NAME CT]Teslasuit支援
-[NAME HU]Teslasuit támogatás
-[NAME ES]Soporte de Teslasuit
-[NAME CZ]Podpora Teslasuit
-[NAME KO]Teslasuit 지원
-[NAME RU]Поддержка Teslasuit
-[NAME IT]Supporto Teslasuit
-[NAME AR]دعم Teslasuit
-[NAME JA]テスラスーツのサポート
-[DESC EN]A smart suit that helps you fully immerse yourself in VR.<br>It is equipped with a motion capture system, climate control, biometric sensors.<br>You can feel everything that happens in a computer game on yourself thanks to electrical impulses.
-[DESC GE]Ein intelligenter Anzug, der Ihnen hilft, vollständig in VR einzutauchen.<br>Es ist mit einem Motion-Capture-System, einer Klimaanlage und biometrischen Sensoren ausgestattet.<br>Alles, was in einem Computerspiel passiert, kann man dank elektrischer Impulse an sich selbst spüren.
-[DESC CH]一款智能套装，可帮助您完全沉浸在 VR 中。<br> 它配备了动作捕捉系统、气候控制、生物识别传感器。<br> 由于电脉冲，您可以在自己身上感受到电脑游戏中发生的一切。
-[DESC TU]Kendinizi sanal gerçekliğe tamamen kaptırmanıza yardımcı olan akıllı bir takım elbise.<br>Hareket yakalama sistemi, iklim kontrolü, biyometrik sensörler ile donatılmıştır.<br>Elektriksel impulslar sayesinde bir bilgisayar oyununda olan her şeyi kendiniz hissedebilirsiniz.
-[DESC FR]Un costume intelligent qui vous aide à vous immerger complètement dans la réalité virtuelle.<br>Il est équipé d'un système de capture de mouvement, d'une climatisation, de capteurs biométriques.<br>Vous pouvez ressentir sur vous-même tout ce qui se passe dans un jeu vidéo grâce à des impulsions électriques.
-[DESC PB]Um traje inteligente que ajuda você a mergulhar totalmente na RV.<br>É equipado com um sistema de captura de movimento, controle de temperatura, sensores biométricos.<br>Você pode sentir tudo o que acontece em um jogo de computador graças a impulsos elétricos.
-[DESC CT]這套智能衣幫助玩家完全沉醉在VR，<br>它設有動作捕捉、氣候控制、生物識別感應器，<br>經過電子脈衝讓身體感受電子遊戲所發生的一切
-[DESC HU]Okos öltöny, amely segít teljesen elmerülni a VR -ben.<br>Mozgásérzékelő rendszerrel, klímaberendezéssel, biometrikus érzékelőkkel van felszerelve.<br>Mindent, ami egy számítógépes játékban történik, magadon érezheted az elektromos impulzusoknak köszönhetően.
-[DESC ES]Un traje inteligente que te ayuda a sumergirte por completo en la realidad virtual.<br>Está equipado con un sistema de captura de movimiento, control de clima, sensores biométricos.<br>Puedes sentir todo lo que sucede en un juego de computadora en ti mismo gracias a impulsos eléctricos.
-[DESC CZ]Chytrý oblek, který vám pomůže plně se ponořit do VR.<br>Je vybaven systémem snímání pohybu, klimatizací, biometrickými senzory.<br>Díky elektrickým impulzům na sobě cítíte vše, co se v počítačové hře děje.
-[DESC KO]VR에 완전히 몰입할 수 있도록 도와주는 스마트 슈트.<br>모션 캡처 시스템, 온도 제어, 생체 센서 등이 내장되어 있습니다.<br>전기 자극 덕분에 게임에서 일어나는 모든 일을 느낄 수 있습니다.
-[DESC RU]Умный костюм, который помогает полностью погрузиться в VR.<br>Он оснащен системой захвата движений, климат-контролем, биометрическими датчиками.<br>Всё, что происходит в компьютерной игре, ты можешь почувствовать на себе благодаря электрическим импульсам.
-[DESC IT]Una tuta intelligente che ti aiuta a immergerti completamente nella realtà virtuale.<br>È dotato di un sistema di motion capture, climatizzazione, sensori biometrici.<br>Puoi sentire tutto ciò che accade in un gioco per computer su te stesso grazie agli impulsi elettrici.
-[DESC AR]بدلة ذكية تساعدك على الانغماس الكامل في الواقع الافتراضي. وهي مجهزة بنظام التقاط الحركة و<br>التحكم في المناخ وأجهزة الاستشعار البيومترية. يمكنك أن تشعر بكل ما يحدث في لعبة الكمبيوتر على نفسك بفضل النبضات الكهربائية.
-[DESC JA]VRに完全に没頭するのに役立つスマートスーツ。<br> モーションキャプチャシステム、気候制御、生体認証センサーが装備されています。<br> 電気インパルスのおかげで、コンピューターゲームで起こるすべてのことを自分で感じることができます。
-[NAME PL]Wsparcie Teslasuit
-[DESC PL]Sprytny garnitur, który pomoże Ci w pełni zanurzyć się w VR.<br>Jest wyposażony w system przechwytywania ruchu, kontrolę klimatu, czujniki biometryczne.<br>Dzięki impulsom elektrycznym możesz poczuć na sobie wszystko, co dzieje się w grze komputerowej.
-[DATE]FEB 2023
-[RES POINTS]3500
-[PRICE]600000
-[DEV COSTS]295000
+[NAME EN]Gaming Suit Support
+[NAME GE]Gaming-Anzug Support
+[NAME CH]Gaming Suit Support
+[NAME TU]Gaming Suit Support
+[NAME FR]Gaming Suit Support
+[NAME PB]Gaming Suit Support
+[NAME CT]Gaming Suit Support
+[NAME HU]Gaming Suit Support
+[NAME ES]Gaming Suit Support
+[NAME CZ]Gaming Suit Support
+[NAME KO]Gaming Suit Support
+[NAME RU]Gaming Suit Support
+[NAME IT]Gaming Suit Support
+[NAME AR]Gaming Suit Support
+[NAME JA]Gaming Suit Support
+[NAME PL]Gaming Suit Support
+[DESC EN]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC GE]Mit einem Gaming-Anzug kannst du deine Bewegung<br>direkt in das Spiel übertragen und zusätzlich Treffer fühlen.
+[DESC CH]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC TU]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC FR]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC PB]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC CT]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC HU]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC ES]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC CZ]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC KO]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC RU]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC IT]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC AR]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC JA]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC PL]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DATE]JUL 2016
+[RES POINTS]980
+[PRICE]270000
+[DEV COSTS]120000
 [PIC]Teslasuit.png
+[GAMEPLAY]250
+[GRAPHIC]0
+[SOUND]0
+[TECH]250
+[GOOD]<5><7><8><10><14><16>
+[BAD]<1><4><9><11>
+[NO_MOBILE]
+
+[ID]72
+[TYP]5
+[NAME EN]Gaming Vest Support
+[NAME GE]Gaming-Westen Support
+[NAME CH]Gaming Vest Support
+[NAME TU]Gaming Vest Support
+[NAME FR]Gaming Vest Support
+[NAME PB]Gaming Vest Support
+[NAME CT]Gaming Vest Support
+[NAME HU]Gaming Vest Support
+[NAME ES]Gaming Vest Support
+[NAME CZ]Gaming Vest Support
+[NAME KO]Gaming Vest Support
+[NAME RU]Gaming Vest Support
+[NAME IT]Gaming Vest Support
+[NAME AR]Gaming Vest Support
+[NAME JA]Gaming Vest Support
+[NAME PL]Gaming Vest Support
+[DESC EN]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC GE]Mit einer Gaming Weste kannst du<br>zum Beispiel Treffer bei einem Action-Spiel wahrnehmen.
+[DESC CH]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC TU]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC FR]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC PB]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC CT]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC HU]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC ES]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC CZ]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC KO]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC RU]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC IT]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC AR]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC JA]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC PL]For example, with a gaming vest<br>you can feel hits during an action game.
+[DATE]JUN 2014
+[RES POINTS]900
+[PRICE]240000
+[DEV COSTS]100000
+[PIC]Vest.png
 [GAMEPLAY]200
 [GRAPHIC]0
 [SOUND]0
-[TECH]400
-[GOOD]<2><3><5><7><8><10><12><14><16><17><18>
-[BAD]<4><9><11><13><15>
+[TECH]200
+[GOOD]<5><7><8><10><14><16>
+[BAD]<1><4><9><11>
 [NO_MOBILE]
-[NO_ARCADE]
+
+[ID]73
+[TYP]4
+[NAME EN]Quick Time Events
+[NAME GE]Quick-Time-Events
+[NAME CH]Quick Time Events
+[NAME TU]Quick Time Events
+[NAME FR]Quick Time Events
+[NAME PB]Quick Time Events
+[NAME CT]Quick Time Events
+[NAME HU]Quick Time Events
+[NAME ES]Quick Time Events
+[NAME CZ]Quick Time Events
+[NAME KO]Quick Time Events
+[NAME RU]Quick Time Events
+[NAME IT]Quick Time Events
+[NAME AR]Quick Time Events
+[NAME JA]Quick Time Events
+[NAME PL]Quick Time Events
+[DESC EN]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC GE]Bei Quick-Time-Events muss der Spieler in kurzer Zeit<br>mehrere Tastenkombinationen drücken um zu bestehen.
+[DESC CH]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC TU]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC FR]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC PB]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC CT]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC HU]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC ES]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC CZ]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC KO]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC RU]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC IT]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC AR]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC JA]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC PL]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DATE]JUN 1983
+[RES POINTS]175
+[PRICE]35000
+[DEV COSTS]20000
+[PIC]qte.png
+[GAMEPLAY]40
+[GRAPHIC]0
+[SOUND]0
+[TECH]0
+[GOOD]<0><5><8><10>
+[BAD]<4><9><11>
+
+[ID]74
+[TYP]4
+[NAME EN]Speech Recognition
+[NAME GE]Spracherkennung
+[NAME CH]Speech Recognition
+[NAME TU]Speech Recognition
+[NAME FR]Speech Recognition
+[NAME PB]Speech Recognition
+[NAME CT]Speech Recognition
+[NAME HU]Speech Recognition
+[NAME ES]Speech Recognition
+[NAME CZ]Speech Recognition
+[NAME KO]Speech Recognition
+[NAME RU]Speech Recognition
+[NAME IT]Speech Recognition
+[NAME AR]Speech Recognition
+[NAME JA]Speech Recognition
+[NAME PL]Speech Recognition
+[DESC EN]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC GE]Mit diesem Feature kannst du zum Beispiel<br>Dialoge mit NPCs mittels eines Mikrophons führen.
+[DESC CH]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC TU]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC FR]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC PB]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC CT]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC HU]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC ES]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC CZ]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC KO]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC RU]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC IT]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC AR]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC JA]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC PL]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DATE]FEB 2017
+[RES POINTS]950
+[PRICE]290000
+[DEV COSTS]145000
+[PIC]SR.png
+[GAMEPLAY]250
+[GRAPHIC]0
+[SOUND]0
+[TECH]250
+[GOOD]<2><3><12><14><15><16>
+[BAD]<9><11>
 
 [EOF]
