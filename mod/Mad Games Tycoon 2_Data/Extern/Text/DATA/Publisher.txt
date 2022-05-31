@@ -215,7 +215,7 @@
 [NAME TU]Infogrames
 [NAME FR]Infogrames
 [NAME JA]Infogrames
-[NAME CH]Infogrames
+[NAME CH]英宝格
 [NAME CT]英寶格
 [DATE]JUN 1983
 [PIC]12
@@ -775,7 +775,7 @@
 [NAME TU]Bungie
 [NAME FR]Bungie
 [NAME JA]Bungie
-[NAME CH]Bungie
+[NAME CH]邦吉
 [NAME CT]Bungie
 [DATE]MAY 1991
 [PIC]41
@@ -1007,7 +1007,7 @@
 [NAME CT]U.S. Gold
 [DATE]OCT 1984
 [PIC]53
-[DEVELOPER]false
+[DEVELOPER]true
 [PUBLISHER]true
 [MARKET]75
 [SHARE]6
@@ -1231,7 +1231,7 @@
 [NAME TU]Strategic Simulations
 [NAME FR]Strategic Simulations
 [NAME JA]Strategic Simulations
-[NAME CH]Strategic Simulations
+[NAME CH]策略模拟社
 [NAME CT]Strategic Simulations
 [DATE]OCT 1979
 [PIC]65
@@ -1288,7 +1288,7 @@
 [NAME TU]Atlus
 [NAME FR]Atlus
 [NAME JA]Atlus
-[NAME CH]Atlus
+[NAME CH]阿特拉斯
 [NAME CT]Atlus
 [DATE]APR 1986
 [PIC]68
@@ -1307,7 +1307,7 @@
 [NAME TU]Broderbund
 [NAME FR]Broderbund
 [NAME JA]ブローバウンド
-[NAME CH]Broderbund
+[NAME CH]布罗德邦德
 [NAME CT]Broderbund
 [DATE]DEC 1980
 [PIC]69
@@ -1383,7 +1383,7 @@
 [NAME TU]King Digital
 [NAME FR]King Digital
 [NAME JA]King Digital
-[NAME CH]King
+[NAME CH]国王
 [NAME CT]King Digital
 [DATE]SEP 2002
 [PIC]157
@@ -1402,7 +1402,7 @@
 [NAME TU]Falcom
 [NAME FR]Falcom
 [NAME JA]Falcom
-[NAME CH]Falcom
+[NAME CH]法尔康
 [NAME CT]Falcom
 [DATE]MAR 1981
 [PIC]158
@@ -1830,7 +1830,7 @@
 [NAME TU]Warner Bros. Games
 [NAME FR]Warner Bros. Games
 [NAME JA]ワーナー-ブラザース-ゲームズ
-[NAME CH]华纳兄弟
+[NAME CH]华纳兄弟游戏
 [NAME CT]華納兄弟互動娛樂
 [DATE]FEB 2004
 [PIC]78

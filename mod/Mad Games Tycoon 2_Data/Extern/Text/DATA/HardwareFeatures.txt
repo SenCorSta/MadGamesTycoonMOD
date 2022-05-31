@@ -844,4 +844,99 @@
 [DEV COSTS]215000
 [QUALITY]1
 
+[ID]27
+[NAME EN]Quick Resume
+[NAME GE]Quick Resume
+[NAME TU]Quick Resume
+[NAME PB]Quick Resume
+[NAME ES]Quick Resume
+[NAME JA]Quick Resume
+[NAME CH]Quick Resume
+[NAME CT]Quick Resume
+[NAME IT]Quick Resume
+[NAME FR]Quick Resume
+[NAME PL]Quick Resume
+[NAME CZ]Quick Resume
+[DESC IT]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC EN]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC GE]Mit diesem Feature speichert die Konsole den aktuellen Status des Spiels<br>und kann zu einem späteres Zeitpunkt an dieser Stelle fortgeführt werden.
+[DESC TU]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC PB]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC ES]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC JA]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC CH]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC CT]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC FR]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC PL]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC CZ]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DATE]NOV 2012
+[RES POINTS]1650
+[PRICE]325000
+[DEV COSTS]150000
+[QUALITY]1
+
+[ID]28
+[NAME EN]Gaming Vest Support
+[NAME GE]Gaming-Westen Support
+[NAME TU]Gaming Vest Support
+[NAME PB]Gaming Vest Support
+[NAME ES]Gaming Vest Support
+[NAME JA]Gaming Vest Support
+[NAME CH]Gaming Vest Support
+[NAME CT]Gaming Vest Support
+[NAME IT]Gaming Vest Support
+[NAME FR]Gaming Vest Support
+[NAME PL]Gaming Vest Support
+[NAME CZ]Gaming Vest Support
+[DESC IT]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC EN]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC GE]Mit einer Gaming Weste kannst du<br>zum Beispiel Treffer bei einem Action-Spiel wahrnehmen.
+[DESC TU]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC PB]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC ES]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC JA]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC CH]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC CT]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC FR]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC PL]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC CZ]For example, with a gaming vest<br>you can feel hits during an action game.
+[DATE]JUN 2014
+[RES POINTS]1700
+[PRICE]340000
+[DEV COSTS]155000
+[ONLY_STATIONARY]
+[QUALITY]1
+
+[ID]29
+[NAME EN]Gaming Suit Support
+[NAME GE]Gaming-Anzug Support
+[NAME TU]Gaming Suit Support
+[NAME PB]Gaming Suit Support
+[NAME ES]Gaming Suit Support
+[NAME JA]Gaming Suit Support
+[NAME CH]Gaming Suit Support
+[NAME CT]Gaming Suit Support
+[NAME IT]Gaming Suit Support
+[NAME FR]Gaming Suit Support
+[NAME PL]Gaming Suit Support
+[NAME CZ]Gaming Suit Support
+[DESC IT]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC EN]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC GE]Mit einem Gaming-Anzug kannst du deine Bewegung<br>direkt in das Spiel übertragen und zusätzlich Treffer fühlen.
+[DESC TU]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC PB]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC ES]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC JA]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC CH]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC CT]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC FR]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC PL]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC CZ]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DATE]JUL 2016
+[RES POINTS]1750
+[PRICE]350000
+[DEV COSTS]160000
+[ONLY_STATIONARY]
+[QUALITY]1
+
 [EOF]
