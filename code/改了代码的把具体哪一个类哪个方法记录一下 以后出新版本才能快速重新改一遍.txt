@@ -1,3 +1,5 @@
+this.guiMain_.MessageBox("helloeworld" + num8, false); //打印参数
+
 ------GameScript：
 +平台市场占有率对游戏销量的影响减小（避免出现满分独占游戏只卖了几百份）
 if (!this.arcade)
@@ -288,23 +290,23 @@ private float GetSkillCap()
 		}
 		if (this.perks[15])
 		{
-			go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.6f;
+			go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.8f;
 			return;
 		}
-		go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.5f;
+		go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.8f;
 	}
 	
 	private Color GetValColor(float val)
 	{
-		if (val < 80f)
+		if (val < 100f)
 		{
 			return this.guiMain_.colorsBalken[0];
 		}
-		if (val >= 80f && val < 150f)
+		if (val >= 100f && val < 200f)
 		{
 			return this.guiMain_.colorsBalken[1];
 		}
-		if (val >= 150f)
+		if (val >= 200f)
 		{
 			return this.guiMain_.colorsBalken[2];
 		}
@@ -337,6 +339,60 @@ private float GetSkillCap()
 	
 	private void Learn()
 	100f改为this.GetSkillCap_Skill(this.beruf)
+	float num = UnityEngine.Random.Range(0.03f, 0.06f);//自主学习速度提升30倍
+	
+Item_Training_Kurs：
+private void SetData()
+	{
+		this.menuTraining_.trainingMaxLearn[this.myID] = 255f;
+		this.uiObjects[0].GetComponent<Text>().text = this.tS_.GetText(538 + this.myID);
+		this.uiObjects[1].GetComponent<Image>().sprite = this.menuTraining_.trainingSprites[this.myID];
+		this.uiObjects[2].GetComponent<Text>().text = this.mS_.GetMoney((long)this.menuTraining_.trainingCosts[this.myID], true);
+		string text = this.tS_.GetText(562);
+		text = text.Replace("<NUM>", this.mS_.Round(this.menuTraining_.trainingMaxLearn[this.myID], 2).ToString());
+		this.uiObjects[3].GetComponent<Text>().text = text;
+		this.uiObjects[4].GetComponent<Text>().text = this.tS_.GetText(563 + this.menuTraining_.trainingEffekt[this.myID]);
+	}	
+	
+	
+	
+Menu_PersonalView：
+// Token: 0x0600127C RID: 4732 RVA: 0x000CF808 File Offset: 0x000CDA08
+	public void SetBalken(GameObject go, float val, int beruf_)
+	{
+		go.transform.Find("Value").GetComponent<Text>().text = this.mS_.Round(val, 1).ToString();
+		go.transform.Find("Fill").GetComponent<Image>().fillAmount = val * 0.003921f;
+		go.transform.Find("Fill").GetComponent<Image>().color = this.GetValColor(val);
+		if (this.cS_.beruf == beruf_)
+		{
+			go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 1f;
+			return;
+		}
+		if (this.cS_.perks[15])
+		{
+			go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.8f;
+			return;
+		}
+		go.transform.Find("FillMax").GetComponent<Image>().fillAmount = 0.8f;
+	}
+
+	// Token: 0x0600127D RID: 4733 RVA: 0x000CF904 File Offset: 0x000CDB04
+	private Color GetValColor(float val)
+	{
+		if (val < 100f)
+		{
+			return this.guiMain_.colorsBalken[0];
+		}
+		if (val >= 100f && val < 200f)
+		{
+			return this.guiMain_.colorsBalken[1];
+		}
+		if (val >= 200f)
+		{
+			return this.guiMain_.colorsBalken[2];
+		}
+		return this.guiMain_.colorsBalken[0];
+	}
 
 +游戏带动的主机销量大幅增加（评分越好的提升量越大，最多比原版多10倍左右）
 
@@ -474,52 +530,8 @@ for (int l = 0; l < array.Length; l++)
 				}
 			}
 			
-授权价格增加10倍使用次数增加10倍			
+授权价格增加10倍使用次数增加10倍	this.licence_TYP[j]（0是电影 1是书籍 3是体育）		
 			licences：
-			public int GetPrice(int i)
-	{
-		int num = 0;
-		if (this.licence_QUALITY[i] >= 0f && this.licence_QUALITY[i] < 33f)
-		{
-			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 1500f * (float)this.licence_ANGEBOT[i]);
-		}
-		if (this.licence_QUALITY[i] >= 33f && this.licence_QUALITY[i] < 66f)
-		{
-			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 4000f * (float)this.licence_ANGEBOT[i]);
-		}
-		if (this.licence_QUALITY[i] >= 66f && this.licence_QUALITY[i] < 80f)
-		{
-			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 7000f * (float)this.licence_ANGEBOT[i]);
-		}
-		if (this.licence_QUALITY[i] >= 80f)
-		{
-			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 11000f * (float)this.licence_ANGEBOT[i]);
-		}
-		return num / 500 * 5000;
-	}
-
-	// Token: 0x0600033D RID: 829 RVA: 0x000466FC File Offset: 0x000448FC
-	public int GetSellPrice(int i)
-	{
-		int num = 0;
-		if (this.licence_QUALITY[i] >= 0f && this.licence_QUALITY[i] < 33f)
-		{
-			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 1000f * (float)this.licence_GEKAUFT[i]);
-		}
-		if (this.licence_QUALITY[i] >= 33f && this.licence_QUALITY[i] < 66f)
-		{
-			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 3000f * (float)this.licence_GEKAUFT[i]);
-		}
-		if (this.licence_QUALITY[i] >= 66f && this.licence_QUALITY[i] < 80f)
-		{
-			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 6000f * (float)this.licence_GEKAUFT[i]);
-		}
-		if (this.licence_QUALITY[i] >= 80f)
-		{
-			num = Mathf.RoundToInt(this.licence_QUALITY[i] * 8000f * (float)this.licence_GEKAUFT[i]);
-		}
-		return num / 500 * 5000;
-	}
 	
 	 LizenzenUpdaten()
 	 UnityEngine.Random.Range(1, 6) 改大
