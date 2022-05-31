@@ -35,7 +35,7 @@ if (!this.arcade)
 		{
 			Debug.Log("Platform Start: " + num2);
 		}
-		float num22 = 100f;
+		float num23 = 100f;
 		for (int i = 0; i < this.gamePlatform.Length; i++)
 		{
 			if (this.gamePlatform[i] != -1)
@@ -46,12 +46,12 @@ if (!this.arcade)
 				}
 				if (this.gamePlatformScript[i])
 				{
-					num22 += 100f + this.gamePlatformScript[i].GetMarktanteil();
+					num23 += 100f + this.gamePlatformScript[i].GetMarktanteil();
 				}
 			}
 		}
-		num22 *= 0.007f;
-		num2 *= num22;
+		num23 *= 0.007f;
+		num2 *= num23;
 		if (this.debug)
 		{
 			Debug.Log("Platform End: " + num2);
@@ -339,7 +339,7 @@ private float GetSkillCap()
 	
 	private void Learn()
 	100f改为this.GetSkillCap_Skill(this.beruf)
-	float num = UnityEngine.Random.Range(0.03f, 0.06f);//自主学习速度提升30倍
+	float num = UnityEngine.Random.Range(0.03f, 0.06f);//自主学习速度提升10倍
 	
 Item_Training_Kurs：
 private void SetData()
@@ -397,7 +397,7 @@ Menu_PersonalView：
 +游戏带动的主机销量大幅增加（评分越好的提升量越大，最多比原版多10倍左右）
 
 -------------Assembly-CSharp/platformScript.cs
-num7 *= this.GetPriceAbzug();
+							num7 *= this.GetPriceAbzug();
 							int reviewTotal = this.games_.arrayGamesScripts[l].reviewTotal;
 							float num8 = (float)Mathf.RoundToInt(UnityEngine.Random.Range((float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * (float)reviewTotal / 300f, (float)this.games_.arrayGamesScripts[l].sellsPerWeek[0] * (float)reviewTotal / 150f));
 							if (reviewTotal < 75)
@@ -426,11 +426,11 @@ num7 *= this.GetPriceAbzug();
 							}
 							if (reviewTotal > 97)
 							{
-								num8 = num8 * 160f / 100f;
+								num8 = num8 * 180f / 100f;
 							}
 							if (reviewTotal > 99)
 							{
-								num8 = num8 * 180f / 100f;
+								num8 = num8 * 200f / 100f;
 							}
 							if (num8 > (float)this.sellsPerWeek[0])
 							{
@@ -453,6 +453,7 @@ num7 *= this.GetPriceAbzug();
 								{
 									this.mS_.mpCalls_.CLIENT_Send_ExklusivKonsolenSells(this.games_.arrayGamesScripts[l], (long)Mathf.RoundToInt(num7));
 								}
+							}
 
 
 员工无需求 最大效率
@@ -466,6 +467,7 @@ private bool IsCrunchtime()
 
 
 子公司选择较新的平台开发游戏
+-------------------publisherScript
 改component4.date_year+component4.GetMarktanteil()
 
 for (int l = 0; l < array.Length; l++)
