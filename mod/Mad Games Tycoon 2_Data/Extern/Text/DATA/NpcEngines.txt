@@ -18,18 +18,18 @@
 [SHARE]0
 
 [ID]1
-[NAME EN]Sierra’s Creative Interpreter
-[NAME GE]Sierra’s Creative Interpreter
-[NAME CH]Sierra’s Creative Interpreter
-[NAME TU]Sierra’s Creative Interpreter
-[NAME FR]Sierra’s Creative Interpreter
-[NAME HU]Sierra’s Creative Interpreter
-[NAME CT]Sierra’s Creative Interpreter
-[NAME CZ]Sierra’s Creative Interpreter
-[NAME PB]Sierra’s Creative Interpreter
-[NAME IT]Sierra’s Creative Interpreter
-[NAME JA]Sierra’s Creative Interpreter
-[NAME PL]Sierra’s Creative Interpreter
+[NAME EN]Sierra's Creative Interpreter
+[NAME GE]Sierra's Creative Interpreter
+[NAME CH]Sierra's Creative Interpreter
+[NAME TU]Sierra's Creative Interpreter
+[NAME FR]Sierra's Creative Interpreter
+[NAME HU]Sierra's Creative Interpreter
+[NAME CT]Sierra's Creative Interpreter
+[NAME CZ]Sierra's Creative Interpreter
+[NAME PB]Sierra's Creative Interpreter
+[NAME IT]Sierra's Creative Interpreter
+[NAME JA]Sierra's Creative Interpreter
+[NAME PL]Sierra's Creative Interpreter
 [DATE]MAR 1977
 [GENRE]2
 [PLATFORM]49
@@ -345,7 +345,7 @@
 [ID]18
 [NAME EN]Unreal Engine 1.5
 [NAME GE]Unreal Engine 1.5
-[NAME CH]虚幻1.5引擎
+[NAME CH]虚幻引擎1.5
 [NAME TU]Unreal Engine 1.5
 [NAME FR]Unreal Engine 1.5
 [NAME HU]Unreal Engine 1.5
@@ -383,7 +383,7 @@
 [ID]20
 [NAME EN]Unreal Engine 2
 [NAME GE]Unreal Engine 2
-[NAME CH]虚幻2引擎
+[NAME CH]虚幻引擎2
 [NAME TU]Unreal Engine 2
 [NAME FR]Unreal Engine 2
 [NAME HU]Unreal Engine 2
@@ -459,7 +459,7 @@
 [ID]24
 [NAME EN]Unreal Engine 3
 [NAME GE]Unreal Engine 3
-[NAME CH]虚幻3引擎
+[NAME CH]虚幻引擎3
 [NAME TU]Unreal Engine 3
 [NAME FR]Unreal Engine 3
 [NAME HU]Unreal Engine 3
@@ -516,7 +516,7 @@
 [ID]27
 [NAME EN]Unreal Engine 4
 [NAME GE]Unreal Engine 4
-[NAME CH]虚幻4引擎
+[NAME CH]虚幻引擎4
 [NAME TU]Unreal Engine 4
 [NAME FR]Unreal Engine 4
 [NAME HU]Unreal Engine 4
@@ -554,7 +554,7 @@
 [ID]29
 [NAME EN]Unreal Engine 4 Free
 [NAME GE]Unreal Engine 4 Free
-[NAME CH]虚幻4引擎 免费版
+[NAME CH]虚幻引擎4 免费版
 [NAME TU]Unreal Engine 4 Free
 [NAME FR]Unreal Engine 4 Free
 [NAME HU]Unreal Engine 4 Free
@@ -573,7 +573,7 @@
 [ID]30
 [NAME EN]Source 2
 [NAME GE]Source 2
-[NAME CH]起源2引擎
+[NAME CH]起源引擎2
 [NAME TU]Source 2
 [NAME FR]Source 2
 [NAME HU]Source 2
@@ -630,7 +630,7 @@
 [ID]33
 [NAME EN]Unreal Engine 5 Free
 [NAME GE]Unreal Engine 5 Free
-[NAME CH]Unreal Engine 5 Free
+[NAME CH]虚幻引擎5 免费版
 [NAME TU]Unreal Engine 5 Free
 [NAME FR]Unreal Engine 5 Free
 [NAME HU]Unreal Engine 5 Free

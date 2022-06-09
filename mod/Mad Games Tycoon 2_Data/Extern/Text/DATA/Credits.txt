@@ -1,8 +1,11 @@
 ﻿<b><size=20>MAD GAMES TYCOON 2</size></b>
 Eggcode Games
+疯狂游戏发展史MOD组
 
 <b>DEVELOPMENT</b>
 Stefan Pohl
+MOD作者：yellowottomany
+MOD作者：icemaker
 
 <b>SOUNDS & MUSIC</b>
 Audiohub
@@ -20,6 +23,7 @@ Unity Asset Store
 Martin Barth & Patrick Lehmann
 
 <b>TRANSLATION</b>
+部分中文翻译：yellowottomany
 Tanfus, fizzrocks & Astata
 Halil Kapağan & Mertcan Alsat
 Nihat Can Kabataş & Burak Ay
@@ -36,13 +40,8 @@ David "i'Mena" Menagro
 MrDzDm & Sillah
 Isacovici Alexandru
 
-<b>Financial support for the mod</b>
-Giggs         (6,00$)
-Максим Волков (2,05$)
-Вадим Телепов (2,05$)
-Ярослав Боярченко (1,36$) [Дон VK] -[1 month]-
-Максим Добрягин    (0,7$) [Дон VK] -[1 month]-
-Дмитрий Игоревич   (0,7$) [Дон VK] -[1 month]-
+<b>对mod作者的支持</b>
+无
 
 
 <b>Wallets for support and gratitude:</b>

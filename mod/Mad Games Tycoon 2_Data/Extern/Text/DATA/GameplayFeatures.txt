@@ -1155,11 +1155,11 @@
 [TYP]4
 [NAME EN]Adjustable Censoring
 [NAME GE]Einstellbare Zensierung
-[NAME CH]选择禁用老司机开车内容
+[NAME CH]可选禁用色情内容
 [NAME TU]Ayarlanabilir Sansür
 [DESC EN]This feature allows parents to<br>disable different content in the game.
 [DESC GE]Mit dieser Funktion können Eltern<br>unterschiedliche Inhalte im Spiel deaktivieren.
-[DESC CH]该功能允许父母<br>禁用游戏中的老司机开车内容.
+[DESC CH]该功能允许父母<br>禁用游戏中的少儿不宜内容.
 [DESC TU]Bu özellik, ebeveynlerin<br> oyundaki farklı içeriği devre dışı bırakmasına olanak tanır.
 [NAME FR]Contenu Ajustable
 [DESC FR]Cette fonctionnalité permet aux parents de<br>désactiver différents contenus dans le jeu.
@@ -2981,7 +2981,7 @@
 [NAME JA]NVIDIA SLI対応
 [DESC EN]The technology of the Nvidia corporation, which allows you to use<br>the power of several video cards to process a three-dimensional image.
 [DESC GE]Die Technologie der Nvidia Corporation, mit der Sie die Leistung<br>mehrerer Grafikkarten verwenden können, um ein dreidimensionales Bild zu verarbeiten.
-[DESC CH]Nvidia公司的技术，它允许您使用几个视频卡的力量来处理三维图像。
+[DESC CH]英伟达公司的技术，它允许您使用几个显卡的力量来处理三维图像。
 [DESC TU]Üç boyutlu bir görüntüyü işlemek için birkaç ekran<br>kartının gücünü kullanmanıza izin veren Nvıdıa Corporation'ın teknolojisi.
 [DESC FR]La technologie de Nvidia Corporation, qui vous permet d'utiliser<br>la puissance de plusieurs cartes vidéo pour traiter une image en trois dimensions.
 [DESC PB]A tecnologia da NVIDIA corporation, que lhe permite usar o poder<br>de várias placas de vídeo para processar uma imagem tridimensional.
@@ -3028,7 +3028,7 @@
 [NAME JA]AMD CrossFireX対応
 [DESC EN]A technology that allows you to simultaneously use the power of two or more<br>Radeon video cards to build a three-dimensional image. Analog of Nvidia SLI.
 [DESC GE]Eine Technologie, mit der Sie gleichzeitig die Leistung von zwei oder mehr<br>Radeon-Grafikkarten verwenden können, um ein dreidimensionales Bild zu erstellen. Analog von Nvidia SLI.
-[DESC CH]一种技术，允许您同时使用两个或多个Radeon视频卡的功能来构建三维图像。 Nvidia SLI的模拟。
+[DESC CH]允许您同时使用两个或多个Radeon显卡的功能来构建三维图像，Nvidia SLI的模拟。
 [DESC TU]Üç boyutlu bir görüntü oluşturmak için iki veya daha fazla Radeon ekran<br>kartının gücünü aynı anda kullanmanıza izin veren bir teknoloji. Nvıdıa SLI analogu.
 [DESC FR]Une technologie qui vous permet d'utiliser simultanément la puissance de deux cartes vidéo<br>Radeon ou plus pour créer une image en trois dimensions. Analogique de Nvidia SLI.
 [DESC PB]Uma tecnologia que lhe permite simultaneamente usar o poder de duas ou mais placas<br>de vídeo Radeon para construir uma imagem tridimensional. Analógico de NVIDIA SLI.
@@ -3203,7 +3203,7 @@
 [TYP]4
 [NAME EN]Facial Recognition
 [NAME GE]Gesichtserkennungen
-[NAME CH]Facial Recognition
+[NAME CH]面部识别
 [NAME TU]Facial Recognition
 [NAME FR]Facial Recognition
 [NAME PB]Facial Recognition
@@ -3219,7 +3219,7 @@
 [NAME PL]Facial Recognition
 [DESC EN]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
 [DESC GE]Mit Gesichtserkennungen kann dein Aussehen<br>und deine Emotionen direkt in das Spiel übertragen werden.
-[DESC CH]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC CH]通过面部识别，您的外表<br>和情绪可以直接转移到游戏中.
 [DESC TU]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
 [DESC FR]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
 [DESC PB]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
@@ -3295,7 +3295,7 @@
 [TYP]5
 [NAME EN]Gaming Suit Support
 [NAME GE]Gaming-Anzug Support
-[NAME CH]Gaming Suit Support
+[NAME CH]支持游戏套装
 [NAME TU]Gaming Suit Support
 [NAME FR]Gaming Suit Support
 [NAME PB]Gaming Suit Support
@@ -3311,7 +3311,7 @@
 [NAME PL]Gaming Suit Support
 [DESC EN]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC GE]Mit einem Gaming-Anzug kannst du deine Bewegung<br>direkt in das Spiel übertragen und zusätzlich Treffer fühlen.
-[DESC CH]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC CH]使用游戏套装，您可以将您的动作<br>直接转移到游戏中，并且还可以感受到打击.
 [DESC TU]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC FR]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC PB]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
@@ -3342,7 +3342,7 @@
 [TYP]5
 [NAME EN]Gaming Vest Support
 [NAME GE]Gaming-Westen Support
-[NAME CH]Gaming Vest Support
+[NAME CH]支持触觉反馈背心
 [NAME TU]Gaming Vest Support
 [NAME FR]Gaming Vest Support
 [NAME PB]Gaming Vest Support
@@ -3358,7 +3358,7 @@
 [NAME PL]Gaming Vest Support
 [DESC EN]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC GE]Mit einer Gaming Weste kannst du<br>zum Beispiel Treffer bei einem Action-Spiel wahrnehmen.
-[DESC CH]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC CH]例如，使用触觉反馈背心<br>您可以在动作游戏中感受到打击.
 [DESC TU]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC FR]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC PB]For example, with a gaming vest<br>you can feel hits during an action game.
@@ -3389,7 +3389,7 @@
 [TYP]4
 [NAME EN]Quick Time Events
 [NAME GE]Quick-Time-Events
-[NAME CH]Quick Time Events
+[NAME CH]快速反应事件
 [NAME TU]Quick Time Events
 [NAME FR]Quick Time Events
 [NAME PB]Quick Time Events
@@ -3405,7 +3405,7 @@
 [NAME PL]Quick Time Events
 [DESC EN]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
 [DESC GE]Bei Quick-Time-Events muss der Spieler in kurzer Zeit<br>mehrere Tastenkombinationen drücken um zu bestehen.
-[DESC CH]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC CH]在快速反应事件中，玩家必须在短时间内按下<br>几个组合键才能通过。
 [DESC TU]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
 [DESC FR]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
 [DESC PB]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
@@ -3435,7 +3435,7 @@
 [TYP]4
 [NAME EN]Speech Recognition
 [NAME GE]Spracherkennung
-[NAME CH]Speech Recognition
+[NAME CH]语音识别
 [NAME TU]Speech Recognition
 [NAME FR]Speech Recognition
 [NAME PB]Speech Recognition
@@ -3451,7 +3451,7 @@
 [NAME PL]Speech Recognition
 [DESC EN]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
 [DESC GE]Mit diesem Feature kannst du zum Beispiel<br>Dialoge mit NPCs mittels eines Mikrophons führen.
-[DESC CH]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC CH]例如，借助此功能，您可以使用麦克风<br>与 NPC 进行对话.
 [DESC TU]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
 [DESC FR]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
 [DESC PB]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.

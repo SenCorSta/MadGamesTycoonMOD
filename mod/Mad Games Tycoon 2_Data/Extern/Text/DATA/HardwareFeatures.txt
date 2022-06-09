@@ -725,7 +725,7 @@
 [NAME PB]Streaming
 [NAME ES]Transmisión
 [NAME JA]ストリーミング
-[NAME CH]串流（云游戏）
+[NAME CH]云游戏
 [NAME CT]串流
 [NAME IT]Streaming
 [NAME FR]Streaming
@@ -851,7 +851,7 @@
 [NAME PB]Quick Resume
 [NAME ES]Quick Resume
 [NAME JA]Quick Resume
-[NAME CH]Quick Resume
+[NAME CH]快速继续游戏
 [NAME CT]Quick Resume
 [NAME IT]Quick Resume
 [NAME FR]Quick Resume
@@ -864,7 +864,7 @@
 [DESC PB]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
 [DESC ES]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
 [DESC JA]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
-[DESC CH]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC CH]使用此功能，控制台可以保存游戏的当前状态<br>并可以在之后恢复.
 [DESC CT]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
 [DESC FR]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
 [DESC PL]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
@@ -882,7 +882,7 @@
 [NAME PB]Gaming Vest Support
 [NAME ES]Gaming Vest Support
 [NAME JA]Gaming Vest Support
-[NAME CH]Gaming Vest Support
+[NAME CH]支持触觉反馈背心
 [NAME CT]Gaming Vest Support
 [NAME IT]Gaming Vest Support
 [NAME FR]Gaming Vest Support
@@ -895,7 +895,7 @@
 [DESC PB]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC ES]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC JA]For example, with a gaming vest<br>you can feel hits during an action game.
-[DESC CH]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC CH]例如，使用触觉反馈背心<br>您可以在动作游戏中感受到打击.
 [DESC CT]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC FR]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC PL]For example, with a gaming vest<br>you can feel hits during an action game.
@@ -914,7 +914,7 @@
 [NAME PB]Gaming Suit Support
 [NAME ES]Gaming Suit Support
 [NAME JA]Gaming Suit Support
-[NAME CH]Gaming Suit Support
+[NAME CH]支持游戏套装
 [NAME CT]Gaming Suit Support
 [NAME IT]Gaming Suit Support
 [NAME FR]Gaming Suit Support
@@ -927,7 +927,7 @@
 [DESC PB]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC ES]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC JA]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
-[DESC CH]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC CH]使用游戏套装，您可以将您的动作<br>直接转移到游戏中，并且还可以感受到打击.
 [DESC CT]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC FR]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC PL]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.

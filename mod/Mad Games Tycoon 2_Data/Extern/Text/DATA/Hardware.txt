@@ -215,7 +215,7 @@
 [NAME ES]CPU Intel Core i3
 [NAME PB]CPU Intel Core i3
 [NAME JA]CPU Intel Core i3
-[NAME CH]CPU Intel Core i3
+[NAME CH]CPU Intel 酷睿 i3
 [NAME CT]CPU Intel Core i3
 [NAME IT]CPU Intel Core i3
 [NAME FR]CPU Intel Core i3
@@ -234,7 +234,7 @@
 [NAME ES]CPU Intel Core i5
 [NAME PB]CPU Intel Core i5
 [NAME JA]CPU Intel Core i5
-[NAME CH]CPU Intel Core i5
+[NAME CH]CPU Intel 酷睿 i5
 [NAME CT]CPU Intel Core i5
 [NAME IT]CPU Intel Core i5
 [NAME FR]CPU Intel Core i5
@@ -272,7 +272,7 @@
 [NAME ES]CPU Intel Core i7
 [NAME PB]CPU Intel Core i7
 [NAME JA]CPU Intel Core i7
-[NAME CH]CPU Intel Core i7
+[NAME CH]CPU Intel 酷睿 i7
 [NAME CT]CPU Intel Core i7
 [NAME IT]CPU Intel Core i7
 [NAME FR]CPU Intel Core i7
@@ -310,7 +310,7 @@
 [NAME ES]CPU Intel Core i9
 [NAME PB]CPU Intel Core i9
 [NAME JA]CPU Intel Core i9
-[NAME CH]CPU Intel Core i9
+[NAME CH]CPU Intel 酷睿 i9
 [NAME CT]CPU Intel Core i9
 [NAME IT]CPU Intel Core i9
 [NAME FR]CPU Intel Core i9
@@ -348,7 +348,7 @@
 [NAME ES]CPU Intel Core Extreme
 [NAME PB]CPU Intel Core Extreme
 [NAME JA]CPU Intel Core Extreme
-[NAME CH]CPU Intel Core Extreme
+[NAME CH]CPU Intel 酷睿 Extreme
 [NAME CT]CPU Intel Core Extreme
 [NAME IT]CPU Intel Core Extreme
 [NAME FR]CPU Intel Core Extreme
@@ -370,7 +370,7 @@
 [NAME PB]TI Adaptor
 [NAME JA]TI Adaptor
 [NAME CH]TI Adaptor
-[NAME CT]TI Adaptor
+[NAME CT]TI适配器
 [NAME IT]TI Adaptor
 [NAME FR]TI Adaptor
 [NAME PL]TI Adaptor
@@ -388,7 +388,7 @@
 [NAME ES]GTI Adaptor
 [NAME PB]GTI Adaptor
 [NAME JA]GTI Adaptor
-[NAME CH]GTI Adaptor
+[NAME CH]GTI适配器
 [NAME CT]GTI Adaptor
 [NAME IT]GTI Adaptor
 [NAME FR]GTI Adaptor
@@ -407,7 +407,7 @@
 [NAME ES]Extended Graphics Adapter
 [NAME PB]Extended Graphics Adapter
 [NAME JA]Extended Graphics Adapter
-[NAME CH]Extended Graphics Adapter
+[NAME CH]扩展图形适配器
 [NAME CT]Extended Graphics Adapter
 [NAME IT]Extended Graphics Adapter
 [NAME FR]Extended Graphics Adapter
@@ -426,7 +426,7 @@
 [NAME ES]OEM Color Emulation Card
 [NAME PB]OEM Color Emulation Card
 [NAME JA]OEM Color Emulation Card
-[NAME CH]OEM Color Emulation Card
+[NAME CH]OEM颜色仿真卡
 [NAME CT]OEM Color Emulation Card
 [NAME IT]OEM Color Emulation Card
 [NAME FR]OEM Color Emulation Card
@@ -692,7 +692,7 @@
 [NAME ES]NVIDIA TITAN RTX
 [NAME PB]NVIDIA TITAN RTX
 [NAME JA]NVIDIA TITAN RTX
-[NAME CH]NVIDIA TITAN RTX
+[NAME CH]英伟达 泰坦 RTX
 [NAME CT]NVIDIA TITAN RTX
 [NAME IT]NVIDIA TITAN RTX
 [NAME FR]NVIDIA TITAN RTX
@@ -711,7 +711,7 @@
 [NAME ES]NVIDIA TITAN RTX SUPER
 [NAME PB]NVIDIA TITAN RTX SUPER
 [NAME JA]NVIDIA TITAN RTX SUPER
-[NAME CH]NVIDIA TITAN RTX SUPER
+[NAME CH]英伟达 泰坦 RTX SUPER
 [NAME CT]NVIDIA TITAN RTX SUPER
 [NAME IT]NVIDIA TITAN RTX SUPER
 [NAME FR]NVIDIA TITAN RTX SUPER
@@ -1133,7 +1133,7 @@
 [NAME ES]1KB en cartucho
 [NAME PB]Cartucho de 1 kilobyte
 [NAME JA]1KB バッテリーバックアップ
-[NAME CH]1KB 卡带
+[NAME CH]1KB卡带
 [NAME CT]1KB卡帶
 [NAME IT]Cartuccia da 1KB
 [NAME FR]1 kilo-octet sur cartouche
@@ -1152,7 +1152,7 @@
 [NAME ES]4KB en cartucho
 [NAME PB]Cartucho de 4 kilobytes
 [NAME JA]4KB バッテリーバックアップ
-[NAME CH]4KB 卡带
+[NAME CH]4KB卡带
 [NAME CT]4KB卡帶
 [NAME IT]Cartuccia da 4KB
 [NAME FR]4 kilo-octet sur cartouche
@@ -1171,7 +1171,7 @@
 [NAME ES]8KB en cartucho
 [NAME PB]Cartucho de 8 kilobytes
 [NAME JA]8KB バッテリーバックアップ
-[NAME CH]8KB 卡带
+[NAME CH]8KB卡带
 [NAME CT]8KB卡帶
 [NAME IT]Cartuccia da 8KB
 [NAME FR]8 kilo-octet sur cartouche
@@ -1190,7 +1190,7 @@
 [NAME ES]32KB en cartucho
 [NAME PB]Cartucho de 32 kilobytes
 [NAME JA]32KB バッテリーバックアップ
-[NAME CH]32KB 卡带
+[NAME CH]32KB卡带
 [NAME CT]32KB卡帶
 [NAME IT]Cartuccia da 32KB
 [NAME FR]32 kilo-octet sur cartouche
@@ -1209,7 +1209,7 @@
 [NAME ES]Tarjeta MMC 512KB
 [NAME PB]Cartão MMC 512KB
 [NAME JA]MMC 512KB メモリーカード
-[NAME CH]MMC 512KB 记忆卡
+[NAME CH]MMC 512KB 储存卡
 [NAME CT]MMC 512KB 記憶卡
 [NAME IT]Carta di MMC 512KB
 [NAME FR]Carte mémoire MMC 512KB
@@ -1228,7 +1228,7 @@
 [NAME ES]Tarjeta Smartmedia 4MB
 [NAME PB]Cartão Smartmedia 4MB
 [NAME JA]Smartmedia 4MB メモリーカード
-[NAME CH]Smartmedia 4MB 记忆卡
+[NAME CH]Smartmedia 4MB 储存卡
 [NAME CT]Smartmedia 4MB 記憶卡
 [NAME IT]Scheda Smartmedia 4 MB
 [NAME FR]Carte mémoire Smartmedia 4MB
@@ -1824,7 +1824,7 @@
 [NAME ES]Pantalla IPS de 4,8 pulgadas
 [NAME PB]Tela IPS de 4,8 polegadas
 [NAME JA]IPSスクリーン4.8インチ
-[NAME CH]IPS 屏幕 4.8 英寸
+[NAME CH]4.8寸IPS屏幕
 [NAME CT]IPS 4.8吋屏幕
 [NAME IT]Schermo IPS da 4,8 pollici
 [NAME FR]Écran IPS 4,8 pouces
@@ -1846,7 +1846,7 @@
 [NAME ES]Pantalla AMOLED de 4,9 pulgadas
 [NAME PB]Tela AMOLED de 4,9 polegadas
 [NAME JA]AMOLEDスクリーン4.9インチ
-[NAME CH]AMOLED 屏幕 4.9 英寸
+[NAME CH]4.9寸AMOLED屏幕
 [NAME CT]AMOLED 4.9吋屏幕
 [NAME IT]Schermo AMOLED da 4,9 pollici
 [NAME FR]Écran AMOLED 4,9 pouces
@@ -1868,7 +1868,7 @@
 [NAME ES]Pantalla Super AMOLED 5.1 pulgadas
 [NAME PB]Super AMOLED tela 5.1 polegada
 [NAME JA]スーパーAMOLEDスクリーン5.1インチ 
-[NAME CH]5.1寸超级AMOLED屏 
+[NAME CH]5.1寸超级AMOLED屏幕
 [NAME CT]超級AMOLED 5.1吋屏幕
 [NAME IT]Schermo Super AMOLED da 5,1 pollici 
 [NAME FR]Écran Super AMOLED 5,1 pouces
@@ -1890,7 +1890,7 @@
 [NAME ES]Pantalla Super AMOLED 5.2 pulgadas
 [NAME PB]Super AMOLED tela 5.2 polegada
 [NAME JA]スーパーAMOLEDスクリーン5.2インチ 
-[NAME CH]5.2寸超级AMOLED屏 
+[NAME CH]5.2寸超级AMOLED屏幕
 [NAME CT]超級AMOLED 5.2吋屏幕
 [NAME IT]Schermo Super AMOLED da 5,2 pollici 
 [NAME FR]Écran Super AMOLED 5,2 pouces
@@ -1912,7 +1912,7 @@
 [NAME ES]Pantalla Super AMOLED 6.0 pulgadas
 [NAME PB]Super AMOLED tela 6.0 polegada
 [NAME JA]スーパーAMOLEDスクリーン6.0インチ 
-[NAME CH]6.0寸超级AMOLED屏 
+[NAME CH]6.0寸超级AMOLED屏幕
 [NAME CT]超級AMOLED 6吋屏幕
 [NAME IT]Schermo Super AMOLED da 6,0 pollici 
 [NAME FR]Écran Super AMOLED 6,0 pouces
@@ -1974,7 +1974,7 @@
 [NAME ES]Yamaha OXL 500
 [NAME PB]Yamaha OXL 500
 [NAME JA]ヤマハ OXL 500
-[NAME CH]Yamaha OXL 500
+[NAME CH]雅马哈 OXL 500
 [NAME CT]Yamaha OXL 500
 [NAME IT]Yamaha OXL 500
 [NAME FR]Yamaha OXL 500
@@ -1993,7 +1993,7 @@
 [NAME ES]Yamaha OXL 1000
 [NAME PB]Yamaha OXL 1000
 [NAME JA]ヤマハ OXL 1000
-[NAME CH]Yamaha OXL 1000
+[NAME CH]雅马哈 OXL 1000
 [NAME CT]Yamaha OXL 1000
 [NAME IT]Yamaha OXL 1000
 [NAME FR]Yamaha OXL 1000
@@ -2088,7 +2088,7 @@
 [NAME ES]Yamaha Audio R3
 [NAME PB]Yamaha Audio R3
 [NAME JA]ヤマハ Audio R3
-[NAME CH]Yamaha Audio R3
+[NAME CH]雅马哈 Audio R3
 [NAME CT]Yamaha Audio R3
 [NAME IT]Yamaha Audio R3
 [NAME FR]Yamaha Audio R3
@@ -2107,7 +2107,7 @@
 [NAME ES]Yamaha Audio R7
 [NAME PB]Yamaha Audio R7
 [NAME JA]ヤマハ Audio R7
-[NAME CH]Yamaha Audio R7
+[NAME CH]雅马哈 Audio R7
 [NAME CT]Yamaha Audio R7
 [NAME IT]Yamaha Audio R7
 [NAME FR]Yamaha Audio R7
@@ -2126,7 +2126,7 @@
 [NAME ES]Creative Sound Blaster
 [NAME PB]Creative Sound Blaster
 [NAME JA]Creative Sound Blaster
-[NAME CH]Creative Sound Blaster
+[NAME CH]Creative 声霸卡
 [NAME CT]Creative Sound Blaster
 [NAME IT]Creative Sound Blaster
 [NAME FR]Creative Sound Blaster
@@ -2145,7 +2145,7 @@
 [NAME ES]Creative Sound Blaster Pro
 [NAME PB]Creative Sound Blaster Pro
 [NAME JA]Creative Sound Blaster Pro
-[NAME CH]Creative Sound Blaster Pro
+[NAME CH]Creative 声霸卡 Pro
 [NAME CT]Creative Sound Blaster Pro
 [NAME IT]Creative Sound Blaster Pro
 [NAME FR]Creative Sound Blaster Pro
@@ -2202,7 +2202,7 @@
 [NAME ES]Yamaha Surround X19
 [NAME PB]Yamaha Surround X19
 [NAME JA]ヤマハ Surround X19
-[NAME CH]Yamaha 環迴X19
+[NAME CH]雅马哈 环绕声X19
 [NAME CT]Yamaha 環迴X19
 [NAME IT]Yamaha Surround X19
 [NAME FR]Yamaha Surround X19
@@ -2221,7 +2221,7 @@
 [NAME ES]Yamaha Surround X23
 [NAME PB]Yamaha Surround X23
 [NAME JA]ヤマハ Surround X23
-[NAME CH]Yamaha 環迴X23
+[NAME CH]雅马哈 环绕声X23
 [NAME CT]Yamaha 環迴X23
 [NAME IT]Yamaha Surround X23
 [NAME FR]Yamaha Surround X23
@@ -2399,7 +2399,7 @@
 [NAME ES]Sistema de 3 ventiladores sintonizado
 [NAME PB]Sistema sintonizado de 3 coolers
 [NAME JA]自動調整3ファン
-[NAME CH]自动调整3风扇系统
+[NAME CH]自动调整三风扇系统
 [NAME CT]調諧三扇系統
 [NAME IT]Raffreddamento ottimizzato a 3 ventole
 [NAME FR]Système à 3 ventilateurs réglé
@@ -2419,7 +2419,7 @@
 [NAME ES]Sistema moderno de 4 ventiladores
 [NAME PB]Sistema moderno de 4 coolers
 [NAME JA]新型4ファンシステム
-[NAME CH]现代4风扇系统
+[NAME CH]现代四风扇系统
 [NAME CT]現代調諧四扇系統
 [NAME IT]Raffreddamento moderno a 4 ventole
 [NAME FR]Système moderne à 4 ventilateurs
@@ -2558,7 +2558,7 @@
 [NAME ES]cartucho de 16MB
 [NAME PB]16 megabyte cartridge
 [NAME JA]16MB ROMカセット
-[NAME CH]16 megabyte cartridge
+[NAME CH]16MB卡带
 [NAME CT]16MB卡帶
 [NAME IT]16 megabyte cartridge
 [NAME FR]16 megabyte cartridge
@@ -2598,7 +2598,7 @@
 [NAME ES]cartucho de 128MB
 [NAME PB]128 megabyte cartridge
 [NAME JA]128MB ROMカセット
-[NAME CH]128 megabyte cartridge
+[NAME CH]128MB卡带
 [NAME CT]128MB卡帶
 [NAME IT]128 megabyte cartridge
 [NAME FR]128 megabyte cartridge
@@ -2678,7 +2678,7 @@
 [NAME ES]DVD dual de 50GB
 [NAME PB]DVD Dual 50GB
 [NAME JA]50GB Dual-DVD
-[NAME CH]50GB Dual-DVD(一种DVD标准)
+[NAME CH]50GB双层DVD
 [NAME CT]50GB雙層DVD
 [NAME IT]Dual-DVD 50GB
 [NAME FR]50 gigaoctets double DVD
@@ -2968,7 +2968,7 @@
 [NAME ES]Carcasa para consola estacionaria IX
 [NAME PB]Carcaça para console fixo IX
 [NAME JA]固定コンソールIX用ケース
-[NAME CH]固定式控制台箱 IX
+[NAME CH]第九代家用游戏机机箱
 [NAME CT]第九代家用機機箱
 [NAME IT]Case per console fissa IX
 [NAME FR]Boitier pour console fixe IX
@@ -3159,7 +3159,7 @@
 [NAME ES]Carcasa para consola portatil IX
 [NAME PB]Carcaça para console portatil IX
 [NAME JA]ハンドヘルドIXのケース
-[NAME CH]手持 IX 外壳
+[NAME CH]第九代掌机外壳
 [NAME CT]第九代手提機外殼
 [NAME IT]Case per console portatile IX
 [NAME FR]Boitier pour console portable IX

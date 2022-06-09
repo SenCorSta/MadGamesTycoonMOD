@@ -39,7 +39,7 @@
 [GRAPHIC]10
 [SOUND]10
 [CONTROL]40
-[GENRE COMB]<1><5><6>
+[GENRE COMB]<1><5><6><8>
 [FOCUS0]5
 [FOCUS1]2
 [FOCUS2]8
@@ -147,7 +147,7 @@
 [GRAPHIC]30
 [SOUND]15
 [CONTROL]15
-[GENRE COMB]<1><5><6><12><15><16>
+[GENRE COMB]<1><3><5><6><12><15><16>
 [FOCUS0]2
 [FOCUS1]1
 [FOCUS2]5
@@ -407,7 +407,7 @@
 [DESC AR].عﻮﻨﻟﺍ اﺬﻫ ﻲﻓ ﺔﻳﺭﻭﺮﺿ ةﺪﺋﺍﺮﻟﺍ تﺎﻣﻮﺳﺮﻟﺍﻭ ﺔﻴﻟﺎﻌﻟﺍ ﺔﻴﻌﻗﺍﻮﻟﺍ<br>.ﺔﻴﺠﻴﺗﺍﺮﺘﺳﻹﺍ ﺐﻌﻠﻟﺍ ﺮﺻﺎﻨﻌﺑ نﻮﻌﺠﺸﻤﻟﺍ ﺪﻌﺴﻳ ، ﻚﻟﺫ ﻰﻟﺇ ﺔﻓﺎﺿﻹﺎﺑ
 [NAME JA]シミュレーション
 [DESC JA]このジャンルでは、リアルで画期的なグラフィックが必要です。<br>更に、ファンは戦略的なプレイ要素にも満足します。
-[DATE]DEC 1981
+[DATE]DEC 1980
 [RES POINTS]700
 [PRICE]60000
 [DEV COSTS]3000
@@ -417,7 +417,7 @@
 [GRAPHIC]40
 [SOUND]20
 [CONTROL]30
-[GENRE COMB]<4><5><8><14><17>
+[GENRE COMB]<4><5><8><9><11><14><17>
 [FOCUS0]5
 [FOCUS1]8
 [FOCUS2]1
@@ -461,8 +461,8 @@
 [DESC AR].ﺮﺗﻮﻴﺒﻤﻜﻠﻟ ﺪﻴﺟ ﻢﺼﺧﻭ ﺔﻴﻌﻗﺍﻮﻟﺎﺑ ﺔﺿﺎﻳﺮﻟﺍ قﺎﺸﻋ ﺐﻟﺎﻄﻳ<br>.ﻪﻨﻣ ﺪﺑ ﻻ ﺮﻣﺃ تﻮﺼﻟﺍﻭ ﺔﻌﺋﺍﺮﻟﺍ تﺎﻣﻮﺳﺮﻟﺍ
 [NAME JA]スポーツゲーム
 [DESC JA]スポーツファンは、リアリティと優れたコンピューターの対戦相手を求めています。<br>高品質なグラフィックとサウンドも必須です。
-[DATE]JAN 1982
-[RES POINTS]800
+[DATE]JAN 1976
+[RES POINTS]100
 [PRICE]70000
 [DEV COSTS]3000
 [PIC]iconSport.png
@@ -471,7 +471,7 @@
 [GRAPHIC]30
 [SOUND]10
 [CONTROL]40
-[GENRE COMB]<4><5><7><9><10><18><19>
+[GENRE COMB]<0><4><5><7><9><10><18><19>
 [FOCUS0]6
 [FOCUS1]3
 [FOCUS2]10
@@ -525,7 +525,7 @@
 [GRAPHIC]20
 [SOUND]10
 [CONTROL]20
-[GENRE COMB]<4><8><11><13>
+[GENRE COMB]<4><7><8><11><13>
 [FOCUS0]10
 [FOCUS1]10
 [FOCUS2]0
@@ -633,7 +633,7 @@
 [GRAPHIC]20
 [SOUND]20
 [CONTROL]30
-[GENRE COMB]<4><9><13>
+[GENRE COMB]<4><7><9><13>
 [FOCUS0]10
 [FOCUS1]10
 [FOCUS2]1
@@ -687,7 +687,7 @@
 [GRAPHIC]50
 [SOUND]30
 [CONTROL]10
-[GENRE COMB]<0><1><2><15>
+[GENRE COMB]<0><1><2><3><5><15>
 [FOCUS0]3
 [FOCUS1]2
 [FOCUS2]7
@@ -839,7 +839,7 @@
 [DESC AR].ﺔﺳﻭﺭﺪﻤﻟﺍ ﺺﺼﻘﻟﺎﺑ فﻭﺮﻌﻣ عﻮﻨﻟﺍ اﺬﻫ<br>.ﺔﻛﺮﺤﻟﺍ ﻰﻠﻋ ﻞﻗﺃ ﺔﺟﺭﺪﺑﻭ ، ﺔﺤﻳﺮﻤﻟﺍ ﺐﻌﻠﻟﺍ ﺔﻘﻳﺮﻃ ﻰﻠﻋ ﺎﻨﻫ ﺰﻴﻛﺮﺘﻟﺍ ﺐﺼﻨﻳ
 [NAME JA]ビジュアルノベル
 [DESC JA]このジャンルは思慮深い物語で知られています。<br>落ち着いたゲームプレイに焦点が当てられ、アクション要素は不要です。
-[DATE]JUN 1992
+[DATE]JUN 1979
 [RES POINTS]1400
 [PRICE]200000
 [DEV COSTS]3000
@@ -849,7 +849,7 @@
 [GRAPHIC]40
 [SOUND]10
 [CONTROL]10
-[GENRE COMB]<0><3><1><2><12>
+[GENRE COMB]<0><1><2><3><12>
 [FOCUS0]5
 [FOCUS1]2
 [FOCUS2]6
