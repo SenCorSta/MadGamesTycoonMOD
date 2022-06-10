@@ -300,6 +300,37 @@
 			this.guiMain_.MessageBox(this.tS_.GetText(831), false);
 			return;
 		}
+改动Update
+把
+	{
+		if (this.s_skills > 50f)
+		{
+			this.s_skills = 50f;
+			this.s_gamedesign = 15f;
+			this.s_programmieren = 15f;
+			this.s_grafik = 15f;
+			this.s_sound = 15f;
+			this.s_pr = 15f;
+			this.s_gametests = 15f;
+			this.s_technik = 15f;
+			this.s_forschen = 15f;
+		}
+	}
+改为
+	{
+		if (this.s_skills > 1000f)
+		{
+			this.s_skills = 50f;
+			this.s_gamedesign = 15f;
+			this.s_programmieren = 15f;
+			this.s_grafik = 15f;
+			this.s_sound = 15f;
+			this.s_pr = 15f;
+			this.s_gametests = 15f;
+			this.s_technik = 15f;
+			this.s_forschen = 15f;
+		}
+	}
 改动BUTTON_AddStats
 把
 	{
