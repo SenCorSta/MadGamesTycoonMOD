@@ -725,7 +725,7 @@
 [NAME PB]Streaming
 [NAME ES]Transmisión
 [NAME JA]ストリーミング
-[NAME CH]云游戏
+[NAME CH]串流（云游戏）
 [NAME CT]串流
 [NAME IT]Streaming
 [NAME FR]Streaming
@@ -850,9 +850,9 @@
 [NAME TU]Quick Resume
 [NAME PB]Quick Resume
 [NAME ES]Quick Resume
-[NAME JA]Quick Resume
-[NAME CH]快速继续游戏
-[NAME CT]Quick Resume
+[NAME JA]クイックレジューム
+[NAME CH]快速恢复
+[NAME CT]快速恢復
 [NAME IT]Quick Resume
 [NAME FR]Quick Resume
 [NAME PL]Quick Resume
@@ -863,11 +863,11 @@
 [DESC TU]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
 [DESC PB]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
 [DESC ES]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
-[DESC JA]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
-[DESC CH]使用此功能，控制台可以保存游戏的当前状态<br>并可以在之后恢复.
-[DESC CT]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC JA]ゲームの現状をゲーム機側に保存して、後で再開できる機能。<br>複数のゲームを気軽に切り替えながらプレイできる。
+[DESC CH]游戏机储存目前游戏的状态<br>可以在以后继续。
+[DESC CT]遊戲機儲存目前遊戲的狀態，<br>可以在較後時間恢復。
 [DESC FR]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
-[DESC PL]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
+[DESC PL]Dzięki tej funkcji konsola zapisuje bieżący stan gry,<br>który można wznowić w późniejszym czasie.
 [DESC CZ]With this feature, the console saves the current state<br>of the game and can be resumed at a later time.
 [DATE]NOV 2012
 [RES POINTS]1650
@@ -881,12 +881,12 @@
 [NAME TU]Gaming Vest Support
 [NAME PB]Gaming Vest Support
 [NAME ES]Gaming Vest Support
-[NAME JA]Gaming Vest Support
-[NAME CH]支持触觉反馈背心
-[NAME CT]Gaming Vest Support
+[NAME JA]ゲームベスト対応
+[NAME CH]游戏背心支持
+[NAME CT]遊戲背心支援
 [NAME IT]Gaming Vest Support
 [NAME FR]Gaming Vest Support
-[NAME PL]Gaming Vest Support
+[NAME PL]Wsparice Kamizelek Haptycznych
 [NAME CZ]Gaming Vest Support
 [DESC IT]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC EN]For example, with a gaming vest<br>you can feel hits during an action game.
@@ -894,11 +894,11 @@
 [DESC TU]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC PB]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC ES]For example, with a gaming vest<br>you can feel hits during an action game.
-[DESC JA]For example, with a gaming vest<br>you can feel hits during an action game.
-[DESC CH]例如，使用触觉反馈背心<br>您可以在动作游戏中感受到打击.
-[DESC CT]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC JA]ゲームベストを着用すれば、<br>攻撃の被弾などが振動で伝わります。
+[DESC CH]举个例子<br>游戏背心让玩家在动作游戏中受到打击感.
+[DESC CT]運用例子：<br>遊戲背心讓玩家在動作遊戲感受到打擊感
 [DESC FR]For example, with a gaming vest<br>you can feel hits during an action game.
-[DESC PL]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC PL]Na przykład, dzięki kamizelkom haptycznym<br>można odczuwać uderzenia podczas gry akcji.
 [DESC CZ]For example, with a gaming vest<br>you can feel hits during an action game.
 [DATE]JUN 2014
 [RES POINTS]1700
@@ -913,12 +913,12 @@
 [NAME TU]Gaming Suit Support
 [NAME PB]Gaming Suit Support
 [NAME ES]Gaming Suit Support
-[NAME JA]Gaming Suit Support
-[NAME CH]支持游戏套装
-[NAME CT]Gaming Suit Support
+[NAME JA]ゲーミングスーツ対応
+[NAME CH]游戏套装支持
+[NAME CT]遊戲服裝支援
 [NAME IT]Gaming Suit Support
 [NAME FR]Gaming Suit Support
-[NAME PL]Gaming Suit Support
+[NAME PL]Obsługa kombinezonów do Gier
 [NAME CZ]Gaming Suit Support
 [DESC IT]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC EN]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
@@ -926,11 +926,11 @@
 [DESC TU]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC PB]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC ES]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
-[DESC JA]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
-[DESC CH]使用游戏套装，您可以将您的动作<br>直接转移到游戏中，并且还可以感受到打击.
-[DESC CT]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC JA]ゲーミングスーツを着用すれば、<br>全身の動きでゲームを操作したり、攻撃の被弾などを体感することができます。
+[DESC CH]游戏套装可以将玩家的动作<br>转移到游戏中并且获得额外的打击感.
+[DESC CT]使用遊戲服裝將玩家動作<br>直接轉移到遊戲及感受額外打擊感
 [DESC FR]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
-[DESC PL]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC PL]Dzięki kombinezonowi do gier możesz przenieść swój<br>ruch bezpośrednio do gry i dodatkowo poczuć uderzenia.
 [DESC CZ]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DATE]JUL 2016
 [RES POINTS]1750

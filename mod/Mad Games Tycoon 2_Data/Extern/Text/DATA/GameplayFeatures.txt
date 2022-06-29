@@ -277,7 +277,7 @@
 
 [ID]6
 [TYP]4
-[NAME EN]Sidequests
+[NAME EN]Side Quests
 [NAME GE]Sidequests
 [NAME CH]支线任务
 [NAME TU]Yan Görevler
@@ -1155,11 +1155,11 @@
 [TYP]4
 [NAME EN]Adjustable Censoring
 [NAME GE]Einstellbare Zensierung
-[NAME CH]可选禁用色情内容
+[NAME CH]选择禁用老司机开车内容
 [NAME TU]Ayarlanabilir Sansür
 [DESC EN]This feature allows parents to<br>disable different content in the game.
 [DESC GE]Mit dieser Funktion können Eltern<br>unterschiedliche Inhalte im Spiel deaktivieren.
-[DESC CH]该功能允许父母<br>禁用游戏中的少儿不宜内容.
+[DESC CH]该功能允许父母<br>禁用游戏中的老司机开车内容.
 [DESC TU]Bu özellik, ebeveynlerin<br> oyundaki farklı içeriği devre dışı bırakmasına olanak tanır.
 [NAME FR]Contenu Ajustable
 [DESC FR]Cette fonctionnalité permet aux parents de<br>désactiver différents contenus dans le jeu.
@@ -2981,7 +2981,7 @@
 [NAME JA]NVIDIA SLI対応
 [DESC EN]The technology of the Nvidia corporation, which allows you to use<br>the power of several video cards to process a three-dimensional image.
 [DESC GE]Die Technologie der Nvidia Corporation, mit der Sie die Leistung<br>mehrerer Grafikkarten verwenden können, um ein dreidimensionales Bild zu verarbeiten.
-[DESC CH]英伟达公司的技术，它允许您使用几个显卡的力量来处理三维图像。
+[DESC CH]Nvidia公司的技术，它允许您使用几个视频卡的力量来处理三维图像。
 [DESC TU]Üç boyutlu bir görüntüyü işlemek için birkaç ekran<br>kartının gücünü kullanmanıza izin veren Nvıdıa Corporation'ın teknolojisi.
 [DESC FR]La technologie de Nvidia Corporation, qui vous permet d'utiliser<br>la puissance de plusieurs cartes vidéo pour traiter une image en trois dimensions.
 [DESC PB]A tecnologia da NVIDIA corporation, que lhe permite usar o poder<br>de várias placas de vídeo para processar uma imagem tridimensional.
@@ -3028,7 +3028,7 @@
 [NAME JA]AMD CrossFireX対応
 [DESC EN]A technology that allows you to simultaneously use the power of two or more<br>Radeon video cards to build a three-dimensional image. Analog of Nvidia SLI.
 [DESC GE]Eine Technologie, mit der Sie gleichzeitig die Leistung von zwei oder mehr<br>Radeon-Grafikkarten verwenden können, um ein dreidimensionales Bild zu erstellen. Analog von Nvidia SLI.
-[DESC CH]允许您同时使用两个或多个Radeon显卡的功能来构建三维图像，Nvidia SLI的模拟。
+[DESC CH]一种技术，允许您同时使用两个或多个Radeon视频卡的功能来构建三维图像。 Nvidia SLI的模拟。
 [DESC TU]Üç boyutlu bir görüntü oluşturmak için iki veya daha fazla Radeon ekran<br>kartının gücünü aynı anda kullanmanıza izin veren bir teknoloji. Nvıdıa SLI analogu.
 [DESC FR]Une technologie qui vous permet d'utiliser simultanément la puissance de deux cartes vidéo<br>Radeon ou plus pour créer une image en trois dimensions. Analogique de Nvidia SLI.
 [DESC PB]Uma tecnologia que lhe permite simultaneamente usar o poder de duas ou mais placas<br>de vídeo Radeon para construir uma imagem tridimensional. Analógico de NVIDIA SLI.
@@ -3207,32 +3207,32 @@
 [NAME TU]Facial Recognition
 [NAME FR]Facial Recognition
 [NAME PB]Facial Recognition
-[NAME CT]Facial Recognition
+[NAME CT]臉容識別
 [NAME HU]Facial Recognition
-[NAME ES]Facial Recognition
+[NAME ES]Reconocimiento facial
 [NAME CZ]Facial Recognition
 [NAME KO]Facial Recognition
 [NAME RU]Facial Recognition
 [NAME IT]Facial Recognition
 [NAME AR]Facial Recognition
-[NAME JA]Facial Recognition
-[NAME PL]Facial Recognition
+[NAME JA]表情認識
+[NAME PL]Rozpoznawanie twarzy
 [DESC EN]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
 [DESC GE]Mit Gesichtserkennungen kann dein Aussehen<br>und deine Emotionen direkt in das Spiel übertragen werden.
-[DESC CH]通过面部识别，您的外表<br>和情绪可以直接转移到游戏中.
+[DESC CH]使用面部识别<br>可以将外表和情绪传到游戏中.
 [DESC TU]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
 [DESC FR]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
 [DESC PB]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
-[DESC CT]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC CT]臉容識別可以直接將玩家<br>外貌和表情傳到遊戲中
 [DESC HU]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
-[DESC ES]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC ES]Con los reconocimientos faciales, su apariencia<br>y las emociones pueden trasladarse directamente al juego.
 [DESC CZ]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
 [DESC KO]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
 [DESC RU]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
 [DESC IT]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
 [DESC AR]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
-[DESC JA]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
-[DESC PL]With facial recognitions, your appearance<br>and emotions can be transferred directly into the game.
+[DESC JA]プレイヤーの表情と感情をゲーム内に反映します。
+[DESC PL]Dzięki funkcji rozpoznawania twarzy wygląd użytkownika<br>i jego emocje mogą być przenoszone bezpośrednio do gry.
 [DATE]NOV 2018
 [RES POINTS]980
 [PRICE]300000
@@ -3295,36 +3295,36 @@
 [TYP]5
 [NAME EN]Gaming Suit Support
 [NAME GE]Gaming-Anzug Support
-[NAME CH]支持游戏套装
+[NAME CH]游戏套装支持
 [NAME TU]Gaming Suit Support
 [NAME FR]Gaming Suit Support
 [NAME PB]Gaming Suit Support
-[NAME CT]Gaming Suit Support
+[NAME CT]遊戲服裝支援
 [NAME HU]Gaming Suit Support
-[NAME ES]Gaming Suit Support
+[NAME ES]Soporte de traje de juego
 [NAME CZ]Gaming Suit Support
 [NAME KO]Gaming Suit Support
 [NAME RU]Gaming Suit Support
 [NAME IT]Gaming Suit Support
 [NAME AR]Gaming Suit Support
-[NAME JA]Gaming Suit Support
-[NAME PL]Gaming Suit Support
+[NAME JA]ゲーミングスーツ対応
+[NAME PL]Obsługa kombinezonów do Gier
 [DESC EN]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC GE]Mit einem Gaming-Anzug kannst du deine Bewegung<br>direkt in das Spiel übertragen und zusätzlich Treffer fühlen.
-[DESC CH]使用游戏套装，您可以将您的动作<br>直接转移到游戏中，并且还可以感受到打击.
+[DESC CH]游戏套装可以将玩家的动作<br>转移到游戏中并且获得额外的打击感.
 [DESC TU]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC FR]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC PB]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
-[DESC CT]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC CT]使用遊戲服裝將玩家動作<br>直接轉移到遊戲及感受額外打擊感
 [DESC HU]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
-[DESC ES]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC ES]Con un traje de juego puedes transferir tu movimiento<br>directamente en el juego y, además, sentir golpes.
 [DESC CZ]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC KO]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC RU]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC IT]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
 [DESC AR]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
-[DESC JA]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
-[DESC PL]With a gaming suit you can transfer your movement<br>directly into the game and additionally feel hits.
+[DESC JA]ゲーミングスーツを着用すれば、<br>全身の動きでゲームを操作したり、攻撃の被弾などを体感することができます。
+[DESC PL]Dzięki kombinezonowi do gier możesz przenieść swój<br>ruch bezpośrednio do gry i dodatkowo poczuć uderzenia.
 [DATE]JUL 2016
 [RES POINTS]980
 [PRICE]270000
@@ -3342,36 +3342,36 @@
 [TYP]5
 [NAME EN]Gaming Vest Support
 [NAME GE]Gaming-Westen Support
-[NAME CH]支持触觉反馈背心
+[NAME CH]游戏背心支持
 [NAME TU]Gaming Vest Support
 [NAME FR]Gaming Vest Support
 [NAME PB]Gaming Vest Support
-[NAME CT]Gaming Vest Support
+[NAME CT]遊戲背心支援
 [NAME HU]Gaming Vest Support
-[NAME ES]Gaming Vest Support
+[NAME ES]Soporte de chaleco para juegos
 [NAME CZ]Gaming Vest Support
 [NAME KO]Gaming Vest Support
 [NAME RU]Gaming Vest Support
 [NAME IT]Gaming Vest Support
 [NAME AR]Gaming Vest Support
-[NAME JA]Gaming Vest Support
-[NAME PL]Gaming Vest Support
+[NAME JA]ゲームベスト対応
+[NAME PL]Wsparice Kamizelek Haptycznych
 [DESC EN]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC GE]Mit einer Gaming Weste kannst du<br>zum Beispiel Treffer bei einem Action-Spiel wahrnehmen.
-[DESC CH]例如，使用触觉反馈背心<br>您可以在动作游戏中感受到打击.
+[DESC CH]举个例子<br>游戏背心让玩家在动作游戏中受到打击感
 [DESC TU]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC FR]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC PB]For example, with a gaming vest<br>you can feel hits during an action game.
-[DESC CT]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC CT]運用例子：<br>遊戲背心讓玩家在動作遊戲感受到打擊感
 [DESC HU]For example, with a gaming vest<br>you can feel hits during an action game.
-[DESC ES]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC ES]Por ejemplo, con un chaleco de juego.<br>puedes sentir golpes durante un juego de acción.
 [DESC CZ]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC KO]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC RU]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC IT]For example, with a gaming vest<br>you can feel hits during an action game.
 [DESC AR]For example, with a gaming vest<br>you can feel hits during an action game.
-[DESC JA]For example, with a gaming vest<br>you can feel hits during an action game.
-[DESC PL]For example, with a gaming vest<br>you can feel hits during an action game.
+[DESC JA]ゲームベストを着用すれば、<br>攻撃の被弾などが振動で伝わります。
+[DESC PL]Na przykład, dzięki kamizelkom haptycznym<br>można odczuwać uderzenia podczas gry akcji.
 [DATE]JUN 2014
 [RES POINTS]900
 [PRICE]240000
@@ -3389,36 +3389,36 @@
 [TYP]4
 [NAME EN]Quick Time Events
 [NAME GE]Quick-Time-Events
-[NAME CH]快速反应事件
+[NAME CH]QTE
 [NAME TU]Quick Time Events
 [NAME FR]Quick Time Events
 [NAME PB]Quick Time Events
-[NAME CT]Quick Time Events
+[NAME CT]快速反應事件(QTE)
 [NAME HU]Quick Time Events
-[NAME ES]Quick Time Events
+[NAME ES]Eventos de tiempo rápido
 [NAME CZ]Quick Time Events
 [NAME KO]Quick Time Events
 [NAME RU]Quick Time Events
 [NAME IT]Quick Time Events
 [NAME AR]Quick Time Events
-[NAME JA]Quick Time Events
-[NAME PL]Quick Time Events
+[NAME JA]クイックタイムイベント
+[NAME PL]Quick Time Eventy
 [DESC EN]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
 [DESC GE]Bei Quick-Time-Events muss der Spieler in kurzer Zeit<br>mehrere Tastenkombinationen drücken um zu bestehen.
-[DESC CH]在快速反应事件中，玩家必须在短时间内按下<br>几个组合键才能通过。
+[DESC CH]在QTE中，玩家要在短时间内<br>按下多个按键才能通过.
 [DESC TU]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
 [DESC FR]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
 [DESC PB]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
-[DESC CT]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC CT]在QTE，玩家要在短時間<br>輸入多個指令才可過關
 [DESC HU]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
-[DESC ES]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC ES]En los eventos de tiempo rápido, el jugador debe pulsar<br>varias combinaciones de teclas en poco tiempo para pasar.
 [DESC CZ]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
 [DESC KO]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
 [DESC RU]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
 [DESC IT]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
 [DESC AR]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
-[DESC JA]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
-[DESC PL]In Quick Time events, the player must press<br>several key combinations in a short time to pass.
+[DESC JA]QTEの場面では、瞬間的なボタン入力を行い、<br>その成否で展開が変化します。
+[DESC PL]W Quick Time Event'ach gracz musi nacisnąć<br>kilka kombinacji klawiszy w krótkim czasie, aby  przejść dalej.
 [DATE]JUN 1983
 [RES POINTS]175
 [PRICE]35000
@@ -3439,32 +3439,32 @@
 [NAME TU]Speech Recognition
 [NAME FR]Speech Recognition
 [NAME PB]Speech Recognition
-[NAME CT]Speech Recognition
+[NAME CT]語音識別
 [NAME HU]Speech Recognition
-[NAME ES]Speech Recognition
+[NAME ES]Reconocimiento de voz
 [NAME CZ]Speech Recognition
 [NAME KO]Speech Recognition
 [NAME RU]Speech Recognition
 [NAME IT]Speech Recognition
 [NAME AR]Speech Recognition
-[NAME JA]Speech Recognition
-[NAME PL]Speech Recognition
+[NAME JA]音声認識
+[NAME PL]Rozpoznawanie mowy
 [DESC EN]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
 [DESC GE]Mit diesem Feature kannst du zum Beispiel<br>Dialoge mit NPCs mittels eines Mikrophons führen.
-[DESC CH]例如，借助此功能，您可以使用麦克风<br>与 NPC 进行对话.
+[DESC CH]使用语音识别<br>玩家可以使用麦克风与NPC进行对话.
 [DESC TU]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
 [DESC FR]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
 [DESC PB]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
-[DESC CT]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC CT]玩家可以在這個功能<br>使用咪跟NPC進行對話等交流
 [DESC HU]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
-[DESC ES]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC ES]Con esta función puedes, por ejemplo,<br>Realizar diálogos con los NPCs utilizando un micrófono.
 [DESC CZ]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
 [DESC KO]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
 [DESC RU]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
 [DESC IT]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
 [DESC AR]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
-[DESC JA]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
-[DESC PL]With this feature you can, for example,<br>conduct dialogs with NPCs using a microphone.
+[DESC JA]マイクで話した言葉を認識する機能です。<br>NPCと対話すること等ができます。
+[DESC PL]Dzięki tej funkcji można na przykład<br>prowadzić dialogi z postaciami niezależnymi za pomocą mikrofonu.
 [DATE]FEB 2017
 [RES POINTS]950
 [PRICE]290000
